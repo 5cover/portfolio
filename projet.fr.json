@@ -1,0 +1,72 @@
+[
+  {
+    "nom": "WinClean",
+    "description": "Application de nettoyage et d'optimisation Windows",
+    "logo": "https://raw.githubusercontent.com/5cover/WinClean/master/WinClean/Resources/Images/WinClean.png",
+    "date": "Août 2021",
+    "context": "personnel",
+    "done": false,
+    "tags": [
+      "software-development",
+      "full-stack",
+      "ui",
+      "ux",
+      "oop"
+    ],
+    "links": {
+      "Dépôt GitHub": "https://github.com/5cover/WinClean",
+      "Article CommentÇaMarche": "https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean"
+    },
+    "languages": [
+      "C#",
+      "Inno Setup",
+      "PowerShell"
+    ],
+    "software": [
+      "Visual Studio",
+      "Inno Setup Install Designer",
+      "GitHub"
+    ],
+    "gallery": {
+      "Fenêtre principale de l'application": "https://github.com/5cover/WinClean/wiki/locale/fr-FR/img/MainWindow.png",
+      "Exécution des scripts": "https://github.com/5cover/WinClean/wiki/locale/fr-FR/img/Page2.png"
+    },
+    "story": [
+      "WinClean est né d'un problème..."
+    ]
+  },
+  {
+    "nom": "2L2W French Rural Road",
+    "description": "Asset de route pour le jeu city-builder Cities Skylines",
+    "date": "Juin 2021",
+    "context": "personnel",
+    "done": true,
+    "links": {
+      "Article Steam Workshop": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993"
+    },
+    "tags": [
+      "3d-modeling",
+      "asset-creation"
+    ],
+    "software": [
+      "Blender"
+    ],
+    "story": [
+      "J'ai toujours trouvé que dans Cities: Skylines, les villes ont un look international plutôt fade et homogène. Où sont le goût, l'émotion, la particularité, toutes ces choses qui font le charme d'une ville ? Alors j'ai essayé de reproduire des villes et villages européens, notamment français. Et c'est ce qui a créé le besoin pour une route française, qui respecte les normes réelles pour le marquage au sol et les panneaux. Personne ne l'avait encore fait sur le Workshop, alors je m'y suis mis. J'ai ainsi découvert les bases du texturing et de la modélisation 3D.",
+      "Mettre un pied dans le monde de la modélisation 3D et du game design aura été une expérience enrichissante pour moi, même si je n'en ferai pas une passion."
+    ]
+  },
+  {
+    "nom": "Trégoria",
+    "description": "Un recul sur notre environnement dans Cities Skylines",
+    "story": "Trégoria, c'est un groupement de communes, avant tout né d'une affection profonde pour mon lieu de vie et d'une attention particulière pour les détails invisibles de notre environnement. Vous savez, toutes ces choses qu'on voit sans voir, les lampadaires, les lignes éléctriques, les bottes de foin dans les champs...",
+    "links": {
+      "Publication Instagram": "https://www.instagram.com/p/CjxQUO3LryP"
+    },
+    "context": "personnel",
+    "date": "Octobre 2022",
+    "tags": [
+      "art"
+    ]
+  }
+]
