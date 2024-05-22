@@ -3,11 +3,11 @@
     "nom": "WinClean",
     "description": "Application de nettoyage et d'optimisation Windows",
     "logo": "https://raw.githubusercontent.com/5cover/WinClean/master/WinClean/Resources/Images/WinClean.png",
-    "date": "Août 2021",
+    "start-date": "Août 2021",
     "context": "personnel",
-    "done": false,
+    "background": "https://github.com/5cover/WinClean/wiki/locale/fr-FR/img/MainWindow.png",
     "tags": [
-      "software-development",
+      "software",
       "full-stack",
       "ui",
       "ux",
@@ -32,15 +32,20 @@
       "Exécution des scripts": "https://github.com/5cover/WinClean/wiki/locale/fr-FR/img/Page2.png"
     },
     "story": [
-      "WinClean est né d'un problème..."
+      "Computing is an extremely powerful and advanced technology compared to how it was just a few decades ago. Since the first experimental computers in the early 1940s, computers haven't stopped getting more powerful and complex. Nowadays, even low-tier computers can perform several billion calculations per second. It's really incredible to think that the device that you're using to read this right now is this powerful.",
+      "However, what's mildly infuriating to me is the usage that we make of computers. We've become so dependent of computers over the years without understanding their complex inner workings. We boot up our devices, run programs, play games, go on the internet and we've become intolerant to any sort of failure or latency. We often complain of the slowness of computers without ever thinking of all the complexity of making all what they offer actually work, i.e. programming.",
+      "Should we be ashamed of that? Should we instead bear unsatisfying computing experiences, and never complain?",
+      "I, as the creator of WinClean, don't think so. We should do the exact opposite. We have a right to be furious when things just don't work out. Why? Billions of calculations per second. What can't you do with that?",
+      "So, whose fault is it? Bad programmers? Bad hardware? Who cares? Clean it up!",
+      "Just ask it, why does it always have to be so painstakingly slow!"
     ]
   },
   {
     "nom": "2L2W French Rural Road",
-    "description": "Asset de route pour le jeu city-builder Cities Skylines",
-    "date": "Juin 2021",
+    "description": "Asset de route pour Cities: Skylines",
+    "start-date": "Juin 2021",
+    "end-date": "2 Octobre 2022",
     "context": "personnel",
-    "done": true,
     "links": {
       "Article Steam Workshop": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993"
     },
@@ -59,14 +64,15 @@
   {
     "nom": "Trégoria",
     "description": "Un recul sur notre environnement dans Cities Skylines",
-    "story": "Trégoria, c'est un groupement de communes, avant tout né d'une affection profonde pour mon lieu de vie et d'une attention particulière pour les détails invisibles de notre environnement. Vous savez, toutes ces choses qu'on voit sans voir, les lampadaires, les lignes éléctriques, les bottes de foin dans les champs...",
+    "story": [
+      "Trégoria, c'est un groupement de communes, avant tout né d'une affection profonde pour mon lieu de vie et d'une attention particulière pour les détails invisibles de notre environnement. Vous savez, toutes ces choses qu'on voit sans voir, les lampadaires, les lignes éléctriques, les bottes de foin dans les champs...",
+      "Pour moi, ces détails forment la beauté de notre environnement."
+    ],
     "links": {
       "Publication Instagram": "https://www.instagram.com/p/CjxQUO3LryP"
     },
     "context": "personnel",
-    "date": "Octobre 2022",
-    "tags": [
-      "art"
-    ]
+    "start-date": "Octobre 2022",
+    "tags":[ "art" ]
   }
 ]
