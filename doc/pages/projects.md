@@ -4,16 +4,21 @@
 
 Left toolbar
 
+each item is a radio button.
+
 filter|UI
 -|-
+none|none
 by title|text box
-by tag|combo box
-context|radio buttons
+by tag|selector with toggle tags (gray disabled, orange enabled)
+context|selector with toggle items (gray disabled, orange enabled)
+Done/Not done|tri-state switch
 
-Sort by (radio buttons) :
+Sort by :
 
 - Title
 - Start date
+- Duration
 
 ## Items
 

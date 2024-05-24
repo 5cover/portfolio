@@ -86,3 +86,7 @@ Logo size : letter of the title
 - Project page : EVERYTHING
 
 (add main image field) - background will serve for the project page
+
+### Contact
+
+Resume button - increase opacity and sigly embiggen on hover.

@@ -2,13 +2,13 @@
 
 ## Référencer les compétences du BUT
 
-Maybe project in context or tags?
+Create tags for it. On hover will link the an article
 
 ## Special style for underway projects
 
 Something that indicates movement? Maybe a moving background of arrows?
 
-There would still be a textual indication that the project is underway to keep it explicit.
+Th*ere would still be a textual indication that the project is underway to keep it explicit.
 
 But it would look nice, and allow to identify ongoing project at a glance.
 
@@ -26,11 +26,6 @@ Something mostly neutral but with some hue to give some expressivity.
 
 Would be nice
 
-## Figma: components
+## Link to iut lannion website in parcours
 
-1. Components tutorial
-2. Create components for
-    - Header
-    - Footer
-    - Project card
-    - Hovered project
+and other relevant links as well, to connect myself to my parcours.
