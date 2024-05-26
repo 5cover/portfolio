@@ -29,3 +29,7 @@ Would be nice
 ## Link to iut lannion website in parcours
 
 and other relevant links as well, to connect myself to my parcours.
+
+## Smooth scrolling
+
+by mouse?

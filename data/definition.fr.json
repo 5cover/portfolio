@@ -5,7 +5,7 @@
       "Cities Skylines"
     ],
     "type": "game",
-    "synopsis": "Cities Skylines est un jeu qui permet de créer des villes virtuelles très réalistes. Un atout de ce jeu est le Steam Workshop, une plateforme qui permet au joueur de partager leurs créations, comme des villes, des bâtiments...",
+    "synopsis": "Cities Skylines est un jeu qui permet de créer des villes virtuelles très réalistes. Un atout de ce jeu est le Steam Workshop, une plateforme qui permet au joueurs de partager leurs créations.",
     "wiki": "https://fr.wikipedia.org/wiki/Cities%3A_Skylines",
     "logo": "https://skylines.paradoxwikis.com/images/f/fb/SKY_wiki_logo.png"
   },
@@ -23,7 +23,7 @@
       "C#"
     ],
     "type": "programming-language",
-    "synopsis": "C# est un langage de programmation orientée objet, commercialisé par Microsoft depuis 2002.",
+    "synopsis": "C# est un langage de programmation orienté objet, commercialisé par Microsoft depuis 2002.",
     "wiki": "https://fr.wikipedia.org/wiki/C_Sharp",
     "logo": "https://raw.githubusercontent.com/dotnet/vscode-csharp/main/images/csharpIcon.png"
   },
@@ -101,5 +101,25 @@
     "type": "programming-language",
     "synopsis": "Pascal est un langage de programmation impératif conçu pour l'enseignement.",
     "wiki": "https://fr.wikipedia.org/wiki/Pascal_(langage)"
+  },
+  {
+    "names": [
+      "WPF",
+      "Windows Presentation Foundation"
+    ],
+    "type": "library",
+    "logo": "/img/logo/wpf.png",
+    "synopsis": "WPF (Windows Presentation Foundation) est un système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois avec .NET Framework 3.0 en 2006.",
+    "wiki": "https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation"
+  },
+  {
+    "names": [
+      ".NET",
+      "Microsoft .NET"
+    ],
+    "type": "library",
+    "synopsis": ".NET est une plateforme de développement d'applications créée par Microsoft. Elle fournit un ensemble de technologies, de langages de programmation et d'outils pour la création d'applications Windows, web, mobiles et IoT (Internet des objets).",
+    "logo": "https://raw.githubusercontent.com/dotnet/brand/main/logo/dotnet-logo.svg",
+    "wiki": "https://fr.wikipedia.org/wiki/Microsoft_.NET"
   }
 ]
