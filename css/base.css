@@ -1,7 +1,7 @@
 /* Base stylesheet */
 
 :root {
-    font-family: Roboto, sans-serif;
+    font-family: Roboto, system-ui;
     --color-bg: #eee;
     --color-lvl1: #ddd;
     --color-lvl2: #ccc;
@@ -13,6 +13,8 @@
 
     color: var(--color-fg);
     background-color: var(--color-bg);
+
+    font-size: 24px;
 }
 
 * {
@@ -34,60 +36,114 @@ svg {
     transition: fill var(--transition-duration-change-theme) ease;
 }
 
-/* Theme switch */
-    .theme-switch-wrapper {
+body, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* Header */
+    header {
+        background-color: var(--color-lvl1);
+        padding: 25px 60px 25px 60px;
         display: flex;
+        flex-flow: row nowrap;
         align-items: center;
     }
 
-    .theme-switch {
-        display: inline-block;
-        height: 30px;
-        position: relative;
-        width: 80px;
+    header nav {
+        margin-right: auto;
+    }
+
+    header ul {
+        list-style-type: none;
+        display: flex;
+        flex-flow: row nowrap;
     }
     
-    .theme-switch input {
-        display:none;
+    header nav ul {
+        align-items: baseline;
+        font-weight: 500;
+        margin-right: auto;
     }
-    
-    .slider {
-        background-color: var(--color-lvl3);
-        bottom: 0;
-        cursor: pointer;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transition: var(--transition-duration-change-theme);
-        margin: 0 10px;
+
+    header nav ul li:first-child, header > ul {
+        margin-right: 60px;
     }
-    
-    .slider:before {
-        background-color: var(--color-bg);
-        bottom: 4px;
-        content: "";
-        height: 22px;
-        left: 4px;
-        position: absolute;
-        transition: var(--transition-duration-change-theme);
-        width: 22px;
+
+    header > ul li {
+        margin-right: 10px;
     }
-    
-    input:checked + .slider {
-        background-color: var(--color-accent);
+
+    header nav ul li {
+        margin-right: 40px;
     }
-    
-    input:checked + .slider:before {
-        transform: translateX(30px);
-    }
-    
-    .slider.round {
-        border-radius: var(--huge-val);
-    }
-    
-    .slider.round:before {
-        border-radius: 50%;
-    }
-    
-    
+
+    /* Theme switch */
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-switch {
+            display: inline-block;
+            height: 30px;
+            position: relative;
+            width: 80px;
+        }
+        
+        .theme-switch input {
+            display:none;
+        }
+        
+        .slider {
+            background-color: var(--color-lvl3);
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: var(--transition-duration-change-theme);
+            margin: 0 10px;
+        }
+        
+        .slider:before {
+            background-color: var(--color-bg);
+            bottom: 4px;
+            content: "";
+            height: 22px;
+            left: 4px;
+            position: absolute;
+            transition: var(--transition-duration-change-theme);
+            width: 22px;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--color-accent);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+        
+        .slider.round {
+            border-radius: var(--huge-val);
+        }
+        
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        
+        
