@@ -146,4 +146,12 @@ h2 {
             border-radius: 50%;
         }
         
-        
+/* State classes */
+
+.grayed-out {
+    filter: grayscale(100%);
+}
+
+.hover-color:hover {
+    filter: none;
+}
