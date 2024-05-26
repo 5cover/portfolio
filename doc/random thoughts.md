@@ -6,3 +6,4 @@
 4. Is it ok to use px or should it use em instead, Em is better right? It allows use to base our sizes on the text size, to maintain a consistent layout. I will use px in the design since they are self-contained but convert them in the implementation
 5. Make interactive elements orange when hovered
 6. my site will be quite hover-heavy
+7. equality is key. purity is possible. Math is the only language.

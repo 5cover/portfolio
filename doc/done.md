@@ -26,3 +26,14 @@ Create components for
 LinkedIn, HelloWork...
 
 Remove phone number (since i don't answer phone calls anyway)
+
+## Underline current page in navbar
+
+Would be nice
+
+except home page since it is already bigger.
+
+when nothing is underlined:
+
+- we're on the home page
+- we're on an page that is not on the navbar (the only one as of now are individual project pages)

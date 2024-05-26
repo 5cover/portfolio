@@ -22,9 +22,6 @@ To avoid stupid errors. They look easy enough.
 
 Something mostly neutral but with some hue to give some expressivity.
 
-## Underline current page in navbar
-
-Would be nice
 
 ## Link to iut lannion website in parcours
 

@@ -1,4 +1,4 @@
-# Style
+# General styling guidelines
 
 > What do you want the website to look like ?
 
@@ -28,9 +28,25 @@ Abstract in italics
     - Horizontal : 0,03125vw
 - Between items : 50px
 
+Base border radius : 25px
+
+## Borders
+
+1px #EEE .125 opacity
+
+## Typefaces
+
+Note : .5 opacity #EEE
+
 ## Font sizes
 
-- h1 : 72
-- h2 : 56
+\#|pts|usage
+-|-|-
+1|72|h1
+2|36 (72/2)|h2
+3|28.8 (72/2.5)|project card title, project abstract
+4|24 (72/3)|h3 or body
+5|18 (72/4)|h4 or body
+6|14.4 (72/5)|project card tag
 
 ## Colors
