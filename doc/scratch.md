@@ -22,7 +22,6 @@ To avoid stupid errors. They look easy enough.
 
 Something mostly neutral but with some hue to give some expressivity.
 
-
 ## Link to iut lannion website in parcours
 
 and other relevant links as well, to connect myself to my parcours.
@@ -30,3 +29,20 @@ and other relevant links as well, to connect myself to my parcours.
 ## Smooth scrolling
 
 by mouse?
+
+## Recommended projects
+
+Compute similaritly index based on number of tags in common
+
+At the bottom of each project page
+
+## Projects
+
+- JSlave
+- ztest
+
+## Perspectives page
+
+My opiniated takes on some things
+
+- On the future of AI : individualization after democratization
