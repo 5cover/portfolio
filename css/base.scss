@@ -29,6 +29,7 @@
     font-size: 24px;
     --distance-1: 60px;
     --distance-2: 25px;
+    --distance-3: 15px;
 }
 
 * {
@@ -80,6 +81,11 @@ h2 {
 
 a {
     color: inherit;
+
+    &:hover > svg,
+    &:focus-within > svg {
+        fill: var(--color-accent)
+    }
 }
 
 ul {
@@ -88,7 +94,8 @@ ul {
     flex-flow: row nowrap;
 }
 
-img, svg {
+img,
+svg {
     max-width: 100%;
     max-height: 100%;
 }
@@ -281,7 +288,8 @@ main section {
     > li,
     > li figcaption {
         transition:
-            transform var(--transition), /* comes from .hover-list */
+            transform var(--transition),
+            /* comes from .hover-list */
             opacity var(--transition);
     }
 
@@ -292,6 +300,27 @@ main section {
 
     > li:not(:hover, :focus-within) figcaption {
         opacity: 0;
+    }
+}
+
+.list-projects {
+    display: flex;
+    flex-flow: row nowrap;
+
+    > li {
+        background-color: var(--color-lvl2);
+        border-radius: var(--distance-3);
+        padding: var(--distance-3);
+
+        small {
+            font-style: italic
+        }
+
+        > ul:last-child {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: right;
+        }
     }
 }
 
@@ -307,7 +336,7 @@ article {
     max-height: calc(113vw / 3.84);
 
     h2 {
-        margin-bottom: 15px;
+        margin-bottom: var(--distance-3);
     }
 }
 
