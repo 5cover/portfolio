@@ -49,8 +49,12 @@
         color: #a66144;
     }
 
+    a:hover {
+        color: #b07055
+    }
+
     &:visited {
-        color: #a66144AA;
+        color: #93553b;
     }
 }
 
@@ -75,6 +79,7 @@ body,
 h1,
 h2,
 h3,
+h4,
 ul,
 p,
 figure {
@@ -95,6 +100,11 @@ h2 {
 
 h3 {
     font-size: 24px;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -416,5 +426,27 @@ header {
         > ul:first-of-type > li {
             background-color: var(--color-lvl2);
         }
+    }
+}
+
+.definition {
+    width: fit-content;
+    position: relative;
+    font-size: .75em;
+    > p {
+        font-style: italic;
+    }
+
+    &:not(:hover, :focus-within) > article {
+        position: absolute;
+        opacity: 0;
+    }
+
+    > article {
+        padding: 1em;
+        border-radius: 1em;
+        background-color: var(--color-lvl2);
+        width: 60ch;
+        z-index: 1;
     }
 }
