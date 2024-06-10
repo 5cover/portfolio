@@ -1,0 +1,56 @@
+/* Index.html stylesheet */
+@use 'base';
+
+.list-piano-tiles {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    > li {
+        @include base.hover-card(a);
+
+        img {
+            display: block;
+        }
+
+        figcaption {
+            @include base.card-fill;
+        }
+
+        figcaption > * {
+            background-color: rgba(var(--color-bg-rgb), calc(2/3));
+        }
+
+        h2,
+        p {
+            padding: .4rem .8rem;
+            margin: 0;
+        }
+
+        &:not(:hover, :focus-within) figcaption {
+            opacity: 0;
+        }
+    }
+}
+
+#moi {
+    > div {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    img {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+#ongoing-projects {
+    position: relative;
+
+    .list-projects ~ small {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: inherit;
+    }
+}
