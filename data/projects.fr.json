@@ -1,5 +1,6 @@
 [
   {
+    "id": "winclean",
     "nom": "WinClean",
     "description": "Application de nettoyage et d'optimisation Windows",
     "logo": "https://raw.githubusercontent.com/5cover/WinClean/master/WinClean/Resources/Images/WinClean.png",
@@ -41,6 +42,7 @@
     ]
   },
   {
+    "id": "2l2w-french-rural-road",
     "nom": "2L2W French Rural Road",
     "description": "Asset de route pour Cities: Skylines",
     "start-date": "Juin 2021",
@@ -62,6 +64,7 @@
     ]
   },
   {
+    "id": "tregoria",
     "nom": "Trégoria",
     "description": "Un recul sur notre environnement dans Cities Skylines",
     "story": [

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft-04/schema",
+  "type": "array",
+  "title": "Definitions",
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "names",
+      "type",
+      "synopsis",
+      "wiki"
+    ],
+    "properties": {
+      "id": {
+        "description": "unique definition id",
+        "type": "string",
+        "uniqueItems": true,
+        "minLength": 1
+      },
+      "names": {
+        "description": "names to search for (as whole words), ordered by commonality",
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+          "type": "string"
+        }
+      },
+      "type": {
+        "enum": [
+          "markup-language",
+          "programming-language",
+          "game",
+          "software",
+          "library",
+          "computer-language",
+          "data-format",
+          "dbms",
+          "website"
+        ]
+      },
+      "synopsis": {
+        "type": "string",
+        "minLength": 1
+      },
+      "wiki": {
+        "type": "string",
+        "minLength": 1
+      },
+      "background": {
+        "type": "string",
+        "minLength": 1
+      },
+      "logo": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "isThemedSvg": {
+            "description": "Whether to include this image as an SVG element that will be affected by the site's theming. Useful for black & white images that would contrast badly with the background. If this is true, the url must point to an SVG file.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "isThemedSvg"
+        ]
+      }
+    }
+  }
+}

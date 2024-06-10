@@ -36,17 +36,26 @@ Base border radius : 25px
 
 ## Typefaces
 
-Note : .5 opacity #EEE
+Note: .5 opacity #EEE
 
 ## Font sizes
 
 \#|pts|usage
 -|-|-
-1|72|h1
-2|36 (72/2)|h2
-3|28.8 (72/2.5)|project card title, project abstract
-4|24 (72/3)|h3 or body
-5|18 (72/4)|h4 or body
-6|14.4 (72/5)|project card tag
+1|36|h1
+2|28.8 (36/1.25)|h2
+3|24 (36/1.5)|h3
+4|20.57 (36/1.75)|base text size
+4|18 (36/2)|h4
+5|14.4 (36/2.5)|project card tag
+
+## Distances
+
+\#|px
+-|-
+1|60
+2|40
+3|25
+4|15
 
 ## Colors

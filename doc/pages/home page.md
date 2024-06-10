@@ -87,6 +87,8 @@ Logo size : letter of the title
 
 (add main image field) - background will serve for the project page
 
+Tags are links that lead to a search for that tag.
+
 ### Contact
 
 Resume button - increase opacity and sigly embiggen on hover.
