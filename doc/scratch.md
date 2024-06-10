@@ -61,33 +61,6 @@ Creates some liveliness.
 
 Left to right.
 
-## Moar definitions
-
-Get bg images
-
-CSS
-Sass
-JavaScript
-Lua
-XML
-Bash
-PHP
-Markdown
-CSV
-JSON
-SVG
-
-c
-cpp
-csharp
-pascal
-python
-wpf
-zig
-java
-
-- visual studio 2022 splash screen
-
 ## Definition test page
 
 just a page with all the definitions to make sure they look right.

@@ -1,6 +1,5 @@
-[
-  {
-    "id": "winclean",
+{
+  "winclean": {
     "nom": "WinClean",
     "description": "Application de nettoyage et d'optimisation Windows",
     "logo": "https://raw.githubusercontent.com/5cover/WinClean/master/WinClean/Resources/Images/WinClean.png",
@@ -41,8 +40,7 @@
       "Just ask it, why does it always have to be so painstakingly slow!"
     ]
   },
-  {
-    "id": "2l2w-french-rural-road",
+  "2l2w-french-rural-road": {
     "nom": "2L2W French Rural Road",
     "description": "Asset de route pour Cities: Skylines",
     "start-date": "Juin 2021",
@@ -63,8 +61,7 @@
       "Mettre un pied dans le monde de la modélisation 3D et du game design aura été une expérience enrichissante pour moi, même si je n'en ferai pas une passion."
     ]
   },
-  {
-    "id": "tregoria",
+  "tregoria": {
     "nom": "Trégoria",
     "description": "Un recul sur notre environnement dans Cities Skylines",
     "story": [
@@ -78,4 +75,4 @@
     "start-date": "Octobre 2022",
     "tags":[ "art" ]
   }
-]
+}

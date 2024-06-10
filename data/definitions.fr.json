@@ -1,6 +1,5 @@
-[
-  {
-    "id": "cities-skylines",
+{
+  "cities-skylines": {
     "names": [
       "Cities: Skylines",
       "Cities Skylines"
@@ -14,8 +13,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "blender",
+  "blender": {
     "names": [
       "Blender"
     ],
@@ -28,8 +26,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "csharp",
+  "csharp": {
     "names": [
       "C#"
     ],
@@ -42,8 +39,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "c",
+  "c": {
     "names": [
       "C"
     ],
@@ -56,8 +52,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "cpp",
+  "cpp": {
     "names": [
       "C++"
     ],
@@ -70,8 +65,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "python",
+  "python": {
     "names": [
       "Python"
     ],
@@ -83,8 +77,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "powershell",
+  "powershell": {
     "names": [
       "PowerShell",
       "Windows PowerShell"
@@ -97,8 +90,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "visual-studio",
+  "visual-studio": {
     "names": [
       "Visual Studio",
       "Microsoft Visual Studio"
@@ -111,8 +103,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "vs-code",
+  "vs-code": {
     "names": [
       "Visual Studio Code",
       "VSCode",
@@ -127,8 +118,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "inno-setup",
+  "inno-setup": {
     "names": [
       "Inno Setup"
     ],
@@ -140,8 +130,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "pascal",
+  "pascal": {
     "names": [
       "Pascal"
     ],
@@ -153,8 +142,7 @@
     "wiki": "https://fr.wikipedia.org/wiki/Pascal_(langage)",
     "logoIsName": false
   },
-  {
-    "id": "wpf",
+  "wpf": {
     "names": [
       "Windows Presentation Foundation",
       "WPF"
@@ -166,8 +154,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "dotnet",
+  "dotnet": {
     "names": [
       ".NET",
       "Microsoft .NET"
@@ -180,8 +167,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "zig",
+  "zig": {
     "names": [
       "Zig"
     ],
@@ -193,8 +179,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "sql",
+  "sql": {
     "names": [
       "SQL",
       "Structured Query Language"
@@ -203,8 +188,7 @@
     "synopsis": "SQL est un langage informatique créé en 1974 servant à exploiter des bases de données relationnelles.",
     "wiki": "https://fr.wikipedia.org/wiki/Structured_Query_Language"
   },
-  {
-    "id": "java",
+  "java": {
     "names": [
       "Java"
     ],
@@ -215,8 +199,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "html",
+  "html": {
     "names": [
       "HTML",
       "HTML5",
@@ -230,8 +213,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "css",
+  "css": {
     "names": [
       "CSS",
       "Cascading Style Sheets"
@@ -244,8 +226,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "sass",
+  "sass": {
     "names": [
       "SASS",
       "SCSS",
@@ -259,8 +240,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "javascript",
+  "javascript": {
     "names": [
       "JavaScript",
       "JS"
@@ -273,8 +253,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "lua",
+  "lua": {
     "names": [
       "Lua"
     ],
@@ -286,8 +265,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "xml",
+  "xml": {
     "names": [
       "XML",
       "Extensible Markup Language"
@@ -300,8 +278,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "bash",
+  "bash": {
     "names": [
       "Bash",
       "Bourne-Again shell"
@@ -314,8 +291,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "php",
+  "php": {
     "names": [
       "PHP",
       "Personal Homepage"
@@ -329,8 +305,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "markdown",
+  "markdown": {
     "names": [
       "Markdown"
     ],
@@ -342,8 +317,7 @@
       "isThemedSvg": true
     }
   },
-  {
-    "id": "csv",
+  "csv": {
     "names": [
       "CSV",
       "Comma-separated values"
@@ -356,8 +330,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "json",
+  "json": {
     "names": [
       "JSON",
       "JavaScript Object Notation"
@@ -370,8 +343,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "svg",
+  "svg": {
     "names": [
       "SVG",
       "Scalable Vector Graphics"
@@ -381,8 +353,7 @@
     "wiki": "https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics",
     "background": "https://upload.wikimedia.org/wikipedia/commons/0/03/Example_of_SVG_code.png"
   },
-  {
-    "id": "pgsql",
+  "pgsql": {
     "names": [
       "Postgres",
       "PostgresQL"
@@ -395,8 +366,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "sqlite",
+  "sqlite": {
     "names": [
       "SQLite"
     ],
@@ -409,8 +379,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "mysql",
+  "mysql": {
     "names": [
       "MySQL"
     ],
@@ -423,8 +392,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "tkinter",
+  "tkinter": {
     "names": [
       "Tkinter"
     ],
@@ -432,8 +400,7 @@
     "synopsis": "Tkinter (de l'anglais Tool kit interface) est la bibliothèque graphique libre d'origine pour le langage Python, permettant la création d'interfaces graphiques.",
     "wiki": "https://fr.wikipedia.org/wiki/Tkinter"
   },
-  {
-    "id": "winforms",
+  "winforms": {
     "names": [
       "Windows Forms"
     ],
@@ -445,8 +412,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "figma",
+  "figma": {
     "names": [
       "Figma"
     ],
@@ -458,8 +424,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "replit",
+  "replit": {
     "names": [
       "Replit"
     ],
@@ -471,8 +436,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "gloomaps",
+  "gloomaps": {
     "names": [
       "Gloomaps",
       "GlooMaps"
@@ -485,8 +449,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "minecraft",
+  "minecraft": {
     "names": [
       "Minecraft"
     ],
@@ -500,8 +463,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "scheme",
+  "scheme": {
     "names": [
       "Scheme"
     ],
@@ -510,11 +472,10 @@
     "wiki": "https://fr.wikipedia.org/wiki/Scheme",
     "logo": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Lambda_lc.svg",
-      "isThemedSvg": false
+      "isThemedSvg": true
     }
   },
-  {
-    "id": "smalltalk",
+  "smalltalk": {
     "names": [
       "Smalltalk"
     ],
@@ -526,8 +487,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "sql-workbench",
+  "sql-workbench": {
     "names": [
       "SQL Workbench/J"
     ],
@@ -541,8 +501,7 @@
       "isThemedSvg": false
     }
   },
-  {
-    "id": "apache2",
+  "apache2": {
     "names": [
       "Apache HTTP Server",
       "Apache Server",
@@ -557,4 +516,4 @@
       "isThemedSvg": false
     }
   }
-]
+}

@@ -1,24 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft-04/schema",
-  "type": "array",
+  "type": "object",
   "title": "Definitions",
   "uniqueItems": true,
-  "items": {
+  "additionalProperties": {
     "type": "object",
     "required": [
-      "id",
       "names",
       "type",
       "synopsis",
       "wiki"
     ],
     "properties": {
-      "id": {
-        "description": "unique definition id",
-        "type": "string",
-        "uniqueItems": true,
-        "minLength": 1
-      },
       "names": {
         "description": "names to search for (as whole words), ordered by commonality",
         "type": "array",

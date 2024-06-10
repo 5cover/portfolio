@@ -25,8 +25,8 @@ class ParseResult:
 def parse_definitions(input: TextIO):
     data = json.load(input)
 
-    for d in data:
-        dir = f'../portfolio/img/definition/{d["id"]}'
+    for id, d in data.items():
+        dir = f'../../portfolio/img/definition/{id}'
         logo_obj = d.get('logo')
         logo = logo_obj.get('url') if logo_obj else None
         yield ParseResult(dir, d.get('background'), logo)
@@ -35,24 +35,23 @@ def parse_definitions(input: TextIO):
 def parse_projects(input: TextIO):
     data = json.load(input)
 
-    for d in data:
-        dir = f'../portfolio/img/project/{d.id}'
+    for id, d in data.items():
+        dir = f'../../portfolio/img/project/{id}'
         yield ParseResult(dir,
                           d.get('background'),
                           d.get('logo'))
 
 
 def download(url: str, dir: Path, filename: str):
-    rep = requests.get(url, headers=HEADER_GEN())
-    rep.raise_for_status()
-
     ext = splitext(urlparse(url).path)[1] or mimetypes.guess_extension(rep.headers['Content-Type'])
     if not ext:
         raise ValueError(f"No extension for mime type '{rep.headers['Content-Type']}' (url: '{url}')")
-
     outf = Path(dir, filename + ext)
+
     try:
         with outf.open('xb') as output:
+            rep = requests.get(url, headers=HEADER_GEN())
+            rep.raise_for_status()
             output.write(rep.content)
     except FileExistsError:
         print(f"Skipping '{url}', '{outf}' already exists", file=sys.stderr)
