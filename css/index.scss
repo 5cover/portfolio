@@ -6,7 +6,12 @@
     flex-wrap: wrap;
 
     > li {
-        @include base.hover-card(a);
+        @include base.hover-card;
+        
+        a {
+            @include base.reset-a;
+            @include base.hover-card-target;
+        }
 
         img {
             display: block;
