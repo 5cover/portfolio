@@ -5,6 +5,8 @@
         exit(0);
     }
 
+    define("BASE_HEIGHT", 40);
+
     function get_svg_element(string $svgCode): string
     {
         // Create a DOMDocument instance
@@ -31,18 +33,18 @@
                 $width = $svgElement->getAttribute('width');
                 $height = $svgElement->getAttribute('height');
                 if (!$width || !$height) {
-                    error_log("Invalid SVG structure (no viewBox, no width or height): ".$svgCode);
+                    error_log("Invalid SVG structure (no viewBox, no width or height): " . $svgCode);
                     exit;
                 }
                 $svgElement->setAttribute("viewBox", "0 0 $width $height");
             }
 
             $svgElement->removeAttribute('width');
-            $svgElement->setAttribute('height', 30);
-            
+            $svgElement->setAttribute('height', BASE_HEIGHT);
+
             return $domDocument->saveXML($svgElement);
         } else {
-            error_log("Invalid SVG structure: ".$svgCode);
+            error_log("Invalid SVG structure: " . $svgCode);
             exit;
         }
     }
@@ -62,25 +64,26 @@
             foreach ($data as $id => $def) {
                 $title = $def['names'][0];
                 ?>
-                <dt id="<?php echo $id ?>"><?php echo $id ?>&nbsp;:
-                    <?php echo implode(', ', array_splice($def['names'], 1)) ?></dt>
+                <dt id="<?php echo $id ?>"><?php echo $id ?></dt>
                 <dd class="definition">
-                    <p><?php echo $title; ?></p>
+                    <p><?php echo implode(', ', array_splice($def['names'], 1)) ?> <span
+                            class="definition-trigger"><?php echo $title; ?>
+                        </span></p>
                     <article>
                         <h4><?php echo $title; ?></h4>
                         <?php
                         if (array_key_exists('logo', $def)) {
                             $filename = glob("../portfolio/img/definition/$id/logo*")[0];
-                            if (str_ends_with($filename, ".svg")) {
+                            if ($def['logo']['isThemedSvg']) {
                                 echo get_svg_element(file_get_contents($filename));
                             } else {
-                                echo "<img src=\"" . ltrim($filename, '.') . "\" height=30 alt=\"$title logo\">";
+                                echo "<img src=\"" . ltrim($filename, '.') . "\" height=" . BASE_HEIGHT . " alt=\"$title logo\">";
                             }
                         }
                         ?>
                         <p><small><?php echo ucfirst($types[$def['type']]); ?></small></p>
                         <p><?php echo $def['synopsis']; ?></p>
-                        <p><a target="_blank" href="<?php echo $def['wiki'] ?>">Plus d'informations&hellip;</a></p>
+                        <p><a target="_blank" href="<?php echo $def['wiki'] ?>">More information</a></p>
                     </article>
                 </dd>
                 <?php

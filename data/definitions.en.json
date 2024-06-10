@@ -22,7 +22,7 @@
       "Bash",
       "Bourne-Again shell"
     ],
-    "synopsis": "<abbr title=\"Bourne-Again shell\">Bash</abbr> is a shell program and command language supported by the <abbr title=\"Free Software Foundation\">FSF></abbr> and first developed for the <abbr title=\"GNU is Not Unix\">GNU</abbr> Project by Brian Fox.",
+    "synopsis": "<abbr title=\"Bourne-Again shell\">Bash</abbr> is a shell program and command language supported by the <abbr title=\"Free Software Foundation\">FSF</abbr> and first developed for the <abbr title=\"GNU is Not Unix\">GNU</abbr> Project by Brian Fox.",
     "type": "programming-language",
     "wiki": "https://en.wikipedia.org/wiki/Bash_(Unix_shell)"
   },
