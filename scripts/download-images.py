@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 
 from dataclasses import dataclass
-import argparse as ap
-from urllib.parse import urlparse
 from os.path import splitext
-import json
-import sys
 from pathlib import Path
-import requests
-import mimetypes
-from typing import Optional, TextIO
 from random_header_generator import HeaderGenerator
+from typing import Optional, TextIO
+from urllib.parse import urlparse
+import argparse as ap
+import json
+import mimetypes
+import os
+import requests
+import sys
 
 HEADER_GEN = HeaderGenerator()
-
 
 @dataclass(frozen=True)
 class ParseResult:
@@ -26,7 +26,7 @@ def parse_definitions(input: TextIO):
     data = json.load(input)
 
     for id, d in data.items():
-        dir = f'../../portfolio/img/definition/{id}'
+        dir = f'../portfolio/img/definition/{id}'
         logo_obj = d.get('logo')
         logo = logo_obj.get('url') if logo_obj else None
         yield ParseResult(dir, d.get('background'), logo)
@@ -36,7 +36,7 @@ def parse_projects(input: TextIO):
     data = json.load(input)
 
     for id, d in data.items():
-        dir = f'../../portfolio/img/project/{id}'
+        dir = f'../portfolio/img/project/{id}'
         yield ParseResult(dir,
                           d.get('background'),
                           d.get('logo'))
@@ -68,6 +68,9 @@ if __name__ == '__main__':
     }
 
     parser.add_argument('kind', choices=kinds, help='Kind of JSON file to parse')
+
+    if not os.getcwd().endswith('/main'):
+        parser.error('script must be run from main directory')
 
     a = parser.parse_args()
 
