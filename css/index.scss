@@ -18,7 +18,7 @@
         }
 
         figcaption {
-            @include base.card-fill;
+            @include base.absolute-fill;
         }
 
         figcaption > * {
