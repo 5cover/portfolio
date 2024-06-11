@@ -71,7 +71,7 @@ svg.themed-fill {
 }
 
 small {
-    font-size: 18px;
+    font-size: calc(2em / 3);
     color: rgba(var(--color-fg-rgb), .5)
 }
 
@@ -429,24 +429,28 @@ header {
     }
 }
 
-.definition {
-    width: fit-content;
+:has(> .definition-tooltip) {
     position: relative;
+}
+
+.definition-tooltip-trigger {
+    cursor: pointer;
+    font-style: italic;
+}
+
+.definition-tooltip {
     font-size: .75em;
-    > p {
-        font-style: italic;
-    }
+    border-radius: .75em;
+    position: absolute;
+    bottom: 1.5rem;
+    width: 60ch;
+    padding: .75em;
+    background-color: var(--color-lvl2);
+    visibility: hidden;
+    opacity: 0;
+}
 
-    &:not(:hover, :focus-within) > article {
-        position: absolute;
-        opacity: 0;
-    }
-
-    > article {
-        padding: 1em;
-        border-radius: 1em;
-        background-color: var(--color-lvl2);
-        width: 60ch;
-        z-index: 1;
-    }
+.definition-tooltip-visible {
+    visibility: visible;
+    opacity: 1;
 }

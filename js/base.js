@@ -18,3 +18,18 @@ function switchTheme(e) {
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
+
+
+jQuery(document).ready(function ($) {
+    function showTooltip() {
+        $(this).siblings('.definition-tooltip').addClass('definition-tooltip-visible');
+    }
+    function hideTooltip() {
+        $(this).siblings('.definition-tooltip').removeClass('definition-tooltip-visible');
+    }
+
+    $(document).ready(function () {
+        $('.definition-tooltip-trigger').on('mouseenter focusin', showTooltip);
+        $('.definition-tooltip-trigger').on('mouseleave focusout', hideTooltip);
+    });
+});
