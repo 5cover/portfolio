@@ -70,7 +70,7 @@
                     <?php echo implode(', ', array_splice($def['names'], 1)) ?>
                     <div>
                         <a target="_blank" href="<?php echo $def['wiki'] ?>"
-                            class="definition-tooltip-trigger"><?php echo $title; ?></a>
+                            class="link definition-tooltip-trigger"><?php echo $title; ?></a>
                         <div class="definition-tooltip" <?php if ($bg) {
                             echo "style=\"--bg-img: url($outdir$bg)\"";
                         } ?>>
