@@ -91,8 +91,7 @@
     },
     "css": {
         "logo": {
-            "isThemedSvg": false,
-            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+            "isThemedSvg": false
         },
         "names": [
             "Cascading Style Sheets",
@@ -414,7 +413,7 @@
     "svg": {
         "background": "https://upload.wikimedia.org/wikipedia/commons/0/03/Example_of_SVG_code.png",
         "logo": {
-            "isThemedSvg": false,
+            "isThemedSvg": true,
             "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg"
         },
         "names": [
