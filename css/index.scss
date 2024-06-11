@@ -9,7 +9,6 @@
         @include base.hover-card;
 
         a {
-            @include base.reset-a;
             @include base.hover-card-target;
         }
 
@@ -51,11 +50,26 @@
 
 #ongoing-projects {
     position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
 
     .list-projects ~ small {
         position: absolute;
         top: 0;
         right: 0;
         padding: inherit;
+    }
+
+    > a {
+        display: block;
+        margin: 0 auto;
+        background-color: var(--color-lvl2);
+        padding: .5em 1em;
+        border-radius: .5em;
+        
+        &:hover, &:focus-within {
+            @include base.bring-out(1.15);
+        }
     }
 }

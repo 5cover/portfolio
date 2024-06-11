@@ -32,14 +32,18 @@
   transition: background-color var(--transition), color var(--transition), transform var(--transition), opacity var(--transition), fill var(--transition), filter var(--transition);
   box-sizing: border-box;
 }
-*:link {
+
+/* Opt-in styling : link colors */
+.link:link {
   color: #a66144;
 }
-* a:hover {
-  color: #b07055;
-}
-*:visited {
+
+.link:visited {
   color: #93553b;
+}
+
+.link:link:hover {
+  color: #b07055;
 }
 
 [data-theme=dark] {
@@ -134,9 +138,14 @@ section h2 {
   text-align: center;
 }
 
+a:link, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 a > svg:hover,
 a > svg:focus-within {
-  transform: scale(1.25);
+  transform: scale(1.15);
 }
 
 footer {
@@ -196,10 +205,6 @@ header nav > ul {
 }
 header nav > ul a {
   font-size: 24px;
-}
-header nav a:link, header nav a:visited {
-  text-decoration: none;
-  color: inherit;
 }
 header nav a:hover, header nav a:focus-within, header nav a[href="#"] {
   text-decoration: underline;
@@ -276,10 +281,6 @@ header input:checked + .slider:before {
   /* Required to clip the :before pseudo-element to the card's boundaries */
   overflow: hidden;
 }
-.list-projects > li h3 > a:link, .list-projects > li h3 > a:visited {
-  text-decoration: none;
-  color: inherit;
-}
 .list-projects > li h3 > a:after {
   content: "";
   position: absolute;
@@ -311,7 +312,7 @@ header input:checked + .slider:before {
   gap: 0.75em;
 }
 .list-projects > li .list-tags > li:hover, .list-projects > li .list-tags > li:focus-within {
-  transform: scale(1.25);
+  transform: scale(1.15);
   z-index: 1;
 }
 .list-projects > li .list-tags > li {
@@ -349,7 +350,7 @@ header input:checked + .slider:before {
   align-items: end;
 }
 .list-projects > li .list-anchors > li:hover, .list-projects > li .list-anchors > li:focus-within {
-  transform: scale(1.25);
+  transform: scale(1.15);
   z-index: 1;
 }
 .list-projects > li .list-anchors > li {
@@ -369,6 +370,10 @@ header input:checked + .slider:before {
 .definition-tooltip-trigger {
   cursor: pointer;
   font-style: italic;
+}
+
+a.definition-tooltip-trigger {
+  text-decoration: none;
 }
 
 .definition-tooltip {
@@ -411,7 +416,7 @@ header input:checked + .slider:before {
   height: 100%;
   background: var(--bg-img) no-repeat var(--color-lvl2);
   background-size: cover;
-  opacity: 0.2;
+  opacity: 0.25;
 }
 .definition-tooltip:after {
   content: "";

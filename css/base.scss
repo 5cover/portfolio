@@ -44,18 +44,20 @@
         fill var(--transition),
         filter var(--transition);
     box-sizing: border-box;
+}
 
-    &:link {
-        color: #a66144;
-    }
+/* Opt-in styling : link colors */
 
-    a:hover {
-        color: #b07055
-    }
+.link:link {
+    color: #a66144;
+}
 
-    &:visited {
-        color: #93553b;
-    }
+.link:visited {
+    color: #93553b;
+}
+
+.link:link:hover {
+    color: #b07055;
 }
 
 [data-theme="dark"] {
@@ -158,13 +160,9 @@ section h2 {
     bottom: 0;
 }
 
-@mixin reset-a {
-
-    &:link,
-    &:visited {
+a:link, a:visited {
         text-decoration: none;
         color: inherit;
-    }
 }
 
 @mixin hover-card {
@@ -179,7 +177,7 @@ section h2 {
 
 a > svg:hover,
 a > svg:focus-within {
-    @include bring-out(1.25);
+    @include bring-out(1.15);
 }
 
 footer {
@@ -236,8 +234,6 @@ header {
         row-gap: 1.5em;
 
         @mixin nav-link {
-            @include reset-a;
-
             &:hover,
             &:focus-within,
             &[href="#"] {
@@ -340,7 +336,6 @@ header {
     @include hover-card;
 
     h3 > a {
-        @include reset-a;
         @include hover-card-target;
     }
 
@@ -369,7 +364,7 @@ header {
     }
 
     .list-tags {
-        @include hover-sensitive-list(1.25);
+        @include hover-sensitive-list(1.15);
         grid-row: 1;
         grid-column: 1;
         gap: .75em;
@@ -407,7 +402,7 @@ header {
     }
 
     .list-anchors {
-        @include hover-sensitive-list(1.25);
+        @include hover-sensitive-list(1.15);
         grid-row: 5;
         grid-column: 1 / 3;
         flex-grow: 1;
@@ -436,6 +431,10 @@ header {
 .definition-tooltip-trigger {
     cursor: pointer;
     font-style: italic;
+}
+
+a.definition-tooltip-trigger {
+    text-decoration: none;
 }
 
 .definition-tooltip {
@@ -475,7 +474,7 @@ header {
         height: 100%;
         background: var(--bg-img) no-repeat var(--color-lvl2);
         background-size: cover;
-        opacity: .2;
+        opacity: .25;
     }
 
     /* Add the new arrow pseudo-element */
