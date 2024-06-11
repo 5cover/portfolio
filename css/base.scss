@@ -17,7 +17,6 @@
     --color-lvl1-rgb: 221, 221, 221;
     --color-lvl2-rgb: 204, 204, 204;
     --color-lvl3-rgb: 187, 187, 187;
-    --color-accent: #a66144;
     --color-bg: rgb(var(--color-bg-rgb));
     --color-fg: rgb(var(--color-fg-rgb));
     --color-lvl1: rgb(var(--color-lvl1-rgb));
@@ -35,6 +34,11 @@
     --distance-4: 15px;
 }
 
+@mixin color-accent {
+    background-color: #a66144;
+    color: white;
+}
+
 * {
     transition:
         background-color var(--transition),
@@ -46,20 +50,6 @@
     box-sizing: border-box;
 }
 
-/* Opt-in styling : link colors */
-
-.link:link {
-    color: #a66144;
-}
-
-.link:visited {
-    color: #93553b;
-}
-
-.link:link:hover {
-    color: #b07055;
-}
-
 [data-theme="dark"] {
     --color-bg-rgb: 17, 17, 17;
     --color-fg-rgb: 238, 238, 238;
@@ -68,12 +58,32 @@
     --color-lvl3-rgb: 68, 68, 68;
 }
 
+/* Opt-in styling : link colors */
+.link:link {
+    color: #a66144;
+}
+
+.link:visited {
+    color: #91553b;
+}
+
+.link:hover {
+    color: #be7c60;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:not(.link) {
+    color: inherit;
+}
+
 svg.themed-fill {
     fill: var(--color-fg);
 }
 
 small {
-    font-size: calc(2em / 3);
     color: rgba(var(--color-fg-rgb), .5)
 }
 
@@ -108,11 +118,6 @@ h3 {
 h4 {
     font-size: 20px;
     font-weight: 500;
-}
-
-ul {
-    list-style-type: none;
-    display: flex;
 }
 
 img,
@@ -160,11 +165,6 @@ section h2 {
     bottom: 0;
 }
 
-a:link, a:visited {
-        text-decoration: none;
-        color: inherit;
-}
-
 @mixin hover-card {
     position: relative;
 }
@@ -173,6 +173,28 @@ a:link, a:visited {
     &:after {
         @include absolute-fill;
     }
+}
+
+@mixin transparent-background-image($img, $color, $opacity) {
+    position: relative;
+
+    &:before {
+        @include absolute-fill;
+        display: block;
+        background: $img no-repeat $color;
+        background-size: cover;
+        opacity: $opacity;
+    }
+}
+
+@mixin absolute-center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin horizontal-box-padding($factor: 1) {
+    padding: calc($factor * .25lh) calc($factor * 1ch);
 }
 
 a > svg:hover,
@@ -185,9 +207,7 @@ footer {
 
     p:has(small) {
         position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        @include absolute-center;
     }
 
     p:has(svg) {
@@ -205,6 +225,8 @@ header {
     justify-content: space-between;
 
     .list-flags {
+        list-style-type: none;
+        display: flex;
         flex-wrap: wrap;
         gap: .5em
     }
@@ -234,6 +256,7 @@ header {
         row-gap: 1.5em;
 
         @mixin nav-link {
+
             &:hover,
             &:focus-within,
             &[href="#"] {
@@ -242,6 +265,8 @@ header {
         }
 
         > ul {
+            display: flex;
+            list-style-type: none;
             column-gap: 2em;
             row-gap: 1em;
             flex-wrap: wrap;
@@ -288,7 +313,7 @@ header {
     }
 
     input:checked + .slider {
-        background-color: var(--color-accent);
+        @include color-accent;
 
         &:before {
             transform: translateX(30px);
@@ -302,10 +327,7 @@ header {
     padding: 1em;
     margin-left: auto;
     margin-right: auto;
-    width: calc(1vw / .03);
     max-width: 32em;
-    height: fit-content;
-    max-height: calc(113vw / 3.84);
 
     h2 {
         margin-bottom: .5em;
@@ -334,11 +356,9 @@ header {
 
 .list-projects > li {
     @include hover-card;
-
-    h3 > a {
-        @include hover-card-target;
-    }
-
+    @include transparent-background-image(var(--bg-img), var(--color-lvl2), .1);
+    list-style-type: none;
+    display: flex;
     border: 1px var(--basic-border);
     display: grid;
     grid-template: repeat(5, auto) / auto min-content;
@@ -349,14 +369,8 @@ header {
     /* Required to clip the :before pseudo-element to the card's boundaries */
     overflow: hidden;
 
-    &:before {
-        @include absolute-fill;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: var(--bg-img) no-repeat var(--color-lvl2);
-        background-size: cover;
-        opacity: .1;
+    h3 > a {
+        @include hover-card-target;
     }
 
     small {
@@ -365,15 +379,17 @@ header {
 
     .list-tags {
         @include hover-sensitive-list(1.15);
+        list-style-type: none;
+        display: flex;
         grid-row: 1;
         grid-column: 1;
         gap: .75em;
 
         > li {
+            @include color-accent;
+            @include horizontal-box-padding(.75);
             font-size: 18px;
-            background-color: var(--color-accent);
             border-radius: .4em;
-            padding: .2em .4em;
             z-index: 1;
         }
     }
@@ -403,11 +419,13 @@ header {
 
     .list-anchors {
         @include hover-sensitive-list(1.15);
+        list-style-type: none;
+        display: flex;
         grid-row: 5;
         grid-column: 1 / 3;
         flex-grow: 1;
         flex-direction: row-reverse;
-        align-items: end;
+        align-items: flex-end;
 
         > li {
             z-index: 1;
@@ -416,7 +434,7 @@ header {
 
     &:hover,
     &:focus-within {
-        background-color: var(--color-accent);
+        @include color-accent;
 
         > ul:first-of-type > li {
             background-color: var(--color-lvl2);
@@ -438,6 +456,7 @@ a.definition-tooltip-trigger {
 }
 
 .definition-tooltip {
+    @include transparent-background-image(var(--bg-img), var(--color-lvl2), .25);
     grid-template: 1fr auto / repeat(2, auto) 1fr;
     display: grid;
     font-size: .75em;
@@ -465,16 +484,6 @@ a.definition-tooltip-trigger {
     > p:nth-last-child(1) {
         grid-row: 3;
         grid-column: 1 / 3;
-    }
-
-    &:before {
-        @include absolute-fill;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: var(--bg-img) no-repeat var(--color-lvl2);
-        background-size: cover;
-        opacity: .25;
     }
 
     /* Add the new arrow pseudo-element */

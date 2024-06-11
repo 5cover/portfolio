@@ -2,6 +2,8 @@
 @use 'base';
 
 .list-piano-tiles {
+    list-style-type: none;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
 
@@ -21,12 +23,8 @@
         }
 
         figcaption > * {
+            @include base.horizontal-box-padding;
             background-color: rgba(var(--color-bg-rgb), calc(2/3));
-        }
-
-        h2,
-        p {
-            padding: .4rem .8rem;
             margin: 0;
         }
 
@@ -36,15 +34,15 @@
     }
 }
 
-#moi {
+#me {
     > div {
         display: flex;
-        flex-flow: row nowrap;
     }
 
     img {
         width: 50%;
         height: 50%;
+        border-radius: .5em;
     }
 }
 
@@ -62,14 +60,69 @@
     }
 
     > a {
+        @include base.horizontal-box-padding(1.5);
         display: block;
         margin: 0 auto;
         background-color: var(--color-lvl2);
-        padding: .5em 1em;
         border-radius: .5em;
-        
-        &:hover, &:focus-within {
-            @include base.bring-out(1.15);
+
+        &:hover,
+        &:focus-within {
+            @include base.bring-out(1.05);
+            @include base.color-accent;
+        }
+    }
+}
+
+#contact {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1em;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: calc(1lh / 3);
+
+        svg {
+            height: .75lh;
+            vertical-align: baseline;
+            margin-right: .5ch;
+        }
+    }
+
+    a {
+        height: 100%;
+        position: relative;
+
+        img {
+            height: 12em;
+            width: auto;
+            opacity: .25;
+            border-radius: .5em;
+        }
+
+        span {
+            @include base.absolute-center;
+            @include base.horizontal-box-padding;
+            width: max-content;
+            background-color: var(--color-lvl1);
+            position: absolute;
+            border-radius: .25em;
+        }
+
+        &:hover,
+        &:focus-within {
+            @include base.bring-out(1.05);
+
+            img {
+                opacity: .75;
+            }
+
+            span {
+                @include base.color-accent;
+            }
         }
     }
 }
