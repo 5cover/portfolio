@@ -19,8 +19,8 @@
             "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg"
         },
         "names": [
-            "Bash",
-            "Bourne-Again shell"
+            "Bourne-Again shell",
+            "Bash"
         ],
         "synopsis": "<abbr title=\"Bourne-Again shell\">Bash</abbr> est un interpréteur en ligne de commande de type script. C'est le shell Unix du projet GNU.",
         "type": "programming-language",
@@ -58,8 +58,8 @@
             "url": "https://skylines.paradoxwikis.com/images/f/fb/SKY_wiki_logo.png"
         },
         "names": [
-            "Cities Skylines",
-            "Cities: Skylines"
+            "Cities: Skylines",
+            "Cities Skylines"
         ],
         "synopsis": "Cities: Skylines est un jeu de construction de ville de 2015 développé par Colossal Order et publié par Paradox Interactive. Le jeu est une simulation de construction de ville ouverte et solo.",
         "type": "game",
@@ -121,8 +121,8 @@
             "url": "https://raw.githubusercontent.com/dotnet/brand/main/logo/dotnet-logo.svg"
         },
         "names": [
-            ".NET",
-            "Microsoft .NET"
+            "Microsoft .NET",
+            ".NET"
         ],
         "synopsis": ".NET est une plateforme de développement créée par Microsoft. Elle fournit un ensemble de technologies, de langages de programmation et d'outils pour la création d'applications Windows, web, mobiles et IoT (Internet des objets).",
         "type": "library",
@@ -149,7 +149,7 @@
             "GlooMaps",
             "Gloomaps"
         ],
-        "synopsis": "GlooMaps est un outil de cartographie de site en ligne simple",
+        "synopsis": "GlooMaps est un outil de cartographie de site en ligne simple.",
         "type": "website",
         "wiki": "https://www.gloomaps.com/"
     },
@@ -159,9 +159,9 @@
             "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
         },
         "names": [
+            "HyperText Markup Language",
             "HTML",
-            "HTML5",
-            "HyperText Markup Language"
+            "HTML5"
         ],
         "synopsis": "L' <abbr title=\"HyperText Markup Language\">HTML</abbr> est le langage de balisage conçu pour représenter les pages web.",
         "type": "markup-language",
@@ -282,8 +282,8 @@
             "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
         },
         "names": [
-            "Postgres",
-            "PostgreSQL"
+            "PostgreSQL",
+            "Postgres"
         ],
         "synopsis": "PostgreSQL est un système de gestion de base de données relationnelle et objet.",
         "type": "dbms",
@@ -298,7 +298,7 @@
             "Personal Homepage",
             "PHP"
         ],
-        "synopsis": "PHP est un langage de programmation créé en 1993, principalement utilisé pour produire des pages Web dynamiques via un serveur web",
+        "synopsis": "<abbr title=\"Personal Homepage\">PHP</abbr> est un langage de programmation créé en 1993, principalement utilisé pour produire des pages Web dynamiques via un serveur web",
         "type": "programming-language",
         "wiki": "https://en.wikipedia.org/wiki/PHP"
     },
@@ -345,11 +345,11 @@
             "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg"
         },
         "names": [
+            "Syntactically Awesome Style Sheets",
             "SASS",
-            "SCSS",
-            "Syntactically Awesome Style Sheets"
+            "SCSS"
         ],
-        "synopsis": "Sass (Syntactically awesome stylesheets) est un langage de script préprocesseur qui est compilé ou interprété en CSS.",
+        "synopsis": "<abbr title=\"Syntactically Awesome Style Sheets\">Sass</abbr> est un langage de script préprocesseur qui est compilé ou interprété en CSS.",
         "type": "computer-language",
         "wiki": "https://fr.wikipedia.org/wiki/Sass_(langage)"
     },
@@ -379,10 +379,10 @@
     },
     "sql": {
         "names": [
-            "SQL",
-            "Structured Query Language"
+            "Structured Query Language",
+            "SQL"
         ],
-        "synopsis": "SQL est un langage informatique créé en 1974 servant à exploiter des bases de données relationnelles.",
+        "synopsis": "<abbr title=\"Structured Query Language\">SQL</abbr> est un langage informatique créé en 1974 servant à exploiter des bases de données relationnelles.",
         "type": "programming-language",
         "wiki": "https://fr.wikipedia.org/wiki/Structured_Query_Language"
     },
@@ -421,7 +421,7 @@
             "Scalable Vector Graphics",
             "SVG"
         ],
-        "synopsis": "Le Scalable Vector Graphics (en français « graphiques vectoriels adaptables »), ou SVG, est un format de données ASCII conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML.",
+        "synopsis": "Le <abbr title=\"Scalable Vector Graphics (en français « graphiques vectoriels adaptables »)\">SVG</abbr>, est un format de données ASCII conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML.",
         "type": "data-format",
         "wiki": "https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics"
     },
@@ -467,7 +467,8 @@
             "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/WinForms_Logo.png"
         },
         "names": [
-            "Windows Forms"
+            "Windows Forms",
+            "WinForms"
         ],
         "synopsis": "Windows Forms un framework d'interface graphique inclus dans le framework .NET fournissant l'accès via à l'API Windows.",
         "type": "library",
@@ -481,7 +482,7 @@
             "Windows Presentation Foundation",
             "WPF"
         ],
-        "synopsis": "WPF (Windows Presentation Foundation) est un système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois en 2006.",
+        "synopsis": "<abbr title=\"Windows Presentation Foundation\">WPF</abbr> est un système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois en 2006.",
         "type": "library",
         "wiki": "https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation"
     },
@@ -494,7 +495,7 @@
             "Extensible Markup Language",
             "XML"
         ],
-        "synopsis": "L'Extensible Markup Language, généralement appelé XML, « langage de balisage extensible » en français, est un métalangage informatique de balisage générique.",
+        "synopsis": "L'<abbr title=\"Extensible Markup Language\">XML</abbr>, est un métalangage informatique de balisage utilisé pour représenter des données structurées.",
         "type": "markup-language",
         "wiki": "https://fr.wikipedia.org/wiki/Extensible_Markup_Language"
     },

@@ -9,7 +9,7 @@
             "Apache Server",
             "Apache2"
         ],
-        "synopsis": "The Apache HTTP Server is a free and open-source cross-platform web server software",
+        "synopsis": "The Apache HTTP Server is a free and open-source cross-platform web server software.",
         "type": "software",
         "wiki": "https://en.wikipedia.org/wiki/Apache_HTTP_Server"
     },
@@ -19,8 +19,8 @@
             "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg"
         },
         "names": [
-            "Bash",
-            "Bourne-Again shell"
+            "Bourne-Again shell",
+            "Bash"
         ],
         "synopsis": "<abbr title=\"Bourne-Again shell\">Bash</abbr> is a shell program and command language supported by the <abbr title=\"Free Software Foundation\">FSF</abbr> and first developed for the <abbr title=\"GNU is Not Unix\">GNU</abbr> Project by Brian Fox.",
         "type": "programming-language",
@@ -58,8 +58,8 @@
             "url": "https://skylines.paradoxwikis.com/images/f/fb/SKY_wiki_logo.png"
         },
         "names": [
-            "Cities Skylines",
-            "Cities: Skylines"
+            "Cities: Skylines",
+            "Cities Skylines"
         ],
         "synopsis": "Cities: Skylines is a 2015 city-building game developed by Colossal Order and published by Paradox Interactive. The game is a single-player open-ended city-building simulation.",
         "type": "game",
@@ -121,8 +121,8 @@
             "url": "https://raw.githubusercontent.com/dotnet/brand/main/logo/dotnet-logo.svg"
         },
         "names": [
-            ".NET",
-            "Microsoft .NET"
+            "Microsoft .NET",
+            ".NET"
         ],
         "synopsis": "The .NET platform is a free and open-source, managed computer software framework for Windows, Linux, and macOS operating systems.",
         "type": "library",
@@ -149,7 +149,7 @@
             "GlooMaps",
             "Gloomaps"
         ],
-        "synopsis": "GlooMaps is a simple online visual sitemap tool",
+        "synopsis": "GlooMaps is a simple online visual sitemap tool.",
         "type": "website",
         "wiki": "https://www.gloomaps.com/"
     },
@@ -159,9 +159,9 @@
             "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
         },
         "names": [
+            "HyperText Markup Language",
             "HTML",
-            "HTML5",
-            "HyperText Markup Language"
+            "HTML5"
         ],
         "synopsis": "<abbr title=\"HyperText Markup Language\">HTML</abbr> is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content.",
         "type": "markup-language",
@@ -282,10 +282,10 @@
             "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
         },
         "names": [
-            "Postgres",
-            "PostgreSQL"
+            "PostgreSQL",
+            "Postgres"
         ],
-        "synopsis": "PostgreSQL also known as Postgres, is a free and open-source relational database management system.",
+        "synopsis": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system.",
         "type": "dbms",
         "wiki": "https://en.wikipedia.org/wiki/PostgreSQL"
     },
@@ -298,7 +298,7 @@
             "Personal Homepage",
             "PHP"
         ],
-        "synopsis": "PHP is a general-purpose scripting language geared towards web development, created in 1993.",
+        "synopsis": "<abbr title=\"Personal Homepage\">PHP</abbr> is a general-purpose scripting language geared towards web development, created in 1993.",
         "type": "programming-language",
         "wiki": "https://en.wikipedia.org/wiki/PHP"
     },
@@ -345,11 +345,11 @@
             "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg"
         },
         "names": [
+            "Syntactically Awesome Style Sheets",
             "SASS",
-            "SCSS",
-            "Syntactically Awesome Style Sheets"
+            "SCSS"
         ],
-        "synopsis": "Sass (short for syntactically awesome style sheets) is a preprocessor scripting language that is interpreted or compiled into CSS.",
+        "synopsis": "<abbr title=\"Syntactically Awesome Style Sheets\">Sass</abbr> is a preprocessor scripting language that is interpreted or compiled into CSS.",
         "type": "computer-language",
         "wiki": "https://en.wikipedia.org/wiki/Sass_(style_sheet_language)"
     },
@@ -382,7 +382,7 @@
             "SQL",
             "Structured Query Language"
         ],
-        "synopsis": "Structured Query Language (SQL) is a domain-specific language used to manage data, especially in relational database management systems.",
+        "synopsis": "<abbr title=\"Structured Query Language\">SQL</abbr> is a domain-specific language used to manage data, especially in relational database management systems.",
         "type": "programming-language",
         "wiki": "https://en.wikipedia.org/wiki/SQL"
     },
@@ -467,7 +467,8 @@
             "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/WinForms_Logo.png"
         },
         "names": [
-            "Windows Forms"
+            "Windows Forms",
+            "WinForms"
         ],
         "synopsis": "Windows Forms is a free and open-source graphical class library included as a part of Microsoft .NET, .NET Framework or Mono.",
         "type": "library",
@@ -481,7 +482,7 @@
             "Windows Presentation Foundation",
             "WPF"
         ],
-        "synopsis": "Windows Presentation Foundation (WPF) is a free and open-source user interface framework for Windows-based desktop applications.",
+        "synopsis": "<abbr title=\"Windows Presentation Foundation\">WPF</abbr> is a free and open-source user interface framework for Windows-based desktop applications.",
         "type": "library",
         "wiki": "https://en.wikipedia.org/wiki/Windows_Presentation_Foundation"
     },
@@ -494,7 +495,7 @@
             "Extensible Markup Language",
             "XML"
         ],
-        "synopsis": "Extensible Markup Language (XML) is a markup language and file format for storing, transmitting, and reconstructing arbitrary data.",
+        "synopsis": "<abbr title=\"Extensible Markup Language\">XML</abbr> is a markup language and file format for storing, transmitting, and reconstructing arbitrary data.",
         "type": "markup-language",
         "wiki": "https://en.wikipedia.org/wiki/XML"
     },

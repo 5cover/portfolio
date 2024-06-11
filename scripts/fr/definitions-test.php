@@ -48,16 +48,16 @@
 
 } ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <?php echo file_get_contents('fragments/head.html'); ?>
 
 <body>
-    <?php echo file_get_contents('fragments/en/header.html'); ?>
+    <?php echo file_get_contents('fragments/fr/header.html'); ?>
     <main>
         <dl>
             <?php
-            $data = json_decode(file_get_contents('data/definitions.en.json'), true);
-            $types = json_decode(file_get_contents('data/types.en.json'), true);
+            $data = json_decode(file_get_contents('data/definitions.fr.json'), true);
+            $types = json_decode(file_get_contents('data/types.fr.json'), true);
             foreach ($data as $id => $def) {
                 $title = $def['names'][0];
                 $indir = "../portfolio/img/definition/$id/";
@@ -96,7 +96,7 @@
             ?>
         </dl>
     </main>
-    <?php echo file_get_contents('fragments/en/footer.html'); ?>
+    <?php echo file_get_contents('fragments/fr/footer.html'); ?>
 </body>
 <?php echo file_get_contents('fragments/scripts.html'); ?>
 
