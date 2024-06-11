@@ -1,11 +1,11 @@
 {
-  "game": "videogame",
-  "software": "sotfware",
-  "programming-language": "programming language",
-  "markup-language": "markup language",
-  "computer-language": "computer language",
-  "library": "library",
-  "data-format": "data format",
-  "dbms": "database management system",
-  "website": "website"
+    "game": "videogame",
+    "software": "sotfware",
+    "programming-language": "programming language",
+    "markup-language": "markup language",
+    "computer-language": "computer language",
+    "library": "library",
+    "data-format": "data format",
+    "dbms": "database management system",
+    "website": "website"
 }

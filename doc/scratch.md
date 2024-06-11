@@ -66,3 +66,7 @@ Left to right.
 just a page with all the definitions to make sure they look right.
 
 keep it in prod, nice easter egg.
+
+## choose theme based on user preferences
+
+with a media quary

@@ -65,26 +65,27 @@
                 $title = $def['names'][0];
                 ?>
                 <dt id="<?php echo $id ?>"><?php echo $id ?></dt>
-                <dd class="definition">
-                    <p><?php echo implode(', ', array_splice($def['names'], 1)) ?> <span
-                            class="definition-trigger"><?php echo $title; ?>
-                        </span></p>
-                    <article>
-                        <h4><?php echo $title; ?></h4>
-                        <?php
-                        if (array_key_exists('logo', $def)) {
-                            $filename = glob("../portfolio/img/definition/$id/logo*")[0];
-                            if ($def['logo']['isThemedSvg']) {
-                                echo get_svg_element(file_get_contents($filename));
-                            } else {
-                                echo "<img src=\"" . ltrim($filename, '.') . "\" height=" . BASE_HEIGHT . " alt=\"$title logo\">";
+                <dd>
+                    <?php echo implode(', ', array_splice($def['names'], 1)) ?>
+                    <div>
+                        <a target="_blank" href="<?php echo $def['wiki'] ?>"
+                            class="definition-tooltip-trigger"><?php echo $title; ?></a>
+                        <div class="definition-tooltip">
+                            <h4><?php echo $title; ?></h4>
+                            <?php
+                            if (array_key_exists('logo', $def)) {
+                                $filename = glob("../portfolio/img/definition/$id/logo*")[0];
+                                if ($def['logo']['isThemedSvg']) {
+                                    echo get_svg_element(file_get_contents($filename));
+                                } else {
+                                    echo "<img src=\"" . ltrim($filename, '.') . "\" height=" . BASE_HEIGHT . " alt=\"$title logo\">";
+                                }
                             }
-                        }
-                        ?>
-                        <p><small><?php echo ucfirst($types[$def['type']]); ?></small></p>
-                        <p><?php echo $def['synopsis']; ?></p>
-                        <p><a target="_blank" href="<?php echo $def['wiki'] ?>">More information</a></p>
-                    </article>
+                            ?>
+                            <p><small><?php echo ucfirst($types[$def['type']]); ?></small></p>
+                            <p><?php echo $def['synopsis']; ?></p>
+                        </div>
+                    </div>
                 </dd>
                 <?php
             }

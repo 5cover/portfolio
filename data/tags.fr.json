@@ -1,8 +1,8 @@
 {
-  "software": "logiciel",
-  "full-stack": "développement full-stack",
-  "ui": "UI",
-  "ux": "UX",
-  "oop": "programmation orientée objet",
-  "art": "art"
+    "software": "logiciel",
+    "full-stack": "développement full-stack",
+    "ui": "UI",
+    "ux": "UX",
+    "oop": "programmation orientée objet",
+    "art": "art"
 }
