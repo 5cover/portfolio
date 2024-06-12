@@ -32,7 +32,7 @@ define("BASE_HEIGHT", 30);
                             <h4><?php echo $title; ?></h4>
                             <?php
                             if (array_key_exists('logo', $def)) {
-                                $logo = glob_website_filename($indir . 'logo*');
+                                $logo = glob_website_filename_single($indir . 'logo*');
                                 if ($def['logo']['isThemedSvg']) {
                                     echo get_svg_element(file_get_contents($logo));
                                 } else {
@@ -51,7 +51,6 @@ define("BASE_HEIGHT", 30);
         </dl>
     </main>
     <?php include 'footer.php'; ?>
+    <?php include '../scripts.php'; ?>
 </body>
-<?php include '../scripts.php'; ?>
-
 </html>

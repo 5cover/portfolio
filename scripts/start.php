@@ -57,12 +57,24 @@ function get_svg_element(string $svgCode): string
 }
 
 /**
+ * Expand a glob to filenames in the website folder.
+ */
+function glob_website_filename(string $glob): array
+{
+    $g = glob(__DIR__ . "/../../portfolio/$glob");
+    if ($g === false) {
+        die_error('glob failed');
+    }
+    return $g;
+}
+
+
+/**
  * Expand a glob to a single filename in the website folder. Exit with an error no or if multiple exist.
  */
-function glob_website_filename(string $glob): string
+function glob_website_filename_single(string $glob): string
 {
-    $glob = __DIR__ . "/../../portfolio/$glob";
-    $g = glob($glob);
+    $g = glob_website_filename($glob);
     if (count($g) != 1) {
         die_error("glob '$glob' matched " . count($g) . ' filename(s). Expected 1');
     }
@@ -74,10 +86,7 @@ function glob_website_filename(string $glob): string
  */
 function glob_website_filename_optional(string $glob): string|null
 {
-    $glob = __DIR__ . "/../../portfolio/$glob";
-    // /home/raphael/Documents/Programmation/Projets/portfolio/main/scripts/../../portfolio/img/definition/markdown/logo.svg
-    // /home/raphael/Documents/Programmation/Projets/portfolio/portfolio/img/definition/markdown/logo.svg
-    $g = glob($glob);
+    $g = glob_website_filename($glob);
     if (count($g) == 0) {
         return null;
     }
@@ -85,25 +94,6 @@ function glob_website_filename_optional(string $glob): string|null
         die_error("glob '$glob' matched " . count($g) . ' filename(s). Expected 0 or 1');
     }
     return realpath($g[0]);
-}
-
-function remove_common_prefix($path1, $path2)
-{
-    // Find the common prefix
-    $prefix = '';
-    $length = min(strlen($path1), strlen($path2));
-    for ($i = 0; $i < $length; $i++) {
-        if ($path1[$i] === $path2[$i]) {
-            $prefix .= $path1[$i];
-        } else {
-            break;
-        }
-    }
-
-    // Remove the common prefix from the second path
-    $newPath = str_replace($prefix, '', $path2);
-
-    return $newPath;
 }
 
 /**
