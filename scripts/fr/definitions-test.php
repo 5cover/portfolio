@@ -34,7 +34,7 @@ define("BASE_HEIGHT", 30);
                             if (array_key_exists('logo', $def)) {
                                 $logo = glob_website_filename_single($indir . 'logo*');
                                 if ($def['logo']['isThemedSvg']) {
-                                    echo get_svg_element(file_get_contents($logo));
+                                    echo get_svg_element(file_get_contents($logo), BASE_HEIGHT);
                                 } else {
                                     echo '<img src="' . get_website_path($logo) . '" height=' . BASE_HEIGHT . " alt=\"$title logo\">";
                                 }

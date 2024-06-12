@@ -16,7 +16,7 @@ function die_error(string $msg): never
     exit("{$argv[0]}: error: $msg" . PHP_EOL);
 }
 
-function get_svg_element(string $svgCode): string
+function get_svg_element(string $svgCode, int $baseHeight): string
 {
     // Create a DOMDocument instance
     $domDocument = new DOMDocument();
@@ -48,7 +48,7 @@ function get_svg_element(string $svgCode): string
         }
 
         $svgElement->removeAttribute('width');
-        $svgElement->setAttribute('height', BASE_HEIGHT);
+        $svgElement->setAttribute('height', $baseHeight);
 
         return $domDocument->saveXML($svgElement);
     } else {

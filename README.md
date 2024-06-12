@@ -1,17 +1,17 @@
-# Autoportfolio
+# Portfolio
 
 Idée : car on crée toujours plus de projets, il peut devenir fastidueux de les ajouter à no créer un programme qui génère le site de manière automatique à partir d'une liste de projets et de paramètres de configuration.
 
 ## Brainstorming
 
-Liste des projets
-Projets favoris
-Projets ordonnées chronologiquement
-Infos contact
-Aperçu CV (avec possibilité de téléchargement)
-Partie moi (présentation, version web du cv +-)
-liens vers but, iut lannion, programme, 6 compétences
-associer chaque projet à des compétences avec justification
+- Liste des projets
+- Projets favoris
+- Projets ordonnées chronologiquement
+- Infos contact
+- Aperçu CV (avec possibilité de téléchargement)
+- Partie moi (présentation, version web du cv +-)
+- liens vers but, iut lannion, programme, 6 compétences
+- associer chaque projet à des compétences avec justification
 
 Localisation (français, anglais)
 
