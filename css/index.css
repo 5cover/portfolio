@@ -1,4 +1,4 @@
-/* Index.html stylesheet */
+/* index.html stylesheet */
 /* Base stylesheet */
 @media (prefers-reduced-motion) {
   /* styles to apply if a user's device settings are set to reduced motion */
@@ -238,8 +238,8 @@ header .slider.round:before {
   border-radius: 50%;
 }
 header input:checked + .slider {
-  background-color: #a66144;
   color: white;
+  background-color: #a66144;
 }
 header input:checked + .slider:before {
   transform: translateX(30px);
@@ -317,8 +317,8 @@ header input:checked + .slider:before {
   z-index: 1;
 }
 .list-projects > li .list-tags > li {
-  background-color: #a66144;
   color: white;
+  background-color: #a66144;
   padding: 0.1875lh 0.75ch;
   font-size: 18px;
   border-radius: 0.4em;
@@ -362,10 +362,12 @@ header input:checked + .slider:before {
 }
 .list-projects > li:hover, .list-projects > li:focus-within {
   background-color: #a66144;
-  color: white;
 }
-.list-projects > li:hover > ul:first-of-type > li, .list-projects > li:focus-within > ul:first-of-type > li {
+.list-projects > li:hover .list-tags > li, .list-projects > li:focus-within .list-tags > li {
   background-color: var(--color-lvl2);
+}
+.list-projects > li:hover :not(.list-tags > li), .list-projects > li:focus-within :not(.list-tags > li) {
+  color: white;
 }
 
 :has(> .definition-tooltip) {
@@ -504,8 +506,8 @@ a.definition-tooltip-trigger {
 }
 #ongoing-projects > a:hover, #ongoing-projects > a:focus-within {
   transform: scale(1.05);
-  background-color: #a66144;
   color: white;
+  background-color: #a66144;
 }
 
 #contact {
@@ -553,6 +555,6 @@ a.definition-tooltip-trigger {
   opacity: 0.75;
 }
 #contact a:hover span, #contact a:focus-within span {
-  background-color: #a66144;
   color: white;
+  background-color: #a66144;
 }/*# sourceMappingURL=index.css.map */

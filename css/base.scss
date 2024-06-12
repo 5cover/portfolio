@@ -34,9 +34,17 @@
     --distance-4: 15px;
 }
 
-@mixin color-accent {
+@mixin color-accent-bg {
     background-color: #a66144;
+}
+
+@mixin color-accent-fg {
     color: white;
+}
+
+@mixin color-accent {
+    @include color-accent-fg;
+    @include color-accent-bg;
 }
 
 * {
@@ -125,12 +133,24 @@ svg {
     vertical-align: middle;
 }
 
+body {
+    max-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    row-gap: 3em;
+    grid-template-rows: auto 1fr auto;
+}
+
 main {
-    margin-top: 3em;
-    margin-bottom: 3em;
+    grid-row: 2;
     display: flex;
     flex-flow: column nowrap;
+    justify-content: space-between;
     gap: 3em;
+}
+
+footer {
+    grid-row: 3;
 }
 
 /* Borders */
@@ -434,10 +454,14 @@ header {
 
     &:hover,
     &:focus-within {
-        @include color-accent;
+        @include color-accent-bg;
 
-        > ul:first-of-type > li {
+        .list-tags > li {
             background-color: var(--color-lvl2);
+        }
+
+        :not(.list-tags > li) {
+            @include color-accent-fg();
         }
     }
 }

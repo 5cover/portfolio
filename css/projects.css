@@ -1,3 +1,4 @@
+/* projects.html stylesheet */
 /* Base stylesheet */
 @media (prefers-reduced-motion) {
   /* styles to apply if a user's device settings are set to reduced motion */
@@ -448,4 +449,4 @@ a.definition-tooltip-trigger {
 .definition-tooltip-visible {
   visibility: visible;
   opacity: 1;
-}/*# sourceMappingURL=base.css.map */
+}/*# sourceMappingURL=projects.css.map */
