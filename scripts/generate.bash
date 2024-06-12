@@ -15,3 +15,5 @@ generate() {
 
 generate en/definitions-test
 generate fr/definitions-test
+
+generate fr/index

@@ -6,7 +6,7 @@ require_once('../start.php');
     <nav>
         <h1><a href="<?php echo get_page_link('index.html'); ?>">Raphaël Bardini</a></h1>
         <ul>
-            <li><a href="<?php echo get_page_link('projects.html'); ?>">Project</a></li>
+            <li><a href="<?php echo get_page_link('projects.html'); ?>">Projets</a></li>
             <li><a href="<?php echo get_page_link('history.html'); ?>">Parcours</a></li>
             <li><a href="<?php echo get_page_link('passions.html'); ?>">Passions</a></li>
             <li><a href="<?php echo get_page_link('perspectives.html'); ?>">Perspectives</a></li>

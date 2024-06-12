@@ -1,6 +1,6 @@
 <?php
 chdir(__DIR__);
-require_once ('start.php');
+require_once 'start.php';
 ?>
 
 <head>
@@ -12,7 +12,7 @@ require_once ('start.php');
     <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
     <?php
-    $g = glob_website_filename('css/' . THIS_PAGE_NAME);
+    $g = glob_website_filename('css/' . THIS_PAGE_NAME . '.css');
     if (count($g) == 1) { ?>
         <link rel="stylesheet" type="text/css" href="<?php echo get_website_path($g[0]); ?>">
     <?php } ?>

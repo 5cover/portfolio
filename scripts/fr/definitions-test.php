@@ -1,15 +1,16 @@
 <?php
 chdir(__DIR__);
-require_once ('../start.php');
+require_once '../start.php';
 
 define("BASE_HEIGHT", 30);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <?php include '../head.php'; ?>
 
 <body>
-    <?php echo include 'header.php'; ?>
+    <?php include 'header.php'; ?>
     <main>
         <dl>
             <?php
