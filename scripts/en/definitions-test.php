@@ -1,69 +1,24 @@
-<?php {
-    $cwd = getcwd();
-    if ($cwd === false || !str_ends_with($cwd, '/main')) {
-        exit('error: cwd not in main');
-    }
+<?php
+chdir(__DIR__);
+require_once ('../start.php');
 
-    define("BASE_HEIGHT", 30);
-
-    function get_svg_element(string $svgCode): string
-    {
-        // Create a DOMDocument instance
-        $domDocument = new DOMDocument();
-
-        // Suppress warnings when loading XML
-        libxml_use_internal_errors(true);
-
-        // Load the SVG code as XML
-        $domDocument->loadXML($svgCode);
-
-        // Clear libxml error buffer
-        libxml_clear_errors();
-
-        // Restore the default libxml error handling
-        libxml_use_internal_errors(false);
-
-        // Extract the <svg> element
-        $svgElements = $domDocument->getElementsByTagName('svg');
-        if ($svgElements->length == 1) {
-            $svgElement = $svgElements->item(0);
-
-            if (!$svgElement->hasAttribute('viewBox')) {
-                $width = $svgElement->getAttribute('width');
-                $height = $svgElement->getAttribute('height');
-                if (!$width || !$height) {
-                    exit("Invalid SVG structure (no viewBox, no width or height): " . $svgCode);
-                }
-                $svgElement->setAttribute("viewBox", "0 0 $width $height");
-            }
-
-            $svgElement->removeAttribute('width');
-            $svgElement->setAttribute('height', BASE_HEIGHT);
-
-            return $domDocument->saveXML($svgElement);
-        } else {
-            exit("Invalid SVG structure: " . $svgCode);
-        }
-    }
-
-} ?>
+define("BASE_HEIGHT", 30);
+?>
 <!DOCTYPE html>
 <html lang="en">
-<?php echo file_get_contents('fragments/head.html'); ?>
+<?php include '../head.php'; ?>
 
 <body>
-    <?php echo file_get_contents('fragments/en/header.html'); ?>
+    <?php include 'header.php'; ?>
     <main>
         <dl>
             <?php
-            $data = json_decode(file_get_contents('data/definitions.en.json'), true);
-            $types = json_decode(file_get_contents('data/types.en.json'), true);
+            $data = json_decode(file_get_contents('../../data/definitions.fr.json'), true);
+            $types = json_decode(file_get_contents('../../data/types.fr.json'), true);
             foreach ($data as $id => $def) {
                 $title = $def['names'][0];
-                $indir = "../portfolio/img/definition/$id/";
-                $outdir = ltrim($indir, '.');
-                $g = glob("$indir/bg*");
-                $bg = sizeof($g) == 1 ? basename($g[0]) : (sizeof($g) == 0 ? null : exit("$id: multiple bgs"));
+                $indir = "img/definition/$id/";
+                $bg = glob_website_filename_optional($indir . 'bg*');
                 ?>
                 <dt id="<?php echo $id ?>"><?php echo $id ?></dt>
                 <dd>
@@ -72,17 +27,16 @@
                         <a target="_blank" href="<?php echo $def['wiki'] ?>"
                             class="link definition-tooltip-trigger"><?php echo $title; ?></a>
                         <div class="definition-tooltip" <?php if ($bg) {
-                            echo "style=\"--bg-img: url($outdir$bg)\"";
+                            echo 'style="--bg-img: url(' . get_website_path($bg) . ')"';
                         } ?>>
                             <h4><?php echo $title; ?></h4>
                             <?php
                             if (array_key_exists('logo', $def)) {
-                                $g = glob("$indir/logo*");
-                                $logo = sizeof($g) == 1 ? basename($g[0]) : exit("$id: Logo found found or multiple logos");
+                                $logo = glob_website_filename($indir . 'logo*');
                                 if ($def['logo']['isThemedSvg']) {
-                                    echo get_svg_element(file_get_contents($indir . $logo));
+                                    echo get_svg_element(file_get_contents($logo));
                                 } else {
-                                    echo "<img src=\"$outdir$logo\" height=" . BASE_HEIGHT . " alt=\"$title logo\">";
+                                    echo '<img src="' . get_website_path($logo) . '" height=' . BASE_HEIGHT . " alt=\"$title logo\">";
                                 }
                             }
                             ?>
@@ -96,8 +50,8 @@
             ?>
         </dl>
     </main>
-    <?php echo file_get_contents('fragments/en/footer.html'); ?>
+    <?php include 'footer.php'; ?>
 </body>
-<?php echo file_get_contents('fragments/scripts.html'); ?>
+<?php include '../scripts.php'; ?>
 
 </html>

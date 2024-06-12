@@ -1,16 +1,20 @@
+<?php
+chdir(__DIR__);
+require_once('../start.php');
+?>
 <header>
     <nav>
-        <h1><a href="/portfolio/en/index.html">Raphaël Bardini</a></h1>
+        <h1><a href="<?php echo get_page_link('index.html'); ?>">Raphaël Bardini</a></h1>
         <ul>
-            <li><a href="/portfolio/en/projects.html">Projects</a></li>
-            <li><a href="/portfolio/en/history.html">History</a></li>
-            <li><a href="/portfolio/en/passions.html">Passions</a></li>
-            <li><a href="/portfolio/en/perspectives.html">Perspectives</a></li>
+            <li><a href="<?php echo get_page_link('projects.html'); ?>">Project</a></li>
+            <li><a href="<?php echo get_page_link('history.html'); ?>">Parcours</a></li>
+            <li><a href="<?php echo get_page_link('passions.html'); ?>">Passions</a></li>
+            <li><a href="<?php echo get_page_link('perspectives.html'); ?>">Perspectives</a></li>
         </ul>
     </nav>
     <ul class="list-flags">
-        <li><a class="fi fi-us" href="#"></a></li>
-        <li><a class="fi fi-fr gray-when-not-hover" href="/portfolio/fr/index.html"></a></li>
+        <li><a class="fi fi-us gray-when-not-hover" href="/portfolio/en/<?php echo THIS_PAGE_NAME; ?>.html"></a></li>
+        <li><a class="fi fi-fr" href="#"></a></li>
     </ul>
     <div class="theme-switch-wrapper">
         <svg class="themed-fill" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

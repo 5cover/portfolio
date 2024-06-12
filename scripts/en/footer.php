@@ -1,3 +1,7 @@
+<?php
+chdir(__DIR__);
+require_once('../start.php');
+?>
 <footer>
     <small>&copy; 2024 Raphaël Bardini</small>
     <a href="https://github.com/5cover/portfolio" title="This site's GitHub repository"><svg

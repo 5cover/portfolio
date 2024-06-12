@@ -1,3 +1,7 @@
+<?php
+chdir(__DIR__);
+require_once('start.php');
+?>
 <head>
     <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
@@ -6,6 +10,7 @@
     <link rel="manifest" href="/portfolio/site.webmanifest">
     <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/portfolio/css/<?php echo THIS_PAGE_NAME; ?>.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
     <meta charset="UTF-8">
