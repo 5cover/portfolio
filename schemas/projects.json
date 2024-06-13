@@ -1,0 +1,114 @@
+{
+    "$schema": "https://json-schema.org/draft-04/schema",
+    "additionalProperties": {
+        "properties": {
+            "anchors": {
+                "additionalProperties": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        "href": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    }
+                },
+                "minProperties": 1,
+                "type": "object",
+                "uniqueItems": true
+            },
+            "background": {
+                "minLength": 1,
+                "title": "Background URL",
+                "type": "string"
+            },
+            "context": {
+                "minLength": 1,
+                "type": "string"
+            },
+            "abstract": {
+                "minLength": 1,
+                "title": "string"
+            },
+            "end-date": {
+                "minLength": 1,
+                "type": "string"
+            },
+            "gallery": {
+                "additionalProperties": {
+                    "type": "string"
+                },
+                "type": "object",
+                "uniqueItems": true
+            },
+            "logo": {
+                "properties": {
+                    "isThemedSvg": {
+                        "description": "Whether to include this image as an SVG element that will be affected by the site's theming. Useful for black & white images that would contrast badly with the background. If this is true, the url must point to an SVG file.",
+                        "type": "boolean"
+                    },
+                    "url": {
+                        "minLength": 1,
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "isThemedSvg"
+                ],
+                "type": "object"
+            },
+            "title": {
+                "minLength": 1,
+                "type": "string"
+            },
+            "start-date": {
+                "minLength": 1,
+                "type": "string"
+            },
+            "story": {
+                "description": "Array of paragraphs. Each item is considered a paragraph, unless it is another element.",
+                "items": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "type": "array"
+            },
+            "technologies": {
+                "description": "definition IDs of technologies used",
+                "items": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "type": "array",
+                "uniqueItems": true
+            },
+            "tags": {
+                "description": "tag IDs",
+                "items": {
+                    "minItems": 1,
+                    "type": "string"
+                },
+                "type": "array",
+                "uniqueItems": true
+            }
+        },
+        "required": [
+            "anchors",
+            "context",
+            "abstract",
+            "gallery",
+            "title",
+            "start-date",
+            "story",
+            "tags",
+            "technologies"
+        ],
+        "type": "object"
+    },
+    "title": "Projects",
+    "type": "object",
+    "uniqueItems": true
+}

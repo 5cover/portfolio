@@ -1,15 +1,15 @@
 <?php
-chdir(__DIR__);
-require_once ('../start.php');
+require_once 'start.php';
+pushd(__DIR__);
 ?>
 <header>
     <nav>
-        <h1><a href="<?php echo get_page_link('index.html'); ?>">Raphaël Bardini</a></h1>
+        <h1><a href="<?php echo get_page_href('index.html'); ?>">Raphaël Bardini</a></h1>
         <ul>
-            <li><a href="<?php echo get_page_link('projects.html'); ?>">Projets</a></li>
-            <li><a href="<?php echo get_page_link('history.html'); ?>">Parcours</a></li>
-            <li><a href="<?php echo get_page_link('passions.html'); ?>">Passions</a></li>
-            <li><a href="<?php echo get_page_link('perspectives.html'); ?>">Perspectives</a></li>
+            <li><a href="<?php echo get_page_href('projects.html'); ?>">Projets</a></li>
+            <li><a href="<?php echo get_page_href('history.html'); ?>">Parcours</a></li>
+            <li><a href="<?php echo get_page_href('passions.html'); ?>">Passions</a></li>
+            <li><a href="<?php echo get_page_href('perspectives.html'); ?>">Perspectives</a></li>
         </ul>
     </nav>
     <ul class="list-flags">
@@ -66,3 +66,4 @@ require_once ('../start.php');
         </label>
     </div>
 </header>
+<?php popd(); ?>

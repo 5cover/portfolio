@@ -1,6 +1,6 @@
 <?php
-chdir(__DIR__);
 require_once 'start.php';
+pushd(__DIR__);
 ?>
 
 <head>
@@ -11,9 +11,9 @@ require_once 'start.php';
     <link rel="manifest" href="/portfolio/site.webmanifest">
     <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
     <?php
-    $g = glob_website_filename('css/' . THIS_PAGE_NAME . '.css');
+    $g = glob_web_filename('css/' . THIS_PAGE_NAME . '.css');
     if (count($g) == 1) { ?>
-        <link rel="stylesheet" type="text/css" href="<?php echo get_website_path($g[0]); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo get_web_path($g[0]); ?>">
     <?php } else { ?>
         <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
     <?php } ?>
@@ -28,3 +28,4 @@ require_once 'start.php';
     <title>Raphaël Bardini</title>
     <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');</script>
 </head>
+<?php popd(); ?>

@@ -9,7 +9,7 @@ readonly outdir='../../portfolio'
 # $1 : page name without extension (php of same name must exist)
 generate() {
     >&2 echo -n "generating $1..."
-    php "$1.php" "$(basename $1)" > "$outdir/$1.html"
+    php -d include_path="$(pwd)/include" "$1.php" "$(basename $1)" > "$outdir/$1.html"
     >&2 echo ok
 }
 

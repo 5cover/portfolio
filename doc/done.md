@@ -75,3 +75,15 @@ Something mostly neutral but with some hue to give some expressivity.
 ## Smooth scrolling
 
 scroll-behavior
+
+## Référencer les compétences du BUT
+
+Create tags for it. On hover will link the an article
+
+## Fetch SVGS from PHP instead of inlining them in PHTML
+
+Avoid all this duplication
+
+## PHP generate project list
+
+Generate project list dynamically from PHP

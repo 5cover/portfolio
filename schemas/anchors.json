@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json-schema.org/draft-04/schema",
+    "type": "object",
+    "title": "Definitions",
+    "uniqueItems": true,
+    "additionalProperties": {
+        "type": "object",
+        "properties": {
+            "url": {
+                "type": "string",
+                "minLength": 1
+            },
+            "isThemedSvg": {
+                "description": "Whether to include this image as an SVG element that will be affected by the site's theming. Useful for black & white images that would contrast badly with the background. If this is true, the url must point to an SVG file.",
+                "type": "boolean"
+            }
+        },
+        "required": [
+            "isThemedSvg"
+        ]
+    }
+}

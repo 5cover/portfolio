@@ -1,0 +1,20 @@
+{
+    "steam": {
+        "isThemedSvg": false
+    },
+    "github": {
+        "isThemedSvg": true
+    },
+    "email": {
+        "isThemedSvg": true
+    },
+    "instagram": {
+        "isThemedSvg": true
+    },
+    "linkedin": {
+        "isThemedSvg": true
+    },
+    "ccm": {
+        "isThemedSvg": false
+    }
+}

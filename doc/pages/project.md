@@ -10,9 +10,9 @@ Background : project background, opacity 10%
 
 ## Meta
 
-en cours - depuis {start date} - {context}
+{context} &mdash; en cours depuis {start date}
 
-{start date} - {end date} - {context}
+{context} &mdash; de {start date} à {end date}
 
 ## Software & tools
 
