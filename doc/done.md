@@ -51,3 +51,27 @@ keep it in prod, nice easter egg.
 ## switch button
 
 redo it. the current one is slightly innacurrate plus it doesnt support tab navigation
+
+## Piano tiles wave on page load
+
+CTA for hover.
+
+Don't show text, just scale(1.05).
+
+Creates some liveliness.
+
+Left to right.
+
+## JSON schemas
+
+To avoid stupid errors. They look easy enough.
+
+- Tags not present and empty tags array are considered equivalent
+
+## Color scheme
+
+Something mostly neutral but with some hue to give some expressivity.
+
+## Smooth scrolling
+
+scroll-behavior
