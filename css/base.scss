@@ -32,6 +32,8 @@
     --distance-2: 40px;
     --distance-3: 25px;
     --distance-4: 15px;
+
+    scroll-behavior: smooth;
 }
 
 @mixin theme-dark {
@@ -78,6 +80,10 @@
     box-sizing: border-box;
 }
 
+@function hover($prefix: '') {
+    @return "#{$prefix}:hover, #{$prefix}:focus-within";
+}
+
 /* Opt-in styling : link colors */
 .link:link {
     color: #a66144;
@@ -87,7 +93,7 @@
     color: #91553b;
 }
 
-.link:hover {
+#{hover('.link')} {
     color: #be7c60;
 }
 
@@ -114,7 +120,8 @@ h3,
 h4,
 ul,
 p,
-figure {
+figure,
+input {
     margin: 0;
     padding: 0;
 }
@@ -229,8 +236,7 @@ section h2 {
     padding: calc($factor * .25lh) calc($factor * 1ch);
 }
 
-a > svg:hover,
-a > svg:focus-within {
+#{hover('a > svg')} {
     @include bring-out(1.15);
 }
 
@@ -255,6 +261,7 @@ header {
     column-gap: 2em;
     row-gap: 1em;
     justify-content: space-between;
+    height: fit-content;
 
     .list-flags {
         list-style-type: none;
@@ -270,15 +277,6 @@ header {
         column-gap: 3em;
         row-gap: 1.5em;
 
-        @mixin nav-link {
-
-            &:hover,
-            &:focus-within,
-            &[href="#"] {
-                text-decoration: underline;
-            }
-        }
-
         > ul {
             display: flex;
             list-style-type: none;
@@ -292,7 +290,11 @@ header {
         }
 
         a {
-            @include nav-link;
+
+            #{hover('&')},
+            &[href="#"] {
+                text-decoration: underline;
+            }
         }
     }
 }
@@ -325,8 +327,7 @@ header {
             border-bottom-left-radius: inherit;
         }
 
-        &:has(input:hover,
-            input:focus-within) {
+        &:has(#{hover(input)}) {
             @include color-accent(.5);
         }
 
@@ -358,13 +359,12 @@ header {
 }
 
 @mixin hover-sensitive-list($factor) {
-    > li {
 
-        &:hover,
-        &:focus-within {
-            @include bring-out($factor);
-            z-index: 1;
-        }
+    #{hover('> li')},
+    /* used in JS */
+    > li.hover {
+        @include bring-out($factor);
+        z-index: 1;
     }
 }
 
@@ -372,7 +372,7 @@ header {
     @include hover-sensitive-list(1.05);
 }
 
-.gray-when-not-hover:not(:hover, :focus-within) {
+.gray-when-not-hover:not(#{hover()}) {
     filter: grayscale(100%);
     opacity: .5;
 }
@@ -489,7 +489,7 @@ a.definition-tooltip-trigger {
     font-size: .75em;
     border-radius: .75em;
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 2lh;
     max-width: 50ch;
     padding: .75em;
     background-color: var(--color-lvl2);
@@ -517,11 +517,11 @@ a.definition-tooltip-trigger {
     &:after {
         content: "";
         position: absolute;
-        bottom: -.5em;
+        bottom: -.9lh;
         left: 1em;
-        border-left: .5em solid transparent;
-        border-right: .5em solid transparent;
-        border-top: .5em solid var(--color-lvl2);
+        border-left: .9lh solid transparent;
+        border-right: .9lh solid transparent;
+        border-top: .9lh solid var(--color-lvl2);
     }
 }
 

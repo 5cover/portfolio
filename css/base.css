@@ -25,6 +25,7 @@
   --distance-2: 40px;
   --distance-3: 25px;
   --distance-4: 15px;
+  scroll-behavior: smooth;
 }
 
 :root[data-theme=dark] {
@@ -58,7 +59,7 @@
   color: #91553b;
 }
 
-.link:hover {
+.link:hover, .link:focus-within {
   color: #be7c60;
 }
 
@@ -85,7 +86,8 @@ h3,
 h4,
 ul,
 p,
-figure {
+figure,
+input {
   margin: 0;
   padding: 0;
 }
@@ -160,8 +162,7 @@ section h2 {
   text-align: center;
 }
 
-a > svg:hover,
-a > svg:focus-within {
+a > svg:hover, a > svg:focus-within {
   transform: scale(1.15);
 }
 
@@ -187,6 +188,8 @@ header {
        column-gap: 2em;
   row-gap: 1em;
   justify-content: space-between;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 header .list-flags {
   list-style-type: none;
@@ -247,8 +250,7 @@ header nav a:hover, header nav a:focus-within, header nav a[href="#"] {
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
 }
-.theme-switches label:has(input:hover,
-input:focus-within) {
+.theme-switches label:has(input:hover, input:focus-within) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
@@ -279,7 +281,8 @@ input:focus-within) {
   margin-bottom: 0.5em;
 }
 
-.hover-sensitive-list > li:hover, .hover-sensitive-list > li:focus-within {
+.hover-sensitive-list > li:hover, .hover-sensitive-list > li:focus-within,
+.hover-sensitive-list > li.hover {
   transform: scale(1.05);
   z-index: 1;
 }
@@ -334,7 +337,8 @@ input:focus-within) {
   grid-column: 1;
   gap: 0.75em;
 }
-.list-projects > li .list-tags > li:hover, .list-projects > li .list-tags > li:focus-within {
+.list-projects > li .list-tags > li:hover, .list-projects > li .list-tags > li:focus-within,
+.list-projects > li .list-tags > li.hover {
   transform: scale(1.15);
   z-index: 1;
 }
@@ -377,7 +381,8 @@ input:focus-within) {
   flex-direction: row-reverse;
   align-items: flex-end;
 }
-.list-projects > li .list-anchors > li:hover, .list-projects > li .list-anchors > li:focus-within {
+.list-projects > li .list-anchors > li:hover, .list-projects > li .list-anchors > li:focus-within,
+.list-projects > li .list-anchors > li.hover {
   transform: scale(1.15);
   z-index: 1;
 }
@@ -416,7 +421,7 @@ a.definition-tooltip-trigger {
   font-size: 0.75em;
   border-radius: 0.75em;
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 2lh;
   max-width: 50ch;
   padding: 0.75em;
   background-color: var(--color-lvl2);
@@ -453,11 +458,11 @@ a.definition-tooltip-trigger {
 .definition-tooltip:after {
   content: "";
   position: absolute;
-  bottom: -0.5em;
+  bottom: -0.9lh;
   left: 1em;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid var(--color-lvl2);
+  border-left: 0.9lh solid transparent;
+  border-right: 0.9lh solid transparent;
+  border-top: 0.9lh solid var(--color-lvl2);
 }
 
 .definition-tooltip-visible {

@@ -59,7 +59,7 @@
   color: #91553b;
 }
 
-.link:hover {
+.link:hover, .link:focus-within {
   color: #be7c60;
 }
 
@@ -86,7 +86,8 @@ h3,
 h4,
 ul,
 p,
-figure {
+figure,
+input {
   margin: 0;
   padding: 0;
 }
@@ -161,8 +162,7 @@ section h2 {
   text-align: center;
 }
 
-a > svg:hover,
-a > svg:focus-within {
+a > svg:hover, a > svg:focus-within {
   transform: scale(1.15);
 }
 
@@ -188,6 +188,8 @@ header {
        column-gap: 2em;
   row-gap: 1em;
   justify-content: space-between;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 header .list-flags {
   list-style-type: none;
@@ -248,8 +250,7 @@ header nav a:hover, header nav a:focus-within, header nav a[href="#"] {
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
 }
-.theme-switches label:has(input:hover,
-input:focus-within) {
+.theme-switches label:has(input:hover, input:focus-within) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
@@ -280,7 +281,8 @@ input:focus-within) {
   margin-bottom: 0.5em;
 }
 
-.hover-sensitive-list > li:hover, .hover-sensitive-list > li:focus-within {
+.hover-sensitive-list > li:hover, .hover-sensitive-list > li:focus-within,
+.hover-sensitive-list > li.hover {
   transform: scale(1.05);
   z-index: 1;
 }
@@ -335,7 +337,8 @@ input:focus-within) {
   grid-column: 1;
   gap: 0.75em;
 }
-.list-projects > li .list-tags > li:hover, .list-projects > li .list-tags > li:focus-within {
+.list-projects > li .list-tags > li:hover, .list-projects > li .list-tags > li:focus-within,
+.list-projects > li .list-tags > li.hover {
   transform: scale(1.15);
   z-index: 1;
 }
@@ -378,7 +381,8 @@ input:focus-within) {
   flex-direction: row-reverse;
   align-items: flex-end;
 }
-.list-projects > li .list-anchors > li:hover, .list-projects > li .list-anchors > li:focus-within {
+.list-projects > li .list-anchors > li:hover, .list-projects > li .list-anchors > li:focus-within,
+.list-projects > li .list-anchors > li.hover {
   transform: scale(1.15);
   z-index: 1;
 }
@@ -417,10 +421,10 @@ a.definition-tooltip-trigger {
   font-size: 0.75em;
   border-radius: 0.75em;
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 2lh;
   max-width: 50ch;
   padding: 0.75em;
-  background-color: var(--color-lvl1);
+  background-color: var(--color-lvl2);
   visibility: hidden;
   opacity: 0;
   /* Add the new arrow pseudo-element */
@@ -435,7 +439,7 @@ a.definition-tooltip-trigger {
   display: block;
   background: var(--bg-img) no-repeat var(--color-lvl2);
   background-size: cover;
-  opacity: 0.15;
+  opacity: 0.1;
 }
 .definition-tooltip > img,
 .definition-tooltip > svg {
@@ -454,11 +458,11 @@ a.definition-tooltip-trigger {
 .definition-tooltip:after {
   content: "";
   position: absolute;
-  bottom: -0.5em;
+  bottom: -0.9lh;
   left: 1em;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid var(--color-lvl2);
+  border-left: 0.9lh solid transparent;
+  border-right: 0.9lh solid transparent;
+  border-top: 0.9lh solid var(--color-lvl2);
 }
 
 .definition-tooltip-visible {
@@ -469,10 +473,14 @@ a.definition-tooltip-trigger {
 .list-piano-tiles {
   list-style-type: none;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  width: 100vw;
 }
 .list-piano-tiles > li {
+  flex-shrink: 1;
+  flex-basis: 12.5vw;
+  min-width: 180px;
   position: relative;
 }
 .list-piano-tiles > li a:after {
@@ -484,6 +492,8 @@ a.definition-tooltip-trigger {
   bottom: 0;
 }
 .list-piano-tiles > li img {
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 .list-piano-tiles > li figcaption {
@@ -563,7 +573,7 @@ a.definition-tooltip-trigger {
 #contact a img {
   height: 12em;
   width: auto;
-  opacity: 0.25;
+  opacity: 0.5;
   border-radius: 0.5em;
 }
 #contact a span {
@@ -581,7 +591,7 @@ a.definition-tooltip-trigger {
   transform: scale(1.05);
 }
 #contact a:hover img, #contact a:focus-within img {
-  opacity: 0.75;
+  opacity: 1;
 }
 #contact a:hover span, #contact a:focus-within span {
   color: white;

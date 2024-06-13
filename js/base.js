@@ -21,7 +21,7 @@ for (let i = 0; i < switches.length; i++) {
     });
 }
 
-jQuery(document).ready(function ($) {
+jQuery(document).ready(($) => {
     function showTooltip() {
         $(this).siblings('.definition-tooltip').addClass('definition-tooltip-visible');
     }
@@ -29,7 +29,7 @@ jQuery(document).ready(function ($) {
         $(this).siblings('.definition-tooltip').removeClass('definition-tooltip-visible');
     }
 
-    $(document).ready(function () {
+    $(document).ready(() => {
         $('.definition-tooltip-trigger').on('mouseenter focusin', showTooltip);
         $('.definition-tooltip-trigger').on('mouseleave focusout', hideTooltip);
     });
