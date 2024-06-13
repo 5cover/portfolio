@@ -3,7 +3,7 @@
 // Theme switch behavior
 const themeIdPrefix = 'theme-switch-';
 
-const themes = new Set(['dark','system','light']); 
+const themes = new Set(['dark', 'system', 'light']);
 
 const theme = (() => {
     var t = document.documentElement.getAttribute('data-theme');
