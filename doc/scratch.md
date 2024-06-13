@@ -47,10 +47,6 @@ My opiniated takes on some things
 
 - On the future of AI : individualization after democratization
 
-## switch button
-
-redo it. the current one is slightly innacurrate plus it doesnt support tab navigation
-
 ## Piano tiles wave on page load
 
 CTA for hover.
@@ -61,12 +57,6 @@ Creates some liveliness.
 
 Left to right.
 
-## Definition test page
+## windows classic theme
 
-just a page with all the definitions to make sure they look right.
-
-keep it in prod, nice easter egg.
-
-## choose theme based on user preferences
-
-with a media quary
+yes. It would be awesome. Use system colors.
