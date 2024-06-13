@@ -27,17 +27,26 @@
   --distance-4: 15px;
 }
 
-* {
-  transition: background-color var(--transition), color var(--transition), transform var(--transition), opacity var(--transition), fill var(--transition), filter var(--transition);
-  box-sizing: border-box;
-}
-
-[data-theme=dark] {
+:root[data-theme=dark] {
   --color-bg-rgb: 17, 17, 17;
   --color-fg-rgb: 238, 238, 238;
   --color-lvl1-rgb: 34, 34, 34;
   --color-lvl2-rgb: 51, 51, 51;
   --color-lvl3-rgb: 68, 68, 68;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme=system] {
+    --color-bg-rgb: 17, 17, 17;
+    --color-fg-rgb: 238, 238, 238;
+    --color-lvl1-rgb: 34, 34, 34;
+    --color-lvl2-rgb: 51, 51, 51;
+    --color-lvl3-rgb: 68, 68, 68;
+  }
+}
+* {
+  transition: background-color var(--transition), color var(--transition), transform var(--transition), opacity var(--transition), fill var(--transition), filter var(--transition);
+  box-sizing: border-box;
 }
 
 /* Opt-in styling : link colors */
@@ -178,26 +187,12 @@ header {
        column-gap: 2em;
   row-gap: 1em;
   justify-content: space-between;
-  /* Theme switch */
 }
 header .list-flags {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
-}
-header .theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-}
-header .theme-switch-wrapper .theme-switch {
-  display: inline-block;
-  height: 1.5em;
-  position: relative;
-  width: 4em;
-}
-header .theme-switch-wrapper .theme-switch input {
-  display: none;
 }
 header nav {
   display: flex;
@@ -221,39 +216,55 @@ header nav > ul a {
 header nav a:hover, header nav a:focus-within, header nav a[href="#"] {
   text-decoration: underline;
 }
-header .slider {
-  background-color: var(--color-lvl3);
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: var(--transition);
-  margin: 0 0.5em;
+
+.theme-switches {
+  display: flex;
+  border-radius: 0.25em;
+  border: 1px var(--basic-border);
 }
-header .slider:before {
-  background-color: var(--color-bg);
-  bottom: 4px;
+.theme-switches input {
   content: "";
-  height: 22px;
-  left: 4px;
   position: absolute;
-  transition: var(--transition);
-  width: 22px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
 }
-header .slider.round {
-  border-radius: var(--huge-val);
+.theme-switches label {
+  position: relative;
+  padding: 0.25em;
+  width: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-header .slider.round:before {
-  border-radius: 50%;
+.theme-switches label:last-of-type {
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
 }
-header input:checked + .slider {
+.theme-switches label:first-of-type {
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+.theme-switches label:has(input:hover,
+input:focus-within) {
   color: white;
-  background-color: #a66144;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgba(166, 97, 68, 0.5);
 }
-header input:checked + .slider:before {
-  transform: translateX(30px);
+.theme-switches label:has(input:checked) {
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgb(166, 97, 68);
+}
+.theme-switches label + label {
+  border-left: 1px var(--basic-border);
+}
+.theme-switches label input {
+  cursor: pointer;
 }
 
 .content-block {
@@ -329,7 +340,9 @@ header input:checked + .slider:before {
 }
 .list-projects > li .list-tags > li {
   color: white;
-  background-color: #a66144;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgb(166, 97, 68);
   padding: 0.1875lh 0.75ch;
   font-size: 18px;
   border-radius: 0.4em;
@@ -372,13 +385,15 @@ header input:checked + .slider:before {
   z-index: 1;
 }
 .list-projects > li:hover, .list-projects > li:focus-within {
-  background-color: #a66144;
+  background-color: rgb(166, 97, 68);
 }
 .list-projects > li:hover .list-tags > li, .list-projects > li:focus-within .list-tags > li {
   background-color: var(--color-lvl2);
 }
 .list-projects > li:hover :not(.list-tags > li), .list-projects > li:focus-within :not(.list-tags > li) {
   color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
 }
 
 :has(> .definition-tooltip) {
@@ -419,7 +434,7 @@ a.definition-tooltip-trigger {
   display: block;
   background: var(--bg-img) no-repeat var(--color-lvl2);
   background-size: cover;
-  opacity: 0.25;
+  opacity: 0.1;
 }
 .definition-tooltip > img,
 .definition-tooltip > svg {

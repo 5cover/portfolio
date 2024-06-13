@@ -34,17 +34,37 @@
     --distance-4: 15px;
 }
 
-@mixin color-accent-bg {
-    background-color: #a66144;
+@mixin theme-dark {
+    --color-bg-rgb: 17, 17, 17;
+    --color-fg-rgb: 238, 238, 238;
+    --color-lvl1-rgb: 34, 34, 34;
+    --color-lvl2-rgb: 51, 51, 51;
+    --color-lvl3-rgb: 68, 68, 68;
+}
+
+:root[data-theme="dark"] {
+    @include theme-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root[data-theme="system"] {
+        @include theme-dark;
+    }
+}
+
+@mixin color-accent-bg($opacity: 1) {
+    background-color: rgba(166, 97, 68, $opacity);
 }
 
 @mixin color-accent-fg {
     color: white;
+    --color-fg: white;
+    --color-fg-rgb: 255, 255, 255;
 }
 
-@mixin color-accent {
+@mixin color-accent($opacity: 1) {
     @include color-accent-fg;
-    @include color-accent-bg;
+    @include color-accent-bg($opacity);
 }
 
 * {
@@ -56,14 +76,6 @@
         fill var(--transition),
         filter var(--transition);
     box-sizing: border-box;
-}
-
-[data-theme="dark"] {
-    --color-bg-rgb: 17, 17, 17;
-    --color-fg-rgb: 238, 238, 238;
-    --color-lvl1-rgb: 34, 34, 34;
-    --color-lvl2-rgb: 51, 51, 51;
-    --color-lvl3-rgb: 68, 68, 68;
 }
 
 /* Opt-in styling : link colors */
@@ -251,23 +263,6 @@ header {
         gap: .5em
     }
 
-    /* Theme switch */
-    .theme-switch-wrapper {
-        display: flex;
-        align-items: center;
-
-        .theme-switch {
-            display: inline-block;
-            height: 1.5em;
-            position: relative;
-            width: 4em;
-
-            input {
-                display: none;
-            }
-        }
-    }
-
     nav {
         display: flex;
         flex-wrap: wrap;
@@ -300,43 +295,51 @@ header {
             @include nav-link;
         }
     }
+}
 
-    .slider {
-        background-color: var(--color-lvl3);
-        bottom: 0;
-        cursor: pointer;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transition: var(--transition);
-        margin: 0 .5em;
+.theme-switches {
+    display: flex;
+    border-radius: .25em;
+    border: 1px var(--basic-border);
 
-        &:before {
-            background-color: var(--color-bg);
-            bottom: 4px;
-            content: "";
-            height: 22px;
-            left: 4px;
-            position: absolute;
-            transition: var(--transition);
-            width: 22px;
-        }
-
-        &.round {
-            border-radius: var(--huge-val);
-
-            &:before {
-                border-radius: 50%;
-            }
-        }
+    input {
+        @include absolute-fill();
+        opacity: 0;
     }
 
-    input:checked + .slider {
-        @include color-accent;
+    label {
+        position: relative;
+        padding: .25em;
+        width: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        &:before {
-            transform: translateX(30px);
+        &:last-of-type {
+            border-top-right-radius: inherit;
+            border-bottom-right-radius: inherit;
+        }
+
+        &:first-of-type {
+            border-top-left-radius: inherit;
+            border-bottom-left-radius: inherit;
+        }
+
+        &:has(input:hover,
+            input:focus-within) {
+            @include color-accent(.5);
+        }
+
+        &:has(input:checked) {
+            @include color-accent;
+        }
+
+        + label {
+            border-left: 1px var(--basic-border);
+        }
+
+        input {
+            cursor: pointer;
         }
     }
 }
@@ -480,7 +483,7 @@ a.definition-tooltip-trigger {
 }
 
 .definition-tooltip {
-    @include transparent-background-image(var(--bg-img), var(--color-lvl2), .25);
+    @include transparent-background-image(var(--bg-img), var(--color-lvl2), .1);
     grid-template: 1fr auto / repeat(2, auto) 1fr;
     display: grid;
     font-size: .75em;

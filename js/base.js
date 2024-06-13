@@ -1,24 +1,25 @@
 /* Base script */
 
 // Theme switch behavior
+const themeIdPrefix = 'theme-switch-';
 
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const themes = new Set(['dark','system','light']); 
 
-toggleSwitch.checked = document.documentElement.getAttribute('data-theme') === 'dark';
+const theme = (() => {
+    var t = document.documentElement.getAttribute('data-theme');
+    return t && themes.has(t) ? t : 'system';
+})();
 
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    }
+document.querySelector('#' + themeIdPrefix + theme).checked = true;
+
+switches = document.querySelectorAll('.theme-switches input[type="radio"]');
+for (let i = 0; i < switches.length; i++) {
+    switches[i].addEventListener('change', _ => {
+        var theme = switches[i].id.substring(themeIdPrefix.length);
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    });
 }
-
-toggleSwitch.addEventListener('change', switchTheme, false);
-
 
 jQuery(document).ready(function ($) {
     function showTooltip() {
