@@ -1,20 +1,20 @@
 {
     "2l2w-french-rural-road": {
-        "abstract": "Assset de route fraçaise standardisée",
+        "abstract": "Up to code French road asset",
         "anchors": {
             "Article Steam Workshop": {
                 "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993",
                 "id": "steam"
             }
         },
-        "context": "personnel",
-        "end-date": "2 Octobre 2022",
+        "context": "personnal",
+        "end-date": "Octover 2, 2022",
         "gallery": {},
         "title": "2L2W French Rural Road",
         "start-date": "Juin 2021",
         "story": [
-            "J'ai toujours trouvé que dans Cities: Skylines, les villes ont un look international plutôt fade et homogène. Où sont le goût, l'émotion, la particularité, toutes ces choses qui font le charme d'une ville ? Alors j'ai essayé de reproduire des villes et villages européens, notamment français. Et c'est ce qui a créé le besoin pour une route française, qui respecte les normes réelles pour le marquage au sol et les panneaux. Personne ne l'avait encore fait sur le Workshop, alors je m'y suis mis. J'ai ainsi découvert les bases du texturing et de la modélisation 3D.",
-            "Mettre un pied dans le monde de la modélisation 3D et du game design aura été une expérience enrichissante pour moi, même si je n'en ferai pas une passion."
+            "I've always found that in Cities: Skylines the cities have a rather bland and homogeneous international look. Where are the taste, the emotion, the particularity, all these things that make up the charm of a city? So I tried to reproduce European towns and villages, particularly French ones. And this is what created the need for a French road, which respects real standards for road markings and signs. No one had done it yet on the Workshop, so I gave it a try. I thus discovered the basics of texturing and 3D modeling.",
+            "Getting a foot in the world of 3D modeling and game design has been an enriching experience for me, even if I won't make it a passion."
         ],
         "tags": [
             "3d-modeling",
@@ -25,17 +25,17 @@
         ]
     },
     "tregoria": {
-        "abstract": "Un recul sur notre environnement dans Cities: Skylines",
+        "abstract": "A perspective on our environment in Cities: Skylines",
         "anchors": {
             "Publication Instagram": {
                 "id": "instagram",
                 "href": "https://www.instagram.com/p/CjxQUO3LryP"
             }
         },
-        "context": "personnel",
+        "context": "personnal",
         "gallery": {},
         "title": "Trégoria",
-        "start-date": "Octobre 2022",
+        "start-date": "October 2022",
         "story": [
             "Pour moi, ces détails forment la beauté de notre environnement.",
             "Trégoria, c'est un groupement de communes, avant tout né d'une affection profonde pour mon lieu de vie et d'une attention particulière pour les détails invisibles de notre environnement. Vous savez, toutes ces choses qu'on voit sans voir, les lampadaires, les lignes éléctriques, les bottes de foin dans les champs..."
@@ -46,7 +46,7 @@
         "technologies": []
     },
     "winclean": {
-        "abstract": "Application de nettoyage et optimisation Windows",
+        "abstract": "Windows optimization and debloating utility",
         "anchors": {
             "Article CommentÇaMarche": {
                 "id": "ccm",
@@ -58,17 +58,17 @@
             }
         },
         "background": "/portfolio/img/project/winclean/bg.png",
-        "context": "personnel",
+        "context": "personnal",
         "gallery": {
-            "Exécution des scripts": "1.png",
-            "Fenêtre principale de l'application": "2.png"
+            "Executing scripts": "1.png",
+            "Application main window": "2.png"
         },
         "logo": {
             "isThemedSvg": false,
             "url": "/portfolio/img/project/winclean/logo.png"
         },
         "title": "WinClean",
-        "start-date": "Août 2021",
+        "start-date": "August 2021",
         "story": [
             "Computing is an extremely powerful and advanced technology compared to how it was just a few decades ago. Since the first experimental computers in the early 1940s, computers haven't stopped getting more powerful and complex. Nowadays, even low-tier computers can perform several billion calculations per second. It's really incredible to think that the device that you're using to read this right now is this powerful.",
             "However, what's mildly infuriating to me is the usage that we make of computers. We've become so dependent of computers over the years without understanding their complex inner workings. We boot up our devices, run programs, play games, go on the internet and we've become intolerant to any sort of failure or latency. We often complain of the slowness of computers without ever thinking of all the complexity of making all what they offer actually work, i.e. programming.",

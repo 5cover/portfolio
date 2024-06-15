@@ -1,0 +1,16 @@
+{
+    "3d-modeling": "3D",
+    "art": "Art",
+    "asset-creation": "Assets",
+    "but-administrer": "<img class=\"text-icon\" src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\">Adminsiter",
+    "but-collaborer": "<img class=\"text-icon\" src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\">Collaborate",
+    "but-conduire": "<img class=\"text-icon\" src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\">Drive",
+    "but-gerer": "<img class=\"text-icon\" src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\">Handle",
+    "but-optimiser": "<img class=\"text-icon\" src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\">Optimize",
+    "but-realiser": "<img class=\"text-icon\" src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\">Create",
+    "full-stack": "Full-stack",
+    "oop": "<abbr title=\"Object Oriented Programming\">OOP</abbr>",
+    "software": "Logiciel",
+    "ui": "<abbr title=\"User Interface\">UI</abbr>",
+    "ux": "<abbr title=\"User Experience\">UX</abbr>"
+}
