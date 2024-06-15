@@ -1,2 +1,43 @@
-/* projects.html stylesheet */
 @use 'base';
+
+main {
+    display: flex;
+    align-items: flex-start;
+    gap: 3em;
+}
+
+h2 {
+    min-width: max-content;
+}
+
+aside {
+    @include base.lvl1-content(1px 1px 1px 0);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    width: 18vw;
+    min-width: min-content;
+    border-radius: 0 1em 1em 0;
+}
+
+#search-input {
+    border-radius: base.$huge-val;
+    font-size: 75%;
+    @include base.horizontal-box-padding();
+}
+
+#list-tag,
+#list-sorting {
+    input {
+        display: none;
+    }
+
+    > label {
+        cursor: pointer;
+        background-color: var(--color-lvl3);
+
+        &:has(input:checked) {
+            @include base.color-accent;
+        }
+    }
+}

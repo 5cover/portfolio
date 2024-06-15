@@ -1,0 +1,498 @@
+{
+    "apache2": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/apache2/logo.svg"
+        },
+        "names": [
+            "Apache HTTP Server",
+            "Apache Server",
+            "Apache2"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Apache_HTTP_Server"
+    },
+    "bash": {
+        "background": "/portfolio/img/definition/bash/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/bash/logo.svg"
+        },
+        "names": [
+            "Bash",
+            "Bourne-Again shell"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Bash_(Unix_shell)"
+    },
+    "blender": {
+        "background": "/portfolio/img/definition/blender/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/blender/logo.svg"
+        },
+        "names": [
+            "Blender"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Blender_(software)"
+    },
+    "c": {
+        "background": "/portfolio/img/definition/c/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/c/logo.svg"
+        },
+        "names": [
+            "C"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/C_(programming_language)"
+    },
+    "cities-skylines": {
+        "background": "/portfolio/img/definition/cities-skylines/bg.jpg",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/cities-skylines/logo.png"
+        },
+        "names": [
+            "Cities Skylines",
+            "Cities: Skylines"
+        ],
+        "type": "game",
+        "wiki": "https://en.wikipedia.org/wiki/Cities:_Skylines"
+    },
+    "cpp": {
+        "background": "/portfolio/img/definition/cpp/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/cpp/logo.svg"
+        },
+        "names": [
+            "C++"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/C%2B%2B"
+    },
+    "csharp": {
+        "background": "/portfolio/img/definition/csharp/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/csharp/logo.svg"
+        },
+        "names": [
+            "C#"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+    },
+    "css": {
+        "background": "/portfolio/img/definition/css/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/css/logo.svg"
+        },
+        "names": [
+            "Cascading Style Sheets",
+            "CSS"
+        ],
+        "type": "computer-language",
+        "wiki": "https://en.wikipedia.org/wiki/CSS"
+    },
+    "csv": {
+        "background": "/portfolio/img/definition/csv/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/csv/logo.svg"
+        },
+        "names": [
+            "Comma-separated values",
+            "CSV"
+        ],
+        "type": "data-format",
+        "wiki": "https://en.wikipedia.org/wiki/Comma-separated_values"
+    },
+    "dotnet": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/dotnet/logo.svg"
+        },
+        "names": [
+            ".NET",
+            "Microsoft .NET"
+        ],
+        "type": "library",
+        "wiki": "https://en.wikipedia.org/wiki/.NET"
+    },
+    "figma": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/figma/logo.svg"
+        },
+        "names": [
+            "Figma"
+        ],
+        "type": "website",
+        "wiki": "https://en.wikipedia.org/wiki/Figma"
+    },
+    "gloomaps": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/gloomaps/logo.svg"
+        },
+        "names": [
+            "GlooMaps",
+            "Gloomaps"
+        ],
+        "type": "website",
+        "wiki": "https://www.gloomaps.com/"
+    },
+    "html": {
+        "background": "/portfolio/img/definition/html/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/html/logo.svg"
+        },
+        "names": [
+            "HTML",
+            "HTML5",
+            "HyperText Markup Language"
+        ],
+        "type": "markup-language",
+        "wiki": "https://en.wikipedia.org/wiki/HTML"
+    },
+    "inno-setup": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/inno-setup/logo.png"
+        },
+        "names": [
+            "Inno Setup"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Inno_Setup"
+    },
+    "java": {
+        "background": "/portfolio/img/definition/java/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/java/logo.svg"
+        },
+        "names": [
+            "Java"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Java_(programming_language)"
+    },
+    "javascript": {
+        "background": "/portfolio/img/definition/javascript/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/javascript/logo.svg"
+        },
+        "names": [
+            "JavaScript",
+            "JS"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/JavaScript"
+    },
+    "json": {
+        "background": "/portfolio/img/definition/json/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/json/logo.svg"
+        },
+        "names": [
+            "JavaScript Object Notation",
+            "JSON"
+        ],
+        "type": "data-format",
+        "wiki": "https://en.wikipedia.org/wiki/JSON"
+    },
+    "lua": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/lua/logo.svg"
+        },
+        "names": [
+            "Lua"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Lua_(programming_language)"
+    },
+    "markdown": {
+        "background": "/portfolio/img/definition/markdown/bg.png",
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/definition/markdown/logo.svg"
+        },
+        "names": [
+            "Markdown"
+        ],
+        "type": "markup-language",
+        "wiki": "https://en.wikipedia.org/wiki/Markdown"
+    },
+    "minecraft": {
+        "background": "/portfolio/img/definition/minecraft/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/minecraft/logo.svg"
+        },
+        "names": [
+            "Minecraft"
+        ],
+        "type": "game",
+        "wiki": "https://en.wikipedia.org/wiki/Minecraft"
+    },
+    "mysql": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/mysql/logo.svg"
+        },
+        "names": [
+            "MySQL"
+        ],
+        "type": "dbms",
+        "wiki": "https://en.wikipedia.org/wiki/MySQL"
+    },
+    "pascal": {
+        "background": "/portfolio/img/definition/pascal/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/pascal/logo.svg"
+        },
+        "names": [
+            "Pascal"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Pascal_(programming_language)"
+    },
+    "pgsql": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/pgsql/logo.svg"
+        },
+        "names": [
+            "Postgres",
+            "PostgreSQL"
+        ],
+        "type": "dbms",
+        "wiki": "https://en.wikipedia.org/wiki/PostgreSQL"
+    },
+    "php": {
+        "background": "/portfolio/img/definition/php/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/php/logo.svg"
+        },
+        "names": [
+            "Personal Homepage",
+            "PHP"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/PHP"
+    },
+    "powershell": {
+        "background": "/portfolio/img/definition/powershell/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/powershell/logo.svg"
+        },
+        "names": [
+            "PowerShell",
+            "Windows PowerShell"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/PowerShell"
+    },
+    "python": {
+        "background": "/portfolio/img/definition/python/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/python/logo.svg"
+        },
+        "names": [
+            "Python"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Python_(programming_language)"
+    },
+    "replit": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/replit/logo.svg"
+        },
+        "names": [
+            "Replit"
+        ],
+        "type": "website",
+        "wiki": "https://en.wikipedia.org/wiki/Replit"
+    },
+    "sass": {
+        "background": "/portfolio/img/definition/sass/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/sass/logo.svg"
+        },
+        "names": [
+            "SASS",
+            "SCSS",
+            "Syntactically Awesome Style Sheets"
+        ],
+        "type": "computer-language",
+        "wiki": "https://en.wikipedia.org/wiki/Sass_(style_sheet_language)"
+    },
+    "scheme": {
+        "background": "/portfolio/img/definition/scheme/bg.png",
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/definition/scheme/logo.svg"
+        },
+        "names": [
+            "Scheme"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Scheme_(programming_language)"
+    },
+    "smalltalk": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/smalltalk/logo.svg"
+        },
+        "names": [
+            "Smalltalk"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Smalltalk"
+    },
+    "sql": {
+        "background": "/portfolio/img/definition/sql/bg.png",
+        "names": [
+            "SQL",
+            "Structured Query Language"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/SQL"
+    },
+    "sql-workbench": {
+        "background": "/portfolio/img/definition/sql-workbench/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/sql-workbench/logo.jpg"
+        },
+        "names": [
+            "SQL Workbench/J"
+        ],
+        "type": "software",
+        "wiki": "https://www.sql-workbench.eu/"
+    },
+    "sqlite": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/sqlite/logo.svg"
+        },
+        "names": [
+            "SQLite"
+        ],
+        "type": "dbms",
+        "wiki": "https://en.wikipedia.org/wiki/SQLite"
+    },
+    "svg": {
+        "background": "/portfolio/img/definition/svg/bg.png",
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/definition/svg/logo.svg"
+        },
+        "names": [
+            "Scalable Vector Graphics",
+            "SVG"
+        ],
+        "type": "data-format",
+        "wiki": "https://en.wikipedia.org/wiki/SVG"
+    },
+    "tkinter": {
+        "names": [
+            "Tkinter"
+        ],
+        "type": "library",
+        "wiki": "https://en.wikipedia.org/wiki/Tkinter"
+    },
+    "visual-studio": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/visual-studio/logo.svg"
+        },
+        "names": [
+            "Microsoft Visual Studio",
+            "Visual Studio"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Visual_Studio"
+    },
+    "vs-code": {
+        "background": "/portfolio/img/definition/vs-code/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/vs-code/logo.svg"
+        },
+        "names": [
+            "Visual Studio Code",
+            "VS Code",
+            "VSC",
+            "VSCode"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Visual_Studio_Code"
+    },
+    "winforms": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/winforms/logo.svg"
+        },
+        "names": [
+            "Windows Forms",
+            "WinForms"
+        ],
+        "type": "library",
+        "wiki": "https://en.wikipedia.org/wiki/Windows_Forms"
+    },
+    "wpf": {
+        "background": "/portfolio/img/definition/wpf/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/wpf/logo.png"
+        },
+        "names": [
+            "Windows Presentation Foundation",
+            "WPF"
+        ],
+        "type": "library",
+        "wiki": "https://en.wikipedia.org/wiki/Windows_Presentation_Foundation"
+    },
+    "xml": {
+        "background": "/portfolio/img/definition/xml/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/xml/logo.svg"
+        },
+        "names": [
+            "Extensible Markup Language",
+            "XML"
+        ],
+        "type": "markup-language",
+        "wiki": "https://en.wikipedia.org/wiki/XML"
+    },
+    "zig": {
+        "background": "/portfolio/img/definition/zig/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/zig/logo.svg"
+        },
+        "names": [
+            "Zig"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Zig_(programming_language)"
+    }
+}

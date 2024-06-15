@@ -1,6 +1,17 @@
 /* index.html stylesheet */
 @use 'base';
 
+main {
+    flex-flow: column nowrap;
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+}
+
+section {
+    @include base.lvl1-content(1px 0);
+}
+
 .list-piano-tiles {
     list-style-type: none;
     display: flex;
@@ -104,9 +115,7 @@
         gap: calc(1lh / 3);
 
         svg {
-            height: .75lh;
-            vertical-align: baseline;
-            margin-right: .5ch;
+            @extend .text-icon;
         }
     }
 

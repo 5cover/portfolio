@@ -1,4 +1,3 @@
-/* Base stylesheet */
 @media (prefers-reduced-motion) {
 
     /* styles to apply if a user's device settings are set to reduced motion */
@@ -7,6 +6,14 @@
 
 @mixin bring-out($factor) {
     transform: scale($factor);
+}
+
+$huge-val: calc(infinity * 1px);
+
+@mixin basic-border($width) {
+    border-width: $width;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), .125);
 }
 
 :root {
@@ -22,8 +29,6 @@
     --color-lvl1: rgb(var(--color-lvl1-rgb));
     --color-lvl2: rgb(var(--color-lvl2-rgb));
     --color-lvl3: rgb(var(--color-lvl3-rgb));
-    --basic-border: solid rgba(var(--color-fg-rgb), .125);
-    --huge-val: calc(infinity * 1px);
     --transition: calc(1s / 3) ease;
     color: var(--color-fg);
     background-color: var(--color-bg);
@@ -71,12 +76,21 @@
         transform var(--transition),
         opacity var(--transition),
         fill var(--transition),
+        stroke var(--transition),
         filter var(--transition);
     box-sizing: border-box;
 }
 
 @function hover($prefix: '') {
     @return "#{$prefix}:hover, #{$prefix}:focus-within";
+}
+
+.text-icon {
+    display: inline-block;
+    height: 1cap;
+    width: auto;
+    margin-right: .5ch;
+    vertical-align: baseline;
 }
 
 /* Opt-in styling : link colors */
@@ -98,10 +112,6 @@ a {
 
 a:not(.link) {
     color: inherit;
-}
-
-svg.themed-fill {
-    fill: var(--color-fg);
 }
 
 small {
@@ -155,39 +165,10 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
-main {
-    grid-row: 2;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    gap: 3em;
-}
-
-footer {
-    grid-row: 3;
-}
-
-/* Borders */
-header,
-footer,
-section {
-    border: 0 var(--basic-border);
+@mixin lvl1-content($border-width) {
+    @include basic-border($border-width);
     background-color: var(--color-lvl1);
     padding: 1em 2em;
-}
-
-section,
-footer {
-    border-top-width: 1px;
-}
-
-section,
-header {
-    border-bottom-width: 1px;
-}
-
-section h2 {
-    text-align: center;
 }
 
 @mixin absolute-fill {
@@ -233,26 +214,9 @@ section h2 {
     padding: calc($factor * .25lh) calc($factor * 1ch);
 }
 
-footer {
-    position: relative;
-
-    p:has(small) {
-        position: absolute;
-        @include absolute-center;
-    }
-
-    p:has(svg) {
-        text-align: right;
-    }
-
-    #{hover('a > svg')} {
-        @include bring-out(1.15);
-    }
-}
-
 header {
+    @include lvl1-content(0 0 1px 0);
     align-items: center;
-    background-color: var(--color-lvl1);
     display: flex;
     flex-wrap: wrap;
     column-gap: 2em;
@@ -296,10 +260,38 @@ header {
     }
 }
 
+main {
+    grid-row: 2;
+}
+
+footer {
+    @include lvl1-content(1px);
+    border-top-width: 1px;
+    grid-row: 3;
+    position: relative;
+
+    p:has(small) {
+        position: absolute;
+        @include absolute-center;
+    }
+
+    p:has(svg) {
+        text-align: right;
+    }
+
+    #{hover('a > svg')} {
+        @include bring-out(1.15);
+    }
+}
+
+section h2 {
+    text-align: center;
+}
+
 .theme-switches {
     display: flex;
     border-radius: .25em;
-    border: 1px var(--basic-border);
+    @include basic-border(1px);
 
     input {
         @include absolute-fill();
@@ -333,7 +325,7 @@ header {
         }
 
         + label {
-            border-left: 1px var(--basic-border);
+            @include basic-border(0 0 0 1px);
         }
 
         input {
@@ -374,6 +366,20 @@ header {
     opacity: .5;
 }
 
+.list-tag {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+
+    > * {
+        @include horizontal-box-padding(.75);
+        font-size: 18px;
+        border-radius: .4em;
+        z-index: 1;
+    }
+}
+
 .list-projects {
     gap: 1em;
     display: flex;
@@ -383,7 +389,7 @@ header {
         @include hover-card;
         @include transparent-background-image(var(--bg-img), var(--color-lvl2), .1);
         list-style-type: none;
-        border: 1px var(--basic-border);
+        @include basic-border(1px);
         display: grid;
         grid-template: min-content repeat(4, auto) min-content / 1fr auto;
         row-gap: .5em;
@@ -393,24 +399,17 @@ header {
         /* Required to clip the :before pseudo-element to the card's boundaries */
         overflow: hidden;
 
-        h3 > a {
-            @include hover-card-target;
-        }
-
-        .list-tags {
+        .list-tag {
             @include hover-sensitive-list(1.15);
-            list-style-type: none;
-            display: flex;
             grid-column: 1 / 3;
-            gap: .5em;
 
             > li {
                 @include color-accent;
-                @include horizontal-box-padding(.75);
-                font-size: 18px;
-                border-radius: .4em;
-                z-index: 1;
             }
+        }
+
+        h3 > a {
+            @include hover-card-target;
         }
 
         .logo {
@@ -465,11 +464,11 @@ header {
         &:focus-within {
             @include color-accent-bg;
 
-            .list-tags > li {
+            .list-tag > li {
                 background-color: var(--color-lvl2);
             }
 
-            :not(.list-tags > li) {
+            :not(.list-tag > li) {
                 @include color-accent-fg();
             }
         }
