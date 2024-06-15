@@ -19,6 +19,7 @@ generate fr/index
 generate fr/projects
 
 generate en/definitions-test
+generate en/index
 
 # Copy data files
 
