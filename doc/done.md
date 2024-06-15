@@ -91,3 +91,11 @@ Generate project list dynamically from PHP
 ## .text-icon class
 
 Intended to size an img or svg as the size of the text next to it. Just put height: 1lh and width: auto.
+
+## Projects page
+
+Have ai explain me how to do it
+
+### Search UI html & css
+
+### Search logic js

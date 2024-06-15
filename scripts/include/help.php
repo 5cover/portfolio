@@ -1,52 +1,46 @@
 <?php
-if ($argc != 2) {
-    exit("Usage: {$argv[0]} <page name without extension>" . PHP_EOL);
+require_once 'lang.php';
+require_once 'page.php';
+
+function parse_args(): array {
+    global $argc, $argv;
+    if ($argc < 3) {
+        exit("Usage: {$argv[0]} <lang> <page name>" . PHP_EOL);
+    }
+    return [Lang::instances()[$argv[1]], new Page($argv[2])];
+
 }
 
-define('THIS_PAGE_NAME', $argv[1]);
+#$_dir_stack = [];
+#
+#/**
+# * Push the directory stack.
+# * Must be called once at the start of every script that uses relative paths.
+# */
+#function pushd(string $dir): void {
+#    global $_dir_stack;
+#    array_push($_dir_stack, $dir);
+#    chdir($dir) or throw new Exception('chdir failed');
+#}
+#
+#/**
+# * Push the directory stack.
+# * Must be called once at the end of every script that uses relative paths.
+# */
+#function popd(): void {
+#    global $_dir_stack;
+#    chdir(array_pop($_dir_stack)) or throw new Exception('chdir failed');
+#}
 
-/**
- * Get the value of the `href` attribute to use for anchors in the navbar.
- * @param string $pageName The name of the page the anchor leads to.
- * @return string *pageName*, unless it is the current page, then `#`.
- */
-function get_page_href(string $pageName): string
-{
-    return $pageName == THIS_PAGE_NAME . '.html' ? "#" : $pageName;
-}
-
-$_dir_stack = [];
-
-/**
- * Push the directory stack.
- * Must be called once at the start of every script that uses relative paths.
- */
-function pushd(string $dir): void
-{
-    global $_dir_stack;
-    array_push($_dir_stack, $dir);
-    chdir($dir) or throw new Exception('chdir failed');
-}
-
-/**
- * Push the directory stack.
- * Must be called once at the end of every script that uses relative paths.
- */
-function popd(): void
-{
-    global $_dir_stack;
-    chdir(array_pop($_dir_stack)) or throw new Exception('chdir failed');
-}
-
-function _get_filename(string $url)
-{
+function _get_filename(string $url) {
     return __DIR__ . '/../../../' . $url;
 }
 
-function get_img_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
-{
+function get_img_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string {
     if (str_ends_with($url, '.svg')) {
-        $sizePart = "height=\"$baseHeight\"";
+        $sizePart = <<<END
+        height="$baseHeight"
+        END;
     } else {
         $size = getimagesize(_get_filename($url));
         if ($size === false) {
@@ -57,11 +51,12 @@ function get_img_element(string $url, string|null $title = null, string|null $cl
 
     $titlePart = $title === null ? '' : " title=\"$title\"";
     $classPart = $class === null ? '' : " class=\"$class\"";
-    return "<img src=\"$url\" alt=\"$title\"$titlePart$classPart $sizePart loading=\"lazy\">";
+    return <<<HTML
+    <img src="$url" alt="$title"$titlePart$classPart $sizePart loading="lazy">
+    HTML;
 }
 
-function get_svg_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
-{
+function get_svg_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string {
     // Create a DOMDocument instance
     $domDocument = new DOMDocument();
 
@@ -115,8 +110,7 @@ function get_svg_element(string $url, string|null $title = null, string|null $cl
  * @param int $baseHeight The default height of the element if it doesn't have an intrinsic one.
  * @return string|null An HTML element or `null` if *info* was `null`.
  */
-function get_icon_element(bool $isThemedSvg, string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
-{
+function get_icon_element(bool $isThemedSvg, string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string {
     return ($isThemedSvg ? get_svg_element(...) : get_img_element(...))(
         $url,
         $title,
@@ -127,14 +121,13 @@ function get_icon_element(bool $isThemedSvg, string $url, string|null $title = n
 
 /**
  * Decode a data JSON file.
- * @param string $path the path of the JSON file, relative to the data directory.
+ * @param string $name the filename of the JSON file, relative to the data directory, without the xtension
  * @return array The decoded JSON, in associative mode.
  */
-function get_data_json(string $path): array
-{
-    $f = file_get_contents(__DIR__ . "/../../data/$path");
+function get_data_json(string $name): array {
+    $f = file_get_contents(__DIR__ . "/../../data/$name.json");
     if ($f === false) {
-        throw new Exception("failed to open JSON data '$path'");
+        throw new Exception("failed to open JSON data '$name'");
     }
     return json_decode($f, true);
 }
@@ -144,8 +137,7 @@ function get_data_json(string $path): array
  * @param string $glob A glob relative to the website folder.
  * @return array The filenames *glob* matched in the website folder.
  */
-function glob_web_filename(string $glob): array
-{
+function glob_web_filename(string $glob): array {
     $g = glob(_get_filename("$glob"));
     if ($g === false) {
         throw new Exception('glob failed');
@@ -159,8 +151,7 @@ function glob_web_filename(string $glob): array
  * @param string $glob A glob relative to the website folder.
  * @return string The canonicalized path represented by *glob*.
  */
-function glob_web_filename_single(string $glob): string
-{
+function glob_web_filename_single(string $glob): string {
     $g = glob_web_filename($glob);
     if (count($g) != 1) {
         throw new Exception("glob '$glob' matched " . count($g) . ' filename(s). Expected 1');
@@ -173,8 +164,7 @@ function glob_web_filename_single(string $glob): string
  * @param string $glob A glob relative to the website folder.
  * @return string The expand glob or `null` if it matched nothing.
  */
-function glob_web_filename_optional(string $glob): string|null
-{
+function glob_web_filename_optional(string $glob): string|null {
     $g = glob_web_filename($glob);
     if (count($g) == 0) {
         return null;
@@ -190,8 +180,7 @@ function glob_web_filename_optional(string $glob): string|null
  * @param string $glob A filesystem filename.
  * @return string A path suitable for use as an HTML `href`.
  */
-function get_web_path(string $filename): string
-{
+function get_web_path(string $filename): string {
     $filename = realpath($filename);
 
     // remove common prefix between __DIR__ and filename

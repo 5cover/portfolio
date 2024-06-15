@@ -1,0 +1,551 @@
+{
+    "apache2": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/apache2/logo.svg"
+        },
+        "names": [
+            "Apache HTTP Server",
+            "Apache Server",
+            "Apache2"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Apache_HTTP_Server",
+        "synopsis": "The Apache HTTP Server is a free and open-source cross-platform web server software."
+    },
+    "github": {
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/social/github.svg"
+        },
+        "names": [
+            "GitHub"
+        ],
+        "type": "website",
+        "wiki": "https://en.wikipedia.org/wiki/GitHub",
+        "synopsis": "GitHub is a developer platform that allows developers to create, store, manage and share their code."
+    },
+    "bash": {
+        "background": "/portfolio/img/definition/bash/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/bash/logo.svg"
+        },
+        "names": [
+            "Bash",
+            "Bourne-Again shell"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Bash_(Unix_shell)",
+        "synopsis": "<abbr title=\"Bourne-Again shell\">Bash</abbr> is a shell program and command language supported by the <abbr title=\"Free Software Foundation\">FSF</abbr> and first developed for the <abbr title=\"GNU is Not Unix\">GNU</abbr> Project by Brian Fox."
+    },
+    "blender": {
+        "background": "/portfolio/img/definition/blender/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/blender/logo.svg"
+        },
+        "names": [
+            "Blender"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Blender_(software)",
+        "synopsis": "Blender is a free and open-source 3D computer graphics software tool set."
+    },
+    "c": {
+        "background": "/portfolio/img/definition/c/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/c/logo.svg"
+        },
+        "names": [
+            "C"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/C_(programming_language)",
+        "synopsis": "C is a general-purpose programming language. It was created in the 1970s by Dennis Ritchie and remains very widely used and influential."
+    },
+    "cities-skylines": {
+        "background": "/portfolio/img/definition/cities-skylines/bg.jpg",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/cities-skylines/logo.png"
+        },
+        "names": [
+            "Cities Skylines",
+            "Cities: Skylines"
+        ],
+        "type": "game",
+        "wiki": "https://en.wikipedia.org/wiki/Cities:_Skylines",
+        "synopsis": "Cities: Skylines is a 2015 city-building game developed by Colossal Order and published by Paradox Interactive. The game is a single-player open-ended city-building simulation."
+    },
+    "cpp": {
+        "background": "/portfolio/img/definition/cpp/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/cpp/logo.svg"
+        },
+        "names": [
+            "C++"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/C%2B%2B",
+        "synopsis": "C++ is a high-level, general-purpose programming language created by Danish computer scientist Bjarne Stroustrup."
+    },
+    "csharp": {
+        "background": "/portfolio/img/definition/csharp/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/csharp/logo.png"
+        },
+        "names": [
+            "C#"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)",
+        "synopsis": "C# is a general-purpose high-level programming language supporting multiple paradigms."
+    },
+    "css": {
+        "background": "/portfolio/img/definition/css/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/css/logo.svg"
+        },
+        "names": [
+            "Cascading Style Sheets",
+            "CSS"
+        ],
+        "type": "computer-language",
+        "wiki": "https://en.wikipedia.org/wiki/CSS",
+        "synopsis": "Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML."
+    },
+    "csv": {
+        "background": "/portfolio/img/definition/csv/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/csv/logo.svg"
+        },
+        "names": [
+            "Comma-separated values",
+            "CSV"
+        ],
+        "type": "data-format",
+        "wiki": "https://en.wikipedia.org/wiki/Comma-separated_values",
+        "synopsis": "Comma-separated values (CSV) is a text file format that uses commas to separate values, and newlines to separate records."
+    },
+    "dotnet": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/dotnet/logo.svg"
+        },
+        "names": [
+            ".NET",
+            "Microsoft .NET"
+        ],
+        "type": "library",
+        "wiki": "https://en.wikipedia.org/wiki/.NET",
+        "synopsis": "The .NET platform is a free and open-source, managed computer software framework for Windows, Linux, and macOS operating systems."
+    },
+    "figma": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/figma/logo.svg"
+        },
+        "names": [
+            "Figma"
+        ],
+        "type": "website",
+        "wiki": "https://en.wikipedia.org/wiki/Figma",
+        "synopsis": "Figma is a collaborative web application for interface design."
+    },
+    "gloomaps": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/gloomaps/logo.png"
+        },
+        "names": [
+            "GlooMaps",
+            "Gloomaps"
+        ],
+        "type": "website",
+        "wiki": "https://www.gloomaps.com/",
+        "synopsis": "GlooMaps is a simple online visual sitemap tool."
+    },
+    "html": {
+        "background": "/portfolio/img/definition/html/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/html/logo.svg"
+        },
+        "names": [
+            "HTML",
+            "HTML5",
+            "HyperText Markup Language"
+        ],
+        "type": "markup-language",
+        "wiki": "https://en.wikipedia.org/wiki/HTML",
+        "synopsis": "<abbr title=\"HyperText Markup Language\">HTML</abbr> is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content."
+    },
+    "inno-setup": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/inno-setup/logo.png"
+        },
+        "names": [
+            "Inno Setup"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Inno_Setup",
+        "synopsis": "Inno Setup is a free software script-driven installation system created in Delphi by Jordan Russell. The first version was released in 1997."
+    },
+    "java": {
+        "background": "/portfolio/img/definition/java/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/java/logo.svg"
+        },
+        "names": [
+            "Java"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Java_(programming_language)",
+        "synopsis": "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible."
+    },
+    "javascript": {
+        "background": "/portfolio/img/definition/javascript/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/javascript/logo.svg"
+        },
+        "names": [
+            "JavaScript",
+            "JS"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/JavaScript",
+        "synopsis": "JavaScript, often abbreviated as JS, is a programming language and core technology of the Web, alongside HTML and CSS."
+    },
+    "json": {
+        "background": "/portfolio/img/definition/json/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/json/logo.svg"
+        },
+        "names": [
+            "JavaScript Object Notation",
+            "JSON"
+        ],
+        "type": "data-format",
+        "wiki": "https://en.wikipedia.org/wiki/JSON",
+        "synopsis": "<abbr title=\"JavaScript Object Notation\">JSON</abbr> is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values)."
+    },
+    "lua": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/lua/logo.svg"
+        },
+        "names": [
+            "Lua"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Lua_(programming_language)",
+        "synopsis": "Lua is a lightweight, high-level, multi-paradigm programming language designed primarily for embedded use in applications."
+    },
+    "markdown": {
+        "background": "/portfolio/img/definition/markdown/bg.png",
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/definition/markdown/logo.svg"
+        },
+        "names": [
+            "Markdown"
+        ],
+        "type": "markup-language",
+        "wiki": "https://en.wikipedia.org/wiki/Markdown",
+        "synopsis": "Markdown is a lightweight markup language for creating formatted text using a plain-text editor."
+    },
+    "minecraft": {
+        "background": "/portfolio/img/definition/minecraft/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/minecraft/logo.svg"
+        },
+        "names": [
+            "Minecraft"
+        ],
+        "type": "game",
+        "wiki": "https://en.wikipedia.org/wiki/Minecraft",
+        "synopsis": "Minecraft is a 2011 sandbox game developed by Mojang Studios and originally released in 2009."
+    },
+    "mysql": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/mysql/logo.svg"
+        },
+        "names": [
+            "MySQL"
+        ],
+        "type": "dbms",
+        "wiki": "https://en.wikipedia.org/wiki/MySQL",
+        "synopsis": "MySQL is an open-source relational database management system."
+    },
+    "pascal": {
+        "background": "/portfolio/img/definition/pascal/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/pascal/logo.svg"
+        },
+        "names": [
+            "Pascal"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Pascal_(programming_language)",
+        "synopsis": "Pascal is an imperative and procedural programming language, designed by Niklaus Wirth as a small, efficient language intended to encourage good programming practices using structured programming and data structuring."
+    },
+    "pgsql": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/pgsql/logo.svg"
+        },
+        "names": [
+            "Postgres",
+            "PostgreSQL"
+        ],
+        "type": "dbms",
+        "wiki": "https://en.wikipedia.org/wiki/PostgreSQL",
+        "synopsis": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system."
+    },
+    "php": {
+        "background": "/portfolio/img/definition/php/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/php/logo.svg"
+        },
+        "names": [
+            "Personal Homepage",
+            "PHP"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/PHP",
+        "synopsis": "<abbr title=\"Personal Homepage\">PHP</abbr> is a general-purpose scripting language geared towards web development, created in 1993."
+    },
+    "powershell": {
+        "background": "/portfolio/img/definition/powershell/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/powershell/logo.svg"
+        },
+        "names": [
+            "PowerShell",
+            "Windows PowerShell"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/PowerShell",
+        "synopsis": "PowerShell is a task automation and configuration management program from Microsoft, consisting of a command-line shell and the associated scripting language."
+    },
+    "python": {
+        "background": "/portfolio/img/definition/python/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/python/logo.svg"
+        },
+        "names": [
+            "Python"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+        "synopsis": "Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation."
+    },
+    "replit": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/replit/logo.svg"
+        },
+        "names": [
+            "Replit"
+        ],
+        "type": "website",
+        "wiki": "https://en.wikipedia.org/wiki/Replit",
+        "synopsis": "Replit is an American start-up and an online <abbr title=\"Integrated Development Environment\">IDE</abbr> that allows creating online programming projects called <em>repls</em>."
+    },
+    "sass": {
+        "background": "/portfolio/img/definition/sass/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/sass/logo.svg"
+        },
+        "names": [
+            "SASS",
+            "SCSS",
+            "Syntactically Awesome Style Sheets"
+        ],
+        "type": "computer-language",
+        "wiki": "https://en.wikipedia.org/wiki/Sass_(style_sheet_language)",
+        "synopsis": "<abbr title=\"Syntactically Awesome Style Sheets\">Sass</abbr> is a preprocessor scripting language that is interpreted or compiled into CSS."
+    },
+    "scheme": {
+        "background": "/portfolio/img/definition/scheme/bg.png",
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/definition/scheme/logo.svg"
+        },
+        "names": [
+            "Scheme"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Scheme_(programming_language)",
+        "synopsis": "Scheme is a dialect of the Lisp family of programming languages. Scheme was created during the 1970s at the <abbr title=\"MIT Computer Science and Artificial Intelligence Laboratory\">MIT AI</abbr> Lab)."
+    },
+    "smalltalk": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/smalltalk/logo.svg"
+        },
+        "names": [
+            "Smalltalk"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Smalltalk",
+        "synopsis": "Smalltalk is a purely object oriented programming language (OOP) that was originally created in 1972 for educational use."
+    },
+    "sql": {
+        "background": "/portfolio/img/definition/sql/bg.png",
+        "names": [
+            "SQL",
+            "Structured Query Language"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/SQL",
+        "synopsis": "<abbr title=\"Structured Query Language\">SQL</abbr> is a domain-specific language used to manage data, especially in relational database management systems."
+    },
+    "sql-workbench": {
+        "background": "/portfolio/img/definition/sql-workbench/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/sql-workbench/logo.jpg"
+        },
+        "names": [
+            "SQL Workbench/J"
+        ],
+        "type": "software",
+        "wiki": "https://www.sql-workbench.eu/",
+        "synopsis": "SQLite is a database engine written in the C programming language."
+    },
+    "sqlite": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/sqlite/logo.svg"
+        },
+        "names": [
+            "SQLite"
+        ],
+        "type": "dbms",
+        "wiki": "https://en.wikipedia.org/wiki/SQLite",
+        "synopsis": "SQL Workbench/J is a DBMS-independent, cross-platform SQL query tool."
+    },
+    "svg": {
+        "background": "/portfolio/img/definition/svg/bg.png",
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/definition/svg/logo.svg"
+        },
+        "names": [
+            "Scalable Vector Graphics",
+            "SVG"
+        ],
+        "type": "data-format",
+        "wiki": "https://en.wikipedia.org/wiki/SVG",
+        "synopsis": "<abbr title=\"Scalable Vector Graphics\">SVG</abbr> is an XML-based vector image format for defining two-dimensional graphics, having support for interactivity and animation."
+    },
+    "tkinter": {
+        "names": [
+            "Tkinter"
+        ],
+        "type": "library",
+        "wiki": "https://en.wikipedia.org/wiki/Tkinter",
+        "synopsis": "Tkinter is a Python binding to the Tk GUI toolkit. It is the standard Python interface to the Tk GUI toolkit."
+    },
+    "visual-studio": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/visual-studio/logo.svg"
+        },
+        "names": [
+            "Microsoft Visual Studio",
+            "Visual Studio"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Visual_Studio",
+        "synopsis": "Visual Studio is an <abbr title=\"Integrated Development Environment\">IDE</abbr> developed by Microsoft. It is used to develop computer programs."
+    },
+    "vs-code": {
+        "background": "/portfolio/img/definition/vs-code/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/vs-code/logo.svg"
+        },
+        "names": [
+            "Visual Studio Code",
+            "VS Code",
+            "VSC",
+            "VSCode"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Visual_Studio_Code",
+        "synopsis": "Visual Studio Code, also commonly referred to as VS Code,[9] is a source-code editor developed by Microsoft for Windows, Linux, macOS and web browsers."
+    },
+    "winforms": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/winforms/logo.png"
+        },
+        "names": [
+            "Windows Forms",
+            "WinForms"
+        ],
+        "type": "library",
+        "wiki": "https://en.wikipedia.org/wiki/Windows_Forms",
+        "synopsis": "Windows Forms is a free and open-source graphical class library included as a part of Microsoft .NET, .NET Framework or Mono."
+    },
+    "wpf": {
+        "background": "/portfolio/img/definition/wpf/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/wpf/logo.png"
+        },
+        "names": [
+            "Windows Presentation Foundation",
+            "WPF"
+        ],
+        "type": "library",
+        "wiki": "https://en.wikipedia.org/wiki/Windows_Presentation_Foundation",
+        "synopsis": "<abbr title=\"Windows Presentation Foundation\">WPF</abbr> is a free and open-source user interface framework for Windows-based desktop applications."
+    },
+    "xml": {
+        "background": "/portfolio/img/definition/xml/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/xml/logo.svg"
+        },
+        "names": [
+            "Extensible Markup Language",
+            "XML"
+        ],
+        "type": "markup-language",
+        "wiki": "https://en.wikipedia.org/wiki/XML",
+        "synopsis": "<abbr title=\"Extensible Markup Language\">XML</abbr> is a markup language and file format for storing, transmitting, and reconstructing arbitrary data."
+    },
+    "zig": {
+        "background": "/portfolio/img/definition/zig/bg.png",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/zig/logo.svg"
+        },
+        "names": [
+            "Zig"
+        ],
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/Zig_(programming_language)",
+        "synopsis": "Zig is an imperative, general-purpose, statically typed, compiled system programming language designed by Andrew Kelley in 2015 as a successor to C."
+    }
+}
