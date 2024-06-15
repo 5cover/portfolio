@@ -11,7 +11,7 @@ pushd(__DIR__);
     <link rel="manifest" href="/portfolio/site.webmanifest">
     <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
     <?php
-    $g = glob_web_filename('css/' . THIS_PAGE_NAME . '.css');
+    $g = glob_web_filename('/portfolio/css/' . THIS_PAGE_NAME . '.css');
     if (count($g) == 1) { ?>
         <link rel="stylesheet" type="text/css" href="<?php echo get_web_path($g[0]); ?>">
     <?php } else { ?>

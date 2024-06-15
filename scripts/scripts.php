@@ -6,7 +6,7 @@ pushd(__DIR__);
     integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 <script src="/portfolio/js/base.js"></script>
 <?php
-$g = glob_web_filename('js/' . THIS_PAGE_NAME . '.js');
+$g = glob_web_filename('/portfolio/js/' . THIS_PAGE_NAME . '.js');
 if (count($g) == 1) { ?>
     <script src="<?php echo get_web_path($g[0]); ?>"></script>
 <?php } ?>

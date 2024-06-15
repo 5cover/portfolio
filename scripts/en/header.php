@@ -13,8 +13,9 @@ pushd(__DIR__);
         </ul>
     </nav>
     <ul class="list-flags">
-        <li><a class="fi fi-us" href="#"></a></li>
-        <li><a class="fi fi-fr gray-when-not-hover" href="/portfolio/fr/<?php echo THIS_PAGE_NAME; ?>.html"></a></li>
+        <li><a class="fi fi-us" title="English" href="#"></a></li>
+        <li><a class="fi fi-fr gray-when-not-hover" title="French / Français"
+                href="/portfolio/fr/<?php echo THIS_PAGE_NAME; ?>.html"></a></li>
     </ul>
     <div class="theme-switches">
         <label for="theme-switch-light" title="Light theme">

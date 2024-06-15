@@ -13,7 +13,13 @@ generate() {
     >&2 echo ok
 }
 
-generate en/definitions-test
-generate fr/definitions-test
 
+generate fr/definitions-test
 generate fr/index
+generate fr/projects
+
+generate en/definitions-test
+
+# Copy data files
+
+cp -r ../data "$outdir"

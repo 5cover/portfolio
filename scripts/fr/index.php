@@ -95,14 +95,58 @@ pushd(__DIR__);
             <h2>Moi</h2>
             <div>
                 <p>Je suis étudiant en 1<sup>re</sup> année de <abbr
-                        title="Brevet Universitaire Technologique">BUT</abbr> informatique, etc...</p>
-                <img src="/portfolio/img/me.jpg" alt="Ma photo" width="1600" height="1600" loading="lazy"
+                        title="Brevet Universitaire Technologique">BUT</abbr> informatique, etc...</p><img
+                    src="/portfolio/img/me.jpg" alt="Ma photo" width="1600" height="1600" loading="lazy"
                     title="Ma photo">
             </div>
         </article>
         <section id="ongoing-projects">
             <h2>Mes projets en cours</h2>
-            <?php include 'project-list.php' ?>
+            <ul class="list-projects">
+                <?php
+                $data = get_data_json('fr/projects.json');
+                $tags = get_data_json('fr/tags.json');
+                $anchors = get_data_json('anchors.json');
+
+                foreach ($data as $id => $project) {
+                    $title = $project['title'];
+
+                    if (array_key_exists('end-date', $project)) {
+                        continue;
+                    }
+
+                    ?>
+                    <li <?php if ($bg = $project['background'] ?? null) {
+                        echo "style=\"--bg-img: url($bg)\"";
+                    } ?>>
+                        <ul class="list-tag">
+                            <?php foreach ($project['tags'] as $tagId) {
+                                echo "<li><a href=\"projects.html?tag=$tagId\">{$tags[$tagId]}</a></li>";
+                            } ?>
+                        </ul>
+                        <?php if ($logo = $project['logo'] ?? null) {
+                            echo get_icon_element($logo['isThemedSvg'], $logo['url'], "Logo $title", 'logo');
+                        } ?>
+                        <h3><a href="project/<?php echo $id; ?>.html"><?php echo $title; ?></a></h3>
+                        <p class="context"><small><?php echo ucfirst($project['context']); ?></small></p>
+                        <p class="status">
+                            <small><?php echo "{$project['start-date']} \u{2013} en cours"; ?></small>
+                        </p>
+                        <p class="abstract"><?php echo $project['abstract']; ?></p>
+                        <ul class="list-anchors">
+                            <?php foreach ($project['anchors'] as $name => $anchor) { ?>
+                                <li>
+                                    <a href="<?php echo $anchor['href']; ?>" title="<?php echo $name; ?>" target="_blank">
+                                        <?php
+                                        $a = $anchors[$anchor['id']];
+                                        echo get_icon_element($a['isThemedSvg'], $a['url']); ?>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </li>
+                <?php } ?>
+            </ul>
             <a href="projects.html">Tous mes projets</a>
             <small>Dernière mise à jour&nbsp;: <time datetime="2024-05-21">21/05/2024</time></small>
         </section>
@@ -110,16 +154,20 @@ pushd(__DIR__);
             <div>
                 <h2>Contact</h2>
                 <ul>
-                    <li title="E-mail"><?php echo get_svg_element('img/social/email.svg', baseHeight: 24) ?><a
+                    <li title="E-mail"><?php echo get_svg_element('portfolio/img/social/email.svg', baseHeight: 24) ?><a
                             class="link" href="mailto:bardini.raphael@gmail.com">bardini.raphael@gmail.com</a></li>
-                    <li title="LinkedIn"><?php echo get_svg_element('img/social/linkedin.svg', baseHeight: 24) ?><a
+                    <li title="LinkedIn">
+                        <?php echo get_svg_element('portfolio/img/social/linkedin.svg', baseHeight: 24) ?><a
                             class="link" href="https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/">Raphaël
                             Bardini</a>
                     </li>
-                    <li title="Instagram"><?php echo get_svg_element('img/social/instagram.svg', baseHeight: 24) ?><a
-                            class="link" href="https://www.instagram.com/bardiniraphael/">bardiniraphael</a></li>
-                    <li title="GitHub"><?php echo get_svg_element('img/social/github.svg', baseHeight: 24) ?><a
-                            class="link" href="https://github.com/5cover">5cover</a>
+                    <li title="Instagram">
+                        <?php echo get_svg_element('portfolio/img/social/instagram.svg', baseHeight: 24) ?><a
+                            class="link" href="https://www.instagram.com/bardiniraphael/">bardiniraphael</a>
+                    </li>
+                    <li title="GitHub">
+                        <?php echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 24) ?><a class="link"
+                            href="https://github.com/5cover">5cover</a>
                     </li>
                 </ul>
             </div>

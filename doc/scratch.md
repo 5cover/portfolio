@@ -33,12 +33,6 @@ Why not.
 
 That way, they won't be on the website. Also I won't need the extension anymore, i can simply compiler them in *generate.sh*.
 
-## .text-height class
-
-Intended to size an img or svg as the size of the text next to it. Just put height: 1lh and width: auto.
-
-Replace existing styles.
-
 ## Projects page
 
 Have ai explain me how to do it

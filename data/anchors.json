@@ -1,20 +1,26 @@
 {
     "steam": {
-        "isThemedSvg": false
+        "isThemedSvg": false,
+        "url": "/portfolio/img/social/steam.svg"
     },
     "github": {
-        "isThemedSvg": true
+        "isThemedSvg": true,
+        "url": "/portfolio/img/social/github.svg"
     },
     "email": {
-        "isThemedSvg": true
+        "isThemedSvg": true,
+        "url": "/portfolio/img/social/email.svg"
     },
     "instagram": {
-        "isThemedSvg": true
+        "isThemedSvg": true,
+        "url": "/portfolio/img/social/instagram.svg"
     },
     "linkedin": {
-        "isThemedSvg": true
+        "isThemedSvg": true,
+        "url": "/portfolio/img/social/linkedin.svg"
     },
     "ccm": {
-        "isThemedSvg": false
+        "isThemedSvg": false,
+        "url": "/portfolio/img/social/ccm.png"
     }
 }

@@ -56,7 +56,8 @@
                     }
                 },
                 "required": [
-                    "isThemedSvg"
+                    "isThemedSvg",
+                    "url"
                 ],
                 "type": "object"
             },

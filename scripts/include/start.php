@@ -38,13 +38,17 @@ function popd(): void
     chdir(array_pop($_dir_stack)) or throw new Exception('chdir failed');
 }
 
-function get_img_element(string $srcWebGlob, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
+function _get_filename(string $url)
 {
-    $srcFilename = glob_web_filename_single($srcWebGlob);
-    if (str_ends_with($srcFilename, '.svg')) {
+    return __DIR__ . '/../../../' . $url;
+}
+
+function get_img_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
+{
+    if (str_ends_with($url, '.svg')) {
         $sizePart = "height=\"$baseHeight\"";
     } else {
-        $size = getimagesize($srcFilename);
+        $size = getimagesize(_get_filename($url));
         if ($size === false) {
             throw new Exception('getimagesize failed');
         }
@@ -53,12 +57,11 @@ function get_img_element(string $srcWebGlob, string|null $title = null, string|n
 
     $titlePart = $title === null ? '' : " title=\"$title\"";
     $classPart = $class === null ? '' : " class=\"$class\"";
-    return "<img src=\"" . get_web_path($srcFilename) . "\" alt=\"$title\"$titlePart$classPart $sizePart loading=\"lazy\">";
+    return "<img src=\"$url\" alt=\"$title\"$titlePart$classPart $sizePart loading=\"lazy\">";
 }
 
-function get_svg_element(string $svgWebGlob, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
+function get_svg_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
 {
-    $filename = glob_web_filename_single($svgWebGlob);
     // Create a DOMDocument instance
     $domDocument = new DOMDocument();
 
@@ -66,7 +69,7 @@ function get_svg_element(string $svgWebGlob, string|null $title = null, string|n
     libxml_use_internal_errors(true);
 
     // Load the SVG code as XML
-    $domDocument->load($filename) or throw new Exception("failed to load DOMDocument at '$filename'");
+    $domDocument->load(_get_filename($url)) or throw new Exception("failed to load DOMDocument at '$url'");
 
     // Clear libxml error buffer
     libxml_clear_errors();
@@ -82,7 +85,7 @@ function get_svg_element(string $svgWebGlob, string|null $title = null, string|n
             $width = $svgElement->getAttribute('width');
             $height = $svgElement->getAttribute('height');
             if (!$width || !$height) {
-                throw new Exception("invalid SVG structure (no viewBox, no width or height) at '$filename'");
+                throw new Exception("invalid SVG structure (no viewBox, no width or height) at '$url'");
             }
             $svgElement->setAttribute("viewBox", "0 0 $width $height");
         }
@@ -99,27 +102,23 @@ function get_svg_element(string $svgWebGlob, string|null $title = null, string|n
 
         return $domDocument->saveXML($svgElement);
     } else {
-        throw new Exception("invalid SVG structure (!= 1 <svg> elements) art '$filename'");
+        throw new Exception("invalid SVG structure (!= 1 <svg> elements) art '$url'");
     }
 }
 
 /**
  * Get the HTML element to use to represent an icon.
- * @param array|null $info The icon info record.
- * @param string $webGlob A glob relative to the website folder. Must match a single filename: the image file
+ * @param bool $isThemedSvg is it a themed SVG?
+ * @param string $url The url of the image
  * @param string|null $title The title of the icon (also set as the `img` `alt` attribute). `null` for no title.
  * @param string|null $class The value of the `class` attribute on the generated element. `null` for no `class` attribute.
  * @param int $baseHeight The default height of the element if it doesn't have an intrinsic one.
  * @return string|null An HTML element or `null` if *info* was `null`.
  */
-function get_icon_element(array|null $info, string $webGlob, string|null $title = null, string|null $class = null, int $baseHeight = 30): string|null
+function get_icon_element(bool $isThemedSvg, string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
 {
-    if ($info === null) {
-        return null;
-    }
-
-    return ($info['isThemedSvg'] ? get_svg_element(...) : get_img_element(...))(
-        $webGlob,
+    return ($isThemedSvg ? get_svg_element(...) : get_img_element(...))(
+        $url,
         $title,
         $class,
         $baseHeight
@@ -147,7 +146,7 @@ function get_data_json(string $path): array
  */
 function glob_web_filename(string $glob): array
 {
-    $g = glob(__DIR__ . "/../../../portfolio/$glob");
+    $g = glob(_get_filename("$glob"));
     if ($g === false) {
         throw new Exception('glob failed');
     }
@@ -191,13 +190,13 @@ function glob_web_filename_optional(string $glob): string|null
  * @param string $glob A filesystem filename.
  * @return string A path suitable for use as an HTML `href`.
  */
-function get_web_path(string $fsFilename): string
+function get_web_path(string $filename): string
 {
-    $fsFilename = realpath($fsFilename);
+    $filename = realpath($filename);
 
-    // remove common prefix between __DIR__ and $fsFilename
+    // remove common prefix between __DIR__ and filename
     $s1 = __DIR__;
-    $s2 = $fsFilename;
+    $s2 = $filename;
     if ($s1 < $s2) {
         [$s1, $s2] = [$s2, $s1];
     }
@@ -210,6 +209,6 @@ function get_web_path(string $fsFilename): string
     for ($i = 0; $i < $len && $s1[$i] == $s2[$i]; $i++)
         ;
 
-    return '/' . substr($fsFilename, $i);
+    return '/' . substr($filename, $i);
 
 }

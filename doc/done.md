@@ -87,3 +87,7 @@ Avoid all this duplication
 ## PHP generate project list
 
 Generate project list dynamically from PHP
+
+## .text-icon class
+
+Intended to size an img or svg as the size of the text next to it. Just put height: 1lh and width: auto.

@@ -8,7 +8,6 @@
         "required": [
             "names",
             "type",
-            "synopsis",
             "wiki"
         ],
         "properties": {
@@ -34,10 +33,6 @@
                     "website"
                 ]
             },
-            "synopsis": {
-                "type": "string",
-                "minLength": 1
-            },
             "wiki": {
                 "type": "string",
                 "minLength": 1
@@ -59,7 +54,8 @@
                     }
                 },
                 "required": [
-                    "isThemedSvg"
+                    "isThemedSvg",
+                    "url"
                 ]
             }
         }

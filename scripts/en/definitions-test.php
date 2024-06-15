@@ -11,11 +11,11 @@ pushd(__DIR__);
     <main>
         <dl>
             <?php
-            $data = get_data_json('en/definitions.json');
+            $data = get_data_json('definitions.json');
+            $synopsis = get_data_json('en/synopsis.json');
             $types = get_data_json('en/types.json');
             foreach ($data as $id => $def) {
                 $title = $def['names'][0];
-                $indir = "img/definition/$id/";
                 ?>
                 <dt id="<?php echo $id ?>"><?php echo $id ?></dt>
                 <dd>
@@ -23,19 +23,19 @@ pushd(__DIR__);
                     <div>
                         <a target="_blank" href="<?php echo $def['wiki'] ?>"
                             class="link definition-tooltip-trigger"><?php echo $title; ?></a>
-                        <div class="definition-tooltip" <?php if ($bgFile = glob_web_filename_optional($indir . 'bg*')) {
-                            echo 'style="--bg-img: url(' . get_web_path($bgFile) . ')"';
+                        <div class="definition-tooltip" <?php if ($bg = $def['background'] ?? null) {
+                            echo "style=\"--bg-img: url($bg)\"";
                         } ?>>
                             <h4><?php echo $title; ?></h4>
-                            <?php echo get_icon_element($def['logo'] ?? null, $indir . 'logo*', "$title logo"); ?>
+                            <?php if ($logo = $def['logo'] ?? null) {
+                                echo get_icon_element($logo['isThemedSvg'], $logo['url'], "$title logo");
+                            } ?>
                             <p><small><?php echo ucfirst($types[$def['type']]); ?></small></p>
-                            <p><?php echo $def['synopsis']; ?></p>
+                            <p><?php echo $synopsis[$id]; ?></p>
                         </div>
                     </div>
                 </dd>
-                <?php
-            }
-            ?>
+            <?php } ?>
         </dl>
     </main>
     <?php include 'footer.php'; ?>

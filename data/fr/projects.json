@@ -57,15 +57,15 @@
                 "href": "https://github.com/5cover/WinClean"
             }
         },
-        "background": "https://github.com/5cover/WinClean/wiki/locale/fr-FR/img/MainWindow.png",
+        "background": "/portfolio/img/project/winclean/bg.png",
         "context": "personnel",
         "gallery": {
-            "Exécution des scripts": "https://github.com/5cover/WinClean/wiki/locale/fr-FR/img/Page2.png",
-            "Fenêtre principale de l'application": "https://github.com/5cover/WinClean/wiki/locale/fr-FR/img/MainWindow.png"
+            "Exécution des scripts": "1.png",
+            "Fenêtre principale de l'application": "2.png"
         },
         "logo": {
             "isThemedSvg": false,
-            "url": "https://raw.githubusercontent.com/5cover/WinClean/master/WinClean/Resources/Images/WinClean.png"
+            "url": "/portfolio/img/project/winclean/logo.png"
         },
         "title": "WinClean",
         "start-date": "Août 2021",
