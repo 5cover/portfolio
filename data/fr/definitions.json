@@ -455,7 +455,7 @@
         ],
         "type": "data-format",
         "wiki": "https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics",
-        "synopsis": "Le <abbr title=\"Scalable Vector Graphics (en français « graphiques vectoriels adaptables »)\">SVG</abbr>, est un format de données ASCII conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML."
+        "synopsis": "Le <abbr title=\"Scalable Vector Graphics (en français « graphiques vectoriels adaptables »)\">SVG</abbr> est un format de données textuel conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML."
     },
     "tkinter": {
         "names": [
