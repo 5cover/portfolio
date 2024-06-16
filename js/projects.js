@@ -4,12 +4,14 @@ jQuery(document).ready(async $ => {
     const searchInput = document.getElementById('search-input');
     const listTags = document.getElementById('list-tag');
 
+    const lang = document.getElementsByTagName('html')[0].lang
+
     // Fetch project data from JSON file
 
     const [projects, tags, anchors] = await Promise.all([
-        fetch('/portfolio/data/fr/projects.json').then(res => res.json()).catch(err => { throw err }),
-        fetch('/portfolio/data/fr/tags.json').then(res => res.json()).catch(err => { throw err }),
-        fetch('/portfolio/data/anchors.json').then(res => res.json()).catch(err => { throw err }),
+        fetch(`/portfolio/data/${lang}/projects.json`).then(res => res.json()).catch(err => { throw err }),
+        fetch(`/portfolio/data/${lang}/tags.json`).then(res => res.json()).catch(err => { throw err }),
+        fetch(`/portfolio/data/anchors.json`).then(res => res.json()).catch(err => { throw err }),
     ]);
 
     const allowedTags = new Set();
@@ -93,7 +95,7 @@ jQuery(document).ready(async $ => {
             <p class="context"><small>${ucfirst(project.context)}</small></p>
             <p class="status"><small>${project['start-date']} – ${project['end-date'] || 'en cours'}</small></p>
             <p class="abstract">${project.abstract}</p>
-            <ul class="list-anchors">
+            <ul class="list-anchor">
                 ${(await Promise.all(Object.entries(project.anchors).map(async ([name, anchor]) => {
                 const icon = await getIconElement(anchors[anchor.id].isThemedSvg, anchors[anchor.id].url);
                 return `<li><a href="${anchor.href}" title="${name}" target="_blank">${icon.outerHTML}</a></li>`;

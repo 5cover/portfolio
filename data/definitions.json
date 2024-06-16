@@ -78,7 +78,7 @@
         "background": "/portfolio/img/definition/csharp/bg.png",
         "logo": {
             "isThemedSvg": false,
-            "url": "/portfolio/img/definition/csharp/logo.svg"
+            "url": "/portfolio/img/definition/csharp/logo.png"
         },
         "names": [
             "C#"
@@ -138,7 +138,7 @@
     "gloomaps": {
         "logo": {
             "isThemedSvg": false,
-            "url": "/portfolio/img/definition/gloomaps/logo.svg"
+            "url": "/portfolio/img/definition/gloomaps/logo.png"
         },
         "names": [
             "GlooMaps",
@@ -448,7 +448,7 @@
     "winforms": {
         "logo": {
             "isThemedSvg": false,
-            "url": "/portfolio/img/definition/winforms/logo.svg"
+            "url": "/portfolio/img/definition/winforms/logo.png"
         },
         "names": [
             "Windows Forms",

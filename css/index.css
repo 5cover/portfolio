@@ -368,7 +368,7 @@ section h2 {
 .list-projects > li .abstract {
   grid-row: 5;
 }
-.list-projects > li .list-anchors {
+.list-projects > li .list-anchor {
   list-style-type: none;
   display: flex;
   grid-row: 6;
@@ -377,16 +377,16 @@ section h2 {
   align-items: flex-end;
   gap: 0.5em;
 }
-.list-projects > li .list-anchors > li:hover, .list-projects > li .list-anchors > li:focus-within,
-.list-projects > li .list-anchors > li.hover {
+.list-projects > li .list-anchor > li:hover, .list-projects > li .list-anchor > li:focus-within,
+.list-projects > li .list-anchor > li.hover {
   transform: scale(1.15);
   z-index: 1;
 }
-.list-projects > li .list-anchors > li {
+.list-projects > li .list-anchor > li {
   z-index: 1;
 }
-.list-projects > li .list-anchors > li img,
-.list-projects > li .list-anchors > li svg {
+.list-projects > li .list-anchor > li img,
+.list-projects > li .list-anchor > li svg {
   height: 1.5em;
   width: 1.5em;
   -o-object-fit: contain;

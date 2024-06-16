@@ -12,10 +12,7 @@
         "gallery": {},
         "title": "2L2W French Rural Road",
         "start-date": "Juin 2021",
-        "story": [
-            "I've always found that in Cities: Skylines the cities have a rather bland and homogeneous international look. Where are the taste, the emotion, the particularity, all these things that make up the charm of a city? So I tried to reproduce European towns and villages, particularly French ones. And this is what created the need for a French road, which respects real standards for road markings and signs. No one had done it yet on the Workshop, so I gave it a try. I thus discovered the basics of texturing and 3D modeling.",
-            "Getting a foot in the world of 3D modeling and game design has been an enriching experience for me, even if I won't make it a passion."
-        ],
+        "story": "<p>I've always found that in Cities: Skylines the cities have a rather bland and homogeneous international look. Where are the taste, the emotion, the particularity, all these things that make up the charm of a city? So I tried to reproduce European towns and villages, particularly French ones. And this is what created the need for a French road, which respects real standards for road markings and signs. No one had done it yet on the Workshop, so I gave it a try. I thus discovered the basics of texturing and 3D modeling.</p><p>Getting a foot in the world of 3D modeling and game design has been an enriching experience for me, even if I won't make it a passion.</p>",
         "tags": [
             "3d-modeling",
             "asset-creation"
@@ -36,10 +33,7 @@
         "gallery": {},
         "title": "Trégoria",
         "start-date": "October 2022",
-        "story": [
-            "Pour moi, ces détails forment la beauté de notre environnement.",
-            "Trégoria, c'est un groupement de communes, avant tout né d'une affection profonde pour mon lieu de vie et d'une attention particulière pour les détails invisibles de notre environnement. Vous savez, toutes ces choses qu'on voit sans voir, les lampadaires, les lignes éléctriques, les bottes de foin dans les champs..."
-        ],
+        "story": "<p>Pour moi, ces détails forment la beauté de notre environnement.</p><p>Trégoria, c'est un groupement de communes, avant tout né d'une affection profonde pour mon lieu de vie et d'une attention particulière pour les détails invisibles de notre environnement. Vous savez, toutes ces choses qu'on voit sans voir, les lampadaires, les lignes éléctriques, les bottes de foin dans les champs...</p>",
         "tags": [
             "art"
         ],
@@ -60,8 +54,8 @@
         "background": "/portfolio/img/project/winclean/bg.png",
         "context": "personnal",
         "gallery": {
-            "Executing scripts": "1.png",
-            "Application main window": "2.png"
+            "Executing scripts": "/portfolio/img/project/winclean/gallery/1.png",
+            "Application main window": "/portfolio/img/project/winclean/gallery/2.png"
         },
         "logo": {
             "isThemedSvg": false,
@@ -69,14 +63,7 @@
         },
         "title": "WinClean",
         "start-date": "August 2021",
-        "story": [
-            "Computing is an extremely powerful and advanced technology compared to how it was just a few decades ago. Since the first experimental computers in the early 1940s, computers haven't stopped getting more powerful and complex. Nowadays, even low-tier computers can perform several billion calculations per second. It's really incredible to think that the device that you're using to read this right now is this powerful.",
-            "However, what's mildly infuriating to me is the usage that we make of computers. We've become so dependent of computers over the years without understanding their complex inner workings. We boot up our devices, run programs, play games, go on the internet and we've become intolerant to any sort of failure or latency. We often complain of the slowness of computers without ever thinking of all the complexity of making all what they offer actually work, i.e. programming.",
-            "I, as the creator of WinClean, don't think so. We should do the exact opposite. We have a right to be furious when things just don't work out. Why? Billions of calculations per second. What can't you do with that?",
-            "Just ask it, why does it always have to be so painstakingly slow!",
-            "Should we be ashamed of that? Should we instead bear unsatisfying computing experiences, and never complain?",
-            "So, whose fault is it? Bad programmers? Bad hardware? Who cares? Clean it up!"
-        ],
+        "story": "<p>Computing is an extremely powerful and advanced technology compared to how it was just a few decades ago. Since the first experimental computers in the early 1940s, computers haven't stopped getting more powerful and complex. Nowadays, even low-tier computers can perform several billion calculations per second. It's really incredible to think that the device that you're using to read this right now is this powerful.</p><p>However, what's mildly infuriating to me is the usage that we make of computers. We've become so dependent of computers over the years without understanding their complex inner workings. We boot up our devices, run programs, play games, go on the internet and we've become intolerant to any sort of failure or latency. We often complain of the slowness of computers without ever thinking of all the complexity of making all what they offer actually work, i.e. programming.</p><p>I, as the creator of WinClean, don't think so. We should do the exact opposite. We have a right to be furious when things just don't work out. Why? Billions of calculations per second. What can't you do with that?</p><p>Just ask it, why does it always have to be so painstakingly slow!</p><p>Should we be ashamed of that? Should we instead bear unsatisfying computing experiences, and never complain?</p><p>So, whose fault is it? Bad programmers? Bad hardware? Who cares? Clean it up!</p>",
         "tags": [
             "full-stack",
             "oop",
@@ -85,12 +72,11 @@
             "ux"
         ],
         "technologies": [
-            "C#",
-            "GitHub",
-            "Inno Setup",
-            "Inno Setup Install Designer",
-            "PowerShell",
-            "Visual Studio"
+            "csharp",
+            "github",
+            "inno-setup",
+            "powershell",
+            "visual-studio"
         ]
     }
 }
