@@ -15,17 +15,17 @@ minify_html() {
 
 # generate html
 # $1: destination filename
-# $2: php file
-# $3: lang
-# $4: page name ($2.php must exist)
+# $2: lang
+# $3: page name
+# $4: php file
 # $5.. args
 # stdout: minified html
 generate() {
     >&2 echo -n "generate $1 $2 $3 $4..."
     local dest="$1"
-    local phpf="$2"
-    local lang="$3"
-    local page="$4"
+    local lang="$2"
+    local page="$3"
+    local phpf="$4"
     shift 4
     mkdir -p "$(dirname "$dest")"
      > "$dest" php -d include_path="$(pwd)/include" -f "$phpf" "$lang" "$page" "$@";
@@ -35,13 +35,13 @@ generate() {
 for lang in fr en; do
     # Simple page
     for page in definitions-test index projects; do
-        generate "$outdir/$lang/$page.html" "$page.php" "$lang" "$page"
+        generate "$outdir/$lang/$page.html" "$lang" "$page" "$page.php"
     done
 
     # Project pages
     projects="../data/$lang/projects.json"
     for id in $(jq -r 'keys[]' "$projects"); do
-        generate "$outdir/$lang/project/$id.html" project.php "$lang" "$id" "$(jq -r ".\"$id\"" "$projects")"
+        generate "$outdir/$lang/project/$id.html" "$lang" "project/$id" project.php "$(jq -r ".\"$id\"" "$projects")"
     done
 done
 

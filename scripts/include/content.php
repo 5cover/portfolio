@@ -140,9 +140,9 @@ function put_header(Page $page, Lang $lang) { ?>
     </header>
 <?php }
 
-function get_background_style_attr(string $bg): string {
+function get_background_style_attr(string $varname, string $bg): string {
     return <<<END
-     style="--bg-img: url($bg)"
+     style="--$varname: url($bg)"
     END;
 }
 
@@ -150,7 +150,7 @@ function put_definition_tooltip(Lang $lang, array $types, string $id, array $def
     $title = $def['names'][0];
     ?>
     <div class="definition-tooltip" <?php if ($bg = $def['background'] ?? null) {
-        echo get_background_style_attr($bg);
+        echo get_background_style_attr('bg-img-definition', $bg);
     } ?>>
         <h4><?php echo $title; ?></h4>
         <?php if ($logo = $def['logo'] ?? null) {
