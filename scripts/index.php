@@ -157,7 +157,7 @@ require_once 'project.php';
                     </li>
                 </ul>
             </div>
-            <a href="/portfolio/cv.pdf" target="_blank">
+            <a href="/portfolio/cv_bardini_raphael.pdf" target="_blank">
                 <img src="/portfolio/img/cv_preview.webp" alt="<?php echo $lang->indexMyResumePreview; ?>" width="1241" height="1755"
                     loading="lazy">
                 <span><?php echo $lang->indexMyResume; ?></span>
