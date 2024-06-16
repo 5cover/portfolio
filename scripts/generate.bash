@@ -10,8 +10,7 @@ readonly outdir='../../portfolio'
 # stdin: html
 # stdout: minified html
 minify_html() {
-    #minhtml --minify-css --minify-js --do-not-minify-doctype --ensure-spec-compliant-unquoted-attribute-values
-    cat
+    minhtml --minify-css --minify-js --do-not-minify-doctype --ensure-spec-compliant-unquoted-attribute-values
 }
 
 # generate html
@@ -29,7 +28,7 @@ generate() {
     local page="$4"
     shift 4
     mkdir -p "$(dirname "$dest")"
-    php -d include_path="$(pwd)/include" -f "$phpf" "$lang" "$page" "$@" | minify_html > "$dest";
+     > "$dest" php -d include_path="$(pwd)/include" -f "$phpf" "$lang" "$page" "$@";
     >&2 echo ok
 }
 
@@ -42,7 +41,7 @@ for lang in fr en; do
     # Project pages
     projects="../data/$lang/projects.json"
     for id in $(jq -r 'keys[]' "$projects"); do
-        generate "$outdir/$lang/project/$id.html" project-page.php "$lang" "$id" "$(jq -r ".\"$id\"" "$projects")"
+        generate "$outdir/$lang/project/$id.html" project.php "$lang" "$id" "$(jq -r ".\"$id\"" "$projects")"
     done
 done
 

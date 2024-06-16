@@ -99,3 +99,15 @@ Have ai explain me how to do it
 ### Search UI html & css
 
 ### Search logic js
+
+## Generate indivudal project pages
+
+Soo, how will this work?
+
+I can't really have a PHP that will generate every page. That would break the THIS_PAGE_NAME system.
+
+Or maybe not? The filename doesn't define THIS_PAGE_NAME, the argument does. So if I parse the JSON from BASH and pass the project ID as the page name... This is weird.
+
+The flaw in my design is that each PHP matches 1 page, whose name is passed as a single argument to the script.
+
+Soo.. Instead i should just set the page name explicitly at the start of every script, and expose it as function and not a constant?

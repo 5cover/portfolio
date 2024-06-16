@@ -21,19 +21,19 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
     $types = get_data_json($lang->tag . '/types');
     ?>
     <?php put_doctype_html($page, $lang); ?>
-    <?php put_head($page, $lang); ?>
+    <?php put_head($page, $lang, ['/portfolio/css/project.css']); ?>
 
     <body>
         <?php put_header($page, $lang); ?>
-        <main>
-            <?php $p->put_tags($tags); ?>
-            <div>
+        <main <?php $p->put_background_style_attr(); ?>>
+            <div class="project-header">
+                <?php $p->put_tags($tags); ?>
                 <h2><?php echo $p->data['title']; ?></h2>
                 <?php $p->put_logo($lang); ?>
+                <?php $p->put_abstract(); ?>
+                <?php $p->put_context(); ?>
+                <?php $p->put_status('en cours'); ?>
             </div>
-            <?php $p->put_abstract(); ?>
-            <?php $p->put_context(); ?>
-            <?php $p->put_status('en cours'); ?>
             <?php $p->put_anchor_list($anchors); ?>
             <?php $p->put_story(); ?>
             <h3>Technologies</h3>

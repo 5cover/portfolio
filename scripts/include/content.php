@@ -27,7 +27,7 @@ function put_scripts(Page $page) { ?>
     <?php }
 }
 
-function put_head(Page $page, Lang $lang) { ?>
+function put_head(Page $page, Lang $lang, array $additionalStylesheets = []) { ?>
 
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
@@ -43,6 +43,7 @@ function put_head(Page $page, Lang $lang) { ?>
         <?php } else { ?>
             <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
         <?php } ?>
+        <?php echo implode('', array_map(fn($s) => "<link rel=\"stylesheet\" type=\"text/css\" href=\"$s\">", $additionalStylesheets)); ?>
         <link rel="stylesheet" type="text/css"
             href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
@@ -60,31 +61,31 @@ function put_head(Page $page, Lang $lang) { ?>
 function put_header(Page $page, Lang $lang) { ?>
     <header>
         <nav>
-            <h1><a href="<?php echo $page->get_anchor_href('index.html'); ?>">Raphaël Bardini</a></h1>
+            <h1><a href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/index.html"); ?>">Raphaël Bardini</a>
+            </h1>
             <ul>
                 <li><a
-                        href="<?php echo $page->get_anchor_href('projects.html'); ?>"><?php echo $lang->namePageProjects; ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/projects.html"); ?>"><?php echo $lang->namePageProjects; ?></a>
                 </li>
                 <li><a
-                        href="<?php echo $page->get_anchor_href('history.html'); ?>"><?php echo $lang->namePageHistory; ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/history.html"); ?>"><?php echo $lang->namePageHistory; ?></a>
                 </li>
                 <li><a
-                        href="<?php echo $page->get_anchor_href('passions.html'); ?>"><?php echo $lang->namePagePassions; ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/passions.html"); ?>"><?php echo $lang->namePagePassions; ?></a>
                 </li>
                 <li><a
-                        href="<?php echo $page->get_anchor_href('perspectives.html'); ?>"><?php echo $lang->namePagePerspectives; ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/perspectives.html"); ?>"><?php echo $lang->namePagePerspectives; ?></a>
                 </li>
             </ul>
         </nav>
         <ul class="list-flags">
-            <?php foreach ($lang->names as $tag => $name) {
-                $otherLang = Lang::instance($tag);
-                $class = 'fi ' . $otherLang->flagClass . ($tag == $lang->tag ? '' : ' gray-when-not-hover');
-                $nativeName = $otherLang->names[$otherLang->tag];
-                $title = $name . ($tag == $lang->tag ? '' : " / {$nativeName}");
+            <?php foreach (Lang::instances() as $otherLangTag => $otherLang) {
+                $isSameLang = $otherLangTag == $lang->tag;
+                $class = 'fi ' . $otherLang->flagClass . ($isSameLang ? '' : ' gray-when-not-hover');
+                $title = $otherLang->names[$otherLangTag] . ($isSameLang ? '' : " / {$otherLang->names[$lang->tag]}");
                 ?>
                 <li><a class="<?php echo $class; ?>" title="<?php echo $title; ?>"
-                        href="/portfolio/<?php echo $tag; ?>/<?php echo $page->name; ?>.html"></a></li>
+                        href="/portfolio/<?php echo $otherLangTag; ?>/<?php echo $page->name; ?>.html"></a></li>
             <?php } ?>
         </ul>
         <div class="theme-switches">
@@ -141,7 +142,7 @@ function put_header(Page $page, Lang $lang) { ?>
 
 function get_background_style_attr(string $bg): string {
     return <<<END
-    style="--bg-img: url($bg)"
+     style="--bg-img: url($bg)"
     END;
 }
 
