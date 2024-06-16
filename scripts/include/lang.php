@@ -45,7 +45,7 @@ $_langInstances = [
         "Search a project",
         "Tags",
         function ($t) {
-            return $t . 'LOGO';
+            return $t . ' logo';
         }),
     'fr' => new Lang('fr',
         ['en' => 'French', 'fr' => 'Français'],

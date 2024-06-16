@@ -25,7 +25,7 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
 
     <body>
         <?php put_header($page, $lang); ?>
-        <main <?php $p->put_background_style_attr(); ?>>
+        <main <?php $p->put_background_style_attr('bg-img'); ?>>
             <div class="project-header">
                 <?php $p->put_tags($tags); ?>
                 <h2><?php echo $p->data['title']; ?></h2>

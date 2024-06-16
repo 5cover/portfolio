@@ -122,7 +122,7 @@ require_once 'project.php';
                         continue;
                     }
                     ?>
-                    <li <?php $p->put_background_style_attr(); ?>>
+                    <li <?php $p->put_background_style_attr('bg-img'); ?>>
                         <?php $p->put_tags($tags); ?>
                         <?php $p->put_logo($lang); ?>
                         <h3><a href="project/<?php echo $id; ?>.html"><?php echo $p->data['title']; ?></a></h3>

@@ -53,9 +53,9 @@ final class Project {
         </ul>
     <?php }
 
-    function put_background_style_attr() {
+    function put_background_style_attr(string $varname) {
         if ($bg = $this->data['background'] ?? null) {
-            echo get_background_style_attr($bg);
+            echo get_background_style_attr($varname, $bg);
         }
     }
 }
