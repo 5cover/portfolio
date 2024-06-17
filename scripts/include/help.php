@@ -60,17 +60,8 @@ function get_svg_element(string $url, string|null $title = null, string|null $cl
     // Create a DOMDocument instance
     $domDocument = new DOMDocument();
 
-    // Suppress warnings when loading XML
-    libxml_use_internal_errors(true);
-
     // Load the SVG code as XML
     $domDocument->load(_get_filename($url)) or throw new Exception("failed to load DOMDocument at '$url'");
-
-    // Clear libxml error buffer
-    libxml_clear_errors();
-
-    // Restore the default libxml error handling
-    libxml_use_internal_errors(false);
 
     // Extract the <svg> element
     $svgElements = $domDocument->getElementsByTagName('svg');

@@ -10,9 +10,9 @@ function put_doctype_html(Page $page, Lang $lang) { ?>
 
 function put_footer(Page $page, Lang $lang) { ?>
     <footer>
-        <p><small>&copy; 2024 Raphaël Bardini</small></p>
-        <p><a href="https://github.com/5cover/portfolio" title="<?php echo $lang->footerGitHubAnchorTitle ?>"><?php
-           echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60); ?></a></p>
+        <small>&copy; 2024 Raphaël Bardini</small>
+        <a href="https://github.com/5cover/portfolio" title="<?php echo $lang->footerGitHubAnchorTitle ?>"><?php
+           echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60); ?></a>
     </footer>
 <?php }
 
@@ -27,7 +27,7 @@ function put_scripts(Page $page) { ?>
     <?php }
 }
 
-function put_head(Page $page, Lang $lang, array $additionalStylesheets = []) { ?>
+function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css') { ?>
 
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
@@ -41,9 +41,8 @@ function put_head(Page $page, Lang $lang, array $additionalStylesheets = []) { ?
         if (count($g) == 1) { ?>
             <link rel="stylesheet" type="text/css" href="<?php echo get_web_path($g[0]); ?>">
         <?php } else { ?>
-            <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
+            <link rel="stylesheet" type="text/css" href="/portfolio/css/<?php echo $fallbackStylesheet; ?>">
         <?php } ?>
-        <?php echo implode('', array_map(fn($s) => "<link rel=\"stylesheet\" type=\"text/css\" href=\"$s\">", $additionalStylesheets)); ?>
         <link rel="stylesheet" type="text/css"
             href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">

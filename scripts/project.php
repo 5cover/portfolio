@@ -21,12 +21,12 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
     $types = get_data_json($lang->tag . '/types');
     ?>
     <?php put_doctype_html($page, $lang); ?>
-    <?php put_head($page, $lang, ['/portfolio/css/project.css']); ?>
+    <?php put_head($page, $lang, 'project.css'); ?>
 
     <body>
         <?php put_header($page, $lang); ?>
         <main <?php $p->put_background_style_attr('bg-img'); ?>>
-            <div class="project-header">
+            <div id="project-header">
                 <?php $p->put_tags($tags); ?>
                 <h2><?php echo $p->data['title']; ?></h2>
                 <?php $p->put_logo($lang); ?>
@@ -37,7 +37,7 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
             <?php $p->put_anchor_list($anchors); ?>
             <?php $p->put_story(); ?>
             <h3>Technologies</h3>
-            <ul><?php foreach ($p->data['technologies'] as $defId) {
+            <ul id="technologies"><?php foreach ($p->data['technologies'] as $defId) {
                 $def = $defintions[$defId];
                 $logo = $def['logo'];
                 ?>
@@ -48,7 +48,7 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                 <?php } ?>
             </ul>
             <h3>Gallerie</h3>
-            <div class="gallery"><?php foreach ($p->data['gallery'] as $name => $url) { ?>
+            <div id="gallery"><?php foreach ($p->data['gallery'] as $name => $url) { ?>
                     <figure>
                         <?php echo get_img_element($url, $name, baseHeight: 300); ?>
                         <figcaption><?php echo $name ?></figcaption>
