@@ -74,7 +74,7 @@ $huge-val: calc(infinity * 1px);
 }
 
 @function hover($prefix: '') {
-    @return "#{$prefix}:hover, #{$prefix}:focus-within";
+    @return "#{$prefix}:hover, #{$prefix}:focus-within, #{$prefix}:active";
 }
 
 .text-icon {
@@ -98,16 +98,12 @@ $huge-val: calc(infinity * 1px);
     color: #be7c60;
 }
 
-a {
+a:not(#{hover()}) {
     text-decoration: none;
 }
 
 a:not(.link) {
     color: inherit;
-}
-
-small {
-    color: rgba(var(--color-fg-rgb), .5)
 }
 
 body,
@@ -121,6 +117,15 @@ figure,
 input {
     margin: 0;
     padding: 0;
+}
+
+small {
+    color: rgba(var(--color-fg-rgb), .5)
+}
+
+p {
+    line-height: calc(1ex / .32);
+    max-width: 60ch;
 }
 
 h1 {
@@ -183,10 +188,10 @@ body {
 }
 
 @mixin transparent-background-image($img, $color-rgb, $opacity) {
+    /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
     background:
-        linear-gradient(rgba($color-rgb, calc(1 - $opacity)), rgba($color-rgb, calc(1 - $opacity))),
-        $img;
-    background-repeat: no-repeat;
+        border-box linear-gradient(rgba($color-rgb, calc(1 - $opacity)), rgba($color-rgb, calc(1 - $opacity))),
+        $img no-repeat;
     background-size: cover;
 }
 
@@ -198,6 +203,16 @@ body {
 
 @mixin horizontal-box-padding($factor: 1) {
     padding: calc($factor * .25lh) calc($factor * 1ch);
+}
+
+@mixin size-images($height, $width, $object-fit: contain) {
+
+    svg,
+    img {
+        height: $height;
+        width: $width;
+        object-fit: $object-fit;
+    }
 }
 
 header {
@@ -236,12 +251,8 @@ header {
             }
         }
 
-        a {
-
-            #{hover('&')},
-            &[href="#"] {
-                text-decoration: underline;
-            }
+        a[href="#"] {
+            text-decoration: underline;
         }
     }
 }
@@ -251,17 +262,19 @@ main {
 }
 
 footer {
-    @include lvl1-content(1px);
+    @include lvl1-content(1px 0 0 0);
     border-top-width: 1px;
     grid-row: 3;
     position: relative;
 
-    p:has(small) {
+    small {
+        display: block;
         position: absolute;
         @include absolute-center;
     }
 
-    p:has(svg) {
+    a {
+        display: block;
         text-align: right;
     }
 
@@ -336,7 +349,7 @@ section h2 {
 @mixin hover-sensitive-list($factor) {
 
     #{hover('> li')},
-    /* used in JS */
+    /* class used in JS */
     > li.hover {
         @include bring-out($factor);
         z-index: 1;
@@ -362,7 +375,6 @@ section h2 {
         @include horizontal-box-padding(.75);
         font-size: 18px;
         border-radius: .4em;
-        z-index: 1;
     }
 }
 
@@ -370,18 +382,6 @@ section h2 {
     @include hover-sensitive-list(1.15);
     list-style-type: none;
     display: flex;
-    gap: .5em;
-
-    > li {
-        z-index: 1;
-
-        img,
-        svg {
-            height: 1.5em;
-            width: 1.5em;
-            object-fit: contain;
-        }
-    }
 }
 
 .list-projects {
@@ -473,32 +473,30 @@ section h2 {
     font-style: italic;
 }
 
-a.definition-tooltip-trigger {
-    text-decoration: none;
-}
-
 .definition-tooltip {
+    $arrow-width: 3em;
+    $arrow-height: 1lh;
+    $padding: .75em;
     @include transparent-background-image(var(--bg-img-definition), var(--color-lvl2-rgb), .1);
     grid-template: 1fr 1fr auto / 1fr auto;
     display: grid;
-    font-size: .75em;
-    border-radius: .75em;
+    font-size: .8em;
+    border-radius: $padding;
     position: absolute;
-    bottom: 2lh;
-    max-width: 50ch;
-    padding: .75em;
+    bottom: 100%;
+    width: max-content;
+    padding: $padding;
     background-color: var(--color-lvl2);
     visibility: hidden;
     opacity: 0;
+    padding-bottom: calc($padding + $arrow-height);
+    clip-path: polygon(50% 0%, 100% 0, 100% calc(100% - $arrow-height), $arrow-width calc(100% - $arrow-height), calc($arrow-width / 2) 100%, 0 calc(100% - $arrow-height), 0 0);
+    @include size-images(2.5lh, auto);
 
     > img,
     > svg {
         grid-row: 1 / 3;
         grid-column: 2;
-        height: 2lh;
-        width: auto;
-        max-width: 25ch;
-        object-fit: contain;
     }
 
     > p:nth-last-child(2) {
@@ -512,7 +510,10 @@ a.definition-tooltip-trigger {
     }
 }
 
-.definition-tooltip-visible {
+.definition-tooltip-visible,
+.definition-tooltip-examining {
     visibility: visible;
     opacity: 1;
+    z-index: 2;
+    transition-delay: calc(1s / 3);
 }

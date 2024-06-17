@@ -20,19 +20,45 @@ for (let i = 0; i < switches.length; i++) {
 }
 
 // todo: do we really need jQuery for this?
-jQuery(document).ready(($) => {
-    function showTooltip() {
-        $(this).siblings('.definition-tooltip').addClass('definition-tooltip-visible');
-    }
-    function hideTooltip() {
-        $(this).siblings('.definition-tooltip').removeClass('definition-tooltip-visible');
-    }
+// todo: this is terrible
+$(document).ready(() => {
+    const tooltip = 'definition-tooltip';
+    const visible = 'definition-tooltip-visible';
+    const trigger = 'definition-tooltip-trigger';
+    const examining = 'definition-tooltip-examining';
 
-    $(document).ready(() => {
-        $('.definition-tooltip-trigger').on('mouseenter focusin', showTooltip);
-        $('.definition-tooltip-trigger').on('mouseleave focusout', hideTooltip);
+    $(`.${trigger}`).on({
+        'focusin mouseenter': function() {
+            $(this).siblings(`.${tooltip}`).addClass(visible);
+        },
+        'focusout mouseleave': function () {
+            $(this).siblings(`.${tooltip}`).removeClass(visible);
+        }
+    });
+
+    $(`.${tooltip}`).on({
+        'focusin mouseenter': function() {
+            $(this).addClass(examining);
+        },
+        'focusout mouseleave': function () {
+            $(this).removeClass(examining);
+        }
     });
 });
+
+/*jQuery(document).ready(($) => {
+    // Select both the tooltip-trigger and the tooltip elements
+    $('.definition-tooltip-trigger').on({
+      mouseenter: () => {
+        // Show the tooltip when the mouse cursor enters either the trigger or the tooltip
+        $(this).siblings('.definition-tooltip').addClass('definition-tooltip-visible');
+      },
+      mouseleave: () => {
+        // Hide the tooltip when the mouse cursor leaves both the trigger and the tooltip
+        $(this).siblings('.definition-tooltip').removeClass('definition-tooltip-visible');
+      }
+    }, '.definition-tooltip');
+  });*/
 
 /**
  * @template T

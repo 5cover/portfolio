@@ -59,20 +59,16 @@
   color: #91553b;
 }
 
-.link:hover, .link:focus-within {
+.link:hover, .link:focus-within, .link:active {
   color: #be7c60;
 }
 
-a {
+a:not(:hover, :focus-within, :active) {
   text-decoration: none;
 }
 
 a:not(.link) {
   color: inherit;
-}
-
-small {
-  color: rgba(var(--color-fg-rgb), 0.5);
 }
 
 body,
@@ -86,6 +82,15 @@ figure,
 input {
   margin: 0;
   padding: 0;
+}
+
+small {
+  color: rgba(var(--color-fg-rgb), 0.5);
+}
+
+p {
+  line-height: 3.125ex;
+  max-width: 60ch;
 }
 
 h1 {
@@ -164,7 +169,7 @@ header nav > ul {
 header nav > ul a {
   font-size: 24px;
 }
-header nav a:hover, header nav a:focus-within, header nav a[href="#"] {
+header nav a[href="#"] {
   text-decoration: underline;
 }
 
@@ -173,7 +178,7 @@ main {
 }
 
 footer {
-  border-width: 1px;
+  border-width: 1px 0 0 0;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
   background-color: var(--color-lvl1);
@@ -182,16 +187,18 @@ footer {
   grid-row: 3;
   position: relative;
 }
-footer p:has(small) {
+footer small {
+  display: block;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-footer p:has(svg) {
+footer a {
+  display: block;
   text-align: right;
 }
-footer a > svg:hover, footer a > svg:focus-within {
+footer a > svg:hover, footer a > svg:focus-within, footer a > svg:active {
   transform: scale(1.15);
 }
 
@@ -231,7 +238,7 @@ section h2 {
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
 }
-.theme-switches label:has(input:hover, input:focus-within) {
+.theme-switches label:has(input:hover, input:focus-within, input:active) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
@@ -264,13 +271,13 @@ section h2 {
   margin-bottom: 0.5em;
 }
 
-.hover-sensitive-list > li:hover, .hover-sensitive-list > li:focus-within,
+.hover-sensitive-list > li:hover, .hover-sensitive-list > li:focus-within, .hover-sensitive-list > li:active,
 .hover-sensitive-list > li.hover {
   transform: scale(1.05);
   z-index: 1;
 }
 
-.gray-when-not-hover:not(:hover, :focus-within) {
+.gray-when-not-hover:not(:hover, :focus-within, :active) {
   filter: grayscale(100%);
   opacity: 0.5;
 }
@@ -285,28 +292,16 @@ section h2 {
   padding: 0.1875lh 0.75ch;
   font-size: 18px;
   border-radius: 0.4em;
-  z-index: 1;
 }
 
 .list-anchor {
   list-style-type: none;
   display: flex;
-  gap: 0.5em;
 }
-.list-anchor > li:hover, .list-anchor > li:focus-within,
+.list-anchor > li:hover, .list-anchor > li:focus-within, .list-anchor > li:active,
 .list-anchor > li.hover {
   transform: scale(1.15);
   z-index: 1;
-}
-.list-anchor > li {
-  z-index: 1;
-}
-.list-anchor > li img,
-.list-anchor > li svg {
-  height: 1.5em;
-  width: 1.5em;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .list-projects {
@@ -316,8 +311,8 @@ section h2 {
 }
 .list-projects > li {
   position: relative;
-  background: linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img);
-  background-repeat: no-repeat;
+  /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
+  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img) no-repeat;
   background-size: cover;
   list-style-type: none;
   border-width: 1px;
@@ -335,7 +330,7 @@ section h2 {
 .list-projects > li .list-tag {
   grid-column: 1/3;
 }
-.list-projects > li .list-tag > li:hover, .list-projects > li .list-tag > li:focus-within,
+.list-projects > li .list-tag > li:hover, .list-projects > li .list-tag > li:focus-within, .list-projects > li .list-tag > li:active,
 .list-projects > li .list-tag > li.hover {
   transform: scale(1.15);
   z-index: 1;
@@ -403,35 +398,37 @@ section h2 {
   font-style: italic;
 }
 
-a.definition-tooltip-trigger {
-  text-decoration: none;
-}
-
 .definition-tooltip {
-  background: linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img-definition);
-  background-repeat: no-repeat;
+  /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
+  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img-definition) no-repeat;
   background-size: cover;
   grid-template: 1fr 1fr auto/1fr auto;
   display: grid;
-  font-size: 0.75em;
+  font-size: 0.8em;
   border-radius: 0.75em;
   position: absolute;
-  bottom: 2lh;
-  max-width: 50ch;
+  bottom: 100%;
+  width: -moz-max-content;
+  width: max-content;
   padding: 0.75em;
   background-color: var(--color-lvl2);
   visibility: hidden;
   opacity: 0;
+  padding-bottom: calc(0.75em + 1lh);
+  -webkit-clip-path: polygon(50% 0%, 100% 0, 100% calc(100% - 1lh), 3em calc(100% - 1lh), 1.5em 100%, 0 calc(100% - 1lh), 0 0);
+          clip-path: polygon(50% 0%, 100% 0, 100% calc(100% - 1lh), 3em calc(100% - 1lh), 1.5em 100%, 0 calc(100% - 1lh), 0 0);
+}
+.definition-tooltip svg,
+.definition-tooltip img {
+  height: 2.5lh;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .definition-tooltip > img,
 .definition-tooltip > svg {
   grid-row: 1/3;
   grid-column: 2;
-  height: 2lh;
-  width: auto;
-  max-width: 25ch;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 .definition-tooltip > p:nth-last-child(2) {
   grid-row: 2;
@@ -442,7 +439,10 @@ a.definition-tooltip-trigger {
   grid-column: 1/3;
 }
 
-.definition-tooltip-visible {
+.definition-tooltip-visible,
+.definition-tooltip-examining {
   visibility: visible;
   opacity: 1;
+  z-index: 2;
+  transition-delay: 0.3333333333s;
 }/*# sourceMappingURL=base.css.map */

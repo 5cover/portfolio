@@ -17,7 +17,7 @@ main {
     @include base.color-accent();
 }
 
-.project-header {
+#project-header {
     display: grid;
     grid-template: repeat(5, auto) / auto 1fr;
     gap: 1em;
@@ -51,5 +51,50 @@ main {
 
     .status {
         grid-row: 5;
+    }
+}
+
+.story {
+    columns: 2;
+    text-align: justify;
+
+    p:not(:first-child) {
+        margin-top: .5lh;
+    }
+
+    p:not(:last-child) {
+        margin-bottom: .5lh;
+    }
+}
+
+#technologies,
+.list-anchor {
+    @include base.basic-border(1px);
+    @include base.horizontal-box-padding;
+    background-color: var(--color-lvl1);
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    $gap: .5em;
+    gap: $gap;
+    @include base.size-images(3.5em,3.5em);
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    align-items: stretch;
+
+    figure {
+        @include base.basic-border(1px);
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+    }
+
+    figcaption {
+        @include base.horizontal-box-padding(2.5);
+        text-align: center;
     }
 }

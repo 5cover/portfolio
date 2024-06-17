@@ -54,8 +54,8 @@
         "background": "/portfolio/img/project/winclean/bg.png",
         "context": "personnel",
         "gallery": {
-            "Exécution des scripts": "/portfolio/img/project/winclean/gallery/1.png",
-            "Fenêtre principale de l'application": "/portfolio/img/project/winclean/gallery/2.png"
+            "Fenêtre principale de l'application": "/portfolio/img/project/winclean/gallery/2.png",
+            "Exécution des scripts": "/portfolio/img/project/winclean/gallery/1.png"
         },
         "logo": {
             "isThemedSvg": false,

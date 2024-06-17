@@ -89,6 +89,19 @@ section {
         padding: inherit;
     }
 
+    /* Increase z-index to stand out above the card link */
+    .list-anchor,
+    .list-tag {
+        > li {
+            z-index: 1;
+        }
+    }
+
+    .list-anchor {
+        gap: .5em;
+        @include base.size-images(1.5em, 1.5em);
+    }
+
     > a {
         @include base.horizontal-box-padding(1.5);
         display: block;
