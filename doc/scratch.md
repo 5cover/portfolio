@@ -69,6 +69,12 @@ Learning C is better than any amount of Leetcode challenges.
 
 Why not. In perspectives, "Team Fortress 2"
 
+## Separate anchors and references
+
+Les références numérotées (style académiques), != des anchors (point d'ancrage du projet : ses connexions au monde : github, article, ...)
+
+aussi afficher plus d'infos que simplement le logo avec un tooltip. surtout qu'il n'y a pas toujours un logo. Peut-être qu'on pourraît afficher le tooltip en permancence et mettre la liste plus bas?
+
 ## Page BUT Inforatique
 
 - Lien programme
@@ -84,18 +90,6 @@ Why not. In perspectives, "Team Fortress 2"
 
 - JSlave
 - ztest
-- S1.01 Implémentation d'un besoin client : lowlevel, C, dialogue client
-- S1.02 Recherche Algorithmique &rarr; Sudone
-- S1.03 Docker, Markdown parser, Bash, automatisation et scripting, sysadmin
-- S1.04 BDD BUT
-- S1.05 Site de steaming
-- S1.06 Découverte du monde de l'entreprise
-- S2.01 IHM & JavaFX
-- S2.02 Découverte Algoritmique, problème des N reines
-- S2.03 Apache HTTP Serveur
-- S2.04 BDD + stat + data mining
-- S2.05 Gestion de Projet
-- S2.06 Teambuilding & film : Chevalier d'Un Jour
 - FileSignatureDetector
 - Portfolio
 - Ethercrash
@@ -111,8 +105,15 @@ Why not. In perspectives, "Team Fortress 2"
 - NoMoreVehicles
 - The Last Teacher : nouvelle
 
-À compléter :
-
-- Trégoria
-- WinClean
-- PSDC
+- S1.01 Implémentation d'un besoin client : lowlevel, C, dialogue client
+- S1.02 Recherche Algorithmique &rarr; Sudone
+- S1.03 Docker, Markdown parser, Bash, automatisation et scripting, sysadmin
+- S1.04 BDD BUT
+- S1.05 Site de steaming
+- S1.06 Découverte du monde de l'entreprise
+- S2.01 IHM & JavaFX
+- S2.02 Découverte Algoritmique, problème des N reines
+- S2.03 Apache HTTP Serveur
+- S2.04 BDD + stat + data mining
+- S2.05 Gestion de Projet
+- S2.06 Teambuilding & film : Chevalier d'Un Jour

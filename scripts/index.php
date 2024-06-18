@@ -7,6 +7,7 @@ require_once 'project.php';
 ?>
 <?php put_doctype_html($page, $lang); ?>
 <?php put_head($page, $lang); ?>
+
 <body>
     <?php put_header($page, $lang); ?>
     <main>
@@ -103,20 +104,20 @@ require_once 'project.php';
             </li>
         </ul>
         <article class="content-block" id="me">
-            <h2><?php echo $lang->indexMe; ?></h2>
             <div>
-                <p><?php echo $lang->indexAboutMeContent; ?></p><img
-                    src="/portfolio/img/me.jpg" alt="Ma photo" width="1600" height="1600" loading="lazy"
-                    title="Ma photo">
+                <h2><?php echo $lang->indexMe; ?></h2>
+                <?php echo $lang->indexAboutMeContent; ?>
             </div>
+            <img src="/portfolio/img/me.jpg" alt="<?php echo $lang->indexMyPhoto; ?>" width="1600" height="1600"
+                loading="lazy" title="<?php echo $lang->indexMyPhoto; ?>">
         </article>
         <section id="ongoing-projects">
             <h2><?php echo $lang->indexOngoingProjects; ?></h2>
             <ul class="list-projects">
                 <?php
-                $tags = get_data_json($lang->tag.'/tags');
+                $tags = get_data_json($lang->tag . '/tags');
                 $anchors = get_data_json('anchors');
-                foreach (get_data_json($lang->tag.'/projects') as $id => $p) {
+                foreach (get_data_json($lang->tag . '/projects') as $id => $p) {
                     $p = new Project($p);
                     if (array_key_exists('end-date', $p->data)) {
                         continue;
@@ -126,7 +127,7 @@ require_once 'project.php';
                         <?php $p->put_tags($tags); ?>
                         <?php $p->put_logo($lang); ?>
                         <h3><a href="project/<?php echo $id; ?>.html"><?php echo $p->data['title']; ?></a></h3>
-                        <?php $p->put_status('en cours'); ?>
+                        <?php $p->put_status($lang->ongoing); ?>
                         <?php $p->put_context(); ?>
                         <?php $p->put_abstract(); ?>
                         <?php $p->put_anchor_list($anchors); ?>
@@ -158,8 +159,8 @@ require_once 'project.php';
                 </ul>
             </div>
             <a href="/portfolio/cv_bardini_raphael.pdf" target="_blank">
-                <img src="/portfolio/img/cv_preview.webp" alt="<?php echo $lang->indexMyResumePreview; ?>" width="1241" height="1755"
-                    loading="lazy">
+                <img src="/portfolio/img/cv_preview.webp" alt="<?php echo $lang->indexMyResumePreview; ?>" width="1241"
+                    height="1755" loading="lazy">
                 <span><?php echo $lang->indexMyResume; ?></span>
             </a>
         </article>
@@ -167,4 +168,5 @@ require_once 'project.php';
     <?php put_footer($page, $lang); ?>
     <?php put_scripts($page); ?>
 </body>
+
 </html>

@@ -13,12 +13,14 @@ $_langInstances = [
         "History",
         "Passions",
         "Perspectives",
-        "Me",
+        "About me",
+        "My photo",
         <<<HTML
-    <p>Je suis étudiant en 1<sup>re</sup> année de <abbr
-    title="Brevet Universitaire Technologique">BUT</abbr> informatique, etc...</p>
+    <p>Hello, my name is <strong>Raphaël Bardini</strong>. I'm an 18 y/o computer science student in year 1 of <abbr
+    title="Brevet Universitaire Technologique">BUT</abbr> Informatique, at the <a href="https://iut-lannion.univ-rennes.fr/"><abbr title="Institut Universitaire Technologique">IUT</abbr> of Lannion</a>.</p><p>I've got the general baccalaureate with the specialties <a href="https://www.lyceeschoelcher972.fr/specialite-llcer-amc/"><abbr title="Langues, littératures et cultures étrangères et régionales &mdash; Anglais Monde Contemporain">LLCER AMC</abbr></a> and <a href="https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"><abbr title="Numérique Sciences Informatiques">NSI</abbr></a>.</p><p>The main source of fulfilment in my life is <strong>software development</strong>. In addition, I commit <em>(pun intented)</em> to the <strong>open-source</strong> community. And I can't deny that I'm a big lover of <strong>jazz music</strong>. Join me in this adventure&nbsp;! &#9749;</p>
     HTML,
         "My ongoing projects",
+        "ongoing",
         "All my projects",
         "Last updated on: ",
         "Contact",
@@ -62,14 +64,16 @@ $_langInstances = [
         "Parcours",
         "Passions",
         "Perspectives",
-        "Moi",
+        "À propos de moi",
+        "Ma photo",
         <<<HTML
-    <p>Je suis étudiant en 1<sup>re</sup> année de <abbr
-    title="Brevet Universitaire Technologique">BUT</abbr> informatique, etc...</p>
+    <p>Bonjour, je m'appelle <strong>Raphaël Bardini</strong>. J'ai 18 ans et suis étudiant en 1<sup>re</sup> année de <abbr
+    title="Brevet Universitaire Technologique">BUT</abbr> Informatique, à l'<a href="https://iut-lannion.univ-rennes.fr/"><abbr title="Institut Universitaire Technologique">IUT</abbr> de Lannion</a>.</p><p>J'ai un baccalauréat général avec spécialités <a href="https://www.lyceeschoelcher972.fr/specialite-llcer-amc/"><abbr title="Langues, littératures et cultures étrangères et régionales &mdash; Anglais Monde Contemporain">LLCER AMC</abbr></a> et <a href="https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"><abbr title="Numérique Sciences Informatiques">NSI</abbr></a>. J'ai un très bon niveau en anglais.</p><p>Je suis passionné par le <strong>développement logiciel</strong> et je suis investi dans le milieu <strong>open-source</strong>. Je suis aussi un grand amateur de <strong>jazz</strong>. Rejoignez-moi dans cette aventure&nbsp;! &#9749;</p>
     HTML,
         "Mes projets en cours",
+        "en cours",
         "Tous mes projets",
-        "Dernière mise à jour : ",
+        "Dernière mise à jour&nbsp;: ",
         "Contact",
         "Mon CV",
         "Aperçu de mon CV",
@@ -103,6 +107,7 @@ $_langInstances = [
 
 final class Lang {
     public readonly string $projectTechnologies;
+    public readonly string $ongoing;
     public readonly string $projectLinks;
     public readonly string $projectGallery;
     public readonly string $tag;
@@ -117,6 +122,7 @@ final class Lang {
     public readonly string $namePagePassions;
     public readonly string $namePagePerspectives;
     public readonly string $indexMe;
+    public readonly string $indexMyPhoto;
     public readonly string $indexAboutMeContent;
     public readonly string $indexOngoingProjects;
     public readonly string $indexAllMyProjects;
@@ -162,8 +168,10 @@ final class Lang {
         string $namePagePassions,
         string $namePagePerspectives,
         string $indexMe,
+        string $indexMyPhoto,
         string $indexAboutMeContent,
         string $indexOngoingProjects,
+        string $ongoing,
         string $indexAllMyProjects,
         string $indexLastUpdatedOn,
         string $indexContact,
@@ -195,6 +203,7 @@ final class Lang {
         Closure $formatTitle,
     ) {
         $this->tag = $tag;
+        $this->ongoing = $ongoing;
         $this->flagClass = $flagClass;
         $this->names = $names;
         $this->fFormatTitle = $formatTitle;
@@ -238,6 +247,7 @@ final class Lang {
         $this->projectTechnologies = $projectTechnologies;
         $this->projectLinks = $projectLinks;
         $this->projectGallery = $projectGallery;
+        $this->indexMyPhoto = $indexMyPhoto;
     }
 
     public function formatTitle(string $title): string {

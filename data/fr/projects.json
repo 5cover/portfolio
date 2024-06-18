@@ -1,4 +1,47 @@
 {
+    "s1-01": {
+        "title": "Jeu de Sudoku",
+        "abstract": "Implémentation d'un besoin client",
+        "context": "BUT Informatique 1<sup>re</sup> année",
+        "start-date": "16 octobre 2023",
+        "end-date": "3 décembre 2023",
+        "background": "/portfolio/img/project/s1-01/bg.png",
+        "tags": [
+            "software",
+            "but-realiser"
+        ],
+        "technologies": [
+            "vs-code",
+            "c"
+        ],
+        "anchors": {
+            "Dépôt GitHub": {
+                "href": "https://github.com/5cover/S1.01-Sudoku",
+                "id": "github"
+            }
+        },
+        "story": "",
+        "gallery": {
+            "Maquette": {
+                "url": "/portfolio/img/project/s1-01/maquette.png"
+            },
+            "Liste de fonctions": {
+                "content": "<div class=\"html-box\"><h1 id=\"liste-des-fonctions-du-sudoku\">Liste des fonctions du Sudoku</h1><h2 id=\"grille\">Grille</h2><p>Fonctions et procédures de manipulation de grilles de Sudoku.</p><h3 id=\"fonction-estgrillecomplète\">Fonction <code>estGrilleComplète</code></h3><p>Détermine si une grille est complète.</p><p><strong>Paramètres</strong>&nbsp;:</p><table><thead><tr><th>nom</th><th>mode</th><th>type</th><th>description</th></tr></thead><tbody><tr><td>grille</td><td>entrée</td><td><code>t_grilleEntier</code></td><td>grille à tester</td></tr></tbody></table><p><strong>Retour</strong>&nbsp;: <code>booléen</code>&nbsp;: <code>vrai</code> si la grille est complète, c&#39;est-à-dire que toutes les valeurs sont renseignées et placées correctement, <code>faux</code> sinon.</p><h3 id=\"fonction-estvaleurinitiale\">Fonction <code>estValeurInitiale</code></h3><p>Détermine si la valeur spécifée correspond à une valeur initiale.</p><p><strong>Paramètres</strong>&nbsp;:</p><table><thead><tr><th>nom</th><th>mode</th><th>type</th><th>description</th></tr></thead><tbody><tr><td>valeur</td><td>entrée</td><td><code>entier</code></td><td>valeur d&#39;une grille de Sudoku</td></tr></tbody></table><p><strong>Retour</strong>&nbsp;: <code>booléen</code>&nbsp;: <code>vrai</code> si <em>valeur</em> correspond à une valeur déjà placée sur une grille de Sudoku au départ de la partie, <code>faux</code> sinon.</p><h3 id=\"procédure-chargergrille\">Procédure <code>chargerGrille</code></h3><p>Initialise une grille à partir de la grille prédéfinie au numéro spécifié.</p><p><strong>Paramètres</strong>&nbsp;:</p><table><thead><tr><th>nom</th><th>mode</th><th>type</th><th>description</th></tr></thead><tbody><tr><td>numeroGrille</td><td>entrée</td><td><code>entier</code></td><td>numéro de la grille prédéfinie à lire</td></tr><tr><td>grille</td><td>sortie</td><td><code>t_grilleEntier</code></td><td>grille à initialiser</td></tr></tbody></table></div>"
+            },
+            "Algorithme en pseudocode": {
+                "content": "<pre><code>\/*\nRapha\u00EBl BARDINI - 1C2\n\nSA\u00C9 1.01 - Algorithme programme principal Sudoku\n*\/\n\nprogramme Sudoku c'est\n\/\/ Un jeu de Sudoku\n\n    constante entier N := 3; \/\/ Facteur de taille de la grille\n    constante entier NB_FICHIERS_GRILLES := 10;\n    constante entier LONGUEUR_MAX_COMMANDE := 64;\n    constante entier COTE_GRILLE := N * N;\n\n    type t_grilleEntier = tableau[COTE_GRILLE][COTE_GRILLE] de entier;\n\nd\u00E9but\n    grilleJeu : t_grilleEntier;\n    ligneCurseur, colonneCurseur : entier;\n    partieAbandonn\u00E9e : bool\u00E9en;\n    commandeR\u00E9ussie : bool\u00E9en;\n    commande : cha\u00EEne(LONGUEUR_MAX_COMMANDE);\n\n    partieAbandonn\u00E9e := faux;\n    ligneCurseur := 1;\n    colonneCurseur := 1;\n\n    chargerGrille(entE entierAl\u00E9atoire(entE 1, entE NB_FICHIERS_GRILLES), sortE grilleJeu);\n\n    \/\/ Boucle principale du jeu\n    faire\n        \u00E9crireGrille(entE grilleJeu);\n        faire\n            commande := entr\u00E9eCommande();\n            commandeR\u00E9ussie := ex\u00E9cuterCommande(entE commande,\n                                                entE\/sortE grilleJeu,\n                                                entE\/sortE ligneCurseur,\n                                                entE\/sortE colonneCurseur,\n                                                sortE partieAbandonn\u00E9e);\n        tant que (non commandeR\u00E9ussie)\n    tant que (non partieAbandonn\u00E9e ET non estGrilleCompl\u00E8te(entE grilleJeu))\n\n    \/\/ La partie n'a pas \u00E9t\u00E9 abandonn\u00E9e, elle s'est donc termin\u00E9e par une victoire\n    si (non partieAbandonn\u00E9e) alors\n        \u00E9crireEcran(\"Bravo, vous avez gagn\u00E9 !\");\n    finsi\nfin</code></pre>"
+            },
+            "Cahier de tests": {
+                "content": "<h1 id=\"cahier-de-tests\">Cahier de tests</h1>\n<h2 id=\"1--chargement-du-fichier\">1&nbsp;: chargement du fichier</h2>\n<p>test de la procédure <em>chargerGrille</em></p>\n<p><strong>Contexte d&#39;exécution</strong>&nbsp;: aucun</p>\n<p><strong>À effectuer</strong>&nbsp;: saisir un nom de fichier</p>\n<table>\n<thead>\n<tr>\n<th>N°</th>\n<th>type</th>\n<th>données entrées</th>\n<th>résultat attendu</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1</td>\n<td>d&#39;erreur</td>\n<td>ouverture du fichier impossible (le fichier n&#39;existe pas...)</td>\n<td>grille inchangée</td>\n</tr>\n<tr>\n<td>2</td>\n<td>d&#39;erreur</td>\n<td>le nom du fichier fait plus de 30 caractères</td>\n<td>possible erreur de segmentation, grille inchangée</td>\n</tr>\n<tr>\n<td>3</td>\n<td>nominal</td>\n<td>le fichier s&#39;ouvre correctement</td>\n<td>grille remplie</td>\n</tr>\n</tbody></table>\n<h2 id=\"2--affichage-de-la-grille\">2&nbsp;: affichage de la grille</h2>\n<p>test de la procédure <em>afficherGrille</em></p>\n<p><strong>Contexte d&#39;exécution</strong>&nbsp;: aucun</p>\n<p><strong>À effectuer</strong>&nbsp;: rien</p>\n<table>\n<thead>\n<tr>\n<th>N°</th>\n<th>type</th>\n<th>données entrées</th>\n<th>résultat attendu</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1</td>\n<td>particulier</td>\n<td>grille vide (tout 0)</td>\n<td>affichage correct</td>\n</tr>\n<tr>\n<td>2</td>\n<td>nominal</td>\n<td>grille non vide</td>\n<td>affichage correct</td>\n</tr>\n<tr>\n<td>3</td>\n<td>particulier</td>\n<td>grille pleine (aucun 0)</td>\n<td>affichage correct</td>\n</tr>\n</tbody></table>\n<h2 id=\"3--saisie-coordonnées-dune-case\">3&nbsp;: saisie coordonnées d’une case</h2>\n<p>test de la fonction <em>saisir</em></p>\n<p><strong>Contexte d&#39;exécution</strong>&nbsp;: aucun</p>\n<p><strong>À effectuer</strong>&nbsp;: saisir un entier</p>\n<table>\n<thead>\n<tr>\n<th>N°</th>\n<th>type</th>\n<th>données entrées</th>\n<th>résultat attendu</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1</td>\n<td>erreur</td>\n<td>pas un entier</td>\n<td>message d&#39;erreur et 0 retourné</td>\n</tr>\n<tr>\n<td>2</td>\n<td>erreur</td>\n<td>entier hors limites</td>\n<td>message d&#39;erreur et 0 retourné</td>\n</tr>\n<tr>\n<td>3</td>\n<td>nominal</td>\n<td>entier correct</td>\n<td>valeur de l&#39;entier retourné</td>\n</tr>\n</tbody></table>"
+            },
+            "Programme final": {
+                "content": "<pre><code>int main()\n{\n    int valeur;     // valeur entrée\n    int numLigne;   // numéro de ligne où insérer la valeur\n    int numColonne; // numéro de colonne où insérer la valeur\n    tGrille grille; // grille de jeu\n\n    chargerGrille(grille);\n\n    // nombre de valeurs insérées dans la grille\n    // initialisé au nombre de valeurs initiales\n    int nbValeursEntrees = nombreDeValeurs(grille);\n\n    // boucle principale\n    while (nbValeursEntrees < TAILLE * TAILLE) {\n        afficherGrille(grille);\n\n        printf(\"Indices de la case ?\\n\");\n        printf(\"Ligne : \");\n        saisir(&numLigne);\n        printf(\"Colonne : \");\n        saisir(&numColonne);\n\n        // Les indices de tableau sont basés à 0 en C. Or l'utilisateur a entré des indices basés à 1.\n        // Il faut donc décrémenter les indices entrés.\n        numLigne--;\n        numColonne--;\n\n        if (grille[numLigne][numColonne] != VALEUR_VIDE) {\n            printf(\"IMPOSSIBLE, la case n'est pas libre.\\n\");\n        } else {\n            printf(\"Valeur à insérer : \");\n            saisir(&valeur);\n            if (possible(grille, numLigne, numColonne, valeur)) {\n                grille[numLigne][numColonne] = valeur;\n                nbValeursEntrees++;\n            }\n        }\n    }\n\n    afficherGrille(grille); // afficher la grille complète\n\n    printf(\"Grille pleine, fin de partie\\n\");\n\n    return EXIT_SUCCESS;\n}</code></pre>"
+            },
+            "Tests": {
+                "content": "<pre><code>/**\n * @brief Tests Sudoku\n * @version 0.0.1\n * @date 13/11/2023\n * @author Raphaël BARDINI 1C2\n *\n * Programme de test pour le Sudoku\n */\n\n#include <stdio.h>\n#include <stdlib.h>\n#include <stdbool.h>\n\n#define N 3\n\n#define TAILLE (N * N)\n\nvoid saisir(int *saisie)\n{\n    char entree[20];  // buffer d'entrée\n    int entreeEntier; // entier entré converti\n    bool erreurDeSaisie = true;\n\n    while (erreurDeSaisie) {\n        // scanf lira au maximum 19 caractères, et non pas 20,\n        // car il faut conserver une place pour le caractère de fin de chaîne '\\0'.\n        scanf(\"%19s\", entree);\n        if (sscanf(entree, \"%d\", &entreeEntier) == 0) {\n            printf(\"Veuillez saisir un entier : \");\n        } else if (entreeEntier < 1 || entreeEntier > TAILLE) {\n            printf(\"Veuillez saisir un entier entre 1 et %d : \", TAILLE);\n        } else {\n            erreurDeSaisie = false;\n        }\n    }\n\n    *saisie = entreeEntier;\n}\n\nvoid casTestSaisir(int attendu)\n{\n    int recu;\n    saisir(&recu);\n    printf(\"\\n%6s : %d -> %d\\n\", attendu == recu ? \"SUCCÈS\" : \"ÉCHEC\",\n        attendu, recu);\n}\n\nint main()\n{\n    casTestSaisir(1);\n    casTestSaisir(2);\n    casTestSaisir(3);\n    casTestSaisir(4);\n    casTestSaisir(5);\n    casTestSaisir(6);\n    casTestSaisir(7);\n\n    return EXIT_SUCCESS;\n}</code></pre>"
+            }
+        }
+    },
     "2l2w-french-rural-road": {
         "abstract": "Assset de route fraçaise standardisée",
         "anchors": {
@@ -18,7 +61,8 @@
             "asset-creation"
         ],
         "technologies": [
-            "blender"
+            "blender",
+            "cities-skylines"
         ]
     },
     "tregoria": {
@@ -37,7 +81,9 @@
         "tags": [
             "art"
         ],
-        "technologies": []
+        "technologies": [
+            "cities-skylines"
+        ]
     },
     "winclean": {
         "abstract": "Application de nettoyage et optimisation Windows",
@@ -54,8 +100,8 @@
         "background": "/portfolio/img/project/winclean/bg.png",
         "context": "personnel",
         "gallery": {
-            "Fenêtre principale de l'application": "/portfolio/img/project/winclean/gallery/2.png",
-            "Exécution des scripts": "/portfolio/img/project/winclean/gallery/1.png"
+            "Fenêtre principale de l'application": { "url": "/portfolio/img/project/winclean/gallery/2.png" },
+            "Exécution des scripts": { "url": "/portfolio/img/project/winclean/gallery/1.png" }
         },
         "logo": {
             "isThemedSvg": false,

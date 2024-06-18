@@ -32,7 +32,7 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                 <?php $p->put_logo($lang); ?>
                 <?php $p->put_abstract(); ?>
                 <?php $p->put_context(); ?>
-                <?php $p->put_status('en cours'); ?>
+                <?php $p->put_status($lang->ongoing); ?>
             </div>
             <?php if (count($techs = $p->data['technologies']) > 0) { ?>
                 <h3><?php echo $lang->projectTechnologies; ?></h3>
@@ -58,9 +58,15 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
             <?php }
             if (count($gallery = $p->data['gallery']) > 0) { ?>
                 <h3><?php echo $lang->projectGallery; ?></h3>
-                <div id="gallery"><?php foreach ($gallery as $name => $url) { ?>
+                <div id="gallery"><?php foreach ($gallery as $name => $figure) { ?>
                         <figure>
-                            <?php echo get_img_element($url, $name, baseHeight: 300); ?>
+                            <?php
+                            if (array_key_exists('url', $figure)) {
+                                echo get_img_element($figure['url'], $name, baseHeight: 300);
+                            } else {
+                                echo $figure['content'];
+                            }
+                            ?>
                             <figcaption><?php echo $name ?></figcaption>
                         </figure>
                     <?php } ?>

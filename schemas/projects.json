@@ -2,19 +2,23 @@
     "$schema": "https://json-schema.org/draft-04/schema",
     "additionalProperties": {
         "properties": {
+            "abstract": {
+                "minLength": 1,
+                "title": "string"
+            },
             "anchors": {
                 "additionalProperties": {
-                    "type": "object",
                     "properties": {
-                        "id": {
-                            "minLength": 1,
-                            "type": "string"
-                        },
                         "href": {
                             "minLength": 1,
                             "type": "string"
+                        },
+                        "id": {
+                            "minLength": 1,
+                            "type": "string"
                         }
-                    }
+                    },
+                    "type": "object"
                 },
                 "minProperties": 1,
                 "type": "object",
@@ -29,17 +33,33 @@
                 "minLength": 1,
                 "type": "string"
             },
-            "abstract": {
-                "minLength": 1,
-                "title": "string"
-            },
             "end-date": {
                 "minLength": 1,
                 "type": "string"
             },
             "gallery": {
                 "additionalProperties": {
-                    "type": "string"
+                    "oneOf": [
+                        {
+                            "additionalProperties": false,
+                            "properties": {
+                                "url": {
+                                    "minLength": 1,
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "additionalProperties": false,
+                            "properties": {
+                                "content": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    ]
                 },
                 "type": "object",
                 "uniqueItems": true
@@ -61,16 +81,21 @@
                 ],
                 "type": "object"
             },
-            "title": {
-                "minLength": 1,
-                "type": "string"
-            },
             "start-date": {
                 "minLength": 1,
                 "type": "string"
             },
             "story": {
                 "type": "string"
+            },
+            "tags": {
+                "description": "tag IDs",
+                "items": {
+                    "minItems": 1,
+                    "type": "string"
+                },
+                "type": "array",
+                "uniqueItems": true
             },
             "technologies": {
                 "description": "definition IDs of technologies used",
@@ -81,26 +106,21 @@
                 "type": "array",
                 "uniqueItems": true
             },
-            "tags": {
-                "description": "tag IDs",
-                "items": {
-                    "minItems": 1,
-                    "type": "string"
-                },
-                "type": "array",
-                "uniqueItems": true
+            "title": {
+                "minLength": 1,
+                "type": "string"
             }
         },
         "required": [
+            "abstract",
             "anchors",
             "context",
-            "abstract",
             "gallery",
-            "title",
             "start-date",
             "story",
             "tags",
-            "technologies"
+            "technologies",
+            "title"
         ],
         "type": "object"
     },
