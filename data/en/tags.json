@@ -10,7 +10,8 @@
     "but-realiser": "<img class=\"text-icon\" src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\">Create",
     "full-stack": "Full-stack",
     "oop": "<abbr title=\"Object Oriented Programming\">OOP</abbr>",
-    "software": "Logiciel",
+    "software": "Software",
     "ui": "<abbr title=\"User Interface\">UI</abbr>",
-    "ux": "<abbr title=\"User Experience\">UX</abbr>"
+    "ux": "<abbr title=\"User Experience\">UX</abbr>",
+    "compiler": "Compiler"
 }

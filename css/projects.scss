@@ -41,3 +41,8 @@ aside {
         }
     }
 }
+
+.list-anchor {
+    gap: .5em;
+    @include base.size-images(1.5em, 1.5em);
+}

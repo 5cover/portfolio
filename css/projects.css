@@ -59,11 +59,11 @@
   color: #91553b;
 }
 
-.link:hover, .link:focus-within {
+.link:hover, .link:focus-within, .link:active {
   color: #be7c60;
 }
 
-a:not(:hover, :focus-within) {
+a:not(:hover, :focus-within, :active) {
   text-decoration: none;
 }
 
@@ -178,7 +178,7 @@ main {
 }
 
 footer {
-  border-width: 1px;
+  border-width: 1px 0 0 0;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
   background-color: var(--color-lvl1);
@@ -195,9 +195,10 @@ footer small {
   transform: translate(-50%, -50%);
 }
 footer a {
+  display: block;
   text-align: right;
 }
-footer a > svg:hover, footer a > svg:focus-within {
+footer a > svg:hover, footer a > svg:focus-within, footer a > svg:active {
   transform: scale(1.15);
 }
 
@@ -237,7 +238,7 @@ section h2 {
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
 }
-.theme-switches label:has(input:hover, input:focus-within) {
+.theme-switches label:has(input:hover, input:focus-within, input:active) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
@@ -270,13 +271,13 @@ section h2 {
   margin-bottom: 0.5em;
 }
 
-.hover-sensitive-list > li:hover, .hover-sensitive-list > li:focus-within,
+.hover-sensitive-list > li:hover, .hover-sensitive-list > li:focus-within, .hover-sensitive-list > li:active,
 .hover-sensitive-list > li.hover {
   transform: scale(1.05);
   z-index: 1;
 }
 
-.gray-when-not-hover:not(:hover, :focus-within) {
+.gray-when-not-hover:not(:hover, :focus-within, :active) {
   filter: grayscale(100%);
   opacity: 0.5;
 }
@@ -296,30 +297,51 @@ section h2 {
 .list-anchor {
   list-style-type: none;
   display: flex;
-  gap: 0.5em;
 }
-.list-anchor > li:hover, .list-anchor > li:focus-within,
+.list-anchor > li:hover, .list-anchor > li:focus-within, .list-anchor > li:active,
 .list-anchor > li.hover {
   transform: scale(1.15);
   z-index: 1;
-}
-.list-anchor > li img,
-.list-anchor > li svg {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .list-projects {
   gap: 1em;
   display: flex;
   flex-flow: row wrap;
+  /* Increase z-index to stand out above the card link */
+}
+.list-projects .list-anchor > li,
+.list-projects .list-tag > li {
+  z-index: 1;
+}
+.list-projects .list-anchor {
+  gap: 0.5em;
+}
+.list-projects .list-anchor svg,
+.list-projects .list-anchor img {
+  height: 1.5em;
+  width: 1.5em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.list-projects > a {
+  padding: 0.375lh 1.5ch;
+  display: block;
+  margin: 0 auto;
+  background-color: var(--color-lvl2);
+  border-radius: 0.5em;
+}
+.list-projects > a:hover, .list-projects > a:focus-within, .list-projects > a:active {
+  transform: scale(1.05);
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgb(166, 97, 68);
 }
 .list-projects > li {
   position: relative;
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img, var(--color-lvl2-rgb)) no-repeat;
   background-size: cover;
   list-style-type: none;
   border-width: 1px;
@@ -337,7 +359,7 @@ section h2 {
 .list-projects > li .list-tag {
   grid-column: 1/3;
 }
-.list-projects > li .list-tag > li:hover, .list-projects > li .list-tag > li:focus-within,
+.list-projects > li .list-tag > li:hover, .list-projects > li .list-tag > li:focus-within, .list-projects > li .list-tag > li:active,
 .list-projects > li .list-tag > li.hover {
   transform: scale(1.15);
   z-index: 1;
@@ -384,13 +406,15 @@ section h2 {
   flex-direction: row-reverse;
   align-items: flex-end;
 }
-.list-projects > li:hover, .list-projects > li:focus-within {
-  background-color: rgb(166, 97, 68);
+.list-projects > li:hover, .list-projects > li:focus-within, .list-projects > li:active {
+  /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
+  background: border-box linear-gradient(rgba(166, 97, 68, 0.9), rgba(166, 97, 68, 0.9)), var(--bg-img, rgb(166, 97, 68)) no-repeat;
+  background-size: cover;
 }
-.list-projects > li:hover .list-tag > li, .list-projects > li:focus-within .list-tag > li {
+.list-projects > li:hover .list-tag > li, .list-projects > li:focus-within .list-tag > li, .list-projects > li:active .list-tag > li {
   background-color: var(--color-lvl2);
 }
-.list-projects > li:hover :not(.list-tag > li), .list-projects > li:focus-within :not(.list-tag > li) {
+.list-projects > li:hover :not(.list-tag > li), .list-projects > li:focus-within :not(.list-tag > li), .list-projects > li:active :not(.list-tag > li) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
@@ -407,7 +431,7 @@ section h2 {
 
 .definition-tooltip {
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img-definition) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img-definition, var(--color-lvl2-rgb)) no-repeat;
   background-size: cover;
   grid-template: 1fr 1fr auto/1fr auto;
   display: grid;
@@ -425,14 +449,17 @@ section h2 {
   -webkit-clip-path: polygon(50% 0%, 100% 0, 100% calc(100% - 1lh), 3em calc(100% - 1lh), 1.5em 100%, 0 calc(100% - 1lh), 0 0);
           clip-path: polygon(50% 0%, 100% 0, 100% calc(100% - 1lh), 3em calc(100% - 1lh), 1.5em 100%, 0 calc(100% - 1lh), 0 0);
 }
-.definition-tooltip > img,
-.definition-tooltip > svg {
-  grid-row: 1/3;
-  grid-column: 2;
+.definition-tooltip svg,
+.definition-tooltip img {
   height: 2.5lh;
   width: auto;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.definition-tooltip > img,
+.definition-tooltip > svg {
+  grid-row: 1/3;
+  grid-column: 2;
 }
 .definition-tooltip > p:nth-last-child(2) {
   grid-row: 2;
@@ -443,10 +470,12 @@ section h2 {
   grid-column: 1/3;
 }
 
-.definition-tooltip-visible, .definition-tooltip-examining {
+.definition-tooltip-visible,
+.definition-tooltip-examining {
   visibility: visible;
   opacity: 1;
   z-index: 2;
+  transition-delay: 0.3333333333s;
 }
 
 main {
@@ -496,4 +525,15 @@ aside {
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
   background-color: rgb(166, 97, 68);
+}
+
+.list-anchor {
+  gap: 0.5em;
+}
+.list-anchor svg,
+.list-anchor img {
+  height: 1.5em;
+  width: 1.5em;
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=projects.css.map */

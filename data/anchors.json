@@ -22,5 +22,17 @@
     "ccm": {
         "isThemedSvg": false,
         "url": "/portfolio/img/social/ccm.png"
+    },
+    "website": {
+        "isThemedSvg": true,
+        "url": "/portfolio/img/social/website.svg"
+    },
+    "youtube": {
+        "isThemedSvg": false,
+        "url": "/portfolio/img/social/youtube.svg"
+    },
+    "wikipedia": {
+        "isThemedSvg": false,
+        "url": "/portfolio/img/social/wikipedia.svg"
     }
 }

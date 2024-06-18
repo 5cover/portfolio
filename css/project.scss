@@ -10,7 +10,7 @@ main {
     justify-content: space-between;
     gap: 1em;
     padding: 3em;
-    @include base.transparent-background-image(var(--bg-img), var(--color-bg-rgb), .1);
+    @include base.transparent-background-image(--bg-img, var(--color-bg-rgb), .1);
 }
 
 .list-tag > li {
@@ -54,9 +54,17 @@ main {
     }
 }
 
-.story {
-    columns: 2;
+
+#story {
+    @media screen and (min-width: 120ch) {
+        columns: 2;
+    }
+
     text-align: justify;
+
+    figure {
+        max-width: 60ch;
+    }
 
     p:not(:first-child) {
         margin-top: .5lh;

@@ -36,7 +36,15 @@ $huge-val: calc(infinity * 1px);
 }
 
 * {
-    transition: all calc(1s / 3) ease;
+    $t: calc(1s / 3);
+    transition:
+        background-color $t,
+        color $t,
+        transform $t,
+        opacity $t,
+        fill $t,
+        stroke $t,
+        filter $t;
     box-sizing: border-box;
 }
 
@@ -58,8 +66,8 @@ $huge-val: calc(infinity * 1px);
     }
 }
 
-@mixin color-accent-bg($opacity: 1) {
-    background-color: rgba(166, 97, 68, $opacity);
+@function color-accent-bg($opacity: 1) {
+    @return rgba(166, 97, 68, $opacity);
 }
 
 @mixin color-accent-fg {
@@ -70,7 +78,7 @@ $huge-val: calc(infinity * 1px);
 
 @mixin color-accent($opacity: 1) {
     @include color-accent-fg;
-    @include color-accent-bg($opacity);
+    background-color: color-accent-bg($opacity);
 }
 
 @function hover($prefix: '') {
@@ -154,6 +162,14 @@ svg {
     vertical-align: middle;
 }
 
+figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+}
+
 body {
     max-width: 100vw;
     min-height: 100vh;
@@ -187,11 +203,13 @@ body {
     }
 }
 
-@mixin transparent-background-image($img, $color-rgb, $opacity) {
+@mixin transparent-background-image($varname-img, $color-rgb, $opacity) {
+    $color: rgba($color-rgb, calc(1 - $opacity));
+    $gradient: linear-gradient($color, $color);
     /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
     background:
-        border-box linear-gradient(rgba($color-rgb, calc(1 - $opacity)), rgba($color-rgb, calc(1 - $opacity))),
-        $img no-repeat;
+        border-box $gradient,
+        var($varname-img, $color-rgb) no-repeat;
     background-size: cover;
 }
 
@@ -389,9 +407,35 @@ section h2 {
     display: flex;
     flex-flow: row wrap;
 
+    /* Increase z-index to stand out above the card link */
+    .list-anchor,
+    .list-tag {
+        > li {
+            z-index: 1;
+        }
+    }
+
+    .list-anchor {
+        gap: .5em;
+        @include size-images(1.5em, 1.5em);
+    }
+
+    > a {
+        @include horizontal-box-padding(1.5);
+        display: block;
+        margin: 0 auto;
+        background-color: var(--color-lvl2);
+        border-radius: .5em;
+
+        #{hover('&')} {
+            @include bring-out(1.05);
+            @include color-accent;
+        }
+    }
+
     > li {
         @include hover-card;
-        @include transparent-background-image(var(--bg-img), var(--color-lvl2-rgb), .1);
+        @include transparent-background-image(--bg-img, var(--color-lvl2-rgb), .1);
         list-style-type: none;
         @include basic-border(1px);
         display: grid;
@@ -449,16 +493,15 @@ section h2 {
             align-items: flex-end;
         }
 
-        &:hover,
-        &:focus-within {
-            @include color-accent-bg;
+        #{hover('&')} {
+            @include transparent-background-image(--bg-img, color-accent-bg(), .1);
 
             .list-tag > li {
                 background-color: var(--color-lvl2);
             }
 
             :not(.list-tag > li) {
-                @include color-accent-fg();
+                @include color-accent-fg;
             }
         }
     }
@@ -477,7 +520,7 @@ section h2 {
     $arrow-width: 3em;
     $arrow-height: 1lh;
     $padding: .75em;
-    @include transparent-background-image(var(--bg-img-definition), var(--color-lvl2-rgb), .1);
+    @include transparent-background-image(--bg-img-definition, var(--color-lvl2-rgb), .1);
     grid-template: 1fr 1fr auto / 1fr auto;
     display: grid;
     font-size: .8em;

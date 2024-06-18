@@ -88,32 +88,6 @@ section {
         right: 0;
         padding: inherit;
     }
-
-    /* Increase z-index to stand out above the card link */
-    .list-anchor,
-    .list-tag {
-        > li {
-            z-index: 1;
-        }
-    }
-
-    .list-anchor {
-        gap: .5em;
-        @include base.size-images(1.5em, 1.5em);
-    }
-
-    > a {
-        @include base.horizontal-box-padding(1.5);
-        display: block;
-        margin: 0 auto;
-        background-color: var(--color-lvl2);
-        border-radius: .5em;
-
-        #{base.hover('&')} {
-            @include base.bring-out(1.05);
-            @include base.color-accent;
-        }
-    }
 }
 
 #contact {
