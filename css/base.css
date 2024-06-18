@@ -63,27 +63,6 @@
   margin-bottom: 0.5em;
 }
 
-/* Opt-in styling : link colors */
-.link:link {
-  color: #a66144;
-}
-
-.link:visited {
-  color: #91553b;
-}
-
-.link:hover, .link:focus-within, .link:active {
-  color: #be7c60;
-}
-
-a:not(:hover, :focus-within, :active) {
-  text-decoration: none;
-}
-
-a:not(.link, .fi) {
-  color: inherit;
-}
-
 .fi {
   color: transparent;
 }
@@ -123,27 +102,18 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 26.4px;
   font-weight: 500;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
 }
 
 img,
 svg {
   vertical-align: middle;
-}
-
-figure img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 body {
@@ -154,7 +124,49 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-header {
+/* Opt-in styling : link colors */
+.link:link {
+  color: #a66144;
+}
+
+.link:visited {
+  color: #91553b;
+}
+
+.link:hover, .link:focus-within, .link:active {
+  color: #be7c60;
+}
+
+a:not(:hover, :focus-within, :active) {
+  text-decoration: none;
+}
+
+a:not(.link, .fi) {
+  color: inherit;
+}
+
+/* Opt-in styling : figures */
+.figure {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(var(--color-fg-rgb), 0.125);
+  background-color: var(--color-lvl1);
+  max-width: 33.3333333333vw;
+}
+.figure > figcaption {
+  padding: 0.625lh 2.5ch;
+  text-align: center;
+}
+.figure > :not(figcaption) {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+body > header {
   border-width: 0 0 1px 0;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
@@ -170,13 +182,13 @@ header {
   height: -moz-fit-content;
   height: fit-content;
 }
-header .list-flags {
+body > header .list-flags {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
 }
-header nav {
+body > header nav {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -184,7 +196,7 @@ header nav {
        column-gap: 3em;
   row-gap: 1.5em;
 }
-header nav > ul {
+body > header nav > ul {
   display: flex;
   list-style-type: none;
   -moz-column-gap: 2em;
@@ -192,10 +204,10 @@ header nav > ul {
   row-gap: 1em;
   flex-wrap: wrap;
 }
-header nav > ul a {
+body > header nav > ul a {
   font-size: 24px;
 }
-header nav a[href="#"] {
+body > header nav a[href="#"] {
   text-decoration: underline;
 }
 
@@ -203,7 +215,7 @@ main {
   grid-row: 2;
 }
 
-main > footer {
+body > footer {
   border-width: 1px 0 0 0;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
@@ -213,18 +225,18 @@ main > footer {
   grid-row: 3;
   position: relative;
 }
-main > footer small {
+body > footer small {
   display: block;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-main > footer a {
+body > footer a {
   display: block;
   text-align: right;
 }
-main > footer a > svg:hover, main > footer a > svg:focus-within, main > footer a > svg:active {
+body > footer a > svg:hover, body > footer a > svg:focus-within, body > footer a > svg:active {
   transform: scale(1.15);
 }
 
@@ -296,6 +308,23 @@ section h2 {
   opacity: 0.5;
 }
 
+.button-link {
+  padding: 0.5lh 2ch;
+  display: block;
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--color-lvl2);
+  border-radius: 0.5em;
+}
+.button-link:hover, .button-link:focus-within, .button-link:active {
+  transform: scale(1.05);
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgb(166, 97, 68);
+}
+
 .list-tag {
   list-style-type: none;
   display: flex;
@@ -318,41 +347,27 @@ section h2 {
   z-index: 1;
 }
 
-.list-projects {
+.list-project {
   gap: 1em;
   display: flex;
   flex-flow: row wrap;
   /* Increase z-index to stand out above the card link */
 }
-.list-projects .list-anchor > li,
-.list-projects .list-tag > li {
+.list-project .list-anchor > li,
+.list-project .list-tag > li {
   z-index: 1;
 }
-.list-projects .list-anchor {
+.list-project .list-anchor {
   gap: 0.5em;
 }
-.list-projects .list-anchor svg,
-.list-projects .list-anchor img {
+.list-project .list-anchor svg,
+.list-project .list-anchor img {
   height: 1.5em;
   width: 1.5em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.list-projects > a {
-  padding: 0.375lh 1.5ch;
-  display: block;
-  margin: 0 auto;
-  background-color: var(--color-lvl2);
-  border-radius: 0.5em;
-}
-.list-projects > a:hover, .list-projects > a:focus-within, .list-projects > a:active {
-  transform: scale(1.05);
-  color: white;
-  --color-fg: white;
-  --color-fg-rgb: 255, 255, 255;
-  background-color: rgb(166, 97, 68);
-}
-.list-projects > li {
+.list-project > li {
   position: relative;
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
   background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img, var(--color-lvl2-rgb)) no-repeat;
@@ -366,28 +381,28 @@ section h2 {
   row-gap: 0.5em;
   border-radius: 0.75em;
   padding: 0.75em;
-  width: 18em;
+  width: 20em;
   /* Required to clip the :before pseudo-element to the card's boundaries */
   overflow: hidden;
 }
-.list-projects > li .list-tag {
+.list-project > li .list-tag {
   grid-column: 1/3;
 }
-.list-projects > li .list-tag > li:hover, .list-projects > li .list-tag > li:focus-within, .list-projects > li .list-tag > li:active,
-.list-projects > li .list-tag > li.hover {
+.list-project > li .list-tag > li:hover, .list-project > li .list-tag > li:focus-within, .list-project > li .list-tag > li:active,
+.list-project > li .list-tag > li.hover {
   transform: scale(1.15);
   z-index: 1;
 }
-.list-projects > li .list-tag > li {
+.list-project > li .list-tag > li {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
   background-color: rgb(166, 97, 68);
 }
-.list-projects > li h3 > a {
+.list-project > li h3 > a {
   text-decoration: none;
 }
-.list-projects > li h3 > a:after {
+.list-project > li h3 > a:after {
   content: "";
   position: absolute;
   left: 0;
@@ -395,7 +410,7 @@ section h2 {
   right: 0;
   bottom: 0;
 }
-.list-projects > li .logo {
+.list-project > li .logo {
   grid-row: 2/6;
   grid-column: 2;
   height: 4lh;
@@ -405,33 +420,33 @@ section h2 {
      object-fit: contain;
   margin: auto 0;
 }
-.list-projects > li h3 {
+.list-project > li h3 {
   grid-row: 2;
 }
-.list-projects > li .context {
+.list-project > li .context {
   grid-row: 3;
 }
-.list-projects > li .status {
+.list-project > li .status {
   grid-row: 4;
 }
-.list-projects > li .abstract {
+.list-project > li .abstract {
   grid-row: 5;
 }
-.list-projects > li .list-anchor {
+.list-project > li .list-anchor {
   grid-row: 6;
   grid-column: 1/3;
   flex-direction: row-reverse;
   align-items: flex-end;
 }
-.list-projects > li:hover, .list-projects > li:focus-within, .list-projects > li:active {
+.list-project > li:hover, .list-project > li:focus-within, .list-project > li:active {
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
   background: border-box linear-gradient(rgba(166, 97, 68, 0.9), rgba(166, 97, 68, 0.9)), var(--bg-img, rgb(166, 97, 68)) no-repeat;
   background-size: cover;
 }
-.list-projects > li:hover .list-tag > li, .list-projects > li:focus-within .list-tag > li, .list-projects > li:active .list-tag > li {
+.list-project > li:hover .list-tag > li, .list-project > li:focus-within .list-tag > li, .list-project > li:active .list-tag > li {
   background-color: var(--color-lvl2);
 }
-.list-projects > li:hover :not(.list-tag > li), .list-projects > li:focus-within :not(.list-tag > li), .list-projects > li:active :not(.list-tag > li) {
+.list-project > li:hover :not(.list-tag > li), .list-project > li:focus-within :not(.list-tag > li), .list-project > li:active :not(.list-tag > li) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;

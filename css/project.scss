@@ -45,16 +45,18 @@ main {
         grid-row: 3;
     }
 
-    .context, .status {
+    .status-context {
         grid-row: 4;
-    }
+        display: flex;
+        gap: 5em;
+        align-items: baseline;
 
-    small {
-        font-size: 100%;
-        vertical-align: middle;
+        small {
+            display: inline-block;
+            font-size: 100%;
+        }
     }
 }
-
 
 #story {
     @media screen and (min-width: 120ch) {
@@ -86,7 +88,7 @@ main {
     flex-wrap: wrap;
     $gap: .5em;
     gap: $gap;
-    @include base.size-images(3.5em,3.5em);
+    @include base.size-images(3.5em, 3.5em);
 }
 
 #gallery {
@@ -96,12 +98,9 @@ main {
     align-items: stretch;
 
     figure {
-        @include base.basic-border(1px);
         display: flex;
         flex-flow: column;
         justify-content: space-between;
-        background-color: var(--color-lvl1);
-        max-width: calc(100vw / 3);
     }
 
     iframe {
@@ -109,14 +108,9 @@ main {
         width: fit-content;
         height: 100%;
         min-height: 13em;
-        
+
         + figcaption {
             @include base.basic-border(1px 0 0 0);
         }
-    }
-
-    figcaption {
-        @include base.horizontal-box-padding(2.5);
-        text-align: center;
     }
 }

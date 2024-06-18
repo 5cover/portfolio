@@ -304,41 +304,41 @@ section h2 {
   z-index: 1;
 }
 
-.list-projects {
+.list-project {
   gap: 1em;
   display: flex;
   flex-flow: row wrap;
   /* Increase z-index to stand out above the card link */
 }
-.list-projects .list-anchor > li,
-.list-projects .list-tag > li {
+.list-project .list-anchor > li,
+.list-project .list-tag > li {
   z-index: 1;
 }
-.list-projects .list-anchor {
+.list-project .list-anchor {
   gap: 0.5em;
 }
-.list-projects .list-anchor svg,
-.list-projects .list-anchor img {
+.list-project .list-anchor svg,
+.list-project .list-anchor img {
   height: 1.5em;
   width: 1.5em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.list-projects > a {
+.list-project > a {
   padding: 0.375lh 1.5ch;
   display: block;
   margin: 0 auto;
   background-color: var(--color-lvl2);
   border-radius: 0.5em;
 }
-.list-projects > a:hover, .list-projects > a:focus-within, .list-projects > a:active {
+.list-project > a:hover, .list-project > a:focus-within, .list-project > a:active {
   transform: scale(1.05);
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
   background-color: rgb(166, 97, 68);
 }
-.list-projects > li {
+.list-project > li {
   position: relative;
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
   background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img, var(--color-lvl2-rgb)) no-repeat;
@@ -356,21 +356,21 @@ section h2 {
   /* Required to clip the :before pseudo-element to the card's boundaries */
   overflow: hidden;
 }
-.list-projects > li .list-tag {
+.list-project > li .list-tag {
   grid-column: 1/3;
 }
-.list-projects > li .list-tag > li:hover, .list-projects > li .list-tag > li:focus-within, .list-projects > li .list-tag > li:active,
-.list-projects > li .list-tag > li.hover {
+.list-project > li .list-tag > li:hover, .list-project > li .list-tag > li:focus-within, .list-project > li .list-tag > li:active,
+.list-project > li .list-tag > li.hover {
   transform: scale(1.15);
   z-index: 1;
 }
-.list-projects > li .list-tag > li {
+.list-project > li .list-tag > li {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
   background-color: rgb(166, 97, 68);
 }
-.list-projects > li h3 > a:after {
+.list-project > li h3 > a:after {
   content: "";
   position: absolute;
   left: 0;
@@ -378,7 +378,7 @@ section h2 {
   right: 0;
   bottom: 0;
 }
-.list-projects > li .logo {
+.list-project > li .logo {
   grid-row: 2/6;
   grid-column: 2;
   height: 4lh;
@@ -388,33 +388,33 @@ section h2 {
      object-fit: contain;
   margin: auto 0;
 }
-.list-projects > li h3 {
+.list-project > li h3 {
   grid-row: 2;
 }
-.list-projects > li .context {
+.list-project > li .context {
   grid-row: 3;
 }
-.list-projects > li .status {
+.list-project > li .status {
   grid-row: 4;
 }
-.list-projects > li .abstract {
+.list-project > li .abstract {
   grid-row: 5;
 }
-.list-projects > li .list-anchor {
+.list-project > li .list-anchor {
   grid-row: 6;
   grid-column: 1/3;
   flex-direction: row-reverse;
   align-items: flex-end;
 }
-.list-projects > li:hover, .list-projects > li:focus-within, .list-projects > li:active {
+.list-project > li:hover, .list-project > li:focus-within, .list-project > li:active {
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
   background: border-box linear-gradient(rgba(166, 97, 68, 0.9), rgba(166, 97, 68, 0.9)), var(--bg-img, rgb(166, 97, 68)) no-repeat;
   background-size: cover;
 }
-.list-projects > li:hover .list-tag > li, .list-projects > li:focus-within .list-tag > li, .list-projects > li:active .list-tag > li {
+.list-project > li:hover .list-tag > li, .list-project > li:focus-within .list-tag > li, .list-project > li:active .list-tag > li {
   background-color: var(--color-lvl2);
 }
-.list-projects > li:hover :not(.list-tag > li), .list-projects > li:focus-within :not(.list-tag > li), .list-projects > li:active :not(.list-tag > li) {
+.list-project > li:hover :not(.list-tag > li), .list-project > li:focus-within :not(.list-tag > li), .list-project > li:active :not(.list-tag > li) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;

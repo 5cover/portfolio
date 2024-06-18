@@ -87,24 +87,11 @@ section {
     flex-flow: column nowrap;
     gap: 1em;
 
-    .list-projects ~ small {
+    .list-project ~ small {
         position: absolute;
         top: 0;
         right: 0;
         padding: inherit;
-    }
-
-    > a {
-        @include base.horizontal-box-padding(2);
-        display: block;
-        margin: 0 auto;
-        background-color: var(--color-lvl2);
-        border-radius: .5em;
-
-        #{base.hover('&')} {
-            @include base.bring-out(1.05);
-            @include base.color-accent;
-        }
     }
 }
 

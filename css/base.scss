@@ -107,27 +107,6 @@ $huge-val: calc(infinity * 1px);
     }
 }
 
-/* Opt-in styling : link colors */
-.link:link {
-    color: #a66144;
-}
-
-.link:visited {
-    color: #91553b;
-}
-
-#{hover('.link')} {
-    color: #be7c60;
-}
-
-a:not(#{hover()}) {
-    text-decoration: none;
-}
-
-a:not(.link, .fi) {
-    color: inherit;
-}
-
 .fi {
     color: transparent;
 }
@@ -166,26 +145,18 @@ h2 {
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 26.4px;
     font-weight: 500;
 }
 
 h4 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
 }
 
 img,
 svg {
     vertical-align: middle;
-}
-
-figure img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: 100%;
-    object-fit: contain;
 }
 
 body {
@@ -217,6 +188,7 @@ body {
 
 @mixin hover-card-target {
     text-decoration: none;
+
     &:after {
         @include absolute-fill;
     }
@@ -252,7 +224,48 @@ body {
     }
 }
 
-header {
+/* Opt-in styling : link colors */
+.link:link {
+    color: #a66144;
+}
+
+.link:visited {
+    color: #91553b;
+}
+
+#{hover('.link')} {
+    color: #be7c60;
+}
+
+a:not(#{hover()}) {
+    text-decoration: none;
+}
+
+a:not(.link, .fi) {
+    color: inherit;
+}
+
+/* Opt-in styling : figures */
+.figure {
+    @include basic-border(1px);
+    background-color: var(--color-lvl1);
+    max-width: calc(100vw / 3);
+
+    > figcaption {
+        @include horizontal-box-padding(2.5);
+        text-align: center;
+    }
+
+    > :not(figcaption) {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+    }
+}
+
+body > header {
     @include lvl1-content(0 0 1px 0);
     align-items: center;
     display: flex;
@@ -298,7 +311,7 @@ main {
     grid-row: 2;
 }
 
-main > footer {
+body > footer {
     @include lvl1-content(1px 0 0 0);
     border-top-width: 1px;
     grid-row: 3;
@@ -389,6 +402,20 @@ section h2 {
     opacity: .5;
 }
 
+.button-link {
+    @include horizontal-box-padding(2);
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    background-color: var(--color-lvl2);
+    border-radius: .5em;
+
+    #{hover('&')} {
+        @include bring-out(1.05);
+        @include color-accent;
+    }
+}
+
 .list-tag {
     list-style-type: none;
     display: flex;
@@ -408,7 +435,7 @@ section h2 {
     display: flex;
 }
 
-.list-projects {
+.list-project {
     gap: 1em;
     display: flex;
     flex-flow: row wrap;
@@ -426,19 +453,6 @@ section h2 {
         @include size-images(1.5em, 1.5em);
     }
 
-    > a {
-        @include horizontal-box-padding(1.5);
-        display: block;
-        margin: 0 auto;
-        background-color: var(--color-lvl2);
-        border-radius: .5em;
-
-        #{hover('&')} {
-            @include bring-out(1.05);
-            @include color-accent;
-        }
-    }
-
     > li {
         @include hover-card;
         @include transparent-background-image(--bg-img, var(--color-lvl2-rgb), .1);
@@ -449,7 +463,7 @@ section h2 {
         row-gap: .5em;
         border-radius: .75em;
         padding: .75em;
-        width: 18em;
+        width: 20em;
         /* Required to clip the :before pseudo-element to the card's boundaries */
         overflow: hidden;
 

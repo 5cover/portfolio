@@ -381,7 +381,7 @@ section h2 {
   row-gap: 0.5em;
   border-radius: 0.75em;
   padding: 0.75em;
-  width: 18em;
+  width: 20em;
   /* Required to clip the :before pseudo-element to the card's boundaries */
   overflow: hidden;
 }
@@ -510,124 +510,87 @@ section h2 {
   transition-delay: 0.3333333333s;
 }
 
-body {
-  gap: 0;
-}
-
 main {
-  flex-flow: column nowrap;
+  margin: 0 3em;
+}
+
+#presentation > p,
+#competences > p,
+article > p,
+#resultat-pour-moi div > p,
+#resultat-pour-moi ul > p {
+  line-height: 3.125ex;
+  margin: 3.125ex 0;
+}
+#presentation > h3,
+#competences > h3,
+article > h3,
+#resultat-pour-moi div > h3,
+#resultat-pour-moi ul > h3 {
+  line-height: 2.6315789474ex;
+  margin: 2.6315789474ex 0;
+}
+#presentation > h4,
+#competences > h4,
+article > h4,
+#resultat-pour-moi div > h4,
+#resultat-pour-moi ul > h4 {
+  line-height: 2.7027027027ex;
+  margin: 2.7027027027ex 0;
+}
+#presentation > li,
+#competences > li,
+article > li,
+#resultat-pour-moi div > li,
+#resultat-pour-moi ul > li {
+  line-height: 3.125ex;
+}
+
+#titre {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   gap: 1em;
-  padding: 3em;
+  justify-content: space-between;
+  font-size: 96px;
+  line-height: 2.380952381rex;
+  margin: 2.380952381rex 0;
+}
+
+#presentation {
+  -moz-columns: 2;
+       columns: 2;
+}
+#presentation p:first-child {
+  margin-top: 0;
+}
+#presentation p:last-child {
+  margin-bottom: 0;
+}
+
+.button-link {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+}
+
+#competences article {
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-bg-rgb), 0.9), rgba(var(--color-bg-rgb), 0.9)), var(--bg-img, var(--color-bg-rgb)) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-lvl1-rgb), 0.9), rgba(var(--color-lvl1-rgb), 0.9)), var(--bg-img-skill, var(--color-lvl1-rgb)) no-repeat;
   background-size: cover;
+  padding: 1em;
+  border-radius: 1em;
+  margin: 3em 0;
 }
 
-.list-tag > li {
-  color: white;
-  --color-fg: white;
-  --color-fg-rgb: 255, 255, 255;
-  background-color: rgb(166, 97, 68);
-}
-
-#project-header {
-  display: grid;
-  grid-template: repeat(5, auto)/auto 1fr;
+#resultat-pour-moi {
+  display: flex;
+  align-items: center;
   gap: 1em;
-}
-#project-header .list-tag {
-  grid-row: 1;
-  grid-column: 1/3;
-}
-#project-header h2 {
-  grid-row: 2;
-  font-size: 42px;
-}
-#project-header .logo {
-  margin-left: auto;
-  height: 100%;
-  width: auto;
-  display: block;
-  grid-column: 2;
-  grid-row: 1/6;
-}
-#project-header .abstract {
-  grid-row: 3;
-}
-#project-header .status-context {
-  grid-row: 4;
-  display: flex;
-  gap: 5em;
-  align-items: baseline;
-}
-#project-header .status-context small {
-  display: inline-block;
-  font-size: 100%;
-}
-
-#story {
-  text-align: justify;
-}
-@media screen and (min-width: 120ch) {
-  #story {
-    -moz-columns: 2;
-         columns: 2;
-  }
-}
-#story figure {
-  max-width: 60ch;
-}
-#story p:not(:first-child) {
-  margin-top: 0.5lh;
-}
-#story p:not(:last-child) {
-  margin-bottom: 0.5lh;
-}
-
-#technologies,
-.list-anchor {
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgba(var(--color-fg-rgb), 0.125);
-  padding: 0.25lh 1ch;
-  background-color: var(--color-lvl1);
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-}
-#technologies svg,
-#technologies img,
-.list-anchor svg,
-.list-anchor img {
-  height: 3.5em;
-  width: 3.5em;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-#gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  align-items: stretch;
-}
-#gallery figure {
-  display: flex;
-  flex-flow: column;
   justify-content: space-between;
 }
-#gallery iframe {
-  background-color: white;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  min-height: 13em;
+#resultat-pour-moi figure {
+  border-radius: 1em;
 }
-#gallery iframe + figcaption {
-  border-width: 1px 0 0 0;
-  border-style: solid;
-  border-color: rgba(var(--color-fg-rgb), 0.125);
-}/*# sourceMappingURL=project.css.map */
+#resultat-pour-moi figure img {
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}/*# sourceMappingURL=but-informatique.css.map */
