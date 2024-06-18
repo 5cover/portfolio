@@ -20,10 +20,10 @@ final class Project {
     <?php }
 
     function put_anchor_list(array $anchors, string $class='list-anchor') { ?>
-        <ul class="<?php echo $class; ?>">
+        <ul class="<?php echo $class; $anchorId = 1; ?>">
             <?php foreach ($this->data['anchors'] as $name => $anchor) { ?>
                 <li>
-                    <a href="<?php echo $anchor['href']; ?>" title="<?php echo $name; ?>" target="_blank">
+                    <a id="anchor-<?php echo $anchorId++; ?>" href="<?php echo $anchor['href']; ?>" title="<?php echo $name; ?>" target="_blank">
                         <?php
                         $a = $anchors[$anchor['id']];
                         echo get_icon_element($a['isThemedSvg'], $a['url']); ?>
@@ -31,10 +31,6 @@ final class Project {
                 </li>
             <?php } ?>
         </ul>
-    <?php }
-
-    function put_story(string $class='story') { ?>
-        <div class="<?php echo $class; ?>"><?php echo $this->data['story']; ?></div>
     <?php }
 
     function put_logo(Lang $lang, string $class = 'logo') {

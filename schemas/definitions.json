@@ -8,7 +8,8 @@
         "required": [
             "names",
             "type",
-            "wiki"
+            "wiki",
+            "synopsis"
         ],
         "properties": {
             "names": {
@@ -19,6 +20,10 @@
                 "items": {
                     "type": "string"
                 }
+            },
+            "synopsis":{
+                "type": "string",
+                "minLength": 1
             },
             "type": {
                 "enum": [

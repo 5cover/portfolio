@@ -34,27 +34,38 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                 <?php $p->put_context(); ?>
                 <?php $p->put_status('en cours'); ?>
             </div>
-            <?php $p->put_anchor_list($anchors); ?>
-            <?php $p->put_story(); ?>
-            <h3>Technologies</h3>
-            <ul id="technologies"><?php foreach ($p->data['technologies'] as $defId) {
-                $def = $defintions[$defId];
-                $logo = $def['logo'];
-                ?>
-                    <li>
-                        <?php echo get_icon_element($logo['isThemedSvg'], $logo['url'], 'Logo ' . $def['names'][0], 'definition-tooltip-trigger', 60) ?>
-                        <?php put_definition_tooltip($lang, $types, $defId, $def); ?>
-                    </li>
-                <?php } ?>
-            </ul>
-            <h3>Gallerie</h3>
-            <div id="gallery"><?php foreach ($p->data['gallery'] as $name => $url) { ?>
-                    <figure>
-                        <?php echo get_img_element($url, $name, baseHeight: 300); ?>
-                        <figcaption><?php echo $name ?></figcaption>
-                    </figure>
-                <?php } ?>
-            </div>
+            <?php if (count($techs = $p->data['technologies']) > 0) { ?>
+                <h3><?php echo $lang->projectTechnologies; ?></h3>
+                <ul id="technologies"><?php foreach ($techs as $defId) {
+                    $def = $defintions[$defId];
+                    $logo = $def['logo'] ?? null;
+                    ?>
+                        <li>
+                            <?php if ($logo) {
+                                echo get_icon_element($logo['isThemedSvg'], $logo['url'], 'Logo ' . $def['names'][0], 'definition-tooltip-trigger', 60);
+                            } else {
+                                echo $def['names'][0];
+                            } ?>
+                            <?php put_definition_tooltip($lang, $types, $defId, $def); ?>
+                        </li>
+                    <?php } ?>
+                </ul>
+            <?php } ?>
+            <div id="story"><?php echo $p->data['story']; ?></div>
+            <?php if (count($p->data['anchors']) > 0) { ?>
+                <h3><?php echo $lang->projectLinks; ?></h3>
+                <?php $p->put_anchor_list($anchors); ?>
+            <?php }
+            if (count($gallery = $p->data['gallery']) > 0) { ?>
+                <h3><?php echo $lang->projectGallery; ?></h3>
+                <div id="gallery"><?php foreach ($gallery as $name => $url) { ?>
+                        <figure>
+                            <?php echo get_img_element($url, $name, baseHeight: 300); ?>
+                            <figcaption><?php echo $name ?></figcaption>
+                        </figure>
+                    <?php } ?>
+                </div>
+            <?php } ?>
         </main>
         <?php put_footer($page, $lang); ?>
         <?php put_scripts($page); ?>

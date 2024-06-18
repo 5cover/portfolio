@@ -44,6 +44,9 @@ $_langInstances = [
         "Sort by title",
         "Search a project",
         "Tags",
+        "Techologies",
+        "Links",
+        "Gallery",
         function ($t) {
             return $t . ' logo';
         }),
@@ -65,7 +68,7 @@ $_langInstances = [
     title="Brevet Universitaire Technologique">BUT</abbr> informatique, etc...</p>
     HTML,
         "Mes projets en cours",
-        "Tous mes projects",
+        "Tous mes projets",
         "Dernière mise à jour : ",
         "Contact",
         "Mon CV",
@@ -90,12 +93,18 @@ $_langInstances = [
         "Trier par titre",
         "Rechercher un projet",
         "Tags",
+        "Technologies",
+        "Liens",
+        "Gallerie",
         function ($t) {
             return 'Logo ' . $t;
         }),
 ];
 
 final class Lang {
+    public readonly string $projectTechnologies;
+    public readonly string $projectLinks;
+    public readonly string $projectGallery;
     public readonly string $tag;
     public readonly string $flagClass;
     public readonly string $footerGitHubAnchorTitle;
@@ -180,6 +189,9 @@ final class Lang {
         string $projectSearchSort,
         string $projectSearchSearch,
         string $projectSearchTags,
+        string $projectTechnologies,
+        string $projectLinks,
+        string $projectGallery,
         Closure $formatTitle,
     ) {
         $this->tag = $tag;
@@ -223,6 +235,9 @@ final class Lang {
         $this->projectSearchSort = $projectSearchSort;
         $this->projectSearchSearch = $projectSearchSearch;
         $this->projectSearchTags = $projectSearchTags;
+        $this->projectTechnologies = $projectTechnologies;
+        $this->projectLinks = $projectLinks;
+        $this->projectGallery = $projectGallery;
     }
 
     public function formatTitle(string $title): string {

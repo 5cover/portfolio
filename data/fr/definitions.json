@@ -1,4 +1,13 @@
 {
+    "ebnf": {
+        "names": [
+            "EBNF",
+            "Extended Backus-Naur Form"
+        ],
+        "type": "computer-language",
+        "wiki": "https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form",
+        "synopsis": "L'Extended Backus-Naur Form (EBNF) est une extension du métalangage <abbr title=\"Backus-Naur Form\">BNF</abbr>, créée par Niklaus Wirth en 1996. Ce langage exprime des grammaire formelles afin de notamment concevoir des compilateurs."
+    },
     "apache2": {
         "logo": {
             "isThemedSvg": false,
