@@ -22,7 +22,7 @@
 }
 
 * {
-  transition: all 0.3333333333s ease;
+  transition: background-color 0.3333333333s, color 0.3333333333s, transform 0.3333333333s, opacity 0.3333333333s, fill 0.3333333333s, stroke 0.3333333333s, filter 0.3333333333s;
   box-sizing: border-box;
 }
 
@@ -43,12 +43,34 @@
     --color-lvl3-rgb: 68, 68, 68;
   }
 }
+/* An icon sized to the text next to it */
 .text-icon, #contact ul svg {
   display: inline-block;
   height: 1cap;
   width: auto;
   margin-right: 0.5ch;
   vertical-align: baseline;
+}
+
+/* An element that contains arbitrary HTML that is not related to the structure or semantics of the current page */
+.html-box {
+  font-size: 75%;
+  background-color: var(--color-lvl3);
+  border-radius: 1em;
+  padding: 1em;
+  overflow: auto;
+}
+
+.content-block {
+  border-radius: 1em;
+  background-color: var(--color-lvl1);
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80ch;
+}
+.content-block h2 {
+  margin-bottom: 0.5em;
 }
 
 /* Opt-in styling : link colors */
@@ -68,8 +90,12 @@ a:not(:hover, :focus-within, :active) {
   text-decoration: none;
 }
 
-a:not(.link) {
+a:not(.link, .fi) {
   color: inherit;
+}
+
+.fi {
+  color: transparent;
 }
 
 body,
@@ -119,6 +145,15 @@ h4 {
 img,
 svg {
   vertical-align: middle;
+}
+
+figure img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 body {
@@ -260,18 +295,6 @@ section h2 {
   cursor: pointer;
 }
 
-.content-block {
-  border-radius: 1em;
-  background-color: var(--color-lvl1);
-  padding: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 32em;
-}
-.content-block h2 {
-  margin-bottom: 0.5em;
-}
-
 .hover-sensitive-list > li:hover, .hover-sensitive-list > li:focus-within, .hover-sensitive-list > li:active,
 .hover-sensitive-list > li.hover {
   transform: scale(1.05);
@@ -370,6 +393,9 @@ section h2 {
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
   background-color: rgb(166, 97, 68);
+}
+.list-projects > li h3 > a {
+  text-decoration: none;
 }
 .list-projects > li h3 > a:after {
   content: "";
@@ -515,6 +541,9 @@ section {
     font-size: 20px;
   }
 }
+.list-piano-tiles > li a {
+  text-decoration: none;
+}
 .list-piano-tiles > li a:after {
   content: "";
   position: absolute;
@@ -545,12 +574,18 @@ section {
   opacity: 0;
 }
 
-#me > div {
+#me {
   display: flex;
+  flex-wrap: wrap;
+}
+#me p:first-of-type {
+  text-indent: 2cap;
 }
 #me img {
-  width: 50%;
-  height: 50%;
+  display: block;
+  margin: auto 0 auto 1em;
+  width: auto;
+  height: 8em;
   border-radius: 0.5em;
 }
 
@@ -565,6 +600,20 @@ section {
   top: 0;
   right: 0;
   padding: inherit;
+}
+#ongoing-projects > a {
+  padding: 0.5lh 2ch;
+  display: block;
+  margin: 0 auto;
+  background-color: var(--color-lvl2);
+  border-radius: 0.5em;
+}
+#ongoing-projects > a:hover, #ongoing-projects > a:focus-within, #ongoing-projects > a:active {
+  transform: scale(1.05);
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgb(166, 97, 68);
 }
 
 #contact {

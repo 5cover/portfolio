@@ -65,13 +65,18 @@ section {
 }
 
 #me {
-    > div {
-        display: flex;
+    display: flex;
+    flex-wrap: wrap;
+
+    p:first-of-type {
+        text-indent: 2cap;
     }
 
     img {
-        width: 50%;
-        height: 50%;
+        display: block;
+        margin: auto 0 auto 1em;
+        width: auto;
+        height: 8em;
         border-radius: .5em;
     }
 }
@@ -87,6 +92,19 @@ section {
         top: 0;
         right: 0;
         padding: inherit;
+    }
+
+    > a {
+        @include base.horizontal-box-padding(2);
+        display: block;
+        margin: 0 auto;
+        background-color: var(--color-lvl2);
+        border-radius: .5em;
+
+        #{base.hover('&')} {
+            @include base.bring-out(1.05);
+            @include base.color-accent;
+        }
     }
 }
 
