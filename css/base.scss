@@ -455,7 +455,7 @@ section h2 {
 
     > li {
         @include hover-card;
-        @include transparent-background-image(--bg-img, var(--color-lvl2-rgb), .1);
+        @include transparent-background-image(--bg-img, var(--color-lvl2), .1);
         list-style-type: none;
         @include basic-border(1px);
         display: grid;
@@ -540,7 +540,7 @@ section h2 {
     $arrow-width: 3em;
     $arrow-height: 1lh;
     $padding: .75em;
-    @include transparent-background-image(--bg-img-definition, var(--color-lvl2-rgb), .1);
+    @include transparent-background-image(--bg-img-definition, var(--color-lvl2), .1);
     grid-template: 1fr 1fr auto / 1fr auto;
     display: grid;
     font-size: .8em;

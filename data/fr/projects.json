@@ -1,4 +1,117 @@
 {
+    "s2.06": {
+        "title": "Évènement de teambuilding",
+        "abstract": "Planification d'un évènement et réalisation d'un film promotionnel",
+"start-date": "8 mars 2024",
+        "end-date": "2 avril 2024",
+        "anchors": {"Dépôt GitHub": {
+            "href": "todo",
+            "id": "github"}},
+        "gallery": {},
+        "technologies": ["github"],
+        "tags": ["but-collaborer"],
+        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "story": "todo"
+    },
+    "s2.05": {
+        "title": "Gestion de projet informatique",
+        "abstract": "Gestion de projet de création d'application Java : gestion d'une salle de spectacle",
+"start-date": "8 mars 2024",
+        "end-date": "2 avril 2024",
+        "anchors": {"Dépôt GitHub": {
+            "href": "todo",
+            "id": "github"}},
+        "gallery": {},
+        "technologies": ["github"],
+        "tags": ["but-conduire", "but-collaborer"],
+        "story": "todo",
+        "context": "BUT Informatique (1<sup>re</sup> année)"
+    },
+    "s2.04": {
+        "title": "Base de donnée et analyse statistique",
+        "abstract": "Data mining sur l'open-data des collèges",
+"start-date": "8 mars 2024",
+        "end-date": "2 avril 2024",
+        "anchors": {"Dépôt GitHub": {
+            "href": "todo",
+            "id": "github"}},
+        "gallery": {},
+        "technologies": ["replit", "sql", "mysql"],
+        "tags": ["but-gerer", "but-collaborer"],
+        "story": "todo",
+        "context": "BUT Informatique (1<sup>re</sup> année)"
+    },
+    "s2.03": {
+        "title": "Configuration d'un serveur Web",
+        "abstract": "Site de météo avec Apache2",
+        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "start-date": "8 mars 2024",
+        "end-date": "2 avril 2024",
+        "anchors": {"Dépôt GitHub": {
+            "href": "todo",
+            "id": "github"}},
+        "gallery": {},
+        "technologies": ["github", "php", "apache2", "mysql"],
+        "tags": ["but-administrer", "but-collaborer"],
+        "story": "todo"
+    },
+    "s2.02": {
+        "title": "Exploration algorithmique",
+        "abstract": "Des solutions innovantes au problèmes des N Reines",
+        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "start-date": "8 mars 2024",
+        "end-date": "2 avril 2024",
+        "anchors": {"Dépôt GitHub": {
+            "href": "todo",
+            "id": "github"}},
+        "gallery": {},
+        "technologies": ["python", "github"],
+        "tags": ["but-optimiser", "but-collaborer"],
+        "story": "L'objectif de ce projet est de résoudre un problème en utilisant la théorie des graphes. Le problème que nous avons choisi est celui des N reines. Il faut placer N reines sur un échiquier de N * N cases"
+    },
+    "s2.01": {
+        "title": "Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr>",
+        "abstract": "Application de gestion de salle de spectacle",
+        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "start-date": "8 mars 2024",
+        "end-date": "2 avril 2024",
+        "anchors": {"Dépôt GitHub": {
+            "href": "todo",
+            "id": "github"}},
+        "gallery": {},
+        "technologies": ["github", "java"],
+        "tags": ["but-realiser"],
+        "story": "L'objectif de ce projet est de créer une application de gestion d'une salle de spectacle en Java avec une IHM (interface homme machine) en Java FX qui permet au directeur de la salle de gérer les spectacles."
+    },
+    "s1.06": {
+        "title": "Caractérisation d'un entreprise",
+        "abstract": "Analyse du RSE de Focus Entertainment",
+        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "start-date": "8 mars 2024",
+        "end-date": "2 avril 2024",
+        "story": "Ce projet consiste à organiser un événement factice de team building pour favoriser la cohésion d'équipe d'une entreprise. L'objectif étant de produire un film promotionnel pour cet évènement.",
+        "anchors": {"Dépôt GitHub": {
+            "href": "todo",
+            "id": "github"}},
+        "gallery": {},
+        "technologies": ["github"],
+        "tags": ["but-collaborer"]
+    },
+    "s1.05": {
+        "title": "Développement d'interfaces web",
+        "abstract": "Création d'un site de streaming",
+        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "start-date": "8 mars 2024",
+        "end-date": "2 avril 2024",
+        "story": "L'objectif était de concevoir et réaliser un site web répondant aux besoins d’un client recueillis lors d’une interview faite au préalable. Le client était une entreprise qui propose des services de streaming en ligne.",
+        "anchors": {    "Dépôt GitHub": {
+            "href": "todo",
+            "id": "github"
+       }},
+       "gallery": {},
+       "technologies": ["html", "css", "javascript", "figma", "gloomaps"],
+       "tags": ["but-conduire", "but-collaborer"]
+    },
     "s1-04": {
         "title": "S1.04",
         "abstract": "Création d'une base de données",
@@ -176,7 +289,8 @@
             "oop",
             "software",
             "ui",
-            "ux"
+            "ux",
+            "but-realiser"
         ],
         "technologies": [
             "csharp",
@@ -193,7 +307,9 @@
         "tags": [
             "software",
             "oop",
-            "compiler"
+            "compiler",
+            "but-realiser",
+            "but-optimiser"
         ],
         "background": "/portfolio/img/project/psdc/bg.png",
         "technologies": [
