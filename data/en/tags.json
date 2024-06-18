@@ -13,5 +13,6 @@
     "software": "Software",
     "ui": "<abbr title=\"User Interface\">UI</abbr>",
     "ux": "<abbr title=\"User Experience\">UX</abbr>",
-    "compiler": "Compiler"
+    "compiler": "Compiler",
+    "sysadmin": "System administration"
 }

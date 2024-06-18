@@ -61,6 +61,14 @@
         "wiki": "https://en.wikipedia.org/wiki/Blender_(software)",
         "synopsis": "Blender is a free and open-source 3D computer graphics software tool set."
     },
+    "docker": {
+        "names": [
+            "Docker"
+        ],
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Docker",
+        "synopsis": "Docker is a containerisation system (todo)."
+    },
     "doxygen": {
         "names": [
             "Doxygen"

@@ -61,6 +61,14 @@
         "wiki": "https://fr.wikipedia.org/wiki/Blender",
         "synopsis": "Blender est un logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D."
     },
+    "docker": {
+        "names": [
+            "Docker"
+        ],
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Docker",
+        "synopsis": "Docker est un système de conteneurisation (todo)."
+    },
     "c": {
         "background": "/portfolio/img/definition/c/bg.png",
         "logo": {
