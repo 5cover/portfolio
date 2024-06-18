@@ -74,6 +74,14 @@
         "wiki": "https://fr.wikipedia.org/wiki/C_(langage)",
         "synopsis": "C est un langage de programmation impératif, généraliste et de bas niveau, inventé en 1972 par Dennis Ritchie et Ken Thompson."
     },
+    "doxygen": {
+        "names": [
+            "Doxygen"
+        ],
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Doxygen",
+        "synopsis": "Doxygen est un générateur de documentation sous licence libre capable de produire une documentation logicielle à partir du code source d'un programme. Pour cela, il tient compte de la syntaxe du langage dans lequel est écrit le code source, ainsi que des commentaires s'ils sont écrits dans un format particulier."
+    },
     "cities-skylines": {
         "background": "/portfolio/img/definition/cities-skylines/bg.jpg",
         "logo": {

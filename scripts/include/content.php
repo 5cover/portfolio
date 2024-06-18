@@ -52,8 +52,7 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Raphaël Bardini</title>
-        <script
-            type="text/javascript">document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');</script>
+        <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');</script>
     </head>
 <?php }
 

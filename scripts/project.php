@@ -31,8 +31,7 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                 <h2><?php echo $p->data['title']; ?></h2>
                 <?php $p->put_logo($lang); ?>
                 <?php $p->put_abstract(); ?>
-                <?php $p->put_context(); ?>
-                <?php $p->put_status($lang->ongoing); ?>
+                <div class="status-context"><?php $p->put_context(); ?><?php $p->put_status($lang->ongoing); ?></div>
             </div>
             <?php if (count($techs = $p->data['technologies']) > 0) { ?>
                 <h3><?php echo $lang->projectTechnologies; ?></h3>
@@ -54,12 +53,12 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
             <div id="story"><?php echo $p->data['story']; ?></div>
             <?php if (count($p->data['anchors']) > 0) { ?>
                 <h3><?php echo $lang->projectLinks; ?></h3>
-                <?php $p->put_anchor_list($anchors); ?>
+                <?php $p->put_anchor_list($anchors, useAnchorId: true); ?>
             <?php }
             if (count($gallery = $p->data['gallery']) > 0) { ?>
                 <h3><?php echo $lang->projectGallery; ?></h3>
                 <div id="gallery"><?php foreach ($gallery as $name => $figure) { ?>
-                        <figure>
+                        <figure class="figure">
                             <?php
                             if ($url = $figure['url'] ?? null) {
                                 echo get_img_element($url, $name, baseHeight: 300);

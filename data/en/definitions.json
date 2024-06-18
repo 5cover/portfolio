@@ -61,6 +61,14 @@
         "wiki": "https://en.wikipedia.org/wiki/Blender_(software)",
         "synopsis": "Blender is a free and open-source 3D computer graphics software tool set."
     },
+    "doxygen": {
+        "names": [
+            "Doxygen"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Doxygen",
+        "synopsis": "Doxygen is a documentation generator and static analysis tool for software source trees. When used as a documentation generator, Doxygen extracts information from specially-formatted comments within the code. When used for analysis, Doxygen uses its parse tree to generate diagrams and charts of the code structure. Doxygen can cross reference documentation and code, so that the reader of a document can easily refer to the actual code."
+    },
     "c": {
         "background": "/portfolio/img/definition/c/bg.png",
         "logo": {

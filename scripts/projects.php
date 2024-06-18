@@ -26,7 +26,7 @@ require_once 'help.php';
                 <label for="sort-desc">Z-A<input type="radio" name="sorting" id="sort-desc" value="desc"></label>
             </div>
         </aside>
-        <ul class="list-projects" id="project-list">
+        <ul class="list-project" id="project-list">
             <!-- Project list will be updated here -->
         </ul>
     </main>

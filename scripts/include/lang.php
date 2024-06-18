@@ -92,7 +92,7 @@ $_langInstances = [
         "Optimisation",
         "L'optimisation ne se termine jamais",
         "Expérience utilisateur",
-        'Mon projet "best-seller"',
+        'Mon projet &quot;best-seller&quot;',
         "Titre de projet…",
         "Trier par titre",
         "Rechercher un projet",

@@ -1,8 +1,34 @@
 {
+    "s1-02": {
+        "title": "Comparaison d'approches algorithmiques",
+        "abstract": "Résolution de Sudoku et optimisation",
+        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "start-date": "8 janvier 2024",
+        "end-date": "2 février 2024",
+        "story": "<p>L'objectif de ce projet était d'optimiser un algorithme de résolution de grilles de Sudoku afin qu'il puisse résoudre des grilles de différentes difficultés le plus rapidement possible.</p><p>Pour les connaisseurs&nbsp;: c'est la <strong>SAÉ 1.02</strong>.</p><p>Ce projet, réalisé en binôme, aura été une aventure particulièrement enrichissante. En effet, après le rendu, notre professeur a organisé un concours d'optimisation. Chaque participant soumetta son programme et notre professeur fit plusieurs <em>benchmarks</em> sur des grilles de Sudoku 3x3, 4x4, 5x5&hellip; afin de déterminer l'équipe qui a le programme le plus optimisé.</p><p>Moi et mon coéquipier <a href=\"https://matteo-k.github.io/Matteo-K_Portfolio.github.io/\">Mattéo Kervadec</a> avons remporté le concours haut la main.</p><p>Certes, nous y avons passé quelques nuits tardives, mais cela nous a permis d'apprendre toute sourtes d'astuces relatives à l'optimisation et de devenir de meilleurs prorammeurs en général.</p><p>De plus, ce projet a continué à grandir grâche à l'investissement personnel de Mattéo et moi. Nous l'avons amélioré sur notre temps libre, aboutissant finalement à <a href=\"/portfolio/fr/project/sudone.html\">Sudone</a>.</p>",
+        "anchors": {
+            "Dépôt GitHub": {
+                "href": "https://github.com/5cover/s1-02-sudoku",
+                "id": "github"
+            }
+        },
+        "background": "/portfolio/img/project/s1-02/bg.png",
+        "gallery": {},
+        "technologies": [
+            "vs-code",
+            "c"
+        ],
+        "tags": [
+            "software",
+            "but-optimiser",
+            "but-collaborer"
+        ]
+
+    },
     "s1-01": {
         "title": "Jeu de Sudoku",
         "abstract": "Implémentation d'un besoin client",
-        "context": "BUT Informatique 1<sup>re</sup> année",
+        "context": "BUT Informatique (1<sup>re</sup> année)",
         "start-date": "16 octobre 2023",
         "end-date": "3 décembre 2023",
         "background": "/portfolio/img/project/s1-01/bg.png",
@@ -12,7 +38,8 @@
         ],
         "technologies": [
             "vs-code",
-            "c"
+            "c",
+            "doxygen"
         ],
         "anchors": {
             "Dépôt GitHub": {
@@ -43,7 +70,7 @@
         }
     },
     "2l2w-french-rural-road": {
-        "abstract": "Assset de route fraçaise standardisée",
+        "abstract": "Assset de route française standardisée",
         "anchors": {
             "Article Steam Workshop": {
                 "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993",

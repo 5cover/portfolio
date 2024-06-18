@@ -113,28 +113,8 @@ require_once 'project.php';
         </article>
         <section id="ongoing-projects">
             <h2><?php echo $lang->indexOngoingProjects; ?></h2>
-            <ul class="list-projects">
-                <?php
-                $tags = get_data_json($lang->tag . '/tags');
-                $anchors = get_data_json('anchors');
-                foreach (get_data_json($lang->tag . '/projects') as $id => $p) {
-                    $p = new Project($p);
-                    if (array_key_exists('end-date', $p->data)) {
-                        continue;
-                    }
-                    ?>
-                    <li <?php $p->put_background_style_attr('bg-img'); ?>>
-                        <?php $p->put_tags($tags); ?>
-                        <?php $p->put_logo($lang); ?>
-                        <h3><a href="project/<?php echo $id; ?>.html"><?php echo $p->data['title']; ?></a></h3>
-                        <?php $p->put_status($lang->ongoing); ?>
-                        <?php $p->put_context(); ?>
-                        <?php $p->put_abstract(); ?>
-                        <?php $p->put_anchor_list($anchors); ?>
-                    </li>
-                <?php } ?>
-            </ul>
-            <a href="projects.html"><?php echo $lang->indexAllMyProjects; ?></a>
+            <?php put_project_cards_list($lang, fn($p) => array_key_exists('end-date', $p->data)) ?>
+            <a href="projects.html" class="button-link"><?php echo $lang->indexAllMyProjects; ?></a>
             <small><?php echo $lang->indexLastUpdatedOn; ?><time datetime="2024-05-21">21/05/2024</time></small>
         </section>
         <article class="content-block" id="contact">

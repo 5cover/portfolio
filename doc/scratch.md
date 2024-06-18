@@ -24,13 +24,30 @@ That way, they won't be on the website. Also I won't need the extension anymore,
 
 for project gallery
 
-## C syntax highlighting
+## C code syntax highlighting
 
 ## Separate anchors and references
 
 Les références numérotées (style académiques), != des anchors (point d'ancrage du projet : ses connexions au monde : github, article, ...)
 
 aussi afficher plus d'infos que simplement le logo avec un tooltip. surtout qu'il n'y a pas toujours un logo. Peut-être qu'on pourraît afficher le tooltip en permancence et mettre la liste plus bas?
+
+## Put colors in separate rulesets
+
+Because we don't know where the element is, we don't know if we should use lvl1, 2 or 3. So the site looks a bit inconsistent. We can use selectors like `main > * > *` for lvl2? i don't know we'll see. We're kind of in an emergency right now.
+
+### Save.tf link?
+
+Why not. In perspectives, "Team Fortress 2"
+
+## Gallerie
+
+- S1.02, S1.01 : shells
+- S1.01 : documentatio,
+
+## Merge status and context
+
+they were never meant to be separate.
 
 ## Perspectives page
 
@@ -73,21 +90,6 @@ However, I still think C is an invaluable language to learn. It forces you to le
 
 Learning C is better than any amount of Leetcode challenges.
 
-### Save.tf link?
-
-Why not. In perspectives, "Team Fortress 2"
-
-## Page BUT Inforatique
-
-- Lien programme
-- Présente chaque compétence et la tête de liste des projets associés (entre 4 et 6)
-
-## Parcours
-
-- Lycée
-- BUT informatique
-- Projets?
-
 ## Projects
 
 - JSlave
@@ -119,3 +121,18 @@ Why not. In perspectives, "Team Fortress 2"
 - S2.04 BDD + stat + data mining
 - S2.05 Gestion de Projet
 - S2.06 Teambuilding & film : Chevalier d'Un Jour
+
+## Préparer l'oral
+
+Un truc rapide, juste un plan
+
+## Parcours
+
+- Lycée
+- BUT informatique
+- Projets?
+
+## Page BUT Informatique
+
+- Lien programme
+- Présente chaque compétence et la tête de liste des projets associés (entre 4 et 6)
