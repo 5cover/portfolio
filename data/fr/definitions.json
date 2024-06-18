@@ -72,7 +72,7 @@
         ],
         "type": "programming-language",
         "wiki": "https://fr.wikipedia.org/wiki/C_(langage)",
-        "synopsis": "C est un langage de programmation impératif, généraliste et de bas niveau, inventé en 1972."
+        "synopsis": "C est un langage de programmation impératif, généraliste et de bas niveau, inventé en 1972 par Dennis Ritchie et Ken Thompson."
     },
     "cities-skylines": {
         "background": "/portfolio/img/definition/cities-skylines/bg.jpg",
@@ -86,7 +86,7 @@
         ],
         "type": "game",
         "wiki": "https://fr.wikipedia.org/wiki/Cities%3A_Skylines",
-        "synopsis": "Cities: Skylines est un jeu de construction de ville de 2015 développé par Colossal Order et publié par Paradox Interactive. Le jeu est une simulation de construction de ville ouverte et solo."
+        "synopsis": "Cities: Skylines est un jeu de construction de ville développé par Colossal Order et publié par Paradox Interactive en 2015. Le jeu est une simulation de construction de ville ouverte et solo."
     },
     "cpp": {
         "background": "/portfolio/img/definition/cpp/bg.png",

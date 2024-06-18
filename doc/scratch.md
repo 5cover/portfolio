@@ -24,6 +24,14 @@ That way, they won't be on the website. Also I won't need the extension anymore,
 
 for project gallery
 
+## C syntax highlighting
+
+## Separate anchors and references
+
+Les références numérotées (style académiques), != des anchors (point d'ancrage du projet : ses connexions au monde : github, article, ...)
+
+aussi afficher plus d'infos que simplement le logo avec un tooltip. surtout qu'il n'y a pas toujours un logo. Peut-être qu'on pourraît afficher le tooltip en permancence et mettre la liste plus bas?
+
 ## Perspectives page
 
 My opiniated rants on some things
@@ -68,12 +76,6 @@ Learning C is better than any amount of Leetcode challenges.
 ### Save.tf link?
 
 Why not. In perspectives, "Team Fortress 2"
-
-## Separate anchors and references
-
-Les références numérotées (style académiques), != des anchors (point d'ancrage du projet : ses connexions au monde : github, article, ...)
-
-aussi afficher plus d'infos que simplement le logo avec un tooltip. surtout qu'il n'y a pas toujours un logo. Peut-être qu'on pourraît afficher le tooltip en permancence et mettre la liste plus bas?
 
 ## Page BUT Inforatique
 

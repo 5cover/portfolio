@@ -61,8 +61,10 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                 <div id="gallery"><?php foreach ($gallery as $name => $figure) { ?>
                         <figure>
                             <?php
-                            if (array_key_exists('url', $figure)) {
-                                echo get_img_element($figure['url'], $name, baseHeight: 300);
+                            if ($url = $figure['url'] ?? null) {
+                                echo get_img_element($url, $name, baseHeight: 300);
+                            } elseif ($src = $figure['iframe-src'] ?? null) {
+                                put_iframe($src, $name);
                             } else {
                                 echo $figure['content'];
                             }

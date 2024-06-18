@@ -58,6 +58,15 @@
                                 }
                             },
                             "type": "object"
+                        },
+                        {
+                            "additionalProperties": false,
+                            "properties": {
+                                "iframe-src": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            }
                         }
                     ]
                 },

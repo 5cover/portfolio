@@ -160,4 +160,9 @@ function put_definition_tooltip(Lang $lang, array $types, string $id, array $def
     </div>
 <?php }
 
+function put_iframe(string $src, string $title) { ?>
+    <iframe src="<?php echo $src; ?>" frameborder="0" loading="lazy" width="300" height="300"
+        title="<?php echo $title; ?>"></iframe>
+<?php }
+
 ?>
