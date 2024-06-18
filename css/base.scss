@@ -94,15 +94,6 @@ $huge-val: calc(infinity * 1px);
     vertical-align: baseline;
 }
 
-/* An element that contains arbitrary HTML that is not related to the structure or semantics of the current page */
-.html-box {
-    font-size: 75%;
-    background-color: var(--color-lvl3);
-    border-radius: 1em;
-    padding: 1em;
-    overflow: auto;
-}
-
 .content-block {
     border-radius: 1em;
     background-color: var(--color-lvl1);
@@ -307,7 +298,7 @@ main {
     grid-row: 2;
 }
 
-footer {
+main > footer {
     @include lvl1-content(1px 0 0 0);
     border-top-width: 1px;
     grid-row: 3;

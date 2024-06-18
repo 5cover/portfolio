@@ -51,15 +51,6 @@
   vertical-align: baseline;
 }
 
-/* An element that contains arbitrary HTML that is not related to the structure or semantics of the current page */
-.html-box {
-  font-size: 75%;
-  background-color: var(--color-lvl3);
-  border-radius: 1em;
-  padding: 1em;
-  overflow: auto;
-}
-
 .content-block {
   border-radius: 1em;
   background-color: var(--color-lvl1);
@@ -212,7 +203,7 @@ main {
   grid-row: 2;
 }
 
-footer {
+main > footer {
   border-width: 1px 0 0 0;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
@@ -222,18 +213,18 @@ footer {
   grid-row: 3;
   position: relative;
 }
-footer small {
+main > footer small {
   display: block;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-footer a {
+main > footer a {
   display: block;
   text-align: right;
 }
-footer a > svg:hover, footer a > svg:focus-within, footer a > svg:active {
+main > footer a > svg:hover, main > footer a > svg:focus-within, main > footer a > svg:active {
   transform: scale(1.15);
 }
 
