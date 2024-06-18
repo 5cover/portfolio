@@ -27,7 +27,7 @@ function put_scripts(Page $page) { ?>
     <?php }
 }
 
-function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css') { ?>
+function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css', array $additionalStylesheets = []) { ?>
 
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
@@ -43,6 +43,7 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <?php } else { ?>
             <link rel="stylesheet" type="text/css" href="/portfolio/css/<?php echo $fallbackStylesheet; ?>">
         <?php } ?>
+        <?php echo implode('', array_map(fn($url) => "<link rel=\"stylesheet\" href=\"$url\">", $additionalStylesheets)); ?>
         <link rel="stylesheet" type="text/css"
             href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">

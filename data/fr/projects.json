@@ -1,4 +1,38 @@
 {
+    "s1-04": {
+        "title": "S1.04",
+        "abstract": "Création d'une base de données",
+        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "start-date": "8 mars 2024",
+        "end-date": "2 avril 2024",
+        "story": "L'objectif de ce projet était de créer le diagramme de classe et d'implémenter un base de données en SQL.",
+        "anchors": {
+            "Dépôt GitHub": {
+                 "href": "todo",
+                 "id": "github"
+            }
+        },
+        "technologies": ["sql", "sql-workbench", "pgsql"],
+        "gallery": {},
+        "tags": ["but-gerer", "but-collaborer"]
+    },
+    "s1-03": {
+        "title": "Installation d'un poste de développement",
+        "abstract": "Automatisation, scripts et conteneurisation",
+        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "start-date": "8 mars 2024",
+        "end-date": "2 avril 2024",
+        "story": "<p>L'objectif de ce projet était de créer un générateur de documents PDF grâce à la conteneurisation Docker et en utilisant également PHP, le scripting Bash etc. Nous étions en groupes de 4. De mon côté, je me suis occupé d'écrire un parser Markdown en PHP. Nos professeurs ont été malins&nbsp;: ils ont modifés la syntaxe Markdown pour pas que l'on puisse simplement copier un parser d'Internet.</p>",
+        "tags": ["but-administrer", "but-collaborer"],
+        "anchors": {
+            "Dépôt GitHub": {
+                 "href": "todo",
+                 "id": "github"
+            }
+        },
+        "gallery": {},
+        "technologies": ["bash", "php", "docker", "github", "css", "html"]
+    },
     "s1-02": {
         "title": "Comparaison d'approches algorithmiques",
         "abstract": "Résolution de Sudoku et optimisation",

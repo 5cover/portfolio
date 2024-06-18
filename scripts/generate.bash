@@ -34,7 +34,7 @@ generate() {
 
 for lang in fr en; do
     # Simple page
-    for page in definitions-test index projects but-informatique; do
+    for page in definitions-test index projects but-informatique history; do
         generate "$outdir/$lang/$page.html" "$lang" "$page" "$page.php"
     done
 

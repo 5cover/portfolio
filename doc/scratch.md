@@ -8,6 +8,10 @@ yes. It would be awesome. Use system colors.
 
 and other relevant links as well, to connect myself to my parcours.
 
+## Une page sur le sujet de grand oral?
+
+Pourquoi pas
+
 ## Recommended projects
 
 Compute similaritly index based on number of tags in common
@@ -136,3 +140,6 @@ Un truc rapide, juste un plan
 
 - Lien programme
 - Présente chaque compétence et la tête de liste des projets associés (entre 4 et 6)
+
+
+ajouter visual paradigm def
