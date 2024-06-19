@@ -5,6 +5,7 @@
 :root {
   font-family: Roboto, system-ui;
   /* Workaround until relative colors get widespread support */
+  --color-accent-bg-rgb: 166, 97, 68;
   --color-bg-rgb: 238, 238, 238;
   --color-fg-rgb: 17, 17, 17;
   --color-lvl1-rgb: 221, 221, 221;
@@ -15,6 +16,7 @@
   --color-lvl1: rgb(var(--color-lvl1-rgb));
   --color-lvl2: rgb(var(--color-lvl2-rgb));
   --color-lvl3: rgb(var(--color-lvl3-rgb));
+  --color-accent-bg: rgb(var(--color-accent-bg-rgb));
   color: var(--color-fg);
   background-color: var(--color-bg);
   font-size: 20.57px;
@@ -281,13 +283,13 @@ section h2 {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: rgba(166, 97, 68, 0.5);
+  background-color: var(--color-accent-bg);
 }
 .theme-switches label:has(input:checked) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: rgb(166, 97, 68);
+  background-color: var(--color-accent-bg);
 }
 .theme-switches label + label {
   border-width: 0 0 0 1px;
@@ -323,7 +325,7 @@ section h2 {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: rgb(166, 97, 68);
+  background-color: var(--color-accent-bg);
 }
 
 .list-tag {
@@ -371,7 +373,7 @@ section h2 {
 .list-project > li {
   position: relative;
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-lvl2), 0.9), rgba(var(--color-lvl2), 0.9)), var(--bg-img, var(--color-lvl2)) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.85), rgba(var(--color-lvl2-rgb), 0.85)), var(--bg-img, rgb(var(--color-lvl2-rgb))) no-repeat;
   background-size: cover;
   list-style-type: none;
   border-width: 1px;
@@ -398,7 +400,7 @@ section h2 {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: rgb(166, 97, 68);
+  background-color: var(--color-accent-bg);
 }
 .list-project > li h3 > a {
   text-decoration: none;
@@ -441,7 +443,7 @@ section h2 {
 }
 .list-project > li:hover, .list-project > li:focus-within, .list-project > li:active {
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(166, 97, 68, 0.9), rgba(166, 97, 68, 0.9)), var(--bg-img, rgb(166, 97, 68)) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-accent-bg-rgb), 0.9), rgba(var(--color-accent-bg-rgb), 0.9)), var(--bg-img, rgb(var(--color-accent-bg-rgb))) no-repeat;
   background-size: cover;
 }
 .list-project > li:hover .list-tag > li, .list-project > li:focus-within .list-tag > li, .list-project > li:active .list-tag > li {
@@ -464,7 +466,7 @@ section h2 {
 
 .definition-tooltip {
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-lvl2), 0.9), rgba(var(--color-lvl2), 0.9)), var(--bg-img-definition, var(--color-lvl2)) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img-definition, rgb(var(--color-lvl2-rgb))) no-repeat;
   background-size: cover;
   grid-template: 1fr 1fr auto/1fr auto;
   display: grid;
@@ -651,5 +653,5 @@ section {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: rgb(166, 97, 68);
+  background-color: var(--color-accent-bg);
 }/*# sourceMappingURL=index.css.map */

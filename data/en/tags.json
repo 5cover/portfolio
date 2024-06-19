@@ -14,5 +14,6 @@
     "ui": "<abbr title=\"User Interface\">UI</abbr>",
     "ux": "<abbr title=\"User Experience\">UX</abbr>",
     "compiler": "Compiler",
-    "sysadmin": "System administration"
+    "sysadmin": "Sysadmin",
+    "communication": "Communication"
 }
