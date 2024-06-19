@@ -1,13 +1,4 @@
 {
-    "ebnf": {
-        "names": [
-            "EBNF",
-            "Extended Backus-Naur Form"
-        ],
-        "type": "computer-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form",
-        "synopsis": "L'Extended Backus-Naur Form (EBNF) est une extension du métalangage <abbr title=\"Backus-Naur Form\">BNF</abbr>, créée par Niklaus Wirth en 1996. Ce langage exprime des grammaire formelles afin de notamment concevoir des compilateurs."
-    },
     "apache2": {
         "logo": {
             "isThemedSvg": false,
@@ -18,21 +9,9 @@
             "Apache Server",
             "Apache2"
         ],
+        "synopsis": "Le logiciel libre Apache HTTP Server (Apache) est un serveur HTTP créé et maintenu au sein de la fondation Apache.",
         "type": "software",
-        "wiki": "https://fr.wikipedia.org/wiki/Apache_HTTP_Server",
-        "synopsis": "Le logiciel libre Apache HTTP Server (Apache) est un serveur HTTP créé et maintenu au sein de la fondation Apache."
-    },
-    "github": {
-        "logo": {
-            "isThemedSvg": true,
-            "url": "/portfolio/img/social/github.svg"
-        },
-        "names": [
-            "GitHub"
-        ],
-        "type": "website",
-        "wiki": "https://fr.wikipedia.org/wiki/GitHub",
-        "synopsis": "GitHub est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git."
+        "wiki": "https://fr.wikipedia.org/wiki/Apache_HTTP_Server"
     },
     "bash": {
         "background": "/portfolio/img/definition/bash/bg.png",
@@ -44,9 +23,9 @@
             "Bash",
             "Bourne-Again shell"
         ],
+        "synopsis": "<abbr title=\"Bourne-Again shell\">Bash</abbr> est un interpréteur en ligne de commande de type script. C'est le shell Unix du projet GNU.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Bourne-Again_shell",
-        "synopsis": "<abbr title=\"Bourne-Again shell\">Bash</abbr> est un interpréteur en ligne de commande de type script. C'est le shell Unix du projet GNU."
+        "wiki": "https://fr.wikipedia.org/wiki/Bourne-Again_shell"
     },
     "blender": {
         "background": "/portfolio/img/definition/blender/bg.png",
@@ -57,17 +36,9 @@
         "names": [
             "Blender"
         ],
+        "synopsis": "Blender est un logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D.",
         "type": "software",
-        "wiki": "https://fr.wikipedia.org/wiki/Blender",
-        "synopsis": "Blender est un logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D."
-    },
-    "docker": {
-        "names": [
-            "Docker"
-        ],
-        "type": "software",
-        "wiki": "https://fr.wikipedia.org/wiki/Docker",
-        "synopsis": "Docker est un système de conteneurisation (todo)."
+        "wiki": "https://fr.wikipedia.org/wiki/Blender"
     },
     "c": {
         "background": "/portfolio/img/definition/c/bg.png",
@@ -78,17 +49,9 @@
         "names": [
             "C"
         ],
+        "synopsis": "C est un langage de programmation impératif, généraliste et de bas niveau, inventé en 1972 par Dennis Ritchie et Ken Thompson.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/C_(langage)",
-        "synopsis": "C est un langage de programmation impératif, généraliste et de bas niveau, inventé en 1972 par Dennis Ritchie et Ken Thompson."
-    },
-    "doxygen": {
-        "names": [
-            "Doxygen"
-        ],
-        "type": "software",
-        "wiki": "https://fr.wikipedia.org/wiki/Doxygen",
-        "synopsis": "Doxygen est un générateur de documentation sous licence libre capable de produire une documentation logicielle à partir du code source d'un programme. Pour cela, il tient compte de la syntaxe du langage dans lequel est écrit le code source, ainsi que des commentaires s'ils sont écrits dans un format particulier."
+        "wiki": "https://fr.wikipedia.org/wiki/C_(langage)"
     },
     "cities-skylines": {
         "background": "/portfolio/img/definition/cities-skylines/bg.jpg",
@@ -100,9 +63,9 @@
             "Cities Skylines",
             "Cities: Skylines"
         ],
+        "synopsis": "Cities: Skylines est un jeu de construction de ville développé par Colossal Order et publié par Paradox Interactive en 2015. Le jeu est une simulation de construction de ville ouverte et solo.",
         "type": "game",
-        "wiki": "https://fr.wikipedia.org/wiki/Cities%3A_Skylines",
-        "synopsis": "Cities: Skylines est un jeu de construction de ville développé par Colossal Order et publié par Paradox Interactive en 2015. Le jeu est une simulation de construction de ville ouverte et solo."
+        "wiki": "https://fr.wikipedia.org/wiki/Cities%3A_Skylines"
     },
     "cpp": {
         "background": "/portfolio/img/definition/cpp/bg.png",
@@ -113,9 +76,9 @@
         "names": [
             "C++"
         ],
+        "synopsis": "C++ est un langage de programmation compilé permettant la programmation sous de multiples paradigmes, dont la programmation procédurale, la programmation orientée objet et la programmation générique.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/C%2B%2B",
-        "synopsis": "C++ est un langage de programmation compilé permettant la programmation sous de multiples paradigmes, dont la programmation procédurale, la programmation orientée objet et la programmation générique."
+        "wiki": "https://fr.wikipedia.org/wiki/C%2B%2B"
     },
     "csharp": {
         "background": "/portfolio/img/definition/csharp/bg.png",
@@ -126,9 +89,9 @@
         "names": [
             "C#"
         ],
+        "synopsis": "C# est un langage de programmation orienté objet, commercialisé par Microsoft depuis 2002.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/C_Sharp",
-        "synopsis": "C# est un langage de programmation orienté objet, commercialisé par Microsoft depuis 2002."
+        "wiki": "https://fr.wikipedia.org/wiki/C_Sharp"
     },
     "css": {
         "background": "/portfolio/img/definition/css/bg.png",
@@ -140,9 +103,9 @@
             "Cascading Style Sheets",
             "CSS"
         ],
+        "synopsis": "Les feuilles de style en cascade, généralement appelées CSS de l'anglais <em>Cascading Style Sheets</em>, forment un langage informatique qui décrit la présentation des documents HTML et XML.",
         "type": "computer-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade",
-        "synopsis": "Les feuilles de style en cascade, généralement appelées CSS de l'anglais <em>Cascading Style Sheets</em>, forment un langage informatique qui décrit la présentation des documents HTML et XML."
+        "wiki": "https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade"
     },
     "csv": {
         "background": "/portfolio/img/definition/csv/bg.png",
@@ -154,9 +117,21 @@
             "Comma-separated values",
             "CSV"
         ],
+        "synopsis": "Comma-separated values, connu sous le sigle CSV, est un format texte ouvert représentant des données tabulaires sous forme de valeurs séparées.",
         "type": "data-format",
-        "wiki": "https://fr.wikipedia.org/wiki/Comma-separated_values",
-        "synopsis": "Comma-separated values, connu sous le sigle CSV, est un format texte ouvert représentant des données tabulaires sous forme de valeurs séparées."
+        "wiki": "https://fr.wikipedia.org/wiki/Comma-separated_values"
+    },
+    "docker": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/docker/logo.png"
+        },
+        "names": [
+            "Docker"
+        ],
+        "synopsis": "Docker est un outil qui peut empaqueter une application et ses dépendances dans un conteneur isolé, qui pourra être exécuté sur n'importe quel serveur.",
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Docker_(logiciel)"
     },
     "dotnet": {
         "logo": {
@@ -167,9 +142,30 @@
             ".NET",
             "Microsoft .NET"
         ],
+        "synopsis": ".NET est une plateforme de développement créée par Microsoft. Elle fournit un ensemble de technologies, de langages de programmation et d'outils pour la création d'applications Windows, web, mobiles et IoT (Internet des objets).",
         "type": "library",
-        "wiki": "https://fr.wikipedia.org/wiki/.NET",
-        "synopsis": ".NET est une plateforme de développement créée par Microsoft. Elle fournit un ensemble de technologies, de langages de programmation et d'outils pour la création d'applications Windows, web, mobiles et IoT (Internet des objets)."
+        "wiki": "https://fr.wikipedia.org/wiki/.NET"
+    },
+    "doxygen": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/doxygen/logo.png"
+        },
+        "names": [
+            "Doxygen"
+        ],
+        "synopsis": "Doxygen est un générateur de documentation sous licence libre capable de produire une documentation logicielle à partir du code source d'un programme. Pour cela, il tient compte de la syntaxe du langage dans lequel est écrit le code source, ainsi que des commentaires s'ils sont écrits dans un format particulier.",
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Doxygen"
+    },
+    "ebnf": {
+        "names": [
+            "EBNF",
+            "Extended Backus-Naur Form"
+        ],
+        "synopsis": "L'Extended Backus-Naur Form (EBNF) est une extension du métalangage <abbr title=\"Backus-Naur Form\">BNF</abbr>, créée par Niklaus Wirth en 1996. Ce langage exprime des grammaire formelles afin de notamment concevoir des compilateurs.",
+        "type": "computer-language",
+        "wiki": "https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form"
     },
     "figma": {
         "logo": {
@@ -179,9 +175,21 @@
         "names": [
             "Figma"
         ],
+        "synopsis": "Figma est un éditeur de graphiques vectoriels et un outil de prototypage en ligne.",
         "type": "website",
-        "wiki": "https://fr.wikipedia.org/wiki/Figma",
-        "synopsis": "Figma est un éditeur de graphiques vectoriels et un outil de prototypage en ligne."
+        "wiki": "https://fr.wikipedia.org/wiki/Figma"
+    },
+    "github": {
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/social/github.svg"
+        },
+        "names": [
+            "GitHub"
+        ],
+        "synopsis": "GitHub est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git.",
+        "type": "website",
+        "wiki": "https://fr.wikipedia.org/wiki/GitHub"
     },
     "gloomaps": {
         "logo": {
@@ -192,9 +200,9 @@
             "GlooMaps",
             "Gloomaps"
         ],
+        "synopsis": "GlooMaps est un outil de cartographie de site en ligne simple.",
         "type": "website",
-        "wiki": "https://www.gloomaps.com/",
-        "synopsis": "GlooMaps est un outil de cartographie de site en ligne simple."
+        "wiki": "https://www.gloomaps.com/"
     },
     "html": {
         "background": "/portfolio/img/definition/html/bg.png",
@@ -207,9 +215,9 @@
             "HTML5",
             "HyperText Markup Language"
         ],
+        "synopsis": "L' <abbr title=\"HyperText Markup Language\">HTML</abbr> est le langage de balisage conçu pour représenter les pages web.",
         "type": "markup-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Hypertext_Markup_Language",
-        "synopsis": "L' <abbr title=\"HyperText Markup Language\">HTML</abbr> est le langage de balisage conçu pour représenter les pages web."
+        "wiki": "https://fr.wikipedia.org/wiki/Hypertext_Markup_Language"
     },
     "inno-setup": {
         "logo": {
@@ -219,9 +227,9 @@
         "names": [
             "Inno Setup"
         ],
+        "synopsis": "Inno Setup est un logiciel libre permettant de créer des installateurs pour Windows.",
         "type": "software",
-        "wiki": "https://fr.wikipedia.org/wiki/Inno_Setup",
-        "synopsis": "Inno Setup est un logiciel libre permettant de créer des installateurs pour Windows."
+        "wiki": "https://fr.wikipedia.org/wiki/Inno_Setup"
     },
     "java": {
         "background": "/portfolio/img/definition/java/bg.png",
@@ -232,9 +240,9 @@
         "names": [
             "Java"
         ],
+        "synopsis": "Java est un langage de programmation de haut niveau orienté objet créé par James Gosling et Patrick Naughton en 1995.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Java_(langage)",
-        "synopsis": "Java est un langage de programmation de haut niveau orienté objet créé par James Gosling et Patrick Naughton en 1995."
+        "wiki": "https://fr.wikipedia.org/wiki/Java_(langage)"
     },
     "javascript": {
         "background": "/portfolio/img/definition/javascript/bg.png",
@@ -246,9 +254,9 @@
             "JavaScript",
             "JS"
         ],
+        "synopsis": "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/JavaScript",
-        "synopsis": "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web."
+        "wiki": "https://fr.wikipedia.org/wiki/JavaScript"
     },
     "json": {
         "background": "/portfolio/img/definition/json/bg.png",
@@ -260,9 +268,9 @@
             "JavaScript Object Notation",
             "JSON"
         ],
+        "synopsis": "JavaScript Object Notation (JSON) est un format de données textuel dérivé de la notation des objets du langage JavaScript. Il concurrence XML pour la représentation et la transmission d’information structurée.",
         "type": "data-format",
-        "wiki": "https://fr.wikipedia.org/wiki/JavaScript_Object_Notation",
-        "synopsis": "JavaScript Object Notation (JSON) est un format de données textuel dérivé de la notation des objets du langage JavaScript. Il concurrence XML pour la représentation et la transmission d’information structurée."
+        "wiki": "https://fr.wikipedia.org/wiki/JavaScript_Object_Notation"
     },
     "lua": {
         "logo": {
@@ -272,9 +280,9 @@
         "names": [
             "Lua"
         ],
+        "synopsis": "Lua est un langage de script libre, réflexif et impératif créé en 1993.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Lua",
-        "synopsis": "Lua est un langage de script libre, réflexif et impératif créé en 1993."
+        "wiki": "https://fr.wikipedia.org/wiki/Lua"
     },
     "markdown": {
         "background": "/portfolio/img/definition/markdown/bg.png",
@@ -285,9 +293,9 @@
         "names": [
             "Markdown"
         ],
+        "synopsis": "Markdown est un langage de balisage léger créé en 2004 par John Gruber, avec l'aide d'Aaron Swartz.",
         "type": "markup-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Markdown",
-        "synopsis": "Markdown est un langage de balisage léger créé en 2004 par John Gruber, avec l'aide d'Aaron Swartz."
+        "wiki": "https://fr.wikipedia.org/wiki/Markdown"
     },
     "minecraft": {
         "background": "/portfolio/img/definition/minecraft/bg.png",
@@ -298,9 +306,9 @@
         "names": [
             "Minecraft"
         ],
+        "synopsis": "Minecraft est un jeu vidéo de type aventure « bac à sable » (construction complètement libre) développé par le Suédois Markus Persson, alias Notch, puis par la société Mojang Studios.",
         "type": "game",
-        "wiki": "https://fr.wikipedia.org/wiki/Minecraft",
-        "synopsis": "Minecraft est un jeu vidéo de type aventure « bac à sable » (construction complètement libre) développé par le Suédois Markus Persson, alias Notch, puis par la société Mojang Studios."
+        "wiki": "https://fr.wikipedia.org/wiki/Minecraft"
     },
     "mysql": {
         "logo": {
@@ -310,9 +318,9 @@
         "names": [
             "MySQL"
         ],
+        "synopsis": "MySQL est un système de gestion de bases de données relationnelles.",
         "type": "dbms",
-        "wiki": "https://fr.wikipedia.org/wiki/MySQL",
-        "synopsis": "MySQL est un système de gestion de bases de données relationnelles."
+        "wiki": "https://fr.wikipedia.org/wiki/MySQL"
     },
     "pascal": {
         "background": "/portfolio/img/definition/pascal/bg.png",
@@ -323,9 +331,9 @@
         "names": [
             "Pascal"
         ],
+        "synopsis": "Pascal est un langage de programmation impératif conçu pour l'enseignement.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Pascal_(langage)",
-        "synopsis": "Pascal est un langage de programmation impératif conçu pour l'enseignement."
+        "wiki": "https://fr.wikipedia.org/wiki/Pascal_(langage)"
     },
     "pgsql": {
         "logo": {
@@ -336,9 +344,9 @@
             "Postgres",
             "PostgreSQL"
         ],
+        "synopsis": "PostgreSQL est un système de gestion de base de données relationnelle et objet.",
         "type": "dbms",
-        "wiki": "https://fr.wikipedia.org/wiki/PostgreSQL",
-        "synopsis": "PostgreSQL est un système de gestion de base de données relationnelle et objet."
+        "wiki": "https://fr.wikipedia.org/wiki/PostgreSQL"
     },
     "php": {
         "background": "/portfolio/img/definition/php/bg.png",
@@ -350,9 +358,9 @@
             "Personal Homepage",
             "PHP"
         ],
+        "synopsis": "<abbr title=\"Personal Homepage\">PHP</abbr> est un langage de programmation créé en 1993, principalement utilisé pour produire des pages Web dynamiques via un serveur web",
         "type": "programming-language",
-        "wiki": "https://en.wikipedia.org/wiki/PHP",
-        "synopsis": "<abbr title=\"Personal Homepage\">PHP</abbr> est un langage de programmation créé en 1993, principalement utilisé pour produire des pages Web dynamiques via un serveur web"
+        "wiki": "https://en.wikipedia.org/wiki/PHP"
     },
     "powershell": {
         "background": "/portfolio/img/definition/powershell/bg.png",
@@ -364,9 +372,9 @@
             "PowerShell",
             "Windows PowerShell"
         ],
+        "synopsis": "Windows PowerShell est une interface de ligne de commande multiplate-forme et langage de script pour l'administration de systèmes informatiques et de réseaux.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Windows_PowerShell",
-        "synopsis": "Windows PowerShell est une interface de ligne de commande multiplate-forme et langage de script pour l'administration de systèmes informatiques et de réseaux."
+        "wiki": "https://fr.wikipedia.org/wiki/Windows_PowerShell"
     },
     "python": {
         "background": "/portfolio/img/definition/python/bg.png",
@@ -377,9 +385,9 @@
         "names": [
             "Python"
         ],
+        "synopsis": "Python est un langage de programmation interprété, multiparadigme et multiplateformes.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Python_(langage)",
-        "synopsis": "Python est un langage de programmation interprété, multiparadigme et multiplateformes."
+        "wiki": "https://fr.wikipedia.org/wiki/Python_(langage)"
     },
     "replit": {
         "logo": {
@@ -389,9 +397,9 @@
         "names": [
             "Replit"
         ],
+        "synopsis": "Replit est une start-up américaine et un <abbr title=\"Environnement de Développement Intégré\">IDE</abbr> en ligne, qui permet de créer des projets de programmation en ligne appelés <em>repls</em>.",
         "type": "website",
-        "wiki": "https://en.wikipedia.org/wiki/Replit",
-        "synopsis": "Replit est une start-up américaine et un <abbr title=\"Environnement de Développement Intégré\">IDE</abbr> en ligne, qui permet de créer des projets de programmation en ligne appelés <em>repls</em>."
+        "wiki": "https://en.wikipedia.org/wiki/Replit"
     },
     "sass": {
         "background": "/portfolio/img/definition/sass/bg.png",
@@ -404,9 +412,9 @@
             "SCSS",
             "Syntactically Awesome Style Sheets"
         ],
+        "synopsis": "<abbr title=\"Syntactically Awesome Style Sheets\">Sass</abbr> est un langage de script préprocesseur qui est compilé ou interprété en CSS.",
         "type": "computer-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Sass_(langage)",
-        "synopsis": "<abbr title=\"Syntactically Awesome Style Sheets\">Sass</abbr> est un langage de script préprocesseur qui est compilé ou interprété en CSS."
+        "wiki": "https://fr.wikipedia.org/wiki/Sass_(langage)"
     },
     "scheme": {
         "background": "/portfolio/img/definition/scheme/bg.png",
@@ -417,9 +425,9 @@
         "names": [
             "Scheme"
         ],
+        "synopsis": "Scheme est un langage de programmation dérivé du langage fonctionnel Lisp, créé dans les années 1970 au <abbr title=\"Massachusetts Institute of Technology\">MIT</abbr> par Gerald Jay Sussman et Guy L. Steele.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Scheme",
-        "synopsis": "Scheme est un langage de programmation dérivé du langage fonctionnel Lisp, créé dans les années 1970 au <abbr title=\"Massachusetts Institute of Technology\">MIT</abbr> par Gerald Jay Sussman et Guy L. Steele."
+        "wiki": "https://fr.wikipedia.org/wiki/Scheme"
     },
     "smalltalk": {
         "logo": {
@@ -429,9 +437,9 @@
         "names": [
             "Smalltalk"
         ],
+        "synopsis": "Smalltalk est un langage de programmation orienté objet, réflexif et dynamiquement typé créé en 1972.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Smalltalk",
-        "synopsis": "Smalltalk est un langage de programmation orienté objet, réflexif et dynamiquement typé créé en 1972."
+        "wiki": "https://fr.wikipedia.org/wiki/Smalltalk"
     },
     "sql": {
         "background": "/portfolio/img/definition/sql/bg.png",
@@ -439,9 +447,9 @@
             "SQL",
             "Structured Query Language"
         ],
+        "synopsis": "<abbr title=\"Structured Query Language\">SQL</abbr> est un langage informatique créé en 1974 servant à exploiter des bases de données relationnelles.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Structured_Query_Language",
-        "synopsis": "<abbr title=\"Structured Query Language\">SQL</abbr> est un langage informatique créé en 1974 servant à exploiter des bases de données relationnelles."
+        "wiki": "https://fr.wikipedia.org/wiki/Structured_Query_Language"
     },
     "sql-workbench": {
         "background": "/portfolio/img/definition/sql-workbench/bg.png",
@@ -452,9 +460,9 @@
         "names": [
             "SQL Workbench/J"
         ],
+        "synopsis": "SQL Workbench/J est un outil de requête SQL multiplateforme indépendant du SGBD.",
         "type": "software",
-        "wiki": "https://www.sql-workbench.eu/",
-        "synopsis": "SQL Workbench/J est un outil de requête SQL multiplateforme indépendant du SGBD."
+        "wiki": "https://www.sql-workbench.eu/"
     },
     "sqlite": {
         "logo": {
@@ -464,9 +472,9 @@
         "names": [
             "SQLite"
         ],
+        "synopsis": "SQLite est une bibliothèque écrite en langage C qui propose un moteur de base de données relationnelle accessible par le langage SQL",
         "type": "dbms",
-        "wiki": "https://fr.wikipedia.org/wiki/SQLite",
-        "synopsis": "SQLite est une bibliothèque écrite en langage C qui propose un moteur de base de données relationnelle accessible par le langage SQL"
+        "wiki": "https://fr.wikipedia.org/wiki/SQLite"
     },
     "svg": {
         "background": "/portfolio/img/definition/svg/bg.png",
@@ -478,17 +486,29 @@
             "Scalable Vector Graphics",
             "SVG"
         ],
+        "synopsis": "Le <abbr title=\"Scalable Vector Graphics (en français « graphiques vectoriels adaptables »)\">SVG</abbr> est un format de données textuel conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML.",
         "type": "data-format",
-        "wiki": "https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics",
-        "synopsis": "Le <abbr title=\"Scalable Vector Graphics (en français « graphiques vectoriels adaptables »)\">SVG</abbr> est un format de données textuel conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML."
+        "wiki": "https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics"
     },
     "tkinter": {
         "names": [
             "Tkinter"
         ],
+        "synopsis": "Tkinter (de l'anglais Tool kit interface) est la bibliothèque graphique libre d'origine pour le langage Python, permettant la création d'interfaces graphiques.",
         "type": "library",
-        "wiki": "https://fr.wikipedia.org/wiki/Tkinter",
-        "synopsis": "Tkinter (de l'anglais Tool kit interface) est la bibliothèque graphique libre d'origine pour le langage Python, permettant la création d'interfaces graphiques."
+        "wiki": "https://fr.wikipedia.org/wiki/Tkinter"
+    },
+    "visual-paradigm": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/visual-paradigm/logo.png"
+        },
+        "names": [
+            "Visual Paradigm"
+        ],
+        "synopsis": "Visual Paradigm est un logiciel de conception et de modélisation de systèmes d'information. Il offre une plateforme de développement logiciel intégrée qui prend en charge les langages de modélisation UML (Unified Modeling Language), BPMN (Business Process Model and Notation), SysML, et bien d'autres.",
+        "type": "software",
+        "wiki": "https://www.visual-paradigm.com/"
     },
     "visual-studio": {
         "logo": {
@@ -499,9 +519,9 @@
             "Microsoft Visual Studio",
             "Visual Studio"
         ],
+        "synopsis": "Microsoft Visual Studio est une suite de logiciels de développement pour Windows et mac OS conçue par Microsoft.",
         "type": "software",
-        "wiki": "https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio",
-        "synopsis": "Microsoft Visual Studio est une suite de logiciels de développement pour Windows et mac OS conçue par Microsoft."
+        "wiki": "https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio"
     },
     "vs-code": {
         "background": "/portfolio/img/definition/vs-code/bg.png",
@@ -515,9 +535,9 @@
             "VSC",
             "VSCode"
         ],
+        "synopsis": "Visual Studio Code est un éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.",
         "type": "software",
-        "wiki": "https://fr.wikipedia.org/wiki/Visual_Studio_Code",
-        "synopsis": "Visual Studio Code est un éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS."
+        "wiki": "https://fr.wikipedia.org/wiki/Visual_Studio_Code"
     },
     "winforms": {
         "logo": {
@@ -528,9 +548,9 @@
             "Windows Forms",
             "WinForms"
         ],
+        "synopsis": "Windows Forms un framework d'interface graphique inclus dans le framework .NET fournissant l'accès via à l'API Windows.",
         "type": "library",
-        "wiki": "https://fr.wikipedia.org/wiki/Windows_Forms",
-        "synopsis": "Windows Forms un framework d'interface graphique inclus dans le framework .NET fournissant l'accès via à l'API Windows."
+        "wiki": "https://fr.wikipedia.org/wiki/Windows_Forms"
     },
     "wpf": {
         "background": "/portfolio/img/definition/wpf/bg.png",
@@ -542,9 +562,9 @@
             "Windows Presentation Foundation",
             "WPF"
         ],
+        "synopsis": "<abbr title=\"Windows Presentation Foundation\">WPF</abbr> est un système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois en 2006.",
         "type": "library",
-        "wiki": "https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation",
-        "synopsis": "<abbr title=\"Windows Presentation Foundation\">WPF</abbr> est un système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois en 2006."
+        "wiki": "https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation"
     },
     "xml": {
         "background": "/portfolio/img/definition/xml/bg.png",
@@ -556,9 +576,9 @@
             "Extensible Markup Language",
             "XML"
         ],
+        "synopsis": "L'<abbr title=\"Extensible Markup Language\">XML</abbr>, est un métalangage informatique de balisage utilisé pour représenter des données structurées.",
         "type": "markup-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Extensible_Markup_Language",
-        "synopsis": "L'<abbr title=\"Extensible Markup Language\">XML</abbr>, est un métalangage informatique de balisage utilisé pour représenter des données structurées."
+        "wiki": "https://fr.wikipedia.org/wiki/Extensible_Markup_Language"
     },
     "zig": {
         "background": "/portfolio/img/definition/zig/bg.png",
@@ -569,8 +589,8 @@
         "names": [
             "Zig"
         ],
+        "synopsis": "Zig est un langage de programmation compilé impératif polyvalent, typé statiquement, conçu par Andrew Kelley en 2015 pour servir de successeur au C.",
         "type": "programming-language",
-        "wiki": "https://fr.wikipedia.org/wiki/Zig_(langage)",
-        "synopsis": "Zig est un langage de programmation compilé impératif polyvalent, typé statiquement, conçu par Andrew Kelley en 2015 pour servir de successeur au C."
+        "wiki": "https://fr.wikipedia.org/wiki/Zig_(langage)"
     }
 }

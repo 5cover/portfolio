@@ -140,6 +140,3 @@ Un truc rapide, juste un plan
 
 - Lien programme
 - Présente chaque compétence et la tête de liste des projets associés (entre 4 et 6)
-
-
-ajouter visual paradigm def

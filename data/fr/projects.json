@@ -1,7 +1,7 @@
 {
     "s2.06": {
         "title": "Évènement de teambuilding",
-        "abstract": "Planification d'un évènement et réalisation d'un film promotionnel",
+        "abstract": "Planification d'un évènement et réalisation d'un film promotionnel. Organisation d'un travail d'équipe (S2.06)",
 "start-date": "8 mars 2024",
         "end-date": "2 avril 2024",
         "anchors": {"Dépôt GitHub": {
@@ -10,12 +10,12 @@
         "gallery": {},
         "technologies": ["github"],
         "tags": ["but-collaborer"],
-        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "context": "BUT",
         "story": "todo"
     },
     "s2.05": {
-        "title": "Gestion de projet informatique",
-        "abstract": "Gestion de projet de création d'application Java : gestion d'une salle de spectacle",
+        "title": "Gestion d'un projet de développement d'application",
+        "abstract": "Application Java de gestion d'une salle de spectacle. Gestion d'un projet (S2.05)",
 "start-date": "8 mars 2024",
         "end-date": "2 avril 2024",
         "anchors": {"Dépôt GitHub": {
@@ -25,11 +25,11 @@
         "technologies": ["github"],
         "tags": ["but-conduire", "but-collaborer"],
         "story": "todo",
-        "context": "BUT Informatique (1<sup>re</sup> année)"
+        "context": "BUT"
     },
     "s2.04": {
-        "title": "Base de donnée et analyse statistique",
-        "abstract": "Data mining sur l'open-data des collèges",
+        "title": "Exploitation de base de données",
+        "abstract": "Data mining sur l'open-data des collèges. Exploitation d'une base de données (S2.04)",
 "start-date": "8 mars 2024",
         "end-date": "2 avril 2024",
         "anchors": {"Dépôt GitHub": {
@@ -39,12 +39,12 @@
         "technologies": ["replit", "sql", "mysql"],
         "tags": ["but-gerer", "but-collaborer"],
         "story": "todo",
-        "context": "BUT Informatique (1<sup>re</sup> année)"
+        "context": "BUT"
     },
     "s2.03": {
-        "title": "Configuration d'un serveur Web",
-        "abstract": "Site de météo avec Apache2",
-        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "title": "Mise en place d'un serveur Web",
+        "abstract": "Site de météo avec Apache HTTP Server. Installation de services réseau (S2.03)",
+        "context": "BUT",
         "start-date": "8 mars 2024",
         "end-date": "2 avril 2024",
         "anchors": {"Dépôt GitHub": {
@@ -56,9 +56,9 @@
         "story": "todo"
     },
     "s2.02": {
-        "title": "Exploration algorithmique",
-        "abstract": "Des solutions innovantes au problèmes des N Reines",
-        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "title": "Analyse du problème des N reines",
+        "abstract": "Des solutions innovantes au <a class=\"link\" target=\"_blank\" href=\"/portfolio/img/project/s2-02/sujet-sae.pdf\">problème des N reines</a>. Exploration algorithmique d'un problème (S2.02)",
+        "context": "BUT",
         "start-date": "8 mars 2024",
         "end-date": "2 avril 2024",
         "anchors": {"Dépôt GitHub": {
@@ -71,8 +71,8 @@
     },
     "s2.01": {
         "title": "Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr>",
-        "abstract": "Application de gestion de salle de spectacle",
-        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "abstract": "Développement d'une application de gestion de salle de spectacle (S2.01)",
+        "context": "BUT",
         "start-date": "8 mars 2024",
         "end-date": "2 avril 2024",
         "anchors": {"Dépôt GitHub": {
@@ -84,12 +84,12 @@
         "story": "L'objectif de ce projet est de créer une application de gestion d'une salle de spectacle en Java avec une IHM (interface homme machine) en Java FX qui permet au directeur de la salle de gérer les spectacles."
     },
     "s1.06": {
-        "title": "Caractérisation d'un entreprise",
-        "abstract": "Analyse du RSE de Focus Entertainment",
-        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "title": "Environnement économique",
+        "abstract": "Analyse du rapport <abbr title=\"Responsabilité sociétale des entreprises\">RSE</abbr> de Focus Entertainment (S1.06)",
+        "context": "BUT",
         "start-date": "8 mars 2024",
         "end-date": "2 avril 2024",
-        "story": "Ce projet consiste à organiser un événement factice de team building pour favoriser la cohésion d'équipe d'une entreprise. L'objectif étant de produire un film promotionnel pour cet évènement.",
+        "story": "Ce projet consiste à organiser un événement factice de team building pour favoriser la cohésion d'équipe d'une entreprise. En groupe de 4, nous avons produit un court film promotionnel pour cet évènement.",
         "anchors": {"Dépôt GitHub": {
             "href": "todo",
             "id": "github"}},
@@ -98,9 +98,9 @@
         "tags": ["but-collaborer"]
     },
     "s1.05": {
-        "title": "Développement d'interfaces web",
-        "abstract": "Création d'un site de streaming",
-        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "title": "Recueil des besoins",
+        "abstract": "Création d'un site de streaming factice (S1.05)",
+        "context": "BUT",
         "start-date": "8 mars 2024",
         "end-date": "2 avril 2024",
         "story": "L'objectif était de concevoir et réaliser un site web répondant aux besoins d’un client recueillis lors d’une interview faite au préalable. Le client était une entreprise qui propose des services de streaming en ligne.",
@@ -110,12 +110,12 @@
        }},
        "gallery": {},
        "technologies": ["html", "css", "javascript", "figma", "gloomaps"],
-       "tags": ["but-conduire", "but-collaborer"]
+       "tags": ["but-conduire", "but-collaborer", "communication"]
     },
     "s1-04": {
         "title": "S1.04",
-        "abstract": "Création d'une base de données",
-        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "abstract": "Création d'une base de données (S1.04)",
+        "context": "BUT",
         "start-date": "8 mars 2024",
         "end-date": "2 avril 2024",
         "story": "L'objectif de ce projet était de créer le diagramme de classe et d'implémenter un base de données en SQL.",
@@ -131,8 +131,8 @@
     },
     "s1-03": {
         "title": "Installation d'un poste de développement",
-        "abstract": "Automatisation, scripts et conteneurisation",
-        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "abstract": "Automatisation, scripts et conteneurisation (S1.03)",
+        "context": "BUT",
         "start-date": "8 mars 2024",
         "end-date": "2 avril 2024",
         "story": "<p>L'objectif de ce projet était de créer un générateur de documents PDF grâce à la conteneurisation Docker et en utilisant également PHP, le scripting Bash etc. Nous étions en groupes de 4. De mon côté, je me suis occupé d'écrire un parser Markdown en PHP. Nos professeurs ont été malins&nbsp;: ils ont modifés la syntaxe Markdown pour pas que l'on puisse simplement copier un parser d'Internet.</p>",
@@ -148,11 +148,11 @@
     },
     "s1-02": {
         "title": "Comparaison d'approches algorithmiques",
-        "abstract": "Résolution de Sudoku et optimisation",
-        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "abstract": "Résolution de Sudoku et optimisation (S1.02)",
+        "context": "BUT",
         "start-date": "8 janvier 2024",
         "end-date": "2 février 2024",
-        "story": "<p>L'objectif de ce projet était d'optimiser un algorithme de résolution de grilles de Sudoku afin qu'il puisse résoudre des grilles de différentes difficultés le plus rapidement possible.</p><p>Pour les connaisseurs&nbsp;: c'est la <strong>SAÉ 1.02</strong>.</p><p>Ce projet, réalisé en binôme, aura été une aventure particulièrement enrichissante. En effet, après le rendu, notre professeur a organisé un concours d'optimisation. Chaque participant soumetta son programme et notre professeur fit plusieurs <em>benchmarks</em> sur des grilles de Sudoku 3x3, 4x4, 5x5&hellip; afin de déterminer l'équipe qui a le programme le plus optimisé.</p><p>Moi et mon coéquipier <a href=\"https://matteo-k.github.io/Matteo-K_Portfolio.github.io/\">Mattéo Kervadec</a> avons remporté le concours haut la main.</p><p>Certes, nous y avons passé quelques nuits tardives, mais cela nous a permis d'apprendre toute sourtes d'astuces relatives à l'optimisation et de devenir de meilleurs prorammeurs en général.</p><p>De plus, ce projet a continué à grandir grâche à l'investissement personnel de Mattéo et moi. Nous l'avons amélioré sur notre temps libre, aboutissant finalement à <a href=\"/portfolio/fr/project/sudone.html\">Sudone</a>.</p>",
+        "story": "<p>L'objectif de ce projet était d'optimiser un algorithme de résolution de grilles de Sudoku afin qu'il puisse résoudre des grilles de différentes difficultés le plus rapidement possible.</p><p>Ce projet, réalisé en binôme, aura été une aventure particulièrement enrichissante. En effet, après le rendu, notre professeur a organisé un concours d'optimisation. Chaque participant soumetta son programme et notre professeur fit plusieurs <em>benchmarks</em> sur des grilles de Sudoku 3x3, 4x4, 5x5&hellip; afin de déterminer l'équipe qui a le programme le plus optimisé.</p><p>Moi et mon coéquipier <a href=\"https://matteo-k.github.io/Matteo-K_Portfolio.github.io/\">Mattéo Kervadec</a> avons remporté le concours haut la main.</p><p>Certes, nous y avons passé quelques nuits tardives, mais cela nous a permis d'apprendre toute sourtes d'astuces relatives à l'optimisation et de devenir de meilleurs prorammeurs en général.</p><p>De plus, ce projet a continué à grandir grâche à l'investissement personnel de Mattéo et moi. Nous l'avons amélioré sur notre temps libre, aboutissant finalement à <a href=\"/portfolio/fr/project/sudone.html\">Sudone</a>.</p>",
         "anchors": {
             "Dépôt GitHub": {
                 "href": "https://github.com/5cover/s1-02-sudoku",
@@ -174,8 +174,8 @@
     },
     "s1-01": {
         "title": "Jeu de Sudoku",
-        "abstract": "Implémentation d'un besoin client",
-        "context": "BUT Informatique (1<sup>re</sup> année)",
+        "abstract": "Implémentation d'un besoin client (S1.01)",
+        "context": "BUT",
         "start-date": "16 octobre 2023",
         "end-date": "3 décembre 2023",
         "background": "/portfolio/img/project/s1-01/bg.png",
@@ -194,7 +194,7 @@
                 "id": "github"
             }
         },
-        "story": "<p>L'objectif de ce projet était de créer un jeu de Sudoku fonctionnel en langage C, jouable via le terminal de Linux.</p><blockquote><p>L’association « Les têtes à clic » intervient dans les collèges pour familiariser les élèves à l’utilisation de logiciels. Elle développe aussi des petits jeux de société sur ordinateur pour les enfants. Stagiaire dans cette association, vous êtes chargés de développer un programme permettant à un collégien de remplir une grille de Sudoku.</p><footer>— <cite>Sujet du projet</cite></footer></blockquote><p>Pour les connaisseurs&nbsp;: c'est la <strong>SAÉ 1.01</strong>.</p>",
+        "story": "<p>L'objectif de ce projet était de créer un jeu de Sudoku fonctionnel en langage C, jouable via le terminal de Linux.</p><blockquote><p>L’association « Les têtes à clic » intervient dans les collèges pour familiariser les élèves à l’utilisation de logiciels. Elle développe aussi des petits jeux de société sur ordinateur pour les enfants. Stagiaire dans cette association, vous êtes chargés de développer un programme permettant à un collégien de remplir une grille de Sudoku.</p><footer>— <cite>Sujet du projet</cite></footer></blockquote>",
         "gallery": {
             "Maquette (extrait)": {
                 "url": "/portfolio/img/project/s1-01/maquette.png"

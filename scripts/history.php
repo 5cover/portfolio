@@ -57,7 +57,7 @@ require_once 'project.php';
                                 </div>
                                 <div class="ag-timeline-card_info">
                                     <div class="ag-timeline-card_title">Cambridge First Certificate</div>
-                                    <div class="ag-timeline-card_desc">J'ai pu passer cette certification d'anglais dans le contexte de ma spécialité AMC. Il y avait un test oral et écrit. Passer cette épreuve m'a permis de certifier mon niveau en anglais (C2).</div>
+                                    <div class="ag-timeline-card_desc">J'ai pu passer cette certification d'anglais dans le contexte de ma spécialité AMC. Il y avait un test oral et écrit. Passer cette épreuve m'a permis de certifier mon niveau en anglais (C1).</div>
                                 </div>
                             </div>
                             <div class="ag-timeline-card_arrow"></div>
