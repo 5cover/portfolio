@@ -113,7 +113,7 @@ require_once 'project.php';
         </article>
         <section id="ongoing-projects">
             <h2><?php echo $lang->indexOngoingProjects; ?></h2>
-            <?php put_project_cards_list($lang, fn($p) => array_key_exists('end-date', $p->data)) ?>
+            <?php put_project_cards_list($lang, fn($p) => !array_key_exists('end-date', $p->data)) ?>
             <a href="projects.html" class="button-link"><?php echo $lang->indexAllMyProjects; ?></a>
             <small><?php echo $lang->indexLastUpdatedOn; ?><time datetime="2024-05-21">21/05/2024</time></small>
         </section>
