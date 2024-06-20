@@ -61,17 +61,17 @@ final class Project {
 }
 
 function put_project_cards_list(Lang $lang, callable $predicate, int $mode = 0) {
-    $tags = get_data_json($lang->tag . '/tags');
+    $tags = $lang->get_data('tags');
     $anchors = get_data_json('anchors');
     ?>
     <ul class="list-project"><?php
-    foreach (array_filter(array_map(fn($p) => new Project($p), get_data_json($lang->tag . '/projects')), $predicate, $mode) as $id => $p) {
+    foreach (array_filter(array_map(fn($p) => new Project($p), $lang->get_data('projects')), $predicate, $mode) as $id => $p) {
         ?>
             <li <?php $p->put_background_style_attr('bg-img'); ?>>
                 <?php $p->put_tags($tags); ?>
                 <?php $p->put_logo($lang); ?>
                 <h3><a href="project/<?php echo $id; ?>.html"><?php echo $p->data['title']; ?></a></h3>
-                <p class="status"><?php $p->put_status($lang->ongoing); ?></p>
+                <p class="status"><?php $p->put_status($lang->get('ongoing')); ?></p>
                 <p class="context"><?php $p->put_context(); ?></p>
                 <?php $p->put_abstract(); ?>
                 <?php $p->put_anchor_list($anchors); ?>

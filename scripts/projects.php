@@ -13,14 +13,14 @@ require_once 'help.php';
             <!-- Fill this up dynamically -->
         </datalist>
         <aside id="search-bar">
-            <h2><?php echo $lang->projectSearchSearch; ?></h2>
-            <input type="search" id="search-input" placeholder="<?php echo $lang->projectSearchPlaceholder; ?>" autocomplete="on"
-                list="project-titles">
-            <h3><?php echo $lang->projectSearchTags; ?></h3>
+            <h2><?php echo $lang->get('projectSearchSearch'); ?></h2>
+            <input type="search" id="search-input" placeholder="<?php echo $lang->get('projectSearchPlaceholder'); ?>"
+                autocomplete="on" list="project-titles">
+            <h3><?php echo $lang->get('projectSearchTags'); ?></h3>
             <div class="list-tag" id="list-tag">
                 <!-- Tags will be added here -->
             </div>
-            <h3><?php echo $lang->projectSearchSort; ?></h3>
+            <h3><?php echo $lang->get('projectSearchSort'); ?></h3>
             <div class="list-tag" id="list-sorting">
                 <label for="sort-asc">A-Z<input type="radio" name="sorting" id="sort-asc" value="asc" checked></label>
                 <label for="sort-desc">Z-A<input type="radio" name="sorting" id="sort-desc" value="desc"></label>

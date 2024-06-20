@@ -21,6 +21,14 @@ Dark background
 White title, left-aligned
 Abstract in italics
 
+## Opt-in styling classes
+
+Sometimes you don't want the basic style for an element. So, we have to opt-in our styles explicitly everywhere that we do. Or we could create classes like `not-link`, `not-figure`... but that's weird. Or is it? Not styling is the special case after all. I have to think about this more.
+
+element|class
+figure|figure
+a|link
+
 ## Margins
 
 - Between blocks

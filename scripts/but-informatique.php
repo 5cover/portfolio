@@ -87,7 +87,7 @@ require_once 'project.php';
                     <li>J'ai énormément étendu mes horizons, j'ai découvert une pléthore de nouvelles disciplines de
                         l'informatique&nbsp;;</li>
                     <li>J'ai maintenant la tête remplie d'idées de projets que je souhaite réaliser&nbsp;;</li>
-                    <li>L'ambience de formation a été conviviale. Le climat est propice à l'entraide et à la
+                    <li>L'ambiance de formation a été conviviale. Le climat est propice à l'entraide et à la
                         coopération, aussi bien entre étudiants qu'avec les professeurs.</li>
                 </ul>
                 <p><strong>Conclusion</strong>&nbsp;: je suis euphorique.</p>

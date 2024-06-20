@@ -16,9 +16,9 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
     $p = new Project(json_decode($projectJson, true));
 
     $anchors = get_data_json('anchors');
-    $tags = get_data_json($lang->tag . '/tags');
-    $defintions = get_data_json($lang->tag . '/definitions');
-    $types = get_data_json($lang->tag . '/types');
+    $tags = $lang->get_data('tags');
+    $defintions = $lang->get_data('definitions');
+    $types = $lang->get_data('types');
     ?>
     <?php put_doctype_html($page, $lang); ?>
     <?php put_head($page, $lang, 'project.css'); ?>
@@ -31,10 +31,10 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                 <h2><?php echo $p->data['title']; ?></h2>
                 <?php $p->put_logo($lang); ?>
                 <?php $p->put_abstract(); ?>
-                <div class="status-context"><?php $p->put_context(); ?><?php $p->put_status($lang->ongoing); ?></div>
+                <div class="status-context"><?php $p->put_context(); ?><?php $p->put_status($lang->get('ongoing')); ?></div>
             </div>
             <?php if (count($techs = $p->data['technologies']) > 0) { ?>
-                <h3><?php echo $lang->projectTechnologies; ?></h3>
+                <h3><?php echo $lang->get('projectTechnologies'); ?></h3>
                 <ul id="technologies"><?php foreach ($techs as $defId) {
                     $def = $defintions[$defId];
                     $logo = $def['logo'] ?? null;
@@ -52,11 +52,11 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
             <?php } ?>
             <div id="story"><?php echo $p->data['story']; ?></div>
             <?php if (count($p->data['anchors']) > 0) { ?>
-                <h3><?php echo $lang->projectLinks; ?></h3>
+                <h3><?php echo $lang->get('projectLinks'); ?></h3>
                 <?php $p->put_anchor_list($anchors, useAnchorId: true); ?>
             <?php }
             if (count($gallery = $p->data['gallery']) > 0) { ?>
-                <h3><?php echo $lang->projectGallery; ?></h3>
+                <h3><?php echo $lang->get('projectGallery'); ?></h3>
                 <div id="gallery"><?php foreach ($gallery as $name => $figure) { ?>
                         <figure class="figure">
                             <?php

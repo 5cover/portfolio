@@ -113,3 +113,23 @@ The flaw in my design is that each PHP matches 1 page, whose name is passed as a
 Soo.. Instead i should just set the page name explicitly at the start of every script, and expose it as function and not a constant?
 
 ## project.scss
+
+## Préparer l'oral
+
+Un truc rapide, juste un plan
+
+## Parcours
+
+- Lycée
+- BUT informatique
+- Projets?
+
+## Express translations as JSON
+
+Right now this is a mess.
+
+~~No need for lang class, just have an helper function that reads the JSON file in object mode.~~
+
+Yes need for lang class, because translation is sometimes associated with more complex logic (*fFormatTitle*...). Although i could use format strings for this, provided PHP has support for this. Look it up in the documentation I guess.
+
+We can use fprintf for it

@@ -12,8 +12,8 @@ require_once 'content.php';
     <main>
         <dl>
             <?php
-            $defs = get_data_json($lang->tag . '/definitions');
-            $types = get_data_json($lang->tag . '/types');
+            $defs = $lang->get_data('definitions');
+            $types = $lang->get_data('types');
             foreach ($defs as $id => $def) {
                 $title = $def['names'][0];
                 ?>

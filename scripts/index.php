@@ -14,112 +14,112 @@ require_once 'project.php';
         <ul class="list-piano-tiles hover-sensitive-list">
             <li>
                 <figure>
-                    <img src="/portfolio/img/piano-tile/1.jpg" alt="<?php echo $lang->indexPianoTile1Title ?>"
+                    <img src="/portfolio/img/piano-tile/1.jpg" alt="<?php echo $lang->get('indexPianoTile1Title') ?>"
                         width="240" height="480" loading="lazy"
-                        title="<?php echo strip_tags($lang->indexPianoTile1Desc); ?>">
+                        title="<?php echo strip_tags($lang->get('indexPianoTile1Desc')); ?>">
                     <figcaption>
-                        <h2><a href="passions.html#mountain"><?php echo $lang->indexPianoTile1Title ?></a></h2>
-                        <p><?php echo $lang->indexPianoTile1Desc ?></p>
+                        <h2><a href="passions.html#mountain"><?php echo $lang->get('indexPianoTile1Title') ?></a></h2>
+                        <p><?php echo $lang->get('indexPianoTile1Desc') ?></p>
                     </figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="/portfolio/img/piano-tile/2.png" alt="<?php echo $lang->indexPianoTile2Title ?>"
+                    <img src="/portfolio/img/piano-tile/2.png" alt="<?php echo $lang->get('indexPianoTile2Title') ?>"
                         width="240" height="480" loading="lazy"
-                        title="<?php echo strip_tags($lang->indexPianoTile2Desc); ?>">
+                        title="<?php echo strip_tags($lang->get('indexPianoTile2Desc')); ?>">
                     <figcaption>
-                        <h2><a href="passions.html#sandbox-videogames"><?php echo $lang->indexPianoTile2Title ?></a>
+                        <h2><a href="passions.html#sandbox-videogames"><?php echo $lang->get('indexPianoTile2Title') ?></a>
                         </h2>
-                        <p><?php echo $lang->indexPianoTile2Desc ?></p>
+                        <p><?php echo $lang->get('indexPianoTile2Desc') ?></p>
                     </figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="/portfolio/img/piano-tile/3.png" alt="<?php echo $lang->indexPianoTile3Title ?>"
+                    <img src="/portfolio/img/piano-tile/3.png" alt="<?php echo $lang->get('indexPianoTile3Title') ?>"
                         width="240" height="480" loading="lazy"
-                        title="<?php echo strip_tags($lang->indexPianoTile3Desc); ?>">
+                        title="<?php echo strip_tags($lang->get('indexPianoTile3Desc')); ?>">
                     <figcaption>
-                        <h2><a href="project/tregoria.html"><?php echo $lang->indexPianoTile3Title ?></a></h2>
-                        <p><?php echo $lang->indexPianoTile3Desc ?></p>
+                        <h2><a href="project/tregoria.html"><?php echo $lang->get('indexPianoTile3Title') ?></a></h2>
+                        <p><?php echo $lang->get('indexPianoTile3Desc') ?></p>
                     </figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="/portfolio/img/piano-tile/4.png" alt="<?php echo $lang->indexPianoTile4Title ?>"
+                    <img src="/portfolio/img/piano-tile/4.png" alt="<?php echo $lang->get('indexPianoTile4Title') ?>"
                         width="240" height="480" loading="lazy"
-                        title="<?php echo strip_tags($lang->indexPianoTile4Desc); ?>">
+                        title="<?php echo strip_tags($lang->get('indexPianoTile4Desc')); ?>">
                     <figcaption>
-                        <h2><a href="project/2l2w-french-rural-road.html"><?php echo $lang->indexPianoTile4Title ?></a>
+                        <h2><a href="project/2l2w-french-rural-road.html"><?php echo $lang->get('indexPianoTile4Title') ?></a>
                         </h2>
-                        <p><?php echo $lang->indexPianoTile4Desc ?></p>
+                        <p><?php echo $lang->get('indexPianoTile4Desc') ?></p>
                     </figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="/portfolio/img/piano-tile/5.png" alt="<?php echo $lang->indexPianoTile5Title ?>"
+                    <img src="/portfolio/img/piano-tile/5.png" alt="<?php echo $lang->get('indexPianoTile5Title') ?>"
                         width="240" height="480" loading="lazy"
-                        title="<?php echo strip_tags($lang->indexPianoTile5Desc); ?>">
+                        title="<?php echo strip_tags($lang->get('indexPianoTile5Desc')); ?>">
                     <figcaption>
-                        <h2><a href="project/ethercrash.html"><?php echo $lang->indexPianoTile5Title ?></a></h2>
-                        <p><?php echo $lang->indexPianoTile5Desc ?></p>
+                        <h2><a href="project/ethercrash.html"><?php echo $lang->get('indexPianoTile5Title') ?></a></h2>
+                        <p><?php echo $lang->get('indexPianoTile5Desc') ?></p>
                     </figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="/portfolio/img/piano-tile/6.png" alt="<?php echo $lang->indexPianoTile6Title ?>"
+                    <img src="/portfolio/img/piano-tile/6.png" alt="<?php echo $lang->get('indexPianoTile6Title') ?>"
                         width="240" height="480" loading="lazy"
-                        title="<?php echo strip_tags($lang->indexPianoTile6Desc); ?>">
+                        title="<?php echo strip_tags($lang->get('indexPianoTile6Desc')); ?>">
                     <figcaption>
-                        <h2><a href="project/psdc.html"><?php echo $lang->indexPianoTile6Title ?></a></h2>
-                        <p><?php echo $lang->indexPianoTile6Desc ?></p>
+                        <h2><a href="project/psdc.html"><?php echo $lang->get('indexPianoTile6Title') ?></a></h2>
+                        <p><?php echo $lang->get('indexPianoTile6Desc') ?></p>
                     </figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="/portfolio/img/piano-tile/7.png" alt="<?php echo $lang->indexPianoTile7Title ?>"
+                    <img src="/portfolio/img/piano-tile/7.png" alt="<?php echo $lang->get('indexPianoTile7Title') ?>"
                         width="240" height="480" loading="lazy"
-                        title="<?php echo strip_tags($lang->indexPianoTile7Desc); ?>">
+                        title="<?php echo strip_tags($lang->get('indexPianoTile7Desc')); ?>">
                     <figcaption>
-                        <h2><a href="project/sudone.html"><?php echo $lang->indexPianoTile7Title ?></a></h2>
-                        <p><?php echo $lang->indexPianoTile7Desc ?></p>
+                        <h2><a href="project/sudone.html"><?php echo $lang->get('indexPianoTile7Title') ?></a></h2>
+                        <p><?php echo $lang->get('indexPianoTile7Desc') ?></p>
                     </figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="/portfolio/img/piano-tile/8.png" alt="<?php echo $lang->indexPianoTile8Title ?>"
+                    <img src="/portfolio/img/piano-tile/8.png" alt="<?php echo $lang->get('indexPianoTile8Title') ?>"
                         width="240" height="480" loading="lazy"
-                        title="<?php echo strip_tags($lang->indexPianoTile8Desc); ?>">
+                        title="<?php echo strip_tags($lang->get('indexPianoTile8Desc')); ?>">
                     <figcaption>
-                        <h2><a href="project/winclean.html"><?php echo $lang->indexPianoTile8Title ?></a></h2>
-                        <p><?php echo $lang->indexPianoTile8Desc ?></p>
+                        <h2><a href="project/winclean.html"><?php echo $lang->get('indexPianoTile8Title') ?></a></h2>
+                        <p><?php echo $lang->get('indexPianoTile8Desc') ?></p>
                     </figcaption>
                 </figure>
             </li>
         </ul>
         <article class="content-block" id="me">
             <div>
-                <h2><?php echo $lang->indexMe; ?></h2>
-                <?php echo $lang->indexAboutMeContent; ?>
+                <h2><?php echo $lang->get('indexMe'); ?></h2>
+                <?php echo $lang->get('indexAboutMeContent'); ?>
             </div>
-            <img src="/portfolio/img/me.jpg" alt="<?php echo $lang->indexMyPhoto; ?>" width="1600" height="1600"
-                loading="lazy" title="<?php echo $lang->indexMyPhoto; ?>">
+            <img src="/portfolio/img/me.jpg" alt="<?php echo $lang->get('indexMyPhoto'); ?>" width="1600" height="1600"
+                loading="lazy" title="<?php echo $lang->get('indexMyPhoto'); ?>">
         </article>
         <section id="ongoing-projects">
-            <h2><?php echo $lang->indexOngoingProjects; ?></h2>
+            <h2><?php echo $lang->get('indexOngoingProjects'); ?></h2>
             <?php put_project_cards_list($lang, fn($p) => !array_key_exists('end-date', $p->data)) ?>
-            <a href="projects.html" class="button-link"><?php echo $lang->indexAllMyProjects; ?></a>
-            <small><?php echo $lang->indexLastUpdatedOn; ?><time datetime="2024-05-21">21/05/2024</time></small>
+            <a href="projects.html" class="button-link"><?php echo $lang->get('indexAllMyProjects'); ?></a>
+            <small><?php echo $lang->get('indexLastUpdatedOn'); ?><time datetime="2024-05-21">21/05/2024</time></small>
         </section>
         <article class="content-block" id="contact">
             <div>
-                <h2><?php echo $lang->indexContact; ?></h2>
+                <h2><?php echo $lang->get('indexContact'); ?></h2>
                 <ul>
                     <li title="E-mail"><?php echo get_svg_element('portfolio/img/social/email.svg', baseHeight: 24) ?><a
                             class="link" href="mailto:bardini.raphael@gmail.com">bardini.raphael@gmail.com</a></li>
@@ -139,9 +139,9 @@ require_once 'project.php';
                 </ul>
             </div>
             <a href="/portfolio/cv_bardini_raphael.pdf" target="_blank">
-                <img src="/portfolio/img/cv_preview.webp" alt="<?php echo $lang->indexMyResumePreview; ?>" width="1241"
+                <img src="/portfolio/img/cv_preview.webp" alt="<?php echo $lang->get('indexMyResumePreview'); ?>" width="1241"
                     height="1755" loading="lazy">
-                <span><?php echo $lang->indexMyResume; ?></span>
+                <span><?php echo $lang->get('indexMyResume'); ?></span>
             </a>
         </article>
     </main>

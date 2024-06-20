@@ -30,28 +30,9 @@ for project gallery
 
 ## C code syntax highlighting
 
-## Separate anchors and references
-
-Les références numérotées (style académiques), != des anchors (point d'ancrage du projet : ses connexions au monde : github, article, ...)
-
-aussi afficher plus d'infos que simplement le logo avec un tooltip. surtout qu'il n'y a pas toujours un logo. Peut-être qu'on pourraît afficher le tooltip en permancence et mettre la liste plus bas?
-
-## Put colors in separate rulesets
-
-Because we don't know where the element is, we don't know if we should use lvl1, 2 or 3. So the site looks a bit inconsistent. We can use selectors like `main > * > *` for lvl2? i don't know we'll see. We're kind of in an emergency right now.
-
 ### Save.tf link?
 
 Why not. In perspectives, "Team Fortress 2"
-
-## Gallerie
-
-- S1.02, S1.01 : shells
-- S1.01 : documentatio,
-
-## Merge status and context
-
-they were never meant to be separate.
 
 ## Perspectives page
 
@@ -126,17 +107,76 @@ Learning C is better than any amount of Leetcode challenges.
 - S2.05 Gestion de Projet
 - S2.06 Teambuilding & film : Chevalier d'Un Jour
 
-## Préparer l'oral
+Mettre le numéro de la SAÉ dans le contexte
 
-Un truc rapide, juste un plan
+### Gallerie
 
-## Parcours
+- S1.02, S1.01 : shells
+- S1.01 : documentation
 
-- Lycée
-- BUT informatique
-- Projets?
+## Rechercher/remplacer les définitions
+
+Préprocesser toutes les pages en PHP. Ajouter le tooltip dans tout les contenus où il y a un nom de définition.
+
+Est-ce que ce serait pas mieu de le faire manuellement? Comme ça on évit tout faux positif. Et puis on peut choisir si on autorise une tooltip ou non.
+
+Oui peut-être bien qu'il faudrait le faire manuellement.
 
 ## Page BUT Informatique
 
-- Lien programme
-- Présente chaque compétence et la tête de liste des projets associés (entre 4 et 6)
+Présente chaque compétence et la tête de liste des projets associés (entre 4 et 6)
+
+## Changer la couleur de scrollbar
+
+Suggéré par Malo &mdash; moins casser le color scheme &mdash; utiliser la couleur d'accent.
+
+## Put colors in separate rulesets
+
+Because we don't know where the element is, we don't know if we should use lvl1, 2 or 3. So the site looks a bit inconsistent. We can use selectors like `main > * > *` for lvl2? i don't know we'll see. We're kind of in an emergency right now.
+
+What is the meaning of `main * *` ? What is the difference with `main > * > *`?
+
+## Fix CSS problems
+
+- Arrière plan des projets dans la page de but
+- Liens z-index dans les cartes de projet.
+- responsivité (tester sur mobile)
+- arrière plan pour le pre > code (voir markdown css)
+- taille des images dans story (voir psdc)
+
+## Amérorations des pages de projet
+
+### Plus de détails sur les liens et les technologies (& futurs coéqupiers)
+
+Au lieu d'afficher que des logos, on fait une liste verticale avec le nom (pour les liens).
+
+Aussi pour les technologies et les copéquipiers il faudrait une version non-tooltip du détail à afficher en permanence et non pas en hover.
+
+Le plus gros problème c'est qu'on aura pas les infobulles de définitions sur mobile, donc il faut afficher les plus importantes en permanence.
+
+### Section coéquipiers
+
+Présente les coéquipiers pour le projet, leur photo et un lien vers leur portfolio.
+
+(non affiché si je suis tout seul)
+
+### Separate anchors and references
+
+Les références numérotées (style académiques), != des anchors (point d'ancrage du projet : ses connexions au monde : github, article, ...)
+
+### Fusion de statut et contexte
+
+Aussi valable pour les cartes de projet. Les avoir sur des lignes différentes n'a pas de sense. Je pense les mettre dans un div avec un flex row wrap et un gap.
+
+### Limiter le nombre de tags dans le cartes
+
+Quand il y en a trop, ça prend trop de place, ça va sur plusieurs lignes
+
+## Définir mes amis
+
+Ajouter une définition pour les coéquipiers.
+
+Logo = leur tête
+
+Plus d'informations = leur portfolio
+

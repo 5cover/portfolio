@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft-04/schema",
+    "title": "Translations",
+    "type": "object",
+    "additionalProperties": {
+        "type": "object",
+        "properties": {
+            "names": {
+                "type": "object",
+                "additionalProperties": {
+                    "type": "string"
+                }
+            }
+        },
+        "additionalProperties": {
+            "type": "string"
+        }
+    }
+}

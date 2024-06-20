@@ -11,7 +11,7 @@ function put_doctype_html(Page $page, Lang $lang) { ?>
 function put_footer(Page $page, Lang $lang) { ?>
     <footer>
         <small>&copy; 2024 Raphaël Bardini</small>
-        <a href="https://github.com/5cover/portfolio" title="<?php echo $lang->footerGitHubAnchorTitle ?>"><?php
+        <a href="https://github.com/5cover/portfolio" title="<?php echo $lang->get('footerGitHubAnchorTitle') ?>"><?php
            echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60); ?></a>
     </footer>
 <?php }
@@ -48,7 +48,7 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
             href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
-        <meta name="description" content="<?php echo $lang->siteDescription ?>">
+        <meta name="description" content="<?php echo $lang->get('siteDescription') ?>">
         <meta name="msapplication-TileColor" content="#2d89ef">
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,31 +64,31 @@ function put_header(Page $page, Lang $lang) { ?>
             </h1>
             <ul>
                 <li><a
-                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/projects.html"); ?>"><?php echo $lang->namePageProjects; ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/projects.html"); ?>"><?php echo $lang->get('namePageProjects'); ?></a>
                 </li>
                 <li><a
-                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/history.html"); ?>"><?php echo $lang->namePageHistory; ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/history.html"); ?>"><?php echo $lang->get('namePageHistory'); ?></a>
                 </li>
                 <li><a
-                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/passions.html"); ?>"><?php echo $lang->namePagePassions; ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/passions.html"); ?>"><?php echo $lang->get('namePagePassions'); ?></a>
                 </li>
                 <li><a
-                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/perspectives.html"); ?>"><?php echo $lang->namePagePerspectives; ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/perspectives.html"); ?>"><?php echo $lang->get('namePagePerspectives'); ?></a>
                 </li>
             </ul>
         </nav>
         <ul class="list-flags">
-            <?php foreach (Lang::instances() as $otherLangTag => $otherLang) {
-                $isSameLang = $otherLangTag == $lang->tag;
-                $class = 'fi ' . $otherLang->flagClass . ($isSameLang ? '' : ' gray-when-not-hover');
-                $title = $otherLang->names[$otherLangTag] . ($isSameLang ? '' : " / {$otherLang->names[$lang->tag]}");
+            <?php foreach (Lang::instances() as $otherLang) {
+                $isSameLang = $lang->equals($otherLang);
+                $class = 'fi ' . $otherLang->get('flagClass') . ($isSameLang ? '' : ' gray-when-not-hover');
+                $title = $otherLang->name . ($isSameLang ? '' : " / {$otherLang->nameof($lang)}");
                 ?>
                 <li><a class="<?php echo $class; ?>" title="<?php echo $title; ?>"
-                        href="/portfolio/<?php echo $otherLangTag; ?>/<?php echo $page->name; ?>.html"></a></li>
+                        href="/portfolio/<?php echo $otherLang->tag; ?>/<?php echo $page->name; ?>.html"></a></li>
             <?php } ?>
         </ul>
         <div class="theme-switches">
-            <label for="theme-switch-light" title="<?php echo $lang->nameLightTheme; ?>">
+            <label for="theme-switch-light" title="<?php echo $lang->get('nameLightTheme'); ?>">
                 <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M10.9966 13.3333C12.8804 13.3333 14.4075 11.8409 14.4075 10C14.4075 8.15905 12.8804 6.66666 10.9966 6.66666C9.11284 6.66666 7.58575 8.15905 7.58575 10C7.58575 11.8409 9.11284 13.3333 10.9966 13.3333Z"
@@ -113,7 +113,7 @@ function put_header(Page $page, Lang $lang) { ?>
                 </svg>
                 <input id="theme-switch-light" name="theme" value="auto" type="radio" onclick="">
             </label>
-            <label for="theme-switch-system" title="<?php echo $lang->nameSystemTheme; ?>">
+            <label for="theme-switch-system" title="<?php echo $lang->get('nameSystemTheme') ?>">
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="15.0014" cy="15.0014" r="9" style="stroke:var(--color-fg);" stroke-width="2" />
                     <mask id="path-2-inside-1_316_18" style="fill:var(--color-bg);">
@@ -127,7 +127,7 @@ function put_header(Page $page, Lang $lang) { ?>
                 </svg>
                 <input id="theme-switch-system" name="theme" value="light" type="radio" onclick="">
             </label>
-            <label for="theme-switch-dark" title="<?php echo $lang->nameDarkTheme; ?>">
+            <label for="theme-switch-dark" title="<?php echo $lang->get('nameDarkTheme') ?>">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M8.99939 1.5C8.00483 2.49456 7.44609 3.84348 7.44609 5.25C7.44609 6.65652 8.00483 8.00544 8.99939 9C9.99395 9.99456 11.3429 10.5533 12.7494 10.5533C14.1559 10.5533 15.5048 9.99456 16.4994 9C16.4994 10.4834 16.0595 11.9334 15.2354 13.1668C14.4113 14.4001 13.24 15.3614 11.8695 15.9291C10.4991 16.4968 8.99107 16.6453 7.53622 16.3559C6.08136 16.0665 4.74499 15.3522 3.69609 14.3033C2.6472 13.2544 1.93289 11.918 1.6435 10.4632C1.35411 9.00832 1.50264 7.50032 2.0703 6.12987C2.63795 4.75943 3.59925 3.58809 4.83262 2.76398C6.06598 1.93987 7.51603 1.5 8.99939 1.5Z"

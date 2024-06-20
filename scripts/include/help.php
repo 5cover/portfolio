@@ -3,34 +3,12 @@ require_once 'lang.php';
 require_once 'page.php';
 
 function parse_args(): array {
-    global $argc, $argv;
+    global $argc, $argv; 
     if ($argc < 3) {
         exit("Usage: {$argv[0]} <lang> <page name>" . PHP_EOL);
     }
     return [Lang::instances()[$argv[1]], new Page($argv[2])];
-
 }
-
-#$_dir_stack = [];
-#
-#/**
-# * Push the directory stack.
-# * Must be called once at the start of every script that uses relative paths.
-# */
-#function pushd(string $dir): void {
-#    global $_dir_stack;
-#    array_push($_dir_stack, $dir);
-#    chdir($dir) or throw new Exception('chdir failed');
-#}
-#
-#/**
-# * Push the directory stack.
-# * Must be called once at the end of every script that uses relative paths.
-# */
-#function popd(): void {
-#    global $_dir_stack;
-#    chdir(array_pop($_dir_stack)) or throw new Exception('chdir failed');
-#}
 
 function _get_filename(string $url) {
     return __DIR__ . '/../../../' . $url;
@@ -112,7 +90,7 @@ function get_icon_element(bool $isThemedSvg, string $url, string|null $title = n
 
 /**
  * Decode a data JSON file.
- * @param string $name the filename of the JSON file, relative to the data directory, without the xtension
+ * @param string $name the filename of the JSON file, relative to the data directory, without the extension.
  * @return array The decoded JSON, in associative mode.
  */
 function get_data_json(string $name): array {
