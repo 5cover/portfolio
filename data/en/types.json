@@ -7,5 +7,6 @@
     "library": "library",
     "data-format": "data format",
     "dbms": "database management system",
-    "website": "website"
+    "website": "website",
+    "person": "person"
 }

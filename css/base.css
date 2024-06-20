@@ -509,5 +509,5 @@ section h2 {
   visibility: visible;
   opacity: 1;
   z-index: 2;
-  transition-delay: 0.3333333333s;
+  transition-delay: 500ms;
 }/*# sourceMappingURL=base.css.map */

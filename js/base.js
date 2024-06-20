@@ -1,3 +1,5 @@
+"use strict";
+
 // Theme switch behavior
 const themeIdPrefix = 'theme-switch-';
 
@@ -45,20 +47,6 @@ $(document).ready(() => {
         }
     });
 });
-
-/*jQuery(document).ready(($) => {
-    // Select both the tooltip-trigger and the tooltip elements
-    $('.definition-tooltip-trigger').on({
-      mouseenter: () => {
-        // Show the tooltip when the mouse cursor enters either the trigger or the tooltip
-        $(this).siblings('.definition-tooltip').addClass('definition-tooltip-visible');
-      },
-      mouseleave: () => {
-        // Hide the tooltip when the mouse cursor leaves both the trigger and the tooltip
-        $(this).siblings('.definition-tooltip').removeClass('definition-tooltip-visible');
-      }
-    }, '.definition-tooltip');
-  });*/
 
 /**
  * @template T

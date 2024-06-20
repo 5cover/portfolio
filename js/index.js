@@ -1,3 +1,5 @@
+"use strict";
+
 /* Index script */
 
 jQuery(document).ready(($) => {
