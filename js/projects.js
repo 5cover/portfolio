@@ -98,7 +98,7 @@ jQuery(document).ready(async $ => {
             <ul class="list-anchor">
                 ${(await Promise.all(Object.entries(project.anchors).map(async ([name, anchor]) => {
                 const icon = await getIconElement(anchors[anchor.id].isThemedSvg, anchors[anchor.id].url);
-                return `<li><a href="${anchor.href}" title="${name}" target="_blank">${icon.outerHTML}</a></li>`;
+                return `<li><a href="${anchor.href}" title="${name}" target="_blank" rel="noopener noreferrer">${icon.outerHTML}</a></li>`;
             }))).join('')}
             </ul>
         </li>`
