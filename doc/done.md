@@ -143,3 +143,11 @@ Plus d'informations = leur portfolio
 ## Do not copy data jsons
 
 It creates confusion. Once i modified the one in portfolio/, thinking i was on the one in main/. My changes were overwritten when i generated.
+
+## Link to iut lannion website in parcours
+
+and other relevant links as well, to connect myself to my parcours.
+
+## Target blank et rel
+
+`target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"`

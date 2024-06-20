@@ -27,7 +27,7 @@ final class Project {
                         echo "id=\"anchor-$anchorId\"";
                         ++$anchorId;
                     } ?>
-                        href="<?php echo $anchor['href']; ?>" title="<?php echo $name; ?>" target="_blank">
+                        href="<?php echo $anchor['href']; ?>" title="<?php echo $name; ?>" target="_blank" rel="noopener noreferrer">
                         <?php
                         $a = $anchors[$anchor['id']];
                         echo get_icon_element($a['isThemedSvg'], $a['url']); ?>

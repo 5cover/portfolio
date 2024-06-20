@@ -4,9 +4,9 @@
 
 yes. It would be awesome. Use system colors.
 
-## Link to iut lannion website in parcours
+## Take another photo
 
-and other relevant links as well, to connect myself to my parcours.
+Something more customized than the class photo.
 
 ## Une page sur le sujet de grand oral?
 
@@ -204,10 +204,6 @@ They:
 - The tooltip is aligned with the current cursor position. It seems to be independent of the DOM and positioned absolutely in JS. I should do that too
 - The whole tooltip is also a link
 - The tooltip does not contain links or other content. It only contains text and images.
-
-## Target blank et rel
-
-`target="_blank" rel="noopener noreferrer"`
 
 ## Fix footer github logo
 

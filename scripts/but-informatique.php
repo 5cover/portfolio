@@ -30,7 +30,7 @@ require_once 'project.php';
             <p>À l’issue d’un tronc commun d’un an, l’étudiant pourra, en fonction de son projet professionnel, choisir
                 l’un des quatre parcours proposés par la spécialité informatique.</p>
         </div>
-        <a class="button-link" target="_blank"
+        <a class="button-link" target="_blank" rel="noopener noreferrer"
             href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf">Programme
             officiel du BUT Informatique</a>
         <section id="competences">

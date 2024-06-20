@@ -21,7 +21,7 @@ require_once 'content.php';
                 <dd>
                     <?php echo implode(', ', array_splice($def['names'], 1)) ?>
                     <div>
-                        <a target="_blank" href="<?php echo $def['wiki'] ?>"
+                        <a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>"
                             class="link definition-tooltip-trigger"><?php echo $title; ?></a>
                         <?php put_definition_tooltip($lang, $types, $id, $def); ?>
                     </div>
