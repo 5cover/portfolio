@@ -10,7 +10,7 @@ function parse_args(): array {
     return [Lang::instances()[$argv[1]], new Page($argv[2])];
 }
 
-function _get_filename(string $url) {
+function _get_web_filename(string $url) {
     return __DIR__ . '/../../../' . $url;
 }
 
@@ -20,7 +20,7 @@ function get_img_element(string $url, string|null $title = null, string|null $cl
         height="$baseHeight"
         END;
     } else {
-        $size = getimagesize(_get_filename($url));
+        $size = getimagesize(_get_web_filename($url));
         if ($size === false) {
             throw new Exception('getimagesize failed');
         }
@@ -39,7 +39,7 @@ function get_svg_element(string $url, string|null $title = null, string|null $cl
     $domDocument = new DOMDocument();
 
     // Load the SVG code as XML
-    $domDocument->load(_get_filename($url)) or throw new Exception("failed to load DOMDocument at '$url'");
+    $domDocument->load(_get_web_filename($url)) or throw new Exception("failed to load DOMDocument at '$url'");
 
     // Extract the <svg> element
     $svgElements = $domDocument->getElementsByTagName('svg');
@@ -94,7 +94,7 @@ function get_icon_element(bool $isThemedSvg, string $url, string|null $title = n
  * @return array The decoded JSON, in associative mode.
  */
 function get_data_json(string $name): array {
-    $f = file_get_contents(__DIR__ . "/../../data/$name.json");
+    $f = file_get_contents(_get_web_filename("/portfolio/data/$name.json"));
     if ($f === false) {
         throw new Exception("failed to open JSON data '$name'");
     }
@@ -107,7 +107,7 @@ function get_data_json(string $name): array {
  * @return array The filenames *glob* matched in the website folder.
  */
 function glob_web_filename(string $glob): array {
-    $g = glob(_get_filename("$glob"));
+    $g = glob(_get_web_filename("$glob"));
     if ($g === false) {
         throw new Exception('glob failed');
     }

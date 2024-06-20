@@ -39,12 +39,8 @@ for lang in fr en; do
     done
 
     # Project pages
-    projects="../data/$lang/projects.json"
+    projects="../../portfolio/data/$lang/projects.json"
     for id in $(jq -r 'keys[]' "$projects"); do
         generate "$outdir/$lang/project/$id.html" "$lang" "project/$id" project.php "$(jq -r ".\"$id\"" "$projects")"
     done
 done
-
-# Copy data files
-
-cp -r ../data "$outdir"

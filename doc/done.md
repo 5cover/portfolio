@@ -132,4 +132,14 @@ Right now this is a mess.
 
 Yes need for lang class, because translation is sometimes associated with more complex logic (*fFormatTitle*...). Although i could use format strings for this, provided PHP has support for this. Look it up in the documentation I guess.
 
-We can use fprintf for it
+## Définir mes amis
+
+Ajouter une définition pour les coéquipiers.
+
+Logo = leur tête
+
+Plus d'informations = leur portfolio
+
+## Do not copy data jsons
+
+It creates confusion. Once i modified the one in portfolio/, thinking i was on the one in main/. My changes were overwritten when i generated.

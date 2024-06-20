@@ -12,7 +12,7 @@ require_once 'project.php';
     <?php put_header($page, $lang); ?>
     <main>
         <div id="titre">
-            <h2><abbr title="Brevet Universitaire Technologique">BUT</abbr> Informatique</h2>
+            <h2><abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique</h2>
             <img src="/portfolio/img/but.webp" alt="Logo BUT Informatique" width="95" height="96" loading="lazy"
                 title="Logo BUT Informatique">
         </div>

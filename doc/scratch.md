@@ -136,6 +136,8 @@ Because we don't know where the element is, we don't know if we should use lvl1,
 
 What is the meaning of `main * *` ? What is the difference with `main > * > *`?
 
+Maybe we could have a class, something like `.new-lvl`. So our selector would be like `main .new-lvl .new-lvl .new-lvl`
+
 ## Fix CSS problems
 
 - Arrière plan des projets dans la page de but
@@ -172,11 +174,41 @@ Aussi valable pour les cartes de projet. Les avoir sur des lignes différentes n
 
 Quand il y en a trop, ça prend trop de place, ça va sur plusieurs lignes
 
-## Définir mes amis
+## Definition tooltip redesign
 
-Ajouter une définition pour les coéquipiers.
+Current problem: its hard to access the tooltip content with the mouse, because it disappears quickly when you leave the trigger.
 
-Logo = leur tête
+Possible solutions:
 
-Plus d'informations = leur portfolio
+### Give time before the tooltip disappears
 
+Why not but it will feel sluggish when you **don't** want the tooltip.
+
+### No more tooltip, use an expander instead
+
+You click on it to expand it over the content.
+
+No more hover
+
+This solves also the responsivity problem causes by hover interactions.
+
+So how does it work? Because i still want to show the link as clickable directly, without going through the preview.
+
+Well, we could show a small arrow on the right of the link. That's the one you'll click on the access the preview. But it may be quite small.
+
+### What wikipedia does
+
+They:
+
+- Show the tooltip right below the trigger. The mouse can easily move to it without making the tooltip go away
+- The tooltip is aligned with the current cursor position. It seems to be independent of the DOM and positioned absolutely in JS. I should do that too
+- The whole tooltip is also a link
+- The tooltip does not contain links or other content. It only contains text and images.
+
+## Target blank et rel
+
+`target="_blank" rel="noopener noreferrer"`
+
+## Fix footer github logo
+
+Currently it takes the full viewport width. what?
