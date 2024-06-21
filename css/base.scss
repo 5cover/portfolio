@@ -96,9 +96,8 @@ $huge-val: calc(infinity * 1px);
     border-radius: 1em;
     background-color: var(--color-lvl1);
     padding: 1em;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80ch;
+    align-self: center;
+    max-width: min(100vw, 80ch);
 
     h2 {
         margin-bottom: .5em;
@@ -159,10 +158,13 @@ svg {
 
 body {
     max-width: 100vw;
-    min-height: 100vh;
     display: grid;
     gap: 3em;
     grid-template-rows: auto 1fr auto;
+
+    > * {
+        max-width: inherit;
+    }
 }
 
 @mixin lvl1-content($border-width) {
@@ -308,6 +310,8 @@ body > header {
 
 main {
     grid-row: 2;
+    display: flex;
+    flex-direction: column;
 }
 
 body > footer {
@@ -315,16 +319,15 @@ body > footer {
     border-top-width: 1px;
     grid-row: 3;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     small {
-        display: block;
-        position: absolute;
-        @include absolute-center;
-    }
-
-    a {
-        display: block;
-        text-align: right;
+        @media screen and (min-width: 570px) {
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
     }
 
     #{hover('a > svg')} {
@@ -440,11 +443,14 @@ section h2 {
     flex-flow: row wrap;
 
     /* Increase z-index to stand out above the card link */
-    .list-anchor,
-    .list-tag {
-        > li {
-            z-index: 1;
-        }
+    :is(.list-anchor, .list-tag) > li {
+        z-index: 1;
+    }
+
+    .link, abbr {
+        display: inline-block;
+        scale: 1; /* Creates a stacking context */
+        z-index: 1;
     }
 
     .list-anchor {
@@ -521,6 +527,10 @@ section h2 {
 
             :not(.list-tag > li) {
                 @include color-accent-fg;
+            }
+
+            .link {
+                text-decoration: underline;
             }
         }
     }

@@ -2,8 +2,6 @@
 @use 'base';
 
 main {
-    flex-flow: column nowrap;
-    display: flex;
     justify-content: space-between;
     gap: 3em;
 }
@@ -23,7 +21,7 @@ section {
     > li {
         flex-shrink: 1;
         $min-width: 180px;
-        flex-basis: calc(100vw / $tile-count);
+        flex-basis: calc(min(100vw, 1920px) / $tile-count);
         min-width: $min-width;
 
         @media screen and (max-width: calc($min-width * $tile-count)) {
@@ -67,17 +65,17 @@ section {
 #me {
     display: flex;
     flex-wrap: wrap;
+    gap: 1em;
 
     p:first-of-type {
         text-indent: 2cap;
     }
 
-    img {
-        display: block;
-        margin: auto 0 auto 1em;
+    > img {
         width: auto;
         height: 8em;
         border-radius: .5em;
+        align-self: center;
     }
 }
 
@@ -86,17 +84,11 @@ section {
     display: flex;
     flex-flow: column nowrap;
     gap: 1em;
-
-    .list-project ~ small {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: inherit;
-    }
 }
 
 #contact {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     column-gap: 1em;
 
@@ -116,7 +108,8 @@ section {
         position: relative;
 
         img {
-            height: 12em;
+            min-height: 0;
+            max-height: 12em;
             width: auto;
             opacity: .5;
             border-radius: .5em;
