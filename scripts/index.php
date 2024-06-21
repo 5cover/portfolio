@@ -115,7 +115,6 @@ require_once 'project.php';
             <h2><?php echo $lang->get('indexOngoingProjects'); ?></h2>
             <?php put_project_cards_list($lang, fn($p) => !array_key_exists('end-date', $p->data)) ?>
             <a href="projects.html" class="button-link"><?php echo $lang->get('indexAllMyProjects'); ?></a>
-            <small><?php echo $lang->get('indexLastUpdatedOn'); ?><time datetime="2024-05-21">21/05/2024</time></small>
         </section>
         <article class="content-block" id="contact">
             <div>

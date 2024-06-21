@@ -204,7 +204,3 @@ They:
 - The tooltip is aligned with the current cursor position. It seems to be independent of the DOM and positioned absolutely in JS. I should do that too
 - The whole tooltip is also a link
 - The tooltip does not contain links or other content. It only contains text and images.
-
-## Fix footer github logo
-
-Currently it takes the full viewport width. what?

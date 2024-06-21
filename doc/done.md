@@ -151,3 +151,14 @@ and other relevant links as well, to connect myself to my parcours.
 ## Target blank et rel
 
 `target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"`
+
+## Fix footer github logo
+
+Currently it takes the full viewport width. what?
+
+## Fix links not being the correct zindex in project cards
+
+## Fix abusive absolute usage
+
+- Project last updated
+- Footer
