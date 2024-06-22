@@ -339,12 +339,12 @@ section h2 {
   border-radius: 0.4em;
 }
 
-.list-anchor {
+.list-link {
   list-style-type: none;
   display: flex;
 }
-.list-anchor > li:is(:hover, :focus-within, :focus),
-.list-anchor > li.hover {
+.list-link > li:is(:hover, :focus-within, :focus),
+.list-link > li.hover {
   transform: scale(1.15);
   z-index: 1;
 }
@@ -355,7 +355,7 @@ section h2 {
   flex-flow: row wrap;
   /* Increase z-index to stand out above the card link */
 }
-.list-project :is(.list-anchor, .list-tag) > li {
+.list-project :is(.list-link, .list-tag) > li {
   z-index: 1;
 }
 .list-project .link,
@@ -364,11 +364,11 @@ section h2 {
   /* Creates a stacking context */
   position: relative;
 }
-.list-project .list-anchor {
+.list-project .list-link {
   gap: 0.5em;
 }
-.list-project .list-anchor svg,
-.list-project .list-anchor img {
+.list-project .list-link svg,
+.list-project .list-link img {
   height: 1.5em;
   width: 1.5em;
   -o-object-fit: contain;
@@ -439,7 +439,7 @@ section h2 {
 .list-project > li .abstract {
   grid-row: 5;
 }
-.list-project > li .list-anchor {
+.list-project > li .list-link {
   grid-row: 6;
   grid-column: 1/3;
   flex-direction: row-reverse;

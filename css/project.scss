@@ -75,10 +75,31 @@ main {
     p:not(:last-child) {
         margin-bottom: .5lh;
     }
+
+    a[id^="cite-"] {
+        @extend .link;
+        font-size: 90%;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        padding-left: 1px;
+        unicode-bidi: isolate;
+        vertical-align: text-top;
+        white-space: nowrap;
+    }
+}
+
+.list-reference {
+    padding-left: 2em;
+}
+
+.ref-backlink {
+    user-select: none;
+    font-size: 80%;
 }
 
 #technologies,
-.list-anchor {
+.list-link {
     @include base.basic-border(1px);
     @include base.horizontal-box-padding;
     background-color: var(--color-lvl1);

@@ -95,10 +95,10 @@ jQuery(document).ready(async $ => {
             <p class="context"><small>${ucfirst(project.context)}</small></p>
             <p class="status"><small>${project['start-date']} – ${project['end-date'] || 'en cours'}</small></p>
             <p class="abstract">${project.abstract}</p>
-            <ul class="list-anchor">
-                ${(await Promise.all(Object.entries(project.anchors).map(async ([name, anchor]) => {
-                const icon = await getIconElement(anchors[anchor.id].isThemedSvg, anchors[anchor.id].url);
-                return `<li><a href="${anchor.href}" title="${name}" target="_blank" rel="noopener noreferrer">${icon.outerHTML}</a></li>`;
+            <ul class="list-link">
+                ${(await Promise.all(Object.entries(project.links).map(async ([name, link]) => {
+                const icon = await getIconElement(anchors[link.anchor].isThemedSvg, anchors[link.anchor].url);
+                return `<li><a href="${link.href}" title="${name}" target="_blank" rel="noopener noreferrer">${icon.outerHTML}</a></li>`;
             }))).join('')}
             </ul>
         </li>`

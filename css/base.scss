@@ -112,6 +112,7 @@ h2,
 h3,
 h4,
 ul,
+ol,
 p,
 figure,
 input {
@@ -156,6 +157,7 @@ svg {
 
 body {
     max-width: 100vw;
+    min-height: 100vh;
     display: grid;
     gap: 3em;
     grid-template-rows: auto 1fr auto;
@@ -421,7 +423,7 @@ body > footer {
     }
 }
 
-.list-anchor {
+.list-link {
     @include hover-sensitive-list(1.15);
     list-style-type: none;
     display: flex;
@@ -433,7 +435,7 @@ body > footer {
     flex-flow: row wrap;
 
     /* Increase z-index to stand out above the card link */
-    :is(.list-anchor, .list-tag) > li {
+    :is(.list-link, .list-tag) > li {
         z-index: 1;
     }
 
@@ -444,7 +446,7 @@ body > footer {
         position: relative;
     }
 
-    .list-anchor {
+    .list-link {
         gap: .5em;
         @include size-images(1.5em, 1.5em);
     }
@@ -502,7 +504,7 @@ body > footer {
             grid-row: 5;
         }
 
-        .list-anchor {
+        .list-link {
             grid-row: 6;
             grid-column: 1 / 3;
             flex-direction: row-reverse;
