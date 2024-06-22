@@ -395,10 +395,6 @@ body > footer a > svg:is(:hover, :focus-within, :focus) {
   z-index: 1;
 }
 .list-project > li .list-tag > li {
-  color: white;
-  --color-fg: white;
-  --color-fg-rgb: 255, 255, 255;
-  background-color: rgba(var(--color-accent-bg-rgb), 1);
   border-radius: 0.4em;
 }
 .list-project > li h3 > a {
@@ -448,13 +444,19 @@ body > footer a > svg:is(:hover, :focus-within, :focus) {
 .list-project > li:is(:hover, :focus-within, :focus) .list-tag > li {
   background-color: var(--color-lvl2);
 }
-.list-project > li:is(:hover, :focus-within, :focus) :not(.list-tag > li) {
+.list-project > li:is(:hover, :focus-within, :focus) > :not(.list-tag) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
 }
 .list-project > li:is(:hover, :focus-within, :focus) .link {
   text-decoration: underline;
+}
+.list-project > li:not(:is(:hover, :focus-within, :focus)) .list-tag > li {
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
 }
 
 :has(> .definition-tooltip) {

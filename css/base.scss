@@ -468,7 +468,6 @@ body > footer {
             grid-column: 1 / 3;
 
             > li {
-                @include color-accent;
                 border-radius: .4em;
             }
         }
@@ -517,12 +516,18 @@ body > footer {
                 background-color: var(--color-lvl2);
             }
 
-            :not(.list-tag > li) {
+            > :not(.list-tag) {
                 @include color-accent-fg;
             }
 
             .link {
                 text-decoration: underline;
+            }
+        }
+
+        &:not(#{$hover}) {
+            .list-tag > li {
+                @include color-accent;
             }
         }
     }

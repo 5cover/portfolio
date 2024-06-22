@@ -225,7 +225,6 @@ body > footer {
   border-color: rgba(var(--color-fg-rgb), 0.125);
   background-color: var(--color-lvl1);
   padding: 1em 2em;
-  border-top-width: 1px;
   grid-row: 3;
   position: relative;
   display: flex;
@@ -240,10 +239,6 @@ body > footer {
 }
 body > footer a > svg:is(:hover, :focus-within, :focus) {
   transform: scale(1.15);
-}
-
-section h2 {
-  text-align: center;
 }
 
 .theme-switches {
@@ -282,13 +277,13 @@ section h2 {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: var(--color-accent-bg);
+  background-color: rgba(var(--color-accent-bg-rgb), 0.5);
 }
 .theme-switches label:has(input:checked) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: var(--color-accent-bg);
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
 }
 .theme-switches label + label {
   border-width: 0 0 0 1px;
@@ -324,7 +319,7 @@ section h2 {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: var(--color-accent-bg);
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
 }
 
 .list-tag {
@@ -336,7 +331,6 @@ section h2 {
 .list-tag > * {
   padding: 0.1875lh 0.75ch;
   font-size: 18px;
-  border-radius: 0.4em;
 }
 
 .list-anchor {
@@ -401,10 +395,7 @@ section h2 {
   z-index: 1;
 }
 .list-project > li .list-tag > li {
-  color: white;
-  --color-fg: white;
-  --color-fg-rgb: 255, 255, 255;
-  background-color: var(--color-accent-bg);
+  border-radius: 0.4em;
 }
 .list-project > li h3 > a {
   text-decoration: none;
@@ -453,13 +444,19 @@ section h2 {
 .list-project > li:is(:hover, :focus-within, :focus) .list-tag > li {
   background-color: var(--color-lvl2);
 }
-.list-project > li:is(:hover, :focus-within, :focus) :not(.list-tag > li) {
+.list-project > li:is(:hover, :focus-within, :focus) > :not(.list-tag) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
 }
 .list-project > li:is(:hover, :focus-within, :focus) .link {
   text-decoration: underline;
+}
+.list-project > li:not(:is(:hover, :focus-within, :focus)) .list-tag > li {
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
 }
 
 :has(> .definition-tooltip) {
