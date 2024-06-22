@@ -20,21 +20,21 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
     $defintions = $lang->get_data('definitions');
     $types = $lang->get_data('types');
     ?>
-    <?php put_doctype_html($page, $lang); ?>
-    <?php put_head($page, $lang, 'project.css'); ?>
+    <?php put_doctype_html($page, $lang) ?>
+    <?php put_head($page, $lang, 'project.css') ?>
 
     <body>
-        <?php put_header($page, $lang); ?>
-        <main <?php $p->put_background_style_attr('bg-img'); ?>>
+        <?php put_header($page, $lang) ?>
+        <main <?php $p->put_background_style_attr('bg-img') ?>>
             <div id="project-header">
-                <?php $p->put_tags($tags); ?>
-                <h2><?php echo $p->data['title']; ?></h2>
-                <?php $p->put_logo($lang); ?>
-                <?php $p->put_abstract(); ?>
-                <div class="status-context"><?php $p->put_context(); ?><?php $p->put_status($lang->get('ongoing')); ?></div>
+                <?php $p->put_tags($tags) ?>
+                <h2><?php echo $p->data['title'] ?></h2>
+                <?php $p->put_logo($lang) ?>
+                <?php $p->put_abstract() ?>
+                <div class="status-context"><?php $p->put_context() ?><?php $p->put_status($lang->get('ongoing')) ?></div>
             </div>
             <?php if (count($techs = $p->data['technologies']) > 0) { ?>
-                <h3><?php echo $lang->get('projectTechnologies'); ?></h3>
+                <h3><?php echo $lang->get('projectTechnologies') ?></h3>
                 <ul id="technologies"><?php foreach ($techs as $defId) {
                     $def = $defintions[$defId];
                     $logo = $def['logo'] ?? null;
@@ -45,18 +45,22 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                             } else {
                                 echo $def['names'][0];
                             } ?>
-                            <?php put_definition_tooltip($lang, $types, $defId, $def); ?>
+                            <?php put_definition_tooltip($lang, $types, $defId, $def) ?>
                         </li>
                     <?php } ?>
                 </ul>
             <?php } ?>
-            <div id="story"><?php echo $p->data['story']; ?></div>
-            <?php if (count($p->data['anchors']) > 0) { ?>
-                <h3><?php echo $lang->get('projectLinks'); ?></h3>
-                <?php $p->put_anchor_list($anchors, useAnchorId: true); ?>
+            <div id="story"><?php echo $p->data['story'] ?></div>
+            <?php if (count($p->data['references']) > 0) { ?>
+                <h3><?php echo $lang->get('projectReferences') ?></h3>
+                <?php $p->put_reference_list($lang, $anchors); ?>
+            <?php }
+            if (count($p->data['links']) > 0) { ?>
+                <h3><?php echo $lang->get('projectLinks') ?></h3>
+                <?php $p->put_link_list($anchors) ?>
             <?php }
             if (count($gallery = $p->data['gallery']) > 0) { ?>
-                <h3><?php echo $lang->get('projectGallery'); ?></h3>
+                <h3><?php echo $lang->get('projectGallery') ?></h3>
                 <div id="gallery"><?php foreach ($gallery as $name => $figure) { ?>
                         <figure class="figure">
                             <?php
@@ -74,8 +78,8 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                 </div>
             <?php } ?>
         </main>
-        <?php put_footer($page, $lang); ?>
-        <?php put_scripts($page); ?>
+        <?php put_footer($page, $lang) ?>
+        <?php put_scripts($page) ?>
     </body>
 
     </html>

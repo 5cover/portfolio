@@ -5,14 +5,14 @@ require_once 'lang.php';
 
 function put_doctype_html(Page $page, Lang $lang) { ?>
     <!DOCTYPE html>
-    <html lang="<?php echo $lang->tag; ?>">
+    <html lang="<?php echo $lang->tag ?>">
 <?php }
 
 function put_footer(Page $page, Lang $lang) { ?>
     <footer>
         <small>&copy; 2024 Raphaël Bardini</small>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="<?php echo $lang->get('footerGitHubAnchorTitle') ?>"><?php
-           echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60); ?></a>
+           echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60) ?></a>
     </footer>
 <?php }
 
@@ -23,7 +23,7 @@ function put_scripts(Page $page) { ?>
     <?php
     $g = glob_web_filename('/portfolio/js/' . $page->name . '.js');
     if (count($g) == 1) { ?>
-        <script src="<?php echo get_web_path($g[0]); ?>"></script>
+        <script src="<?php echo get_web_path($g[0]) ?>"></script>
     <?php }
 }
 
@@ -39,11 +39,11 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <?php
         $g = glob_web_filename('/portfolio/css/' . $page->name . '.css');
         if (count($g) == 1) { ?>
-            <link rel="stylesheet" type="text/css" href="<?php echo get_web_path($g[0]); ?>">
+            <link rel="stylesheet" type="text/css" href="<?php echo get_web_path($g[0]) ?>">
         <?php } else { ?>
-            <link rel="stylesheet" type="text/css" href="/portfolio/css/<?php echo $fallbackStylesheet; ?>">
+            <link rel="stylesheet" type="text/css" href="/portfolio/css/<?php echo $fallbackStylesheet ?>">
         <?php } ?>
-        <?php echo implode('', array_map(fn($url) => "<link rel=\"stylesheet\" href=\"$url\">", $additionalStylesheets)); ?>
+        <?php echo implode('', array_map(fn($url) => "<link rel=\"stylesheet\" href=\"$url\">", $additionalStylesheets)) ?>
         <link rel="stylesheet" type="text/css"
             href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
@@ -60,20 +60,20 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
 function put_header(Page $page, Lang $lang) { ?>
     <header>
         <nav>
-            <h1><a href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/index.html"); ?>">Raphaël Bardini</a>
+            <h1><a href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/index.html") ?>">Raphaël Bardini</a>
             </h1>
             <ul>
                 <li><a
-                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/projects.html"); ?>"><?php echo $lang->get('namePageProjects'); ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/projects.html") ?>"><?php echo $lang->get('namePageProjects') ?></a>
                 </li>
                 <li><a
-                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/history.html"); ?>"><?php echo $lang->get('namePageHistory'); ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/history.html") ?>"><?php echo $lang->get('namePageHistory') ?></a>
                 </li>
                 <li><a
-                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/passions.html"); ?>"><?php echo $lang->get('namePagePassions'); ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/passions.html") ?>"><?php echo $lang->get('namePagePassions') ?></a>
                 </li>
                 <li><a
-                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/perspectives.html"); ?>"><?php echo $lang->get('namePagePerspectives'); ?></a>
+                        href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/perspectives.html") ?>"><?php echo $lang->get('namePagePerspectives') ?></a>
                 </li>
             </ul>
         </nav>
@@ -83,12 +83,12 @@ function put_header(Page $page, Lang $lang) { ?>
                 $class = 'fi ' . $otherLang->get('flagClass') . ($isSameLang ? '' : ' gray-when-not-hover');
                 $title = $otherLang->name . ($isSameLang ? '' : " / {$otherLang->nameof($lang)}");
                 ?>
-                <li><a class="<?php echo $class; ?>" title="<?php echo $title; ?>"
-                        href="/portfolio/<?php echo $otherLang->tag; ?>/<?php echo $page->name; ?>.html"></a></li>
+                <li><a class="<?php echo $class ?>" title="<?php echo $title ?>"
+                        href="/portfolio/<?php echo $otherLang->tag ?>/<?php echo $page->name ?>.html"></a></li>
             <?php } ?>
         </ul>
         <div class="theme-switches">
-            <label for="theme-switch-light" title="<?php echo $lang->get('nameLightTheme'); ?>">
+            <label for="theme-switch-light" title="<?php echo $lang->get('nameLightTheme') ?>">
                 <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M10.9966 13.3333C12.8804 13.3333 14.4075 11.8409 14.4075 10C14.4075 8.15905 12.8804 6.66666 10.9966 6.66666C9.11284 6.66666 7.58575 8.15905 7.58575 10C7.58575 11.8409 9.11284 13.3333 10.9966 13.3333Z"
@@ -151,18 +151,18 @@ function put_definition_tooltip(Lang $lang, array $types, string $id, array $def
     <div class="definition-tooltip" role="tooltip" <?php if ($bg = $def['background'] ?? null) {
         echo get_background_style_attr('bg-img-definition', $bg);
     } ?>>
-        <h4><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki']; ?>"><?php echo $title; ?></a></h4>
+        <h4><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>"><?php echo $title ?></a></h4>
         <?php if ($logo = $def['logo'] ?? null) {
             echo get_icon_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title));
         } ?>
-        <p><small><?php echo ucfirst($types[$def['type']]); ?></small></p>
-        <p><?php echo $def['synopsis']; ?></p>
+        <p><small><?php echo ucfirst($types[$def['type']]) ?></small></p>
+        <p><?php echo $def['synopsis'] ?></p>
     </div>
 <?php }
 
 function put_iframe(string $src, string $title) { ?>
-    <iframe src="<?php echo $src; ?>" frameborder="0" loading="lazy" width="300" height="300"
-        title="<?php echo $title; ?>"></iframe>
+    <iframe src="<?php echo $src ?>" frameborder="0" loading="lazy" width="300" height="300"
+        title="<?php echo $title ?>"></iframe>
 <?php }
 
 ?>

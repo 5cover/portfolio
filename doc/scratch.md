@@ -1,5 +1,13 @@
 # Scratch area
 
+## Fusion de statut et contexte
+
+Aussi valable pour les cartes de projet. Les avoir sur des lignes différentes n'a pas de sense. Je pense les mettre dans un div avec un flex row wrap et un gap.
+
+## Limiter le nombre de tags dans le cartes
+
+Quand il y en a trop, ça prend trop de place, ça va sur plusieurs lignes
+
 ## windows classic theme
 
 yes. It would be awesome. Use system colors.
@@ -138,13 +146,25 @@ What is the meaning of `main * *` ? What is the difference with `main > * > *`?
 
 Maybe we could have a class, something like `.new-lvl`. So our selector would be like `main .new-lvl .new-lvl .new-lvl`
 
+## Fix project content
+
+### add projects
+
+- ztest
+- jslave
+- projets de nsi
+
+### fix dates
+
+### tell more in story
+
 ## Fix CSS problems
 
-- Arrière plan des projets dans la page de but
-- Liens z-index dans les cartes de projet.
+- ~~Arrière plan des projets dans la page de but~~
+- ~~Liens z-index dans les cartes de projet.~~
 - responsivité (tester sur mobile)
-- arrière plan pour le pre > code (voir markdown css)
-- taille des images dans story (voir psdc)
+- arrière plan pour le pre > code (voir markdown css), samp et kbd
+- ~~taille des images dans story (voir psdc)~~
 
 ## Amérorations des pages de projet
 
@@ -162,14 +182,14 @@ Présente les coéquipiers pour le projet, leur photo et un lien vers leur portf
 
 (non affiché si je suis tout seul)
 
-### Separate anchors and references
+### Separate links and references
 
-Les références numérotées (style académiques), != des anchors (point d'ancrage du projet : ses connexions au monde : github, article, ...)
+Les références numérotées (style académiques), != des links (point d'ancrage du projet : ses connexions au monde : github, article, ...)
 
-### Fusion de statut et contexte
+### Links
 
-Aussi valable pour les cartes de projet. Les avoir sur des lignes différentes n'a pas de sense. Je pense les mettre dans un div avec un flex row wrap et un gap.
+Link to a page i'm responsible for (github repo, steam workshop page...) or that is directly related to the project (article ccm...).
 
-### Limiter le nombre de tags dans le cartes
+### Reference
 
-Quand il y en a trop, ça prend trop de place, ça va sur plusieurs lignes
+Link to a resource that has helped in the realization or research of the project but that is not related to the project (wikipedia articles, online books, tutorial, resources...)

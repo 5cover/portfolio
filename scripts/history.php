@@ -5,11 +5,11 @@ require_once 'project.php';
 
 [$lang, $page] = parse_args();
 ?>
-<?php put_doctype_html($page, $lang); ?>
-<?php put_head($page, $lang); ?>
+<?php put_doctype_html($page, $lang) ?>
+<?php put_head($page, $lang) ?>
 
 <body>
-    <?php put_header($page, $lang); ?>
+    <?php put_header($page, $lang) ?>
     <main>
         <div class="ag-format-container">
             <div class="js-timeline ag-timeline">
@@ -90,8 +90,8 @@ require_once 'project.php';
             </div>
         </div>
     </main>
-    <?php put_footer($page, $lang); ?>
-    <?php put_scripts($page); ?>
+    <?php put_footer($page, $lang) ?>
+    <?php put_scripts($page) ?>
 </body>
 
 </html>
