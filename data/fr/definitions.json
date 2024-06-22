@@ -17,10 +17,10 @@
         "type": "programming-language",
         "background": "/portfolio/img/definition/bash/bg.png",
         "wiki": "https://fr.wikipedia.org/wiki/Bourne-Again_shell",
-        "synopsis": "<abbr title=\"Bourne-Again shell\">Bash</abbr> est un interpréteur en ligne de commande de type script. C'est le shell Unix du projet GNU.",
+        "synopsis": "Bash est un interpréteur en ligne de commande de type script. C'est le shell Unix du projet GNU.",
         "names": [
-            "Bash",
-            "Bourne-Again shell"
+            "Bourne-Again shell",
+            "Bash"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -74,8 +74,8 @@
         "wiki": "https://fr.wikipedia.org/wiki/Cities%3A_Skylines",
         "synopsis": "Cities: Skylines est un jeu de construction de ville développé par Colossal Order et publié par Paradox Interactive en 2015. Le jeu est une simulation de construction de ville ouverte et solo.",
         "names": [
-            "Cities Skylines",
-            "Cities: Skylines"
+            "Cities: Skylines",
+            "Cities Skylines"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -114,8 +114,8 @@
         "wiki": "https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade",
         "synopsis": "Les feuilles de style en cascade, généralement appelées CSS de l'anglais <em>Cascading Style Sheets</em>, forment un langage informatique qui décrit la présentation des documents HTML et XML.",
         "names": [
-            "Cascading Style Sheets",
-            "CSS"
+            "CSS",
+            "Cascading Style Sheets"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -126,10 +126,10 @@
         "type": "data-format",
         "background": "/portfolio/img/definition/csv/bg.png",
         "wiki": "https://fr.wikipedia.org/wiki/Comma-separated_values",
-        "synopsis": "Comma-separated values, connu sous le sigle CSV, est un format texte ouvert représentant des données tabulaires sous forme de valeurs séparées.",
+        "synopsis": "Comma-separated values est un format texte ouvert représentant des données tabulaires sous forme de valeurs séparées.",
         "names": [
-            "Comma-separated values",
-            "CSV"
+            "CSV",
+            "Comma-separated values"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -223,11 +223,11 @@
         "type": "markup-language",
         "background": "/portfolio/img/definition/html/bg.png",
         "wiki": "https://fr.wikipedia.org/wiki/Hypertext_Markup_Language",
-        "synopsis": "L' <abbr title=\"HyperText Markup Language\">HTML</abbr> est le langage de balisage conçu pour représenter les pages web.",
+        "synopsis": "HyperText Markup Language est le langage de balisage conçu pour représenter les pages web.",
         "names": [
             "HTML",
-            "HTML5",
-            "HyperText Markup Language"
+            "HyperText Markup Language",
+            "HTML5"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -277,10 +277,10 @@
         "type": "data-format",
         "background": "/portfolio/img/definition/json/bg.png",
         "wiki": "https://fr.wikipedia.org/wiki/JavaScript_Object_Notation",
-        "synopsis": "JavaScript Object Notation (JSON) est un format de données textuel dérivé de la notation des objets du langage JavaScript. Il concurrence XML pour la représentation et la transmission d’information structurée.",
+        "synopsis": "JavaScript Object Notation est un format de données textuel dérivé de la notation des objets du langage JavaScript. Il concurrence XML pour la représentation et la transmission d’information structurée.",
         "names": [
-            "JavaScript Object Notation",
-            "JSON"
+            "JSON",
+            "JavaScript Object Notation"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -370,8 +370,10 @@
         "wiki": "https://fr.wikipedia.org/wiki/PostgreSQL",
         "synopsis": "PostgreSQL est un système de gestion de base de données relationnelle et objet.",
         "names": [
+            "PostgreSQL",
             "Postgres",
-            "PostgreSQL"
+            "pgsql",
+            "pg_sql"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -382,10 +384,11 @@
         "type": "programming-language",
         "wiki": "https://en.wikipedia.org/wiki/PHP",
         "background": "/portfolio/img/definition/php/bg.png",
-        "synopsis": "<abbr title=\"Personal Homepage\">PHP</abbr> est un langage de programmation créé en 1993, principalement utilisé pour produire des pages Web dynamiques via un serveur web",
+        "synopsis": "PHP: Hypertext Preprocessor est un langage de programmation créé en 1993, principalement utilisé pour produire des pages Web dynamiques via un serveur web",
         "names": [
-            "Personal Homepage",
-            "PHP"
+            "PHP",
+            "PHP: Hypertext Preprocessor",
+            "Personal Homepage"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -446,11 +449,11 @@
         "type": "computer-language",
         "background": "/portfolio/img/definition/sass/bg.png",
         "wiki": "https://fr.wikipedia.org/wiki/Sass_(langage)",
-        "synopsis": "<abbr title=\"Syntactically Awesome Style Sheets\">Sass</abbr> est un langage de script préprocesseur qui est compilé ou interprété en CSS.",
+        "synopsis": "Syntactically Awesome Style Sheets est un langage de script préprocesseur qui est compilé ou interprété en CSS.",
         "names": [
             "SASS",
-            "SCSS",
-            "Syntactically Awesome Style Sheets"
+            "Syntactically Awesome Style Sheets",
+            "SCSS"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -486,7 +489,7 @@
         "type": "programming-language",
         "background": "/portfolio/img/definition/sql/bg.png",
         "wiki": "https://fr.wikipedia.org/wiki/Structured_Query_Language",
-        "synopsis": "<abbr title=\"Structured Query Language\">SQL</abbr> est un langage informatique créé en 1974 servant à exploiter des bases de données relationnelles.",
+        "synopsis": "Structured Query Language est un langage informatique créé en 1974 servant à exploiter des bases de données relationnelles.",
         "names": [
             "SQL",
             "Structured Query Language"
@@ -521,10 +524,10 @@
         "type": "data-format",
         "background": "/portfolio/img/definition/svg/bg.png",
         "wiki": "https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics",
-        "synopsis": "Le <abbr title=\"Scalable Vector Graphics (en français « graphiques vectoriels adaptables »)\">SVG</abbr> est un format de données textuel conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML.",
+        "synopsis": "Scalable Vector Graphics est un format de données textuel conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML.",
         "names": [
-            "Scalable Vector Graphics",
-            "SVG"
+            "SVG",
+            "Scalable Vector Graphics"
         ],
         "logo": {
             "isThemedSvg": true,
@@ -571,8 +574,8 @@
         "wiki": "https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio",
         "synopsis": "Microsoft Visual Studio est une suite de logiciels de développement pour Windows et mac OS conçue par Microsoft.",
         "names": [
-            "Microsoft Visual Studio",
-            "Visual Studio"
+            "Visual Studio",
+            "Microsoft Visual Studio"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -601,7 +604,8 @@
         "synopsis": "Windows Forms un framework d'interface graphique inclus dans le framework .NET fournissant l'accès via à l'API Windows.",
         "names": [
             "Windows Forms",
-            "WinForms"
+            "WinForms",
+            "Winforms"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -612,10 +616,10 @@
         "type": "library",
         "background": "/portfolio/img/definition/wpf/bg.png",
         "wiki": "https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation",
-        "synopsis": "<abbr title=\"Windows Presentation Foundation\">WPF</abbr> est un système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois en 2006.",
+        "synopsis": "Windows Presentation Foundation est un système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois en 2006.",
         "names": [
-            "Windows Presentation Foundation",
-            "WPF"
+            "WPF",
+            "Windows Presentation Foundation"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -626,10 +630,10 @@
         "type": "markup-language",
         "background": "/portfolio/img/definition/xml/bg.png",
         "wiki": "https://fr.wikipedia.org/wiki/Extensible_Markup_Language",
-        "synopsis": "XML est un métalangage informatique de balisage utilisé pour représenter des données structurées.",
+        "synopsis": "Extensible Markup Language est un métalangage informatique de balisage utilisé pour représenter des données structurées.",
         "names": [
-            "Extensible Markup Language",
-            "XML"
+            "XML",
+            "Extensible Markup Language"
         ],
         "logo": {
             "isThemedSvg": false,

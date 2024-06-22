@@ -17,10 +17,10 @@
         "type": "programming-language",
         "background": "/portfolio/img/definition/bash/bg.png",
         "wiki": "https://en.wikipedia.org/wiki/Bash_(Unix_shell)",
-        "synopsis": "<abbr title=\"Bourne-Again shell\">Bash</abbr> is a shell program and command language supported by the <abbr title=\"Free Software Foundation\">FSF</abbr> and first developed for the <abbr title=\"GNU is Not Unix\">GNU</abbr> Project by Brian Fox.",
+        "synopsis": "Bash is a shell program and command language supported by the <abbr title=\"Free Software Foundation\">FSF</abbr> and first developed for the <abbr title=\"GNU is Not Unix\">GNU</abbr> Project by Brian Fox.",
         "names": [
-            "Bash",
-            "Bourne-Again shell"
+            "Bourne-Again shell",
+            "Bash"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -74,8 +74,8 @@
         "background": "/portfolio/img/definition/cities-skylines/bg.jpg",
         "synopsis": "Cities: Skylines is a 2015 city-building game developed by Colossal Order and published by Paradox Interactive. The game is a single-player open-ended city-building simulation.",
         "names": [
-            "Cities Skylines",
-            "Cities: Skylines"
+            "Cities: Skylines",
+            "Cities Skylines"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -112,10 +112,10 @@
         "type": "computer-language",
         "wiki": "https://en.wikipedia.org/wiki/CSS",
         "background": "/portfolio/img/definition/css/bg.png",
-        "synopsis": "Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML.",
+        "synopsis": "Cascading Style Sheets is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML.",
         "names": [
-            "Cascading Style Sheets",
-            "CSS"
+            "CSS",
+            "Cascading Style Sheets"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -126,10 +126,10 @@
         "type": "data-format",
         "background": "/portfolio/img/definition/csv/bg.png",
         "wiki": "https://en.wikipedia.org/wiki/Comma-separated_values",
-        "synopsis": "Comma-separated values (CSV) is a text file format that uses commas to separate values, and newlines to separate records.",
+        "synopsis": "Comma-separated values is a text file format that uses commas to separate values, and newlines to separate records.",
         "names": [
-            "Comma-separated values",
-            "CSV"
+            "CSV",
+            "Comma-separated values"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -176,7 +176,7 @@
     "ebnf": {
         "type": "computer-language",
         "wiki": "https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form",
-        "synopsis": "Extended Backus-Naur Form (EBNF) is a <abbr title=\"Backus-Naur Form\">BNF</abbr> extension created by Niklaus Wirth in 1996. This language expresses formal grammars, which are notably used in compiler design.",
+        "synopsis": "Extended Backus-Naur Form is a <abbr title=\"Backus-Naur Form\">BNF</abbr> extension created by Niklaus Wirth in 1996. This language expresses formal grammars, which are notably used in compiler design.",
         "names": [
             "EBNF",
             "Extended Backus-Naur Form"
@@ -223,11 +223,11 @@
         "type": "markup-language",
         "wiki": "https://en.wikipedia.org/wiki/HTML",
         "background": "/portfolio/img/definition/html/bg.png",
-        "synopsis": "<abbr title=\"HyperText Markup Language\">HTML</abbr> is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content.",
+        "synopsis": "HyperText Markup Language is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content.",
         "names": [
             "HTML",
-            "HTML5",
-            "HyperText Markup Language"
+            "HyperText Markup Language",
+            "HTML5"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -277,10 +277,10 @@
         "type": "data-format",
         "wiki": "https://en.wikipedia.org/wiki/JSON",
         "background": "/portfolio/img/definition/json/bg.png",
-        "synopsis": "<abbr title=\"JavaScript Object Notation\">JSON</abbr> is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values).",
+        "synopsis": "JavaScript Object Notation is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values).",
         "names": [
-            "JavaScript Object Notation",
-            "JSON"
+            "JSON",
+            "JavaScript Object Notation"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -370,8 +370,10 @@
         "wiki": "https://en.wikipedia.org/wiki/PostgreSQL",
         "synopsis": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system.",
         "names": [
+            "PostgreSQL",
             "Postgres",
-            "PostgreSQL"
+            "pgsql",
+            "pg_sql"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -382,10 +384,11 @@
         "type": "programming-language",
         "wiki": "https://en.wikipedia.org/wiki/PHP",
         "background": "/portfolio/img/definition/php/bg.png",
-        "synopsis": "<abbr title=\"Personal Homepage\">PHP</abbr> is a general-purpose scripting language geared towards web development, created in 1993.",
+        "synopsis": "PHP: Hypertext Preprocessor is a general-purpose scripting language geared towards web development, created in 1993.",
         "names": [
-            "Personal Homepage",
-            "PHP"
+            "PHP",
+            "PHP: Hypertext Preprocessor",
+            "Personal Homepage"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -396,7 +399,7 @@
         "type": "programming-language",
         "wiki": "https://en.wikipedia.org/wiki/PowerShell",
         "background": "/portfolio/img/definition/powershell/bg.png",
-        "synopsis": "PowerShell is a task automation and configuration management program from Microsoft, consisting of a command-line shell and the associated scripting language.",
+        "synopsis": "Windows PowerShell is a task automation and configuration management program from Microsoft, consisting of a command-line shell and the associated scripting language.",
         "names": [
             "PowerShell",
             "Windows PowerShell"
@@ -446,11 +449,11 @@
         "type": "computer-language",
         "background": "/portfolio/img/definition/sass/bg.png",
         "wiki": "https://en.wikipedia.org/wiki/Sass_(style_sheet_language)",
-        "synopsis": "<abbr title=\"Syntactically Awesome Style Sheets\">Sass</abbr> is a preprocessor scripting language that is interpreted or compiled into CSS.",
+        "synopsis": "Syntactically Awesome Style Sheets is a preprocessor scripting language that is interpreted or compiled into CSS.",
         "names": [
             "SASS",
-            "SCSS",
-            "Syntactically Awesome Style Sheets"
+            "Syntactically Awesome Style Sheets",
+            "SCSS"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -486,7 +489,7 @@
         "type": "programming-language",
         "wiki": "https://en.wikipedia.org/wiki/SQL",
         "background": "/portfolio/img/definition/sql/bg.png",
-        "synopsis": "<abbr title=\"Structured Query Language\">SQL</abbr> is a domain-specific language used to manage data, especially in relational database management systems.",
+        "synopsis": "Structured Query Language is a domain-specific language used to manage data, especially in relational database management systems.",
         "names": [
             "SQL",
             "Structured Query Language"
@@ -521,10 +524,10 @@
         "type": "data-format",
         "wiki": "https://en.wikipedia.org/wiki/SVG",
         "background": "/portfolio/img/definition/svg/bg.png",
-        "synopsis": "<abbr title=\"Scalable Vector Graphics\">SVG</abbr> is an XML-based vector image format for defining two-dimensional graphics, having support for interactivity and animation.",
+        "synopsis": "Scalable Vector Graphics is an XML-based vector image format for defining two-dimensional graphics, having support for interactivity and animation.",
         "names": [
-            "Scalable Vector Graphics",
-            "SVG"
+            "SVG",
+            "Scalable Vector Graphics"
         ],
         "logo": {
             "isThemedSvg": true,
@@ -571,8 +574,8 @@
         "wiki": "https://en.wikipedia.org/wiki/Visual_Studio",
         "synopsis": "Visual Studio is an <abbr title=\"Integrated Development Environment\">IDE</abbr> developed by Microsoft. It is used to develop computer programs.",
         "names": [
-            "Microsoft Visual Studio",
-            "Visual Studio"
+            "Visual Studio",
+            "Microsoft Visual Studio"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -601,7 +604,8 @@
         "synopsis": "Windows Forms is a free and open-source graphical class library included as a part of Microsoft .NET, .NET Framework or Mono.",
         "names": [
             "Windows Forms",
-            "WinForms"
+            "WinForms",
+            "Winforms"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -612,10 +616,10 @@
         "type": "library",
         "background": "/portfolio/img/definition/wpf/bg.png",
         "wiki": "https://en.wikipedia.org/wiki/Windows_Presentation_Foundation",
-        "synopsis": "<abbr title=\"Windows Presentation Foundation\">WPF</abbr> is a free and open-source user interface framework for Windows-based desktop applications.",
+        "synopsis": "Windows Presentation Foundation is a free and open-source user interface framework for Windows-based desktop applications.",
         "names": [
-            "Windows Presentation Foundation",
-            "WPF"
+            "WPF",
+            "Windows Presentation Foundation"
         ],
         "logo": {
             "isThemedSvg": false,
@@ -626,10 +630,10 @@
         "type": "markup-language",
         "wiki": "https://en.wikipedia.org/wiki/XML",
         "background": "/portfolio/img/definition/xml/bg.png",
-        "synopsis": "XML is a markup language and file format for storing, transmitting, and reconstructing arbitrary data.",
+        "synopsis": "Extensible Markup Language is a markup language and file format for storing, transmitting, and reconstructing arbitrary data.",
         "names": [
-            "Extensible Markup Language",
-            "XML"
+            "XML",
+            "Extensible Markup Language"
         ],
         "logo": {
             "isThemedSvg": false,

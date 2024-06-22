@@ -21,33 +21,6 @@ for (let i = 0; i < switches.length; i++) {
     });
 }
 
-// todo: do we really need jQuery for this?
-// todo: this is terrible
-$(document).ready(() => {
-    const tooltip = 'definition-tooltip';
-    const visible = 'definition-tooltip-visible';
-    const trigger = 'definition-tooltip-trigger';
-    const examining = 'definition-tooltip-examining';
-
-    $(`.${trigger}`).on({
-        'focusin mouseenter': function() {
-            $(this).siblings(`.${tooltip}`).addClass(visible);
-        },
-        'focusout mouseleave': function () {
-            $(this).siblings(`.${tooltip}`).removeClass(visible);
-        }
-    });
-
-    $(`.${tooltip}`).on({
-        'focusin mouseenter': function() {
-            $(this).addClass(examining);
-        },
-        'focusout mouseleave': function () {
-            $(this).removeClass(examining);
-        }
-    });
-});
-
 /**
  * @template T
  * @template TResult

@@ -3,13 +3,18 @@
 :root {
     overflow-x: hidden;
     --color-empty-line: var(--color-lvl2);
-    --color-filled-line: #a66144; /* same as color accent */
+    --color-filled-line: #a66144;
+    /* same as color accent */
     --color-card-background: var(--color-lvl2);
 }
 
-/* Don't ask...*/
-main * {
-    box-sizing: content-box;
+main {
+    flex-direction: column;
+
+    /* Don't ask...*/
+    * {
+        box-sizing: content-box;
+    }
 }
 
 img {

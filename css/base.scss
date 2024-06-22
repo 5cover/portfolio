@@ -1,3 +1,4 @@
+@use "sass:selector";
 @media (prefers-reduced-motion) {
 
     /* styles to apply if a user's device settings are set to reduced motion */
@@ -9,6 +10,7 @@
 }
 
 $huge-val: calc(infinity * 1px);
+$hover: selector.parse(":is(:hover, :focus-within, :focus)");
 
 @mixin basic-border($width) {
     border-width: $width;
@@ -76,11 +78,7 @@ $huge-val: calc(infinity * 1px);
 
 @mixin color-accent($opacity: 1) {
     @include color-accent-fg;
-    background-color: var(--color-accent-bg);
-}
-
-@function hover($prefix: '') {
-    @return "#{$prefix}:hover, #{$prefix}:focus-within, #{$prefix}:active";
+    background-color: rgba(var(--color-accent-bg-rgb), $opacity);
 }
 
 /* An icon sized to the text next to it */
@@ -194,14 +192,13 @@ body {
     }
 }
 
-
-@mixin transparent-background-image($varname-img, $color-rgb, $opacity) {
+@mixin transparent-background-image($varname-img, $color-rgb, $opacity, $origin: padding-box) {
     $color: rgba($color-rgb, calc(1 - $opacity));
     $gradient: linear-gradient($color, $color);
     /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
     background:
         border-box $gradient,
-        var($varname-img, rgb($color-rgb)) no-repeat;
+        $origin var($varname-img, rgb($color-rgb)) no-repeat;
     background-size: cover;
 }
 
@@ -234,11 +231,11 @@ body {
     color: #91553b;
 }
 
-#{hover('.link')} {
+.link#{$hover} {
     color: #be7c60;
 }
 
-a:not(#{hover()}) {
+a:not(#{$hover}) {
     text-decoration: none;
 }
 
@@ -311,12 +308,10 @@ body > header {
 main {
     grid-row: 2;
     display: flex;
-    flex-direction: column;
 }
 
 body > footer {
     @include lvl1-content(1px 0 0 0);
-    border-top-width: 1px;
     grid-row: 3;
     position: relative;
     display: flex;
@@ -330,13 +325,9 @@ body > footer {
         }
     }
 
-    #{hover('a > svg')} {
+    a > svg#{$hover} {
         @include bring-out(1.15);
     }
-}
-
-section h2 {
-    text-align: center;
 }
 
 .theme-switches {
@@ -367,7 +358,7 @@ section h2 {
             border-bottom-left-radius: inherit;
         }
 
-        &:has(#{hover(input)}) {
+        &:has(input#{$hover}) {
             @include color-accent(.5);
         }
 
@@ -387,7 +378,7 @@ section h2 {
 
 @mixin hover-sensitive-list($factor) {
 
-    #{hover('> li')},
+    > li#{$hover},
     /* class used in JS */
     > li.hover {
         @include bring-out($factor);
@@ -399,7 +390,7 @@ section h2 {
     @include hover-sensitive-list(1.05);
 }
 
-.gray-when-not-hover:not(#{hover()}) {
+.gray-when-not-hover:not(#{$hover}) {
     filter: grayscale(100%);
     opacity: .5;
 }
@@ -412,7 +403,7 @@ section h2 {
     background-color: var(--color-lvl2);
     border-radius: .5em;
 
-    #{hover('&')} {
+    &#{$hover} {
         @include bring-out(1.05);
         @include color-accent;
     }
@@ -427,7 +418,6 @@ section h2 {
     > * {
         @include horizontal-box-padding(.75);
         font-size: 18px;
-        border-radius: .4em;
     }
 }
 
@@ -447,10 +437,11 @@ section h2 {
         z-index: 1;
     }
 
-    .link, abbr {
-        display: inline-block;
-        scale: 1; /* Creates a stacking context */
+    .link,
+    abbr {
         z-index: 1;
+        /* Creates a stacking context */
+        position: relative;
     }
 
     .list-anchor {
@@ -478,6 +469,7 @@ section h2 {
 
             > li {
                 @include color-accent;
+                border-radius: .4em;
             }
         }
 
@@ -518,7 +510,7 @@ section h2 {
             align-items: flex-end;
         }
 
-        #{hover('&')} {
+        &#{$hover} {
             @include transparent-background-image(--bg-img, var(--color-accent-bg-rgb), .1);
 
             .list-tag > li {
@@ -546,24 +538,32 @@ section h2 {
 }
 
 .definition-tooltip {
-    $arrow-width: 3em;
-    $arrow-height: 1lh;
-    $padding: .75em;
+    @include size-images(2.5lh, auto);
     @include transparent-background-image(--bg-img-definition, var(--color-lvl2-rgb), .1);
-    grid-template: 1fr 1fr auto / 1fr auto;
+    $arrow-height: 1lh;
+    $arrow-width: 3em;
+    $padding: .75em;
+    background-color: var(--color-lvl2);
+    border-radius: $padding;
+    left: -$padding;
+    bottom: 110%;
     display: grid;
     font-size: .8em;
-    border-radius: $padding;
-    position: absolute;
-    bottom: 100%;
-    width: max-content;
+    grid-template: 1fr 1fr auto / 1fr auto;
     padding: $padding;
-    background-color: var(--color-lvl2);
-    visibility: hidden;
-    opacity: 0;
-    padding-bottom: calc($padding + $arrow-height);
-    clip-path: polygon(50% 0%, 100% 0, 100% calc(100% - $arrow-height), $arrow-width calc(100% - $arrow-height), calc($arrow-width / 2) 100%, 0 calc(100% - $arrow-height), 0 0);
-    @include size-images(2.5lh, auto);
+    position: absolute;
+    width: max-content;
+
+    .link,
+    abbr {
+        /* Creates a stacking context */
+        z-index: 1;
+        position: relative;
+    }
+
+    > h4 a {
+        @include hover-card-target;
+    }
 
     > img,
     > svg {
@@ -580,12 +580,18 @@ section h2 {
         grid-row: 3;
         grid-column: 1 / 3;
     }
-}
 
-.definition-tooltip-visible,
-.definition-tooltip-examining {
-    visibility: visible;
-    opacity: 1;
-    z-index: 2;
-    transition-delay: 500ms;
+    &#{$hover},
+    &-trigger#{$hover} ~ & {
+        opacity: 1;
+        z-index: 2;
+        transition-delay: 500ms;
+    }
+
+    &-trigger:not(#{$hover}) ~ &:not(#{$hover}) {
+        transition-delay: 250ms;
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+    }
 }

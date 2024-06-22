@@ -1,26 +1,28 @@
 @use 'base';
 
 main {
-    align-items: flex-start;
     gap: 3em;
+    flex-direction: column;
 }
 
 h2 {
     min-width: max-content;
 }
 
-aside {
+#search-bar {
     @include base.lvl1-content(1px 1px 1px 0);
     display: flex;
     flex-flow: column nowrap;
     gap: 1em;
-    width: 18vw;
-    min-width: min-content;
+    min-width: 61.8vw;
+    width: min-content;
+    max-width: 100vw;
     border-radius: 0 1em 1em 0;
 }
 
 #search-input {
     border-radius: base.$huge-val;
+    max-width: 60ch;
     font-size: 75%;
     @include base.horizontal-box-padding();
 }
@@ -35,13 +37,30 @@ aside {
         cursor: pointer;
         background-color: var(--color-lvl3);
 
+        &:has(input#{base.$hover}) {
+            @include base.color-accent(.5);
+        }
+
         &:has(input:checked) {
             @include base.color-accent;
         }
     }
 }
 
+#list-tag > * {
+    border-radius: .2em;
+}
+
+#list-sorting > * {
+    border-radius: base.$huge-val;
+}
+
 .list-anchor {
     gap: .5em;
     @include base.size-images(1.5em, 1.5em);
+}
+
+#project-list {
+    justify-content: center;
+    margin: 0 2em;
 }

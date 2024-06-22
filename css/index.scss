@@ -2,26 +2,29 @@
 @use 'base';
 
 main {
-    justify-content: space-between;
+    flex-direction: column;
     gap: 3em;
+    justify-content: space-between;
 }
 
 section {
     @include base.lvl1-content(1px 0);
+    padding: 1em 2em;
 }
 
 .list-piano-tiles {
-    list-style-type: none;
+    $tile-count: 8;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    list-style-type: none;
     width: 100vw;
-    $tile-count: 8;
 
     > li {
-        flex-shrink: 1;
+        @include base.hover-card;
         $min-width: 180px;
         flex-basis: calc(min(100vw, 1920px) / $tile-count);
+        flex-shrink: 1;
         min-width: $min-width;
 
         @media screen and (max-width: calc($min-width * $tile-count)) {
@@ -33,8 +36,6 @@ section {
                 font-size: 20px;
             }
         }
-
-        @include base.hover-card;
 
         a {
             @include base.hover-card-target;
@@ -56,7 +57,7 @@ section {
             margin: 0;
         }
 
-        &:not(#{base.hover()}) figcaption {
+        &:not(#{base.$hover}) figcaption {
             opacity: 0;
         }
     }
@@ -84,6 +85,10 @@ section {
     display: flex;
     flex-flow: column nowrap;
     gap: 1em;
+
+    h2 {
+        text-align: center;
+    }
 }
 
 #contact {
@@ -124,7 +129,7 @@ section {
             border-radius: .25em;
         }
 
-        #{base.hover('&')} {
+        &#{base.$hover} {
             @include base.bring-out(1.05);
 
             img {

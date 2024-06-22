@@ -58,8 +58,6 @@
   background-color: var(--color-lvl1);
   padding: 1em;
   align-self: center;
-  margin-left: auto;
-  margin-right: auto;
   max-width: min(100vw, 80ch);
 }
 .content-block h2 {
@@ -120,9 +118,13 @@ svg {
 }
 
 body {
+  max-width: 100vw;
   display: grid;
   gap: 3em;
   grid-template-rows: auto 1fr auto;
+}
+body > * {
+  max-width: inherit;
 }
 
 /* Opt-in styling : link colors */
@@ -134,11 +136,11 @@ body {
   color: #91553b;
 }
 
-.link:hover, .link:focus-within, .link:active {
+.link:is(:hover, :focus-within, :focus) {
   color: #be7c60;
 }
 
-a:not(:hover, :focus-within, :active) {
+a:not(:is(:hover, :focus-within, :focus)) {
   text-decoration: none;
 }
 
@@ -168,7 +170,6 @@ a:not(.link, .fi) {
 }
 
 body > header {
-  width: 100vw;
   border-width: 0 0 1px 0;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
@@ -216,34 +217,28 @@ body > header nav a[href="#"] {
 main {
   grid-row: 2;
   display: flex;
-  flex-direction: column;
 }
 
 body > footer {
-  width: 100vw;
   border-width: 1px 0 0 0;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
   background-color: var(--color-lvl1);
   padding: 1em 2em;
-  border-top-width: 1px;
   grid-row: 3;
   position: relative;
   display: flex;
-  flex-flow: row-reverse wrap;
   justify-content: space-between;
   align-items: center;
 }
-body > footer small {
-  margin-left: 50%;
-  transform: translateX(-50%);
+@media screen and (min-width: 570px) {
+  body > footer small {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 }
-body > footer a > svg:hover, body > footer a > svg:focus-within, body > footer a > svg:active {
+body > footer a > svg:is(:hover, :focus-within, :focus) {
   transform: scale(1.15);
-}
-
-section h2 {
-  text-align: center;
 }
 
 .theme-switches {
@@ -278,17 +273,17 @@ section h2 {
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
 }
-.theme-switches label:has(input:hover, input:focus-within, input:active) {
+.theme-switches label:has(input:is(:hover, :focus-within, :focus)) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: var(--color-accent-bg);
+  background-color: rgba(var(--color-accent-bg-rgb), 0.5);
 }
 .theme-switches label:has(input:checked) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: var(--color-accent-bg);
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
 }
 .theme-switches label + label {
   border-width: 0 0 0 1px;
@@ -299,13 +294,13 @@ section h2 {
   cursor: pointer;
 }
 
-.hover-sensitive-list > li:hover, .hover-sensitive-list > li:focus-within, .hover-sensitive-list > li:active,
+.hover-sensitive-list > li:is(:hover, :focus-within, :focus),
 .hover-sensitive-list > li.hover {
   transform: scale(1.05);
   z-index: 1;
 }
 
-.gray-when-not-hover:not(:hover, :focus-within, :active) {
+.gray-when-not-hover:not(:is(:hover, :focus-within, :focus)) {
   filter: grayscale(100%);
   opacity: 0.5;
 }
@@ -319,12 +314,12 @@ section h2 {
   background-color: var(--color-lvl2);
   border-radius: 0.5em;
 }
-.button-link:hover, .button-link:focus-within, .button-link:active {
+.button-link:is(:hover, :focus-within, :focus) {
   transform: scale(1.05);
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: var(--color-accent-bg);
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
 }
 
 .list-tag {
@@ -336,14 +331,13 @@ section h2 {
 .list-tag > * {
   padding: 0.1875lh 0.75ch;
   font-size: 18px;
-  border-radius: 0.4em;
 }
 
 .list-anchor {
   list-style-type: none;
   display: flex;
 }
-.list-anchor > li:hover, .list-anchor > li:focus-within, .list-anchor > li:active,
+.list-anchor > li:is(:hover, :focus-within, :focus),
 .list-anchor > li.hover {
   transform: scale(1.15);
   z-index: 1;
@@ -358,10 +352,11 @@ section h2 {
 .list-project :is(.list-anchor, .list-tag) > li {
   z-index: 1;
 }
-.list-project .link, .list-project abbr {
-  display: inline-block;
-  scale: 1; /* Creates a stacking context */
+.list-project .link,
+.list-project abbr {
   z-index: 1;
+  /* Creates a stacking context */
+  position: relative;
 }
 .list-project .list-anchor {
   gap: 0.5em;
@@ -376,7 +371,7 @@ section h2 {
 .list-project > li {
   position: relative;
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.85), rgba(var(--color-lvl2-rgb), 0.85)), var(--bg-img, rgb(var(--color-lvl2-rgb))) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.85), rgba(var(--color-lvl2-rgb), 0.85)), padding-box var(--bg-img, rgb(var(--color-lvl2-rgb))) no-repeat;
   background-size: cover;
   list-style-type: none;
   border-width: 1px;
@@ -394,7 +389,7 @@ section h2 {
 .list-project > li .list-tag {
   grid-column: 1/3;
 }
-.list-project > li .list-tag > li:hover, .list-project > li .list-tag > li:focus-within, .list-project > li .list-tag > li:active,
+.list-project > li .list-tag > li:is(:hover, :focus-within, :focus),
 .list-project > li .list-tag > li.hover {
   transform: scale(1.15);
   z-index: 1;
@@ -403,7 +398,8 @@ section h2 {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: var(--color-accent-bg);
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
+  border-radius: 0.4em;
 }
 .list-project > li h3 > a {
   text-decoration: none;
@@ -444,20 +440,20 @@ section h2 {
   flex-direction: row-reverse;
   align-items: flex-end;
 }
-.list-project > li:hover, .list-project > li:focus-within, .list-project > li:active {
+.list-project > li:is(:hover, :focus-within, :focus) {
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-accent-bg-rgb), 0.9), rgba(var(--color-accent-bg-rgb), 0.9)), var(--bg-img, rgb(var(--color-accent-bg-rgb))) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-accent-bg-rgb), 0.9), rgba(var(--color-accent-bg-rgb), 0.9)), padding-box var(--bg-img, rgb(var(--color-accent-bg-rgb))) no-repeat;
   background-size: cover;
 }
-.list-project > li:hover .list-tag > li, .list-project > li:focus-within .list-tag > li, .list-project > li:active .list-tag > li {
+.list-project > li:is(:hover, :focus-within, :focus) .list-tag > li {
   background-color: var(--color-lvl2);
 }
-.list-project > li:hover :not(.list-tag > li), .list-project > li:focus-within :not(.list-tag > li), .list-project > li:active :not(.list-tag > li) {
+.list-project > li:is(:hover, :focus-within, :focus) :not(.list-tag > li) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
 }
-.list-project > li:hover .link, .list-project > li:focus-within .link, .list-project > li:active .link {
+.list-project > li:is(:hover, :focus-within, :focus) .link {
   text-decoration: underline;
 }
 
@@ -472,23 +468,19 @@ section h2 {
 
 .definition-tooltip {
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), var(--bg-img-definition, rgb(var(--color-lvl2-rgb))) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl2-rgb))) no-repeat;
   background-size: cover;
-  grid-template: 1fr 1fr auto/1fr auto;
+  background-color: var(--color-lvl2);
+  border-radius: 0.75em;
+  left: -0.75em;
+  bottom: 110%;
   display: grid;
   font-size: 0.8em;
-  border-radius: 0.75em;
+  grid-template: 1fr 1fr auto/1fr auto;
+  padding: 0.75em;
   position: absolute;
-  bottom: 100%;
   width: -moz-max-content;
   width: max-content;
-  padding: 0.75em;
-  background-color: var(--color-lvl2);
-  visibility: hidden;
-  opacity: 0;
-  padding-bottom: calc(0.75em + 1lh);
-  -webkit-clip-path: polygon(50% 0%, 100% 0, 100% calc(100% - 1lh), 3em calc(100% - 1lh), 1.5em 100%, 0 calc(100% - 1lh), 0 0);
-          clip-path: polygon(50% 0%, 100% 0, 100% calc(100% - 1lh), 3em calc(100% - 1lh), 1.5em 100%, 0 calc(100% - 1lh), 0 0);
 }
 .definition-tooltip svg,
 .definition-tooltip img {
@@ -496,6 +488,23 @@ section h2 {
   width: auto;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.definition-tooltip .link,
+.definition-tooltip abbr {
+  /* Creates a stacking context */
+  z-index: 1;
+  position: relative;
+}
+.definition-tooltip > h4 a {
+  text-decoration: none;
+}
+.definition-tooltip > h4 a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .definition-tooltip > img,
 .definition-tooltip > svg {
@@ -510,18 +519,23 @@ section h2 {
   grid-row: 3;
   grid-column: 1/3;
 }
-
-.definition-tooltip-visible,
-.definition-tooltip-examining {
-  visibility: visible;
+.definition-tooltip:is(:hover, :focus-within, :focus), .definition-tooltip-trigger:is(:hover, :focus-within, :focus) ~ .definition-tooltip {
   opacity: 1;
   z-index: 2;
   transition-delay: 500ms;
 }
+.definition-tooltip-trigger:not(:is(:hover, :focus-within, :focus)) ~ .definition-tooltip:not(:is(:hover, :focus-within, :focus)) {
+  transition-delay: 250ms;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  opacity: 0;
+}
 
 main {
-  align-items: flex-start;
   gap: 3em;
+  flex-direction: column;
 }
 
 h2 {
@@ -529,7 +543,7 @@ h2 {
   min-width: max-content;
 }
 
-aside {
+#search-bar {
   border-width: 1px 1px 1px 0;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
@@ -538,14 +552,16 @@ aside {
   display: flex;
   flex-flow: column nowrap;
   gap: 1em;
-  width: 18vw;
-  min-width: -moz-min-content;
-  min-width: min-content;
+  min-width: 61.8vw;
+  width: -moz-min-content;
+  width: min-content;
+  max-width: 100vw;
   border-radius: 0 1em 1em 0;
 }
 
 #search-input {
   border-radius: calc(infinity * 1px);
+  max-width: 60ch;
   font-size: 75%;
   padding: 0.25lh 1ch;
 }
@@ -559,12 +575,27 @@ aside {
   cursor: pointer;
   background-color: var(--color-lvl3);
 }
+#list-tag > label:has(input:is(:hover, :focus-within, :focus)),
+#list-sorting > label:has(input:is(:hover, :focus-within, :focus)) {
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgba(var(--color-accent-bg-rgb), 0.5);
+}
 #list-tag > label:has(input:checked),
 #list-sorting > label:has(input:checked) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: var(--color-accent-bg);
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
+}
+
+#list-tag > * {
+  border-radius: 0.2em;
+}
+
+#list-sorting > * {
+  border-radius: calc(infinity * 1px);
 }
 
 .list-anchor {
@@ -576,4 +607,9 @@ aside {
   width: 1.5em;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+#project-list {
+  justify-content: center;
+  margin: 0 2em;
 }/*# sourceMappingURL=projects.css.map */
