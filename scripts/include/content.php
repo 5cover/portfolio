@@ -148,10 +148,10 @@ function get_background_style_attr(string $varname, string $bg): string {
 function put_definition_tooltip(Lang $lang, array $types, string $id, array $def) {
     $title = $def['names'][0];
     ?>
-    <div class="definition-tooltip" <?php if ($bg = $def['background'] ?? null) {
+    <div class="definition-tooltip" role="tooltip" <?php if ($bg = $def['background'] ?? null) {
         echo get_background_style_attr('bg-img-definition', $bg);
     } ?>>
-        <h4><?php echo $title; ?></h4>
+        <h4><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki']; ?>"><?php echo $title; ?></a></h4>
         <?php if ($logo = $def['logo'] ?? null) {
             echo get_icon_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title));
         } ?>

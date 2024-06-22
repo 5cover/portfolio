@@ -173,34 +173,3 @@ Aussi valable pour les cartes de projet. Les avoir sur des lignes différentes n
 ### Limiter le nombre de tags dans le cartes
 
 Quand il y en a trop, ça prend trop de place, ça va sur plusieurs lignes
-
-## Definition tooltip redesign
-
-Current problem: its hard to access the tooltip content with the mouse, because it disappears quickly when you leave the trigger.
-
-Possible solutions:
-
-### Give time before the tooltip disappears
-
-Why not but it will feel sluggish when you **don't** want the tooltip.
-
-### No more tooltip, use an expander instead
-
-You click on it to expand it over the content.
-
-No more hover
-
-This solves also the responsivity problem causes by hover interactions.
-
-So how does it work? Because i still want to show the link as clickable directly, without going through the preview.
-
-Well, we could show a small arrow on the right of the link. That's the one you'll click on the access the preview. But it may be quite small.
-
-### What wikipedia does
-
-They:
-
-- Show the tooltip right below the trigger. The mouse can easily move to it without making the tooltip go away
-- The tooltip is aligned with the current cursor position. It seems to be independent of the DOM and positioned absolutely in JS. I should do that too
-- The whole tooltip is also a link
-- The tooltip does not contain links or other content. It only contains text and images.
