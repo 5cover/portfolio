@@ -12,7 +12,7 @@ require_once 'help.php';
         <datalist id="project-titles">
             <!-- Fill this up dynamically -->
         </datalist>
-        <aside id="search-bar">
+        <section id="search-bar">
             <h2><?php echo $lang->get('projectSearchSearch'); ?></h2>
             <input type="search" id="search-input" placeholder="<?php echo $lang->get('projectSearchPlaceholder'); ?>"
                 autocomplete="on" list="project-titles">
@@ -25,7 +25,7 @@ require_once 'help.php';
                 <label for="sort-asc">A-Z<input type="radio" name="sorting" id="sort-asc" value="asc" checked></label>
                 <label for="sort-desc">Z-A<input type="radio" name="sorting" id="sort-desc" value="desc"></label>
             </div>
-        </aside>
+        </section>
         <ul class="list-project" id="project-list">
             <!-- Project list will be updated here -->
         </ul>
