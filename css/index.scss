@@ -10,7 +10,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    list-style-type: none;
+    list-style: none;
     width: 100%;
 
     > li {
@@ -92,7 +92,7 @@ section {
     column-gap: 1em;
 
     ul {
-        list-style-type: none;
+        list-style: none;
         display: flex;
         flex-direction: column;
         gap: calc(1lh / 3);
@@ -119,7 +119,6 @@ section {
             @include base.horizontal-box;
             width: max-content;
             background-color: var(--color-lvl1);
-            position: absolute;
         }
 
         &#{base.$hover} {

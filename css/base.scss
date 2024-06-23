@@ -1,11 +1,9 @@
-@use "sass:selector";
-$huge-val: calc(infinity * 1px);
-$hover: selector.parse(":is(:hover, :focus-within, :focus)");
-$graphic: selector.parse(":is(img, svg)");
-$phi: 1.61803398875;
-$full-width-horizontal-margin: min(2.5vw, 2.5lh);
-$full-width-vertical-margin: 2.5lh;
-$max-line-length: 60ch;
+@forward 'const';
+@forward 'util';
+@forward 'components';
+@use 'const';
+@use 'util';
+@use 'components';
 
 @property --bg-img {
     syntax: '*';
@@ -52,173 +50,34 @@ $max-line-length: 60ch;
     }
 }
 
+/* Chromium issue: transitions stack (children wait for parents to finish their transition before doing their own) */
+/* Solution: apply all transitions only to leaf elements. In non-leaf elements, transition only properties that are unrelated to the textual content */
+$non-textual-transition-properties: background-color,
+    background-attachment,
+    background-clip,
+    background-image,
+    background-origin,
+    background-position,
+    background-repeat,
+    background-size,
+    transform,
+    opacity,
+    filter,
+    fill,
+    stroke;
+
 * {
     box-sizing: border-box;
     transition-duration: calc(1s / 3);
-    transition-property:
-        background-color,
-        background-attachment,
-        background-clip,
-        background-image,
-        background-origin,
-        background-position,
-        background-repeat,
-        background-size,
-        transform,
-        opacity,
-        filter,
-        text-decoration;
+    transition-property: $non-textual-transition-properties;
 }
 
-/* Blink issue: transitions stack (children wait for parents before doing their own transition) */
-/* Solution: apply all transitions only to leaf elements */
+/* Leaf elements */
 :not(:has(*)) {
     transition-property:
-        background-color,
-        background-attachment,
-        background-clip,
-        background-image,
-        background-origin,
-        background-position,
-        background-repeat,
-        background-size,
+        $non-textual-transition-properties,
         color,
-        transform,
-        opacity,
-        fill,
-        stroke,
-        filter,
         text-decoration;
-}
-
-@mixin shallow-li {
-    > li {
-        display: contents;
-
-        > * {
-            padding: inherit;
-            margin: inherit;
-            border-radius: inherit;
-            @content;
-        }
-    }
-}
-
-@mixin gapped($flex-direction: column, $flex-wrap: nowrap) {
-    display: flex;
-    flex-flow: $flex-direction $flex-wrap;
-    gap: 1lh;
-}
-
-@mixin justify {
-    text-align: justify;
-    hyphens: auto;
-}
-
-@mixin bring-out($factor) {
-    transform: scale($factor);
-
-    @media (prefers-reduced-motion: reduce) {
-        transform: none;
-    }
-}
-
-@mixin basic-border($width) {
-    border-width: $width;
-    border-style: solid;
-    border-color: rgba(var(--color-fg-rgb), .125);
-}
-
-@mixin color-accent-fg {
-    color: white;
-    --color-fg: white;
-    --color-fg-rgb: 255, 255, 255;
-}
-
-@mixin color-accent($opacity: 1) {
-    @include color-accent-fg;
-    background-color: rgba(var(--color-accent-bg-rgb), $opacity);
-}
-
-@mixin iconed-text($factor: 1) {
-    #{$graphic}:first-child {
-        height: calc(1em * $factor);
-        width: auto;
-        vertical-align: middle;
-        margin-right: calc(.5ch * $factor);
-    }
-}
-
-.iconed-text {
-    @include iconed-text;
-}
-
-@mixin lvl1-content($border-width) {
-    @include basic-border($border-width);
-    background-color: var(--color-lvl1);
-    padding: 1em $full-width-horizontal-margin;
-}
-
-@mixin absolute-fill {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-}
-
-@mixin hover-card {
-    position: relative;
-}
-
-@mixin hover-card-target {
-    text-decoration: none;
-
-    &:after {
-        @include absolute-fill;
-    }
-}
-
-@mixin transparent-background-image($varname-img, $color-rgb, $opacity, $origin: padding-box) {
-    $color: rgba($color-rgb, calc(1 - $opacity));
-    $gradient: linear-gradient($color, $color);
-    /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-    background:
-        border-box $gradient,
-        $origin var($varname-img, rgb($color-rgb)) no-repeat;
-    background-size: cover;
-}
-
-@mixin absolute-center {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-@mixin horizontal-box($padding-factor: 1, $border-radius-factor: 1) {
-    padding: calc($padding-factor * .25lh) calc($padding-factor * 1ch);
-    border-radius: calc($border-radius-factor * .25lh);
-}
-
-@mixin size-graphics($height, $width, $object-fit: contain) {
-    #{$graphic} {
-        height: $height;
-        width: $width;
-        object-fit: $object-fit;
-    }
-}
-
-.content-block {
-    border-radius: 1.5em;
-    background-color: var(--color-lvl1);
-    padding: 1.5em;
-    align-self: center;
-    max-width: 100%;
-
-    h2 {
-        margin-bottom: .5em;
-    }
 }
 
 .fi {
@@ -245,7 +104,7 @@ blockquote {
 }
 
 blockquote {
-    $border-width: calc(1ch / $phi);
+    $border-width: calc(1ch / const.$phi);
     $margin-padding-ratio: 1;
     padding-left: calc(1em - $border-width / 2);
     margin-left: calc(min(1vw, 1em) - $border-width / 2);
@@ -259,12 +118,12 @@ blockquote {
 
 :not(pre) > :is(code, samp, kbd) {
     background-color: var(--color-lvl2);
-    @include horizontal-box(.4);
+    @include util.horizontal-box(.4);
 }
 
 pre {
     background-color: var(--color-lvl2);
-    @include horizontal-box(2, 1);
+    @include util.horizontal-box(2, 1);
 }
 
 small {
@@ -273,7 +132,7 @@ small {
 
 p {
     line-height: calc(1ex / .32);
-    max-width: $max-line-length;
+    max-width: const.$max-line-length;
 }
 
 $p-margin: calc(1ex / 0.32);
@@ -304,12 +163,6 @@ h1 {
     font-weight: 500;
 }
 
-@mixin nav-home-link {
-    font-size: 1.75em;
-    font-weight: 500;
-    width: fit-content;
-}
-
 h2 {
     font-size: 1.75em;
     font-weight: 500;
@@ -333,7 +186,7 @@ body {
     max-width: 100%;
     min-height: 100vh;
     display: grid;
-    gap: $full-width-vertical-margin;
+    gap: const.$full-width-vertical-margin;
     grid-template-rows: auto 1fr auto;
 
     > * {
@@ -341,7 +194,7 @@ body {
     }
 }
 
-a:not(#{$hover}) {
+a:not(#{const.$hover}) {
     text-decoration: none;
 }
 
@@ -349,18 +202,14 @@ a:not(.link, .fi) {
     color: inherit;
 }
 
-@mixin sup-annotation {
-    align-self: normal;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    padding-left: 1px;
-    text-indent: initial;
-    unicode-bidi: isolate;
-    vertical-align: text-top;
-}
-
-/* Opt-in styling: link colors */
+/* Opt-in basic style classes
+ *
+ * Define basic styles for common elements with explicit opt-in
+ */
+/* Link
+ *
+ * Intended for: <a>
+ */
 .link:link {
     color: #a66144;
 }
@@ -369,12 +218,12 @@ a:not(.link, .fi) {
     color: #91553b;
 }
 
-.link#{$hover} {
+.link#{const.$hover} {
     color: #be7c60;
 }
 
 .link[target='_blank']:after {
-    @include sup-annotation;
+    @include util.sup-annotation;
     content: '🡭';
     display: inline-block;
     font-size: .4em;
@@ -382,14 +231,17 @@ a:not(.link, .fi) {
     user-select: none;
 }
 
-/* Opt-in styling: figures */
+/* Figure
+ *
+ * Intended for: <figure>
+ */
 .figure {
-    @include basic-border(1px);
+    @include util.basic-border(1px);
     background-color: var(--color-lvl1);
     max-width: min(100%, 26em);
 
     > figcaption {
-        @include horizontal-box(2.5, 1.25);
+        @include util.horizontal-box(2.5, 1.25);
         text-align: center;
     }
 
@@ -402,341 +254,71 @@ a:not(.link, .fi) {
     }
 }
 
-body > header {
-    @include lvl1-content(0 0 1px 0);
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 2em;
-    row-gap: 1em;
-    justify-content: space-between;
-    height: fit-content;
-
-    .list-flags {
-        list-style-type: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: .5em
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        column-gap: 3em;
-        row-gap: 1.5em;
-
-        > a {
-            @include nav-home-link;
-        }
-
-        > ul {
-            display: flex;
-            list-style-type: none;
-            column-gap: 2em;
-            row-gap: 1em;
-            flex-wrap: wrap;
-
-            a {
-                font-size: 1.25em;
-            }
-        }
-
-        a[href="#"] {
-            text-decoration: underline;
-        }
-    }
-}
-
-main {
-    grid-row: 2;
-    display: flex;
-    flex-direction: column;
-    gap: $full-width-vertical-margin;
-}
-
-body > footer {
-    @include lvl1-content(1px 0 0 0);
-    grid-row: 3;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    small {
-        @media screen and (min-width: 570px) {
-            margin-left: 50%;
-            transform: translateX(-50%);
-        }
-    }
-
-    a > #{$graphic}#{$hover} {
-        @include bring-out(1.15);
-    }
-}
-
-.theme-switches {
-    display: flex;
-    border-radius: .25em;
-    @include basic-border(1px);
-
-    input {
-        @include absolute-fill();
-        opacity: 0;
-    }
-
-    label {
-        position: relative;
-        padding: .25em;
-        width: 2em;
-        display: flex;
+/* Page structure */
+body {
+    > header {
+        @include util.lvl1-content(0 0 1px 0);
         align-items: center;
-        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2em;
+        row-gap: 1em;
+        justify-content: space-between;
+        height: fit-content;
 
-        &:last-of-type {
-            border-top-right-radius: inherit;
-            border-bottom-right-radius: inherit;
-        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            column-gap: 3em;
+            row-gap: 1.5em;
 
-        &:first-of-type {
-            border-top-left-radius: inherit;
-            border-bottom-left-radius: inherit;
-        }
-
-        &:has(input#{$hover}) {
-            @include color-accent(.5);
-        }
-
-        &:has(input:checked) {
-            @include color-accent;
-        }
-
-        + label {
-            @include basic-border(0 0 0 1px);
-        }
-
-        input {
-            cursor: pointer;
-        }
-    }
-}
-
-.gray-when-not-hover:not(#{$hover}) {
-    filter: grayscale(100%);
-    opacity: .5;
-}
-
-@mixin button-link($padding-factor: 1) {
-    @include horizontal-box($padding-factor);
-    background-color: var(--color-lvl2);
-
-    &#{$hover} {
-        @include bring-out(1.05);
-        @include color-accent;
-
-        :link {
-            text-decoration: none;
-        }
-    }
-}
-
-.button-link {
-    @include button-link(2);
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-}
-
-.list-rect {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5em;
-
-    > li {
-        @include horizontal-box(.7, 1.6);
-        font-size: .9em;
-    }
-}
-
-.list-link {
-    display: flex;
-    list-style-type: none;
-}
-
-.list-project {
-    gap: 1em;
-    display: flex;
-    flex-flow: row wrap;
-
-    /* Increase z-index to stand out above the card link */
-    :is(.list-link, .list-rect) > li {
-        z-index: 1;
-    }
-
-    .link,
-    abbr {
-        z-index: 1;
-        /* Creates a stacking context */
-        position: relative;
-    }
-
-    > li {
-        @include hover-card;
-        @include transparent-background-image(--bg-img-project, var(--color-lvl2-rgb), .15);
-        list-style-type: none;
-        @include basic-border(1px);
-        display: grid;
-        grid-template: min-content repeat(4, auto) min-content / 1fr auto;
-        row-gap: .5em;
-        border-radius: .75em;
-        padding: .75em;
-        width: 20em;
-        /* Required to clip the :before pseudo-element to the card's boundaries */
-        overflow: hidden;
-
-        .list-rect {
-            grid-column: 1 / 3;
-
-            > #{$hover} {
-                @include bring-out(1.15);
-                z-index: 1;
-            }
-        }
-
-        h3 > a {
-            @include hover-card-target;
-        }
-
-        .logo {
-            grid-row: 2/6;
-            grid-column: 2;
-            height: 4lh;
-            width: auto;
-            max-width: 25ch;
-            object-fit: contain;
-            margin: auto 0;
-        }
-
-        h3 {
-            grid-row: 2;
-        }
-
-        .context {
-            grid-row: 3;
-        }
-
-        .status {
-            grid-row: 4;
-        }
-
-        .abstract {
-            grid-row: 5;
-        }
-
-        .list-link {
-            @include size-graphics(1.5em, 1.5em);
-            gap: .5em;
-            grid-row: 6;
-            grid-column: 1 / 3;
-            flex-direction: row-reverse;
-            align-items: flex-end;
-
-            > #{$hover} {
-                @include bring-out(1.15);
-                z-index: 1;
-            }
-        }
-
-        &#{$hover} {
-            @include transparent-background-image(--bg-img-project, var(--color-accent-bg-rgb), .15);
-
-            .list-rect > li {
-                background-color: var(--color-lvl2);
+            > a {
+                @include components.nav-home-link;
             }
 
-            > :not(.list-rect) {
-                @include color-accent-fg;
+            > ul {
+                display: flex;
+                list-style: none;
+                column-gap: 2em;
+                row-gap: 1em;
+                flex-wrap: wrap;
+
+                a {
+                    font-size: 1.25em;
+                }
             }
 
-            .link {
+            a[href="#"] {
                 text-decoration: underline;
             }
         }
+    }
 
-        &:not(#{$hover}) {
-            .list-rect > li {
-                @include color-accent;
+    > main {
+        grid-row: 2;
+        display: flex;
+        flex-direction: column;
+        gap: const.$full-width-vertical-margin;
+    }
+
+    > footer {
+        @include util.lvl1-content(1px 0 0 0);
+        grid-row: 3;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        small {
+            @media screen and (min-width: 570px) {
+                margin-left: 50%;
+                transform: translateX(-50%);
             }
         }
-    }
-}
 
-.definition {
-    @include size-graphics(2.5lh, auto);
-    @include transparent-background-image(--bg-img-definition, var(--color-lvl2-rgb), .1);
-    $padding: 1em;
-    background-color: var(--color-lvl2);
-    border-radius: $padding;
-    display: grid;
-    font-size: .8em;
-    grid-template: 1fr 1fr auto / 1fr auto;
-    padding: $padding;
-    position: relative;
-
-    .link,
-    abbr {
-        z-index: 1;
-        /* Creates a stacking context */
-        position: relative;
-    }
-
-    > h4 a {
-        @include hover-card-target;
-    }
-
-    > #{$graphic} {
-        grid-row: 1 / 3;
-        grid-column: 2;
-    }
-
-    > p:nth-last-child(2) {
-        grid-row: 2;
-        grid-column: 1 / 3;
-    }
-
-    > p:nth-last-child(1) {
-        grid-row: 3;
-        grid-column: 1 / 3;
-    }
-
-    &-tooltip {
-        width: max-content;
-        left: -$padding;
-        bottom: 110%;
-        position: absolute;
-
-        &#{$hover},
-        &-trigger#{$hover} ~ & {
-            opacity: 1;
-            z-index: 2;
-            transition-delay: 500ms;
-        }
-
-        &-trigger:not(#{$hover}) ~ &:not(#{$hover}) {
-            transition-delay: 250ms;
-            pointer-events: none;
-            user-select: none;
-            opacity: 0;
+        a > #{const.$graphic}#{const.$hover} {
+            @include util.bring-out(1.15);
         }
     }
-}
-
-:has(> .definition-tooltip) {
-    position: relative;
-}
-
-.definition-tooltip-trigger {
-    cursor: pointer;
-    font-style: italic;
 }

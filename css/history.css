@@ -1,4 +1,493 @@
 @charset "UTF-8";
+/* Emulates infinity. */
+/* Hover state selector  */
+/* Graphic element selector */
+/* Golden ratio */
+/* Horizontal margin of an element whose width spans over the entire viewport */
+/* Vertical margin of an element whose width spans over the entire viewport */
+/* Maximum length of a line of text */
+/* Utilities
+ * 
+ * Increase stylesheet expressivity. May not be semantic.
+ */
+/* Super annotation
+ *
+ * An annotation as an exponent
+ */
+/* Shallow list item
+ *
+ * Display contents on children <li>, inherit layout properties.
+ */
+/* Gapped children
+ *
+ * Display flex, gap based on line height.
+ */
+/* Justify
+ *
+ * Justify and hyphenate. Replaces `text-align: justify`.
+ */
+/* Bring out element
+ *
+ * Scale the element.
+ *
+ * $factor: scale() argument -> scaling factor
+ */
+/* Basic border
+ *
+ * A basic border around the element. Color is foreground, .125 alpha.
+ *
+ * $width: border-width value -> border width
+ */
+/* Accent color foreground 
+ *
+ * Adapt the foreground to the accent color for better contrast.
+ */
+/* Accent color
+ *
+ * Set the background to the accent color and adapt the foreground color.
+ *
+ * $opacity: number [0..1] -> accent background color opacity
+ */
+/* Level 1 content
+ *
+ * Content spanning over the width of the entire viewport. One level of nesting inside the main element (direct child of the main element).
+ *
+ * $border-width: border-width value -> border width
+ */
+/* Absolue fill
+ *
+ * Position absolutely and fill all available space.
+ */
+/* Hover card 
+ *
+ * Position relatively. Represents an interactive card covered by an anchor.
+ */
+/* Hover card target
+ *
+ * The anchor element of an hover card.
+ */
+/* Transparent background image
+ *
+ * Define a transparent background image.
+ *
+ * $varname-img: <image>                  -> the background image.
+ * $color-rgb:   rgb() or rgba() argument -> the backging color (also used as a fallback if $varname-img is not defined)
+ * $opacity:     real [0..1]              -> the opacity of the image
+ * $origin:      <visual-box>             -> origin of the background image layer
+ *
+ * As sometimes the gradient is a little bit smaller than the image, the origin of the color background layer is set to `border-box` as a workaround.
+ *
+ * Todo: fix background color transition. Currently: instant. Expected: transition-duration
+ */
+/* Absolute center
+ *
+ * Position absolutely and center in parent, horizontally and vertically.
+ */
+/* Horizontal box
+ *
+ * Appropriate padding and radius for an horizontal box.
+ *
+ * $padding-factor:       number -> padding multiplier
+ * $border-radius-factor: number -> border radius multiplier
+ */
+/* Size graphics
+ *
+ * Size graphics children accordingly.
+ *
+ * $height:     height value     -> children graphics height
+ * $width:      width value      -> children graphics width
+ * $object-fit: object-fit value -> children graphics object-fit
+ */
+/* Gray when not hover 
+ *
+ * The element is grayed out when it is not hovered.
+ */
+.gray-when-not-hover:not(:is(:hover, :focus-within, :focus)) {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+/* Components
+ * 
+ * Provide reusable components. Semantic.
+ *
+ * Definition of a component:
+ *
+ * - semantics over utilities
+ * - name related to the content
+ * - reusing requires a similar markup structure
+ * - can be specialized in page stylesheets
+ *
+ * Mixin: use to reference the component from stylesheet
+ * Class: use to reference the component from HTML with the default arguments (do not use @extend)
+ */
+/* Home nav link
+ *
+ * The link to the homepage in the navbar.
+ */
+/* Button link
+ *
+ * A link that looks like a button.
+ */
+.button-link {
+  padding: 0.5lh 2ch;
+  border-radius: 0.25lh;
+  background-color: var(--color-lvl2);
+  display: block;
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.button-link:is(:hover, :focus-within, :focus) {
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .button-link:is(:hover, :focus-within, :focus) {
+    transform: scale(1.05);
+  }
+}
+.button-link:is(:hover, :focus-within, :focus) :link {
+  text-decoration: none;
+}
+
+/* Iconed text
+ *
+ * An element containing a graphic that is sized to the neighbouring text.
+ */
+.iconed-text :is(img, svg):first-child {
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.5ch;
+}
+
+/* Flag list
+ *
+ * List of flags.
+ */
+.list-flags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+/* Theme switch control
+ *
+ * Set of theme switches.
+ */
+.theme-switches {
+  display: flex;
+  border-radius: 0.25em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(var(--color-fg-rgb), 0.125);
+}
+.theme-switches input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.theme-switches label {
+  position: relative;
+  padding: 0.25em;
+  width: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.theme-switches label:last-of-type {
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+.theme-switches label:first-of-type {
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+.theme-switches label:has(input:is(:hover, :focus-within, :focus)) {
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgba(var(--color-accent-bg-rgb), 0.5);
+}
+.theme-switches label:has(input:checked) {
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
+}
+.theme-switches label + label {
+  border-width: 0 0 0 1px;
+  border-style: solid;
+  border-color: rgba(var(--color-fg-rgb), 0.125);
+}
+.theme-switches label input {
+  cursor: pointer;
+}
+
+/* Rectangle list
+ *
+ * A list of small, (ideally) horizontal rectancgles
+ */
+.list-rect {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+.list-rect > li {
+  padding: 0.175lh 0.7ch;
+  border-radius: 0.4lh;
+  font-size: 0.9em;
+}
+
+/* Link list
+ *
+ * List of links
+ */
+.list-link {
+  display: flex;
+  list-style: none;
+}
+
+/* Project list
+ *
+ * A list of projects
+
+ * Domain classes:
+ * - logo: project logo graphic
+ * - abstract: project abstract text
+ * - context: project context text
+ * - status: project status text
+ */
+.list-project {
+  gap: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  /* Increase z-index to stand out above the card link */
+}
+.list-project :is(.list-link, .list-rect) > li {
+  z-index: 1;
+}
+.list-project .link,
+.list-project abbr {
+  z-index: 1;
+  /* Creates a stacking context */
+  position: relative;
+}
+.list-project > li {
+  position: relative;
+  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.85), rgba(var(--color-lvl2-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-lvl2-rgb))) no-repeat;
+  background-size: cover;
+  list-style: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(var(--color-fg-rgb), 0.125);
+  display: grid;
+  grid-template: min-content repeat(4, auto) min-content/1fr auto;
+  row-gap: 0.5em;
+  border-radius: 0.75em;
+  padding: 0.75em;
+  width: 20em;
+  /* Required to clip the :before pseudo-element to the card's boundaries */
+  overflow: hidden;
+  /* Tag list */
+}
+.list-project > li .list-rect {
+  grid-column: 1/3;
+}
+.list-project > li .list-rect > :is(:hover, :focus-within, :focus) {
+  z-index: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .list-project > li .list-rect > :is(:hover, :focus-within, :focus) {
+    transform: scale(1.15);
+  }
+}
+.list-project > li h3 > a {
+  text-decoration: none;
+}
+.list-project > li h3 > a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.list-project > li .logo {
+  grid-row: 2/6;
+  grid-column: 2;
+  height: 4lh;
+  width: auto;
+  max-width: 25ch;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: auto 0;
+}
+.list-project > li h3 {
+  grid-row: 2;
+}
+.list-project > li .context {
+  grid-row: 3;
+}
+.list-project > li .status {
+  grid-row: 4;
+}
+.list-project > li .abstract {
+  grid-row: 5;
+}
+.list-project > li .list-link {
+  gap: 0.5em;
+  grid-row: 6;
+  grid-column: 1/3;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+.list-project > li .list-link :is(img, svg) {
+  height: 1.5em;
+  width: 1.5em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.list-project > li .list-link > :is(:hover, :focus-within, :focus) {
+  z-index: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .list-project > li .list-link > :is(:hover, :focus-within, :focus) {
+    transform: scale(1.15);
+  }
+}
+.list-project > li:is(:hover, :focus-within, :focus) {
+  /* Invert the colors: background in orange */
+  background: border-box linear-gradient(rgba(var(--color-accent-bg-rgb), 0.85), rgba(var(--color-accent-bg-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-accent-bg-rgb))) no-repeat;
+  background-size: cover;
+  /* and ags in gray. */
+  /* Adapt foreground to accent color (except tag list). */
+  /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
+}
+.list-project > li:is(:hover, :focus-within, :focus) .list-rect > li {
+  background-color: var(--color-lvl2);
+}
+.list-project > li:is(:hover, :focus-within, :focus) > :not(.list-rect) {
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+}
+.list-project > li:is(:hover, :focus-within, :focus) .link {
+  text-decoration: underline;
+}
+.list-project > li:not(:is(:hover, :focus-within, :focus)) .list-rect > li {
+  color: white;
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+  background-color: rgba(var(--color-accent-bg-rgb), 1);
+}
+
+/* Definition
+ *
+ * An that explains a concept. Can be shown as a tooltip
+
+ * Domain classes:
+ * - definition-tooltip: tooltip form of the definition
+ * - definition-tooltip-trigger: trigger of the definition tooltip form
+ */
+.definition {
+  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl2-rgb))) no-repeat;
+  background-size: cover;
+  background-color: var(--color-lvl2);
+  border-radius: 1em;
+  display: grid;
+  font-size: 0.8em;
+  grid-template: 1fr 1fr auto/1fr auto;
+  padding: 1em;
+  position: relative;
+}
+.definition :is(img, svg) {
+  height: 2.5lh;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.definition .link,
+.definition abbr {
+  z-index: 1;
+  /* Creates a stacking context */
+  position: relative;
+}
+.definition > h4 a {
+  text-decoration: none;
+}
+.definition > h4 a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.definition > :is(img, svg) {
+  grid-row: 1/3;
+  grid-column: 2;
+}
+.definition > p:nth-last-child(2) {
+  grid-row: 2;
+  grid-column: 1/3;
+}
+.definition > p:nth-last-child(1) {
+  grid-row: 3;
+  grid-column: 1/3;
+}
+.definition-tooltip {
+  width: -moz-max-content;
+  width: max-content;
+  left: -1em;
+  bottom: 110%;
+  position: absolute;
+}
+.definition-tooltip-trigger {
+  cursor: pointer;
+  font-style: italic;
+}
+.definition-tooltip:is(:hover, :focus-within, :focus), .definition-tooltip-trigger:is(:hover, :focus-within, :focus) ~ .definition-tooltip {
+  opacity: 1;
+  z-index: 2;
+  transition-delay: 500ms;
+}
+.definition-tooltip-trigger:not(:is(:hover, :focus-within, :focus)) ~ .definition-tooltip:not(:is(:hover, :focus-within, :focus)) {
+  transition-delay: 250ms;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  opacity: 0;
+}
+
+:has(> .definition-tooltip) {
+  position: relative;
+}
+
+/* Content block
+ *
+ * A block containing a limited amount of content, defined by a singular purpose.
+ */
+.content-block {
+  border-radius: 1.5em;
+  background-color: var(--color-lvl1);
+  padding: 1.5em;
+  align-self: center;
+  max-width: 100%;
+}
+.content-block h2 {
+  margin-bottom: 0.5em;
+}
+
 @property --bg-img {
   syntax: "*";
   inherits: false;
@@ -42,38 +531,21 @@
     --color-lvl3-rgb: 68, 68, 68;
   }
 }
+/* Chromium issue: transitions stack (children wait for parents to finish their transition before doing their own) */
+/* Solution: apply all transitions only to leaf elements. In non-leaf elements, transition only properties that are unrelated to the textual content */
 * {
   box-sizing: border-box;
   transition-duration: 0.3333333333s;
-  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, -webkit-background-clip, -webkit-text-decoration;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, text-decoration;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, text-decoration, -webkit-background-clip, -webkit-text-decoration;
+  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, -webkit-background-clip;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, -webkit-background-clip;
 }
 
-/* Blink issue: transitions stack (children wait for parents before doing their own transition) */
-/* Solution: apply all transitions only to leaf elements */
+/* Leaf elements */
 :not(:has(*)) {
-  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, color, transform, opacity, fill, stroke, filter, -webkit-background-clip, -webkit-text-decoration;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, color, transform, opacity, fill, stroke, filter, text-decoration;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, color, transform, opacity, fill, stroke, filter, text-decoration, -webkit-background-clip, -webkit-text-decoration;
-}
-
-.iconed-text :is(img, svg):first-child {
-  height: 1em;
-  width: auto;
-  vertical-align: middle;
-  margin-right: 0.5ch;
-}
-
-.content-block {
-  border-radius: 1.5em;
-  background-color: var(--color-lvl1);
-  padding: 1.5em;
-  align-self: center;
-  max-width: 100%;
-}
-.content-block h2 {
-  margin-bottom: 0.5em;
+  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, color, -webkit-background-clip, -webkit-text-decoration;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, color, text-decoration;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, color, text-decoration, -webkit-background-clip, -webkit-text-decoration;
 }
 
 .fi {
@@ -190,7 +662,14 @@ a:not(.link, .fi) {
   color: inherit;
 }
 
-/* Opt-in styling: link colors */
+/* Opt-in basic style classes
+ *
+ * Define basic styles for common elements with explicit opt-in
+ */
+/* Link
+ *
+ * Intended for: <a>
+ */
 .link:link {
   color: #a66144;
 }
@@ -221,7 +700,10 @@ a:not(.link, .fi) {
           user-select: none;
 }
 
-/* Opt-in styling: figures */
+/* Figure
+ *
+ * Intended for: <figure>
+ */
 .figure {
   border-width: 1px;
   border-style: solid;
@@ -243,6 +725,7 @@ a:not(.link, .fi) {
      object-fit: contain;
 }
 
+/* Page structure */
 body > header {
   border-width: 0 0 1px 0;
   border-style: solid;
@@ -258,12 +741,6 @@ body > header {
   justify-content: space-between;
   height: -moz-fit-content;
   height: fit-content;
-}
-body > header .list-flags {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
 }
 body > header nav {
   display: flex;
@@ -281,7 +758,7 @@ body > header nav > a {
 }
 body > header nav > ul {
   display: flex;
-  list-style-type: none;
+  list-style: none;
   -moz-column-gap: 2em;
        column-gap: 2em;
   row-gap: 1em;
@@ -293,14 +770,12 @@ body > header nav > ul a {
 body > header nav a[href="#"] {
   text-decoration: underline;
 }
-
-main {
+body > main {
   grid-row: 2;
   display: flex;
   flex-direction: column;
   gap: 2.5lh;
 }
-
 body > footer {
   border-width: 1px 0 0 0;
   border-style: solid;
@@ -319,313 +794,10 @@ body > footer {
     transform: translateX(-50%);
   }
 }
-body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
-  transform: scale(1.15);
-}
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: no-preference) {
   body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
-    transform: none;
+    transform: scale(1.15);
   }
-}
-
-.theme-switches {
-  display: flex;
-  border-radius: 0.25em;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgba(var(--color-fg-rgb), 0.125);
-}
-.theme-switches input {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-}
-.theme-switches label {
-  position: relative;
-  padding: 0.25em;
-  width: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.theme-switches label:last-of-type {
-  border-top-right-radius: inherit;
-  border-bottom-right-radius: inherit;
-}
-.theme-switches label:first-of-type {
-  border-top-left-radius: inherit;
-  border-bottom-left-radius: inherit;
-}
-.theme-switches label:has(input:is(:hover, :focus-within, :focus)) {
-  color: white;
-  --color-fg: white;
-  --color-fg-rgb: 255, 255, 255;
-  background-color: rgba(var(--color-accent-bg-rgb), 0.5);
-}
-.theme-switches label:has(input:checked) {
-  color: white;
-  --color-fg: white;
-  --color-fg-rgb: 255, 255, 255;
-  background-color: rgba(var(--color-accent-bg-rgb), 1);
-}
-.theme-switches label + label {
-  border-width: 0 0 0 1px;
-  border-style: solid;
-  border-color: rgba(var(--color-fg-rgb), 0.125);
-}
-.theme-switches label input {
-  cursor: pointer;
-}
-
-.gray-when-not-hover:not(:is(:hover, :focus-within, :focus)) {
-  filter: grayscale(100%);
-  opacity: 0.5;
-}
-
-.button-link {
-  padding: 0.5lh 2ch;
-  border-radius: 0.25lh;
-  background-color: var(--color-lvl2);
-  display: block;
-  margin: 0 auto;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.button-link:is(:hover, :focus-within, :focus) {
-  transform: scale(1.05);
-  color: white;
-  --color-fg: white;
-  --color-fg-rgb: 255, 255, 255;
-  background-color: rgba(var(--color-accent-bg-rgb), 1);
-}
-@media (prefers-reduced-motion: reduce) {
-  .button-link:is(:hover, :focus-within, :focus) {
-    transform: none;
-  }
-}
-.button-link:is(:hover, :focus-within, :focus) :link {
-  text-decoration: none;
-}
-
-.list-rect {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-}
-.list-rect > li {
-  padding: 0.175lh 0.7ch;
-  border-radius: 0.4lh;
-  font-size: 0.9em;
-}
-
-.list-link {
-  display: flex;
-  list-style-type: none;
-}
-
-.list-project {
-  gap: 1em;
-  display: flex;
-  flex-flow: row wrap;
-  /* Increase z-index to stand out above the card link */
-}
-.list-project :is(.list-link, .list-rect) > li {
-  z-index: 1;
-}
-.list-project .link,
-.list-project abbr {
-  z-index: 1;
-  /* Creates a stacking context */
-  position: relative;
-}
-.list-project > li {
-  position: relative;
-  /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.85), rgba(var(--color-lvl2-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-lvl2-rgb))) no-repeat;
-  background-size: cover;
-  list-style-type: none;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgba(var(--color-fg-rgb), 0.125);
-  display: grid;
-  grid-template: min-content repeat(4, auto) min-content/1fr auto;
-  row-gap: 0.5em;
-  border-radius: 0.75em;
-  padding: 0.75em;
-  width: 20em;
-  /* Required to clip the :before pseudo-element to the card's boundaries */
-  overflow: hidden;
-}
-.list-project > li .list-rect {
-  grid-column: 1/3;
-}
-.list-project > li .list-rect > :is(:hover, :focus-within, :focus) {
-  transform: scale(1.15);
-  z-index: 1;
-}
-@media (prefers-reduced-motion: reduce) {
-  .list-project > li .list-rect > :is(:hover, :focus-within, :focus) {
-    transform: none;
-  }
-}
-.list-project > li h3 > a {
-  text-decoration: none;
-}
-.list-project > li h3 > a:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-.list-project > li .logo {
-  grid-row: 2/6;
-  grid-column: 2;
-  height: 4lh;
-  width: auto;
-  max-width: 25ch;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin: auto 0;
-}
-.list-project > li h3 {
-  grid-row: 2;
-}
-.list-project > li .context {
-  grid-row: 3;
-}
-.list-project > li .status {
-  grid-row: 4;
-}
-.list-project > li .abstract {
-  grid-row: 5;
-}
-.list-project > li .list-link {
-  gap: 0.5em;
-  grid-row: 6;
-  grid-column: 1/3;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-}
-.list-project > li .list-link :is(img, svg) {
-  height: 1.5em;
-  width: 1.5em;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.list-project > li .list-link > :is(:hover, :focus-within, :focus) {
-  transform: scale(1.15);
-  z-index: 1;
-}
-@media (prefers-reduced-motion: reduce) {
-  .list-project > li .list-link > :is(:hover, :focus-within, :focus) {
-    transform: none;
-  }
-}
-.list-project > li:is(:hover, :focus-within, :focus) {
-  /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-accent-bg-rgb), 0.85), rgba(var(--color-accent-bg-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-accent-bg-rgb))) no-repeat;
-  background-size: cover;
-}
-.list-project > li:is(:hover, :focus-within, :focus) .list-rect > li {
-  background-color: var(--color-lvl2);
-}
-.list-project > li:is(:hover, :focus-within, :focus) > :not(.list-rect) {
-  color: white;
-  --color-fg: white;
-  --color-fg-rgb: 255, 255, 255;
-}
-.list-project > li:is(:hover, :focus-within, :focus) .link {
-  text-decoration: underline;
-}
-.list-project > li:not(:is(:hover, :focus-within, :focus)) .list-rect > li {
-  color: white;
-  --color-fg: white;
-  --color-fg-rgb: 255, 255, 255;
-  background-color: rgba(var(--color-accent-bg-rgb), 1);
-}
-
-.definition {
-  /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
-  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl2-rgb))) no-repeat;
-  background-size: cover;
-  background-color: var(--color-lvl2);
-  border-radius: 1em;
-  display: grid;
-  font-size: 0.8em;
-  grid-template: 1fr 1fr auto/1fr auto;
-  padding: 1em;
-  position: relative;
-}
-.definition :is(img, svg) {
-  height: 2.5lh;
-  width: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.definition .link,
-.definition abbr {
-  z-index: 1;
-  /* Creates a stacking context */
-  position: relative;
-}
-.definition > h4 a {
-  text-decoration: none;
-}
-.definition > h4 a:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-.definition > :is(img, svg) {
-  grid-row: 1/3;
-  grid-column: 2;
-}
-.definition > p:nth-last-child(2) {
-  grid-row: 2;
-  grid-column: 1/3;
-}
-.definition > p:nth-last-child(1) {
-  grid-row: 3;
-  grid-column: 1/3;
-}
-.definition-tooltip {
-  width: -moz-max-content;
-  width: max-content;
-  left: -1em;
-  bottom: 110%;
-  position: absolute;
-}
-.definition-tooltip:is(:hover, :focus-within, :focus), .definition-tooltip-trigger:is(:hover, :focus-within, :focus) ~ .definition-tooltip {
-  opacity: 1;
-  z-index: 2;
-  transition-delay: 500ms;
-}
-.definition-tooltip-trigger:not(:is(:hover, :focus-within, :focus)) ~ .definition-tooltip:not(:is(:hover, :focus-within, :focus)) {
-  transition-delay: 250ms;
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  opacity: 0;
-}
-
-:has(> .definition-tooltip) {
-  position: relative;
-}
-
-.definition-tooltip-trigger {
-  cursor: pointer;
-  font-style: italic;
 }
 
 :root {
