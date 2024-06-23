@@ -27,6 +27,29 @@ href|`#ref-`num
 - Project link: to a page dedicated to the project (often managed by myself)
 - Link: other resources
 
-## Images
+## HTML `<img>` elements
 
 Lazy: always unless eager loading is critical to the correct display of the page
+
+## SCSS documentation
+
+Markdown inline format allowed.
+
+Format:
+
+```scss
+/* name
+ *
+ * description
+ *
+ * $paremeter1name: type -> desc
+ * $paremeter2name: type -> desc
+ * ...
+ *
+ * information
+ */
+```
+
+- *name*: brief name
+- *description*: brief description
+- *information*: unrestricted text

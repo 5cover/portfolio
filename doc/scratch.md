@@ -1,5 +1,11 @@
 # Scratch area
 
+## Final release
+
+- Minify HTML
+- Minify CSS
+- Minify JS
+
 ## On firefox 128 release (9 juillet)
 
 Take advantage of @property support. Replace *bg-img-project* and *bg-img-definition* by *bg-img*.
