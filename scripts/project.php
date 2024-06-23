@@ -27,37 +27,29 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
         <?php put_header($page, $lang) ?>
         <main <?php $p->put_background_style_attr('bg-img') ?>>
             <div id="project-header">
-                <?php $p->put_tags($tags) ?>
+                <?php $p->put_tags($lang, $tags) ?>
                 <h2><?php echo $p->data['title'] ?></h2>
                 <?php $p->put_logo($lang) ?>
                 <?php $p->put_abstract() ?>
                 <div class="status-context"><?php $p->put_context() ?><?php $p->put_status($lang->get('ongoing')) ?></div>
             </div>
-            <?php if (count($techs = $p->data['technologies']) > 0) { ?>
-                <h3><?php echo $lang->get('projectTechnologies') ?></h3>
-                <ul id="technologies"><?php foreach ($techs as $defId) {
-                    $def = $defintions[$defId];
-                    $logo = $def['logo'] ?? null;
-                    ?>
-                        <li>
-                            <?php if ($logo) {
-                                echo get_icon_element($logo['isThemedSvg'], $logo['url'], 'Logo ' . $def['names'][0], 'definition-tooltip-trigger', 60);
-                            } else {
-                                echo $def['names'][0];
-                            } ?>
-                            <?php put_definition_tooltip($lang, $types, $defId, $def) ?>
-                        </li>
-                    <?php } ?>
+            <?php if (count($p->data['links']) > 0) { ?>
+                <?php $p->put_link_list($anchors) ?>
+            <?php }
+            if (count ($team = $p->data['team']) > 0) { ?>
+                <h3><?php echo $lang->get('projectTeammates'); ?></h3>
+                <ul id="team"><?php foreach ($team as $personDefId) {
+                    put_definition_card($lang, $types, $personDefId, $defintions[$personDefId], "li");
+                } ?>
                 </ul>
             <?php } ?>
             <div id="story"><?php echo $p->data['story'] ?></div>
-            <?php if (count($p->data['references']) > 0) { ?>
-                <h3><?php echo $lang->get('projectReferences') ?></h3>
-                <?php $p->put_reference_list($lang, $anchors); ?>
-            <?php }
-            if (count($p->data['links']) > 0) { ?>
-                <h3><?php echo $lang->get('projectLinks') ?></h3>
-                <?php $p->put_link_list($anchors) ?>
+            <?php if (count($techs = $p->data['technologies']) > 0) { ?>
+                <h3><?php echo $lang->get('projectTechnologies') ?></h3>
+                <ul id="technologies"><?php foreach ($techs as $defId) {
+                    put_definition_card($lang, $types, $defId, $defintions[$defId], "li");
+                } ?>
+                </ul>
             <?php }
             if (count($gallery = $p->data['gallery']) > 0) { ?>
                 <h3><?php echo $lang->get('projectGallery') ?></h3>
@@ -76,6 +68,10 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                         </figure>
                     <?php } ?>
                 </div>
+            <?php }
+            if (count($p->data['references']) > 0) { ?>
+                <h3><?php echo $lang->get('projectReferences') ?></h3>
+                <?php $p->put_reference_list($lang, $anchors); ?>
             <?php } ?>
         </main>
         <?php put_footer($page, $lang) ?>

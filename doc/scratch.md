@@ -1,5 +1,13 @@
 # Scratch area
 
+## On firefox 128 release (9 juillet)
+
+Take advantage of @property support. Replace *bg-img-project* and *bg-img-definition* by *bg-img*.
+
+## Print CSS
+
+Break-inside avoid and stuff
+
 ## Fusion de statut et contexte
 
 Aussi valable pour les cartes de projet. Les avoir sur des lignes différentes n'a pas de sense. Je pense les mettre dans un div avec un flex row wrap et un gap.
@@ -11,6 +19,10 @@ Quand il y en a trop, ça prend trop de place, ça va sur plusieurs lignes
 ## windows classic theme
 
 yes. It would be awesome. Use system colors.
+
+need to put in theme
+
+- border radius
 
 ## Take another photo
 
@@ -117,6 +129,10 @@ Learning C is better than any amount of Leetcode challenges.
 
 Mettre le numéro de la SAÉ dans le contexte
 
+### Project repositories
+
+GitLab for SAÉs. Put the in a group called BUT.
+
 ### Gallerie
 
 - S1.02, S1.01 : shells
@@ -138,6 +154,10 @@ Présente chaque compétence et la tête de liste des projets associés (entre 4
 
 Suggéré par Malo &mdash; moins casser le color scheme &mdash; utiliser la couleur d'accent.
 
+Finalement non. Il vaut mieux respecter l'agent utilisateur.
+
+Finalement si. La scrollbar est vraiment moche sur Chromium.
+
 ## Put colors in separate rulesets
 
 Because we don't know where the element is, we don't know if we should use lvl1, 2 or 3. So the site looks a bit inconsistent. We can use selectors like `main > * > *` for lvl2? i don't know we'll see. We're kind of in an emergency right now.
@@ -157,39 +177,3 @@ Maybe we could have a class, something like `.new-lvl`. So our selector would be
 ### fix dates
 
 ### tell more in story
-
-## Fix CSS problems
-
-- ~~Arrière plan des projets dans la page de but~~
-- ~~Liens z-index dans les cartes de projet.~~
-- responsivité (tester sur mobile)
-- arrière plan pour le pre > code (voir markdown css), samp et kbd
-- ~~taille des images dans story (voir psdc)~~
-
-## Amérorations des pages de projet
-
-### Plus de détails sur les liens et les technologies (& futurs coéqupiers)
-
-Au lieu d'afficher que des logos, on fait une liste verticale avec le nom (pour les liens).
-
-Aussi pour les technologies et les copéquipiers il faudrait une version non-tooltip du détail à afficher en permanence et non pas en hover.
-
-Le plus gros problème c'est qu'on aura pas les infobulles de définitions sur mobile, donc il faut afficher les plus importantes en permanence.
-
-### Section coéquipiers
-
-Présente les coéquipiers pour le projet, leur photo et un lien vers leur portfolio.
-
-(non affiché si je suis tout seul)
-
-### Separate links and references
-
-Les références numérotées (style académiques), != des links (point d'ancrage du projet : ses connexions au monde : github, article, ...)
-
-### Links
-
-Link to a page i'm responsible for (github repo, steam workshop page...) or that is directly related to the project (article ccm...).
-
-### Reference
-
-Link to a resource that has helped in the realization or research of the project but that is not related to the project (wikipedia articles, online books, tutorial, resources...)

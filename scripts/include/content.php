@@ -139,17 +139,25 @@ function put_header(Page $page, Lang $lang) { ?>
     </header>
 <?php }
 
-function get_background_style_attr(string $varname, string $bg): string {
+function get_background_style_attr(string $bg, string $varname = 'bg-img'): string {
     return <<<END
      style="--$varname: url($bg)"
     END;
 }
 
+function put_definition_card(Lang $lang, array $types, string $id, array $def, string $enclosingElementName) {
+    _put_definition($lang, $types, $id, $def, $enclosingElementName, "class=\"definition\"");
+}
+
 function put_definition_tooltip(Lang $lang, array $types, string $id, array $def) {
+    _put_definition($lang, $types, $id, $def, "div", "class=\"definition definition-tooltip\" role=\"tooltip\"");
+}
+
+function _put_definition(Lang $lang, array $types, string $id, array $def, string $enclosingElementName, string $divAttrs) {
     $title = $def['names'][0];
     ?>
-    <div class="definition-tooltip" role="tooltip" <?php if ($bg = $def['background'] ?? null) {
-        echo get_background_style_attr('bg-img-definition', $bg);
+    <<?php echo $enclosingElementName ?> <?php echo $divAttrs ?> <?php if ($bg = $def['background'] ?? null) {
+        echo get_background_style_attr($bg, 'bg-img-definition');
     } ?>>
         <h4><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>"><?php echo $title ?></a></h4>
         <?php if ($logo = $def['logo'] ?? null) {
@@ -157,7 +165,7 @@ function put_definition_tooltip(Lang $lang, array $types, string $id, array $def
         } ?>
         <p><small><?php echo ucfirst($types[$def['type']]) ?></small></p>
         <p><?php echo $def['synopsis'] ?></p>
-    </div>
+    </<?php echo $enclosingElementName ?>>
 <?php }
 
 function put_iframe(string $src, string $title) { ?>

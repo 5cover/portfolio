@@ -17,11 +17,11 @@ require_once 'help.php';
             <input type="search" id="search-input" placeholder="<?php echo $lang->get('projectSearchPlaceholder') ?>"
                 autocomplete="on" list="project-titles">
             <h3><?php echo $lang->get('projectSearchTags') ?></h3>
-            <div class="list-tag" id="list-tag">
+            <div class="list-rect" id="list-tag">
                 <!-- Tags will be added here -->
             </div>
             <h3><?php echo $lang->get('projectSearchSort') ?></h3>
-            <div class="list-tag" id="list-sorting">
+            <div class="list-rect" id="list-sorting">
                 <label for="sort-asc">A-Z<input type="radio" name="sorting" id="sort-asc" value="asc" checked></label>
                 <label for="sort-desc">Z-A<input type="radio" name="sorting" id="sort-desc" value="desc"></label>
             </div>

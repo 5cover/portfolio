@@ -15,12 +15,20 @@
             "story",
             "tags",
             "technologies",
-            "title"
+            "title",
+            "team"
         ],
         "properties": {
             "abstract": {
                 "minLength": 1,
                 "title": "string"
+            },
+            "team": {
+                "uniqueItems": true,
+                "type": "array",
+                "additionalItems": {
+                    "type": "string"
+                }
             },
             "links": {
                 "uniqueItems": true,

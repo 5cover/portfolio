@@ -193,3 +193,51 @@ They:
 - The tooltip is aligned with the current cursor position. It seems to be independent of the DOM and positioned absolutely in JS. I should do that too
 - The whole tooltip is also a link
 - The tooltip does not contain links or other content. It only contains text and images.
+
+## Amérorations des pages de projet
+
+### Separate links and references
+
+Les références numérotées (style académiques), != des links (point d'ancrage du projet : ses connexions au monde : github, article, ...)
+
+### Links
+
+Link to a page i'm responsible for (github repo, steam workshop page...) or that is directly related to the project (article ccm...).
+
+### Reference
+
+Link to a resource that has helped in the realization or research of the project but that is not related to the project (wikipedia articles, online books, tutorial, resources...)
+
+### Plus de détails sur les liens et les technologies
+
+Au lieu d'afficher que des logos, on affiche tout le contenu des liens et des technologies.
+
+### Section coéquipiers
+
+Présente les coéquipiers pour le projet, leur photo et un lien vers leur portfolio.
+
+(non affiché si je suis tout seul)
+
+### Blockquote left border
+
+### Project gallery types
+
+for the current iframes: use shorter code, see for markdown
+
+iframe should be last resort
+
+## Fix CSS problems
+
+- Arrière plan des projets dans la page de but
+- Liens z-index dans les cartes de projet.
+- responsivité (tester sur mobile)
+- arrière plan pour le pre > code (voir markdown css), samp et kbd
+- taille des images dans story (voir psdc)
+
+## improve .text-icon
+
+replace by class on the container element
+
+display flex align items center
+
+renamed to *.iconed-text*

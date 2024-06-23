@@ -3,7 +3,20 @@ require_once 'help.php';
 require_once 'content.php';
 require_once 'project.php';
 
+define('MAX_PROJECTS_PER_SKILL', 4);
+
 [$lang, $page] = parse_args();
+
+$projects = array_map(fn($p) => new Project($p), $lang->get_data('projects'));
+
+function put_skill_project_list($skillId) {
+    global $lang, $projects;
+    put_project_cards_list($lang,
+        array_slice(
+            array_filter($projects,
+                fn($p) => in_array($skillId, $p->data['tags'])), 0, MAX_PROJECTS_PER_SKILL, true));
+}
+
 ?>
 <?php put_doctype_html($page, $lang) ?>
 <?php put_head($page, $lang) ?>
@@ -24,9 +37,9 @@ require_once 'project.php';
                 accent mis sur une professionnalisation progressive pour une insertion rapide, tout en garantissant un
                 niveau scientifique suffisant pour permettre de continuer des études pour ceux qui le souhaitent.</p>
             <p>Le titulaire du BUT spécialité informatique est compétent sur les plans technique et méthodologique tout
-                en étant sensibilisé aux problématiques actuelles (sécurité des données, <em>cloud computing</em>, intelligence
-                artificielle), sur les questions sociétales, juridiques, éthiques et environnementales liées aux usages
-                du numérique.</p>
+                en étant sensibilisé aux problématiques actuelles (sécurité des données, <em>cloud computing</em>,
+                intelligence artificielle), sur les questions sociétales, juridiques, éthiques et environnementales
+                liées aux usages du numérique.</p>
             <p>À l’issue d’un tronc commun d’un an, l’étudiant pourra, en fonction de son projet professionnel, choisir
                 l’un des quatre parcours proposés par la spécialité informatique.</p>
         </div>
@@ -36,42 +49,42 @@ require_once 'project.php';
         <section id="competences">
             <h3>Compétences du BUT</h3>
             <p>Les apprentissages du BUT sont organisés en 6 compétences&nbsp;:</p>
-            <article style="--bg-img-skill: url(/portfolio/img/skill/1.jpg)">
+            <article style="--bg-img: url(/portfolio/img/skill/1.jpg)">
                 <h4>Compétence 1. Réaliser</h4>
-                <p>Développer — c’est-à-dire concevoir, coder, tester et intégrer — une solution informatique pour un
+                <p>Développer — c’est-à-dire concevoir, coder, tester et intégrer une solution informatique pour un
                     client.</p>
-                <?php put_project_cards_list($lang, fn($p) => in_array('but-realiser', $p->data['tags'])) ?>
+                <?php put_skill_project_list('but-realiser') ?>
             </article>
-            <article style="--bg-img-skill: url(/portfolio/img/skill/2.jpg)">
+            <article style="--bg-img: url(/portfolio/img/skill/2.jpg)">
                 <h4>Compétence 2. Optimiser</h4>
                 <p>Proposer des applications informatiques optimisées en fonction de critères spécifiques&nbsp;: temps
                     d’exécution, précision, consommation de ressources.</p>
-                <?php put_project_cards_list($lang, fn($p) => in_array('but-optimiser', $p->data['tags'])) ?>
+                <?php put_skill_project_list('but-optimiser') ?>
             </article>
-            <article style="--bg-img-skill: url(/portfolio/img/skill/3.jpg)">
+            <article style="--bg-img: url(/portfolio/img/skill/3.jpg)">
                 <h4>Compétence 3. Administrer</h4>
                 <p>Installer, configurer, mettre à disposition, maintenir en conditions opérationnelles des
-                    infrastructures, des services et des réseaux et optimiser le système informatique d’une organisation.
-                </p>
-                <?php put_project_cards_list($lang, fn($p) => in_array('but-administrer', $p->data['tags'])) ?>
+                    infrastructures, des services et des réseaux et optimiser le système informatique d’une
+                    organisation. </p>
+                <?php put_skill_project_list('but-administrer') ?>
             </article>
-            <article style="--bg-img-skill: url(/portfolio/img/skill/4.jpg)">
+            <article style="--bg-img: url(/portfolio/img/skill/4.jpg)">
                 <h4>Compétence 4. Gérer</h4>
                 <p>Concevoir, gérer, administrer et exploiter les données de l’entreprise et mettre à disposition toutes
                     les informations pour un bon pilotage de l’entreprise.</p>
-                <?php put_project_cards_list($lang, fn($p) => in_array('but-gerer', $p->data['tags'])) ?>
+                <?php put_skill_project_list('but-gerer') ?>
             </article>
-            <article style="--bg-img-skill: url(/portfolio/img/skill/5.jpg)">
+            <article style="--bg-img: url(/portfolio/img/skill/5.jpg)">
                 <h4>Compétence 5. Conduire</h4>
                 <p>Satisfaire les besoins des utilisateurs au regard de la chaîne de valeur du client, organiser et
                     piloter un projet informatique avec des méthodes classiques ou agiles.</p>
-                <?php put_project_cards_list($lang, fn($p) => in_array('but-conduire', $p->data['tags'])) ?>
+                <?php put_skill_project_list('but-conduire') ?>
             </article>
-            <article style="--bg-img-skill: url(/portfolio/img/skill/6.jpg)">
+            <article style="--bg-img: url(/portfolio/img/skill/6.jpg)">
                 <h4>Compétence 6. Collaborer</h4>
                 <p>Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une
                     équipe informatique.</p>
-                <?php put_project_cards_list($lang, fn($p) => in_array('but-collaborer', $p->data['tags'])) ?>
+                <?php put_skill_project_list('but-collaborer') ?>
             </article>
         </section>
         <div id="resultat-pour-moi">
