@@ -2,7 +2,6 @@
     "en": {
         "projectSearchTags": "Tags",
         "flagClass": "fi-us",
-        "projectLinks": "Links",
         "namePageHistory": "History",
         "ongoing": "ongoing",
         "indexContact": "Contact",
@@ -12,6 +11,7 @@
         "refJumpUp": "Jump up",
         "namePageProjects": "Projects",
         "namePagePassions": "Passions",
+        "projectTeammates": "Teammates",
         "indexMe": "About me",
         "indexMyPhoto": "My photo",
         "indexMyResume": "My resume",
@@ -53,7 +53,6 @@
     "fr": {
         "projectSearchTags": "Tags",
         "flagClass": "fi-fr",
-        "projectLinks": "Liens",
         "indexMyResume": "Mon CV",
         "namePageProjects": "Projets",
         "indexContact": "Contact",
@@ -64,7 +63,7 @@
         "indexMyPhoto": "Ma photo",
         "ongoing": "en cours",
         "projectGallery": "Gallerie",
-        "projectReferences": "Réferences",
+        "projectReferences": "Références",
         "nameLightTheme": "Thème clair",
         "indexPianoTile1Title": "Val d'Isère",
         "nameDarkTheme": "Thème sombre",
@@ -94,6 +93,7 @@
         "indexPianoTile8Desc": "Mon projet &quot;best-seller&quot;",
         "indexPianoTile7Desc": "L'optimisation ne se termine jamais",
         "indexPianoTile2Desc": "L'art et la fonctionnalité conjointes",
+        "projectTeammates": "Coéquipiers",
         "siteDescription": "Bonjour ! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous !",
         "indexAboutMeContent": "<p>Bonjour, je m'appelle <strong>Raphaël Bardini</strong>. J'ai 18 ans et suis étudiant en 1<sup>re</sup> année de <abbr title=\"Bachelor Universitaire Technologique\">BUT</abbr> Informatique, à l'<a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://iut-lannion.univ-rennes.fr/\"><abbr title=\"Institut Universitaire Technologique\">IUT</abbr> de Lannion</a>.</p><p>J'ai un baccalauréat général avec spécialités <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.lyceeschoelcher972.fr/specialite-llcer-amc/\"><abbr title=\"Langues, littératures et cultures étrangères et régionales &mdash; Anglais Monde Contemporain\">LLCER AMC</abbr></a> et <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448\"><abbr title=\"Numérique Sciences Informatiques\">NSI</abbr></a>. J'ai un très bon niveau en anglais.</p><p>Je suis passionné par le <strong>développement logiciel</strong> et je suis investi dans le milieu <strong>open-source</strong>. Je suis également un grand amateur de <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://youtube.com/playlist?list=PL1weKnP9ENMdJbMr338lNOMSF487f8nGm\">jazz</a>. Rejoignez-moi dans cette aventure&nbsp;! &#9749;</p>",
         "names": {

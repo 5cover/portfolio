@@ -18,12 +18,12 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
-    width: 100vw;
+    width: 100%;
 
-    > li {
+    > * {
         @include base.hover-card;
         $min-width: 180px;
-        flex-basis: calc(min(100vw, 1920px) / $tile-count);
+        flex-basis: calc(min(100%, 1920px) / $tile-count);
         flex-shrink: 1;
         min-width: $min-width;
 
@@ -49,15 +49,21 @@ section {
 
         figcaption {
             @include base.absolute-fill;
+
+            > * {
+                @include base.horizontal-box-padding(1, 0);
+                background-color: rgba(var(--color-bg-rgb), calc(2/3));
+                margin: 0;
+            }
         }
 
-        figcaption > * {
-            @include base.horizontal-box-padding();
-            background-color: rgba(var(--color-bg-rgb), calc(2/3));
-            margin: 0;
+        &#{base.$hover},
+        &.hover {
+            @include base.bring-out(1.05);
+            z-index: 1;
         }
 
-        &:not(#{base.$hover}) figcaption {
+        &:not(&#{base.$hover}) figcaption {
             opacity: 0;
         }
     }
@@ -103,8 +109,8 @@ section {
         flex-direction: column;
         gap: calc(1lh / 3);
 
-        svg {
-            @extend .text-icon;
+        > * {
+            width: fit-content
         }
     }
 
@@ -126,7 +132,6 @@ section {
             width: max-content;
             background-color: var(--color-lvl1);
             position: absolute;
-            border-radius: .25em;
         }
 
         &#{base.$hover} {

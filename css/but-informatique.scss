@@ -5,6 +5,10 @@ main {
     margin: 0 3em;
 }
 
+#resultat-pour-moi ul {
+    padding-left: 2em;
+}
+
 #presentation,
 #competences,
 article,
@@ -27,6 +31,7 @@ article,
 
     > li {
         line-height: calc(1ex / 0.32);
+        max-width: 60ch;
     }
 }
 
@@ -45,7 +50,8 @@ article,
 }
 
 #presentation {
-    columns: 2;
+    column-width: 60ch;
+    text-align: justify;
 
     p:first-child {
         margin-top: 0;
@@ -63,7 +69,7 @@ article,
 
 #competences {
     article {
-        @include base.transparent-background-image(--bg-img-skill, var(--color-lvl1-rgb), .1);
+        @include base.transparent-background-image(--bg-img, var(--color-lvl1-rgb), .1);
         padding: 1em;
         border-radius: 1em;
         margin: 3em 0;

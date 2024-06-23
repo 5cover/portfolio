@@ -87,8 +87,8 @@ jQuery(document).ready(async $ => {
     }
 
     async function getProjectHtml(id, project) {
-        return `<li${map(b => ` style="--bg-img: url(${b})"`, '', project.background)}>
-        <ul class="list-tag">${project.tags.map(id => `<li><a href="?tag=${id}">${tags[id]}</a></li>`).join('')}</ul>
+        return `<li${map(b => ` style="--bg-img-project: url(${b})"`, '', project.background)}>
+        <ul class="list-rect">${project.tags.map(id => `<li><a href="?tag=${id}">${tags[id]}</a></li>`).join('')}</ul>
             ${await map(async info => (await getIconElement(info.isThemedSvg, `${info.url}`, `Logo ${project.title}`, ['logo'])).outerHTML,
             '', project.logo)}
             <h3><a href="project/${id}.html">${project.title}</a></h3>

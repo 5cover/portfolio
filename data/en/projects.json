@@ -20,7 +20,8 @@
             }
         },
         "references": {},
-        "gallery": {}
+        "gallery": {},
+        "team": []
     },
     "tregoria": {
         "title": "Trégoria",
@@ -39,7 +40,8 @@
             }
         },
         "references": {},
-        "gallery": {}
+        "gallery": {},
+        "team": []
     },
     "winclean": {
         "title": "WinClean",
@@ -84,6 +86,7 @@
         "logo": {
             "isThemedSvg": false,
             "url": "/portfolio/img/project/winclean/logo.png"
-        }
+        },
+        "team": []
     }
 }

@@ -1,21 +1,12 @@
 @use "sass:selector";
-@media (prefers-reduced-motion) {
-
-    /* styles to apply if a user's device settings are set to reduced motion */
-    @mixin bring-out($factor) {}
-}
-
-@mixin bring-out($factor) {
-    transform: scale($factor);
-}
-
 $huge-val: calc(infinity * 1px);
 $hover: selector.parse(":is(:hover, :focus-within, :focus)");
+$graphic: selector.parse(":is(img, svg)");
+$phi: 1.61803398875;
 
-@mixin basic-border($width) {
-    border-width: $width;
-    border-style: solid;
-    border-color: rgba(var(--color-fg-rgb), .125);
+@property --bg-img {
+    syntax: '*';
+    inherits: false;
 }
 
 :root {
@@ -37,19 +28,7 @@ $hover: selector.parse(":is(:hover, :focus-within, :focus)");
     background-color: var(--color-bg);
     font-size: 20.57px;
     scroll-behavior: smooth;
-}
-
-* {
-    $t: calc(1s / 3);
-    transition:
-        background-color $t,
-        color $t,
-        transform $t,
-        opacity $t,
-        fill $t,
-        stroke $t,
-        filter $t;
-    box-sizing: border-box;
+    scrollbar-color: gray transparent;
 }
 
 @mixin theme-dark {
@@ -70,6 +49,59 @@ $hover: selector.parse(":is(:hover, :focus-within, :focus)");
     }
 }
 
+* {
+    box-sizing: border-box;
+    transition-duration: calc(1s / 3);
+    transition-property:
+        background-color,
+        background-attachment,
+        background-clip,
+        background-image,
+        background-origin,
+        background-position,
+        background-repeat,
+        background-size,
+        transform,
+        opacity,
+        filter,
+        text-decoration;
+}
+
+/* Blink issue: transitions stack (children wait for parents before doing their own transition) */
+/* Solution: apply all transitions only to leaf elements */
+:not(:has(*)) {
+    transition-property:
+        background-color,
+        background-attachment,
+        background-clip,
+        background-image,
+        background-origin,
+        background-position,
+        background-repeat,
+        background-size,
+        color,
+        transform,
+        opacity,
+        fill,
+        stroke,
+        filter,
+        text-decoration;
+}
+
+@mixin bring-out($factor) {
+    transform: scale($factor);
+
+    @media (prefers-reduced-motion: reduce) {
+        transform: none;
+    }
+}
+
+@mixin basic-border($width) {
+    border-width: $width;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), .125);
+}
+
 @mixin color-accent-fg {
     color: white;
     --color-fg: white;
@@ -81,90 +113,18 @@ $hover: selector.parse(":is(:hover, :focus-within, :focus)");
     background-color: rgba(var(--color-accent-bg-rgb), $opacity);
 }
 
-/* An icon sized to the text next to it */
-.text-icon {
-    display: inline-block;
-    height: 1cap;
-    width: auto;
-    margin-right: .5ch;
-    vertical-align: baseline;
-}
+@mixin iconed-text($factor: 1) {
+    display: inline-flex;
+    align-items: center;
 
-.content-block {
-    border-radius: 1em;
-    background-color: var(--color-lvl1);
-    padding: 1em;
-    align-self: center;
-    max-width: min(100vw, 80ch);
-
-    h2 {
-        margin-bottom: .5em;
+    #{$graphic}:first-child {
+        height: calc(1em * $factor);
+        width: auto;
+        margin-right: calc(.5ch * $factor);
     }
 }
-
-.fi {
-    color: transparent;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-ul,
-ol,
-p,
-figure,
-input {
-    margin: 0;
-    padding: 0;
-}
-
-small {
-    color: rgba(var(--color-fg-rgb), .5)
-}
-
-p {
-    line-height: calc(1ex / .32);
-    max-width: 60ch;
-}
-
-h1 {
-    font-size: 36px;
-    font-weight: 500;
-    width: fit-content;
-}
-
-h2 {
-    font-size: 28.8px;
-    font-weight: 500;
-}
-
-h3 {
-    font-size: 26.4px;
-    font-weight: 500;
-}
-
-h4 {
-    font-size: 24px;
-    font-weight: 500;
-}
-
-img,
-svg {
-    vertical-align: middle;
-}
-
-body {
-    max-width: 100vw;
-    min-height: 100vh;
-    display: grid;
-    gap: 3em;
-    grid-template-rows: auto 1fr auto;
-
-    > * {
-        max-width: inherit;
-    }
+.iconed-text {
+    @include iconed-text;
 }
 
 @mixin lvl1-content($border-width) {
@@ -210,21 +170,139 @@ body {
     transform: translate(-50%, -50%);
 }
 
-@mixin horizontal-box-padding($factor: 1) {
-    padding: calc($factor * .25lh) calc($factor * 1ch);
+@mixin horizontal-box-padding($padding-factor: 1, $border-radius-factor: 1) {
+    padding: calc($padding-factor * .25lh) calc($padding-factor * 1ch);
+    border-radius: calc($border-radius-factor * .25lh);
 }
 
-@mixin size-images($height, $width, $object-fit: contain) {
-
-    svg,
-    img {
+@mixin size-graphics($height, $width, $object-fit: contain) {
+    #{$graphic} {
         height: $height;
         width: $width;
         object-fit: $object-fit;
     }
 }
 
-/* Opt-in styling : link colors */
+.content-block {
+    border-radius: 1em;
+    background-color: var(--color-lvl1);
+    padding: 1em;
+    align-self: center;
+    max-width: min(100%, 80ch);
+
+    h2 {
+        margin-bottom: .5em;
+    }
+}
+
+.fi {
+    color: transparent;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+p,
+figure,
+input,
+samp,
+code,
+kbd,
+pre,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+blockquote {
+    $border-width: calc(1ch / $phi);
+    $margin-padding-ratio: 1;
+    padding-left: calc(1em - $border-width / 2);
+    margin-left: calc(min(1vw, 1em) - $border-width / 2);
+    width: fit-content;
+    border-left: $border-width solid var(--color-lvl2);
+
+    footer {
+        text-align: right;
+    }
+}
+
+:not(pre) > :is(code, samp, kbd) {
+    background-color: var(--color-lvl2);
+    @include horizontal-box-padding(.4);
+}
+
+pre {
+    background-color: var(--color-lvl2);
+    @include horizontal-box-padding(2, 1);
+}
+
+small {
+    color: rgba(var(--color-fg-rgb), .5)
+}
+
+p {
+    line-height: calc(1ex / .32);
+    max-width: 60ch;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+h2 {
+    font-size: 28.8px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 26.4px;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+body {
+    max-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    gap: 3em;
+    grid-template-rows: auto 1fr auto;
+
+    > * {
+        max-width: inherit;
+    }
+}
+
+a:not(#{$hover}) {
+    text-decoration: none;
+}
+
+a:not(.link, .fi) {
+    color: inherit;
+}
+
+@mixin sup-annotation {
+    align-self: normal;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 1px;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    vertical-align: text-top;
+}
+
+/* Opt-in styling: link colors */
 .link:link {
     color: #a66144;
 }
@@ -237,22 +315,23 @@ body {
     color: #be7c60;
 }
 
-a:not(#{$hover}) {
+.link[target='_blank']:after {
+    @include sup-annotation;
+    content: '🡭';
+    display: inline-block;
+    font-size: 40%;
     text-decoration: none;
+    user-select: none;
 }
 
-a:not(.link, .fi) {
-    color: inherit;
-}
-
-/* Opt-in styling : figures */
+/* Opt-in styling: figures */
 .figure {
     @include basic-border(1px);
     background-color: var(--color-lvl1);
-    max-width: calc(100vw / 3);
+    max-width: min(100%, 26em);
 
     > figcaption {
-        @include horizontal-box-padding(2.5);
+        @include horizontal-box-padding(2.5, 1.25);
         text-align: center;
     }
 
@@ -327,7 +406,7 @@ body > footer {
         }
     }
 
-    a > svg#{$hover} {
+    a > #{$graphic}#{$hover} {
         @include bring-out(1.15);
     }
 }
@@ -378,55 +457,47 @@ body > footer {
     }
 }
 
-@mixin hover-sensitive-list($factor) {
-
-    > li#{$hover},
-    /* class used in JS */
-    > li.hover {
-        @include bring-out($factor);
-        z-index: 1;
-    }
-}
-
-.hover-sensitive-list {
-    @include hover-sensitive-list(1.05);
-}
-
 .gray-when-not-hover:not(#{$hover}) {
     filter: grayscale(100%);
     opacity: .5;
 }
 
-.button-link {
-    @include horizontal-box-padding(2);
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
+@mixin button-link($padding-factor: 1) {
+    @include horizontal-box-padding($padding-factor);
     background-color: var(--color-lvl2);
-    border-radius: .5em;
 
     &#{$hover} {
         @include bring-out(1.05);
         @include color-accent;
+
+        :link {
+            text-decoration: none;
+        }
     }
 }
 
-.list-tag {
+.button-link {
+    @include button-link(2);
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.list-rect {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     gap: .5em;
 
     > * {
-        @include horizontal-box-padding(.75);
+        @include horizontal-box-padding(.8, 1.6);
         font-size: 18px;
     }
 }
 
 .list-link {
-    @include hover-sensitive-list(1.15);
-    list-style-type: none;
     display: flex;
+    list-style-type: none;
 }
 
 .list-project {
@@ -435,7 +506,7 @@ body > footer {
     flex-flow: row wrap;
 
     /* Increase z-index to stand out above the card link */
-    :is(.list-link, .list-tag) > li {
+    :is(.list-link, .list-rect) > * {
         z-index: 1;
     }
 
@@ -446,14 +517,9 @@ body > footer {
         position: relative;
     }
 
-    .list-link {
-        gap: .5em;
-        @include size-images(1.5em, 1.5em);
-    }
-
-    > li {
+    > * {
         @include hover-card;
-        @include transparent-background-image(--bg-img, var(--color-lvl2-rgb), .15);
+        @include transparent-background-image(--bg-img-project, var(--color-lvl2-rgb), .15);
         list-style-type: none;
         @include basic-border(1px);
         display: grid;
@@ -465,12 +531,12 @@ body > footer {
         /* Required to clip the :before pseudo-element to the card's boundaries */
         overflow: hidden;
 
-        .list-tag {
-            @include hover-sensitive-list(1.15);
+        .list-rect {
             grid-column: 1 / 3;
 
-            > li {
-                border-radius: .4em;
+            > #{$hover} {
+                @include bring-out(1.15);
+                z-index: 1;
             }
         }
 
@@ -505,20 +571,27 @@ body > footer {
         }
 
         .list-link {
+            @include size-graphics(1.5em, 1.5em);
+            gap: .5em;
             grid-row: 6;
             grid-column: 1 / 3;
             flex-direction: row-reverse;
             align-items: flex-end;
+
+            > #{$hover} {
+                @include bring-out(1.15);
+                z-index: 1;
+            }
         }
 
         &#{$hover} {
-            @include transparent-background-image(--bg-img, var(--color-accent-bg-rgb), .1);
+            @include transparent-background-image(--bg-img-project, var(--color-accent-bg-rgb), .15);
 
-            .list-tag > li {
+            .list-rect > * {
                 background-color: var(--color-lvl2);
             }
 
-            > :not(.list-tag) {
+            > :not(.list-rect) {
                 @include color-accent-fg;
             }
 
@@ -528,43 +601,29 @@ body > footer {
         }
 
         &:not(#{$hover}) {
-            .list-tag > li {
+            .list-rect > * {
                 @include color-accent;
             }
         }
     }
 }
 
-:has(> .definition-tooltip) {
-    position: relative;
-}
-
-.definition-tooltip-trigger {
-    cursor: pointer;
-    font-style: italic;
-}
-
-.definition-tooltip {
-    @include size-images(2.5lh, auto);
+.definition {
+    @include size-graphics(2.5lh, auto);
     @include transparent-background-image(--bg-img-definition, var(--color-lvl2-rgb), .1);
-    $arrow-height: 1lh;
-    $arrow-width: 3em;
     $padding: .75em;
     background-color: var(--color-lvl2);
     border-radius: $padding;
-    left: -$padding;
-    bottom: 110%;
     display: grid;
     font-size: .8em;
     grid-template: 1fr 1fr auto / 1fr auto;
     padding: $padding;
-    position: absolute;
-    width: max-content;
+    position: relative;
 
     .link,
     abbr {
-        /* Creates a stacking context */
         z-index: 1;
+        /* Creates a stacking context */
         position: relative;
     }
 
@@ -572,8 +631,7 @@ body > footer {
         @include hover-card-target;
     }
 
-    > img,
-    > svg {
+    > #{$graphic} {
         grid-row: 1 / 3;
         grid-column: 2;
     }
@@ -588,17 +646,33 @@ body > footer {
         grid-column: 1 / 3;
     }
 
-    &#{$hover},
-    &-trigger#{$hover} ~ & {
-        opacity: 1;
-        z-index: 2;
-        transition-delay: 500ms;
-    }
+    &-tooltip {
+        width: max-content;
+        left: -$padding;
+        bottom: 110%;
+        position: absolute;
 
-    &-trigger:not(#{$hover}) ~ &:not(#{$hover}) {
-        transition-delay: 250ms;
-        pointer-events: none;
-        user-select: none;
-        opacity: 0;
+        &#{$hover},
+        &-trigger#{$hover} ~ & {
+            opacity: 1;
+            z-index: 2;
+            transition-delay: 500ms;
+        }
+
+        &-trigger:not(#{$hover}) ~ &:not(#{$hover}) {
+            transition-delay: 250ms;
+            pointer-events: none;
+            user-select: none;
+            opacity: 0;
+        }
     }
+}
+
+:has(> .definition-tooltip) {
+    position: relative;
+}
+
+.definition-tooltip-trigger {
+    cursor: pointer;
+    font-style: italic;
 }
