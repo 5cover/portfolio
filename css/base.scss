@@ -3,6 +3,9 @@ $huge-val: calc(infinity * 1px);
 $hover: selector.parse(":is(:hover, :focus-within, :focus)");
 $graphic: selector.parse(":is(img, svg)");
 $phi: 1.61803398875;
+$full-width-horizontal-margin: min(2.5vw, 2.5lh);
+$full-width-vertical-margin: 2.5lh;
+$max-line-length: 60ch;
 
 @property --bg-img {
     syntax: '*';
@@ -26,7 +29,7 @@ $phi: 1.61803398875;
     --color-accent-bg: rgb(var(--color-accent-bg-rgb));
     color: var(--color-fg);
     background-color: var(--color-bg);
-    font-size: 20.57px;
+    font-size: 20px;
     scroll-behavior: smooth;
     scrollbar-color: gray transparent;
 }
@@ -88,6 +91,30 @@ $phi: 1.61803398875;
         text-decoration;
 }
 
+@mixin shallow-li {
+    > li {
+        display: contents;
+
+        > * {
+            padding: inherit;
+            margin: inherit;
+            border-radius: inherit;
+            @content;
+        }
+    }
+}
+
+@mixin gapped($flex-direction: column, $flex-wrap: nowrap) {
+    display: flex;
+    flex-flow: $flex-direction $flex-wrap;
+    gap: 1lh;
+}
+
+@mixin justify {
+    text-align: justify;
+    hyphens: auto;
+}
+
 @mixin bring-out($factor) {
     transform: scale($factor);
 
@@ -114,15 +141,14 @@ $phi: 1.61803398875;
 }
 
 @mixin iconed-text($factor: 1) {
-    display: inline-flex;
-    align-items: center;
-
     #{$graphic}:first-child {
         height: calc(1em * $factor);
         width: auto;
+        vertical-align: middle;
         margin-right: calc(.5ch * $factor);
     }
 }
+
 .iconed-text {
     @include iconed-text;
 }
@@ -130,7 +156,7 @@ $phi: 1.61803398875;
 @mixin lvl1-content($border-width) {
     @include basic-border($border-width);
     background-color: var(--color-lvl1);
-    padding: 1em 2em;
+    padding: 1em $full-width-horizontal-margin;
 }
 
 @mixin absolute-fill {
@@ -170,7 +196,7 @@ $phi: 1.61803398875;
     transform: translate(-50%, -50%);
 }
 
-@mixin horizontal-box-padding($padding-factor: 1, $border-radius-factor: 1) {
+@mixin horizontal-box($padding-factor: 1, $border-radius-factor: 1) {
     padding: calc($padding-factor * .25lh) calc($padding-factor * 1ch);
     border-radius: calc($border-radius-factor * .25lh);
 }
@@ -184,11 +210,11 @@ $phi: 1.61803398875;
 }
 
 .content-block {
-    border-radius: 1em;
+    border-radius: 1.5em;
     background-color: var(--color-lvl1);
-    padding: 1em;
+    padding: 1.5em;
     align-self: center;
-    max-width: min(100%, 80ch);
+    max-width: 100%;
 
     h2 {
         margin-bottom: .5em;
@@ -233,12 +259,12 @@ blockquote {
 
 :not(pre) > :is(code, samp, kbd) {
     background-color: var(--color-lvl2);
-    @include horizontal-box-padding(.4);
+    @include horizontal-box(.4);
 }
 
 pre {
     background-color: var(--color-lvl2);
-    @include horizontal-box-padding(2, 1);
+    @include horizontal-box(2, 1);
 }
 
 small {
@@ -247,35 +273,67 @@ small {
 
 p {
     line-height: calc(1ex / .32);
-    max-width: 60ch;
+    max-width: $max-line-length;
+}
+
+$p-margin: calc(1ex / 0.32);
+
+.text p,
+p.text {
+    &:first-of-type:not(:last-of-type) {
+        text-indent: 2cap;
+    }
+}
+
+p.text {
+    margin: $p-margin 0;
+}
+
+.text p {
+    &:not(:first-child) {
+        margin-top: $p-margin;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: $p-margin;
+    }
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+@mixin nav-home-link {
+    font-size: 1.75em;
     font-weight: 500;
     width: fit-content;
 }
 
 h2 {
-    font-size: 28.8px;
+    font-size: 1.75em;
     font-weight: 500;
+    line-height: calc(1ex / 0.42);
 }
 
 h3 {
-    font-size: 26.4px;
+    font-size: 1.5em;
     font-weight: 500;
+    line-height: calc(1ex / 0.38);
+    margin-bottom: 1lh;
 }
 
 h4 {
-    font-size: 24px;
+    font-size: 1.25em;
     font-weight: 500;
+    line-height: calc(1ex / 0.37);
 }
 
 body {
     max-width: 100%;
     min-height: 100vh;
     display: grid;
-    gap: 3em;
+    gap: $full-width-vertical-margin;
     grid-template-rows: auto 1fr auto;
 
     > * {
@@ -319,7 +377,7 @@ a:not(.link, .fi) {
     @include sup-annotation;
     content: '🡭';
     display: inline-block;
-    font-size: 40%;
+    font-size: .4em;
     text-decoration: none;
     user-select: none;
 }
@@ -331,7 +389,7 @@ a:not(.link, .fi) {
     max-width: min(100%, 26em);
 
     > figcaption {
-        @include horizontal-box-padding(2.5, 1.25);
+        @include horizontal-box(2.5, 1.25);
         text-align: center;
     }
 
@@ -368,6 +426,10 @@ body > header {
         column-gap: 3em;
         row-gap: 1.5em;
 
+        > a {
+            @include nav-home-link;
+        }
+
         > ul {
             display: flex;
             list-style-type: none;
@@ -376,7 +438,7 @@ body > header {
             flex-wrap: wrap;
 
             a {
-                font-size: 24px;
+                font-size: 1.25em;
             }
         }
 
@@ -389,6 +451,8 @@ body > header {
 main {
     grid-row: 2;
     display: flex;
+    flex-direction: column;
+    gap: $full-width-vertical-margin;
 }
 
 body > footer {
@@ -463,7 +527,7 @@ body > footer {
 }
 
 @mixin button-link($padding-factor: 1) {
-    @include horizontal-box-padding($padding-factor);
+    @include horizontal-box($padding-factor);
     background-color: var(--color-lvl2);
 
     &#{$hover} {
@@ -489,9 +553,9 @@ body > footer {
     flex-wrap: wrap;
     gap: .5em;
 
-    > * {
-        @include horizontal-box-padding(.8, 1.6);
-        font-size: 18px;
+    > li {
+        @include horizontal-box(.7, 1.6);
+        font-size: .9em;
     }
 }
 
@@ -506,7 +570,7 @@ body > footer {
     flex-flow: row wrap;
 
     /* Increase z-index to stand out above the card link */
-    :is(.list-link, .list-rect) > * {
+    :is(.list-link, .list-rect) > li {
         z-index: 1;
     }
 
@@ -517,7 +581,7 @@ body > footer {
         position: relative;
     }
 
-    > * {
+    > li {
         @include hover-card;
         @include transparent-background-image(--bg-img-project, var(--color-lvl2-rgb), .15);
         list-style-type: none;
@@ -587,7 +651,7 @@ body > footer {
         &#{$hover} {
             @include transparent-background-image(--bg-img-project, var(--color-accent-bg-rgb), .15);
 
-            .list-rect > * {
+            .list-rect > li {
                 background-color: var(--color-lvl2);
             }
 
@@ -601,7 +665,7 @@ body > footer {
         }
 
         &:not(#{$hover}) {
-            .list-rect > * {
+            .list-rect > li {
                 @include color-accent;
             }
         }
@@ -611,7 +675,7 @@ body > footer {
 .definition {
     @include size-graphics(2.5lh, auto);
     @include transparent-background-image(--bg-img-definition, var(--color-lvl2-rgb), .1);
-    $padding: .75em;
+    $padding: 1em;
     background-color: var(--color-lvl2);
     border-radius: $padding;
     display: grid;

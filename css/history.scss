@@ -8,13 +8,9 @@
     --color-card-background: var(--color-lvl2);
 }
 
-main {
-    flex-direction: column;
-
-    /* Don't ask...*/
-    * {
-        box-sizing: content-box;
-    }
+/* Don't ask...*/
+main * {
+    box-sizing: content-box;
 }
 
 img {
@@ -174,7 +170,7 @@ img {
 
 .ag-timeline-card_desc {
     line-height: calc(1ex / 0.32);
-    font-size: 85%;
+    font-size: .85em;
     color: var(--color-fg);
 }
 

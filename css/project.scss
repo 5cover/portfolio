@@ -1,42 +1,43 @@
 @use 'base';
 
+/* Reset body gap and use padding instead of margin to suit background image */
 body {
     gap: 0;
 }
 
 main {
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1.5em;
-    padding: 3em;
     @include base.transparent-background-image(--bg-img, var(--color-bg-rgb), .1);
+    justify-content: space-between;
+    padding: base.$full-width-vertical-margin base.$full-width-horizontal-margin;
 }
 
-h2 {
-    margin: .5em 0;
-}
-
-h3 {
-    margin-top: .5em
+section:is(:empty, :blank, :-moz-only-whitespace) {
+    display: none;
 }
 
 a[id^="cite-"] {
     @extend .link;
     @include base.sup-annotation;
     white-space: nowrap;
-    font-size: 60%;
+    font-size: .6em;
 }
 
-#project-header {
+#header {
+    $gap: .5lh;
     display: grid;
     grid-template: repeat(5, auto) / auto auto;
-    row-gap: 1em;
+    row-gap: $gap;
+
+    h1 {
+        margin: $gap 0;
+        grid-row: 2;
+    }
 
     .list-rect {
         grid-row: 1;
         grid-column: 1 / 3;
 
-        > * {
+        > li {
             @include base.color-accent;
 
             &#{base.$hover} {
@@ -44,11 +45,6 @@ a[id^="cite-"] {
                 z-index: 1;
             }
         }
-    }
-
-    h2 {
-        grid-row: 2;
-        font-size: 42px;
     }
 
     .logo {
@@ -81,7 +77,7 @@ a[id^="cite-"] {
 
         small {
             display: inline-block;
-            font-size: 100%;
+            font-size: 1em;
         }
     }
 }
@@ -103,20 +99,12 @@ a[id^="cite-"] {
 
 #story {
     &:has(:not(:only-child)) {
-        text-align: justify;
-        column-width: 60ch;
+        @include base.justify;
+        column-width: base.$max-line-length;
     }
 
     figure {
-        max-width: 60ch;
-    }
-
-    p:not(:first-child) {
-        margin-top: .5lh;
-    }
-
-    p:not(:last-child) {
-        margin-bottom: .5lh;
+        max-width: base.$max-line-length;
     }
 }
 
@@ -127,7 +115,7 @@ a[id^="cite-"] {
 .ref-backlink {
     vertical-align: top;
     user-select: none;
-    font-size: 80%;
+    font-size: .8em;
 }
 
 #technologies,
@@ -135,9 +123,9 @@ a[id^="cite-"] {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    gap: .5em;
+    gap: 1em;
 
-    > * {
+    > li {
         flex-shrink: 1;
         min-width: min-content;
 
@@ -150,7 +138,14 @@ a[id^="cite-"] {
 #gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
+    list-style-type: none;
+    gap: 1em;
+
+    @include base.shallow-li {
+        flex: 1;
+        min-width: 25ch;
+        max-width: max-content;
+    }
 
     figure {
         display: flex;

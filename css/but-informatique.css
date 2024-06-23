@@ -20,7 +20,7 @@
   --color-accent-bg: rgb(var(--color-accent-bg-rgb));
   color: var(--color-fg);
   background-color: var(--color-bg);
-  font-size: 20.57px;
+  font-size: 20px;
   scroll-behavior: smooth;
   scrollbar-color: gray transparent;
 }
@@ -58,22 +58,19 @@
   transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, color, transform, opacity, fill, stroke, filter, text-decoration, -webkit-background-clip, -webkit-text-decoration;
 }
 
-.iconed-text {
-  display: flex;
-  align-items: center;
-  gap: 0.5ch;
-}
-.iconed-text :is(img, svg) {
+.iconed-text :is(img, svg):first-child {
   height: 1em;
   width: auto;
+  vertical-align: middle;
+  margin-right: 0.5ch;
 }
 
 .content-block {
-  border-radius: 1em;
+  border-radius: 1.5em;
   background-color: var(--color-lvl1);
-  padding: 1em;
+  padding: 1.5em;
   align-self: center;
-  max-width: min(100%, 80ch);
+  max-width: 100%;
 }
 .content-block h2 {
   margin-bottom: 0.5em;
@@ -134,33 +131,51 @@ p {
   max-width: 60ch;
 }
 
+.text p:first-of-type:not(:last-of-type),
+p.text:first-of-type:not(:last-of-type) {
+  text-indent: 2cap;
+}
+
+p.text {
+  margin: 3.125ex 0;
+}
+
+.text p:not(:first-child) {
+  margin-top: 3.125ex;
+}
+.text p:not(:last-child) {
+  margin-bottom: 3.125ex;
+}
+
 h1 {
-  font-size: 36px;
+  font-size: 2em;
   font-weight: 500;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 h2 {
-  font-size: 28.8px;
+  font-size: 1.75em;
   font-weight: 500;
+  line-height: 2.380952381ex;
 }
 
 h3 {
-  font-size: 26.4px;
+  font-size: 1.5em;
   font-weight: 500;
+  line-height: 2.6315789474ex;
+  margin-bottom: 1lh;
 }
 
 h4 {
-  font-size: 24px;
+  font-size: 1.25em;
   font-weight: 500;
+  line-height: 2.7027027027ex;
 }
 
 body {
   max-width: 100%;
   min-height: 100vh;
   display: grid;
-  gap: 3em;
+  gap: 2.5lh;
   grid-template-rows: auto 1fr auto;
 }
 body > * {
@@ -189,6 +204,7 @@ a:not(.link, .fi) {
 }
 
 .link[target=_blank]:after {
+  align-self: normal;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -198,7 +214,7 @@ a:not(.link, .fi) {
   vertical-align: text-top;
   content: "🡭";
   display: inline-block;
-  font-size: 40%;
+  font-size: 0.4em;
   text-decoration: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -232,7 +248,7 @@ body > header {
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
   background-color: var(--color-lvl1);
-  padding: 1em 2em;
+  padding: 1em min(2.5vw, 2.5lh);
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -257,6 +273,12 @@ body > header nav {
        column-gap: 3em;
   row-gap: 1.5em;
 }
+body > header nav > a {
+  font-size: 1.75em;
+  font-weight: 500;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 body > header nav > ul {
   display: flex;
   list-style-type: none;
@@ -266,7 +288,7 @@ body > header nav > ul {
   flex-wrap: wrap;
 }
 body > header nav > ul a {
-  font-size: 24px;
+  font-size: 1.25em;
 }
 body > header nav a[href="#"] {
   text-decoration: underline;
@@ -275,6 +297,8 @@ body > header nav a[href="#"] {
 main {
   grid-row: 2;
   display: flex;
+  flex-direction: column;
+  gap: 2.5lh;
 }
 
 body > footer {
@@ -282,7 +306,7 @@ body > footer {
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
   background-color: var(--color-lvl1);
-  padding: 1em 2em;
+  padding: 1em min(2.5vw, 2.5lh);
   grid-row: 3;
   position: relative;
   display: flex;
@@ -393,10 +417,10 @@ body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
   flex-wrap: wrap;
   gap: 0.5em;
 }
-.list-rect > * {
-  padding: 0.2lh 0.8ch;
+.list-rect > li {
+  padding: 0.175lh 0.7ch;
   border-radius: 0.4lh;
-  font-size: 18px;
+  font-size: 0.9em;
 }
 
 .list-link {
@@ -410,7 +434,7 @@ body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
   flex-flow: row wrap;
   /* Increase z-index to stand out above the card link */
 }
-.list-project :is(.list-link, .list-rect) > * {
+.list-project :is(.list-link, .list-rect) > li {
   z-index: 1;
 }
 .list-project .link,
@@ -419,7 +443,7 @@ body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
   /* Creates a stacking context */
   position: relative;
 }
-.list-project > * {
+.list-project > li {
   position: relative;
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
   background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.85), rgba(var(--color-lvl2-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-lvl2-rgb))) no-repeat;
@@ -437,22 +461,22 @@ body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
   /* Required to clip the :before pseudo-element to the card's boundaries */
   overflow: hidden;
 }
-.list-project > * .list-rect {
+.list-project > li .list-rect {
   grid-column: 1/3;
 }
-.list-project > * .list-rect > :is(:hover, :focus-within, :focus) {
+.list-project > li .list-rect > :is(:hover, :focus-within, :focus) {
   transform: scale(1.15);
   z-index: 1;
 }
 @media (prefers-reduced-motion: reduce) {
-  .list-project > * .list-rect > :is(:hover, :focus-within, :focus) {
+  .list-project > li .list-rect > :is(:hover, :focus-within, :focus) {
     transform: none;
   }
 }
-.list-project > * h3 > a {
+.list-project > li h3 > a {
   text-decoration: none;
 }
-.list-project > * h3 > a:after {
+.list-project > li h3 > a:after {
   content: "";
   position: absolute;
   left: 0;
@@ -460,7 +484,7 @@ body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
   right: 0;
   bottom: 0;
 }
-.list-project > * .logo {
+.list-project > li .logo {
   grid-row: 2/6;
   grid-column: 2;
   height: 4lh;
@@ -470,57 +494,57 @@ body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
      object-fit: contain;
   margin: auto 0;
 }
-.list-project > * h3 {
+.list-project > li h3 {
   grid-row: 2;
 }
-.list-project > * .context {
+.list-project > li .context {
   grid-row: 3;
 }
-.list-project > * .status {
+.list-project > li .status {
   grid-row: 4;
 }
-.list-project > * .abstract {
+.list-project > li .abstract {
   grid-row: 5;
 }
-.list-project > * .list-link {
+.list-project > li .list-link {
   gap: 0.5em;
   grid-row: 6;
   grid-column: 1/3;
   flex-direction: row-reverse;
   align-items: flex-end;
 }
-.list-project > * .list-link :is(img, svg) {
+.list-project > li .list-link :is(img, svg) {
   height: 1.5em;
   width: 1.5em;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.list-project > * .list-link > :is(:hover, :focus-within, :focus) {
+.list-project > li .list-link > :is(:hover, :focus-within, :focus) {
   transform: scale(1.15);
   z-index: 1;
 }
 @media (prefers-reduced-motion: reduce) {
-  .list-project > * .list-link > :is(:hover, :focus-within, :focus) {
+  .list-project > li .list-link > :is(:hover, :focus-within, :focus) {
     transform: none;
   }
 }
-.list-project > *:is(:hover, :focus-within, :focus) {
+.list-project > li:is(:hover, :focus-within, :focus) {
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
   background: border-box linear-gradient(rgba(var(--color-accent-bg-rgb), 0.85), rgba(var(--color-accent-bg-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-accent-bg-rgb))) no-repeat;
   background-size: cover;
 }
-.list-project > *:is(:hover, :focus-within, :focus) .list-rect > * {
+.list-project > li:is(:hover, :focus-within, :focus) .list-rect > li {
   background-color: var(--color-lvl2);
 }
-.list-project > *:is(:hover, :focus-within, :focus) > :not(.list-rect) {
+.list-project > li:is(:hover, :focus-within, :focus) > :not(.list-rect) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
 }
-.list-project > *:is(:hover, :focus-within, :focus) .link {
+.list-project > li:is(:hover, :focus-within, :focus) .link {
   text-decoration: underline;
 }
-.list-project > *:not(:is(:hover, :focus-within, :focus)) .list-rect > * {
+.list-project > li:not(:is(:hover, :focus-within, :focus)) .list-rect > li {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
@@ -532,11 +556,11 @@ body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
   background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl2-rgb))) no-repeat;
   background-size: cover;
   background-color: var(--color-lvl2);
-  border-radius: 0.75em;
+  border-radius: 1em;
   display: grid;
   font-size: 0.8em;
   grid-template: 1fr 1fr auto/1fr auto;
-  padding: 0.75em;
+  padding: 1em;
   position: relative;
 }
 .definition :is(img, svg) {
@@ -577,7 +601,7 @@ body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
 .definition-tooltip {
   width: -moz-max-content;
   width: max-content;
-  left: -0.75em;
+  left: -1em;
   bottom: 110%;
   position: absolute;
 }
@@ -605,61 +629,26 @@ body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
 }
 
 main {
-  flex-direction: column;
-  margin: 0 3em;
+  margin: 0 min(2.5vw, 2.5lh);
 }
 
 #resultat-pour-moi ul {
   padding-left: 2em;
 }
 
-#presentation > p,
-#competences > p,
-article > p,
-#resultat-pour-moi div > p,
-#resultat-pour-moi ul > p {
-  line-height: 3.125ex;
-  margin: 3.125ex 0;
-}
-#presentation > h3,
-#competences > h3,
-article > h3,
-#resultat-pour-moi div > h3,
-#resultat-pour-moi ul > h3 {
-  line-height: 2.6315789474ex;
-  margin: 2.6315789474ex 0;
-}
-#presentation > h4,
-#competences > h4,
-article > h4,
-#resultat-pour-moi div > h4,
-#resultat-pour-moi ul > h4 {
-  line-height: 2.7027027027ex;
-  margin: 2.7027027027ex 0;
-}
-#presentation > li,
-#competences > li,
-article > li,
-#resultat-pour-moi div > li,
-#resultat-pour-moi ul > li {
-  line-height: 3.125ex;
-  max-width: 60ch;
-}
-
 #titre {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 1em;
   justify-content: space-between;
-  font-size: 96px;
-  line-height: 2.380952381rex;
-  margin: 2.380952381rex 0;
 }
 
 #presentation {
+  text-align: justify;
+  -webkit-hyphens: auto;
+          hyphens: auto;
   -moz-column-width: 60ch;
        column-width: 60ch;
-  text-align: justify;
 }
 #presentation p:first-child {
   margin-top: 0;
@@ -668,23 +657,23 @@ article > li,
   margin-bottom: 0;
 }
 
-.button-link {
-  margin-top: 3em;
-  margin-bottom: 1.5em;
+#competences > ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5lh;
 }
-
-#competences article {
+#competences > ul > li {
   /* sometimes the gradient is a little bit smaller than the image. origin border-box as a hack. */
   background: border-box linear-gradient(rgba(var(--color-lvl1-rgb), 0.9), rgba(var(--color-lvl1-rgb), 0.9)), padding-box var(--bg-img, rgb(var(--color-lvl1-rgb))) no-repeat;
   background-size: cover;
-  padding: 1em;
-  border-radius: 1em;
-  margin: 3em 0;
+  padding: 1.5em;
+  border-radius: 1.5em;
 }
 
 #resultat-pour-moi {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 1em;
   justify-content: space-between;
 }
@@ -694,4 +683,13 @@ article > li,
 #resultat-pour-moi figure img {
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
+}
+#resultat-pour-moi article,
+#resultat-pour-moi div {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1lh;
+}
+#resultat-pour-moi li {
+  max-width: 60ch;
 }/*# sourceMappingURL=but-informatique.css.map */

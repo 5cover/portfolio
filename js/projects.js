@@ -1,4 +1,10 @@
-jQuery(document).ready(async $ => {
+jQuery(document).ready(async _ => {
+    function createLi(contents) {
+        const li = document.createElement('li');
+        li.append(contents);
+        return li;
+    }
+
     const titleDataList = document.getElementById('project-titles');
     const projectList = document.getElementById('project-list');
     const searchInput = document.getElementById('search-input');
@@ -41,7 +47,7 @@ jQuery(document).ready(async $ => {
         label.htmlFor = input.id = htmlId;
 
         label.appendChild(input);
-        listTags.appendChild(label);
+        listTags.appendChild(createLi(label));
     }
 
     document.querySelectorAll('input').forEach(input => {

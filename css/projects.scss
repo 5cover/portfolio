@@ -1,38 +1,33 @@
 @use 'base';
 
-main {
-    gap: 3em;
-    flex-direction: column;
-}
-
-h2 {
-    min-width: max-content;
-}
-
 #search-bar {
     @include base.lvl1-content(1px 1px 1px 0);
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 1em;
+    @include base.gapped;
     min-width: calc(100% / base.$phi);
     width: min-content;
     max-width: 100%;
     border-radius: 0 1em 1em 0;
-}
 
-#search-input {
-    max-width: 60ch;
-    font-size: 75%;
-    @include base.horizontal-box-padding(1, Infinity);
+    h1 {
+        margin: .5lh 0;
+    }
+
+    #search-input {
+        max-width: base.$max-line-length;
+        font-size: .8em;
+        @include base.horizontal-box(1, Infinity);
+    }
 }
 
 #list-tag,
 #list-sorting {
+    @include base.shallow-li;
+
     input {
         display: none;
     }
 
-    > label {
+    label {
         cursor: pointer;
         background-color: var(--color-lvl3);
 
@@ -46,11 +41,10 @@ h2 {
     }
 }
 
-#list-sorting > * {
+#list-sorting > li {
     border-radius: base.$huge-val;
 }
 
 #project-list {
-    justify-content: center;
-    margin: 0 2em;
+    margin: 0 base.$full-width-horizontal-margin;
 }
