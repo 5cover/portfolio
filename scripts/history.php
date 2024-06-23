@@ -4,8 +4,7 @@ require_once 'content.php';
 require_once 'project.php';
 
 [$lang, $page] = parse_args();
-?>
-<?php put_doctype_html($page, $lang) ?>
+?> <?php put_doctype_html($page, $lang) ?>
 <?php put_head($page, $lang) ?>
 
 <body>
@@ -29,8 +28,7 @@ require_once 'project.php';
                         <div class="ag-timeline-card_item">
                             <div class="ag-timeline-card_inner">
                                 <div class="ag-timeline-card_img-box">
-                                    <img src="/portfolio/img/bossuet.jpeg" alt="Lycée Saint-Joseph-Bossuet"
-                                        class="ag-timeline-card_img"/>
+                                    <img src="/portfolio/img/bossuet.jpeg" alt="Lycée Saint-Joseph-Bossuet" class="ag-timeline-card_img" />
                                 </div>
                                 <div class="ag-timeline-card_info">
                                     <div class="ag-timeline-card_title">Lycée</div>
@@ -52,8 +50,7 @@ require_once 'project.php';
                         <div class="ag-timeline-card_item">
                             <div class="ag-timeline-card_inner">
                                 <div class="ag-timeline-card_img-box">
-                                    <img src="/portfolio/img/cambridge-first.jpg" alt="Cambridge First Certificate"
-                                        class="ag-timeline-card_img"/>
+                                    <img src="/portfolio/img/cambridge-first.jpg" alt="Cambridge First Certificate" class="ag-timeline-card_img" />
                                 </div>
                                 <div class="ag-timeline-card_info">
                                     <div class="ag-timeline-card_title">Cambridge First Certificate</div>
@@ -75,8 +72,7 @@ require_once 'project.php';
                         <div class="ag-timeline-card_item">
                             <div class="ag-timeline-card_inner">
                                 <div class="ag-timeline-card_img-box">
-                                    <img src="/portfolio/img/iut-lannion.jpg"
-                                        class="ag-timeline-card_img" alt="L'IUT de Lannion" />
+                                    <img src="/portfolio/img/iut-lannion.jpg" class="ag-timeline-card_img" alt="L'IUT de Lannion" />
                                 </div>
                                 <div class="ag-timeline-card_info">
                                     <div class="ag-timeline-card_title"><abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique</div>

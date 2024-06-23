@@ -10,7 +10,7 @@ readonly outdir='../../portfolio'
 # stdin: html
 # stdout: minified html
 minify_html() {
-    minhtml --minify-css --minify-js --do-not-minify-doctype --ensure-spec-compliant-unquoted-attribute-values
+    minhtml --minify-css --minify-js
 }
 
 # generate html

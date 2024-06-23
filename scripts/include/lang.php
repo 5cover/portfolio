@@ -41,7 +41,7 @@ final class Lang {
             foreach (get_data_json('langs') as $tag => $strings) {
                 static::$instances[$tag] = new static($tag, $strings);
             }
-            
+
         }
         return static::$instances;
     }

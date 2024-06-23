@@ -168,6 +168,8 @@ Maybe we could have a class, something like `.new-lvl`. So our selector would be
 
 ## Fix project content
 
+### tell more in story
+
 ### add projects
 
 - ztest
@@ -175,5 +177,3 @@ Maybe we could have a class, something like `.new-lvl`. So our selector would be
 - projets de nsi
 
 ### fix dates
-
-### tell more in story

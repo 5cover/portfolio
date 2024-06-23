@@ -3,7 +3,7 @@ require_once 'lang.php';
 require_once 'page.php';
 
 function parse_args(): array {
-    global $argc, $argv; 
+    global $argc, $argv;
     if ($argc < 3) {
         exit("Usage: {$argv[0]} <lang> <page name>" . PHP_EOL);
     }
@@ -102,11 +102,11 @@ function get_data_json(string $name): array {
 }
 
 /**
- * Expand a glob to filenames in the website folder.
+ * Expand a glob to filename in the website folder.
  * @param string $glob A glob relative to the website folder.
  * @return array The filenames *glob* matched in the website folder.
  */
-function glob_web_filename(string $glob): array {
+function glob_web(string $glob): array {
     $g = glob(_get_web_filename("$glob"));
     if ($g === false) {
         throw new Exception('glob failed');
@@ -118,10 +118,10 @@ function glob_web_filename(string $glob): array {
 /**
  * Expand a glob to a single filename in the website folder. Exit with an error no or if multiple exist.
  * @param string $glob A glob relative to the website folder.
- * @return string The canonicalized path represented by *glob*.
+ * @return string The canonicalized filenames represented by *glob*.
  */
-function glob_web_filename_single(string $glob): string {
-    $g = glob_web_filename($glob);
+function glob_web_single(string $glob): string {
+    $g = glob_web($glob);
     if (count($g) != 1) {
         throw new Exception("glob '$glob' matched " . count($g) . ' filename(s). Expected 1');
     }
@@ -131,10 +131,10 @@ function glob_web_filename_single(string $glob): string {
 /**
  * Expand a glob to a single filename in the website folder. Exit with an error if multiple exist.
  * @param string $glob A glob relative to the website folder.
- * @return string The expand glob or `null` if it matched nothing.
+ * @return string The expand filenames or `null` if it matched nothing.
  */
-function glob_web_filename_optional(string $glob): string|null {
-    $g = glob_web_filename($glob);
+function glob_web_optional(string $glob): string|null {
+    $g = glob_web($glob);
     if (count($g) == 0) {
         return null;
     }
@@ -145,11 +145,11 @@ function glob_web_filename_optional(string $glob): string|null {
 }
 
 /**
- * Get the website path to use to reference a file in the website folder.
+ * Get the URL to use to reference a file in the website folder.
  * @param string $glob A filesystem filename.
- * @return string A path suitable for use as an HTML `href`.
+ * @return string An URL suitable for use as an HTML `href`, CSS `url()`...
  */
-function get_web_path(string $filename): string {
+function get_web_url(string $filename): string {
     $filename = realpath($filename);
 
     // remove common prefix between __DIR__ and filename

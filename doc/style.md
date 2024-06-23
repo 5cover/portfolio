@@ -48,22 +48,29 @@ Note: .5 opacity #EEE
 
 ## Font sizes
 
-\#|pts|usage
--|-|-
-1|36|h1
-2|28.8 (36/1.25)|h2
-3|24 (36/1.5)|h3
-4|20.57 (36/1.75)|base text size
-4|18 (36/2)|h4
-5|14.4 (36/2.5)|project card tag
-
-## Distances
-
-\#|px
+size|usage
 -|-
-1|60
-2|40
-3|25
-4|15
+42px|h1
+36px|nav home link
+28.8px (36/1.25)|h2
+26.4px|h3
+24px (36/1.5)|h4, nav link, piano-tile h2 min
+20.57px (36/1.75)|base
+18px (36/2)|rect
+.8em|definition synopsis, reference backlink, input prompt
+.6em|reference (cite-) link
+.4em|external link arrow
+
+size|usage
+-|-
+2em|h1
+1.75em|nav home link, h2
+1.5em|h3
+1.25em|h4, nav link, piano-tile h2 min
+**20px**|base
+.9em|rect
+.8em|synopsis, reference backlink, input prompt
+.6em|reference (cite-) link
+.4em|external link arrow
 
 ## Colors

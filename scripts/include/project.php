@@ -32,34 +32,29 @@ final class Project {
         </ul>
     <?php }
 
-    function put_link_list(array $anchors, string $class = 'list-link') { ?>
-        <ul class="<?php echo $class ?>">
-            <?php foreach ($this->data['links'] as $name => $link) { ?>
-                <li>
-                    <a class="iconed-text" target="_blank" rel="noopener noreferrer" href="<?php echo $link['href'] ?>">
-                        <?php $a = $anchors[$link['anchor']];
-                        echo get_icon_element($a['isThemedSvg'], $a['url']) ?>
-                        <?php echo $name ?>
-                    </a>
-                </li>
-            <?php } ?>
-        </ul>
+    function put_link_list_items(array $anchors) { ?>
+        <?php foreach ($this->data['links'] as $name => $link) { ?>
+            <li>
+                <a class="iconed-text" target="_blank" rel="noopener noreferrer" href="<?php echo $link['href'] ?>">
+                    <?php $a = $anchors[$link['anchor']];
+                    echo get_icon_element($a['isThemedSvg'], $a['url']) ?>
+                    <?php echo $name ?>
+                </a>
+            </li>
+        <?php } ?>
     <?php }
 
-    function put_reference_list(Lang $lang, array $anchors, string $class = 'list-reference') { ?>
-        <ol class="<?php echo $class ?>">
-            <?php $ref_num = 1;
-            foreach ($this->data['references'] as $name => $ref) { ?>
-                <li id="ref-<?php echo $ref_num ?>"><span class="ref-backlink" aria-label="<?php echo $lang->get('refJumpUp') ?>"
-                        title="<?php echo $lang->get('refJumpUp') ?>"><a class="link" href="#cite-ref-<?php echo $ref_num++ ?>">&uarr;</a></span>
-                    <a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="<?php echo $ref['href'] ?>">
-                        <?php $a = $anchors[$ref['anchor']];
-                        echo get_icon_element($a['isThemedSvg'], $a['url']) ?>
-                        <?php echo $name ?>
-                    </a>
-                </li>
-            <?php } ?>
-        </ol>
+    function put_reference_list_items(Lang $lang, array $anchors) { ?>
+        <?php $ref_num = 1;
+        foreach ($this->data['references'] as $name => $ref) { ?>
+            <li id="ref-<?php echo $ref_num ?>"><span class="ref-backlink" aria-label="<?php echo $lang->get('refJumpUp') ?>" title="<?php echo $lang->get('refJumpUp') ?>"><a class="link" href="#cite-ref-<?php echo $ref_num++ ?>">&uarr;</a></span>
+                <a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="<?php echo $ref['href'] ?>">
+                    <?php $a = $anchors[$ref['anchor']];
+                    echo get_icon_element($a['isThemedSvg'], $a['url']) ?>
+                    <?php echo $name ?>
+                </a>
+            </li>
+        <?php } ?>
     <?php }
 
     function put_logo(Lang $lang, string $class = 'logo') {

@@ -26,53 +26,64 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
     <body>
         <?php put_header($page, $lang) ?>
         <main <?php $p->put_background_style_attr('bg-img') ?>>
-            <div id="project-header">
-                <?php $p->put_tags($lang, $tags) ?>
-                <h2><?php echo $p->data['title'] ?></h2>
+            <section id="header"><?php $p->put_tags($lang, $tags) ?>
+                <h1><?php echo $p->data['title'] ?></h1>
                 <?php $p->put_logo($lang) ?>
                 <?php $p->put_abstract() ?>
                 <div class="status-context"><?php $p->put_context() ?><?php $p->put_status($lang->get('ongoing')) ?></div>
-            </div>
-            <?php if (count($p->data['links']) > 0) { ?>
-                <?php $p->put_link_list($anchors) ?>
-            <?php }
-            if (count ($team = $p->data['team']) > 0) { ?>
-                <h3><?php echo $lang->get('projectTeammates'); ?></h3>
-                <ul id="team"><?php foreach ($team as $personDefId) {
-                    put_definition_card($lang, $types, $personDefId, $defintions[$personDefId], "li");
-                } ?>
-                </ul>
-            <?php } ?>
-            <div id="story"><?php echo $p->data['story'] ?></div>
-            <?php if (count($techs = $p->data['technologies']) > 0) { ?>
-                <h3><?php echo $lang->get('projectTechnologies') ?></h3>
-                <ul id="technologies"><?php foreach ($techs as $defId) {
-                    put_definition_card($lang, $types, $defId, $defintions[$defId], "li");
-                } ?>
-                </ul>
-            <?php }
-            if (count($gallery = $p->data['gallery']) > 0) { ?>
-                <h3><?php echo $lang->get('projectGallery') ?></h3>
-                <div id="gallery"><?php foreach ($gallery as $name => $figure) { ?>
-                        <figure class="figure">
-                            <?php
-                            if ($url = $figure['url'] ?? null) {
-                                echo get_img_element($url, $name, baseHeight: 300);
-                            } elseif ($src = $figure['iframe-src'] ?? null) {
-                                put_iframe($src, $name);
-                            } else {
-                                echo $figure['content'];
-                            }
-                            ?>
-                            <figcaption><?php echo $name ?></figcaption>
-                        </figure>
-                    <?php } ?>
-                </div>
-            <?php }
-            if (count($p->data['references']) > 0) { ?>
-                <h3><?php echo $lang->get('projectReferences') ?></h3>
-                <?php $p->put_reference_list($lang, $anchors); ?>
-            <?php } ?>
+            </section>
+            <section><?php if (count($p->data['links']) > 0) { ?>
+                    <ul id="links" class="list-link">
+                        <?php $p->put_link_list_items($anchors) ?>
+                    </ul>
+                <?php } ?>
+            </section>
+            <section><?php if (count($team = $p->data['team']) > 0) { ?>
+                    <h3><?php echo $lang->get('projectTeammates'); ?></h3>
+                    <ul id="team"><?php foreach ($team as $personDefId) {
+                        put_definition_card($lang, $types, $personDefId, $defintions[$personDefId], "li");
+                    } ?>
+                    </ul>
+                <?php } ?>
+            </section>
+            <div id="story" class="text"><?php echo $p->data['story'] ?></div>
+            <section><?php if (count($techs = $p->data['technologies']) > 0) { ?>
+                    <h3><?php echo $lang->get('projectTechnologies') ?></h3>
+                    <ul id="technologies"><?php foreach ($techs as $defId) {
+                        put_definition_card($lang, $types, $defId, $defintions[$defId], "li");
+                    } ?>
+                    </ul>
+                <?php } ?>
+            </section>
+            <section><?php if (count($gallery = $p->data['gallery']) > 0) { ?>
+                    <h3><?php echo $lang->get('projectGallery') ?></h3>
+                    <ul id="gallery">
+                        <?php foreach ($gallery as $name => $figure) { ?>
+                            <li>
+                                <figure class="figure">
+                                    <?php
+                                    if ($url = $figure['url'] ?? null) {
+                                        echo get_img_element($url, $name, baseHeight: 300);
+                                    } elseif ($src = $figure['iframe-src'] ?? null) {
+                                        put_iframe($src, $name);
+                                    } else {
+                                        echo $figure['content'];
+                                    }
+                                    ?>
+                                    <figcaption><?php echo $name ?></figcaption>
+                                </figure>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                <?php } ?>
+            </section>
+            <section><?php if (count($p->data['references']) > 0) { ?>
+                    <h3><?php echo $lang->get('projectReferences') ?></h3>
+                    <ol id="references" class="list-reference">
+                        <?php $p->put_reference_list_items($lang, $anchors); ?>
+                    </ol>
+                <?php } ?>
+            </section>
         </main>
         <?php put_footer($page, $lang) ?>
         <?php put_scripts($page) ?>
