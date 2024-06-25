@@ -16,7 +16,7 @@ require_once 'project.php';
                     <div class="js-timeline_line-progress ag-timeline_line-progress"></div>
                 </div>
                 <div class="ag-timeline_list">
-                    <div class="js-timeline_item ag-timeline_item">
+                    <div class="lvl js-timeline_item ag-timeline_item">
                         <div class="ag-timeline-card_box">
                             <div class="js-timeline-card_point-box ag-timeline-card_point-box">
                                 <div class="ag-timeline-card_point">2020</div>
@@ -38,7 +38,7 @@ require_once 'project.php';
                             <div class="ag-timeline-card_arrow"></div>
                         </div>
                     </div>
-                    <div class="js-timeline_item ag-timeline_item">
+                    <div class="lvl js-timeline_item ag-timeline_item">
                         <div class="ag-timeline-card_box">
                             <div class="ag-timeline-card_meta-box">
                                 <div class="ag-timeline-card_meta">Cambridge</div>
@@ -60,7 +60,7 @@ require_once 'project.php';
                             <div class="ag-timeline-card_arrow"></div>
                         </div>
                     </div>
-                    <div class="js-timeline_item ag-timeline_item">
+                    <div class="lvl js-timeline_item ag-timeline_item">
                         <div class="ag-timeline-card_box">
                             <div class="js-timeline-card_point-box ag-timeline-card_point-box">
                                 <div class="ag-timeline-card_point">2023</div>

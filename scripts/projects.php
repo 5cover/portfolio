@@ -11,24 +11,24 @@ require_once 'help.php';
         <datalist id="project-titles">
             <!-- Fill this up dynamically -->
         </datalist>
-        <section id="search-bar">
+        <section class="lvl" id="search-bar">
             <h1><?php echo $lang->get('projectSearchSearch') ?></h1>
             <input type="search" id="search-input" placeholder="<?php echo $lang->get('projectSearchPlaceholder') ?>" autocomplete="on" list="project-titles">
             <section>
                 <h3><?php echo $lang->get('projectSearchTags') ?></h3>
-                <ul class="list-rect" id="list-tag">
+                <ul class="lvl list-rect" id="list-tag">
                     <!-- Tags will be added here -->
                 </ul>
             </section>
             <section>
                 <h3><?php echo $lang->get('projectSearchSort') ?></h3>
-                <ul class="list-rect" id="list-sorting">
+                <ul class="lvl list-rect" id="list-sorting">
                     <li><label for="sort-asc">A-Z<input type="radio" name="sorting" id="sort-asc" value="asc" checked></label></li>
                     <li><label for="sort-desc">Z-A<input type="radio" name="sorting" id="sort-desc" value="desc"></label></li>
                 </ul>
             </section>
         </section>
-        <ul class="list-project" id="project-list">
+        <ul class="lvl list-project" id="project-list">
             <!-- Project list will be updated here -->
         </ul>
     </main>

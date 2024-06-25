@@ -265,3 +265,15 @@ also (why not) show projects on a calendar
 do same as php
 
 it's annoying to have the same logic expressed in 2 languages
+
+## Put colors in separate rulesets
+
+Because we don't know where the element is, we don't know if we should use lvl1, 2 or 3. So the site looks a bit inconsistent.
+
+Maybe we could have a class, something like `.lvl`. So our selector would be like
+
+- `main .lvl` for level 1
+- `main .lvl .lvl` for level 2
+- ...
+
+Maybe we could base it on `:root`? Since header and footer are lvl 1

@@ -101,6 +101,10 @@ However, I still think C is an invaluable language to learn. It forces you to le
 
 Learning C is better than any amount of Leetcode challenges.
 
+## Fix project content
+
+### tell more in story
+
 ## Projects
 
 - JSlave
@@ -158,15 +162,3 @@ Préprocesser toutes les pages en PHP. Ajouter le tooltip dans tout les contenus
 Est-ce que ce serait pas mieu de le faire manuellement? Comme ça on évit tout faux positif. Et puis on peut choisir si on autorise une tooltip ou non.
 
 Oui peut-être bien qu'il faudrait le faire manuellement.
-
-## Put colors in separate rulesets
-
-Because we don't know where the element is, we don't know if we should use lvl1, 2 or 3. So the site looks a bit inconsistent. We can use selectors like `main > * > *` for lvl2? i don't know we'll see. We're kind of in an emergency right now.
-
-What is the meaning of `main * *` ? What is the difference with `main > * > *`?
-
-Maybe we could have a class, something like `.new-lvl`. So our selector would be like `main .new-lvl .new-lvl .new-lvl`
-
-## Fix project content
-
-### tell more in story

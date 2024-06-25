@@ -9,7 +9,7 @@ function put_doctype_html(Page $page, Lang $lang) { ?>
 <?php }
 
 function put_footer(Page $page, Lang $lang) { ?>
-    <footer>
+    <footer class="lvl">
         <small>&copy; 2024 Raphaël Bardini</small>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="<?php echo $lang->get('footerGitHubAnchorTitle') ?>"><?php
            echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60) ?></a>
@@ -56,7 +56,7 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
 <?php }
 
 function put_header(Page $page, Lang $lang) { ?>
-    <header>
+    <header class="lvl">
         <nav>
             <a href="<?php echo $page->get_nav_href($lang, "index") ?>">Raphaël Bardini</a>
             <ul>

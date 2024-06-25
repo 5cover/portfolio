@@ -33,11 +33,11 @@ function put_skill_project_list($skillId) {
             <p>Le titulaire du BUT spécialité informatique est compétent sur les plans technique et méthodologique tout en étant sensibilisé aux problématiques actuelles (sécurité des données, <em>cloud computing</em>, intelligence artificielle), sur les questions sociétales, juridiques, éthiques et environnementales liées aux usages du numérique.</p>
             <p>À l’issue d’un tronc commun d’un an, l’étudiant pourra, en fonction de son projet professionnel, choisir l’un des quatre parcours proposés par la spécialité informatique.</p>
         </div>
-        <a class="button-link" target="_blank" rel="noopener noreferrer" href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf">Programme officiel du BUT Informatique</a>
+        <a class="lvl button-link" target="_blank" rel="noopener noreferrer" href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf">Programme officiel du BUT Informatique</a>
         <section id="competences">
             <h3>Compétences du BUT</h3>
             <p class="text">Les apprentissages du BUT sont organisés en 6 compétences&nbsp;:</p>
-            <ul>
+            <ul class="lvl">
                 <li style="--bg-img: url(/portfolio/img/skill/1.jpg)">
                     <h4>Compétence 1. Réaliser</h4>
                     <p class="text">Développer — c’est-à-dire concevoir, coder, tester et intégrer une solution informatique pour un client.</p>
@@ -70,7 +70,7 @@ function put_skill_project_list($skillId) {
                 </li>
             </ul>
         </section>
-        <div id="resultat-pour-moi">
+        <div class="lvl" id="resultat-pour-moi">
             <div>
                 <article>
                     <h3>Pourquoi ai-je choisi le BUT Informatique&nbsp;?</h3>

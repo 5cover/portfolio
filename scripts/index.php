@@ -25,7 +25,7 @@ put_head($page, $lang);
 <body>
     <?php put_header($page, $lang) ?>
     <main>
-        <ul class="list-piano-tiles">
+        <ul class="lvl list-piano-tiles">
             <?php foreach ($piano_tiles as $i => $href) {
                 $num = $i + 1;
                 $src = get_web_url(glob_web_single("/portfolio/img/piano-tile/$num.*"));
@@ -43,33 +43,33 @@ put_head($page, $lang);
                 </li>
             <?php } ?>
         </ul>
-        <article class="content-block text" id="me">
+        <article id="me" class="lvl content-block text">
             <div>
                 <h2><?php echo $lang->get('indexMe') ?></h2>
                 <?php echo $lang->get('indexAboutMeContent') ?>
             </div>
             <img src="/portfolio/img/me.jpg" alt="<?php echo $lang->get('indexMyPhoto') ?>" width="1600" height="1600" loading="lazy" title="<?php echo $lang->get('indexMyPhoto') ?>">
         </article>
-        <section id="ongoing-projects">
+        <section id="ongoing-projects" class="lvl">
             <h2><?php echo $lang->get('indexOngoingProjects') ?></h2>
             <?php put_project_cards_list($lang, array_filter($projects, fn($p) => !array_key_exists('end-date', $p->data))) ?>
-            <a href="projects.html" class="button-link"><?php echo $lang->get('indexAllMyProjects') ?></a>
+            <a href="projects.html" class="lvl button-link"><?php echo $lang->get('indexAllMyProjects') ?></a>
         </section>
-        <article class="content-block" id="contact">
+        <article id="contact" class="lvl content-block">
             <address>
                 <h2><?php echo $lang->get('indexContact') ?></h2>
                     <ul>
                         <li title="E-mail"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="mailto:bardini.raphael@gmail.com"><?php
-                        echo get_svg_element('portfolio/img/social/email.svg', baseHeight: 24) ?>bardini.raphael@gmail.com</a>
+                        echo get_svg_element('portfolio/img/social/email.svg', baseHeight: 24) ?><span>bardini.raphael@gmail.com</span></a>
                         </li>
                         <li title="LinkedIn"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/"><?php
-                        echo get_svg_element('portfolio/img/social/linkedin.svg', baseHeight: 24) ?>Raphaël Bardini</a>
+                        echo get_svg_element('portfolio/img/social/linkedin.svg', baseHeight: 24) ?><span>Raphaël Bardini</span></a>
                         </li>
                         <li title="Instagram"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/bardiniraphael/"><?php
-                        echo get_svg_element('portfolio/img/social/instagram.svg', baseHeight: 24) ?>bardiniraphael</a>
+                        echo get_svg_element('portfolio/img/social/instagram.svg', baseHeight: 24) ?><span>bardiniraphael</span></a>
                         </li>
                         <li title="GitHub"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover"><?php
-                        echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 24) ?>5cover</a>
+                        echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 24) ?><span>5cover</span></a>
                         </li>
                     </ul>
             </address>

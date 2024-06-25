@@ -40,7 +40,7 @@ final class Project {
                 <a class="iconed-text" target="_blank" rel="noopener noreferrer" href="<?php echo $link['href'] ?>">
                     <?php $a = $anchors[$link['anchor']];
                     echo get_icon_element($a['isThemedSvg'], $a['url']) ?>
-                    <?php echo $name ?>
+                    <span><?php echo $name ?></span>
                 </a>
             </li>
         <?php } ?>
@@ -53,7 +53,7 @@ final class Project {
                 <a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="<?php echo $ref['href'] ?>">
                     <?php $a = $anchors[$ref['anchor']];
                     echo get_icon_element($a['isThemedSvg'], $a['url']) ?>
-                    <?php echo $name ?>
+                    <span><?php echo $name ?></span>
                 </a>
             </li>
         <?php } ?>
@@ -86,7 +86,7 @@ function put_project_cards_list(Lang $lang, array $projects) {
     $tags = $lang->get_data('tags');
     $anchors = get_data_json('anchors');
     ?>
-    <ul class="list-project"><?php
+    <ul class="lvl list-project"><?php
     foreach ($projects as $id => $p) {
         ?>
             <li <?php $p->put_background_style_attr('bg-img-project') ?>>

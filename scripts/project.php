@@ -32,24 +32,24 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                 <?php $p->put_abstract() ?>
                 <div class="status-context"><?php $p->put_context() ?><?php $p->put_status($lang) ?></div>
             </section>
-            <section><?php if (count($p->data['links']) > 0) { ?>
-                    <ul id="links" class="list-link">
+            <section class="lvl"><?php if (count($p->data['links']) > 0) { ?>
+                    <ul id="links" class="lvl list-link">
                         <?php $p->put_link_list_items($anchors) ?>
                     </ul>
                 <?php } ?>
             </section>
-            <section><?php if (count($team = $p->data['team']) > 0) { ?>
+            <section class="lvl"><?php if (count($team = $p->data['team']) > 0) { ?>
                     <h3><?php echo $lang->get('projectTeammates'); ?></h3>
-                    <ul id="team"><?php foreach ($team as $personDefId) {
+                    <ul id="team" class="lvl"><?php foreach ($team as $personDefId) {
                         put_definition_card($lang, $types, $personDefId, $defintions[$personDefId], "li");
                     } ?>
                     </ul>
                 <?php } ?>
             </section>
             <div id="story" class="text"><?php echo $p->data['story'] ?></div>
-            <section><?php if (count($techs = $p->data['technologies']) > 0) { ?>
+            <section class="lvl"><?php if (count($techs = $p->data['technologies']) > 0) { ?>
                     <h3><?php echo $lang->get('projectTechnologies') ?></h3>
-                    <ul id="technologies"><?php foreach ($techs as $defId) {
+                    <ul id="technologies" class="lvl"><?php foreach ($techs as $defId) {
                         put_definition_card($lang, $types, $defId, $defintions[$defId], "li");
                     } ?>
                     </ul>
@@ -57,7 +57,7 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
             </section>
             <section><?php if (count($gallery = $p->data['gallery']) > 0) { ?>
                     <h3><?php echo $lang->get('projectGallery') ?></h3>
-                    <ul id="gallery">
+                    <ul id="gallery" class="lvl">
                         <?php foreach ($gallery as $name => $figure) { ?>
                             <li>
                                 <figure class="figure">
