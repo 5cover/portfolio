@@ -12,11 +12,10 @@ final class Page {
 
     /**
      * Get the value of the `href` attribute to use for anchors in the navbar.
-     * @param string $thisPageName The name of the current page.
      * @param string $pageName The name of the page the anchor leads to.
      * @return string *pageName*, unless it is the current page, then `#`.
      */
-    public function get_anchor_href(string $pageName): string {
-        return $pageName == $this->name . '.html' ? "#" : $pageName;
+    public function get_nav_href(Lang $lang, string $pageName): string {
+        return $pageName == $this->name ? "#" : "/portfolio/$lang->tag/$pageName.html";
     }
 }

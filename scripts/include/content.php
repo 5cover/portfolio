@@ -58,15 +58,15 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
 function put_header(Page $page, Lang $lang) { ?>
     <header>
         <nav>
-            <a href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/index.html") ?>">Raphaël Bardini</a>
+            <a href="<?php echo $page->get_nav_href($lang, "index") ?>">Raphaël Bardini</a>
             <ul>
-                <li><a href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/projects.html") ?>"><?php echo $lang->get('namePageProjects') ?></a>
+                <li><a href="<?php echo $page->get_nav_href($lang, "projects") ?>"><?php echo $lang->get('namePageProjects') ?></a>
                 </li>
-                <li><a href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/history.html") ?>"><?php echo $lang->get('namePageHistory') ?></a>
+                <li><a href="<?php echo $page->get_nav_href($lang, "history") ?>"><?php echo $lang->get('namePageHistory') ?></a>
                 </li>
-                <li><a href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/passions.html") ?>"><?php echo $lang->get('namePagePassions') ?></a>
+                <li><a href="<?php echo $page->get_nav_href($lang, "passions") ?>"><?php echo $lang->get('namePagePassions') ?></a>
                 </li>
-                <li><a href="<?php echo $page->get_anchor_href("/portfolio/{$lang->tag}/perspectives.html") ?>"><?php echo $lang->get('namePagePerspectives') ?></a>
+                <li><a href="<?php echo $page->get_nav_href($lang, "perspectives") ?>"><?php echo $lang->get('namePagePerspectives') ?></a>
                 </li>
             </ul>
         </nav>
