@@ -67,6 +67,7 @@ function put_header(Page $page, Lang $lang) { ?>
                 <li><a href="<?php echo $page->get_nav_href($lang, "passions") ?>"><?php echo $lang->get('namePagePassions') ?></a>
                 </li>
                 <li><a href="<?php echo $page->get_nav_href($lang, "perspectives") ?>"><?php echo $lang->get('namePagePerspectives') ?></a>
+                <li><a href="<?php echo $page->get_nav_href($lang, "but-informatique") ?>"><?php echo $lang->get('namePageButInformatique') ?></a>
                 </li>
             </ul>
         </nav>
