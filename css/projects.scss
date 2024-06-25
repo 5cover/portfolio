@@ -29,7 +29,7 @@
 
     label {
         cursor: pointer;
-        background-color: var(--color-lvl3);
+        background-color: var(--color-lvl-next);
 
         &:has(input#{base.$hover}) {
             @include base.color-accent(.5);

@@ -31,7 +31,7 @@
  */
 @mixin button-link($padding-factor: 1) {
     @include util.horizontal-box($padding-factor);
-    background-color: var(--color-lvl2);
+    background-color: var(--color-lvl);
 
     &#{const.$hover} {
         @include util.bring-out(1.05);
@@ -55,11 +55,14 @@
  * An element containing a graphic that is sized to the neighbouring text.
  */
 @mixin iconed-text($factor: 1) {
-    #{const.$graphic}:first-child {
+    #{const.$graphic} {
         height: calc(1em * $factor);
         width: auto;
-        vertical-align: middle;
         margin-right: calc(.5ch * $factor);
+    }
+
+    * {
+        vertical-align: middle;
     }
 }
 
@@ -182,7 +185,7 @@
 
     > li {
         @include util.hover-card;
-        @include util.transparent-background-image(--bg-img-project, var(--color-lvl2-rgb), .15);
+        @include util.transparent-background-image(--bg-img-project, var(--color-lvl-rgb), .15);
         list-style: none;
         @include util.basic-border(1px);
         display: grid;
@@ -253,11 +256,11 @@
 
         &#{const.$hover} {
             /* Invert the colors: background in orange */
-            @include util.transparent-background-image(--bg-img-project, var(--color-accent-bg-rgb), .15);
+            @include util.transparent-background-image(--bg-img-project, var(--color-accent-rgb), .15);
 
             /* and ags in gray. */
             .list-rect > li {
-                background-color: var(--color-lvl2);
+                background-color: var(--color-lvl);
             }
 
             /* Adapt foreground to accent color (except tag list). */
@@ -289,9 +292,9 @@
  */
 .definition {
     @include util.size-graphics(2.5lh, auto);
-    @include util.transparent-background-image(--bg-img-definition, var(--color-lvl2-rgb), .1);
+    @include util.transparent-background-image(--bg-img-definition, var(--color-lvl-rgb), .1);
     $space: .75em;
-    background-color: var(--color-lvl2);
+    background-color: var(--color-lvl);
     border-radius: $space;
     row-gap: $space;
     display: grid;
@@ -364,7 +367,7 @@
  */
 .content-block {
     border-radius: 1.5em;
-    background-color: var(--color-lvl1);
+    background-color: var(--color-lvl);
     padding: 1.5em;
     align-self: center;
     max-width: 100%;

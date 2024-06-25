@@ -40,7 +40,7 @@ section {
             @include base.absolute-fill;
 
             div {
-                background-color: rgba(var(--color-bg-rgb), calc(2/3));
+                background-color: rgba(var(--color-lvl-rgb), calc(2/3));
                 height: fit-content;
 
                 > * {
@@ -118,7 +118,7 @@ section {
             @include base.absolute-center;
             @include base.horizontal-box;
             width: max-content;
-            background-color: var(--color-lvl1);
+            background-color: var(--color-lvl);
         }
 
         &#{base.$hover} {

@@ -97,7 +97,7 @@
  */
 @mixin color-accent($opacity: 1) {
     @include color-accent-fg;
-    background-color: rgba(var(--color-accent-bg-rgb), $opacity);
+    background-color: rgba(var(--color-accent-rgb), $opacity);
 }
 
 /* Level 1 content
@@ -108,7 +108,7 @@
  */
 @mixin lvl1-content($border-width) {
     @include basic-border($border-width);
-    background-color: var(--color-lvl1);
+    background-color: var(--color-lvl);
     padding: 1em const.$full-width-horizontal-margin;
 }
 

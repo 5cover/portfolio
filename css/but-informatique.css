@@ -132,7 +132,7 @@
 .button-link {
   padding: 0.5lh 2ch;
   border-radius: 0.25lh;
-  background-color: var(--color-lvl2);
+  background-color: var(--color-lvl);
   display: block;
   margin: 0 auto;
   width: -moz-fit-content;
@@ -142,7 +142,7 @@
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: rgba(var(--color-accent-bg-rgb), 1);
+  background-color: rgba(var(--color-accent-rgb), 1);
 }
 @media (prefers-reduced-motion: no-preference) {
   .button-link:is(:hover, :focus-within, :focus) {
@@ -157,11 +157,13 @@
  *
  * An element containing a graphic that is sized to the neighbouring text.
  */
-.iconed-text :is(img, svg):first-child {
+.iconed-text :is(img, svg) {
   height: 1em;
   width: auto;
-  vertical-align: middle;
   margin-right: 0.5ch;
+}
+.iconed-text * {
+  vertical-align: middle;
 }
 
 /* Flag list
@@ -214,13 +216,13 @@
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: rgba(var(--color-accent-bg-rgb), 0.5);
+  background-color: rgba(var(--color-accent-rgb), 0.5);
 }
 .theme-switches label:has(input:checked) {
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: rgba(var(--color-accent-bg-rgb), 1);
+  background-color: rgba(var(--color-accent-rgb), 1);
 }
 .theme-switches label + label {
   border-width: 0 0 0 1px;
@@ -283,7 +285,7 @@
 }
 .list-project > li {
   position: relative;
-  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.85), rgba(var(--color-lvl2-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-lvl2-rgb))) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.85), rgba(var(--color-lvl-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-lvl-rgb))) no-repeat;
   background-size: cover;
   list-style: none;
   border-width: 1px;
@@ -368,14 +370,14 @@
 }
 .list-project > li:is(:hover, :focus-within, :focus) {
   /* Invert the colors: background in orange */
-  background: border-box linear-gradient(rgba(var(--color-accent-bg-rgb), 0.85), rgba(var(--color-accent-bg-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-accent-bg-rgb))) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.85), rgba(var(--color-accent-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-accent-rgb))) no-repeat;
   background-size: cover;
   /* and ags in gray. */
   /* Adapt foreground to accent color (except tag list). */
   /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
 }
 .list-project > li:is(:hover, :focus-within, :focus) .list-rect > li {
-  background-color: var(--color-lvl2);
+  background-color: var(--color-lvl);
 }
 .list-project > li:is(:hover, :focus-within, :focus) > :not(.list-rect) {
   color: white;
@@ -389,7 +391,7 @@
   color: white;
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
-  background-color: rgba(var(--color-accent-bg-rgb), 1);
+  background-color: rgba(var(--color-accent-rgb), 1);
 }
 
 /* Definition
@@ -401,9 +403,9 @@
  * - definition-tooltip-trigger: trigger of the definition tooltip form
  */
 .definition {
-  background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl2-rgb))) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.9), rgba(var(--color-lvl-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl-rgb))) no-repeat;
   background-size: cover;
-  background-color: var(--color-lvl2);
+  background-color: var(--color-lvl);
   border-radius: 0.75em;
   row-gap: 0.75em;
   display: grid;
@@ -483,7 +485,7 @@
  */
 .content-block {
   border-radius: 1.5em;
-  background-color: var(--color-lvl1);
+  background-color: var(--color-lvl);
   padding: 1.5em;
   align-self: center;
   max-width: 100%;
@@ -497,59 +499,144 @@
   inherits: false;
 }
 :root {
-  font-family: Roboto, system-ui;
-  /* Workaround until relative colors get widespread support */
-  --color-accent-bg-rgb: 166, 97, 68;
-  --color-bg-rgb: 238, 238, 238;
-  --color-fg-rgb: 17, 17, 17;
-  --color-lvl1-rgb: 221, 221, 221;
-  --color-lvl2-rgb: 204, 204, 204;
-  --color-lvl3-rgb: 187, 187, 187;
-  --color-bg: rgb(var(--color-bg-rgb));
-  --color-fg: rgb(var(--color-fg-rgb));
-  --color-lvl1: rgb(var(--color-lvl1-rgb));
-  --color-lvl2: rgb(var(--color-lvl2-rgb));
-  --color-lvl3: rgb(var(--color-lvl3-rgb));
-  --color-accent-bg: rgb(var(--color-accent-bg-rgb));
+  background-color: var(--color-lvl);
   color: var(--color-fg);
-  background-color: var(--color-bg);
+  font-family: Roboto, system-ui;
   font-size: 20px;
   scroll-behavior: smooth;
   scrollbar-color: gray transparent;
 }
 
 :root[data-theme=dark] {
-  --color-bg-rgb: 17, 17, 17;
+  /* *-rgb: workaround until relative colors get widespread support */
+  --color-accent: rgb(166, 97, 68);
+  --color-accent-rgb: 166, 97, 68;
+  --color-fg: rgb(238, 238, 238);
   --color-fg-rgb: 238, 238, 238;
-  --color-lvl1-rgb: 34, 34, 34;
-  --color-lvl2-rgb: 51, 51, 51;
-  --color-lvl3-rgb: 68, 68, 68;
+  --color-lvl: rgb(17, 17, 17);
+  --color-lvl-rgb: 17, 17, 17;
+  --color-lvl-next: rgb(34, 34, 34);
+  --color-lvl-next-rgb: 34, 34, 34;
+}
+:root[data-theme=dark] .lvl {
+  --color-lvl: rgb(34, 34, 34);
+  --color-lvl-rgb: 34, 34, 34;
+  --color-lvl-next: rgb(51, 51, 51);
+  --color-lvl-next-rgb: 51, 51, 51;
+}
+:root[data-theme=dark] .lvl .lvl {
+  --color-lvl: rgb(51, 51, 51);
+  --color-lvl-rgb: 51, 51, 51;
+  --color-lvl-next: rgb(68, 68, 68);
+  --color-lvl-next-rgb: 68, 68, 68;
+}
+:root[data-theme=dark] .lvl .lvl .lvl {
+  --color-lvl-rgb: 68, 68, 68;
+  --color-lvl: rgb(68, 68, 68);
+}
+
+:root[data-theme=light] {
+  /* *-rgb: workaround until relative colors get widespread support */
+  --color-accent: rgb(166, 97, 68);
+  --color-accent-rgb: 166, 97, 68;
+  --color-fg: rgb(17, 17, 17);
+  --color-fg-rgb: 17, 17, 17;
+  --color-lvl: rgb(238, 238, 238);
+  --color-lvl-rgb: 238, 238, 238;
+  --color-lvl-next: rgb(221, 221, 221);
+  --color-lvl-next-rgb: 221, 221, 221;
+}
+:root[data-theme=light] .lvl {
+  --color-lvl: rgb(221, 221, 221);
+  --color-lvl-rgb: 221, 221, 221;
+  --color-lvl-next: rgb(204, 204, 204);
+  --color-lvl-next-rgb: 204, 204, 204;
+}
+:root[data-theme=light] .lvl .lvl {
+  --color-lvl: rgb(204, 204, 204);
+  --color-lvl-rgb: 204, 204, 204;
+  --color-lvl-next: rgb(187, 187, 187);
+  --color-lvl-next-rgb: 187, 187, 187;
+}
+:root[data-theme=light] .lvl .lvl .lvl {
+  --color-lvl-rgb: 187, 187, 187;
+  --color-lvl: rgb(187, 187, 187);
 }
 
 @media (prefers-color-scheme: dark) {
   :root[data-theme=system] {
-    --color-bg-rgb: 17, 17, 17;
+    /* *-rgb: workaround until relative colors get widespread support */
+    --color-accent: rgb(166, 97, 68);
+    --color-accent-rgb: 166, 97, 68;
+    --color-fg: rgb(238, 238, 238);
     --color-fg-rgb: 238, 238, 238;
-    --color-lvl1-rgb: 34, 34, 34;
-    --color-lvl2-rgb: 51, 51, 51;
-    --color-lvl3-rgb: 68, 68, 68;
+    --color-lvl: rgb(17, 17, 17);
+    --color-lvl-rgb: 17, 17, 17;
+    --color-lvl-next: rgb(34, 34, 34);
+    --color-lvl-next-rgb: 34, 34, 34;
+  }
+  :root[data-theme=system] .lvl {
+    --color-lvl: rgb(34, 34, 34);
+    --color-lvl-rgb: 34, 34, 34;
+    --color-lvl-next: rgb(51, 51, 51);
+    --color-lvl-next-rgb: 51, 51, 51;
+  }
+  :root[data-theme=system] .lvl .lvl {
+    --color-lvl: rgb(51, 51, 51);
+    --color-lvl-rgb: 51, 51, 51;
+    --color-lvl-next: rgb(68, 68, 68);
+    --color-lvl-next-rgb: 68, 68, 68;
+  }
+  :root[data-theme=system] .lvl .lvl .lvl {
+    --color-lvl-rgb: 68, 68, 68;
+    --color-lvl: rgb(68, 68, 68);
   }
 }
+@media (prefers-color-scheme: light) {
+  :root[data-theme=system] {
+    /* *-rgb: workaround until relative colors get widespread support */
+    --color-accent: rgb(166, 97, 68);
+    --color-accent-rgb: 166, 97, 68;
+    --color-fg: rgb(17, 17, 17);
+    --color-fg-rgb: 17, 17, 17;
+    --color-lvl: rgb(238, 238, 238);
+    --color-lvl-rgb: 238, 238, 238;
+    --color-lvl-next: rgb(221, 221, 221);
+    --color-lvl-next-rgb: 221, 221, 221;
+  }
+  :root[data-theme=system] .lvl {
+    --color-lvl: rgb(221, 221, 221);
+    --color-lvl-rgb: 221, 221, 221;
+    --color-lvl-next: rgb(204, 204, 204);
+    --color-lvl-next-rgb: 204, 204, 204;
+  }
+  :root[data-theme=system] .lvl .lvl {
+    --color-lvl: rgb(204, 204, 204);
+    --color-lvl-rgb: 204, 204, 204;
+    --color-lvl-next: rgb(187, 187, 187);
+    --color-lvl-next-rgb: 187, 187, 187;
+  }
+  :root[data-theme=system] .lvl .lvl .lvl {
+    --color-lvl-rgb: 187, 187, 187;
+    --color-lvl: rgb(187, 187, 187);
+  }
+}
+
 /* Chromium issue: transitions stack (children wait for parents to finish their transition before doing their own) */
 /* Solution: apply all transitions only to leaf elements. In non-leaf elements, transition only properties that are unrelated to the textual content */
 * {
   box-sizing: border-box;
   transition-duration: 0.3333333333s;
-  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, -webkit-background-clip;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, -webkit-background-clip;
+  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, -webkit-background-clip;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, -webkit-background-clip;
 }
 
 /* Leaf elements */
 :not(:has(*)) {
-  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, color, -webkit-background-clip, -webkit-text-decoration;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, color, text-decoration;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, color, text-decoration, -webkit-background-clip, -webkit-text-decoration;
+  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, color, fill, stroke, -webkit-background-clip, -webkit-text-decoration;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, color, text-decoration, fill, stroke;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, color, text-decoration, fill, stroke, -webkit-background-clip, -webkit-text-decoration;
 }
 
 .fi {
@@ -584,20 +671,20 @@ blockquote {
   margin-left: calc(min(1vw, 1em) - 0.3090169944ch);
   width: -moz-fit-content;
   width: fit-content;
-  border-left: 0.6180339887ch solid var(--color-lvl2);
+  border-left: 0.6180339887ch solid var(--color-lvl);
 }
 blockquote footer {
   text-align: right;
 }
 
 :not(pre) > :is(code, samp, kbd) {
-  background-color: var(--color-lvl2);
+  background-color: var(--color-lvl);
   padding: 0.1lh 0.4ch;
   border-radius: 0.25lh;
 }
 
 pre {
-  background-color: var(--color-lvl2);
+  background-color: var(--color-lvl);
   padding: 0.5lh 2ch;
   border-radius: 0.25lh;
 }
@@ -717,7 +804,7 @@ a:not(.link, .fi) {
   border-width: 1px;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
-  background-color: var(--color-lvl1);
+  background-color: var(--color-lvl);
   max-width: min(100%, 26em);
 }
 .figure > figcaption {
@@ -739,7 +826,7 @@ body > header {
   border-width: 0 0 1px 0;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
-  background-color: var(--color-lvl1);
+  background-color: var(--color-lvl);
   padding: 1em min(2.5vw, 2.5lh);
   align-items: center;
   display: flex;
@@ -789,7 +876,7 @@ body > footer {
   border-width: 1px 0 0 0;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
-  background-color: var(--color-lvl1);
+  background-color: var(--color-lvl);
   padding: 1em min(2.5vw, 2.5lh);
   grid-row: 3;
   position: relative;
@@ -845,7 +932,7 @@ main {
   gap: 2.5lh;
 }
 #competences > ul > li {
-  background: border-box linear-gradient(rgba(var(--color-lvl1-rgb), 0.9), rgba(var(--color-lvl1-rgb), 0.9)), padding-box var(--bg-img, rgb(var(--color-lvl1-rgb))) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.9), rgba(var(--color-lvl-rgb), 0.9)), padding-box var(--bg-img, rgb(var(--color-lvl-rgb))) no-repeat;
   background-size: cover;
   padding: 1.5em;
   border-radius: 1.5em;

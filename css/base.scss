@@ -10,43 +10,81 @@
     inherits: false;
 }
 
+@mixin theme($accent, $fg, $c0, $c1, $c2, $c3) {
+    /* *-rgb: workaround until relative colors get widespread support */
+    --color-accent: rgb(#{$accent});
+    --color-accent-rgb: #{$accent};
+    --color-fg: rgb(#{$fg});
+    --color-fg-rgb: #{$fg};
+    --color-lvl: rgb(#{$c0});
+    --color-lvl-rgb: #{$c0};
+    --color-lvl-next: rgb(#{$c1});
+    --color-lvl-next-rgb: #{$c1};
+
+    .lvl {
+        --color-lvl: rgb(#{$c1});
+        --color-lvl-rgb: #{$c1};
+        --color-lvl-next: rgb(#{$c2});
+        --color-lvl-next-rgb: #{$c2};
+
+        .lvl {
+            --color-lvl: rgb(#{$c2});
+            --color-lvl-rgb: #{$c2};
+            --color-lvl-next: rgb(#{$c3});
+            --color-lvl-next-rgb: #{$c3};
+
+            .lvl {
+                --color-lvl-rgb: #{$c3};
+                --color-lvl: rgb(#{$c3});
+            }
+        }
+    }
+}
+
+$accent: 166, 97, 68;
+
+@mixin theme-dark {
+    $fg: 238, 238, 238;
+    $c0: 17,17,17;
+    $c1: 34,34,34;
+    $c2: 51,51,51;
+    $c3: 68,68,68;
+    @include theme($accent, $fg, $c0, $c1, $c2, $c3);
+}
+
+@mixin theme-light {
+    $fg: 17, 17, 17;
+    $c0: 238, 238, 238;
+    $c1: 221, 221, 221;
+    $c2: 204, 204, 204;
+    $c3: 187, 187, 187;
+    @include theme($accent, $fg, $c0, $c1, $c2, $c3);
+}
+
 :root {
-    font-family: Roboto, system-ui;
-    /* Workaround until relative colors get widespread support */
-    --color-accent-bg-rgb: 166, 97, 68;
-    --color-bg-rgb: 238, 238, 238;
-    --color-fg-rgb: 17, 17, 17;
-    --color-lvl1-rgb: 221, 221, 221;
-    --color-lvl2-rgb: 204, 204, 204;
-    --color-lvl3-rgb: 187, 187, 187;
-    --color-bg: rgb(var(--color-bg-rgb));
-    --color-fg: rgb(var(--color-fg-rgb));
-    --color-lvl1: rgb(var(--color-lvl1-rgb));
-    --color-lvl2: rgb(var(--color-lvl2-rgb));
-    --color-lvl3: rgb(var(--color-lvl3-rgb));
-    --color-accent-bg: rgb(var(--color-accent-bg-rgb));
+    background-color: var(--color-lvl);
     color: var(--color-fg);
-    background-color: var(--color-bg);
+    font-family: Roboto, system-ui;
     font-size: 20px;
     scroll-behavior: smooth;
     scrollbar-color: gray transparent;
-}
-
-@mixin theme-dark {
-    --color-bg-rgb: 17, 17, 17;
-    --color-fg-rgb: 238, 238, 238;
-    --color-lvl1-rgb: 34, 34, 34;
-    --color-lvl2-rgb: 51, 51, 51;
-    --color-lvl3-rgb: 68, 68, 68;
 }
 
 :root[data-theme="dark"] {
     @include theme-dark;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root[data-theme="system"] {
+:root[data-theme="light"] {
+    @include theme-light;
+}
+
+:root[data-theme="system"] {
+    @media (prefers-color-scheme: dark) {
         @include theme-dark;
+    }
+
+    @media (prefers-color-scheme: light) {
+        @include theme-light;
     }
 }
 
@@ -113,7 +151,7 @@ blockquote {
     padding-left: calc(1em - $border-width / 2);
     margin-left: calc(min(1vw, 1em) - $border-width / 2);
     width: fit-content;
-    border-left: $border-width solid var(--color-lvl2);
+    border-left: $border-width solid var(--color-lvl);
 
     footer {
         text-align: right;
@@ -121,12 +159,12 @@ blockquote {
 }
 
 :not(pre) > :is(code, samp, kbd) {
-    background-color: var(--color-lvl2);
+    background-color: var(--color-lvl);
     @include util.horizontal-box(.4);
 }
 
 pre {
-    background-color: var(--color-lvl2);
+    background-color: var(--color-lvl);
     @include util.horizontal-box(2, 1);
 }
 
@@ -242,7 +280,7 @@ a:not(.link, .fi) {
  */
 .figure {
     @include util.basic-border(1px);
-    background-color: var(--color-lvl1);
+    background-color: var(--color-lvl);
     max-width: min(100%, 26em);
 
     > figcaption {

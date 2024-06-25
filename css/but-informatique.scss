@@ -39,7 +39,7 @@ main {
     gap: base.$full-width-vertical-margin;
 
     > li {
-        @include base.transparent-background-image(--bg-img, var(--color-lvl1-rgb), .1);
+        @include base.transparent-background-image(--bg-img, var(--color-lvl-rgb), .1);
         padding: 1.5em;
         border-radius: 1.5em;
     }
