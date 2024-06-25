@@ -16,7 +16,7 @@
  */
 /* Shallow list item
  *
- * Display contents on children <li>, inherit layout properties.
+ * Display contents on children <li>, inherit layout properties. Similar to the HTML transparent content model.
  */
 /* Gapped children
  *
@@ -107,6 +107,10 @@
   opacity: 0.5;
 }
 
+/* Adapet for accent background color
+ *
+ * Appropriate styles to maintain legibility when the element has an accent background color.
+ */
 /* Components
  * 
  * Provide reusable components. Semantic.
@@ -142,11 +146,24 @@
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
   background-color: rgba(var(--color-accent-rgb), 1);
+  /* Adapt foreground to accent color (except tag list). */
+  /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
 }
 @media (prefers-reduced-motion: no-preference) {
   .button-link:is(:hover, :focus-within, :focus) {
     transform: scale(1.05);
   }
+}
+.button-link:is(:hover, :focus-within, :focus) .list-rect > li {
+  background-color: var(--color-lvl);
+}
+.button-link:is(:hover, :focus-within, :focus) :not(.list-rect) {
+  --color-fg: white;
+  --color-fg-rgb: 255, 255, 255;
+}
+.button-link:is(:hover, :focus-within, :focus) .link {
+  color: var(--color-fg);
+  text-decoration: underline;
 }
 .button-link:is(:hover, :focus-within, :focus) :link {
   text-decoration: none;
@@ -301,11 +318,11 @@
 .list-project > li .list-rect {
   grid-column: 1/3;
 }
-.list-project > li .list-rect > :is(:hover, :focus-within, :focus) {
+.list-project > li .list-rect > li:is(:hover, :focus-within, :focus) {
   z-index: 1;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .list-project > li .list-rect > :is(:hover, :focus-within, :focus) {
+  .list-project > li .list-rect > li:is(:hover, :focus-within, :focus) {
     transform: scale(1.15);
   }
 }
@@ -369,7 +386,6 @@
   /* Invert the colors: background in orange */
   background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.85), rgba(var(--color-accent-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-accent-rgb))) no-repeat;
   background-size: cover;
-  /* and ags in gray. */
   /* Adapt foreground to accent color (except tag list). */
   /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
 }
@@ -399,8 +415,6 @@
  * - definition-tooltip-trigger: trigger of the definition tooltip form
  */
 .definition {
-  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.9), rgba(var(--color-lvl-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl-rgb))) no-repeat;
-  background-size: cover;
   background-color: var(--color-lvl);
   border-radius: 0.75em;
   row-gap: 0.75em;
@@ -446,7 +460,13 @@
   grid-column: 1/3;
   align-content: center;
 }
+.definition:not(.definition-tooltip) {
+  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.9), rgba(var(--color-lvl-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl-rgb))) no-repeat;
+  background-size: cover;
+}
 .definition-tooltip {
+  background: border-box linear-gradient(rgba(var(--color-lvl-next-rgb), 0.9), rgba(var(--color-lvl-next-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl-next-rgb))) no-repeat;
+  background-size: cover;
   width: -moz-max-content;
   width: max-content;
   left: -0.75em;
@@ -505,6 +525,7 @@
 
 :root[data-theme=dark] {
   /* *-rgb: workaround until relative colors get widespread support */
+  accent-color: rgb(166, 97, 68);
   --color-accent: rgb(166, 97, 68);
   --color-accent-rgb: 166, 97, 68;
   --color-fg: rgb(238, 238, 238);
@@ -533,6 +554,7 @@
 
 :root[data-theme=light] {
   /* *-rgb: workaround until relative colors get widespread support */
+  accent-color: rgb(166, 97, 68);
   --color-accent: rgb(166, 97, 68);
   --color-accent-rgb: 166, 97, 68;
   --color-fg: rgb(17, 17, 17);
@@ -562,6 +584,7 @@
 @media (prefers-color-scheme: dark) {
   :root[data-theme=system] {
     /* *-rgb: workaround until relative colors get widespread support */
+    accent-color: rgb(166, 97, 68);
     --color-accent: rgb(166, 97, 68);
     --color-accent-rgb: 166, 97, 68;
     --color-fg: rgb(238, 238, 238);
@@ -591,6 +614,7 @@
 @media (prefers-color-scheme: light) {
   :root[data-theme=system] {
     /* *-rgb: workaround until relative colors get widespread support */
+    accent-color: rgb(166, 97, 68);
     --color-accent: rgb(166, 97, 68);
     --color-accent-rgb: 166, 97, 68;
     --color-fg: rgb(17, 17, 17);
