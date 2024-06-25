@@ -5,9 +5,11 @@ final class Project {
         $this->data = $project;
     }
 
-    function put_status(string $endDatePlaceholder, string $class = 'status') { ?>
+    function put_status(Lang $lang, string $class = 'status') { ?>
         <small><?php
-        echo $this->data['start-date'] . " \u{2013} " . ($this->data['end-date'] ?? $endDatePlaceholder) ?></small>
+        $startDate = $lang->formatDate(parse_date($this->data['start-date']));
+        $endDate = map(fn($d) => $lang->formatDate(parse_date($d)), $this->data['end-date'] ?? null);
+        echo $startDate . " \u{2013} " . ($endDate ?? $lang->get('ongoing')) ?></small>
     <?php }
 
     function put_context(string $class = 'context') { ?>
@@ -91,7 +93,7 @@ function put_project_cards_list(Lang $lang, array $projects) {
                 <?php $p->put_tags($lang, $tags) ?>
                 <?php $p->put_logo($lang) ?>
                 <h3><a href="project/<?php echo $id ?>.html"><?php echo $p->data['title'] ?></a></h3>
-                <p class="status"><?php $p->put_status($lang->get('ongoing')) ?></p>
+                <p class="status"><?php $p->put_status($lang) ?></p>
                 <p class="context"><?php $p->put_context() ?></p>
                 <?php $p->put_abstract() ?>
                 <?php $p->put_link_list_compact($anchors) ?>

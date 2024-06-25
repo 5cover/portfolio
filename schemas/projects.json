@@ -2,7 +2,7 @@
     "uniqueItems": true,
     "type": "object",
     "title": "Projects",
-    "$schema": "https://json-schema.org/draft-04/schema",
+    "$schema": "https://json-schema.org/draft-07/schema",
     "additionalProperties": {
         "type": "object",
         "required": [
@@ -82,7 +82,8 @@
             },
             "end-date": {
                 "minLength": 1,
-                "type": "string"
+                "type": "string",
+                "format": "date"
             },
             "gallery": {
                 "uniqueItems": true,
@@ -139,7 +140,8 @@
             },
             "start-date": {
                 "minLength": 1,
-                "type": "string"
+                "type": "string",
+                "format": "date"
             },
             "story": {
                 "type": "string"

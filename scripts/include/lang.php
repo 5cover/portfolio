@@ -6,10 +6,20 @@ final class Lang {
     private readonly array $strings;
     public readonly string $tag;
     public readonly string $name;
+    private readonly IntlDateFormatter $fmt;
     public function __construct(string $tag, array $strings) {
         $this->tag = $tag;
         $this->strings = $strings;
         $this->name = $strings['names'][$tag];
+        $this->fmt = new IntlDateFormatter($tag, IntlDateFormatter::LONG, IntlDateFormatter::NONE);
+    }
+
+    public function formatDate(DateTimeInterface $dateTime) {
+        $res = $this->fmt->format($dateTime);
+        if ($res === false) {
+            throw new Exception("IntlDateFormatter::format failed");
+        }
+        return $res;
     }
 
     public function get(string $name): string {

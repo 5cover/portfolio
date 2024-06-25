@@ -48,11 +48,11 @@ Show up to a row, so maybe 5? that feels like a good number. Of course it may sp
 
 ## Put *.SCSS in main/
 
-That way, they won't be on the website. Also I won't need the extension anymore, i can simply compiler them in *generate.sh*.
+That way, they won't be on the website. Also I won't need the extension anymore, i can simply compile them in *generate.sh*.
 
 ## Large image preview
 
-for project gallery
+for project gallery but not only
 
 ## C code syntax highlighting
 
@@ -139,10 +139,17 @@ Mettre le numéro de la SAÉ dans le contexte
 
 GitLab for SAÉs. Put the in a group called BUT.
 
+S1.01 : host doxygen generated html on gh-pages, add link
+
 ### Gallerie
 
 - S1.02, S1.01 : shells
 - S1.01 : documentation
+
+## Restyle history
+
+- Proper border radius
+- Better background color (current is too bright)
 
 ## Rechercher/remplacer les définitions
 
@@ -151,18 +158,6 @@ Préprocesser toutes les pages en PHP. Ajouter le tooltip dans tout les contenus
 Est-ce que ce serait pas mieu de le faire manuellement? Comme ça on évit tout faux positif. Et puis on peut choisir si on autorise une tooltip ou non.
 
 Oui peut-être bien qu'il faudrait le faire manuellement.
-
-## Page BUT Informatique
-
-Présente chaque compétence et la tête de liste des projets associés (entre 4 et 6)
-
-## Changer la couleur de scrollbar
-
-Suggéré par Malo &mdash; moins casser le color scheme &mdash; utiliser la couleur d'accent.
-
-Finalement non. Il vaut mieux respecter l'agent utilisateur.
-
-Finalement si. La scrollbar est vraiment moche sur Chromium.
 
 ## Put colors in separate rulesets
 
@@ -175,11 +170,3 @@ Maybe we could have a class, something like `.new-lvl`. So our selector would be
 ## Fix project content
 
 ### tell more in story
-
-### add projects
-
-- ztest
-- jslave
-- projets de nsi
-
-### fix dates

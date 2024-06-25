@@ -56,23 +56,23 @@ put_head($page, $lang);
             <a href="projects.html" class="button-link"><?php echo $lang->get('indexAllMyProjects') ?></a>
         </section>
         <article class="content-block" id="contact">
-            <div>
+            <address>
                 <h2><?php echo $lang->get('indexContact') ?></h2>
-                <ul>
-                    <li title="E-mail"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="mailto:bardini.raphael@gmail.com"><?php
-                    echo get_svg_element('portfolio/img/social/email.svg', baseHeight: 24) ?>bardini.raphael@gmail.com</a>
-                    </li>
-                    <li title="LinkedIn"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/"><?php
-                    echo get_svg_element('portfolio/img/social/linkedin.svg', baseHeight: 24) ?>Raphaël Bardini</a>
-                    </li>
-                    <li title="Instagram"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/bardiniraphael/"><?php
-                    echo get_svg_element('portfolio/img/social/instagram.svg', baseHeight: 24) ?>bardiniraphael</a>
-                    </li>
-                    <li title="GitHub"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover"><?php
-                    echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 24) ?>5cover</a>
-                    </li>
-                </ul>
-            </div>
+                    <ul>
+                        <li title="E-mail"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="mailto:bardini.raphael@gmail.com"><?php
+                        echo get_svg_element('portfolio/img/social/email.svg', baseHeight: 24) ?>bardini.raphael@gmail.com</a>
+                        </li>
+                        <li title="LinkedIn"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/"><?php
+                        echo get_svg_element('portfolio/img/social/linkedin.svg', baseHeight: 24) ?>Raphaël Bardini</a>
+                        </li>
+                        <li title="Instagram"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/bardiniraphael/"><?php
+                        echo get_svg_element('portfolio/img/social/instagram.svg', baseHeight: 24) ?>bardiniraphael</a>
+                        </li>
+                        <li title="GitHub"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover"><?php
+                        echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 24) ?>5cover</a>
+                        </li>
+                    </ul>
+            </address>
             <a href="/portfolio/cv_bardini_raphael.pdf" target="_blank" rel="noopener noreferrer">
                 <img src="/portfolio/img/cv_preview.webp" alt="<?php echo $lang->get('indexMyResumePreview') ?>" width="1241" height="1755" loading="lazy">
                 <span><?php echo $lang->get('indexMyResume') ?></span>

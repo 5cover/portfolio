@@ -241,3 +241,27 @@ replace by class on the container element
 display flex align items center
 
 renamed to *.iconed-text*
+
+## Changer la couleur de scrollbar
+
+Suggéré par Malo &mdash; moins casser le color scheme &mdash; utiliser la couleur d'accent.
+
+Finalement non. Il vaut mieux respecter l'agent utilisateur.
+
+Finalement si. La scrollbar est vraiment moche sur Chromium.
+
+## Page BUT Informatique
+
+Présente chaque compétence et la tête de liste des projets associés (entre 4 et 6)
+
+## parse project dates
+
+would allow to show and sort by project duration
+
+also (why not) show projects on a calendar
+
+### update date format in javascript
+
+do same as php
+
+it's annoying to have the same logic expressed in 2 languages

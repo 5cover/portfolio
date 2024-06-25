@@ -30,7 +30,7 @@ function put_project_page(Lang $lang, Page $page, string $projectJson) {
                 <h1><?php echo $p->data['title'] ?></h1>
                 <?php $p->put_logo($lang) ?>
                 <?php $p->put_abstract() ?>
-                <div class="status-context"><?php $p->put_context() ?><?php $p->put_status($lang->get('ongoing')) ?></div>
+                <div class="status-context"><?php $p->put_context() ?><?php $p->put_status($lang) ?></div>
             </section>
             <section><?php if (count($p->data['links']) > 0) { ?>
                     <ul id="links" class="list-link">

@@ -2,6 +2,10 @@
 require_once 'lang.php';
 require_once 'page.php';
 
+function map(callable $transform, mixed $data): mixed {
+    return $data === null ? null : $transform($data);
+}
+
 function parse_args(): array {
     global $argc, $argv;
     if ($argc < 3) {
@@ -12,6 +16,14 @@ function parse_args(): array {
 
 function _get_web_filename(string $url) {
     return __DIR__ . '/../../../' . $url;
+}
+
+function parse_date(string $date): DateTimeImmutable {
+    $res = DateTimeImmutable::createFromFormat('Y-m-d', $date);
+    if ($res === false) {
+        throw new Exception("DateTimeImmutable::createFromFormat failed on '$date'");
+    }
+    return $res;
 }
 
 function get_img_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string {
