@@ -1,0 +1,137 @@
+/* index.html stylesheet */
+@use 'util';
+@use 'const';
+
+section {
+    @include util.lvl1-content(1px 0);
+}
+
+.list-piano-tiles {
+    $tile-count: 8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+
+    > li {
+        @include util.hover-card;
+        $min-width: 180px;
+        flex-basis: calc(min(100%, 1920px) / $tile-count);
+        flex-shrink: 1;
+        min-width: $min-width;
+
+        @media screen and (max-width: calc($min-width * $tile-count)) {
+            h2 {
+                font-size: 1.25em;
+            }
+        }
+
+        a {
+            @include util.hover-card-target;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        figcaption {
+            @include util.absolute-fill;
+
+            div {
+                background-color: rgba(var(--color-lvl-rgb), calc(2/3));
+                height: fit-content;
+
+                > * {
+                    @include util.horizontal-box(1, 0);
+                }
+            }
+        }
+
+        &#{const.$hover},
+        &.hover {
+            @include util.bring-out(1.05);
+            z-index: 1;
+        }
+
+        &:not(&#{const.$hover}) figcaption {
+            opacity: 0;
+        }
+    }
+}
+
+#me {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    > img {
+        width: auto;
+        height: 8em;
+        border-radius: .5em;
+        align-self: center;
+    }
+}
+
+#ongoing-projects {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+
+    h2 {
+        text-align: center;
+    }
+}
+
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 1em;
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: calc(1lh / 3);
+
+        > li {
+            width: fit-content
+        }
+    }
+
+    > a {
+        height: 100%;
+        position: relative;
+
+        img {
+            min-height: 0;
+            max-height: 12em;
+            width: auto;
+            opacity: .5;
+            border-radius: .5em;
+        }
+
+        span {
+            @include util.absolute-center;
+            @include util.horizontal-box;
+            width: max-content;
+            background-color: var(--color-lvl);
+        }
+
+        &#{const.$hover} {
+            @include util.bring-out(1.05);
+
+            img {
+                opacity: 1;
+            }
+
+            span {
+                @include util.color-accent;
+            }
+        }
+    }
+}

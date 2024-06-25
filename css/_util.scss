@@ -1,0 +1,236 @@
+@use 'const';
+
+/* Utilities
+ * 
+ * Increase stylesheet expressivity. May not be semantic.
+ */
+/* Super annotation
+ *
+ * An annotation as an exponent
+ */
+@mixin sup-annotation {
+    align-self: normal;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 1px;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    vertical-align: text-top;
+}
+
+/* Shallow list item
+ *
+ * Display contents on children <li>, inherit layout properties. Similar to the HTML transparent content model.
+ */
+@mixin shallow-li {
+    > li {
+        display: contents;
+
+        > * {
+            padding: inherit;
+            margin: inherit;
+            border-radius: inherit;
+            @content;
+        }
+    }
+}
+
+/* Gapped children
+ *
+ * Display flex, gap based on line height.
+ */
+@mixin gapped($flex-direction: column, $flex-wrap: nowrap) {
+    display: flex;
+    flex-flow: $flex-direction $flex-wrap;
+    gap: 1lh;
+}
+
+/* Justify
+ *
+ * Justify and hyphenate. Replaces `text-align: justify`.
+ */
+@mixin justify {
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Bring out element
+ *
+ * Scale the element.
+ *
+ * $factor: scale() argument -> scaling factor
+ */
+@mixin bring-out($factor) {
+    @media (prefers-reduced-motion: no-preference) {
+        transform: scale($factor);
+    }
+}
+
+/* Basic border
+ *
+ * A basic border around the element. Color is foreground, .125 alpha.
+ *
+ * $width: border-width value -> border width
+ */
+@mixin basic-border($width) {
+    border-width: $width;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), .125);
+}
+
+/* Accent color foreground 
+ *
+ * Adapt the foreground to the accent color for better contrast.
+ */
+@mixin color-accent-fg {
+    --color-fg: white;
+    --color-fg-rgb: 255, 255, 255;
+}
+
+/* Accent color
+ *
+ * Set the background to the accent color and adapt the foreground color.
+ *
+ * $opacity: number [0..1] -> accent background color opacity
+ */
+@mixin color-accent($opacity: 1) {
+    @include color-accent-fg;
+    background-color: rgba(var(--color-accent-rgb), $opacity);
+}
+
+/* Level 1 content
+ *
+ * Content spanning over the width of the entire viewport. One level of nesting inside the main element (direct child of the main element).
+ *
+ * $border-width: border-width value -> border width
+ */
+@mixin lvl1-content($border-width) {
+    @include basic-border($border-width);
+    background-color: var(--color-lvl);
+    padding: 1em const.$full-width-horizontal-margin;
+}
+
+/* Absolue fill
+ *
+ * Position absolutely and fill all available space.
+ */
+@mixin absolute-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Hover card 
+ *
+ * Position relatively. Represents an interactive card covered by an anchor.
+ */
+@mixin hover-card {
+    position: relative;
+}
+
+/* Hover card target
+ *
+ * The anchor element of an hover card.
+ */
+@mixin hover-card-target {
+    text-decoration: none;
+
+    &:after {
+        content: "";
+        @include absolute-fill;
+    }
+}
+
+/* Transparent background image
+ *
+ * Define a transparent background image.
+ *
+ * $varname-img: <image>                  -> the background image.
+ * $color-rgb:   rgb() or rgba() argument -> the backging color (also used as a fallback if $varname-img is not defined)
+ * $opacity:     real [0..1]              -> the opacity of the image
+ * $origin:      <visual-box>             -> origin of the background image layer
+ *
+ * As sometimes the gradient is a little bit smaller than the image, the origin of the color background layer is set to `border-box` as a workaround.
+ *
+ * Todo: fix background color transition. Currently: instant. Expected: transition-duration
+ */
+@mixin transparent-background-image($varname-img, $color-rgb, $opacity, $origin: padding-box) {
+    $color: rgba($color-rgb, calc(1 - $opacity));
+    $gradient: linear-gradient($color, $color);
+    background:
+        border-box $gradient,
+        $origin var($varname-img, rgb($color-rgb)) no-repeat;
+    background-size: cover;
+}
+
+/* Absolute center
+ *
+ * Position absolutely and center in parent, horizontally and vertically.
+ */
+@mixin absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Horizontal box
+ *
+ * Appropriate padding and radius for an horizontal box.
+ *
+ * $padding-factor:       number -> padding multiplier
+ * $border-radius-factor: number -> border radius multiplier
+ */
+@mixin horizontal-box($padding-factor: 1, $border-radius-factor: 1) {
+    padding: calc($padding-factor * .25lh) calc($padding-factor * 1ch);
+    border-radius: calc($border-radius-factor * .25lh);
+}
+
+/* Size graphics
+ *
+ * Size graphics children accordingly.
+ *
+ * $height:     height value     -> children graphics height
+ * $width:      width value      -> children graphics width
+ * $object-fit: object-fit value -> children graphics object-fit
+ */
+@mixin size-graphics($height, $width, $object-fit: contain) {
+    #{const.$graphic} {
+        height: $height;
+        width: $width;
+        object-fit: $object-fit;
+    }
+}
+
+/* Gray when not hover 
+ *
+ * The element is grayed out when it is not hovered.
+ */
+.gray-when-not-hover:not(#{const.$hover}) {
+    filter: grayscale(100%);
+    opacity: .5;
+}
+
+/* Adapet for accent background color
+ *
+ * Appropriate styles to maintain legibility when the element has an accent background color.
+ */
+@mixin adapt-accent-bg {
+    .list-rect > li {
+        background-color: var(--color-lvl);
+    }
+
+    /* Adapt foreground to accent color (except tag list). */
+    :not(.list-rect) {
+        @include color-accent-fg;
+    }
+
+    /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
+    .link {
+        color: var(--color-fg);
+        text-decoration: underline;
+    }
+}

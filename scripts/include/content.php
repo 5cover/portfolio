@@ -26,7 +26,7 @@ function put_scripts(Page $page) { ?>
     <?php }
 }
 
-function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css', array $additionalStylesheets = []) { ?>
+function put_head(Page $page, Lang $lang, array $additionalStylesheets = []) { ?>
 
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
@@ -35,14 +35,13 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
         <link rel="manifest" href="/portfolio/site.webmanifest">
         <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
         <?php
         $g = glob_web('/portfolio/css/' . $page->name . '.css');
         if (count($g) == 1) { ?>
             <link rel="stylesheet" type="text/css" href="<?php echo get_web_url($g[0]) ?>">
-        <?php } else { ?>
-            <link rel="stylesheet" type="text/css" href="/portfolio/css/<?php echo $fallbackStylesheet ?>">
         <?php } ?>
-        <?php echo implode('', array_map(fn($url) => "<link rel=\"stylesheet\" href=\"$url\">", $additionalStylesheets)) ?>
+        <?php echo implode('', array_map(fn($url) => "<link rel=\"stylesheet\" href=\"/portfolio/css/$url\">", $additionalStylesheets)) ?>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">

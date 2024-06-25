@@ -277,3 +277,16 @@ Maybe we could have a class, something like `.lvl`. So our selector would be lik
 - ...
 
 Maybe we could base it on `:root`? Since header and footer are lvl 1
+
+## Restyle history
+
+- Proper border radius
+- Better background color (current is too bright)
+
+## reference const ant util
+
+no longer forward
+
+## Put *.SCSS in main/
+
+That way, they won't be on the website. Also I won't need the extension anymore, i can simply compile them in *generate.sh*.

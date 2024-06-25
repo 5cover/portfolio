@@ -1,0 +1,369 @@
+@use 'util';
+@use 'const';
+
+/* Components
+ * 
+ * Provide reusable components. Semantic.
+ *
+ * Definition of a component:
+ *
+ * - semantics over utilities
+ * - name related to the content
+ * - reusing requires a similar markup structure
+ * - can be specialized in page stylesheets
+ *
+ * Mixin: use to reference the component from stylesheet
+ * Class: use to reference the component from HTML with the default arguments (do not use @extend)
+ */
+/* Home nav link
+ *
+ * The link to the homepage in the navbar.
+ */
+@mixin nav-home-link {
+    font-size: 1.75em;
+    font-weight: 500;
+    width: fit-content;
+}
+
+/* Button link
+ *
+ * A link that looks like a button.
+ */
+@mixin button-link($padding-factor: 1) {
+    @include util.horizontal-box($padding-factor);
+    background-color: var(--color-lvl);
+
+    &#{const.$hover} {
+        @include util.bring-out(1.05);
+        @include util.color-accent;
+        @include util.adapt-accent-bg;
+
+        :link {
+            text-decoration: none;
+        }
+    }
+}
+
+.button-link {
+    @include button-link(2);
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+/* Iconed text
+ *
+ * An element containing a graphic that is sized to the neighbouring text.
+ */
+@mixin iconed-text($factor: 1) {
+    #{const.$graphic} {
+        height: calc(1em * $factor);
+        width: auto;
+        margin-right: calc(.5ch * $factor);
+    }
+
+    * {
+        vertical-align: middle;
+    }
+}
+
+.iconed-text {
+    @include iconed-text;
+}
+
+/* Flag list
+ *
+ * List of flags.
+ */
+.list-flags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em
+}
+
+/* Theme switch control
+ *
+ * Set of theme switches.
+ */
+.theme-switches {
+    display: flex;
+    border-radius: .25em;
+    @include util.basic-border(1px);
+
+    input {
+        @include util.absolute-fill();
+        opacity: 0;
+    }
+
+    label {
+        position: relative;
+        padding: .25em;
+        width: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:last-of-type {
+            border-top-right-radius: inherit;
+            border-bottom-right-radius: inherit;
+        }
+
+        &:first-of-type {
+            border-top-left-radius: inherit;
+            border-bottom-left-radius: inherit;
+        }
+
+        &:has(input#{const.$hover}) {
+            @include util.color-accent(.5);
+        }
+
+        &:has(input:checked) {
+            @include util.color-accent;
+        }
+
+        + label {
+            @include util.basic-border(0 0 0 1px);
+        }
+
+        input {
+            cursor: pointer;
+        }
+    }
+}
+
+/* Rectangle list
+ *
+ * A list of small, (ideally) horizontal rectancgles
+ */
+.list-rect {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+
+    > li {
+        @include util.horizontal-box(.7, 1.4);
+        font-size: .9em;
+    }
+}
+
+/* Link list
+ *
+ * List of links
+ */
+.list-link {
+    display: flex;
+    list-style: none;
+}
+
+/* Project list
+ *
+ * A list of projects
+
+ * Domain classes:
+ * - logo: project logo graphic
+ * - abstract: project abstract text
+ * - context: project context text
+ * - status: project status text
+ */
+.list-project {
+    gap: 1em;
+    display: flex;
+    flex-flow: row wrap;
+
+    /* Increase z-index to stand out above the card link */
+    :is(.list-link, .list-rect) > li {
+        z-index: 1;
+    }
+
+    .link,
+    abbr {
+        z-index: 1;
+        /* Creates a stacking context */
+        position: relative;
+    }
+
+    > li {
+        @include util.hover-card;
+        @include util.transparent-background-image(--bg-img-project, var(--color-lvl-rgb), .15);
+        list-style: none;
+        @include util.basic-border(1px);
+        display: grid;
+        grid-template: repeat(4, auto) 1fr min-content / 1fr auto;
+        $space: .75em;
+        row-gap: $space;
+        border-radius: $space;
+        padding: $space;
+        flex-basis: 20em;
+        /* Required to clip the :before pseudo-element to the card's boundaries */
+        overflow: hidden;
+
+        /* Tag list */
+        .list-rect {
+            grid-column: 1 / 3;
+
+            > li#{const.$hover} {
+                @include util.bring-out(1.15);
+                z-index: 1;
+            }
+        }
+
+        h3 > a {
+            @include util.hover-card-target;
+        }
+
+        .logo {
+            grid-row: 2/6;
+            grid-column: 2;
+            height: 4lh;
+            width: auto;
+            max-width: 25ch;
+            object-fit: contain;
+            margin: auto 0;
+        }
+
+        h3 {
+            grid-row: 2;
+            margin: 0;
+        }
+
+        .context {
+            grid-row: 3;
+        }
+
+        .status {
+            grid-row: 4;
+        }
+
+        .abstract {
+            grid-row: 5;
+            align-content: center;
+        }
+
+        .list-link {
+            @include util.size-graphics(1.5em, 1.5em);
+            gap: .5em;
+            grid-row: 6;
+            grid-column: 1 / 3;
+            flex-direction: row-reverse;
+            align-items: flex-end;
+
+            > #{const.$hover} {
+                @include util.bring-out(1.15);
+                z-index: 1;
+            }
+        }
+
+        &#{const.$hover} {
+            /* Invert the colors: background in orange */
+            @include util.transparent-background-image(--bg-img-project, var(--color-accent-rgb), .15);
+            @include util.adapt-accent-bg;
+        }
+
+        &:not(#{const.$hover}) {
+            .list-rect > li {
+                @include util.color-accent;
+            }
+        }
+    }
+}
+
+/* Definition
+ *
+ * An that explains a concept. Can be shown as a tooltip
+
+ * Domain classes:
+ * - definition-tooltip: tooltip form of the definition
+ * - definition-tooltip-trigger: trigger of the definition tooltip form
+ */
+.definition {
+    @include util.size-graphics(2.5lh, auto);
+    $space: .75em;
+    background-color: var(--color-lvl);
+    border-radius: $space;
+    row-gap: $space;
+    display: grid;
+    font-size: .8em;
+    grid-template: min-content min-content 1fr / 1fr auto;
+    padding: $space;
+    position: relative;
+
+    .link,
+    abbr {
+        z-index: 1;
+        /* Creates a stacking context */
+        position: relative;
+    }
+
+    > h4 a {
+        @include util.hover-card-target;
+    }
+
+    > #{const.$graphic} {
+        grid-row: 1 / 3;
+        grid-column: 2;
+    }
+
+    > p:nth-last-child(2) {
+        grid-row: 2;
+        grid-column: 1 / 3;
+    }
+
+    > p:nth-last-child(1) {
+        grid-row: 3;
+        grid-column: 1 / 3;
+        align-content: center;
+    }
+
+    &:not(&-tooltip) {
+        @include util.transparent-background-image(--bg-img-definition, var(--color-lvl-rgb), .1);
+    }
+
+    &-tooltip {
+        @include util.transparent-background-image(--bg-img-definition, var(--color-lvl-next-rgb), .1);
+        width: max-content;
+        left: -$space;
+        bottom: 110%;
+        position: absolute;
+
+        &-trigger {
+            cursor: pointer;
+            font-style: italic;
+        }
+
+        &#{const.$hover},
+        &-trigger#{const.$hover} ~ & {
+            opacity: 1;
+            z-index: 2;
+            transition-delay: 500ms;
+        }
+
+        &-trigger:not(#{const.$hover}) ~ &:not(#{const.$hover}) {
+            transition-delay: 250ms;
+            pointer-events: none;
+            user-select: none;
+            opacity: 0;
+        }
+    }
+}
+
+:has(> .definition-tooltip) {
+    position: relative;
+}
+
+/* Content block
+ *
+ * A block containing a limited amount of content, defined by a singular purpose.
+ */
+.content-block {
+    border-radius: 1.5em;
+    background-color: var(--color-lvl);
+    padding: 1.5em;
+    align-self: center;
+    max-width: 100%;
+
+    h2 {
+        margin-bottom: .5em;
+    }
+}

@@ -1,0 +1,366 @@
+@use 'const';
+@use 'util';
+@use 'components';
+@use 'sass:list';
+
+@property --bg-img {
+    syntax: '*';
+    inherits: false;
+}
+
+@mixin theme($accent, $fg, $c0, $c1, $c2, $c3) {
+    /* *-rgb: workaround until relative colors get widespread support */
+    accent-color: rgb(list.nth($accent, 1), list.nth($accent, 2), list.nth($accent, 3));
+    --color-accent: rgb(#{$accent});
+    --color-accent-rgb: #{$accent};
+    --color-fg: rgb(#{$fg});
+    --color-fg-rgb: #{$fg};
+    --color-lvl: rgb(#{$c0});
+    --color-lvl-rgb: #{$c0};
+    --color-lvl-next: rgb(#{$c1});
+    --color-lvl-next-rgb: #{$c1};
+
+    .lvl {
+        --color-lvl: rgb(#{$c1});
+        --color-lvl-rgb: #{$c1};
+        --color-lvl-next: rgb(#{$c2});
+        --color-lvl-next-rgb: #{$c2};
+
+        .lvl {
+            --color-lvl: rgb(#{$c2});
+            --color-lvl-rgb: #{$c2};
+            --color-lvl-next: rgb(#{$c3});
+            --color-lvl-next-rgb: #{$c3};
+
+            .lvl {
+                --color-lvl-rgb: #{$c3};
+                --color-lvl: rgb(#{$c3});
+            }
+        }
+    }
+}
+
+$accent: 166, 97, 68;
+
+@mixin theme-dark {
+    $fg: 238, 238, 238;
+    $c0: 17,17,17;
+    $c1: 34,34,34;
+    $c2: 51,51,51;
+    $c3: 68,68,68;
+    @include theme($accent, $fg, $c0, $c1, $c2, $c3);
+}
+
+@mixin theme-light {
+    $fg: 17, 17, 17;
+    $c0: 238, 238, 238;
+    $c1: 221, 221, 221;
+    $c2: 204, 204, 204;
+    $c3: 187, 187, 187;
+    @include theme($accent, $fg, $c0, $c1, $c2, $c3);
+}
+
+:root {
+    background-color: var(--color-lvl);
+    color: var(--color-fg);
+    font-family: Roboto, system-ui;
+    font-size: 20px;
+    scroll-behavior: smooth;
+    scrollbar-color: gray transparent;
+}
+
+:root[data-theme="dark"] {
+    @include theme-dark;
+}
+
+:root[data-theme="light"] {
+    @include theme-light;
+}
+
+:root[data-theme="system"] {
+    @media (prefers-color-scheme: dark) {
+        @include theme-dark;
+    }
+
+    @media (prefers-color-scheme: light) {
+        @include theme-light;
+    }
+}
+
+/* Chromium issue: transitions stack (children wait for parents to finish their transition before doing their own) */
+/* Solution: apply all transitions only to leaf elements. In non-leaf elements, transition only properties that are unrelated to the textual content */
+$non-leaf-transition-properties: background-color,
+    background-attachment,
+    background-clip,
+    background-image,
+    background-origin,
+    background-position,
+    background-repeat,
+    background-size,
+    transform,
+    opacity,
+    filter;
+
+* {
+    box-sizing: border-box;
+    transition-duration: calc(1s / 3);
+    transition-property: $non-leaf-transition-properties;
+}
+
+/* Leaf elements */
+:not(:has(*)) {
+    transition-property:
+        $non-leaf-transition-properties,
+        color,
+        text-decoration,
+        fill,
+        stroke;
+}
+
+.fi {
+    color: transparent;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+p,
+figure,
+input,
+samp,
+code,
+kbd,
+pre,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+address {
+    font-style: normal;
+}
+
+blockquote {
+    $border-width: calc(1ch / const.$phi);
+    $margin-padding-ratio: 1;
+    padding-left: calc(1em - $border-width / 2);
+    margin-left: calc(min(1vw, 1em) - $border-width / 2);
+    width: fit-content;
+    border-left: $border-width solid var(--color-lvl);
+
+    footer {
+        text-align: right;
+    }
+}
+
+:not(pre) > :is(code, samp, kbd) {
+    background-color: var(--color-lvl);
+    @include util.horizontal-box(.4);
+}
+
+pre {
+    background-color: var(--color-lvl);
+    @include util.horizontal-box(2, 1);
+}
+
+small {
+    font-size: 1em;
+    color: rgba(var(--color-fg-rgb), .5)
+}
+
+p {
+    line-height: calc(1ex / .32);
+    max-width: const.$max-line-length;
+}
+
+$p-margin: calc(1ex / 0.32);
+
+.text p,
+p.text {
+    &:first-of-type:not(:last-of-type) {
+        text-indent: 2cap;
+    }
+}
+
+p.text {
+    margin: $p-margin 0;
+}
+
+.text p {
+    &:not(:first-child) {
+        margin-top: $p-margin;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: $p-margin;
+    }
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.75em;
+    font-weight: 500;
+    line-height: calc(1ex / 0.42);
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: calc(1ex / 0.38);
+    margin-bottom: 1lh;
+}
+
+h4 {
+    font-size: 1.25em;
+    font-weight: 500;
+    line-height: calc(1ex / 0.37);
+}
+
+body {
+    max-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    gap: const.$full-width-vertical-margin;
+    grid-template-rows: auto 1fr auto;
+
+    > * {
+        max-width: inherit;
+    }
+}
+
+a:not(#{const.$hover}) {
+    text-decoration: none;
+}
+
+a:not(.link, .fi) {
+    color: inherit;
+}
+
+/* Opt-in basic style classes
+ *
+ * Define basic styles for common elements with explicit opt-in
+ */
+/* Link
+ *
+ * Intended for: <a>
+ */
+.link:link {
+    color: #a66144;
+}
+
+.link:visited {
+    color: #91553b;
+}
+
+.link#{const.$hover} {
+    color: #be7c60;
+}
+
+.link[target='_blank']:after {
+    @include util.sup-annotation;
+    content: '🡭';
+    display: inline-block;
+    font-size: .4em;
+    text-decoration: none;
+    user-select: none;
+}
+
+/* Figure
+ *
+ * Intended for: <figure>
+ */
+.figure {
+    @include util.basic-border(1px);
+    background-color: var(--color-lvl);
+    max-width: min(100%, 26em);
+
+    > figcaption {
+        @include util.horizontal-box(2.5, 1.25);
+        text-align: center;
+    }
+
+    > :not(figcaption) {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+    }
+}
+
+/* Page structure */
+body {
+    > header {
+        @include util.lvl1-content(0 0 1px 0);
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2em;
+        row-gap: 1em;
+        justify-content: space-between;
+        height: fit-content;
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            column-gap: 3em;
+            row-gap: 1.5em;
+
+            > a {
+                @include components.nav-home-link;
+            }
+
+            > ul {
+                display: flex;
+                list-style: none;
+                column-gap: 2em;
+                row-gap: 1em;
+                flex-wrap: wrap;
+
+                a {
+                    font-size: 1.25em;
+                }
+            }
+
+            a[href="#"] {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    > main {
+        grid-row: 2;
+        display: flex;
+        flex-direction: column;
+        gap: const.$full-width-vertical-margin;
+    }
+
+    > footer {
+        @include util.lvl1-content(1px 0 0 0);
+        grid-row: 3;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        small {
+            @media screen and (min-width: 570px) {
+                margin-left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        a > #{const.$graphic}#{const.$hover} {
+            @include util.bring-out(1.15);
+        }
+    }
+}

@@ -33,3 +33,7 @@ site
 ```
 
 Imagine I had Hebrew and i needed right to left layout in CSS. I can link my hebrew-specific stylesheet.
+
+### JSON markup processing
+
+Markup string expressed in JSON support special instructions evaluated in PHP.

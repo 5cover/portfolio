@@ -46,10 +46,6 @@ At the bottom of each project page.
 
 Show up to a row, so maybe 5? that feels like a good number. Of course it may span over multiple rows on mobile.
 
-## Put *.SCSS in main/
-
-That way, they won't be on the website. Also I won't need the extension anymore, i can simply compile them in *generate.sh*.
-
 ## Large image preview
 
 for project gallery but not only
@@ -101,6 +97,10 @@ However, I still think C is an invaluable language to learn. It forces you to le
 
 Learning C is better than any amount of Leetcode challenges.
 
+## Increase the contrast between lvl 1 and 2
+
+currently it is too small, which result in small elements not standing out from the background enough. this is an accesssibility concern.
+
 ## Fix project content
 
 ### tell more in story
@@ -150,11 +150,6 @@ S1.01 : host doxygen generated html on gh-pages, add link
 - S1.02, S1.01 : shells
 - S1.01 : documentation
 
-## Restyle history
-
-- Proper border radius
-- Better background color (current is too bright)
-
 ## Rechercher/remplacer les définitions
 
 Préprocesser toutes les pages en PHP. Ajouter le tooltip dans tout les contenus où il y a un nom de définition.
@@ -162,3 +157,35 @@ Préprocesser toutes les pages en PHP. Ajouter le tooltip dans tout les contenus
 Est-ce que ce serait pas mieu de le faire manuellement? Comme ça on évit tout faux positif. Et puis on peut choisir si on autorise une tooltip ou non.
 
 Oui peut-être bien qu'il faudrait le faire manuellement.
+
+## PHP procession of json
+
+- insert a definition tooltip (i want it to be explicit)
+- reference numbering
+- insert a target="_blank" link
+
+implementation: preg-replace callback?
+
+## Put project story json in a separate file
+
+It's kind of a pain having to write HTML in JSON manually. There's no support for newlines and double quotes need to be escaped.
+
+it would be better to store them as fragments in another file.
+
+List of JSON html properties
+
+file|location|content category
+-|-|-|
+types|*|flow
+tags|*|flow
+projects|context|phrasing
+projects|story|flow
+projects|title|phrasing
+projects|abstract|phrasing
+projects|link keys|phrasing
+projects|reference keys|phrasing
+projects|gallery keys|phrasing
+definition|synopsis|phrasing
+definition|names items|phrasing
+langs|all strings except indexAboutMeContent|phrasing
+langs|indexAboutMeContent|flow
