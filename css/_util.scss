@@ -84,7 +84,6 @@
  * Adapt the foreground to the accent color for better contrast.
  */
 @mixin color-accent-fg {
-    color: white;
     --color-fg: white;
     --color-fg-rgb: 255, 255, 255;
 }

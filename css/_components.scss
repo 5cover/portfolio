@@ -142,7 +142,7 @@
     gap: .5em;
 
     > li {
-        @include util.horizontal-box(.7, 1.6);
+        @include util.horizontal-box(.7, 1.4);
         font-size: .9em;
     }
 }
@@ -194,7 +194,7 @@
         row-gap: $space;
         border-radius: $space;
         padding: $space;
-        width: 20em;
+        flex-basis: 20em;
         /* Required to clip the :before pseudo-element to the card's boundaries */
         overflow: hidden;
 
@@ -264,12 +264,13 @@
             }
 
             /* Adapt foreground to accent color (except tag list). */
-            > :not(.list-rect) {
+            :not(.list-rect) {
                 @include util.color-accent-fg;
             }
 
             /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
             .link {
+                color: var(--color-fg);
                 text-decoration: underline;
             }
         }

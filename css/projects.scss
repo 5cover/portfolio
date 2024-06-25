@@ -42,7 +42,8 @@
 }
 
 #list-sorting > li {
-    border-radius: base.$huge-val;
+    @include base.horizontal-box(1, Infinity);
+    
 }
 
 #project-list {
