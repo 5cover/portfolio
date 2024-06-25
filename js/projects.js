@@ -1,3 +1,5 @@
+"use strict";
+
 jQuery(document).ready(async _ => {
     function createLi(contents) {
         const li = document.createElement('li');
@@ -10,13 +12,19 @@ jQuery(document).ready(async _ => {
     const searchInput = document.getElementById('search-input');
     const listTags = document.getElementById('list-tag');
 
-    const lang = document.getElementsByTagName('html')[0].lang
+    {
+        const dateFmt = new Intl.DateTimeFormat(document.documentElement.lang, {
+            "dateStyle": "long"
+        });
+        var formatDate = function (dateStr) {
+            return dateFmt.format(Date.parse(dateStr));
+        }
+    }
 
-    // Fetch project data from JSON file
-
+    // Fetch JSON data
     const [projects, tags, anchors] = await Promise.all([
-        fetch(`/portfolio/data/${lang}/projects.json`).then(res => res.json()).catch(err => { throw err }),
-        fetch(`/portfolio/data/${lang}/tags.json`).then(res => res.json()).catch(err => { throw err }),
+        fetch(`/portfolio/data/${document.documentElement.lang}/projects.json`).then(res => res.json()).catch(err => { throw err }),
+        fetch(`/portfolio/data/${document.documentElement.lang}/tags.json`).then(res => res.json()).catch(err => { throw err }),
         fetch(`/portfolio/data/anchors.json`).then(res => res.json()).catch(err => { throw err }),
     ]);
 
@@ -99,7 +107,7 @@ jQuery(document).ready(async _ => {
             '', project.logo)}
             <h3><a href="project/${id}.html">${project.title}</a></h3>
             <p class="context"><small>${ucfirst(project.context)}</small></p>
-            <p class="status"><small>${project['start-date']} – ${project['end-date'] || 'en cours'}</small></p>
+            <p class="status"><small>${getStatus(project)}</small></p>
             <p class="abstract">${project.abstract}</p>
             <ul class="list-link">
                 ${(await Promise.all(Object.entries(project.links).map(async ([name, link]) => {
@@ -108,5 +116,11 @@ jQuery(document).ready(async _ => {
             }))).join('')}
             </ul>
         </li>`
+    }
+
+    function getStatus(project) {
+        const startDate = formatDate(project['start-date']);
+        const endDate = map(formatDate, 'en cours', project['end-date']);
+        return `${startDate} – ${endDate}`;
     }
 });

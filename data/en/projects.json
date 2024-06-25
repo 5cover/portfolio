@@ -1,8 +1,8 @@
 {
     "2l2w-french-rural-road": {
         "context": "personnal",
-        "start-date": "Juin 2021",
-        "end-date": "Octover 2, 2022",
+        "start-date": "2021-06-15",
+        "end-date": "2022-10-02",
         "title": "2L2W French Rural Road",
         "abstract": "Up to code French road asset",
         "story": "<p>I've always found that in Cities: Skylines the cities have a rather bland and homogeneous international look. Where are the taste, the emotion, the particularity, all these things that make up the charm of a city? So I tried to reproduce European towns and villages, particularly French ones. And this is what created the need for a French road, which respects real standards for road markings and signs. No one had done it yet on the Workshop, so I gave it a try. I thus discovered the basics of texturing and 3D modeling.</p><p>Getting a foot in the world of 3D modeling and game design has been an enriching experience for me, even if I won't make it a passion.</p>",
@@ -26,7 +26,7 @@
     "tregoria": {
         "title": "Trégoria",
         "context": "personnal",
-        "start-date": "October 2022",
+        "start-date": "2022-10-15",
         "abstract": "A perspective on our environment in Cities: Skylines",
         "story": "<p>Pour moi, ces détails forment la beauté de notre environnement.</p><p>Trégoria, c'est un groupement de communes, avant tout né d'une affection profonde pour mon lieu de vie et d'une attention particulière pour les détails invisibles de notre environnement. Vous savez, toutes ces choses qu'on voit sans voir, les lampadaires, les lignes éléctriques, les bottes de foin dans les champs...</p>",
         "technologies": [],
@@ -46,7 +46,7 @@
     "winclean": {
         "title": "WinClean",
         "context": "personnal",
-        "start-date": "August 2021",
+        "start-date": "2021-08-15",
         "background": "/portfolio/img/project/winclean/bg.png",
         "abstract": "Windows optimization and debloating utility",
         "story": "<p>Computers are extremely powerful and advanced compared to how they were just a few decades ago. Nowadays, even low-tier CPUs performs several billion calculations per second. It's really incredible to think that the device that you're using to read this right now is this powerful.</p><p>We've become so dependent of computers over the years without understanding their complex inner workings. We boot up our devices, run software, play games, go on the internet and we've become intolerant to any sort of failure or latency. We often complain of the slowness of computers without ever thinking of all the complexity of making all what they offer actually work.</p><p>Is that an issue? Should we instead bear unsatisfying computer experiences, and never complain?</p><p>As the creator of WinClean, I don't think so. We should do the exact opposite. We have a right to be furious when things don't work well. Why? Billions of calculations per second. What can't you do with that?</p><p>Just ask it, why does it always have to be so painstakingly slow ?</p><p>So, whose fault is it? Bad software? Bad hardware? Who cares? Clean it up!</p>",

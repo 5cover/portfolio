@@ -103,6 +103,10 @@ blockquote {
     padding: 0;
 }
 
+address {
+    font-style: normal;
+}
+
 blockquote {
     $border-width: calc(1ch / const.$phi);
     $margin-padding-ratio: 1;
@@ -127,6 +131,7 @@ pre {
 }
 
 small {
+    font-size: 1em;
     color: rgba(var(--color-fg-rgb), .5)
 }
 

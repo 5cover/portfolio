@@ -23,9 +23,9 @@ a[id^="cite-"] {
 }
 
 #header {
-    $gap: .5lh;
+    $gap: .75lh;
     display: grid;
-    grid-template: repeat(5, auto) / auto auto;
+    grid-template: repeat(4, auto) / auto auto;
     row-gap: $gap;
 
     h1 {
@@ -77,7 +77,6 @@ a[id^="cite-"] {
 
         small {
             display: inline-block;
-            font-size: 1em;
         }
     }
 }
@@ -139,7 +138,8 @@ a[id^="cite-"] {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    gap: 1em;
+    row-gap: min(3vw, 3em);
+    column-gap: 3em;
 
     @include base.shallow-li {
         flex: 1;

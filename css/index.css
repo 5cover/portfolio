@@ -291,8 +291,8 @@
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
   display: grid;
-  grid-template: min-content repeat(4, auto) min-content/1fr auto;
-  row-gap: 0.5em;
+  grid-template: repeat(4, auto) 1fr min-content/1fr auto;
+  row-gap: 0.75em;
   border-radius: 0.75em;
   padding: 0.75em;
   width: 20em;
@@ -334,6 +334,7 @@
 }
 .list-project > li h3 {
   grid-row: 2;
+  margin: 0;
 }
 .list-project > li .context {
   grid-row: 3;
@@ -343,6 +344,7 @@
 }
 .list-project > li .abstract {
   grid-row: 5;
+  align-content: center;
 }
 .list-project > li .list-link {
   gap: 0.5em;
@@ -403,11 +405,12 @@
   background: border-box linear-gradient(rgba(var(--color-lvl2-rgb), 0.9), rgba(var(--color-lvl2-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl2-rgb))) no-repeat;
   background-size: cover;
   background-color: var(--color-lvl2);
-  border-radius: 1em;
+  border-radius: 0.75em;
+  row-gap: 0.75em;
   display: grid;
   font-size: 0.8em;
-  grid-template: 1fr 1fr auto/1fr auto;
-  padding: 1em;
+  grid-template: min-content min-content 1fr/1fr auto;
+  padding: 0.75em;
   position: relative;
 }
 .definition :is(img, svg) {
@@ -444,11 +447,12 @@
 .definition > p:nth-last-child(1) {
   grid-row: 3;
   grid-column: 1/3;
+  align-content: center;
 }
 .definition-tooltip {
   width: -moz-max-content;
   width: max-content;
-  left: -1em;
+  left: -0.75em;
   bottom: 110%;
   position: absolute;
 }
@@ -572,6 +576,10 @@ blockquote {
   padding: 0;
 }
 
+address {
+  font-style: normal;
+}
+
 blockquote {
   padding-left: calc(1em - 0.3090169944ch);
   margin-left: calc(min(1vw, 1em) - 0.3090169944ch);
@@ -596,6 +604,7 @@ pre {
 }
 
 small {
+  font-size: 1em;
   color: rgba(var(--color-fg-rgb), 0.5);
 }
 

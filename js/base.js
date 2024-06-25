@@ -26,7 +26,7 @@ for (let i = 0; i < switches.length; i++) {
  * @template TResult
  * @param {(arg: T) => TResult} transform
  * @param {TResult} fallback
- * @param {T} value
+ * @param {T | null | undefined} value
  * @returns { TResult }
  */
 function map(transform, fallback, value) {
