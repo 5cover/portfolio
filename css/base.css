@@ -540,16 +540,16 @@
 * {
   box-sizing: border-box;
   transition-duration: 0.3333333333s;
-  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, -webkit-background-clip;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, -webkit-background-clip;
+  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, -webkit-background-clip;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, -webkit-background-clip;
 }
 
 /* Leaf elements */
 :not(:has(*)) {
-  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, color, -webkit-background-clip, -webkit-text-decoration;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, color, text-decoration;
-  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, fill, stroke, color, text-decoration, -webkit-background-clip, -webkit-text-decoration;
+  transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, color, fill, stroke, -webkit-background-clip, -webkit-text-decoration;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, color, text-decoration, fill, stroke;
+  transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, color, text-decoration, fill, stroke, -webkit-background-clip, -webkit-text-decoration;
 }
 
 .fi {

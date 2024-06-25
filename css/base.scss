@@ -52,7 +52,7 @@
 
 /* Chromium issue: transitions stack (children wait for parents to finish their transition before doing their own) */
 /* Solution: apply all transitions only to leaf elements. In non-leaf elements, transition only properties that are unrelated to the textual content */
-$non-textual-transition-properties: background-color,
+$non-leaf-transition-properties: background-color,
     background-attachment,
     background-clip,
     background-image,
@@ -62,22 +62,22 @@ $non-textual-transition-properties: background-color,
     background-size,
     transform,
     opacity,
-    filter,
-    fill,
-    stroke;
+    filter;
 
 * {
     box-sizing: border-box;
     transition-duration: calc(1s / 3);
-    transition-property: $non-textual-transition-properties;
+    transition-property: $non-leaf-transition-properties;
 }
 
 /* Leaf elements */
 :not(:has(*)) {
     transition-property:
-        $non-textual-transition-properties,
+        $non-leaf-transition-properties,
         color,
-        text-decoration;
+        text-decoration,
+        fill,
+        stroke;
 }
 
 .fi {
