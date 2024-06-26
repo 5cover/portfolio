@@ -18,12 +18,11 @@
                 "minItems": 1,
                 "uniqueItems": true,
                 "items": {
-                    "type": "string"
+                    "$ref": "html.json"
                 }
             },
             "synopsis": {
-                "type": "string",
-                "minLength": 1
+                "$ref": "html.json"
             },
             "type": {
                 "enum": [

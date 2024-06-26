@@ -290,3 +290,48 @@ no longer forward
 ## Put *.SCSS in main/
 
 That way, they won't be on the website. Also I won't need the extension anymore, i can simply compile them in *generate.sh*.
+
+### The data linking phase
+
+what i need to do:
+
+1. update the json shemas and data: union html string with an object { isFragment: boolean; filename: string; }
+2. write the fragments in php. require a library (fragment.php) that will provide the features that we want
+3. write the json linker php script. it will read the jsons in the data directory, replace the fragment objects with strings (to run the php and collect stdout: exec?) and encode the final jsons to the website directory
+4. call the linker in generate.sh before running the generation scripts.
+
+## Put project story json in a separate file
+
+It's kind of a pain having to write HTML in JSON manually. There's no support for newlines and double quotes need to be escaped.
+
+it would be better to store them as fragments in another file.
+
+List of JSON html properties
+
+file|location|content category
+-|-|-|
+types|*|flow
+tags|*|flow
+projects|context|phrasing
+projects|story|flow
+projects|title|phrasing
+projects|abstract|phrasing
+projects|link keys|phrasing
+projects|reference keys|phrasing
+projects|gallery keys|phrasing
+definition|synopsis|phrasing
+definition|names items|phrasing
+langs|all strings except indexAboutMeContent|phrasing
+langs|indexAboutMeContent|flow
+
+But then what about Javascript? I only want the fragments to take part in the generation. I'd like to avoid having to fetch them in JS or even hosting them online at all.
+
+So... maybe i can preprocess the JSONs? and replace the fragment references with their actual content before running PHP?
+
+Maybe there's a better solution to this I'm not seeing.
+
+All I want is to express HTML content in an PHP file.
+
+I'd lke to have to rely on my own conventions and concepts as little as possible.
+
+I want to add as little complexity as possible to this project.

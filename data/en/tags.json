@@ -1,0 +1,19 @@
+{
+    "3d-modeling": "3D",
+    "art": "Art",
+    "asset-creation": "Assets",
+    "but-administrer": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Administer</span></span>",
+    "but-collaborer": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Collaborate</span></span>",
+    "but-conduire": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Conduct</span></span>",
+    "but-gerer": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Manage</span></span>",
+    "but-optimiser": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Optimize</span></span>",
+    "but-realiser": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Create</span></span>",
+    "full-stack": "Full-stack",
+    "oop": "<abbr title=\"Object Oriented Programming\">OOP</abbr>",
+    "software": "Software",
+    "ui": "<abbr title=\"User Interface\">UI</abbr>",
+    "ux": "<abbr title=\"User Experience\">UX</abbr>",
+    "compiler": "Compiler",
+    "sysadmin": "Sysadmin",
+    "communication": "Communication"
+}

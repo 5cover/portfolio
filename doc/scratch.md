@@ -157,35 +157,3 @@ Préprocesser toutes les pages en PHP. Ajouter le tooltip dans tout les contenus
 Est-ce que ce serait pas mieu de le faire manuellement? Comme ça on évit tout faux positif. Et puis on peut choisir si on autorise une tooltip ou non.
 
 Oui peut-être bien qu'il faudrait le faire manuellement.
-
-## PHP procession of json
-
-- insert a definition tooltip (i want it to be explicit)
-- reference numbering
-- insert a target="_blank" link
-
-implementation: preg-replace callback?
-
-## Put project story json in a separate file
-
-It's kind of a pain having to write HTML in JSON manually. There's no support for newlines and double quotes need to be escaped.
-
-it would be better to store them as fragments in another file.
-
-List of JSON html properties
-
-file|location|content category
--|-|-|
-types|*|flow
-tags|*|flow
-projects|context|phrasing
-projects|story|flow
-projects|title|phrasing
-projects|abstract|phrasing
-projects|link keys|phrasing
-projects|reference keys|phrasing
-projects|gallery keys|phrasing
-definition|synopsis|phrasing
-definition|names items|phrasing
-langs|all strings except indexAboutMeContent|phrasing
-langs|indexAboutMeContent|flow

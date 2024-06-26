@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+shopt -s globstar
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 readonly outdir='../../portfolio'
+readonly data_dir='../../portfolio/data/'
 
 # minify html
 # stdin: html
@@ -32,6 +34,9 @@ generate() {
     >&2 echo ok
 }
 
+# link data JSONs
+./linker.py "$data_dir" ../data/**/*.json
+
 for lang in fr en; do
     # Simple page
     for page in definitions-test index projects but-informatique history passions perspectives; do
@@ -39,7 +44,7 @@ for lang in fr en; do
     done
 
     # Project pages
-    projects="../../portfolio/data/$lang/projects.json"
+    projects="$data_dir/$lang/projects.json"
     for id in $(jq -r 'keys[]' "$projects"); do
         generate "$outdir/$lang/project/$id.html" "$lang" "project/$id" project.php "$(jq -r ".\"$id\"" "$projects")"
     done

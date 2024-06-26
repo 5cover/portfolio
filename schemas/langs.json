@@ -13,7 +13,7 @@
             }
         },
         "additionalProperties": {
-            "type": "string"
+            "$ref": "html.json"
         }
     }
 }

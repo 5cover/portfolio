@@ -1,0 +1,566 @@
+{
+    "s2.06": {
+        "context": "BUT",
+        "story": "todo",
+        "start-date": "2024-04-18",
+        "end-date": "2024-06-06",
+        "title": "Évènement de teambuilding",
+        "abstract": "Planification d'un évènement et réalisation d'un film promotionnel. Organisation d'un travail d'équipe (S2.06)",
+        "technologies": [
+            "github"
+        ],
+        "tags": [
+            "but-collaborer"
+        ],
+        "team": [
+            "chartier--le-goff-marius",
+            "kervadec-matteo",
+            "toe-paolo"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "s2.05": {
+        "context": "BUT",
+        "story": "todo",
+        "start-date": "2024-05-15",
+        "end-date": "2024-06-17",
+        "title": "Gestion d'un projet de développement d'application",
+        "abstract": "Application Java de gestion d'une salle de spectacle. Gestion d'un projet (S2.05)",
+        "technologies": [
+            "github"
+        ],
+        "tags": [
+            "but-conduire",
+            "but-collaborer",
+            "oop"
+        ],
+        "team": [
+            "chartier--le-goff-marius",
+            "kervadec-matteo",
+            "toe-paolo"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "s2.04": {
+        "context": "BUT",
+        "story": "todo",
+        "start-date": "2024-04-23",
+        "end-date": "2024-06-12",
+        "title": "Exploitation de base de données",
+        "abstract": "Data mining sur l'open-data des collèges. Exploitation d'une base de données (S2.04)",
+        "team": [
+            "kervadec-matteo"
+        ],
+        "tags": [
+            "but-gerer",
+            "but-collaborer"
+        ],
+        "technologies": [
+            "replit",
+            "sql",
+            "mysql"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "s2.03": {
+        "context": "BUT",
+        "story": "todo",
+        "start-date": "2024-05-14",
+        "end-date": "2024-06-05",
+        "title": "Mise en place d'un serveur Web",
+        "abstract": "Site de météo avec Apache HTTP Server. Installation de services réseau (S2.03)",
+        "tags": [
+            "but-administrer",
+            "but-collaborer"
+        ],
+        "team": [
+            "chartier--le-goff-marius",
+            "kervadec-matteo",
+            "toe-paolo"
+        ],
+        "technologies": [
+            "github",
+            "php",
+            "apache2",
+            "mysql"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "s2.02": {
+        "context": "BUT",
+        "start-date": "2024-03-11",
+        "end-date": "2024-03-27",
+        "title": "Analyse du problème des N reines",
+        "abstract": "Des solutions innovantes au <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"/portfolio/img/project/s2.02/sujet-sae.pdf\">problème des N reines</a>. Exploration algorithmique d'un problème (S2.02)",
+        "technologies": [
+            "python",
+            "github"
+        ],
+        "tags": [
+            "but-optimiser",
+            "but-collaborer"
+        ],
+        "team": [
+            "chartier--le-goff-marius",
+            "kervadec-matteo",
+            "toe-paolo"
+        ],
+        "story": {
+            "$include": "projects/s2.02.phtml"
+        },
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "s2.01": {
+        "context": "BUT",
+        "start-date": "2024-05-28",
+        "end-date": "2024-06-17",
+        "title": "Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr>",
+        "abstract": "Développement d'une application de gestion de salle de spectacle (S2.01)",
+        "story": "L'objectif de ce projet est de créer une application de gestion d'une salle de spectacle en Java avec une IHM (interface homme machine) en Java FX qui permet au directeur de la salle de gérer les spectacles.",
+        "tags": [
+            "but-realiser"
+        ],
+        "technologies": [
+            "github",
+            "java"
+        ],
+        "team": [
+            "chartier--le-goff-marius",
+            "kervadec-matteo",
+            "toe-paolo"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "s1.06": {
+        "context": "BUT",
+        "start-date": "2023-09-08",
+        "end-date": "2023-06-11",
+        "title": "Environnement économique",
+        "abstract": "Analyse du rapport <abbr title=\"Responsabilité sociétale des entreprises\">RSE</abbr> de Focus Entertainment (S1.06)",
+        "story": "Ce projet consiste à organiser un événement factice de team building pour favoriser la cohésion d'équipe d'une entreprise. En groupe de 4, nous avons produit un court film promotionnel pour cet évènement.",
+        "technologies": [
+            "github"
+        ],
+        "tags": [
+            "but-collaborer"
+        ],
+        "team": [
+            "chartier--le-goff-marius",
+            "kervadec-matteo",
+            "toe-paolo"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "s1.05": {
+        "context": "BUT",
+        "start-date": "2023-10-09",
+        "end-date": "2024-01-21",
+        "title": "Recueil des besoins",
+        "abstract": "Création d'un site de streaming factice (S1.05)",
+        "story": "L'objectif était de concevoir et réaliser un site web répondant aux besoins d’un client recueillis lors d’une interview faite au préalable. Le client était une entreprise qui propose des services de streaming en ligne.",
+        "tags": [
+            "but-conduire",
+            "but-collaborer",
+            "communication"
+        ],
+        "team": [
+            "chartier--le-goff-marius",
+            "kervadec-matteo",
+            "rolland-stanislas"
+        ],
+        "technologies": [
+            "html",
+            "css",
+            "javascript",
+            "figma",
+            "gloomaps"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "s1.04": {
+        "context": "BUT",
+        "title": "S1.04",
+        "start-date": "2023-11-27",
+        "end-date": "2024-01-22",
+        "abstract": "Création d'une base de données (S1.04)",
+        "story": "L'objectif de ce projet était de créer le diagramme de classe et d'implémenter un base de données en SQL.",
+        "team": [
+            "chartier--le-goff-marius"
+        ],
+        "tags": [
+            "but-gerer",
+            "but-collaborer"
+        ],
+        "technologies": [
+            "sql",
+            "sql-workbench",
+            "pgsql"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "s1.03": {
+        "context": "BUT",
+        "start-date": "2023-10-25",
+        "end-date": "2023-01-21",
+        "title": "Installation d'un poste de développement",
+        "abstract": "Automatisation, scripts et conteneurisation (S1.03)",
+        "story": "<p>L'objectif de ce projet était de créer un générateur de documents PDF grâce à la conteneurisation Docker et en utilisant également PHP, le scripting Bash etc. Nous étions en groupes de 4. De mon côté, je me suis occupé d'écrire un parser Markdown en PHP. Nos professeurs ont été malins&nbsp;: ils ont modifés la syntaxe Markdown pour pas que l'on puisse simplement copier un parser d'Internet.</p>",
+        "tags": [
+            "but-administrer",
+            "but-collaborer"
+        ],
+        "team": [
+            "chartier--le-goff-marius",
+            "kervadec-matteo",
+            "toe-paolo"
+        ],
+        "technologies": [
+            "bash",
+            "php",
+            "docker",
+            "github",
+            "css",
+            "html"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "s1.02": {
+        "context": "BUT",
+        "start-date": "2023-11-27",
+        "end-date": "2024-01-28",
+        "background": "/portfolio/img/project/s1.02/bg.png",
+        "title": "Comparaison d'approches algorithmiques",
+        "abstract": "Résolution de Sudoku et optimisation (S1.02)",
+        "story": "<p>L'objectif de ce projet était d'optimiser un algorithme de résolution de grilles de Sudoku afin qu'il puisse résoudre des grilles de différentes difficultés le plus rapidement possible.</p><p>Ce projet, réalisé en binôme, aura été une aventure particulièrement enrichissante. En effet, après le rendu, notre professeur a organisé un concours d'optimisation. Chaque participant soumetta son programme et notre professeur fit plusieurs <em>benchmarks</em> sur des grilles de Sudoku 3x3, 4x4, 5x5&hellip; afin de déterminer l'équipe qui a le programme le plus optimisé.</p><p>Moi et mon coéquipier Mattéo Kervadec avons remporté le concours haut la main.</p><p>Certes, nous y avons passé quelques nuits tardives, mais cela nous a permis d'apprendre toute sourtes d'astuces relatives à l'optimisation et de devenir de meilleurs prorammeurs en général.</p><p>De plus, ce projet a continué à grandir grâche à l'investissement personnel de Mattéo et moi. Nous l'avons amélioré sur notre temps libre, aboutissant finalement à <a class=\"link\" href=\"/portfolio/fr/project/sudone.html\">Sudone</a>.</p>",
+        "team": [
+            "kervadec-matteo"
+        ],
+        "technologies": [
+            "vs-code",
+            "c"
+        ],
+        "tags": [
+            "software",
+            "but-optimiser",
+            "but-collaborer"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/s1.02-sudoku"
+            }
+        },
+        "gallery": {},
+        "references": {}
+    },
+    "sudone": {
+        "story": "todo",
+        "title": "Sudone",
+        "context": "Personnel",
+        "start-date": "2024-02-05",
+        "abstract": "Un solveur de Sudoku optimisé",
+        "team": [
+            "kervadec-matteo"
+        ],
+        "technologies": [
+            "vs-code",
+            "c"
+        ],
+        "tags": [
+            "software",
+            "but-optimiser",
+            "but-collaborer"
+        ],
+        "gallery": {},
+        "references": {},
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/Matteo-K/Sudoku-Solver"
+            }
+        }
+    },
+    "s1.01": {
+        "context": "BUT",
+        "start-date": "2023-10-16",
+        "end-date": "2023-11-27",
+        "title": "Jeu de Sudoku",
+        "background": "/portfolio/img/project/s1.01/bg.png",
+        "abstract": "Implémentation d'un besoin client (S1.01)",
+        "team": [],
+        "tags": [
+            "software",
+            "but-realiser"
+        ],
+        "technologies": [
+            "vs-code",
+            "c",
+            "doxygen"
+        ],
+        "story": {
+            "$include": "projects/s1.01.phtml"
+        },
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/s1.01-sudoku"
+            }
+        },
+        "gallery": {
+            "Maquette (extrait)": {
+                "url": "/portfolio/img/project/s1.01/maquette.png"
+            },
+            "Liste de fonctions (extrait)": {
+                "iframe-src": "/portfolio/img/project/s1.01/liste-de-fonctions.html"
+            },
+            "Algorithme en pseudocode": {
+                "iframe-src": "/portfolio/img/project/s1.01/algorithme-pseudocode.html"
+            },
+            "Cahier de tests (extrait)": {
+                "iframe-src": "/portfolio/img/project/s1.01/cahier-de-tests.html"
+            },
+            "Programme final (extrait)": {
+                "iframe-src": "/portfolio/img/project/s1.01/programme-final.html"
+            },
+            "Tests (extrait)": {
+                "iframe-src": "/portfolio/img/project/s1.01/tests.html"
+            }
+        },
+        "references": {}
+    },
+    "2l2w-french-rural-road": {
+        "context": "personnel",
+        "start-date": "2021-06-15",
+        "end-date": "2022-10-02",
+        "title": "2L2W French Rural Road",
+        "abstract": "Assset de route française standardisée",
+        "team": [],
+        "tags": [
+            "3d-modeling",
+            "asset-creation"
+        ],
+        "technologies": [
+            "blender",
+            "cities-skylines"
+        ],
+        "story": {
+            "$include": "/projects/2l2w-french-rural-road.phtml"
+        },
+        "references": {},
+        "links": {
+            "Article Steam Workshop": {
+                "anchor": "steam",
+                "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993"
+            }
+        },
+        "gallery": {}
+    },
+    "tregoria": {
+        "title": "Trégoria",
+        "context": "personnel",
+        "start-date": "2022-10-15",
+        "abstract": "Un recul sur notre environnement dans Cities: Skylines",
+        "team": [],
+        "tags": [
+            "art"
+        ],
+        "technologies": [
+            "cities-skylines"
+        ],
+        "story": {
+            "$include": "/projects/tregoria.phtml"
+        },
+        "references": {
+            "Cities Skylines: MARS, Citywokcitywall, sur YouTube (anglais)": {
+                "anchor": "youtube",
+                "href": "https://youtube.com/playlist?list=PLkBlOw_hzgdfL6Gqw0l9P1TYKn_WIgrd-"
+            },
+            "Cities Skylines: Bordertown, Two Dollars Twenty, sur YouTube (anglais)": {
+                "anchor": "youtube",
+                "href": "https://youtube.com/playlist?list=PL0vu9rx9cHrUoRedRsFzX367j3DlE_dTk"
+            }
+        },
+        "links": {
+            "Publication Instagram": {
+                "anchor": "instagram",
+                "href": "https://www.instagram.com/p/CjxQUO3LryP"
+            }
+        },
+        "gallery": {}
+    },
+    "winclean": {
+        "title": "WinClean",
+        "context": "personnel",
+        "start-date": "2022-08-15",
+        "background": "/portfolio/img/project/winclean/bg.png",
+        "abstract": "Application de nettoyage et optimisation Windows",
+        "team": [],
+        "technologies": [
+            "csharp",
+            "github",
+            "inno-setup",
+            "powershell",
+            "visual-studio"
+        ],
+        "tags": [
+            "full-stack",
+            "oop",
+            "software",
+            "ui",
+            "ux",
+            "but-realiser"
+        ],
+        "story": {
+            "$include": "projects/winclean.phtml"
+        },
+        "references": {},
+        "links": {
+            "Article CommentÇaMarche": {
+                "anchor": "ccm",
+                "href": "https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean"
+            },
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/WinClean"
+            }
+        },
+        "gallery": {
+            "Fenêtre principale de l'application": {
+                "url": "/portfolio/img/project/winclean/gallery/2.png"
+            },
+            "Exécution des scripts": {
+                "url": "/portfolio/img/project/winclean/gallery/1.png"
+            }
+        },
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/project/winclean/logo.png"
+        }
+    },
+    "psdc": {
+        "title": "Psdc",
+        "context": "personnel",
+        "start-date": "2023-11-15",
+        "background": "/portfolio/img/project/psdc/bg.png",
+        "abstract": "Compilateur pseudocode de l'IUT de Lannion",
+        "team": [],
+        "technologies": [
+            "csharp",
+            "ebnf",
+            "vs-code"
+        ],
+        "tags": [
+            "software",
+            "oop",
+            "compiler",
+            "but-realiser",
+            "but-optimiser"
+        ],
+        "story": {
+            "$include": "projects/psdc.phtml"
+        },
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/psdc"
+            }
+        },
+        "references": {
+            "Crafting Interpreters, Robert Nystrom (anglais)": {
+                "anchor": "website",
+                "href": "https://craftinginterpreters.com"
+            },
+            "Creating a Compiler, Pixeled, sur YouTube (anglais)": {
+                "anchor": "youtube",
+                "href": "https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs"
+            },
+            "NASM, site officiel (anglais)": {
+                "anchor": "website",
+                "href": "https://nasm.us/"
+            },
+            "Analyse lexicale, Wikipédia": {
+                "anchor": "wikipedia",
+                "href": "https://fr.wikipedia.org/wiki/Analyse_lexicale"
+            },
+            "Grammaire formelle, Wikipédia": {
+                "anchor": "wikipedia",
+                "href": "https://fr.wikipedia.org/wiki/Grammaire_formelle"
+            },
+            "Analyse syntaxique, Wikipédia": {
+                "anchor": "wikipedia",
+                "href": "https://fr.wikipedia.org/wiki/Analyse_syntaxique"
+            }
+        },
+        "gallery": {}
+    }
+}

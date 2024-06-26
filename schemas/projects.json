@@ -20,13 +20,13 @@
         ],
         "properties": {
             "abstract": {
-                "minLength": 1,
-                "title": "string"
+                "$ref": "html.json"
             },
             "team": {
                 "uniqueItems": true,
                 "type": "array",
                 "additionalItems": {
+                    "description": "definition id",
                     "type": "string"
                 }
             },
@@ -41,7 +41,7 @@
                     ],
                     "properties": {
                         "href": {
-                            "minLength": 1,
+                            "format": "uri-reference",
                             "type": "string"
                         },
                         "anchor": {
@@ -61,10 +61,11 @@
                     ],
                     "properties": {
                         "href": {
-                            "minLength": 1,
-                            "type": "string"
+                            "type": "string",
+                            "format": "uri-reference"
                         },
                         "anchor": {
+                            "description": "anchor id",
                             "minLength": 1,
                             "type": "string"
                         }
@@ -72,16 +73,14 @@
                 }
             },
             "background": {
-                "minLength": 1,
                 "type": "string",
-                "title": "Background URL"
+                "format": "uri-reference",
+                "title": "Background URI"
             },
             "context": {
-                "minLength": 1,
-                "type": "string"
+                "$ref": "html.json"
             },
             "end-date": {
-                "minLength": 1,
                 "type": "string",
                 "format": "date"
             },
@@ -139,12 +138,11 @@
                 }
             },
             "start-date": {
-                "minLength": 1,
                 "type": "string",
                 "format": "date"
             },
             "story": {
-                "type": "string"
+                "$ref": "html.json"
             },
             "tags": {
                 "uniqueItems": true,
@@ -165,8 +163,7 @@
                 }
             },
             "title": {
-                "minLength": 1,
-                "type": "string"
+                "$ref": "html.json"
             }
         }
     }

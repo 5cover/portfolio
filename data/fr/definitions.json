@@ -1,0 +1,656 @@
+{
+    "apache2": {
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Apache_HTTP_Server",
+        "synopsis": "Le logiciel libre Apache HTTP Server (Apache) est un serveur HTTP créé et maintenu au sein de la fondation Apache.",
+        "names": [
+            "Apache HTTP Server",
+            "Apache Server",
+            "Apache2"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/apache2/logo.svg"
+        }
+    },
+    "bash": {
+        "type": "programming-language",
+        "background": "/portfolio/img/definition/bash/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Bourne-Again_shell",
+        "synopsis": "Bash est un interpréteur en ligne de commande de type script. C'est le shell Unix du projet GNU.",
+        "names": [
+            "Bourne-Again shell",
+            "Bash"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/bash/logo.svg"
+        }
+    },
+    "blender": {
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Blender",
+        "background": "/portfolio/img/definition/blender/bg.png",
+        "synopsis": "Blender est un logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D.",
+        "names": [
+            "Blender"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/blender/logo.svg"
+        }
+    },
+    "c": {
+        "type": "programming-language",
+        "background": "/portfolio/img/definition/c/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/C_(langage)",
+        "synopsis": "C est un langage de programmation impératif, généraliste et de bas niveau, inventé en 1972 par Dennis Ritchie et Ken Thompson.",
+        "names": [
+            "C"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/c/logo.svg"
+        }
+    },
+    "chartier--le-goff-marius": {
+        "type": "person",
+        "wiki": "https://icelos6.wixsite.com/portfolio-marius-cha",
+        "synopsis": "Marius Chartier--Le Goff est né en 2005 et est étudiant en BUT informatique à l'IUT de Lannion. Il souhaite continuer ses études jusqu'au titre d'ingénieur.",
+        "names": [
+            "Marius Chartier--Le Goff",
+            "Marius CHARTIER--LE GOFF",
+            "Chartier--Le Goff Marius",
+            "CHARTIER--LE GOFF Marius"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/chartier--le-goff-marius/logo.webp"
+        }
+    },
+    "cities-skylines": {
+        "type": "game",
+        "background": "/portfolio/img/definition/cities-skylines/bg.jpg",
+        "wiki": "https://fr.wikipedia.org/wiki/Cities%3A_Skylines",
+        "synopsis": "Cities: Skylines est un jeu de construction de ville développé par Colossal Order et publié par Paradox Interactive en 2015. Le jeu est une simulation de construction de ville ouverte et solo.",
+        "names": [
+            "Cities: Skylines",
+            "Cities Skylines"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/cities-skylines/logo.png"
+        }
+    },
+    "cpp": {
+        "type": "programming-language",
+        "background": "/portfolio/img/definition/cpp/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/C%2B%2B",
+        "synopsis": "C++ est un langage de programmation compilé permettant la programmation sous de multiples paradigmes, dont la programmation procédurale, la programmation orientée objet et la programmation générique.",
+        "names": [
+            "C++"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/cpp/logo.svg"
+        }
+    },
+    "csharp": {
+        "type": "programming-language",
+        "wiki": "https://fr.wikipedia.org/wiki/C_Sharp",
+        "background": "/portfolio/img/definition/csharp/bg.png",
+        "synopsis": "C# est un langage de programmation orienté objet, commercialisé par Microsoft depuis 2002.",
+        "names": [
+            "C#"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/csharp/logo.png"
+        }
+    },
+    "css": {
+        "type": "computer-language",
+        "background": "/portfolio/img/definition/css/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade",
+        "synopsis": "Les feuilles de style en cascade, généralement appelées CSS de l'anglais <em>Cascading Style Sheets</em>, forment un langage informatique qui décrit la présentation des documents HTML et XML.",
+        "names": [
+            "CSS",
+            "Cascading Style Sheets"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/css/logo.svg"
+        }
+    },
+    "csv": {
+        "type": "data-format",
+        "background": "/portfolio/img/definition/csv/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Comma-separated_values",
+        "synopsis": "Comma-separated values est un format texte ouvert représentant des données tabulaires sous forme de valeurs séparées.",
+        "names": [
+            "CSV",
+            "Comma-separated values"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/csv/logo.svg"
+        }
+    },
+    "docker": {
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Docker_(logiciel)",
+        "synopsis": "Docker est un outil qui peut empaqueter une application et ses dépendances dans un conteneur isolé, qui pourra être exécuté sur n'importe quel serveur.",
+        "names": [
+            "Docker"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/docker/logo.png"
+        }
+    },
+    "dotnet": {
+        "type": "library",
+        "wiki": "https://fr.wikipedia.org/wiki/.NET",
+        "synopsis": ".NET est une plateforme de développement créée par Microsoft. Elle fournit un ensemble de technologies, de langages de programmation et d'outils pour la création d'applications Windows, web, mobiles et IoT (Internet des objets).",
+        "names": [
+            ".NET",
+            "Microsoft .NET"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/dotnet/logo.svg"
+        }
+    },
+    "doxygen": {
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Doxygen",
+        "synopsis": "Doxygen est un générateur de documentation sous licence libre capable de produire une documentation logicielle à partir du code source d'un programme. Pour cela, il tient compte de la syntaxe du langage dans lequel est écrit le code source, ainsi que des commentaires s'ils sont écrits dans un format particulier.",
+        "names": [
+            "Doxygen"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/doxygen/logo.png"
+        }
+    },
+    "ebnf": {
+        "type": "computer-language",
+        "wiki": "https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form",
+        "synopsis": "L'Extended Backus-Naur Form est une extension du métalangage <abbr title=\"Backus-Naur Form\">BNF</abbr>, créée par Niklaus Wirth en 1996. Ce langage exprime des grammaires formelles afin de notamment concevoir des compilateurs.",
+        "names": [
+            "EBNF",
+            "Extended Backus-Naur Form"
+        ]
+    },
+    "figma": {
+        "type": "website",
+        "wiki": "https://fr.wikipedia.org/wiki/Figma",
+        "synopsis": "Figma est un éditeur de graphiques vectoriels et un outil de prototypage en ligne.",
+        "names": [
+            "Figma"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/figma/logo.svg"
+        }
+    },
+    "github": {
+        "type": "website",
+        "wiki": "https://fr.wikipedia.org/wiki/GitHub",
+        "synopsis": "GitHub est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git.",
+        "names": [
+            "GitHub"
+        ],
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/social/github.svg"
+        }
+    },
+    "gloomaps": {
+        "type": "website",
+        "wiki": "https://www.gloomaps.com/",
+        "synopsis": "GlooMaps est un outil de cartographie de site en ligne simple.",
+        "names": [
+            "GlooMaps",
+            "Gloomaps"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/gloomaps/logo.png"
+        }
+    },
+    "html": {
+        "type": "markup-language",
+        "background": "/portfolio/img/definition/html/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Hypertext_Markup_Language",
+        "synopsis": "HyperText Markup Language est le langage de balisage conçu pour représenter les pages web.",
+        "names": [
+            "HTML",
+            "HyperText Markup Language",
+            "HTML5"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/html/logo.svg"
+        }
+    },
+    "inno-setup": {
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Inno_Setup",
+        "synopsis": "Inno Setup est un logiciel libre permettant de créer des installateurs pour Windows.",
+        "names": [
+            "Inno Setup"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/inno-setup/logo.png"
+        }
+    },
+    "java": {
+        "type": "programming-language",
+        "background": "/portfolio/img/definition/java/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Java_(langage)",
+        "synopsis": "Java est un langage de programmation de haut niveau orienté objet créé par James Gosling et Patrick Naughton en 1995.",
+        "names": [
+            "Java"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/java/logo.svg"
+        }
+    },
+    "javascript": {
+        "type": "programming-language",
+        "wiki": "https://fr.wikipedia.org/wiki/JavaScript",
+        "background": "/portfolio/img/definition/javascript/bg.png",
+        "synopsis": "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.",
+        "names": [
+            "JavaScript",
+            "JS"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/javascript/logo.svg"
+        }
+    },
+    "json": {
+        "type": "data-format",
+        "background": "/portfolio/img/definition/json/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/JavaScript_Object_Notation",
+        "synopsis": "JavaScript Object Notation est un format de données textuel dérivé de la notation des objets du langage JavaScript. Il concurrence XML pour la représentation et la transmission d’information structurée.",
+        "names": [
+            "JSON",
+            "JavaScript Object Notation"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/json/logo.svg"
+        }
+    },
+    "kervadec-matteo": {
+        "type": "person",
+        "wiki": "https://matteo-k.github.io/Matteo-K_Portfolio.github.io/",
+        "synopsis": "Mattéo Kervadec est un étudiant en 1<sup>ère</sup> année de <abbr title=\"Bachelor Universitaire Technologique\">BUT</abbr> en filière Informatique à l'IUT de Lannion. Il a un baccalauréat avec les spécialités <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://cache.media.education.gouv.fr/file/SPE8_MENJ_25_7_2019/90/7/spe246_annexe_1158907.pdf\">Mathématiques</a> et <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448\"><abbr title=\"Numériques Sciences Informatiques\">NSI</abbr></a> obtenu au lycée <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://sainteanne-saintlouis.fr\">Sainte-Anne</a> à Sainte-Anne-d'Auray. Il est passionné par le tennis et le cinéma autant dans les films que le jeu vidéo. Il porte aussi un intérêt pour le développement de logiciels informatiques.",
+        "names": [
+            "Mattéo Kervadec",
+            "Mattéo KERVADEC",
+            "Kervadec Mattéo",
+            "KERVADEC Mattéo"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/kervadec-matteo/logo.jpg"
+        }
+    },
+    "lua": {
+        "type": "programming-language",
+        "wiki": "https://fr.wikipedia.org/wiki/Lua",
+        "synopsis": "Lua est un langage de script libre, réflexif et impératif créé en 1993.",
+        "names": [
+            "Lua"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/lua/logo.svg"
+        }
+    },
+    "markdown": {
+        "type": "markup-language",
+        "wiki": "https://fr.wikipedia.org/wiki/Markdown",
+        "background": "/portfolio/img/definition/markdown/bg.png",
+        "synopsis": "Markdown est un langage de balisage léger créé en 2004 par John Gruber, avec l'aide d'Aaron Swartz.",
+        "names": [
+            "Markdown"
+        ],
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/definition/markdown/logo.svg"
+        }
+    },
+    "minecraft": {
+        "type": "game",
+        "wiki": "https://fr.wikipedia.org/wiki/Minecraft",
+        "background": "/portfolio/img/definition/minecraft/bg.png",
+        "synopsis": "Minecraft est un jeu vidéo de type aventure « bac à sable » (construction complètement libre) développé par le Suédois Markus Persson, alias Notch, puis par la société Mojang Studios.",
+        "names": [
+            "Minecraft"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/minecraft/logo.svg"
+        }
+    },
+    "mysql": {
+        "type": "dbms",
+        "wiki": "https://fr.wikipedia.org/wiki/MySQL",
+        "synopsis": "MySQL est un système de gestion de bases de données relationnelles.",
+        "names": [
+            "MySQL"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/mysql/logo.svg"
+        }
+    },
+    "pascal": {
+        "type": "programming-language",
+        "background": "/portfolio/img/definition/pascal/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Pascal_(langage)",
+        "synopsis": "Pascal est un langage de programmation impératif conçu pour l'enseignement.",
+        "names": [
+            "Pascal"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/pascal/logo.svg"
+        }
+    },
+    "pgsql": {
+        "type": "dbms",
+        "wiki": "https://fr.wikipedia.org/wiki/PostgreSQL",
+        "synopsis": "PostgreSQL est un système de gestion de base de données relationnelle et objet.",
+        "names": [
+            "PostgreSQL",
+            "Postgres",
+            "pgsql",
+            "pg_sql"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/pgsql/logo.svg"
+        }
+    },
+    "php": {
+        "type": "programming-language",
+        "wiki": "https://en.wikipedia.org/wiki/PHP",
+        "background": "/portfolio/img/definition/php/bg.png",
+        "synopsis": "PHP: Hypertext Preprocessor est un langage de programmation créé en 1993, principalement utilisé pour produire des pages Web dynamiques via un serveur web",
+        "names": [
+            "PHP",
+            "PHP: Hypertext Preprocessor",
+            "Personal Homepage"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/php/logo.svg"
+        }
+    },
+    "powershell": {
+        "type": "programming-language",
+        "background": "/portfolio/img/definition/powershell/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Windows_PowerShell",
+        "synopsis": "Windows PowerShell est une interface de ligne de commande multiplate-forme et langage de script pour l'administration de systèmes informatiques et de réseaux.",
+        "names": [
+            "PowerShell",
+            "Windows PowerShell"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/powershell/logo.svg"
+        }
+    },
+    "python": {
+        "type": "programming-language",
+        "background": "/portfolio/img/definition/python/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Python_(langage)",
+        "synopsis": "Python est un langage de programmation interprété, multiparadigme et multiplateformes.",
+        "names": [
+            "Python"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/python/logo.svg"
+        }
+    },
+    "replit": {
+        "type": "website",
+        "wiki": "https://en.wikipedia.org/wiki/Replit",
+        "synopsis": "Replit est une start-up américaine et un <abbr title=\"Environnement de Développement Intégré\">IDE</abbr> en ligne, qui permet de créer des projets de programmation en ligne appelés <em>repls</em>.",
+        "names": [
+            "Replit"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/replit/logo.svg"
+        }
+    },
+    "rolland-stanislas": {
+        "type": "person",
+        "wiki": "https://stanislasrolland.github.io/Portfolio/",
+        "synopsis": "Stanislas Rolland est âgé de 18 ans et est actuellement en première année de BUT informatique à l'IUT de Lannion. Avant de rejoindre cette formation, il a obtenu son baccalauréat mention assez bien avec les spécialités <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://cache.media.education.gouv.fr/file/SPE8_MENJ_25_7_2019/90/7/spe246_annexe_1158907.pdf\">Mathématiques</a> et <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448\"><abbr title=\"Numériques Sciences Informatiques\">NSI</abbr></a>.",
+        "names": [
+            "Stanislas Rolland",
+            "Stanislas ROLLAND",
+            "Rolland Stanislas",
+            "ROLLAND Stanislas"
+        ]
+    },
+    "sass": {
+        "type": "computer-language",
+        "background": "/portfolio/img/definition/sass/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Sass_(langage)",
+        "synopsis": "Syntactically Awesome Style Sheets est un langage de script préprocesseur qui est compilé ou interprété en CSS.",
+        "names": [
+            "SASS",
+            "Syntactically Awesome Style Sheets",
+            "SCSS"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/sass/logo.svg"
+        }
+    },
+    "scheme": {
+        "type": "programming-language",
+        "wiki": "https://fr.wikipedia.org/wiki/Scheme",
+        "background": "/portfolio/img/definition/scheme/bg.png",
+        "synopsis": "Scheme est un langage de programmation dérivé du langage fonctionnel Lisp, créé dans les années 1970 au <abbr title=\"Massachusetts Institute of Technology\">MIT</abbr> par Gerald Jay Sussman et Guy L. Steele.",
+        "names": [
+            "Scheme"
+        ],
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/definition/scheme/logo.svg"
+        }
+    },
+    "smalltalk": {
+        "type": "programming-language",
+        "wiki": "https://fr.wikipedia.org/wiki/Smalltalk",
+        "synopsis": "Smalltalk est un langage de programmation orienté objet, réflexif et dynamiquement typé créé en 1972.",
+        "names": [
+            "Smalltalk"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/smalltalk/logo.svg"
+        }
+    },
+    "sql": {
+        "type": "programming-language",
+        "background": "/portfolio/img/definition/sql/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Structured_Query_Language",
+        "synopsis": "Structured Query Language est un langage informatique créé en 1974 servant à exploiter des bases de données relationnelles.",
+        "names": [
+            "SQL",
+            "Structured Query Language"
+        ]
+    },
+    "sql-workbench": {
+        "type": "software",
+        "wiki": "https://www.sql-workbench.eu/",
+        "background": "/portfolio/img/definition/sql-workbench/bg.png",
+        "synopsis": "SQL Workbench/J est un outil de requête SQL multiplateforme indépendant du SGBD.",
+        "names": [
+            "SQL Workbench/J"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/sql-workbench/logo.jpg"
+        }
+    },
+    "sqlite": {
+        "type": "dbms",
+        "wiki": "https://fr.wikipedia.org/wiki/SQLite",
+        "synopsis": "SQLite est une bibliothèque écrite en langage C qui propose un moteur de base de données relationnelle accessible par le langage SQL",
+        "names": [
+            "SQLite"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/sqlite/logo.svg"
+        }
+    },
+    "svg": {
+        "type": "data-format",
+        "background": "/portfolio/img/definition/svg/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics",
+        "synopsis": "Scalable Vector Graphics est un format de données textuel conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML.",
+        "names": [
+            "SVG",
+            "Scalable Vector Graphics"
+        ],
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/definition/svg/logo.svg"
+        }
+    },
+    "tkinter": {
+        "type": "library",
+        "wiki": "https://fr.wikipedia.org/wiki/Tkinter",
+        "synopsis": "Tkinter (de l'anglais Tool kit interface) est la bibliothèque graphique libre d'origine pour le langage Python, permettant la création d'interfaces graphiques.",
+        "names": [
+            "Tkinter"
+        ]
+    },
+    "toe-paolo": {
+        "type": "person",
+        "wiki": "https://vitovitae.github.io/",
+        "synopsis": "Paolo Vito Toé est un étudiant en BUT Informatique à l'IUT de Lannion. Son parcours le pousse à s'améliorer en permanence, car l'informatique est une de ses grandes passions. Né aux États-Unis et ayant grandi dans plusieurs pays différents, il est suis aussi passionné par les cultures étrangères. Outre ses études, il est passionné par la lecture et la création de jeux.",
+        "names": [
+            "Paolo Toé",
+            "Paolo TOÉ",
+            "Toé Paolo",
+            "TOÉ Paolo"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/toe-paolo/logo.jpg"
+        }
+    },
+    "visual-paradigm": {
+        "type": "software",
+        "wiki": "https://www.visual-paradigm.com/",
+        "synopsis": "Visual Paradigm est un logiciel de conception et de modélisation de systèmes d'information. Il offre une plateforme de développement logiciel intégrée qui prend en charge les langages de modélisation UML (Unified Modeling Language), BPMN (Business Process Model and Notation), SysML, et bien d'autres.",
+        "names": [
+            "Visual Paradigm"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/visual-paradigm/logo.png"
+        }
+    },
+    "visual-studio": {
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio",
+        "synopsis": "Microsoft Visual Studio est une suite de logiciels de développement pour Windows et mac OS conçue par Microsoft.",
+        "names": [
+            "Visual Studio",
+            "Microsoft Visual Studio"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/visual-studio/logo.svg"
+        }
+    },
+    "vs-code": {
+        "type": "software",
+        "background": "/portfolio/img/definition/vs-code/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Visual_Studio_Code",
+        "synopsis": "Visual Studio Code est un éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.",
+        "names": [
+            "Visual Studio Code",
+            "VS Code",
+            "VSC",
+            "VSCode"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/vs-code/logo.svg"
+        }
+    },
+    "winforms": {
+        "type": "library",
+        "wiki": "https://fr.wikipedia.org/wiki/Windows_Forms",
+        "synopsis": "Windows Forms un framework d'interface graphique inclus dans le framework .NET fournissant l'accès via à l'API Windows.",
+        "names": [
+            "Windows Forms",
+            "WinForms",
+            "Winforms"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/winforms/logo.png"
+        }
+    },
+    "wpf": {
+        "type": "library",
+        "background": "/portfolio/img/definition/wpf/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation",
+        "synopsis": "Windows Presentation Foundation est un système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois en 2006.",
+        "names": [
+            "WPF",
+            "Windows Presentation Foundation"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/wpf/logo.png"
+        }
+    },
+    "xml": {
+        "type": "markup-language",
+        "background": "/portfolio/img/definition/xml/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Extensible_Markup_Language",
+        "synopsis": "Extensible Markup Language est un métalangage informatique de balisage utilisé pour représenter des données structurées.",
+        "names": [
+            "XML",
+            "Extensible Markup Language"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/xml/logo.svg"
+        }
+    },
+    "zig": {
+        "type": "programming-language",
+        "background": "/portfolio/img/definition/zig/bg.png",
+        "wiki": "https://fr.wikipedia.org/wiki/Zig_(langage)",
+        "synopsis": "Zig est un langage de programmation compilé impératif polyvalent, typé statiquement, conçu par Andrew Kelley en 2015 pour servir de successeur au C.",
+        "names": [
+            "Zig"
+        ],
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/zig/logo.svg"
+        }
+    }
+}

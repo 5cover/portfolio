@@ -1,0 +1,94 @@
+{
+    "2l2w-french-rural-road": {
+        "context": "personnal",
+        "start-date": "2021-06-15",
+        "end-date": "2022-10-02",
+        "title": "2L2W French Rural Road",
+        "abstract": "Up to code French road asset",
+        "story": {"$include": "projects/2l2w-french-rural-road.phtml"},
+        "technologies": [
+            "blender"
+        ],
+        "tags": [
+            "3d-modeling",
+            "asset-creation"
+        ],
+        "links": {
+            "Article Steam Workshop": {
+                "anchor": "steam",
+                "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993"
+            }
+        },
+        "references": {},
+        "gallery": {},
+        "team": []
+    },
+    "tregoria": {
+        "title": "Trégoria",
+        "context": "personnal",
+        "start-date": "2022-10-15",
+        "abstract": "A perspective on our environment in Cities: Skylines",
+        "story": {"$include": "projects/tregoria.phtml"},
+        "technologies": [],
+        "tags": [
+            "art"
+        ],
+        "links": {
+            "Publication Instagram": {
+                "anchor": "instagram",
+                "href": "https://www.instagram.com/p/CjxQUO3LryP"
+            }
+        },
+        "references": {},
+        "gallery": {},
+        "team": []
+    },
+    "winclean": {
+        "title": "WinClean",
+        "context": "personnal",
+        "start-date": "2021-08-15",
+        "background": "/portfolio/img/project/winclean/bg.png",
+        "abstract": "Windows optimization and debloating utility",
+        "story": {
+            "$include": "projects/winclean.phtml"
+        },
+        "tags": [
+            "full-stack",
+            "oop",
+            "software",
+            "ui",
+            "ux"
+        ],
+        "technologies": [
+            "csharp",
+            "github",
+            "inno-setup",
+            "powershell",
+            "visual-studio"
+        ],
+        "links": {
+            "Article CommentÇaMarche": {
+                "anchor": "ccm",
+                "href": "https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean"
+            },
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/WinClean"
+            }
+        },
+        "references": {},
+        "gallery": {
+            "Application main window": {
+                "url": "/portfolio/img/project/winclean/gallery/2.png"
+            },
+            "Executing scripts": {
+                "url": "/portfolio/img/project/winclean/gallery/1.png"
+            }
+        },
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/project/winclean/logo.png"
+        },
+        "team": []
+    }
+}
