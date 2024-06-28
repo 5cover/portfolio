@@ -145,7 +145,7 @@ async function getGraphicElement(graphic, title = undefined, classList = undefin
     let element;
     if (graphic.isThemedSvg) {
         const content = await fetch(graphic.url).then(r => r.text());
-        element = single(parseHTML(content));
+        element = single(parseHtml(content).children);
         if (title !== undefined) element.setAttribute('title', title);
     } else {
         element = document.createElement('img');
@@ -166,20 +166,18 @@ function ucfirst(str) {
 }
 
 /**
- * @param {String} html HTML representing a single element.
+ * @param {String} html arbitrary HTML.
  * @param {Boolean} trim flag representing whether or not to trim input whitespace, defaults to true.
- * @return {HTMLCollection}
+ * @return {DocumentFragment}
  */
-function parseHTML(html, trim = true) {
+function parseHtml(html, trim = true) {
     // Process the HTML string.
     html = trim ? html.trim() : html;
 
     // Then set up a new template element.
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    const result = template.content.children;
-
-    return result;
+    const e = document.createElement('template');
+    e.innerHTML = html;
+    return e.content;
 }
 /**
  * @template T

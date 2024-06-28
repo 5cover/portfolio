@@ -306,7 +306,7 @@
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.125);
   display: grid;
-  grid-template: repeat(4, auto) 1fr min-content/1fr auto;
+  grid-template: min-content repeat(3, auto) 1fr min-content/1fr auto;
   row-gap: 0.75em;
   border-radius: 0.75em;
   padding: 0.75em;
@@ -338,14 +338,13 @@
   bottom: 0;
 }
 .list-project > li .logo {
-  grid-row: 2/6;
+  align-self: center;
+  grid-row: 2/4;
   grid-column: 2;
-  height: 4lh;
-  width: auto;
-  max-width: 25ch;
+  max-height: 3lh;
+  max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  margin: auto 0;
 }
 .list-project > li h3 {
   grid-row: 2;
@@ -355,9 +354,11 @@
   grid-row: 3;
 }
 .list-project > li .status {
+  grid-column: 1/3;
   grid-row: 4;
 }
 .list-project > li .abstract {
+  grid-column: 1/3;
   grid-row: 5;
   align-content: center;
 }
@@ -413,6 +414,11 @@
  * Domain classes:
  * - definition-tooltip: tooltip form of the definition
  * - definition-tooltip-trigger: trigger of the definition tooltip form
+ *
+ * - title: definition title
+ * - logo: definition logo
+ * - type: definition types
+ * - synopsis: definition synopsis
  */
 .definition, .definition-tooltip {
   position: relative;
@@ -1090,26 +1096,27 @@ a[id^=cite-] {
   flex-shrink: 1;
   min-width: -moz-min-content;
   min-width: min-content;
+  display: contents;
 }
-#technologies > li:is(:hover, :focus-within, :focus),
-#team > li:is(:hover, :focus-within, :focus) {
+#technologies > li article:is(:hover, :focus-within, :focus),
+#team > li article:is(:hover, :focus-within, :focus) {
   background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.9), rgba(var(--color-accent-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-accent-rgb))) no-repeat;
   background-size: cover;
   /* Adapt foreground to accent color (except tag list). */
   /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
 }
-#technologies > li:is(:hover, :focus-within, :focus) .list-rect > li,
-#team > li:is(:hover, :focus-within, :focus) .list-rect > li {
+#technologies > li article:is(:hover, :focus-within, :focus) .list-rect > li,
+#team > li article:is(:hover, :focus-within, :focus) .list-rect > li {
   background-color: var(--color-lvl);
 }
-#technologies > li:is(:hover, :focus-within, :focus) :not(.list-rect),
-#team > li:is(:hover, :focus-within, :focus) :not(.list-rect) {
+#technologies > li article:is(:hover, :focus-within, :focus) :not(.list-rect),
+#team > li article:is(:hover, :focus-within, :focus) :not(.list-rect) {
   --color-fg: white;
   --color-fg-rgb: 255, 255, 255;
 }
-#technologies > li:is(:hover, :focus-within, :focus) .link, #technologies > li:is(:hover, :focus-within, :focus) a[id^=cite-],
-#team > li:is(:hover, :focus-within, :focus) .link,
-#team > li:is(:hover, :focus-within, :focus) a[id^=cite-] {
+#technologies > li article:is(:hover, :focus-within, :focus) .link, #technologies > li article:is(:hover, :focus-within, :focus) a[id^=cite-],
+#team > li article:is(:hover, :focus-within, :focus) .link,
+#team > li article:is(:hover, :focus-within, :focus) a[id^=cite-] {
   color: var(--color-fg);
   text-decoration: underline;
 }

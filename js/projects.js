@@ -16,8 +16,8 @@ $(document).ready(async _ => {
         const dateFmt = new Intl.DateTimeFormat(document.documentElement.lang, {
             "dateStyle": "long"
         });
-        var formatDate = function (dateStr) {
-            return dateFmt.format(Date.parse(dateStr));
+        var formatDate = function (date) {
+            return `<time datetime="${date}">${dateFmt.format(Date.parse(date))}</time>`
         }
     }
 
@@ -80,6 +80,10 @@ $(document).ready(async _ => {
         const searchTerm = searchInput.value || '';
         const sortBy = document.querySelector('input[name="sorting"]:checked').value; // asc or desc
         const filteredProjects = Object.entries(projects)
+            .map(([key, project]) => {
+                project.title = parseHtml(project.title).textContent;
+                return [key, project]
+            })
             .filter(([_, project]) =>
                 project.title.toLowerCase().includes(searchTerm.toLowerCase())
                 && Array.from(allowedTags).every(t => project.tags.includes(t)))
@@ -107,7 +111,7 @@ $(document).ready(async _ => {
             '')}
             <h3><a href="project/${id}.html">${project.title}</a></h3>
             <p class="context"><small>${ucfirst(project.context)}</small></p>
-            <p class="status"><small>${getStatus(project)}</small></p>
+            <p class="status">${getStatus(project)}</p>
             <p class="abstract">${project.abstract}</p>
             <ul class="list-link">
                 ${(await Promise.all(Object.entries(project.links).map(async ([name, link]) => {
@@ -121,6 +125,6 @@ $(document).ready(async _ => {
     function getStatus(project) {
         const startDate = formatDate(project['start-date']);
         const endDate = map(project['end-date'], formatDate, 'en cours');
-        return `${startDate} – ${endDate}`;
+        return `<small>${startDate} – ${endDate}</small>`;
     }
 });
