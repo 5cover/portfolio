@@ -128,8 +128,9 @@ a[id^="cite-"] {
     > li {
         flex-shrink: 1;
         min-width: min-content;
+        display: contents;
 
-        &#{base.$hover} {
+        article#{base.$hover} {
             @include base.transparent-background-image(--bg-img-definition, var(--color-accent-rgb), .1);
             @include base.adapt-accent-bg;
         }

@@ -135,34 +135,19 @@ function put_definition_card(Lang $lang, array $types, string $id, array $def) {
     <article class="definition" <?php if ($bg = $def['background'] ?? null) {
         echo get_background_style_attr($bg, 'bg-img-definition');
     } ?>>
-        <h4><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>"><?php echo $title ?></a>
+        <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>"><?php echo $title ?></a>
         </h4>
         <?php if ($logo = $def['logo'] ?? null) {
-            echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title));
+            echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title), 'logo');
         } ?>
-        <p><small><?php echo ucfirst($types[$def['type']]) ?></small></p>
-        <p><?php echo $def['synopsis'] ?></p>
+        <p class="type"><small><?php echo ucfirst($types[$def['type']]) ?></small></p>
+        <p class="synopsis"><?php echo $def['synopsis'] ?></p>
     </article>
 <?php }
 
 function put_definition_tooltip_trigger(Lang $lang, string $id, array $def) {
     ?><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>" data-definition-id="<?php echo $id ?>" class="link definition-tooltip-trigger"><?php echo $def['names'][0] ?></a><?php
 }
-
-function _put_definition(Lang $lang, array $types, string $id, array $def, string $enclosingElementName, string $attrs) {
-    $title = $def['names'][0];
-    ?>
-    <<?php echo $enclosingElementName ?>     <?php echo $attrs ?>     <?php if ($bg = $def['background'] ?? null) {
-                        echo get_background_style_attr($bg, 'bg-img-definition');
-                    } ?>> <h4><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>"><?php echo $title ?></a>
-        </h4>
-        <?php if ($logo = $def['logo'] ?? null) {
-            echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title));
-        } ?>
-        <p><small><?php echo ucfirst($types[$def['type']]) ?></small></p>
-        <p><?php echo $def['synopsis'] ?></p>
-    </<?php echo $enclosingElementName ?>>
-<?php }
 
 function put_iframe(string $src, string $title) { ?>
     <iframe src="<?php echo $src ?>" frameborder="0" loading="lazy" width="300" height="300" title="<?php echo $title ?>"></iframe> <?php }

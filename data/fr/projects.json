@@ -379,7 +379,8 @@
         "abstract": "Site de météo avec Apache HTTP Server. Installation de services réseau (S2.03)",
         "tags": [
             "but-administrer",
-            "but-collaborer"
+            "but-collaborer",
+            "web"
         ],
         "team": [
             "chartier--le-goff-marius",
@@ -497,7 +498,8 @@
         "tags": [
             "but-conduire",
             "but-collaborer",
-            "communication"
+            "communication",
+            "web"
         ],
         "team": [
             "chartier--le-goff-marius",

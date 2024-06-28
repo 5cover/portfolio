@@ -196,7 +196,7 @@
         list-style: none;
         @include util.basic-border(1px);
         display: grid;
-        grid-template: repeat(4, auto) 1fr min-content / 1fr auto;
+        grid-template: min-content repeat(3, auto) 1fr min-content / 1fr auto;
         $space: .75em;
         row-gap: $space;
         border-radius: $space;
@@ -220,13 +220,12 @@
         }
 
         .logo {
-            grid-row: 2/6;
+            align-self: center;
+            grid-row: 2/4;
             grid-column: 2;
-            height: 4lh;
-            width: auto;
-            max-width: 25ch;
+            max-height: 3lh;
+            max-width: 100%;
             object-fit: contain;
-            margin: auto 0;
         }
 
         h3 {
@@ -239,10 +238,12 @@
         }
 
         .status {
+            grid-column: 1/3;
             grid-row: 4;
         }
 
         .abstract {
+            grid-column: 1/3;
             grid-row: 5;
             align-content: center;
         }
@@ -282,6 +283,11 @@
  * Domain classes:
  * - definition-tooltip: tooltip form of the definition
  * - definition-tooltip-trigger: trigger of the definition tooltip form
+ *
+ * - title: definition title
+ * - logo: definition logo
+ * - type: definition types
+ * - synopsis: definition synopsis
  */
 .definition {
     @include util.hover-card;

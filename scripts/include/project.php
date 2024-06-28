@@ -5,12 +5,19 @@ final class Project {
         $this->data = $project;
     }
 
-    function put_status(Lang $lang, string $class = 'status') { ?>
-        <small><?php
-        $startDate = $lang->formatDate(parse_date($this->data['start-date']));
-        $endDate = map(fn($d) => $lang->formatDate(parse_date($d)), $this->data['end-date'] ?? null);
-        echo $startDate . " \u{2013} " . ($endDate ?? $lang->get('ongoing')) ?></small>
+    function put_status(Lang $lang, string $class = 'status') {
+        $endDate = $this->data['end-date'] ?? false;
+        ?><small><?php static::put_date($lang, $this->data['start-date']) ?> &ndash; <?php
+            if ($endDate) {
+                static::put_date($lang, $endDate);
+            } else {
+                echo $lang->get('ongoing');
+            } ?></small>
     <?php }
+
+    private static function put_date(Lang $lang, string $date) {
+        ?><time datetime="<?php echo $date ?>"><?php echo $lang->formatDate(parse_date($date)) ?></time><?php
+    }
 
     function put_context(string $class = 'context') { ?>
         <small><?php echo ucfirst($this->data['context']) ?></small>
