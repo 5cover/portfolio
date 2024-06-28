@@ -2,7 +2,7 @@
 
 /* Index script */
 
-jQuery(document).ready(($) => {
+$(document).ready(_ => {
     const duration = 200;
     const wait = 100;
     var i = 0;

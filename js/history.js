@@ -63,7 +63,5 @@
             agFlag || requestAnimationFrame(fnUpdateWindow);
             agFlag = true;
         }
-
-
     });
 })(jQuery);

@@ -8,8 +8,9 @@
         <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
         <link rel="manifest" href="/portfolio/site.webmanifest">
         <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
-                <link rel="stylesheet" href="/portfolio/css/project.css">        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+
+                    <link rel="stylesheet" type="text/css" href="/portfolio/css/project.css">
+                        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
         <meta name="description" content="Bonjour ! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous !">
@@ -21,7 +22,15 @@
     </head>
 
     <body>
-            <header class="lvl">
+            <template id="template-definition-tooltip">
+        <article class="lvl definition-tooltip" role="tooltip">
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer"><!-- href="wiki"; name --></a></h4>
+            <!-- logo graphic -->
+            <p class="type"><small><!-- type --></small></p>
+            <p class="synopsis"><!-- synopsis --></p>
+        </article>
+    </template>
+    <header class="lvl">
         <nav>
             <a href="/portfolio/fr/index.html">Raphaël Bardini</a>
             <ul>
@@ -84,30 +93,39 @@
             </section>
             <section>                    <ul id="links" class="lvl list-link">
                                             <li>
-                <a class="iconed-text" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/s1.02-sudoku">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/s1.02-sudoku">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    <span>Dépôt GitHub</span>
                 </a>
             </li>
                                 </ul>
                             </section>
             <section>                    <h3>Coéquipiers</h3>
-                    <ul id="team" class="lvl">    <li     class="definition"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://matteo-k.github.io/Matteo-K_Portfolio.github.io/">Mattéo Kervadec</a>
+                    <ul id="team" class="lvl">                            <li>    <article class="definition" >
+        <h4><a target="_blank" rel="noopener noreferrer" href="https://matteo-k.github.io/Matteo-K_Portfolio.github.io/">Mattéo Kervadec</a>
         </h4>
         <img src="/portfolio/img/definition/kervadec-matteo/logo.jpg" alt="Logo Mattéo Kervadec" title="Logo Mattéo Kervadec" width="800" height="800" loading="lazy">        <p><small>Personne</small></p>
         <p>Mattéo Kervadec est un étudiant en 1<sup>ère</sup> année de <abbr title="Bachelor Universitaire Technologique">BUT</abbr> en filière Informatique à l'IUT de Lannion. Il a un baccalauréat avec les spécialités <a class="link" target="_blank" rel="noopener noreferrer" href="https://cache.media.education.gouv.fr/file/SPE8_MENJ_25_7_2019/90/7/spe246_annexe_1158907.pdf">Mathématiques</a> et <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"><abbr title="Numériques Sciences Informatiques">NSI</abbr></a> obtenu au lycée <a class="link" target="_blank" rel="noopener noreferrer" href="https://sainteanne-saintlouis.fr">Sainte-Anne</a> à Sainte-Anne-d'Auray. Il est passionné par le tennis et le cinéma autant dans les films que le jeu vidéo. Il porte aussi un intérêt pour le développement de logiciels informatiques.</p>
-    </li>                     </ul>
+    </article>
+</li>
+                                            </ul>
                             </section>
             <div id="story" class="text"><p>L'objectif de ce projet était d'optimiser un algorithme de résolution de grilles de Sudoku afin qu'il puisse résoudre des grilles de différentes difficultés le plus rapidement possible.</p><p>Ce projet, réalisé en binôme, aura été une aventure particulièrement enrichissante. En effet, après le rendu, notre professeur a organisé un concours d'optimisation. Chaque participant soumetta son programme et notre professeur fit plusieurs <em>benchmarks</em> sur des grilles de Sudoku 3x3, 4x4, 5x5&hellip; afin de déterminer l'équipe qui a le programme le plus optimisé.</p><p>Moi et mon coéquipier Mattéo Kervadec avons remporté le concours haut la main.</p><p>Certes, nous y avons passé quelques nuits tardives, mais cela nous a permis d'apprendre toute sourtes d'astuces relatives à l'optimisation et de devenir de meilleurs prorammeurs en général.</p><p>De plus, ce projet a continué à grandir grâche à l'investissement personnel de Mattéo et moi. Nous l'avons amélioré sur notre temps libre, aboutissant finalement à <a class="link" href="/portfolio/fr/project/sudone.html">Sudone</a>.</p></div>
             <section>                    <h3>Technologies</h3>
-                    <ul id="technologies" class="lvl">    <li     class="definition"      style="--bg-img-definition: url(/portfolio/img/definition/vs-code/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code">Visual Studio Code</a>
+                    <ul id="technologies" class="lvl">                            <li>    <article class="definition"  style="--bg-img-definition: url(/portfolio/img/definition/vs-code/bg.png)">
+        <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code">Visual Studio Code</a>
         </h4>
-        <img src="/portfolio/img/definition/vs-code/logo.svg" alt="Logo Visual Studio Code" title="Logo Visual Studio Code" height="30" loading="lazy">        <p><small>Logiciel</small></p>
+        <img src="/portfolio/img/definition/vs-code/logo.svg" alt="Logo Visual Studio Code" title="Logo Visual Studio Code" height="30" loading="lazy">        <p><small>Environnement de développement intégré</small></p>
         <p>Visual Studio Code est un éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.</p>
-    </li>     <li     class="definition"      style="--bg-img-definition: url(/portfolio/img/definition/c/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)">C</a>
+    </article>
+</li>
+                                                    <li>    <article class="definition"  style="--bg-img-definition: url(/portfolio/img/definition/c/bg.png)">
+        <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)">C</a>
         </h4>
         <img src="/portfolio/img/definition/c/logo.svg" alt="Logo C" title="Logo C" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
         <p>C est un langage de programmation impératif, généraliste et de bas niveau, inventé en 1972 par Dennis Ritchie et Ken Thompson.</p>
-    </li>                     </ul>
+    </article>
+</li>
+                                            </ul>
                             </section>
             <section>            </section>
             <section>            </section>

@@ -8,8 +8,9 @@
         <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
         <link rel="manifest" href="/portfolio/site.webmanifest">
         <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
-                <link rel="stylesheet" href="/portfolio/css/project.css">        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+
+                    <link rel="stylesheet" type="text/css" href="/portfolio/css/project.css">
+                        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
         <meta name="description" content="Bonjour ! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous !">
@@ -21,7 +22,15 @@
     </head>
 
     <body>
-            <header class="lvl">
+            <template id="template-definition-tooltip">
+        <article class="lvl definition-tooltip" role="tooltip">
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer"><!-- href="wiki"; name --></a></h4>
+            <!-- logo graphic -->
+            <p class="type"><small><!-- type --></small></p>
+            <p class="synopsis"><!-- synopsis --></p>
+        </article>
+    </template>
+    <header class="lvl">
         <nav>
             <a href="/portfolio/fr/index.html">Raphaël Bardini</a>
             <ul>
@@ -84,7 +93,7 @@
             </section>
             <section>                    <ul id="links" class="lvl list-link">
                                             <li>
-                <a class="iconed-text" target="_blank" rel="noopener noreferrer" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993">
+                <a target="_blank" rel="noopener noreferrer" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993">
                     <img src="/portfolio/img/social/steam.svg" alt="" height="30" loading="lazy">                    <span>Article Steam Workshop</span>
                 </a>
             </li>
@@ -94,15 +103,21 @@
             <div id="story" class="text"><p>J'ai toujours trouvé que dans Cities: Skylines, les villes ont un look international plutôt fade et homogène. Où sont le goût, l'émotion, la particularité, toutes ces choses qui font le charme d'une ville&nbsp;? Alors j'ai essayé de reproduire des villes et villages européens, notamment français. Et c'est ce qui a créé le besoin pour une route française, qui respecte les normes réelles pour le marquage au sol et les panneaux. Personne ne l'avait encore fait sur le Workshop, alors je m'y suis mis. J'ai ainsi découvert les bases du texturing et de la modélisation 3D.</p>
 <p>Mettre un pied dans le monde de la modélisation 3D et du game design aura été une expérience enrichissante pour moi, même si je n'en ferai pas une passion.</p></div>
             <section>                    <h3>Technologies</h3>
-                    <ul id="technologies" class="lvl">    <li     class="definition"      style="--bg-img-definition: url(/portfolio/img/definition/blender/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Blender">Blender</a>
+                    <ul id="technologies" class="lvl">                            <li>    <article class="definition"  style="--bg-img-definition: url(/portfolio/img/definition/blender/bg.png)">
+        <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Blender">Blender</a>
         </h4>
         <img src="/portfolio/img/definition/blender/logo.svg" alt="Logo Blender" title="Logo Blender" height="30" loading="lazy">        <p><small>Logiciel</small></p>
         <p>Blender est un logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D.</p>
-    </li>     <li     class="definition"      style="--bg-img-definition: url(/portfolio/img/definition/cities-skylines/bg.jpg)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Cities%3A_Skylines">Cities: Skylines</a>
+    </article>
+</li>
+                                                    <li>    <article class="definition"  style="--bg-img-definition: url(/portfolio/img/definition/cities-skylines/bg.jpg)">
+        <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Cities%3A_Skylines">Cities: Skylines</a>
         </h4>
         <img src="/portfolio/img/definition/cities-skylines/logo.png" alt="Logo Cities: Skylines" title="Logo Cities: Skylines" width="333" height="128" loading="lazy">        <p><small>Jeu-vidéo</small></p>
         <p>Cities: Skylines est un jeu de construction de ville développé par Colossal Order et publié par Paradox Interactive en 2015. Le jeu est une simulation de construction de ville ouverte et solo.</p>
-    </li>                     </ul>
+    </article>
+</li>
+                                            </ul>
                             </section>
             <section>            </section>
             <section>            </section>

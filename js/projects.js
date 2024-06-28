@@ -1,6 +1,6 @@
 "use strict";
 
-jQuery(document).ready(async _ => {
+$(document).ready(async _ => {
     function createLi(contents) {
         const li = document.createElement('li');
         li.append(contents);
@@ -21,11 +21,10 @@ jQuery(document).ready(async _ => {
         }
     }
 
-    // Fetch JSON data
     const [projects, tags, anchors] = await Promise.all([
-        fetch(`/portfolio/data/${document.documentElement.lang}/projects.json`).then(res => res.json()).catch(err => { throw err }),
-        fetch(`/portfolio/data/${document.documentElement.lang}/tags.json`).then(res => res.json()).catch(err => { throw err }),
-        fetch(`/portfolio/data/anchors.json`).then(res => res.json()).catch(err => { throw err }),
+        getDataJson(`${document.documentElement.lang}/projects`),
+        getDataJson(`${document.documentElement.lang}/tags`),
+        getDataJson('anchors'),
     ]);
 
     const allowedTags = new Set();
@@ -101,17 +100,18 @@ jQuery(document).ready(async _ => {
     }
 
     async function getProjectHtml(id, project) {
-        return `<li${map(b => ` style="--bg-img-project: url(${b})"`, '', project.background)}>
+        return `<li${map(project.background, b => ` style="--bg-img-project: url(${b})"`, '')}>
         <ul class="list-rect">${project.tags.map(id => `<li><a href="?tag=${id}">${tags[id]}</a></li>`).join('')}</ul>
-            ${await map(async info => (await getIconElement(info.isThemedSvg, `${info.url}`, `Logo ${project.title}`, ['logo'])).outerHTML,
-            '', project.logo)}
+            ${await map(project.logo, async info =>
+            (await getGraphicElement(info, project.title /* todo: format title*/, ['logo'])).outerHTML,
+            '')}
             <h3><a href="project/${id}.html">${project.title}</a></h3>
             <p class="context"><small>${ucfirst(project.context)}</small></p>
             <p class="status"><small>${getStatus(project)}</small></p>
             <p class="abstract">${project.abstract}</p>
             <ul class="list-link">
                 ${(await Promise.all(Object.entries(project.links).map(async ([name, link]) => {
-                const icon = await getIconElement(anchors[link.anchor].isThemedSvg, anchors[link.anchor].url);
+                const icon = await getGraphicElement(anchors[link.anchor]);
                 return `<li><a href="${link.href}" title="${name}" target="_blank" rel="noopener noreferrer">${icon.outerHTML}</a></li>`;
             }))).join('')}
             </ul>
@@ -120,7 +120,7 @@ jQuery(document).ready(async _ => {
 
     function getStatus(project) {
         const startDate = formatDate(project['start-date']);
-        const endDate = map(formatDate, 'en cours', project['end-date']);
+        const endDate = map(project['end-date'], formatDate, 'en cours');
         return `${startDate} – ${endDate}`;
     }
 });

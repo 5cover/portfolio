@@ -1,4 +1,4 @@
-     <!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="fr">
 
     <head>
@@ -8,7 +8,8 @@
         <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
         <link rel="manifest" href="/portfolio/site.webmanifest">
         <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
+
+                    <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
                         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
@@ -21,7 +22,15 @@
     </head>
 
 <body>
-        <header class="lvl">
+        <template id="template-definition-tooltip">
+        <article class="lvl definition-tooltip" role="tooltip">
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer"><!-- href="wiki"; name --></a></h4>
+            <!-- logo graphic -->
+            <p class="type"><small><!-- type --></small></p>
+            <p class="synopsis"><!-- synopsis --></p>
+        </article>
+    </template>
+    <header class="lvl">
         <nav>
             <a href="/portfolio/fr/index.html">Raphaël Bardini</a>
             <ul>
@@ -75,521 +84,270 @@
     </header>
     <main>
         <dl>
+                            <dt id="wizard">wizard</dt>
+                <dd>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards" data-definition-id="wizard" class="link definition-tooltip-trigger">Assistant</a>                    </div>
+                </dd>
+                            <dt id="task-dialog">task-dialog</dt>
+                <dd>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview" data-definition-id="task-dialog" class="link definition-tooltip-trigger">Dialogue de tâche</a>                    </div>
+                </dd>
+                            <dt id="spyder">spyder</dt>
+                <dd>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.spyder-ide.org/" data-definition-id="spyder" class="link definition-tooltip-trigger">Spyder</a>                    </div>
+                </dd>
                             <dt id="apache2">apache2</dt>
                 <dd>
-                    Apache Server, Apache2                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Apache_HTTP_Server" class="link definition-tooltip-trigger">Apache HTTP Server</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Apache_HTTP_Server">Apache HTTP Server</a>
-        </h4>
-        <img src="/portfolio/img/definition/apache2/logo.svg" alt="Logo Apache HTTP Server" title="Logo Apache HTTP Server" height="30" loading="lazy">        <p><small>Logiciel</small></p>
-        <p>Le logiciel libre Apache HTTP Server (Apache) est un serveur HTTP créé et maintenu au sein de la fondation Apache.</p>
-    </div>                     </div>
+                    Apache Server, Apache2                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Apache_HTTP_Server" data-definition-id="apache2" class="link definition-tooltip-trigger">Apache HTTP Server</a>                    </div>
                 </dd>
                             <dt id="bash">bash</dt>
                 <dd>
-                    Bash                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Bourne-Again_shell" class="link definition-tooltip-trigger">Bourne-Again shell</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/bash/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Bourne-Again_shell">Bourne-Again shell</a>
-        </h4>
-        <img src="/portfolio/img/definition/bash/logo.svg" alt="Logo Bourne-Again shell" title="Logo Bourne-Again shell" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>Bash est un interpréteur en ligne de commande de type script. C'est le shell Unix du projet GNU.</p>
-    </div>                     </div>
+                    Bash                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Bourne-Again_shell" data-definition-id="bash" class="link definition-tooltip-trigger">Bourne-Again shell</a>                    </div>
                 </dd>
                             <dt id="blender">blender</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Blender" class="link definition-tooltip-trigger">Blender</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/blender/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Blender">Blender</a>
-        </h4>
-        <img src="/portfolio/img/definition/blender/logo.svg" alt="Logo Blender" title="Logo Blender" height="30" loading="lazy">        <p><small>Logiciel</small></p>
-        <p>Blender est un logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Blender" data-definition-id="blender" class="link definition-tooltip-trigger">Blender</a>                    </div>
                 </dd>
                             <dt id="c">c</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" class="link definition-tooltip-trigger">C</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/c/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)">C</a>
-        </h4>
-        <img src="/portfolio/img/definition/c/logo.svg" alt="Logo C" title="Logo C" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>C est un langage de programmation impératif, généraliste et de bas niveau, inventé en 1972 par Dennis Ritchie et Ken Thompson.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a>                    </div>
                 </dd>
                             <dt id="chartier--le-goff-marius">chartier--le-goff-marius</dt>
                 <dd>
-                    Marius CHARTIER--LE GOFF, Chartier--Le Goff Marius, CHARTIER--LE GOFF Marius                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://icelos6.wixsite.com/portfolio-marius-cha" class="link definition-tooltip-trigger">Marius Chartier--Le Goff</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://icelos6.wixsite.com/portfolio-marius-cha">Marius Chartier--Le Goff</a>
-        </h4>
-        <img src="/portfolio/img/definition/chartier--le-goff-marius/logo.webp" alt="Logo Marius Chartier--Le Goff" title="Logo Marius Chartier--Le Goff" width="589" height="620" loading="lazy">        <p><small>Personne</small></p>
-        <p>Marius Chartier--Le Goff est né en 2005 et est étudiant en BUT informatique à l'IUT de Lannion. Il souhaite continuer ses études jusqu'au titre d'ingénieur.</p>
-    </div>                     </div>
+                    Marius CHARTIER--LE GOFF, Chartier--Le Goff Marius, CHARTIER--LE GOFF Marius                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://icelos6.wixsite.com/portfolio-marius-cha" data-definition-id="chartier--le-goff-marius" class="link definition-tooltip-trigger">Marius Chartier--Le Goff</a>                    </div>
                 </dd>
                             <dt id="cities-skylines">cities-skylines</dt>
                 <dd>
-                    Cities Skylines                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Cities%3A_Skylines" class="link definition-tooltip-trigger">Cities: Skylines</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/cities-skylines/bg.jpg)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Cities%3A_Skylines">Cities: Skylines</a>
-        </h4>
-        <img src="/portfolio/img/definition/cities-skylines/logo.png" alt="Logo Cities: Skylines" title="Logo Cities: Skylines" width="333" height="128" loading="lazy">        <p><small>Jeu-vidéo</small></p>
-        <p>Cities: Skylines est un jeu de construction de ville développé par Colossal Order et publié par Paradox Interactive en 2015. Le jeu est une simulation de construction de ville ouverte et solo.</p>
-    </div>                     </div>
+                    Cities Skylines                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Cities%3A_Skylines" data-definition-id="cities-skylines" class="link definition-tooltip-trigger">Cities: Skylines</a>                    </div>
                 </dd>
                             <dt id="cpp">cpp</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C%2B%2B" class="link definition-tooltip-trigger">C++</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/cpp/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C%2B%2B">C++</a>
-        </h4>
-        <img src="/portfolio/img/definition/cpp/logo.svg" alt="Logo C++" title="Logo C++" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>C++ est un langage de programmation compilé permettant la programmation sous de multiples paradigmes, dont la programmation procédurale, la programmation orientée objet et la programmation générique.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C%2B%2B" data-definition-id="cpp" class="link definition-tooltip-trigger">C++</a>                    </div>
                 </dd>
                             <dt id="csharp">csharp</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_Sharp" class="link definition-tooltip-trigger">C#</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/csharp/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_Sharp">C#</a>
-        </h4>
-        <img src="/portfolio/img/definition/csharp/logo.png" alt="Logo C#" title="Logo C#" width="256" height="256" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>C# est un langage de programmation orienté objet, commercialisé par Microsoft depuis 2002.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_Sharp" data-definition-id="csharp" class="link definition-tooltip-trigger">C#</a>                    </div>
                 </dd>
                             <dt id="css">css</dt>
                 <dd>
-                    Cascading Style Sheets                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade" class="link definition-tooltip-trigger">CSS</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/css/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade">CSS</a>
-        </h4>
-        <img src="/portfolio/img/definition/css/logo.svg" alt="Logo CSS" title="Logo CSS" height="30" loading="lazy">        <p><small>Language informatique</small></p>
-        <p>Les feuilles de style en cascade, généralement appelées CSS de l'anglais <em>Cascading Style Sheets</em>, forment un langage informatique qui décrit la présentation des documents HTML et XML.</p>
-    </div>                     </div>
+                    Cascading Style Sheets                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade" data-definition-id="css" class="link definition-tooltip-trigger">CSS</a>                    </div>
                 </dd>
                             <dt id="csv">csv</dt>
                 <dd>
-                    Comma-separated values                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Comma-separated_values" class="link definition-tooltip-trigger">CSV</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/csv/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Comma-separated_values">CSV</a>
-        </h4>
-        <img src="/portfolio/img/definition/csv/logo.svg" alt="Logo CSV" title="Logo CSV" height="30" loading="lazy">        <p><small>Format de données</small></p>
-        <p>Comma-separated values est un format texte ouvert représentant des données tabulaires sous forme de valeurs séparées.</p>
-    </div>                     </div>
+                    Comma-separated values                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Comma-separated_values" data-definition-id="csv" class="link definition-tooltip-trigger">CSV</a>                    </div>
                 </dd>
                             <dt id="docker">docker</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Docker_(logiciel)" class="link definition-tooltip-trigger">Docker</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Docker_(logiciel)">Docker</a>
-        </h4>
-        <img src="/portfolio/img/definition/docker/logo.png" alt="Logo Docker" title="Logo Docker" width="3152" height="2488" loading="lazy">        <p><small>Logiciel</small></p>
-        <p>Docker est un outil qui peut empaqueter une application et ses dépendances dans un conteneur isolé, qui pourra être exécuté sur n'importe quel serveur.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Docker_(logiciel)" data-definition-id="docker" class="link definition-tooltip-trigger">Docker</a>                    </div>
                 </dd>
                             <dt id="dotnet">dotnet</dt>
                 <dd>
-                    Microsoft .NET                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/.NET" class="link definition-tooltip-trigger">.NET</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/.NET">.NET</a>
-        </h4>
-        <img src="/portfolio/img/definition/dotnet/logo.svg" alt="Logo .NET" title="Logo .NET" height="30" loading="lazy">        <p><small>Bibliothèque</small></p>
-        <p>.NET est une plateforme de développement créée par Microsoft. Elle fournit un ensemble de technologies, de langages de programmation et d'outils pour la création d'applications Windows, web, mobiles et IoT (Internet des objets).</p>
-    </div>                     </div>
+                    Microsoft .NET                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/.NET" data-definition-id="dotnet" class="link definition-tooltip-trigger">.NET</a>                    </div>
                 </dd>
                             <dt id="doxygen">doxygen</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Doxygen" class="link definition-tooltip-trigger">Doxygen</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Doxygen">Doxygen</a>
-        </h4>
-        <img src="/portfolio/img/definition/doxygen/logo.png" alt="Logo Doxygen" title="Logo Doxygen" width="128" height="128" loading="lazy">        <p><small>Logiciel</small></p>
-        <p>Doxygen est un générateur de documentation sous licence libre capable de produire une documentation logicielle à partir du code source d'un programme. Pour cela, il tient compte de la syntaxe du langage dans lequel est écrit le code source, ainsi que des commentaires s'ils sont écrits dans un format particulier.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Doxygen" data-definition-id="doxygen" class="link definition-tooltip-trigger">Doxygen</a>                    </div>
                 </dd>
                             <dt id="ebnf">ebnf</dt>
                 <dd>
-                    Extended Backus-Naur Form                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form" class="link definition-tooltip-trigger">EBNF</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form">EBNF</a>
-        </h4>
-                <p><small>Language informatique</small></p>
-        <p>L'Extended Backus-Naur Form est une extension du métalangage <abbr title="Backus-Naur Form">BNF</abbr>, créée par Niklaus Wirth en 1996. Ce langage exprime des grammaires formelles afin de notamment concevoir des compilateurs.</p>
-    </div>                     </div>
+                    Extended Backus-Naur Form                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form" data-definition-id="ebnf" class="link definition-tooltip-trigger">EBNF</a>                    </div>
                 </dd>
                             <dt id="figma">figma</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Figma" class="link definition-tooltip-trigger">Figma</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Figma">Figma</a>
-        </h4>
-        <img src="/portfolio/img/definition/figma/logo.svg" alt="Logo Figma" title="Logo Figma" height="30" loading="lazy">        <p><small>Site Web</small></p>
-        <p>Figma est un éditeur de graphiques vectoriels et un outil de prototypage en ligne.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Figma" data-definition-id="figma" class="link definition-tooltip-trigger">Figma</a>                    </div>
                 </dd>
                             <dt id="github">github</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/GitHub" class="link definition-tooltip-trigger">GitHub</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/GitHub">GitHub</a>
-        </h4>
-        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)" title="Logo GitHub"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>        <p><small>Site Web</small></p>
-        <p>GitHub est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/GitHub" data-definition-id="github" class="link definition-tooltip-trigger">GitHub</a>                    </div>
                 </dd>
                             <dt id="gloomaps">gloomaps</dt>
                 <dd>
-                    Gloomaps                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.gloomaps.com/" class="link definition-tooltip-trigger">GlooMaps</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://www.gloomaps.com/">GlooMaps</a>
-        </h4>
-        <img src="/portfolio/img/definition/gloomaps/logo.png" alt="Logo GlooMaps" title="Logo GlooMaps" width="128" height="128" loading="lazy">        <p><small>Site Web</small></p>
-        <p>GlooMaps est un outil de cartographie de site en ligne simple.</p>
-    </div>                     </div>
+                    Gloomaps                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.gloomaps.com/" data-definition-id="gloomaps" class="link definition-tooltip-trigger">GlooMaps</a>                    </div>
                 </dd>
                             <dt id="html">html</dt>
                 <dd>
-                    HyperText Markup Language, HTML5                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language" class="link definition-tooltip-trigger">HTML</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/html/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language">HTML</a>
-        </h4>
-        <img src="/portfolio/img/definition/html/logo.svg" alt="Logo HTML" title="Logo HTML" height="30" loading="lazy">        <p><small>Langage de balisage</small></p>
-        <p>HyperText Markup Language est le langage de balisage conçu pour représenter les pages web.</p>
-    </div>                     </div>
+                    HyperText Markup Language, HTML5                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language" data-definition-id="html" class="link definition-tooltip-trigger">HTML</a>                    </div>
                 </dd>
                             <dt id="inno-setup">inno-setup</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Inno_Setup" class="link definition-tooltip-trigger">Inno Setup</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Inno_Setup">Inno Setup</a>
-        </h4>
-        <img src="/portfolio/img/definition/inno-setup/logo.png" alt="Logo Inno Setup" title="Logo Inno Setup" width="256" height="256" loading="lazy">        <p><small>Logiciel</small></p>
-        <p>Inno Setup est un logiciel libre permettant de créer des installateurs pour Windows.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Inno_Setup" data-definition-id="inno-setup" class="link definition-tooltip-trigger">Inno Setup</a>                    </div>
                 </dd>
                             <dt id="java">java</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Java_(langage)" class="link definition-tooltip-trigger">Java</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/java/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Java_(langage)">Java</a>
-        </h4>
-        <img src="/portfolio/img/definition/java/logo.svg" alt="Logo Java" title="Logo Java" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>Java est un langage de programmation de haut niveau orienté objet créé par James Gosling et Patrick Naughton en 1995.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Java_(langage)" data-definition-id="java" class="link definition-tooltip-trigger">Java</a>                    </div>
                 </dd>
                             <dt id="javascript">javascript</dt>
                 <dd>
-                    JS                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/JavaScript" class="link definition-tooltip-trigger">JavaScript</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/javascript/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/JavaScript">JavaScript</a>
-        </h4>
-        <img src="/portfolio/img/definition/javascript/logo.svg" alt="Logo JavaScript" title="Logo JavaScript" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.</p>
-    </div>                     </div>
+                    JS                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/JavaScript" data-definition-id="javascript" class="link definition-tooltip-trigger">JavaScript</a>                    </div>
                 </dd>
                             <dt id="json">json</dt>
                 <dd>
-                    JavaScript Object Notation                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/JavaScript_Object_Notation" class="link definition-tooltip-trigger">JSON</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/json/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/JavaScript_Object_Notation">JSON</a>
-        </h4>
-        <img src="/portfolio/img/definition/json/logo.svg" alt="Logo JSON" title="Logo JSON" height="30" loading="lazy">        <p><small>Format de données</small></p>
-        <p>JavaScript Object Notation est un format de données textuel dérivé de la notation des objets du langage JavaScript. Il concurrence XML pour la représentation et la transmission d’information structurée.</p>
-    </div>                     </div>
+                    JavaScript Object Notation                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/JavaScript_Object_Notation" data-definition-id="json" class="link definition-tooltip-trigger">JSON</a>                    </div>
                 </dd>
                             <dt id="kervadec-matteo">kervadec-matteo</dt>
                 <dd>
-                    Mattéo KERVADEC, Kervadec Mattéo, KERVADEC Mattéo                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://matteo-k.github.io/Matteo-K_Portfolio.github.io/" class="link definition-tooltip-trigger">Mattéo Kervadec</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://matteo-k.github.io/Matteo-K_Portfolio.github.io/">Mattéo Kervadec</a>
-        </h4>
-        <img src="/portfolio/img/definition/kervadec-matteo/logo.jpg" alt="Logo Mattéo Kervadec" title="Logo Mattéo Kervadec" width="800" height="800" loading="lazy">        <p><small>Personne</small></p>
-        <p>Mattéo Kervadec est un étudiant en 1<sup>ère</sup> année de <abbr title="Bachelor Universitaire Technologique">BUT</abbr> en filière Informatique à l'IUT de Lannion. Il a un baccalauréat avec les spécialités <a class="link" target="_blank" rel="noopener noreferrer" href="https://cache.media.education.gouv.fr/file/SPE8_MENJ_25_7_2019/90/7/spe246_annexe_1158907.pdf">Mathématiques</a> et <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"><abbr title="Numériques Sciences Informatiques">NSI</abbr></a> obtenu au lycée <a class="link" target="_blank" rel="noopener noreferrer" href="https://sainteanne-saintlouis.fr">Sainte-Anne</a> à Sainte-Anne-d'Auray. Il est passionné par le tennis et le cinéma autant dans les films que le jeu vidéo. Il porte aussi un intérêt pour le développement de logiciels informatiques.</p>
-    </div>                     </div>
+                    Mattéo KERVADEC, Kervadec Mattéo, KERVADEC Mattéo                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://matteo-k.github.io/Matteo-K_Portfolio.github.io/" data-definition-id="kervadec-matteo" class="link definition-tooltip-trigger">Mattéo Kervadec</a>                    </div>
                 </dd>
                             <dt id="lua">lua</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Lua" class="link definition-tooltip-trigger">Lua</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Lua">Lua</a>
-        </h4>
-        <img src="/portfolio/img/definition/lua/logo.svg" alt="Logo Lua" title="Logo Lua" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>Lua est un langage de script libre, réflexif et impératif créé en 1993.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Lua" data-definition-id="lua" class="link definition-tooltip-trigger">Lua</a>                    </div>
                 </dd>
                             <dt id="markdown">markdown</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Markdown" class="link definition-tooltip-trigger">Markdown</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/markdown/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Markdown">Markdown</a>
-        </h4>
-        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 208 128" title="Logo Markdown"><rect x="5" y="5" ry="10" stroke-width="10" fill="none" style="stroke: var(--color-fg)"/><path d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39zm125 0l-30-33h20V30h20v35h20z" style="fill: var(--color-fg)"/></svg>        <p><small>Langage de balisage</small></p>
-        <p>Markdown est un langage de balisage léger créé en 2004 par John Gruber, avec l'aide d'Aaron Swartz.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Markdown" data-definition-id="markdown" class="link definition-tooltip-trigger">Markdown</a>                    </div>
                 </dd>
                             <dt id="minecraft">minecraft</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Minecraft" class="link definition-tooltip-trigger">Minecraft</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/minecraft/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Minecraft">Minecraft</a>
-        </h4>
-        <img src="/portfolio/img/definition/minecraft/logo.svg" alt="Logo Minecraft" title="Logo Minecraft" height="30" loading="lazy">        <p><small>Jeu-vidéo</small></p>
-        <p>Minecraft est un jeu vidéo de type aventure « bac à sable » (construction complètement libre) développé par le Suédois Markus Persson, alias Notch, puis par la société Mojang Studios.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Minecraft" data-definition-id="minecraft" class="link definition-tooltip-trigger">Minecraft</a>                    </div>
                 </dd>
                             <dt id="mysql">mysql</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/MySQL" class="link definition-tooltip-trigger">MySQL</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/MySQL">MySQL</a>
-        </h4>
-        <img src="/portfolio/img/definition/mysql/logo.svg" alt="Logo MySQL" title="Logo MySQL" height="30" loading="lazy">        <p><small>Système de gestion de base de données</small></p>
-        <p>MySQL est un système de gestion de bases de données relationnelles.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/MySQL" data-definition-id="mysql" class="link definition-tooltip-trigger">MySQL</a>                    </div>
                 </dd>
                             <dt id="pascal">pascal</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Pascal_(langage)" class="link definition-tooltip-trigger">Pascal</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/pascal/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Pascal_(langage)">Pascal</a>
-        </h4>
-        <img src="/portfolio/img/definition/pascal/logo.svg" alt="Logo Pascal" title="Logo Pascal" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>Pascal est un langage de programmation impératif conçu pour l'enseignement.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Pascal_(langage)" data-definition-id="pascal" class="link definition-tooltip-trigger">Pascal</a>                    </div>
                 </dd>
                             <dt id="pgsql">pgsql</dt>
                 <dd>
-                    Postgres, pgsql, pg_sql                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/PostgreSQL" class="link definition-tooltip-trigger">PostgreSQL</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a>
-        </h4>
-        <img src="/portfolio/img/definition/pgsql/logo.svg" alt="Logo PostgreSQL" title="Logo PostgreSQL" height="30" loading="lazy">        <p><small>Système de gestion de base de données</small></p>
-        <p>PostgreSQL est un système de gestion de base de données relationnelle et objet.</p>
-    </div>                     </div>
+                    Postgres, pgsql, pg_sql                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/PostgreSQL" data-definition-id="pgsql" class="link definition-tooltip-trigger">PostgreSQL</a>                    </div>
                 </dd>
                             <dt id="php">php</dt>
                 <dd>
-                    PHP: Hypertext Preprocessor, Personal Homepage                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/PHP" class="link definition-tooltip-trigger">PHP</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/php/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/PHP">PHP</a>
-        </h4>
-        <img src="/portfolio/img/definition/php/logo.svg" alt="Logo PHP" title="Logo PHP" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>PHP: Hypertext Preprocessor est un langage de programmation créé en 1993, principalement utilisé pour produire des pages Web dynamiques via un serveur web</p>
-    </div>                     </div>
+                    PHP: Hypertext Preprocessor, Personal Homepage                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/PHP" data-definition-id="php" class="link definition-tooltip-trigger">PHP</a>                    </div>
                 </dd>
                             <dt id="powershell">powershell</dt>
                 <dd>
-                    Windows PowerShell                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_PowerShell" class="link definition-tooltip-trigger">PowerShell</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/powershell/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_PowerShell">PowerShell</a>
-        </h4>
-        <img src="/portfolio/img/definition/powershell/logo.svg" alt="Logo PowerShell" title="Logo PowerShell" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>Windows PowerShell est une interface de ligne de commande multiplate-forme et langage de script pour l'administration de systèmes informatiques et de réseaux.</p>
-    </div>                     </div>
+                    Windows PowerShell                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_PowerShell" data-definition-id="powershell" class="link definition-tooltip-trigger">PowerShell</a>                    </div>
                 </dd>
                             <dt id="python">python</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Python_(langage)" class="link definition-tooltip-trigger">Python</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/python/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Python_(langage)">Python</a>
-        </h4>
-        <img src="/portfolio/img/definition/python/logo.svg" alt="Logo Python" title="Logo Python" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>Python est un langage de programmation interprété, multiparadigme et multiplateformes.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Python_(langage)" data-definition-id="python" class="link definition-tooltip-trigger">Python</a>                    </div>
                 </dd>
                             <dt id="replit">replit</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Replit" class="link definition-tooltip-trigger">Replit</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Replit">Replit</a>
-        </h4>
-        <img src="/portfolio/img/definition/replit/logo.svg" alt="Logo Replit" title="Logo Replit" height="30" loading="lazy">        <p><small>Site Web</small></p>
-        <p>Replit est une start-up américaine et un <abbr title="Environnement de Développement Intégré">IDE</abbr> en ligne, qui permet de créer des projets de programmation en ligne appelés <em>repls</em>.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Replit" data-definition-id="replit" class="link definition-tooltip-trigger">Replit</a>                    </div>
                 </dd>
                             <dt id="rolland-stanislas">rolland-stanislas</dt>
                 <dd>
-                    Stanislas ROLLAND, Rolland Stanislas, ROLLAND Stanislas                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://stanislasrolland.github.io/Portfolio/" class="link definition-tooltip-trigger">Stanislas Rolland</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://stanislasrolland.github.io/Portfolio/">Stanislas Rolland</a>
-        </h4>
-                <p><small>Personne</small></p>
-        <p>Stanislas Rolland est âgé de 18 ans et est actuellement en première année de BUT informatique à l'IUT de Lannion. Avant de rejoindre cette formation, il a obtenu son baccalauréat mention assez bien avec les spécialités <a class="link" target="_blank" rel="noopener noreferrer" href="https://cache.media.education.gouv.fr/file/SPE8_MENJ_25_7_2019/90/7/spe246_annexe_1158907.pdf">Mathématiques</a> et <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"><abbr title="Numériques Sciences Informatiques">NSI</abbr></a>.</p>
-    </div>                     </div>
+                    Stanislas ROLLAND, Rolland Stanislas, ROLLAND Stanislas                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://stanislasrolland.github.io/Portfolio/" data-definition-id="rolland-stanislas" class="link definition-tooltip-trigger">Stanislas Rolland</a>                    </div>
                 </dd>
                             <dt id="sass">sass</dt>
                 <dd>
-                    Syntactically Awesome Style Sheets, SCSS                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Sass_(langage)" class="link definition-tooltip-trigger">SASS</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/sass/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Sass_(langage)">SASS</a>
-        </h4>
-        <img src="/portfolio/img/definition/sass/logo.svg" alt="Logo SASS" title="Logo SASS" height="30" loading="lazy">        <p><small>Language informatique</small></p>
-        <p>Syntactically Awesome Style Sheets est un langage de script préprocesseur qui est compilé ou interprété en CSS.</p>
-    </div>                     </div>
+                    Syntactically Awesome Style Sheets, SCSS                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Sass_(langage)" data-definition-id="sass" class="link definition-tooltip-trigger">SASS</a>                    </div>
                 </dd>
                             <dt id="scheme">scheme</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Scheme" class="link definition-tooltip-trigger">Scheme</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/scheme/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Scheme">Scheme</a>
-        </h4>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" height="30" title="Logo Scheme"><path d="M967 288h36q0-158-51-230T823-14q-63 0-121 47T598 288l-86 388L214 0H25l428 922q-34 179-82 265t-119 86q-57 0-99-43t-48-135H69q3 147 59 235t140 89q54 0 102-44t84-152 111-446l71-317q43-197 90-263t114-67q112 0 127 158" style="fill:var(--color-fg)" transform="matrix(.23738 0 0 -.23738 65.485 354.262)"/></svg>        <p><small>Langage de programmation</small></p>
-        <p>Scheme est un langage de programmation dérivé du langage fonctionnel Lisp, créé dans les années 1970 au <abbr title="Massachusetts Institute of Technology">MIT</abbr> par Gerald Jay Sussman et Guy L. Steele.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Scheme" data-definition-id="scheme" class="link definition-tooltip-trigger">Scheme</a>                    </div>
                 </dd>
                             <dt id="smalltalk">smalltalk</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Smalltalk" class="link definition-tooltip-trigger">Smalltalk</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Smalltalk">Smalltalk</a>
-        </h4>
-        <img src="/portfolio/img/definition/smalltalk/logo.svg" alt="Logo Smalltalk" title="Logo Smalltalk" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>Smalltalk est un langage de programmation orienté objet, réflexif et dynamiquement typé créé en 1972.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Smalltalk" data-definition-id="smalltalk" class="link definition-tooltip-trigger">Smalltalk</a>                    </div>
                 </dd>
                             <dt id="sql">sql</dt>
                 <dd>
-                    Structured Query Language                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Structured_Query_Language" class="link definition-tooltip-trigger">SQL</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/sql/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Structured_Query_Language">SQL</a>
-        </h4>
-                <p><small>Langage de programmation</small></p>
-        <p>Structured Query Language est un langage informatique créé en 1974 servant à exploiter des bases de données relationnelles.</p>
-    </div>                     </div>
+                    Structured Query Language                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Structured_Query_Language" data-definition-id="sql" class="link definition-tooltip-trigger">SQL</a>                    </div>
                 </dd>
                             <dt id="sql-workbench">sql-workbench</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.sql-workbench.eu/" class="link definition-tooltip-trigger">SQL Workbench/J</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/sql-workbench/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://www.sql-workbench.eu/">SQL Workbench/J</a>
-        </h4>
-        <img src="/portfolio/img/definition/sql-workbench/logo.jpg" alt="Logo SQL Workbench/J" title="Logo SQL Workbench/J" width="800" height="122" loading="lazy">        <p><small>Logiciel</small></p>
-        <p>SQL Workbench/J est un outil de requête SQL multiplateforme indépendant du SGBD.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.sql-workbench.eu/" data-definition-id="sql-workbench" class="link definition-tooltip-trigger">SQL Workbench/J</a>                    </div>
                 </dd>
                             <dt id="sqlite">sqlite</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/SQLite" class="link definition-tooltip-trigger">SQLite</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/SQLite">SQLite</a>
-        </h4>
-        <img src="/portfolio/img/definition/sqlite/logo.svg" alt="Logo SQLite" title="Logo SQLite" height="30" loading="lazy">        <p><small>Système de gestion de base de données</small></p>
-        <p>SQLite est une bibliothèque écrite en langage C qui propose un moteur de base de données relationnelle accessible par le langage SQL</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/SQLite" data-definition-id="sqlite" class="link definition-tooltip-trigger">SQLite</a>                    </div>
                 </dd>
                             <dt id="svg">svg</dt>
                 <dd>
-                    Scalable Vector Graphics                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics" class="link definition-tooltip-trigger">SVG</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/svg/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG</a>
-        </h4>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" height="30" title="Logo SVG">
-  <defs>
-    <path d="M50.964 220.638a36.54 36.54 0 0 1-10.746-25.922c0-20.252 16.426-36.668 36.668-36.668 20.252 0 36.678 16.416 36.678 36.668h-21.48c0-8.388-6.808-15.186-15.198-15.186a15.184 15.184 0 0 0-10.746 25.912h.01c2.75 2.76 5.04 3.558 10.736 4.462 10.132 1.054 19.296 4.108 25.932 10.744a36.54 36.54 0 0 1 10.746 25.924c0 20.252-16.426 36.678-36.678 36.678-20.242 0-36.668-16.426-36.668-36.678H61.7c0 8.388 6.798 15.196 15.186 15.196a15.2 15.2 0 0 0 15.198-15.196 15.14 15.14 0 0 0-4.442-10.726h-.01c-2.75-2.75-6.696-3.698-10.746-4.452v-.01c-9.82-1.506-19.286-4.108-25.922-10.746m135.94-62.59-25.94 125.202h-21.48l-25.92-125.202h21.48l15.2 73.326 15.18-73.326zm36.68 51.856h36.668v36.668h.01c0 20.254-16.426 36.68-36.678 36.68-20.254 0-36.668-16.426-36.668-36.68v-51.854h-.01c0-20.252 16.424-36.668 36.678-36.668 20.242 0 36.668 16.416 36.668 36.668H238.77a15.2 15.2 0 0 0-15.186-15.188 15.19 15.19 0 0 0-15.188 15.188v51.854a15.187 15.18 0 0 0 30.374.01v-15.186h-15.186z" id="d" style="fill: var(--color-fg)"/>
-  </defs>
-  <path id="c" style="fill: var(--color-bg)" d="M8.5 150h283v100c0 23.5-18 41.5-41.5 41.5H50c-23.5 0-41.5-18-41.5-41.5Z"/>
-  <g stroke-width="38.009" style="stroke: var(--color-bg)">
-    <g id="b" transform="translate(150 150)">
-      <path id="a" fill="#ffb13b" d="M-84.149-15.851a22.417 22.417 0 1 0 0 31.702H84.15a22.417 22.417 0 1 0 0-31.702Z"/>
-      <use xlink:href="#a" transform="rotate(45)"/>
-      <use xlink:href="#a" transform="rotate(90)"/>
-      <use xlink:href="#a" transform="rotate(135)"/>
-    </g>
-  </g>
-  <use xlink:href="#b"/>
-  <use xlink:href="#c" opacity=".85"/>
-  <use xlink:href="#d"/>
-</svg>        <p><small>Format de données</small></p>
-        <p>Scalable Vector Graphics est un format de données textuel conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML.</p>
-    </div>                     </div>
+                    Scalable Vector Graphics                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics" data-definition-id="svg" class="link definition-tooltip-trigger">SVG</a>                    </div>
                 </dd>
                             <dt id="tkinter">tkinter</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Tkinter" class="link definition-tooltip-trigger">Tkinter</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Tkinter">Tkinter</a>
-        </h4>
-                <p><small>Bibliothèque</small></p>
-        <p>Tkinter (de l'anglais Tool kit interface) est la bibliothèque graphique libre d'origine pour le langage Python, permettant la création d'interfaces graphiques.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Tkinter" data-definition-id="tkinter" class="link definition-tooltip-trigger">Tkinter</a>                    </div>
                 </dd>
                             <dt id="toe-paolo">toe-paolo</dt>
                 <dd>
-                    Paolo TOÉ, Toé Paolo, TOÉ Paolo                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://vitovitae.github.io/" class="link definition-tooltip-trigger">Paolo Toé</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://vitovitae.github.io/">Paolo Toé</a>
-        </h4>
-        <img src="/portfolio/img/definition/toe-paolo/logo.jpg" alt="Logo Paolo Toé" title="Logo Paolo Toé" width="512" height="512" loading="lazy">        <p><small>Personne</small></p>
-        <p>Paolo Vito Toé est un étudiant en BUT Informatique à l'IUT de Lannion. Son parcours le pousse à s'améliorer en permanence, car l'informatique est une de ses grandes passions. Né aux États-Unis et ayant grandi dans plusieurs pays différents, il est suis aussi passionné par les cultures étrangères. Outre ses études, il est passionné par la lecture et la création de jeux.</p>
-    </div>                     </div>
+                    Paolo TOÉ, Toé Paolo, TOÉ Paolo                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://vitovitae.github.io/" data-definition-id="toe-paolo" class="link definition-tooltip-trigger">Paolo Toé</a>                    </div>
                 </dd>
                             <dt id="visual-paradigm">visual-paradigm</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.visual-paradigm.com/" class="link definition-tooltip-trigger">Visual Paradigm</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://www.visual-paradigm.com/">Visual Paradigm</a>
-        </h4>
-        <img src="/portfolio/img/definition/visual-paradigm/logo.png" alt="Logo Visual Paradigm" title="Logo Visual Paradigm" width="750" height="904" loading="lazy">        <p><small>Logiciel</small></p>
-        <p>Visual Paradigm est un logiciel de conception et de modélisation de systèmes d'information. Il offre une plateforme de développement logiciel intégrée qui prend en charge les langages de modélisation UML (Unified Modeling Language), BPMN (Business Process Model and Notation), SysML, et bien d'autres.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.visual-paradigm.com/" data-definition-id="visual-paradigm" class="link definition-tooltip-trigger">Visual Paradigm</a>                    </div>
                 </dd>
                             <dt id="visual-studio">visual-studio</dt>
                 <dd>
-                    Microsoft Visual Studio                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio" class="link definition-tooltip-trigger">Visual Studio</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio">Visual Studio</a>
-        </h4>
-        <img src="/portfolio/img/definition/visual-studio/logo.svg" alt="Logo Visual Studio" title="Logo Visual Studio" height="30" loading="lazy">        <p><small>Logiciel</small></p>
-        <p>Microsoft Visual Studio est une suite de logiciels de développement pour Windows et mac OS conçue par Microsoft.</p>
-    </div>                     </div>
+                    Microsoft Visual Studio                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio" data-definition-id="visual-studio" class="link definition-tooltip-trigger">Visual Studio</a>                    </div>
                 </dd>
                             <dt id="vs-code">vs-code</dt>
                 <dd>
-                    VS Code, VSC, VSCode                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code" class="link definition-tooltip-trigger">Visual Studio Code</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/vs-code/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code">Visual Studio Code</a>
-        </h4>
-        <img src="/portfolio/img/definition/vs-code/logo.svg" alt="Logo Visual Studio Code" title="Logo Visual Studio Code" height="30" loading="lazy">        <p><small>Logiciel</small></p>
-        <p>Visual Studio Code est un éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.</p>
-    </div>                     </div>
+                    VS Code, VSC, VSCode                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code" data-definition-id="vs-code" class="link definition-tooltip-trigger">Visual Studio Code</a>                    </div>
                 </dd>
                             <dt id="winforms">winforms</dt>
                 <dd>
-                    WinForms, Winforms                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_Forms" class="link definition-tooltip-trigger">Windows Forms</a>
-                            <div     class="definition definition-tooltip" role="tooltip"     > <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_Forms">Windows Forms</a>
-        </h4>
-        <img src="/portfolio/img/definition/winforms/logo.png" alt="Logo Windows Forms" title="Logo Windows Forms" width="32" height="32" loading="lazy">        <p><small>Bibliothèque</small></p>
-        <p>Windows Forms un framework d'interface graphique inclus dans le framework .NET fournissant l'accès via à l'API Windows.</p>
-    </div>                     </div>
+                    WinForms, Winforms                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_Forms" data-definition-id="winforms" class="link definition-tooltip-trigger">Windows Forms</a>                    </div>
                 </dd>
                             <dt id="wpf">wpf</dt>
                 <dd>
-                    Windows Presentation Foundation                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation" class="link definition-tooltip-trigger">WPF</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/wpf/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation">WPF</a>
-        </h4>
-        <img src="/portfolio/img/definition/wpf/logo.png" alt="Logo WPF" title="Logo WPF" width="200" height="175" loading="lazy">        <p><small>Bibliothèque</small></p>
-        <p>Windows Presentation Foundation est un système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois en 2006.</p>
-    </div>                     </div>
+                    Windows Presentation Foundation                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation" data-definition-id="wpf" class="link definition-tooltip-trigger">WPF</a>                    </div>
                 </dd>
                             <dt id="xml">xml</dt>
                 <dd>
-                    Extensible Markup Language                    <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Extensible_Markup_Language" class="link definition-tooltip-trigger">XML</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/xml/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Extensible_Markup_Language">XML</a>
-        </h4>
-        <img src="/portfolio/img/definition/xml/logo.svg" alt="Logo XML" title="Logo XML" height="30" loading="lazy">        <p><small>Langage de balisage</small></p>
-        <p>Extensible Markup Language est un métalangage informatique de balisage utilisé pour représenter des données structurées.</p>
-    </div>                     </div>
+                    Extensible Markup Language                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Extensible_Markup_Language" data-definition-id="xml" class="link definition-tooltip-trigger">XML</a>                    </div>
                 </dd>
                             <dt id="zig">zig</dt>
                 <dd>
-                                        <div class="lvl">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" class="link definition-tooltip-trigger">Zig</a>
-                            <div     class="definition definition-tooltip" role="tooltip"      style="--bg-img-definition: url(/portfolio/img/definition/zig/bg.png)"> <h4><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)">Zig</a>
-        </h4>
-        <img src="/portfolio/img/definition/zig/logo.svg" alt="Logo Zig" title="Logo Zig" height="30" loading="lazy">        <p><small>Langage de programmation</small></p>
-        <p>Zig est un langage de programmation compilé impératif polyvalent, typé statiquement, conçu par Andrew Kelley en 2015 pour servir de successeur au C.</p>
-    </div>                     </div>
+                                        <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>                    </div>
                 </dd>
                     </dl>
     </main>

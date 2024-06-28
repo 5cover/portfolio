@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
         <link rel="manifest" href="/portfolio/site.webmanifest">
         <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
+
                     <link rel="stylesheet" type="text/css" href="/portfolio/css/projects.css">
                         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
@@ -22,7 +22,15 @@
     </head>
 
 <body>
-        <header class="lvl">
+        <template id="template-definition-tooltip">
+        <article class="lvl definition-tooltip" role="tooltip">
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer"><!-- href="wiki"; name --></a></h4>
+            <!-- logo graphic -->
+            <p class="type"><small><!-- type --></small></p>
+            <p class="synopsis"><!-- synopsis --></p>
+        </article>
+    </template>
+    <header class="lvl">
         <nav>
             <a href="/portfolio/en/index.html">Raphaël Bardini</a>
             <ul>
