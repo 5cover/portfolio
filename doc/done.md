@@ -335,3 +335,7 @@ All I want is to express HTML content in an PHP file.
 I'd lke to have to rely on my own conventions and concepts as little as possible.
 
 I want to add as little complexity as possible to this project.
+
+## JSON schema foreign keys
+
+for types, definitions, tags, anchors

@@ -1,8 +1,65 @@
 {
     "$schema": "https://json-schema.org/draft-07/schema",
     "type": "object",
-    "title": "Definitions",
-    "uniqueItems": true,
+    "title": "definitions",
+    "propertyNames": {
+        "description": "definition ID",
+        "enum": [
+            "apache2",
+            "bash",
+            "blender",
+            "c",
+            "chartier--le-goff-marius",
+            "cities-skylines",
+            "cpp",
+            "csharp",
+            "css",
+            "csv",
+            "docker",
+            "dotnet",
+            "doxygen",
+            "ebnf",
+            "figma",
+            "github",
+            "gloomaps",
+            "html",
+            "inno-setup",
+            "java",
+            "javascript",
+            "json",
+            "kervadec-matteo",
+            "lua",
+            "markdown",
+            "minecraft",
+            "mysql",
+            "pascal",
+            "pgsql",
+            "php",
+            "powershell",
+            "python",
+            "replit",
+            "rolland-stanislas",
+            "sass",
+            "scheme",
+            "smalltalk",
+            "spyder",
+            "sql",
+            "sql-workbench",
+            "sqlite",
+            "svg",
+            "task-dialog",
+            "tkinter",
+            "toe-paolo",
+            "visual-paradigm",
+            "visual-studio",
+            "vs-code",
+            "winforms",
+            "wizard",
+            "wpf",
+            "xml",
+            "zig"
+        ]
+    },
     "additionalProperties": {
         "type": "object",
         "required": [
@@ -18,27 +75,14 @@
                 "minItems": 1,
                 "uniqueItems": true,
                 "items": {
-                    "$ref": "html.json"
+                    "$ref": "util/html.json"
                 }
             },
             "synopsis": {
-                "$ref": "html.json"
+                "$ref": "util/html.json"
             },
             "type": {
-                "enum": [
-                    "markup-language",
-                    "programming-language",
-                    "game",
-                    "software",
-                    "library",
-                    "computer-language",
-                    "data-format",
-                    "dbms",
-                    "website",
-                    "person",
-                    "ide",
-                    "ui"
-                ]
+                "$ref": "types.json#/propertyNames"
             },
             "wiki": {
                 "type": "string",
@@ -49,21 +93,7 @@
                 "minLength": 1
             },
             "logo": {
-                "type": "object",
-                "properties": {
-                    "url": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "isThemedSvg": {
-                        "description": "Whether to include this image as an SVG element that will be affected by the site's theming. Useful for black & white images that would contrast badly with the background. If this is true, the url must point to an SVG file.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "isThemedSvg",
-                    "url"
-                ]
+                "$ref": "util/graphic.json"
             }
         }
     }

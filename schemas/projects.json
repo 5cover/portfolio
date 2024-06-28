@@ -1,5 +1,4 @@
 {
-    "uniqueItems": true,
     "type": "object",
     "title": "Projects",
     "$schema": "https://json-schema.org/draft-07/schema",
@@ -20,57 +19,7 @@
         ],
         "properties": {
             "abstract": {
-                "$ref": "html.json"
-            },
-            "team": {
-                "uniqueItems": true,
-                "type": "array",
-                "additionalItems": {
-                    "description": "definition id",
-                    "type": "string"
-                }
-            },
-            "links": {
-                "uniqueItems": true,
-                "minProperties": 1,
-                "type": "object",
-                "additionalProperties": {
-                    "type": "object",
-                    "required": [
-                        "href"
-                    ],
-                    "properties": {
-                        "href": {
-                            "format": "uri-reference",
-                            "type": "string"
-                        },
-                        "anchor": {
-                            "minLength": 1,
-                            "type": "string"
-                        }
-                    }
-                }
-            },
-            "references": {
-                "uniqueItems": true,
-                "type": "object",
-                "additionalProperties": {
-                    "type": "object",
-                    "required": [
-                        "href"
-                    ],
-                    "properties": {
-                        "href": {
-                            "type": "string",
-                            "format": "uri-reference"
-                        },
-                        "anchor": {
-                            "description": "anchor id",
-                            "minLength": 1,
-                            "type": "string"
-                        }
-                    }
-                }
+                "$ref": "util/html.json"
             },
             "background": {
                 "type": "string",
@@ -78,20 +27,18 @@
                 "title": "Background URI"
             },
             "context": {
-                "$ref": "html.json"
+                "$ref": "util/html.json"
             },
             "end-date": {
-                "type": "string",
-                "format": "date"
+                "format": "date",
+                "type": "string"
             },
             "gallery": {
-                "uniqueItems": true,
                 "type": "object",
                 "additionalProperties": {
                     "oneOf": [
                         {
                             "additionalProperties": false,
-                            "type": "object",
                             "properties": {
                                 "url": {
                                     "minLength": 1,
@@ -101,7 +48,6 @@
                         },
                         {
                             "additionalProperties": false,
-                            "type": "object",
                             "properties": {
                                 "content": {
                                     "type": "string"
@@ -120,50 +66,52 @@
                     ]
                 }
             },
-            "logo": {
+            "links": {
+                "minProperties": 1,
                 "type": "object",
-                "required": [
-                    "isThemedSvg",
-                    "url"
-                ],
-                "properties": {
-                    "isThemedSvg": {
-                        "type": "boolean",
-                        "description": "Whether to include this image as an SVG element that will be affected by the site's theming. Useful for black & white images that would contrast badly with the background. If this is true, the url must point to an SVG file."
-                    },
-                    "url": {
-                        "minLength": 1,
-                        "type": "string"
-                    }
+                "additionalProperties": {
+                    "$ref": "util/anchor.json"
+                }
+            },
+            "logo": {
+                "$ref": "util/graphic.json"
+            },
+            "references": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "util/anchor.json"
                 }
             },
             "start-date": {
-                "type": "string",
-                "format": "date"
+                "format": "date",
+                "type": "string"
             },
             "story": {
-                "$ref": "html.json"
+                "$ref": "util/html.json"
             },
             "tags": {
                 "uniqueItems": true,
                 "type": "array",
-                "description": "tag IDs",
                 "items": {
-                    "minItems": 1,
-                    "type": "string"
+                    "$ref": "tags.json#/propertyNames"
+                }
+            },
+            "team": {
+                "uniqueItems": true,
+                "type": "array",
+                "items": {
+                    "$ref": "definitions.json#/propertyNames"
                 }
             },
             "technologies": {
                 "uniqueItems": true,
                 "type": "array",
-                "description": "definition IDs of technologies used",
                 "items": {
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "definitions.json#/propertyNames"
                 }
             },
             "title": {
-                "$ref": "html.json"
+                "$ref": "util/html.json"
             }
         }
     }

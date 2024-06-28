@@ -191,7 +191,3 @@ S1.01 : host doxygen generated html on gh-pages, add link
 
 - S1.02, S1.01 : shells
 - S1.01 : documentation
-
-## JSON schema foreign keys
-
-for types, definitions, tags, anchors

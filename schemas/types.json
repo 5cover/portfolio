@@ -1,8 +1,24 @@
 {
     "$schema": "https://json-schema.org/draft-07/schema",
     "type": "object",
-    "title": "Types",
-    "uniqueItems": true,
+    "title": "types",
+    "propertyNames": {
+        "description": "type ID",
+        "enum": [
+            "markup-language",
+            "programming-language",
+            "game",
+            "software",
+            "library",
+            "computer-language",
+            "data-format",
+            "dbms",
+            "website",
+            "person",
+            "ide",
+            "ui"
+        ]
+    },
     "additionalProperties": {
         "type": "string"
     }
