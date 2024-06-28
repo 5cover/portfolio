@@ -13,7 +13,7 @@ require_once 'help.php';
         </datalist>
         <section class="lvl" id="search-bar">
             <h1><?php echo $lang->get('projectSearchSearch') ?></h1>
-            <input type="search" id="search-input" placeholder="<?php echo $lang->get('projectSearchPlaceholder') ?>" autocomplete="on" list="project-titles">
+            <input incremental type="search" id="search-input" placeholder="<?php echo $lang->get('projectSearchPlaceholder') ?>" autocomplete="on" list="project-titles">
             <section>
                 <h3><?php echo $lang->get('projectSearchTags') ?></h3>
                 <ul class="lvl list-rect" id="list-tag">

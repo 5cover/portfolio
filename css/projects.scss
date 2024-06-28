@@ -1,21 +1,22 @@
 @use 'base';
 
 #search-bar {
-    @include base.lvl1-content(1px 1px 1px 0);
-    @include base.gapped;
+    @include base.lvl-content(1px 1px 1px 0);
+    @include base.gapped(1.5);
     min-width: calc(100% / base.$phi);
     width: min-content;
     max-width: 100%;
     border-radius: 0 1em 1em 0;
 
-    h1 {
-        margin: .5lh 0;
-    }
-
     #search-input {
         max-width: base.$max-line-length;
-        font-size: .8em;
-        @include base.horizontal-box(1, Infinity);
+        font-size: .9em;
+        @include base.horizontal-box(2, Infinity);
+        @include base.basic-border(1px);
+    }
+
+    h3 {
+        margin-bottom: .5lh;
     }
 }
 

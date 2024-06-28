@@ -1,7 +1,7 @@
 @use 'base';
 
 section {
-    @include base.lvl1-content(1px 0);
+    @include base.lvl-content(1px 0);
 }
 
 .list-piano-tiles {
@@ -74,7 +74,6 @@ section {
 }
 
 #ongoing-projects {
-    position: relative;
     display: flex;
     flex-flow: column nowrap;
     gap: 1em;

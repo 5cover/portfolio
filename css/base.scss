@@ -1,9 +1,10 @@
 @forward 'components';
 @forward 'const';
 @forward 'util';
+@use 'sass:list';
+@use 'sass:color';
 @use 'components';
 @use 'const';
-@use 'sass:list';
 @use 'util';
 
 @property --bg-img {
@@ -11,56 +12,64 @@
     inherits: false;
 }
 
-@mixin theme($accent, $fg, $c0, $c1, $c2, $c3) {
-    /* *-rgb: workaround until relative colors get widespread support */
-    accent-color: rgb(list.nth($accent, 1), list.nth($accent, 2), list.nth($accent, 3));
-    --color-accent: rgb(#{$accent});
-    --color-accent-rgb: #{$accent};
-    --color-fg: rgb(#{$fg});
-    --color-fg-rgb: #{$fg};
-    --color-lvl: rgb(#{$c0});
-    --color-lvl-rgb: #{$c0};
-    --color-lvl-next: rgb(#{$c1});
-    --color-lvl-next-rgb: #{$c1};
+@function get-rgb($color) {
+    @return red($color), green($color), blue($color);
+}
+
+@mixin var-color($color-name, $color) {
+    /* workaround until relative alpha colors get widespread support */
+    --color-#{$color-name}: #{$color};
+    --color-#{$color-name}-rgb: #{get-rgb($color)};
+}
+
+@mixin theme($accent-bg, $accent-fg, $fg, $c0, $c1, $c2, $c3) {
+    accent-color: $accent-bg;
+    @include var-color('accent', $accent-bg);
+    @include var-color('accent-fg', $accent-fg);
+    @include var-color('fg', $fg);
+    @include var-color('lvl', $c0);
+    @include var-color('lvl-next', $c1);
 
     .lvl {
-        --color-lvl: rgb(#{$c1});
-        --color-lvl-rgb: #{$c1};
-        --color-lvl-next: rgb(#{$c2});
-        --color-lvl-next-rgb: #{$c2};
+        @include var-color('lvl', $c1);
+        @include var-color('lvl-next', $c2);
 
         .lvl {
-            --color-lvl: rgb(#{$c2});
-            --color-lvl-rgb: #{$c2};
-            --color-lvl-next: rgb(#{$c3});
-            --color-lvl-next-rgb: #{$c3};
+            @include var-color('lvl', $c2);
+            @include var-color('lvl-next', $c3);
 
             .lvl {
-                --color-lvl-rgb: #{$c3};
-                --color-lvl: rgb(#{$c3});
+                @include var-color('lvl', $c3);
             }
         }
     }
 }
 
-$accent: 166, 97, 68;
+$accent: #a66144;
 
 @mixin theme-dark {
-    $fg: 238, 238, 238;
-    $c0: 17,17,17;
-    $c1: 34,34,34;
-    $c2: 51,51,51;
-    $c3: 68,68,68;
-    @include theme($accent, $fg, $c0, $c1, $c2, $c3);
+    color-scheme: dark;
+    $fg: #eee;
+    $c0: #111;
+    /*$c1: #222;
+    $c2: #333;
+    $c3: #444;*/
+    $step: 8%;
+    $c1: color.scale($c0, $lightness: $step);
+    $c2: color.scale($c1, $lightness: $step);
+    $c3: color.scale($c2, $lightness: $step);
+    @include theme($accent, white, $fg, $c0, $c1, $c2, $c3);
 }
 
 @mixin theme-light {
-    $fg: 17, 17, 17;
-    $c0: 238, 238, 238;
-    $c1: 221, 221, 221;
-    $c2: 204, 204, 204;
-    $c3: 187, 187, 187;
-    @include theme($accent, $fg, $c0, $c1, $c2, $c3);
+    color-scheme: light;
+    $fg: #111;
+    $c0: #fafafa;
+    $step: -8%;
+    $c1: color.scale($c0, $lightness: $step);
+    $c2: color.scale($c1, $lightness: $step);
+    $c3: color.scale($c2, $lightness: $step);
+    @include theme($accent, white, $fg, $c0, $c1, $c2, $c3);
 }
 
 :root {
@@ -69,7 +78,6 @@ $accent: 166, 97, 68;
     font-family: Roboto, system-ui;
     font-size: 20px;
     scroll-behavior: smooth;
-    scrollbar-color: gray transparent;
 }
 
 :root[data-theme="dark"] {
@@ -124,6 +132,8 @@ $non-leaf-transition-properties: background-color,
     color: transparent;
 }
 
+/* Resets */
+
 body,
 h1,
 h2,
@@ -141,6 +151,17 @@ pre,
 blockquote {
     margin: 0;
     padding: 0;
+}
+
+input {
+    border: none;
+    font: inherit;
+}
+
+/* Basic styles */
+
+abbr {
+    text-decoration: underline dotted;
 }
 
 address {
@@ -172,7 +193,7 @@ pre {
 
 small {
     font-size: 1em;
-    color: rgba(var(--color-fg-rgb), .5)
+    color: rgba(var(--color-fg-rgb), calc(2/3));
 }
 
 p {
@@ -303,7 +324,7 @@ a:not(.link, .fi) {
 /* Page structure */
 body {
     > header {
-        @include util.lvl1-content(0 0 1px 0);
+        @include util.lvl-content(0 0 1px 0);
         align-items: center;
         display: flex;
         flex-wrap: wrap;
@@ -335,7 +356,8 @@ body {
                 }
             }
 
-            a#{const.$hover}, a[href="#"] {
+            a#{const.$hover},
+            a[href="#"] {
                 text-decoration: underline;
             }
         }
@@ -349,7 +371,7 @@ body {
     }
 
     > footer {
-        @include util.lvl1-content(1px 0 0 0);
+        @include util.lvl-content(1px 0 0 0);
         grid-row: 3;
         position: relative;
         display: flex;

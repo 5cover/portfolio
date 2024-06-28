@@ -1,25 +1,41 @@
 # General styling guidelines
 
-> What do you want the website to look like ?
+## Interactive elements
 
-I want to put a primary focus on
+Effects:
 
-- comfort
-- readability
+name|explanation
+-|-
+accentBg(opacity)|accent background of the specified opacity. Implies *box*.
+accentFg|accent foreground
+arrowGlyph|an arrow glyph (`🡭`) is shown after the element
+box|the element is on a new level with optionally a border and a border radius
+browserTooltip|a browser tooltip is shown
+dotted|`text-decoration: underline dotted`
+italics|`font-style: italics`
+lightenForeground|lightened foregroud clolor
+scale($factor)|`transform: scale($factor)`
+underline|`text-decoration: underline`
 
-So no fancy colors schemes or anything complicated. Keep it simple.
+element|leads to a new page?|always|on domain hover
+-|-|-|-
+abbreviation|no|dotted|browserTooltip
+link|no|accentFg|lightenForeground underline
+link blank|yes|accentFg arrow-glyph|lightenForeground underline
+link button|yes|box|accentBg(1) scale()
+reference link|no|accentFg|lightenForeground underline
+reference backlink|no|accentFg|lightenForeground
+tooltip definition trigger|yes|accentFg italics arrow-glyph|lightenForeground
+tooltip definitition|yes|box
+definition card|yes|box|accentBg(1)
+project card|yes|box|accentBg(1)
+tag|! in *projects* page|accentBg|scale()
+checkbox|no|box|accentBg(.5)
+checkbox (checked)|no|accentBg(1)
+radio|no|box|accentBg(.5)
+radio (checked)|no|accentBg(1)
 
-> Dark theme ?
-
-YES! but an option. don't force it.
-
-> Precise style?
-
-For project page:
-
-Dark background
-White title, left-aligned
-Abstract in italics
+All: `cursor: pointer`
 
 ## Opt-in styling classes
 

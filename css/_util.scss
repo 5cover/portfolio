@@ -21,7 +21,7 @@
 
 /* Shallow list item
  *
- * Display contents on children <li>, inherit layout properties. Similar to the HTML transparent content model.
+ * Display contents on children <li>, inherit layout properties. Analogous to the HTML transparent content model.
  */
 @mixin shallow-li {
     > li {
@@ -40,10 +40,10 @@
  *
  * Display flex, gap based on line height.
  */
-@mixin gapped($flex-direction: column, $flex-wrap: nowrap) {
+@mixin gapped($factor: 1, $flex-direction: column, $flex-wrap: nowrap) {
     display: flex;
     flex-flow: $flex-direction $flex-wrap;
-    gap: 1lh;
+    gap: calc(1lh * $factor);
 }
 
 /* Justify
@@ -55,9 +55,9 @@
     hyphens: auto;
 }
 
-/* Bring out element
+/* Bring out
  *
- * Scale the element.
+ * Brings out the element by scaling it up.
  *
  * $factor: scale() argument -> scaling factor
  */
@@ -69,14 +69,14 @@
 
 /* Basic border
  *
- * A basic border around the element. Color is foreground, .125 alpha.
+ * A basic border around the element. Color is foreground wih low opacity.
  *
  * $width: border-width value -> border width
  */
 @mixin basic-border($width) {
     border-width: $width;
     border-style: solid;
-    border-color: rgba(var(--color-fg-rgb), .125);
+    border-color: rgba(var(--color-fg-rgb), .15);
 }
 
 /* Accent color foreground 
@@ -84,8 +84,9 @@
  * Adapt the foreground to the accent color for better contrast.
  */
 @mixin color-accent-fg {
-    --color-fg: white;
-    --color-fg-rgb: 255, 255, 255;
+    color: var(--color-accent-fg);
+    --color-fg: var(--color-accent-fg);
+    --color-fg-rgb: var(--color-accent-fg-rgb);
 }
 
 /* Accent color
@@ -99,13 +100,13 @@
     background-color: rgba(var(--color-accent-rgb), $opacity);
 }
 
-/* Level 1 content
+/* Level content
  *
  * Content spanning over the width of the entire viewport. One level of nesting inside the main element (direct child of the main element).
  *
  * $border-width: border-width value -> border width
  */
-@mixin lvl1-content($border-width) {
+@mixin lvl-content($border-width) {
     @include basic-border($border-width);
     background-color: var(--color-lvl);
     padding: 1em const.$full-width-horizontal-margin;
@@ -189,20 +190,20 @@
     border-radius: calc($border-radius-factor * .25lh);
 }
 
-/* Size graphics
+/* Size graphic
  *
- * Size graphics children accordingly.
+ * Size the graphic accordingly.
  *
  * $height:     height value     -> children graphics height
  * $width:      width value      -> children graphics width
  * $object-fit: object-fit value -> children graphics object-fit
  */
-@mixin size-graphics($height, $width, $object-fit: contain) {
-    #{const.$graphic} {
-        height: $height;
-        width: $width;
-        object-fit: $object-fit;
-    }
+@mixin size-graphic($height, $width, $object-fit: contain) {
+    max-width: 100%;
+    max-height: 100%;
+    height: $height;
+    width: $width;
+    object-fit: $object-fit;
 }
 
 /* Gray when not hover 
@@ -224,7 +225,7 @@
     }
 
     /* Adapt foreground to accent color (except tag list). */
-    :not(.list-rect) {
+    :not(.list-rect, .list-rect *) {
         @include color-accent-fg;
     }
 

@@ -54,6 +54,14 @@ yes. It would be awesome. Use system colors.
 need to put in theme
 
 - border radius
+- transparency
+- maybe more?
+
+## thème "tableau craie"
+
+bordures : blanc brillant (*c.f.* cmd.exe)
+
+niveaux : tous en noir
 
 ## Sort technologies
 

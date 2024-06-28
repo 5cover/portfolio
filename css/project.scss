@@ -48,20 +48,16 @@ a[id^="cite-"] {
     }
 
     .logo {
-        align-self: center;
-        margin-left: auto;
-        width: auto;
+        place-self: center right;
+        @include base.size-graphic(9lh, auto);
 
         @media screen and (min-width: 701px) {
-            max-height: 100%;
-            height: auto;
             grid-column: 2;
             grid-row: 1 / 6;
         }
 
         @media screen and (max-width: 700px) {
             grid-row: 2;
-            height: 3lh;
         }
     }
 

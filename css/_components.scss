@@ -220,12 +220,10 @@
         }
 
         .logo {
+            @include util.size-graphic(3lh, auto);
             align-self: center;
             grid-row: 2/4;
             grid-column: 2;
-            max-height: 3lh;
-            max-width: 100%;
-            object-fit: contain;
         }
 
         h3 {
@@ -249,7 +247,6 @@
         }
 
         .list-link {
-            @include util.size-graphics(1.5em, 1.5em);
             gap: .5em;
             grid-row: 6;
             grid-column: 1 / 3;
@@ -259,6 +256,10 @@
             > #{const.$hover} {
                 @include util.bring-out(1.15);
                 z-index: 1;
+            }
+
+            #{const.$graphic} {
+                @include util.size-graphic(1.5em, 1.5em);
             }
         }
 
@@ -290,8 +291,8 @@
  * - synopsis: definition synopsis
  */
 .definition {
+    @include util.basic-border(1px);
     @include util.hover-card;
-    @include util.size-graphics(2.5lh, auto);
     @include util.transparent-background-image(--bg-img-definition, var(--color-lvl-rgb), .1);
     $space: .75em;
     background-color: var(--color-lvl);
@@ -314,6 +315,7 @@
     }
 
     .logo {
+        @include util.size-graphic(2.5lh, auto);
         grid-row: 1 / 3;
         grid-column: 2;
     }
@@ -331,7 +333,6 @@
 
     &-tooltip {
         @extend .definition;
-        width: max-content;
         position: fixed;
 
         &-trigger {
