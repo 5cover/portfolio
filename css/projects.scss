@@ -1,10 +1,9 @@
-@use 'util';
-@use 'const';
+@use 'base';
 
 #search-bar {
-    @include util.lvl1-content(1px 1px 1px 0);
-    @include util.gapped;
-    min-width: calc(100% / const.$phi);
+    @include base.lvl1-content(1px 1px 1px 0);
+    @include base.gapped;
+    min-width: calc(100% / base.$phi);
     width: min-content;
     max-width: 100%;
     border-radius: 0 1em 1em 0;
@@ -14,15 +13,15 @@
     }
 
     #search-input {
-        max-width: const.$max-line-length;
+        max-width: base.$max-line-length;
         font-size: .8em;
-        @include util.horizontal-box(1, Infinity);
+        @include base.horizontal-box(1, Infinity);
     }
 }
 
 #list-tag,
 #list-sorting {
-    @include util.shallow-li;
+    @include base.shallow-li;
 
     input {
         display: none;
@@ -32,21 +31,21 @@
         cursor: pointer;
         background-color: var(--color-lvl-next);
 
-        &:has(input#{const.$hover}) {
-            @include util.color-accent(.5);
+        &:has(input#{base.$hover}) {
+            @include base.color-accent(.5);
         }
 
         &:has(input:checked) {
-            @include util.color-accent;
+            @include base.color-accent;
         }
     }
 }
 
 #list-sorting > li {
-    @include util.horizontal-box(1, Infinity);
+    @include base.horizontal-box(1, Infinity);
     
 }
 
 #project-list {
-    margin: 0 const.$full-width-horizontal-margin;
+    margin: 0 base.$full-width-horizontal-margin;
 }

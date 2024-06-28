@@ -30,14 +30,16 @@ generate() {
     local phpf="$4"
     shift 4
     mkdir -p "$(dirname "$dest")"
-     > "$dest" php -d include_path="$(pwd)/include" -f "$phpf" "$lang" "$page" "$@";
+     > "$dest" php -d include_path="include" -f "$phpf" "$lang" "$page" "$@";
     >&2 echo ok
 }
 
 # link data JSONs
 ./linker.py "$data_dir" ../data/**/*.json
 
-for lang in fr en; do
+# shellcheck disable=SC2043
+# todo: add lang 'en' once translations are finished
+for lang in fr; do
     # Simple page
     for page in definitions-test index projects but-informatique history passions perspectives; do
         generate "$outdir/$lang/$page.html" "$lang" "$page" "$page.php"

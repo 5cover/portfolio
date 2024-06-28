@@ -26,7 +26,7 @@ function put_scripts(Page $page) { ?>
     <?php }
 }
 
-function put_head(Page $page, Lang $lang, array $additionalStylesheets = []) { ?>
+function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css') { ?>
 
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
@@ -35,13 +35,15 @@ function put_head(Page $page, Lang $lang, array $additionalStylesheets = []) { ?
         <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
         <link rel="manifest" href="/portfolio/site.webmanifest">
         <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
+
         <?php
         $g = glob_web('/portfolio/css/' . $page->name . '.css');
         if (count($g) == 1) { ?>
             <link rel="stylesheet" type="text/css" href="<?php echo get_web_url($g[0]) ?>">
+        <?php } else { ?>
+            <link rel="stylesheet" type="text/css" href="/portfolio/css/<?php echo $fallbackStylesheet ?>">
         <?php } ?>
-        <?php echo implode('', array_map(fn($url) => "<link rel=\"stylesheet\" href=\"/portfolio/css/$url\">", $additionalStylesheets)) ?>
+        <?php #echo implode('', array_map(fn($url) => "<link rel=\"stylesheet\" href=\"/portfolio/css/$url\">", $additionalStylesheets)) ?>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
@@ -53,8 +55,15 @@ function put_head(Page $page, Lang $lang, array $additionalStylesheets = []) { ?
         <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');</script>
     </head>
 <?php }
-
 function put_header(Page $page, Lang $lang) { ?>
+    <template id="template-definition-tooltip">
+        <article class="lvl definition-tooltip" role="tooltip">
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer"><!-- href="wiki"; name --></a></h4>
+            <!-- logo graphic -->
+            <p class="type"><small><!-- type --></small></p>
+            <p class="synopsis"><!-- synopsis --></p>
+        </article>
+    </template>
     <header class="lvl">
         <nav>
             <a href="<?php echo $page->get_nav_href($lang, "index") ?>">Raphaël Bardini</a>
@@ -120,27 +129,40 @@ function get_background_style_attr(string $bg, string $varname = 'bg-img'): stri
     END;
 }
 
-function put_definition_card(Lang $lang, array $types, string $id, array $def, string $enclosingElementName) {
-    _put_definition($lang, $types, $id, $def, $enclosingElementName, "class=\"definition\"");
-}
-
-function put_definition_tooltip(Lang $lang, array $types, string $id, array $def) {
-    _put_definition($lang, $types, $id, $def, "div", "class=\"definition definition-tooltip\" role=\"tooltip\"");
-}
-
-function _put_definition(Lang $lang, array $types, string $id, array $def, string $enclosingElementName, string $divAttrs) {
+function put_definition_card(Lang $lang, array $types, string $id, array $def) {
     $title = $def['names'][0];
     ?>
-    <<?php echo $enclosingElementName ?>     <?php echo $divAttrs ?>     <?php if ($bg = $def['background'] ?? null) {
+    <article class="definition" <?php if ($bg = $def['background'] ?? null) {
+        echo get_background_style_attr($bg, 'bg-img-definition');
+    } ?>>
+        <h4><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>"><?php echo $title ?></a>
+        </h4>
+        <?php if ($logo = $def['logo'] ?? null) {
+            echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title));
+        } ?>
+        <p><small><?php echo ucfirst($types[$def['type']]) ?></small></p>
+        <p><?php echo $def['synopsis'] ?></p>
+    </article>
+<?php }
+
+function put_definition_tooltip_trigger(Lang $lang, string $id, array $def) {
+    ?><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>" data-definition-id="<?php echo $id ?>" class="link definition-tooltip-trigger"><?php echo $def['names'][0] ?></a><?php
+}
+
+function _put_definition(Lang $lang, array $types, string $id, array $def, string $enclosingElementName, string $attrs) {
+    $title = $def['names'][0];
+    ?>
+    <<?php echo $enclosingElementName ?>     <?php echo $attrs ?>     <?php if ($bg = $def['background'] ?? null) {
                         echo get_background_style_attr($bg, 'bg-img-definition');
                     } ?>> <h4><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>"><?php echo $title ?></a>
         </h4>
         <?php if ($logo = $def['logo'] ?? null) {
-            echo get_icon_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title));
+            echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title));
         } ?>
         <p><small><?php echo ucfirst($types[$def['type']]) ?></small></p>
         <p><?php echo $def['synopsis'] ?></p>
-    </<?php echo $enclosingElementName ?>> <?php }
+    </<?php echo $enclosingElementName ?>>
+<?php }
 
 function put_iframe(string $src, string $title) { ?>
     <iframe src="<?php echo $src ?>" frameborder="0" loading="lazy" width="300" height="300" title="<?php echo $title ?>"></iframe> <?php }

@@ -83,7 +83,7 @@ function get_svg_element(string $url, string|null $title = null, string|null $cl
 }
 
 /**
- * Get the HTML element to use to represent an icon.
+ * Get the HTML element to use for a graphic.
  * @param bool $isThemedSvg is it a themed SVG?
  * @param string $url The url of the image
  * @param string|null $title The title of the icon (also set as the `img` `alt` attribute). `null` for no title.
@@ -91,7 +91,7 @@ function get_svg_element(string $url, string|null $title = null, string|null $cl
  * @param int $baseHeight The default height of the element if it doesn't have an intrinsic one.
  * @return string|null An HTML element or `null` if *info* was `null`.
  */
-function get_icon_element(bool $isThemedSvg, string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string {
+function get_graphic_element(bool $isThemedSvg, string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string {
     return ($isThemedSvg ? get_svg_element(...) : get_img_element(...))(
         $url,
         $title,
@@ -105,8 +105,10 @@ function get_icon_element(bool $isThemedSvg, string $url, string|null $title = n
  * @param string $name the filename of the JSON file, relative to the data directory, without the extension.
  * @return array The decoded JSON, in associative mode.
  */
-function get_data_json(string $name): array {
-    $f = file_get_contents(_get_web_filename("/portfolio/data/$name.json"));
+function get_data_json(string $name, bool $linked = true): array {
+    $f = file_get_contents($linked
+        ? _get_web_filename("/portfolio/data/$name.json")
+        : __DIR__."/../../data/$name.json");
     if ($f === false) {
         throw new Exception("failed to open JSON data '$name'");
     }

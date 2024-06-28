@@ -27,7 +27,7 @@ final class Project {
                 <li>
                     <a href="<?php echo $link['href'] ?>" title="<?php echo $name ?>" target="_blank" rel="noopener noreferrer">
                         <?php $a = $anchors[$link['anchor']];
-                        echo get_icon_element($a['isThemedSvg'], $a['url']) ?>
+                        echo get_graphic_element($a['isThemedSvg'], $a['url']) ?>
                     </a>
                 </li>
             <?php } ?>
@@ -37,9 +37,9 @@ final class Project {
     function put_link_list_items(array $anchors) { ?>
         <?php foreach ($this->data['links'] as $name => $link) { ?>
             <li>
-                <a class="iconed-text" target="_blank" rel="noopener noreferrer" href="<?php echo $link['href'] ?>">
+                <a target="_blank" rel="noopener noreferrer" href="<?php echo $link['href'] ?>">
                     <?php $a = $anchors[$link['anchor']];
-                    echo get_icon_element($a['isThemedSvg'], $a['url']) ?>
+                    echo get_graphic_element($a['isThemedSvg'], $a['url']) ?>
                     <span><?php echo $name ?></span>
                 </a>
             </li>
@@ -50,9 +50,9 @@ final class Project {
         <?php $ref_num = 1;
         foreach ($this->data['references'] as $name => $ref) { ?>
             <li id="ref-<?php echo $ref_num ?>"><span class="ref-backlink" aria-label="<?php echo $lang->get('refJumpUp') ?>" title="<?php echo $lang->get('refJumpUp') ?>"><a class="link" href="#cite-ref-<?php echo $ref_num++ ?>">&uarr;</a></span>
-                <a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="<?php echo $ref['href'] ?>">
+                <a class="link" target="_blank" rel="noopener noreferrer" href="<?php echo $ref['href'] ?>">
                     <?php $a = $anchors[$ref['anchor']];
-                    echo get_icon_element($a['isThemedSvg'], $a['url']) ?>
+                    echo get_graphic_element($a['isThemedSvg'], $a['url']) ?>
                     <span><?php echo $name ?></span>
                 </a>
             </li>
@@ -61,7 +61,7 @@ final class Project {
 
     function put_logo(Lang $lang, string $class = 'logo') {
         if ($logo = $this->data['logo'] ?? null) {
-            echo get_icon_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($this->data['title']), $class);
+            echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($this->data['title']), $class);
         }
     }
 

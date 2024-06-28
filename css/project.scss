@@ -1,6 +1,4 @@
-@use 'util';
-@use 'const';
-@use 'components';
+@use 'base';
 
 /* Reset body gap and use padding instead of margin to suit background image */
 body {
@@ -8,9 +6,9 @@ body {
 }
 
 main {
-    @include util.transparent-background-image(--bg-img, var(--color-lvl-rgb), .1);
+    @include base.transparent-background-image(--bg-img, var(--color-lvl-rgb), .1);
     justify-content: space-between;
-    padding: const.$full-width-vertical-margin const.$full-width-horizontal-margin;
+    padding: base.$full-width-vertical-margin base.$full-width-horizontal-margin;
 }
 
 section:is(:empty, :blank, :-moz-only-whitespace) {
@@ -19,7 +17,7 @@ section:is(:empty, :blank, :-moz-only-whitespace) {
 
 a[id^="cite-"] {
     @extend .link;
-    @include util.sup-annotation;
+    @include base.sup-annotation;
     white-space: nowrap;
     font-size: .6em;
 }
@@ -40,10 +38,10 @@ a[id^="cite-"] {
         grid-column: 1 / 3;
 
         > li {
-            @include util.color-accent;
+            @include base.color-accent;
 
-            &#{const.$hover} {
-                @include util.bring-out(1.15);
+            &#{base.$hover} {
+                @include base.bring-out(1.15);
                 z-index: 1;
             }
         }
@@ -88,29 +86,30 @@ a[id^="cite-"] {
     flex-wrap: wrap;
 
     a {
+        @include base.button-link(1.5);
+        @include base.iconed-text(2);
         display: block;
-        @include components.button-link(1.5);
-        text-decoration: none;
-    }
-
-    .iconed-text {
-        @include components.iconed-text(2);
     }
 }
 
 #story {
     &:has(:not(:only-child)) {
-        @include util.justify;
-        column-width: const.$max-line-length;
+        @include base.justify;
+        column-width: base.$max-line-length;
     }
 
     figure {
-        max-width: const.$max-line-length;
+        max-width: base.$max-line-length;
     }
 }
 
 .list-reference {
     padding-left: 2em;
+
+    .link {
+        text-decoration: none;
+        @include base.iconed-text($underline: true);
+    }
 }
 
 .ref-backlink {
@@ -130,9 +129,9 @@ a[id^="cite-"] {
         flex-shrink: 1;
         min-width: min-content;
 
-        &#{const.$hover} {
-            @include util.transparent-background-image(--bg-img-definition, var(--color-accent-rgb), .1);
-            @include util.adapt-accent-bg;
+        &#{base.$hover} {
+            @include base.transparent-background-image(--bg-img-definition, var(--color-accent-rgb), .1);
+            @include base.adapt-accent-bg;
         }
     }
 }
@@ -145,7 +144,7 @@ a[id^="cite-"] {
     list-style: none;
     row-gap: min(3vw, 3em);
 
-    @include util.shallow-li {
+    @include base.shallow-li {
         flex: 1;
         max-width: max-content;
         min-width: 25ch;
@@ -163,7 +162,7 @@ a[id^="cite-"] {
         min-height: 13em;
 
         + figcaption {
-            @include util.basic-border(1px 0 0 0);
+            @include base.basic-border(1px 0 0 0);
         }
     }
 }

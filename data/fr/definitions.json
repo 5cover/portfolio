@@ -1,4 +1,32 @@
 {
+    "wizard": {
+        "names": [
+            "Assistant"
+        ],
+        "type": "ui",
+        "wiki": "https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards",
+        "synopsis": "Malgré ce nom merveilleux et fantaisiste, les assistants ne sont pas vraiment une forme spéciale d’interface utilisateur, et ils n’ont qu’une gamme particulière d’utilité. Les Assistants sont utilisés pour effectuer des tâches en plusieurs étapes."
+    },
+    "task-dialog": {
+        "names": [
+            "Dialogue de tâche"
+        ],
+        "type": "ui",
+        "wiki": "https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview",
+        "synopsis": "Une boîte de dialogue de tâche est une boîte de dialogue qui peut être utilisée pour afficher des informations et recevoir une entrée simple de l’utilisateur. Comme une boîte de message, elle est mise en forme par le système d’exploitation en fonction des paramètres que vous définissez. Toutefois, une boîte de dialogue de tâche a beaucoup plus de fonctionnalités qu’une boîte de message."
+    },
+    "spyder": {
+        "names": [
+            "Spyder"
+        ],
+        "type": "ide",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/spyder/logo.svg"
+        },
+        "synopsis": "Spyder est un environnement scientifique gratuit et open source écrit en Python, pour Python, et conçu par et pour des scientifiques, ingénieurs et analystes de données. Il présente une combinaison unique des fonctionnalités avancées d'édition, d'analyse, de débogage et de profilage d'un outil de développement complet avec l'exploration des données, l'exécution interactive, l'inspection approfondie et les superbes capacités de visualisation d'un package scientifique.",
+        "wiki": "https://www.spyder-ide.org/"
+    },
     "apache2": {
         "type": "software",
         "wiki": "https://fr.wikipedia.org/wiki/Apache_HTTP_Server",
@@ -570,7 +598,7 @@
         }
     },
     "visual-studio": {
-        "type": "software",
+        "type": "ide",
         "wiki": "https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio",
         "synopsis": "Microsoft Visual Studio est une suite de logiciels de développement pour Windows et mac OS conçue par Microsoft.",
         "names": [
@@ -583,7 +611,7 @@
         }
     },
     "vs-code": {
-        "type": "software",
+        "type": "ide",
         "background": "/portfolio/img/definition/vs-code/bg.png",
         "wiki": "https://fr.wikipedia.org/wiki/Visual_Studio_Code",
         "synopsis": "Visual Studio Code est un éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.",

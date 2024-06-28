@@ -1,7 +1,10 @@
-@use 'const';
-@use 'util';
+@forward 'components';
+@forward 'const';
+@forward 'util';
 @use 'components';
+@use 'const';
 @use 'sass:list';
+@use 'util';
 
 @property --bg-img {
     syntax: '*';
@@ -158,12 +161,12 @@ blockquote {
 }
 
 :not(pre) > :is(code, samp, kbd) {
-    background-color: var(--color-lvl);
+    background-color: var(--color-lvl-next);
     @include util.horizontal-box(.4);
 }
 
 pre {
-    background-color: var(--color-lvl);
+    background-color: var(--color-lvl-next);
     @include util.horizontal-box(2, 1);
 }
 
@@ -236,7 +239,7 @@ body {
     }
 }
 
-a:not(#{const.$hover}) {
+a {
     text-decoration: none;
 }
 
@@ -262,6 +265,7 @@ a:not(.link, .fi) {
 
 .link#{const.$hover} {
     color: #be7c60;
+    text-decoration: underline;
 }
 
 .link[target='_blank']:after {
@@ -331,7 +335,7 @@ body {
                 }
             }
 
-            a[href="#"] {
+            a#{const.$hover}, a[href="#"] {
                 text-decoration: underline;
             }
         }

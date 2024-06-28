@@ -8,5 +8,7 @@
     "data-format": "data format",
     "dbms": "database management system",
     "website": "website",
-    "person": "person"
+    "person": "person",
+    "ide": "integrated development environment",
+    "ui": "user interface component"
 }

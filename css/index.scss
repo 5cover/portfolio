@@ -1,9 +1,7 @@
-/* index.html stylesheet */
-@use 'util';
-@use 'const';
+@use 'base';
 
 section {
-    @include util.lvl1-content(1px 0);
+    @include base.lvl1-content(1px 0);
 }
 
 .list-piano-tiles {
@@ -15,7 +13,7 @@ section {
     width: 100%;
 
     > li {
-        @include util.hover-card;
+        @include base.hover-card;
         $min-width: 180px;
         flex-basis: calc(min(100%, 1920px) / $tile-count);
         flex-shrink: 1;
@@ -28,7 +26,7 @@ section {
         }
 
         a {
-            @include util.hover-card-target;
+            @include base.hover-card-target;
         }
 
         img {
@@ -38,25 +36,25 @@ section {
         }
 
         figcaption {
-            @include util.absolute-fill;
+            @include base.absolute-fill;
 
             div {
                 background-color: rgba(var(--color-lvl-rgb), calc(2/3));
                 height: fit-content;
 
                 > * {
-                    @include util.horizontal-box(1, 0);
+                    @include base.horizontal-box(1, 0);
                 }
             }
         }
 
-        &#{const.$hover},
+        &#{base.$hover},
         &.hover {
-            @include util.bring-out(1.05);
+            @include base.bring-out(1.05);
             z-index: 1;
         }
 
-        &:not(&#{const.$hover}) figcaption {
+        &:not(&#{base.$hover}) figcaption {
             opacity: 0;
         }
     }
@@ -116,21 +114,21 @@ section {
         }
 
         span {
-            @include util.absolute-center;
-            @include util.horizontal-box;
+            @include base.absolute-center;
+            @include base.horizontal-box;
             width: max-content;
             background-color: var(--color-lvl);
         }
 
-        &#{const.$hover} {
-            @include util.bring-out(1.05);
+        &#{base.$hover} {
+            @include base.bring-out(1.05);
 
             img {
                 opacity: 1;
             }
 
             span {
-                @include util.color-accent;
+                @include base.color-accent;
             }
         }
     }

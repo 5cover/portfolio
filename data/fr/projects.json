@@ -1,4 +1,291 @@
 {
+    "cori": {
+        "context": "Personnel",
+        "start-date": "2023-10-09",
+        "end-date": "2024-03-09",
+        "title": "<abbr title=\"Correct Input\">Cori</abbr>",
+        "story": "todo.. raconter la difficulté et les problèmes du scanf en c...",
+        "abstract": "Bibliothèque d'entrée utilisateur correcte et facile à utiliser en C",
+        "team": [],
+        "tags": [
+            "low-level",
+            "library"
+        ],
+        "technologies": [
+            "vs-code",
+            "c"
+        ],
+        "gallery": {},
+        "references": {},
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/stb_cori"
+            }
+        }
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "start-date": "2024-06-17",
+        "abstract": "Mon portfolio",
+        "context": "BUT, Personnel",
+        "story": "todo.. raconter comment d'abord j'aimais pas puis après c'était mieux... comment j'ai dépassé les objectifs du cours.. etc...",
+        "team": [],
+        "tags": [
+            "web",
+            "but-realiser"
+        ],
+        "technologies": [
+            "html",
+            "sass",
+            "php",
+            "vs-code",
+            "bash",
+            "json",
+            "markdown",
+            "python"
+        ],
+        "gallery": {},
+        "references": {},
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/portfolio"
+            }
+        }
+    },
+    "jslave": {
+        "title": "JSlave",
+        "context": "Personnel",
+        "start-date": "2024-05-30",
+        "story": "todo (projet encore en phase embryonnaire)",
+        "team": [],
+        "technologies": [
+            "vs-code",
+            "ebnf",
+            "zig"
+        ],
+        "tags": [
+            "low-level",
+            "cli",
+            "software"
+        ],
+        "gallery": {},
+        "references": {},
+        "abstract": {
+            "$include": "project/abstract/jslave.phtml"
+        },
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/jslave"
+            }
+        }
+    },
+    "ztest": {
+        "story": "todo",
+        "title": "ztest",
+        "context": "Personnel",
+        "start-date": "2024-06-01",
+        "team": [],
+        "technologies": [
+            "zig",
+            "vs-code"
+        ],
+        "tags": [
+            "software",
+            "cli",
+            "low-level"
+        ],
+        "gallery": {},
+        "references": {},
+        "abstract": {
+            "$include": "project/abstract/ztest.phtml"
+        },
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/ztest"
+            }
+        }
+    },
+    "wpfzard": {
+        "title": "WPFZard",
+        "context": "Personnel",
+        "start-date": "2022-07-21",
+        "end-date": "2022-11-23",
+        "story": "todo (frustation Winclean wizard xctk license...)",
+        "team": [],
+        "tags": [
+            "oop",
+            "library",
+            "ui"
+        ],
+        "technologies": [
+            "csharp",
+            "visual-studio",
+            "dotnet",
+            "wpf"
+        ],
+        "gallery": {},
+        "references": {},
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/WPFZard"
+            }
+        },
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/project/wpfzard/logo.png"
+        },
+        "abstract": {
+            "$include": "project/abstract/wpfzard.phtml"
+        }
+    },
+    "dialogs": {
+        "title": "WPFZard",
+        "context": "Personnel",
+        "start-date": "2023-06-25",
+        "end-date": "2022-11-23",
+        "story": "todo (frustation Winclean dialogs winforms, vanara...)",
+        "team": [],
+        "tags": [
+            "oop",
+            "library",
+            "ui"
+        ],
+        "technologies": [
+            "visual-studio",
+            "csharp",
+            "dotnet"
+        ],
+        "gallery": {},
+        "references": {},
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/Dialogs"
+            }
+        },
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/project/dialogs/logo.png"
+        },
+        "abstract": {
+            "$include": "project/abstract/dialogs.phtml"
+        }
+    },
+    "file-signature-detector": {
+        "story": "todo",
+        "context": "NSI Lycée",
+        "start-date": "2022-05-07",
+        "end-date": "2055-05-08",
+        "title": "FileSignatureDetector",
+        "abstract": "Détecteur de signature de fichier",
+        "team": [],
+        "tags": [
+            "software"
+        ],
+        "technologies": [
+            "python",
+            "csv"
+        ],
+        "gallery": {},
+        "references": {},
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/FileSignatureDetector"
+            }
+        }
+    },
+    "puissance-4": {
+        "story": "todo",
+        "context": "NSI Lycée",
+        "start-date": "2021-11-15",
+        "end-date": "2021-12-05",
+        "title": "Puissance 4",
+        "abstract": "Jeu de Puissance 4 en console",
+        "team": [],
+        "tags": [
+            "game",
+            "cli"
+        ],
+        "technologies": [
+            "python",
+            "spyder"
+        ],
+        "gallery": {},
+        "references": {},
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/Puissance-4"
+            }
+        }
+    },
+    "demineur-python": {
+        "story": "todo",
+        "context": "NSI Lycée",
+        "start-date": "2022-03-01",
+        "end-date": "2022-04-24",
+        "title": "Démineur Python",
+        "abstract": "Jeu de démineur en interface graphique",
+        "team": [],
+        "tags": [
+            "game",
+            "oop"
+        ],
+        "technologies": [
+            "python",
+            "tkinter",
+            "spyder"
+        ],
+        "gallery": {},
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/Demineur-Python"
+            }
+        },
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/project/demineur-python/logo.png"
+        },
+        "references": {}
+    },
+    "edplusplus": {
+        "story": "todo",
+        "title": "ED++",
+        "context": "NSI Lycée",
+        "start-date": "2022-10-21",
+        "end-date": "2022-11-09",
+        "abstract": "Projet NSI de suivi des notes scolaires",
+        "team": [],
+        "tags": [
+            "software",
+            "db",
+            "oop"
+        ],
+        "technologies": [
+            "python",
+            "sqlite",
+            "spyder"
+        ],
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/EDPlusPlus"
+            }
+        },
+        "gallery": {},
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/project/edplusplus/logo.png"
+        },
+        "references": {}
+    },
     "s2.06": {
         "context": "BUT",
         "story": "todo",
@@ -134,7 +421,7 @@
             "toe-paolo"
         ],
         "story": {
-            "$include": "projects/s2.02.phtml"
+            "$include": "project/story/s2.02.phtml"
         },
         "links": {
             "Dépôt GitHub": {
@@ -270,7 +557,8 @@
         "story": "<p>L'objectif de ce projet était de créer un générateur de documents PDF grâce à la conteneurisation Docker et en utilisant également PHP, le scripting Bash etc. Nous étions en groupes de 4. De mon côté, je me suis occupé d'écrire un parser Markdown en PHP. Nos professeurs ont été malins&nbsp;: ils ont modifés la syntaxe Markdown pour pas que l'on puisse simplement copier un parser d'Internet.</p>",
         "tags": [
             "but-administrer",
-            "but-collaborer"
+            "but-collaborer",
+            "cli"
         ],
         "team": [
             "chartier--le-goff-marius",
@@ -368,7 +656,7 @@
             "doxygen"
         ],
         "story": {
-            "$include": "projects/s1.01.phtml"
+            "$include": "project/story/s1.01.phtml"
         },
         "links": {
             "Dépôt GitHub": {
@@ -414,7 +702,7 @@
             "cities-skylines"
         ],
         "story": {
-            "$include": "/projects/2l2w-french-rural-road.phtml"
+            "$include": "project/story/2l2w-french-rural-road.phtml"
         },
         "references": {},
         "links": {
@@ -438,7 +726,7 @@
             "cities-skylines"
         ],
         "story": {
-            "$include": "/projects/tregoria.phtml"
+            "$include": "project/story/tregoria.phtml"
         },
         "references": {
             "Cities Skylines: MARS, Citywokcitywall, sur YouTube (anglais)": {
@@ -478,10 +766,11 @@
             "software",
             "ui",
             "ux",
-            "but-realiser"
+            "but-realiser",
+            "cli"
         ],
         "story": {
-            "$include": "projects/winclean.phtml"
+            "$include": "project/story/winclean.phtml"
         },
         "references": {},
         "links": {
@@ -524,10 +813,11 @@
             "oop",
             "compiler",
             "but-realiser",
-            "but-optimiser"
+            "but-optimiser",
+            "cli"
         ],
         "story": {
-            "$include": "projects/psdc.phtml"
+            "$include": "project/story/psdc.phtml"
         },
         "links": {
             "Dépôt GitHub": {

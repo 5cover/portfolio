@@ -1,4 +1,32 @@
 {
+    "wizard": {
+        "names": [
+            "Wizard"
+        ],
+        "type": "ui",
+        "wiki": "https://learn.microsoft.com/en/windows/win32/uxguide/win-wizards",
+        "synopsis": "Despite that wonderful, whimsical name, wizards are not really a special form of user interface, and they have only a particular range of utility. Wizards are used to perform multi-step tasks."
+    },
+    "task-dialog": {
+        "names": [
+            "Task dialog"
+        ],
+        "type": "ui",
+        "wiki": "https://learn.microsoft.com/en/windows/win32/controls/task-dialogs-overview",
+        "synopsis": "A task dialog is a dialog box that can be used to display information and receive simple input from the user. Like a message box, it is formatted by the operating system according to parameters you set. However, a task dialog has many more features than a message box."
+    },
+    "spyder": {
+        "names": [
+            "Spyder"
+        ],
+        "type": "ide",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/spyder/logo.svg"
+        },
+        "synopsis": "Spyder is a free and open source scientific environment written in Python, for Python, and designed by and for scientists, engineers and data analysts. It features a unique combination of the advanced editing, analysis, debugging, and profiling functionality of a comprehensive development tool with the data exploration, interactive execution, deep inspection, and beautiful visualization capabilities of a scientific package.",
+        "wiki": "https://www.spyder-ide.org/"
+    },
     "apache2": {
         "type": "software",
         "wiki": "https://en.wikipedia.org/wiki/Apache_HTTP_Server",

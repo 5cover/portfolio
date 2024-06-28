@@ -6,21 +6,46 @@
 - Minify CSS
 - Minify JS
 
+## Use typescript
+
+it's better
+
 ## On firefox 128 release (9 juillet)
 
 Take advantage of @property support. Replace *bg-img-project* and *bg-img-definition* by *bg-img*.
 
+## definir équipe projets nsi
+
+```json
+    "nerzic-brevin": {
+        "names": [
+            "Brévin Nerzic"
+        ],
+        "type": "person",
+        "logo": {
+            "isThemedSvg": false,
+            "url": ""
+        },
+        "synopsis": "",
+        "wiki": ""
+    },
+    "dubouil-clea": {
+        "names": [
+            "Cléa Dubouil"
+        ],
+        "type": "person",
+        "logo": {
+            "isThemedSvg": false,
+            "url": ""
+        },
+        "synopsis": "",
+        "wiki": ""
+    },
+```
+
 ## Print CSS
 
 Break-inside avoid and stuff
-
-## Fusion de statut et contexte
-
-Aussi valable pour les cartes de projet. Les avoir sur des lignes différentes n'a pas de sense. Je pense les mettre dans un div avec un flex row wrap et un gap.
-
-## Limiter le nombre de tags dans le cartes
-
-Quand il y en a trop, ça prend trop de place, ça va sur plusieurs lignes
 
 ## windows classic theme
 
@@ -29,6 +54,11 @@ yes. It would be awesome. Use system colors.
 need to put in theme
 
 - border radius
+
+## Sort technologies
+
+- Alphabetically: for consistent ordering (as json order may be inconsistent)
+- Group by type: so we don't mix vs-code and programming languages. also this does our initial idea of having an "editors" section
 
 ## Take another photo
 
@@ -52,7 +82,25 @@ for project gallery but not only
 
 ## C code syntax highlighting
 
-### Save.tf link?
+## start loading jsons on page load
+
+use maybe a map with cached jsons?
+
+## js langs
+
+format title based on value of the html lang attr
+
+annoying we have to duplicate logic from php -> js.
+
+## Increase the contrast between lvl 1 and 2
+
+currently it is too small, which result in small elements not standing out from the background enough. this is an accesssibility concern.
+
+## Formaliser le contexte
+
+mettre dans un json traduit et utiliser des clés primaires dans projects (comme avec types pour les définiitons...)
+
+## Save.tf link?
 
 Why not. In perspectives, "Team Fortress 2"
 
@@ -96,12 +144,6 @@ Of course it will be around forever since so much stuff is written in it and it 
 However, I still think C is an invaluable language to learn. It forces you to leave your comfort zone of abstactions and face the actual challenge of implementating stuff that we use every day as programmers, such a lists or hash tables.
 
 Learning C is better than any amount of Leetcode challenges.
-
-## Increase the contrast between lvl 1 and 2
-
-currently it is too small, which result in small elements not standing out from the background enough. this is an accesssibility concern.
-
-## Fix project content
 
 ### tell more in story
 
@@ -150,10 +192,6 @@ S1.01 : host doxygen generated html on gh-pages, add link
 - S1.02, S1.01 : shells
 - S1.01 : documentation
 
-## Rechercher/remplacer les définitions
+## JSON schema foreign keys
 
-Préprocesser toutes les pages en PHP. Ajouter le tooltip dans tout les contenus où il y a un nom de définition.
-
-Est-ce que ce serait pas mieu de le faire manuellement? Comme ça on évit tout faux positif. Et puis on peut choisir si on autorise une tooltip ou non.
-
-Oui peut-être bien qu'il faudrait le faire manuellement.
+for types, definitions, tags, anchors
