@@ -24,5 +24,6 @@
     "but-administrer": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Administer</span></span>",
     "but-collaborer": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Collaborate</span></span>",
     "algorithms": "Algorithms",
-    "data": "Data"
+    "data": "Data",
+    "idea": "Idea"
 }

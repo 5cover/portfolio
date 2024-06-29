@@ -58,11 +58,15 @@ main {
         }
     }
 
-    article,
     div {
-        @include base.gapped;
+        @include base.gapped(1.5);
     }
 
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: .5lh;
+    }
     li {
         max-width: base.$max-line-length;
     }

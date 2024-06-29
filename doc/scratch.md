@@ -101,10 +101,6 @@ format title based on value of the html lang attr
 
 annoying we have to duplicate logic from php -> js.
 
-## Increase the contrast between lvl 1 and 2
-
-currently it is too small, which result in small elements not standing out from the background enough. this is an accesssibility concern.
-
 ## Formaliser le contexte
 
 mettre dans un json traduit et utiliser des clés primaires dans projects (comme avec types pour les définiitons...)
@@ -149,19 +145,44 @@ stories
 
 s1.01 blockquote cite attribute
 
+### Galleries
+
+- S1.02, S1.01 : shells
+- S1.01 : documentation
+
+### Histoires
+
+Reprendre la structure des compte rendus d'anglais
+
+- \+ Livrables
+
 ### Project repositories
 
 GitLab for SAÉs. Put the in a group called BUT.
 
 S1.01 : host doxygen generated html on gh-pages, add link
 
+## Fix accent color contrast
+
 ## Passions page
 
 Content:
 
+- Montagne: Ski/randonnée (hiver/été). exposer la dualité entre les deux
+- Jeux-vidéos bac-à-sable
+- voyager's software
+
+même structure que pour les perspectives
+
 ## Perspectives page
 
 My opiniated rants on some things
+
+Structure:
+
+liste verticale d'élements avec un border-radius élevé. Séparé en deux parties (gauche : image, droite : titre + abstract)
+
+chacun mêne vers une page individuelle.
 
 ### Future of AI
 
@@ -180,7 +201,7 @@ Your video about Zig prompted me to learn the language, and so far I absolutely 
 - generics (they are such a pain in C)
 - explicit and exhaustive error handling (imagine putting every printf in an if statement)
 - explicit integer sizes (seemed annoying at first; but it makes sense if you think about it: YOU give the values, so YOU should be the one who decides on the size, not the compiler)
-- defer (best thing since sliced bread)
+- <span lang="en">defer</span> (best thing since sliced bread)
 - an useful standard library (no need to download an stb lib for arena or hashtable - or feel too lazy to implement them myself)
 - a simple build system (no more cmake or make; finally free!)
 - compile time guarantees and invariants: Zig is much, much closer than C to the (ultimately unnatainable) ideal of "if it compiles, it works".
@@ -198,9 +219,4 @@ Of course it will be around forever since so much stuff is written in it and it 
 
 However, I still think C is an invaluable language to learn. It forces you to leave your comfort zone of abstactions and face the actual challenge of implementating stuff that we use every day as programmers, such a lists or hash tables.
 
-Learning C is better than any amount of Leetcode challenges.
-
-### Gallerie
-
-- S1.02, S1.01 : shells
-- S1.01 : documentation
+~~Learning C is better than any amount of Leetcode challenges.~~

@@ -339,3 +339,7 @@ I want to add as little complexity as possible to this project.
 ## JSON schema foreign keys
 
 for types, definitions, tags, anchors
+
+## Increase the contrast between lvl 1 and 2
+
+currently it is too small, which result in small elements not standing out from the background enough. this is an accesssibility concern.

@@ -5,6 +5,7 @@
     "propertyNames": {
         "description": "definition ID",
         "enum": [
+            "anno2070",
             "apache2",
             "bash",
             "blender",
@@ -65,7 +66,10 @@
             "mousepad",
             "javafx",
             "gitlab",
-            "make"
+            "make",
+            "numpy",
+            "matplotlib",
+            "pandas"
         ]
     },
     "additionalProperties": {
