@@ -28,7 +28,9 @@
             "sysadmin",
             "ui",
             "ux",
-            "web"
+            "web",
+            "algorithms",
+            "data"
         ]
     },
     "additionalProperties": {

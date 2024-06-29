@@ -1,4 +1,88 @@
 {
+    "make": {
+        "names": [
+            "Make"
+        ],
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Make",
+        "synopsis": "Make est un logiciel qui construit automatiquement des fichiers, souvent exécutables, ou des bibliothèques à partir d'éléments de base tels que du code source. Il utilise des fichiers appelés makefile qui spécifient comment construire les fichiers cibles.",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/make/logo.svg"
+        }
+    },
+    "gitlab": {
+        "names": [
+            "GitLab"
+        ],
+        "type": "website",
+        "wiki": "https://fr.wikipedia.org/wiki/GitLab",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/gitlab/logo.svg"
+        },
+        "synopsis": "GitLab est un logiciel libre de forge basé sur git proposant les fonctionnalités de wiki, un système de suivi des bugs, l’intégration continue et la livraison continue."
+    },
+    "javafx": {
+        "names": [
+            "JavaFX"
+        ],
+        "type": "library",
+        "wiki": "https://fr.wikipedia.org/wiki/JavaFX",
+        "synopsis": "JavaFX est un framework et une bibliothèque d'interface utilisateur issue du projet OpenJFX, qui permet aux développeurs Java de créer une interface graphique pour des applications de bureau, des applications internet riches et des applications smartphones et tablettes tactiles.",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/javafx/logo.png"
+        }
+    },
+    "mousepad": {
+        "names": [
+            "Mousepad"
+        ],
+        "type": "software",
+        "wiki": "https://doc.ubuntu-fr.org/mousepad",
+        "synopsis": "Mousepad est l'éditeur de texte officiel de l'environnement de bureau XFCE. C'est un éditeur rapide, léger, et facile à prendre en main."
+    },
+    "eclipse": {
+        "names": [
+            "Eclipse"
+        ],
+        "type": "ide",
+        "wiki": "https://fr.wikipedia.org/wiki/Eclipse_(projet)",
+        "synopsis": "Eclipse est un projet, décliné et organisé en un ensemble de sous-projets de développements logiciels, de la fondation Eclipse visant à développer un environnement de production de logiciels libre qui soit extensible, universel et polyvalent, en s'appuyant principalement sur Java.",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/eclipse/logo.png"
+        }
+    },
+    "gcov": {
+        "names": [
+            "Gcov"
+        ],
+        "type": "software",
+        "wiki": "https://en.wikipedia.org/wiki/Gcov",
+        "synopsis": "Gcov est un outil de couverture de code utilisé dans le cadre de la suite de compilation GNU (GCC). Il aide les développeurs à déterminer quelles parties d'un programme ont été exécutées et quelles parties n'ont pas été testées. Cela permet d'évaluer l'efficacité des tests et d'identifier les zones de code qui nécessitent des tests supplémentaires."
+    },
+    "gprof": {
+        "names": [
+            "Gprof"
+        ],
+        "type": "software",
+        "wiki": "https://fr.wikipedia.org/wiki/Gprof",
+        "synopsis": "Gprof est un outil de profilage de code utilisé dans le cadre de la suite de compilation GNU (GCC). Il permet aux développeurs d'analyser les performances d'un programme en mesurant le temps d'exécution de chaque fonction et en identifiant les goulots d'étranglement."
+    },
+    "mermaid": {
+        "names": [
+            "Mermaid JS"
+        ],
+        "type": "software",
+        "wiki": "https://mermaid.js.org/",
+        "synopsis": "Mermaid est un outil de création de diagrammes et de graphiques basé sur JavaScript utilisant un langage formel intégré à Markdown pour créer et modifier des diagrammes de manière dynamique.",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/mermaid/logo.png"
+        }
+    },
     "wizard": {
         "names": [
             "Assistant"

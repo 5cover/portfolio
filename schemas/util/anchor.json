@@ -11,7 +11,7 @@
             "type": "string"
         },
         "anchor": {
-            "$ref": "anchors.json#/propertyNames"
+            "$ref": "../anchors.json#/propertyNames"
         }
     }
 }

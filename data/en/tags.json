@@ -22,5 +22,7 @@
     "but-conduire": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Conduct</span></span>",
     "but-optimiser": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Optimize</span></span>",
     "but-administrer": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Administer</span></span>",
-    "but-collaborer": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Collaborate</span></span>"
+    "but-collaborer": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Collaborate</span></span>",
+    "algorithms": "Algorithms",
+    "data": "Data"
 }

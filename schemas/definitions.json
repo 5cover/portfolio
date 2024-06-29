@@ -57,7 +57,15 @@
             "wizard",
             "wpf",
             "xml",
-            "zig"
+            "zig",
+            "mermaid",
+            "gcov",
+            "gprof",
+            "eclipse",
+            "mousepad",
+            "javafx",
+            "gitlab",
+            "make"
         ]
     },
     "additionalProperties": {

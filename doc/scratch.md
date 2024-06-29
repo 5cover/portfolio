@@ -54,6 +54,7 @@ yes. It would be awesome. Use system colors.
 need to put in theme
 
 - border radius
+- border widths
 - transparency
 - maybe more?
 
@@ -112,6 +113,52 @@ mettre dans un json traduit et utiliser des clés primaires dans projects (comme
 
 Why not. In perspectives, "Team Fortress 2"
 
+## Projects
+
+- JSlave
+- ztest
+- FileSignatureDetector
+- Portfolio
+- Ethercrash
+- Dialogs
+- ED++
+- Cori
+- MyMalloc
+- C-exCeptions
+- WPFZard
+- Demineur Python
+- NormalizeVolume : an FFMPEG helper for volume normalization : histoire avec renault zoé
+- UnixTimestamScreenSaver : why didn't this already exist
+- NoMoreVehicles
+- The Last Teacher : nouvelle
+
+- S1.01 Implémentation d'un besoin client : lowlevel, C, dialogue client
+- S1.02 Recherche Algorithmique &rarr; Sudone
+- S1.03 Docker, Markdown parser, Bash, automatisation et scripting, sysadmin
+- S1.04 BDD BUT
+- S1.05 Site de steaming
+- S1.06 Découverte du monde de l'entreprise
+- S2.01 IHM & JavaFX
+- S2.02 Découverte Algoritmique, problème des N reines
+- S2.03 Apache HTTP Serveur
+- S2.04 BDD + stat + data mining
+- S2.05 Gestion de Projet
+- S2.06 Teambuilding & film : Chevalier d'Un Jour
+
+stories
+
+s1.01 blockquote cite attribute
+
+### Project repositories
+
+GitLab for SAÉs. Put the in a group called BUT.
+
+S1.01 : host doxygen generated html on gh-pages, add link
+
+## Passions page
+
+Content:
+
 ## Perspectives page
 
 My opiniated rants on some things
@@ -152,48 +199,6 @@ Of course it will be around forever since so much stuff is written in it and it 
 However, I still think C is an invaluable language to learn. It forces you to leave your comfort zone of abstactions and face the actual challenge of implementating stuff that we use every day as programmers, such a lists or hash tables.
 
 Learning C is better than any amount of Leetcode challenges.
-
-### tell more in story
-
-## Projects
-
-- JSlave
-- ztest
-- FileSignatureDetector
-- Portfolio
-- Ethercrash
-- Dialogs
-- ED++
-- Cori
-- MyMalloc
-- C-exCeptions
-- WPFZard
-- Demineur Python
-- NormalizeVolume : an FFMPEG helper for volume normalization : histoire avec renault zoé
-- UnixTimestamScreenSaver : why didn't this already exist
-- NoMoreVehicles
-- The Last Teacher : nouvelle
-
-- S1.01 Implémentation d'un besoin client : lowlevel, C, dialogue client
-- S1.02 Recherche Algorithmique &rarr; Sudone
-- S1.03 Docker, Markdown parser, Bash, automatisation et scripting, sysadmin
-- S1.04 BDD BUT
-- S1.05 Site de steaming
-- S1.06 Découverte du monde de l'entreprise
-- S2.01 IHM & JavaFX
-- S2.02 Découverte Algoritmique, problème des N reines
-- S2.03 Apache HTTP Serveur
-- S2.04 BDD + stat + data mining
-- S2.05 Gestion de Projet
-- S2.06 Teambuilding & film : Chevalier d'Un Jour
-
-Mettre le numéro de la SAÉ dans le contexte
-
-### Project repositories
-
-GitLab for SAÉs. Put the in a group called BUT.
-
-S1.01 : host doxygen generated html on gh-pages, add link
 
 ### Gallerie
 

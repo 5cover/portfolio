@@ -67,7 +67,6 @@
                 }
             },
             "links": {
-                "minProperties": 1,
                 "type": "object",
                 "additionalProperties": {
                     "$ref": "util/anchor.json"

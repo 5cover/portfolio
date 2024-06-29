@@ -1,8 +1,19 @@
 {
     "2l2w-french-rural-road": {
-        "abstract": "Assset de route française standardisée",
         "context": "personnel",
         "end-date": "2022-10-02",
+        "start-date": "2021-06-15",
+        "title": "2L2W French Rural Road",
+        "abstract": "Assset de route française standardisée",
+        "team": [],
+        "tags": [
+            "3d-modeling",
+            "asset-creation"
+        ],
+        "technologies": [
+            "blender",
+            "cities-skylines"
+        ],
         "gallery": {},
         "links": {
             "Article Steam Workshop": {
@@ -11,25 +22,27 @@
             }
         },
         "references": {},
-        "start-date": "2021-06-15",
         "story": {
             "$include": "project/story/2l2w-french-rural-road.phtml"
-        },
-        "tags": [
-            "3d-modeling",
-            "asset-creation"
-        ],
-        "team": [],
-        "technologies": [
-            "blender",
-            "cities-skylines"
-        ],
-        "title": "2L2W French Rural Road"
+        }
     },
     "cori": {
-        "abstract": "Bibliothèque d'entrée utilisateur correcte et facile à utiliser en C",
         "context": "Personnel",
         "end-date": "2024-03-09",
+        "start-date": "2023-10-09",
+        "title": "<abbr title=\"Correct Input\">Cori</abbr>",
+        "story": "todo.. raconter la difficulté et les problèmes du scanf en c...",
+        "abstract": "Bibliothèque d'entrée utilisateur correcte et facile à utiliser en C",
+        "team": [],
+        "tags": [
+            "low-level",
+            "library"
+        ],
+        "technologies": [
+            "vs-code",
+            "c",
+            "make"
+        ],
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
@@ -37,24 +50,25 @@
                 "href": "https://github.com/5cover/stb_cori"
             }
         },
-        "references": {},
-        "start-date": "2023-10-09",
-        "story": "todo.. raconter la difficulté et les problèmes du scanf en c...",
-        "tags": [
-            "low-level",
-            "library"
-        ],
-        "team": [],
-        "technologies": [
-            "vs-code",
-            "c"
-        ],
-        "title": "<abbr title=\"Correct Input\">Cori</abbr>"
+        "references": {}
     },
     "demineur-python": {
-        "abstract": "Jeu de démineur en interface graphique",
+        "story": "todo",
         "context": "NSI Lycée",
         "end-date": "2022-04-24",
+        "start-date": "2022-03-01",
+        "title": "Démineur Python",
+        "abstract": "Jeu de démineur en interface graphique",
+        "team": [],
+        "tags": [
+            "game",
+            "oop"
+        ],
+        "technologies": [
+            "python",
+            "tkinter",
+            "spyder"
+        ],
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
@@ -66,27 +80,28 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/project/demineur-python/logo.png"
         },
-        "references": {},
-        "start-date": "2022-03-01",
-        "story": "todo",
-        "tags": [
-            "game",
-            "oop"
-        ],
-        "team": [],
-        "technologies": [
-            "python",
-            "tkinter",
-            "spyder"
-        ],
-        "title": "Démineur Python"
+        "references": {}
     },
     "dialogs": {
+        "title": "Dialogs",
+        "context": "Personnel",
+        "end-date": "2022-11-23",
+        "start-date": "2023-06-25",
+        "story": "todo (frustation Winclean dialogs winforms, vanara...)",
+        "team": [],
+        "tags": [
+            "oop",
+            "library",
+            "ui"
+        ],
+        "technologies": [
+            "visual-studio",
+            "csharp",
+            "dotnet"
+        ],
         "abstract": {
             "$include": "project/abstract/dialogs.phtml"
         },
-        "context": "Personnel",
-        "end-date": "2022-11-23",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
@@ -98,26 +113,26 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/project/dialogs/logo.png"
         },
-        "references": {},
-        "start-date": "2023-06-25",
-        "story": "todo (frustation Winclean dialogs winforms, vanara...)",
-        "tags": [
-            "oop",
-            "library",
-            "ui"
-        ],
-        "team": [],
-        "technologies": [
-            "visual-studio",
-            "csharp",
-            "dotnet"
-        ],
-        "title": "Dialogs"
+        "references": {}
     },
     "edplusplus": {
-        "abstract": "Projet NSI de suivi des notes scolaires",
+        "story": "todo",
+        "title": "ED++",
         "context": "NSI Lycée",
         "end-date": "2022-11-09",
+        "start-date": "2022-10-21",
+        "abstract": "Projet NSI de suivi des notes scolaires",
+        "team": [],
+        "tags": [
+            "software",
+            "db",
+            "oop"
+        ],
+        "technologies": [
+            "python",
+            "sqlite",
+            "spyder"
+        ],
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
@@ -129,26 +144,23 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/project/edplusplus/logo.png"
         },
-        "references": {},
-        "start-date": "2022-10-21",
-        "story": "todo",
-        "tags": [
-            "software",
-            "db",
-            "oop"
-        ],
-        "team": [],
-        "technologies": [
-            "python",
-            "sqlite",
-            "spyder"
-        ],
-        "title": "ED++"
+        "references": {}
     },
     "file-signature-detector": {
-        "abstract": "Détecteur de signature de fichier",
+        "story": "todo",
         "context": "NSI Lycée",
         "end-date": "2022-05-08",
+        "start-date": "2022-04-07",
+        "title": "FileSignatureDetector",
+        "abstract": "Détecteur de signature de fichier",
+        "team": [],
+        "tags": [
+            "software"
+        ],
+        "technologies": [
+            "python",
+            "csv"
+        ],
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
@@ -156,24 +168,27 @@
                 "href": "https://github.com/5cover/FileSignatureDetector"
             }
         },
-        "references": {},
-        "start-date": "2022-04-07",
-        "story": "todo",
-        "tags": [
-            "software"
-        ],
-        "team": [],
-        "technologies": [
-            "python",
-            "csv"
-        ],
-        "title": "FileSignatureDetector"
+        "references": {}
     },
     "jslave": {
+        "title": "JSlave",
+        "context": "Personnel",
+        "start-date": "2024-05-30",
+        "story": "todo (projet encore en phase embryonnaire)",
+        "team": [],
+        "tags": [
+            "low-level",
+            "cli",
+            "software"
+        ],
+        "technologies": [
+            "vs-code",
+            "ebnf",
+            "zig"
+        ],
         "abstract": {
             "$include": "project/abstract/jslave.phtml"
         },
-        "context": "Personnel",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
@@ -181,40 +196,20 @@
                 "href": "https://github.com/5cover/jslave"
             }
         },
-        "references": {},
-        "start-date": "2024-05-30",
-        "story": "todo (projet encore en phase embryonnaire)",
-        "tags": [
-            "low-level",
-            "cli",
-            "software"
-        ],
-        "team": [],
-        "technologies": [
-            "vs-code",
-            "ebnf",
-            "zig"
-        ],
-        "title": "JSlave"
+        "references": {}
     },
     "portfolio": {
-        "abstract": "Mon portfolio",
-        "context": "BUT, Personnel",
-        "gallery": {},
-        "links": {
-            "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "https://github.com/5cover/portfolio"
-            }
-        },
-        "references": {},
+        "title": "Portfolio",
         "start-date": "2024-06-17",
+        "abstract": "Mon portfolio",
+        "context": "BUT",
         "story": "todo.. raconter comment d'abord j'aimais pas puis après c'était mieux... comment j'ai dépassé les objectifs du cours.. etc...",
+        "team": [],
         "tags": [
             "web",
-            "but-realiser"
+            "but-realiser",
+            "ux"
         ],
-        "team": [],
         "technologies": [
             "html",
             "sass",
@@ -223,14 +218,40 @@
             "bash",
             "json",
             "markdown",
-            "python"
+            "python",
+            "javascript",
+            "svg"
         ],
-        "title": "Portfolio"
+        "gallery": {},
+        "links": {
+            "Dépôt GitHub": {
+                "anchor": "github",
+                "href": "https://github.com/5cover/portfolio"
+            }
+        },
+        "references": {}
     },
     "psdc": {
-        "abstract": "Compilateur pseudocode de l'IUT de Lannion",
-        "background": "/portfolio/img/project/psdc/bg.png",
+        "title": "Psdc",
         "context": "personnel",
+        "start-date": "2023-11-15",
+        "background": "/portfolio/img/project/psdc/bg.png",
+        "abstract": "Compilateur pseudocode de l'IUT de Lannion",
+        "team": [],
+        "technologies": [
+            "csharp",
+            "ebnf",
+            "vs-code",
+            "markdown"
+        ],
+        "tags": [
+            "software",
+            "oop",
+            "compiler",
+            "but-realiser",
+            "but-optimiser",
+            "cli"
+        ],
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
@@ -264,30 +285,27 @@
                 "href": "https://nasm.us/"
             }
         },
-        "start-date": "2023-11-15",
         "story": {
             "$include": "project/story/psdc.phtml"
-        },
-        "tags": [
-            "software",
-            "oop",
-            "compiler",
-            "but-realiser",
-            "but-optimiser",
-            "cli"
-        ],
-        "team": [],
-        "technologies": [
-            "csharp",
-            "ebnf",
-            "vs-code"
-        ],
-        "title": "Psdc"
+        }
     },
     "puissance-4": {
-        "abstract": "Jeu de Puissance 4 en console",
+        "story": "todo",
         "context": "NSI Lycée",
         "end-date": "2021-12-05",
+        "start-date": "2021-11-15",
+        "title": "Puissance 4",
+        "abstract": "Jeu de Puissance 4 en console",
+        "team": [],
+        "tags": [
+            "game",
+            "high-level",
+            "cli"
+        ],
+        "technologies": [
+            "python",
+            "spyder"
+        ],
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
@@ -295,25 +313,28 @@
                 "href": "https://github.com/5cover/Puissance-4"
             }
         },
-        "references": {},
-        "start-date": "2021-11-15",
-        "story": "todo",
-        "tags": [
-            "game",
-            "cli"
-        ],
-        "team": [],
-        "technologies": [
-            "python",
-            "spyder"
-        ],
-        "title": "Puissance 4"
+        "references": {}
     },
     "s1.01": {
-        "abstract": "Implémentation d'un besoin client (S1.01)",
-        "background": "/portfolio/img/project/s1.01/bg.png",
         "context": "BUT",
         "end-date": "2023-11-27",
+        "start-date": "2023-10-16",
+        "title": "Jeu de Sudoku",
+        "background": "/portfolio/img/project/s1.01/bg.png",
+        "abstract": "Implémentation d'un besoin client (S1.01)",
+        "team": [],
+        "tags": [
+            "software",
+            "but-realiser",
+            "algorithms",
+            "cli",
+            "low-level"
+        ],
+        "technologies": [
+            "vs-code",
+            "c",
+            "doxygen"
+        ],
         "gallery": {
             "Algorithme en pseudocode": {
                 "iframe-src": "/portfolio/img/project/s1.01/algorithme-pseudocode.html"
@@ -341,69 +362,60 @@
             }
         },
         "references": {},
-        "start-date": "2023-10-16",
         "story": {
             "$include": "project/story/s1.01.phtml"
-        },
-        "tags": [
-            "software",
-            "but-realiser"
-        ],
-        "team": [],
-        "technologies": [
-            "vs-code",
-            "c",
-            "doxygen"
-        ],
-        "title": "Jeu de Sudoku"
+        }
     },
     "s1.02": {
-        "abstract": "Résolution de Sudoku et optimisation (S1.02)",
-        "background": "/portfolio/img/project/s1.02/bg.png",
         "context": "BUT",
-        "end-date": "2024-01-28",
-        "gallery": {},
-        "links": {
-            "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "https://github.com/5cover/s1.02-sudoku"
-            }
-        },
-        "references": {},
+        "end-date": "2024-05-20",
         "start-date": "2023-11-27",
-        "story": "<p>L'objectif de ce projet était d'optimiser un algorithme de résolution de grilles de Sudoku afin qu'il puisse résoudre des grilles de différentes difficultés le plus rapidement possible.</p><p>Ce projet, réalisé en binôme, aura été une aventure particulièrement enrichissante. En effet, après le rendu, notre professeur a organisé un concours d'optimisation. Chaque participant soumetta son programme et notre professeur fit plusieurs <em>benchmarks</em> sur des grilles de Sudoku 3x3, 4x4, 5x5&hellip; afin de déterminer l'équipe qui a le programme le plus optimisé.</p><p>Moi et mon coéquipier Mattéo Kervadec avons remporté le concours haut la main.</p><p>Certes, nous y avons passé quelques nuits tardives, mais cela nous a permis d'apprendre toute sourtes d'astuces relatives à l'optimisation et de devenir de meilleurs prorammeurs en général.</p><p>De plus, ce projet a continué à grandir grâche à l'investissement personnel de Mattéo et moi. Nous l'avons amélioré sur notre temps libre, aboutissant finalement à <a class=\"link\" href=\"/portfolio/fr/project/sudone.html\">Sudone</a>.</p>",
-        "tags": [
-            "software",
-            "but-optimiser",
-            "but-collaborer"
-        ],
+        "background": "/portfolio/img/project/s1.02/bg.png",
+        "title": "Sudone",
+        "abstract": "Résolution de Sudoku et optimisation. Comparaison d'approches algorithmiques (S1.02)",
+        "story": "<p>L'objectif de ce projet était d'optimiser un algorithme de résolution de grilles de Sudoku afin qu'il puisse résoudre des grilles de différentes difficultés le plus rapidement possible.</p><p>Ce projet, réalisé en binôme, aura été une aventure particulièrement enrichissante. En effet, après le rendu, notre professeur a organisé un concours d'optimisation. Chaque participant soumetta son programme et notre professeur fit plusieurs <em>benchmarks</em> sur des grilles de Sudoku 3x3, 4x4, 5x5&hellip; afin de déterminer l'équipe qui a le programme le plus optimisé.</p><p>Moi et mon coéquipier Mattéo Kervadec avons remporté le concours haut la main.</p><p>Certes, nous y avons passé quelques nuits tardives, mais cela nous a permis d'apprendre toute sourtes d'astuces relatives à l'optimisation et de devenir de meilleurs prorammeurs en général.</p><p>De plus, ce projet a continué à grandir grâche à l'investissement personnel de Mattéo et moi. Nous l'avons amélioré sur notre temps libre, aboutissant finalement à Sudone.</p>",
         "team": [
             "kervadec-matteo"
         ],
         "technologies": [
             "vs-code",
-            "c"
+            "c",
+            "markdown",
+            "gprof",
+            "gcov",
+            "make",
+            "bash",
+            "python"
         ],
-        "title": "Comparaison d'approches algorithmiques"
-    },
-    "s1.03": {
-        "abstract": "Automatisation, scripts et conteneurisation (S1.03)",
-        "context": "BUT",
-        "end-date": "2023-01-21",
+        "tags": [
+            "software",
+            "but-optimiser",
+            "but-collaborer",
+            "algorithms",
+            "cli",
+            "low-level"
+        ],
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
-                "href": "todo"
+                "href": "https://github.com/Matteo-K/Sudoku-Solver"
             }
         },
-        "references": {},
+        "references": {}
+    },
+    "s1.03": {
+        "context": "BUT",
+        "end-date": "2023-01-21",
         "start-date": "2023-10-25",
+        "title": "Installation d'un poste de développement",
+        "abstract": "Automatisation, scripts et conteneurisation (S1.03)",
         "story": "<p>L'objectif de ce projet était de créer un générateur de documents PDF grâce à la conteneurisation Docker et en utilisant également PHP, le scripting Bash etc. Nous étions en groupes de 4. De mon côté, je me suis occupé d'écrire un parser Markdown en PHP. Nos professeurs ont été malins&nbsp;: ils ont modifés la syntaxe Markdown pour pas que l'on puisse simplement copier un parser d'Internet.</p>",
         "tags": [
             "but-administrer",
             "but-collaborer",
-            "cli"
+            "cli",
+            "sysadmin"
         ],
         "team": [
             "chartier--le-goff-marius",
@@ -416,176 +428,195 @@
             "docker",
             "github",
             "css",
-            "html"
+            "html",
+            "markdown",
+            "gitlab"
         ],
-        "title": "Installation d'un poste de développement"
-    },
-    "s1.04": {
-        "abstract": "Création d'une base de données (S1.04)",
-        "context": "BUT",
-        "end-date": "2024-01-22",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "todo"
+                "href": "todo",
+                "anchor": "github"
             }
         },
-        "references": {},
+        "references": {}
+    },
+    "s1.04": {
+        "context": "BUT",
+        "end-date": "2024-01-22",
         "start-date": "2023-11-27",
-        "story": "L'objectif de ce projet était de créer le diagramme de classe et d'implémenter un base de données en SQL.",
-        "tags": [
-            "but-gerer",
-            "but-collaborer"
-        ],
+        "title": "Création d'une base de données",
+        "abstract": "Création d'une base de données (S1.04)",
+        "story": "L'objectif de ce projet était de créer un diagramme de classe et d'implémenter une base de données en SQL.",
         "team": [
             "chartier--le-goff-marius"
+        ],
+        "tags": [
+            "but-gerer",
+            "but-collaborer",
+            "db"
         ],
         "technologies": [
             "sql",
             "sql-workbench",
-            "pgsql"
+            "pgsql",
+            "markdown"
         ],
-        "title": "S1.04"
-    },
-    "s1.05": {
-        "abstract": "Création d'un site de streaming factice (S1.05)",
-        "context": "BUT",
-        "end-date": "2024-01-21",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "todo"
+                "href": "todo",
+                "anchor": "github"
             }
         },
-        "references": {},
+        "references": {}
+    },
+    "s1.05": {
+        "context": "BUT",
+        "end-date": "2024-01-21",
         "start-date": "2023-10-09",
+        "title": "Recueil des besoins",
+        "abstract": "Création d'un site de streaming factice (S1.05)",
         "story": "L'objectif était de concevoir et réaliser un site web répondant aux besoins d’un client recueillis lors d’une interview faite au préalable. Le client était une entreprise qui propose des services de streaming en ligne.",
+        "team": [
+            "chartier--le-goff-marius",
+            "kervadec-matteo",
+            "rolland-stanislas"
+        ],
         "tags": [
             "but-conduire",
             "but-collaborer",
             "communication",
             "web"
         ],
-        "team": [
-            "chartier--le-goff-marius",
-            "kervadec-matteo",
-            "rolland-stanislas"
-        ],
         "technologies": [
+            "gitlab",
             "html",
             "css",
             "javascript",
             "figma",
-            "gloomaps"
+            "gloomaps",
+            "vs-code",
+            "markdown"
         ],
-        "title": "Recueil des besoins"
-    },
-    "s1.06": {
-        "abstract": "Analyse du rapport <abbr title=\"Responsabilité sociétale des entreprises\">RSE</abbr> de Focus Entertainment (S1.06)",
-        "context": "BUT",
-        "end-date": "2023-06-11",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "todo"
+                "href": "todo",
+                "anchor": "github"
             }
         },
-        "references": {},
+        "references": {}
+    },
+    "s1.06": {
+        "context": "BUT",
+        "end-date": "2023-06-11",
         "start-date": "2023-09-08",
+        "title": "Environnement économique",
+        "abstract": "Analyse du rapport <abbr title=\"Responsabilité sociétale des entreprises\">RSE</abbr> de Focus Entertainment (S1.06)",
         "story": "Ce projet consiste à organiser un événement factice de team building pour favoriser la cohésion d'équipe d'une entreprise. En groupe de 4, nous avons produit un court film promotionnel pour cet évènement.",
         "tags": [
             "but-collaborer"
         ],
+        "technologies": [
+            "github",
+            "markdown"
+        ],
         "team": [
             "chartier--le-goff-marius",
             "kervadec-matteo",
             "toe-paolo"
         ],
-        "technologies": [
-            "github"
-        ],
-        "title": "Environnement économique"
-    },
-    "s2.01": {
-        "abstract": "Développement d'une application de gestion de salle de spectacle (S2.01)",
-        "context": "BUT",
-        "end-date": "2024-06-17",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "todo"
+                "href": "todo",
+                "anchor": "github"
             }
         },
-        "references": {},
+        "references": {}
+    },
+    "s2.01": {
+        "context": "BUT",
+        "end-date": "2024-06-17",
         "start-date": "2024-05-28",
+        "title": "Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr>",
+        "abstract": "Développement d'une application de gestion de salle de spectacle (S2.01)",
         "story": "L'objectif de ce projet est de créer une application de gestion d'une salle de spectacle en Java avec une IHM (interface homme machine) en Java FX qui permet au directeur de la salle de gérer les spectacles.",
         "tags": [
-            "but-realiser"
-        ],
-        "team": [
-            "chartier--le-goff-marius",
-            "kervadec-matteo",
-            "toe-paolo"
+            "but-realiser",
+            "oop",
+            "ui",
+            "ux"
         ],
         "technologies": [
             "github",
-            "java"
-        ],
-        "title": "Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr>"
-    },
-    "s2.02": {
-        "abstract": "Des solutions innovantes au <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"/portfolio/img/project/s2.02/sujet-sae.pdf\">problème des N reines</a>. Exploration algorithmique d'un problème (S2.02)",
-        "context": "BUT",
-        "end-date": "2024-03-27",
-        "gallery": {},
-        "links": {
-            "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "todo"
-            }
-        },
-        "references": {},
-        "start-date": "2024-03-11",
-        "story": {
-            "$include": "project/story/s2.02.phtml"
-        },
-        "tags": [
-            "but-optimiser",
-            "but-collaborer"
+            "eclipse",
+            "java",
+            "javafx"
         ],
         "team": [
             "chartier--le-goff-marius",
             "kervadec-matteo",
             "toe-paolo"
         ],
-        "technologies": [
-            "python",
-            "github"
-        ],
-        "title": "Analyse du problème des N reines"
-    },
-    "s2.03": {
-        "abstract": "Site de météo avec Apache HTTP Server. Installation de services réseau (S2.03)",
-        "context": "BUT",
-        "end-date": "2024-06-05",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "todo"
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "references": {}
+    },
+    "s2.02": {
+        "context": "BUT",
+        "end-date": "2024-03-27",
+        "start-date": "2024-03-11",
+        "title": "Analyse du problème des N reines",
+        "abstract": "Des solutions innovantes au <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"/portfolio/img/project/s2.02/sujet-sae.pdf\">problème des N reines</a>. Exploration algorithmique d'un problème (S2.02)",
+        "tags": [
+            "but-optimiser",
+            "but-collaborer",
+            "high-level",
+            "algorithms"
+        ],
+        "technologies": [
+            "python",
+            "github",
+            "json",
+            "markdown",
+            "mermaid"
+        ],
+        "team": [
+            "chartier--le-goff-marius",
+            "kervadec-matteo",
+            "toe-paolo"
+        ],
+        "gallery": {},
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo (clone exploration algo in my own public repo)",
+                "anchor": "github"
             }
         },
         "references": {},
-        "start-date": "2024-05-14",
+        "story": {
+            "$include": "project/story/s2.02.phtml"
+        }
+    },
+    "s2.03": {
+        "context": "BUT",
         "story": "todo",
+        "end-date": "2024-06-05",
+        "start-date": "2024-05-14",
+        "title": "Site de météo",
+        "abstract": "Mise en place d'un serveur Web. Installation de services réseau (S2.03)",
         "tags": [
             "but-administrer",
             "but-collaborer",
-            "web"
+            "web",
+            "sysadmin"
         ],
         "team": [
             "chartier--le-goff-marius",
@@ -596,124 +627,122 @@
             "github",
             "php",
             "apache2",
-            "mysql"
+            "mysql",
+            "bash",
+            "vs-code",
+            "css",
+            "html",
+            "mousepad"
         ],
-        "title": "Mise en place d'un serveur Web"
-    },
-    "s2.04": {
-        "abstract": "Data mining sur l'open-data des collèges. Exploitation d'une base de données (S2.04)",
-        "context": "BUT",
-        "end-date": "2024-06-12",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "todo"
+                "href": "todo",
+                "anchor": "github"
             }
         },
-        "references": {},
-        "start-date": "2024-04-23",
+        "references": {}
+    },
+    "s2.04": {
+        "context": "BUT",
         "story": "todo",
-        "tags": [
-            "but-gerer",
-            "but-collaborer"
-        ],
+        "end-date": "2024-06-12",
+        "start-date": "2024-04-23",
+        "title": "Exploitation d'une base de données",
+        "abstract": "Data mining sur l'open-data des collèges et lycées français (S2.04)",
         "team": [
             "kervadec-matteo"
+        ],
+        "tags": [
+            "but-gerer",
+            "but-collaborer",
+            "data",
+            "db"
         ],
         "technologies": [
             "replit",
             "sql",
-            "mysql"
+            "mysql",
+            "python",
+            "sql-workbench"
         ],
-        "title": "Exploitation de base de données"
-    },
-    "s2.05": {
-        "abstract": "Application Java de gestion d'une salle de spectacle. Gestion d'un projet (S2.05)",
-        "context": "BUT",
-        "end-date": "2024-06-17",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "todo"
+                "href": "todo",
+                "anchor": "github"
             }
         },
-        "references": {},
-        "start-date": "2024-05-15",
+        "references": {}
+    },
+    "s2.05": {
+        "context": "BUT",
         "story": "todo",
+        "end-date": "2024-06-17",
+        "start-date": "2024-05-15",
+        "title": "Gestion d'un projet de développement d'application",
+        "abstract": "Application Java de gestion d'une salle de spectacle. Gestion d'un projet (S2.05)",
+        "technologies": [
+            "github"
+        ],
         "tags": [
             "but-conduire",
             "but-collaborer",
-            "oop"
+            "communication"
         ],
         "team": [
             "chartier--le-goff-marius",
             "kervadec-matteo",
             "toe-paolo"
         ],
-        "technologies": [
-            "github"
-        ],
-        "title": "Gestion d'un projet de développement d'application"
+        "gallery": {},
+        "links": {
+            "Dépôt GitHub": {
+                "href": "todo",
+                "anchor": "github"
+            }
+        },
+        "references": {}
     },
     "s2.06": {
-        "abstract": "Planification d'un évènement et réalisation d'un film promotionnel. Organisation d'un travail d'équipe (S2.06)",
         "context": "BUT",
-        "end-date": "2024-06-06",
-        "gallery": {},
-        "links": {
-            "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "todo"
-            }
-        },
-        "references": {},
-        "start-date": "2024-04-18",
         "story": "todo",
+        "end-date": "2024-06-06",
+        "start-date": "2024-04-18",
+        "title": "Chevalier d'un Jour",
+        "abstract": "Planification d'un évènement de <em>team building</em> et réalisation d'un film promotionnel. Organisation d'un travail d'équipe (S2.06)",
         "tags": [
             "but-collaborer"
+        ],
+        "technologies": [
+            "github"
         ],
         "team": [
             "chartier--le-goff-marius",
             "kervadec-matteo",
             "toe-paolo"
         ],
-        "technologies": [
-            "github"
-        ],
-        "title": "Évènement de teambuilding"
-    },
-    "sudone": {
-        "abstract": "Un solveur de Sudoku optimisé",
-        "context": "Personnel",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
-                "anchor": "github",
-                "href": "https://github.com/Matteo-K/Sudoku-Solver"
+                "href": "todo",
+                "anchor": "github"
             }
         },
-        "references": {},
-        "start-date": "2024-02-05",
-        "story": "todo",
-        "tags": [
-            "software",
-            "but-optimiser",
-            "but-collaborer"
-        ],
-        "team": [
-            "kervadec-matteo"
-        ],
-        "technologies": [
-            "vs-code",
-            "c"
-        ],
-        "title": "Sudone"
+        "references": {}
     },
     "tregoria": {
-        "abstract": "Un recul sur notre environnement dans Cities: Skylines",
+        "title": "Trégoria",
         "context": "personnel",
+        "start-date": "2022-10-15",
+        "abstract": "Un recul sur notre environnement dans Cities: Skylines",
+        "team": [],
+        "tags": [
+            "art"
+        ],
+        "technologies": [
+            "cities-skylines"
+        ],
         "gallery": {},
         "links": {
             "Publication Instagram": {
@@ -731,23 +760,33 @@
                 "href": "https://youtube.com/playlist?list=PLkBlOw_hzgdfL6Gqw0l9P1TYKn_WIgrd-"
             }
         },
-        "start-date": "2022-10-15",
         "story": {
             "$include": "project/story/tregoria.phtml"
-        },
-        "tags": [
-            "art"
-        ],
-        "team": [],
-        "technologies": [
-            "cities-skylines"
-        ],
-        "title": "Trégoria"
+        }
     },
     "winclean": {
-        "abstract": "Application de nettoyage et optimisation Windows",
-        "background": "/portfolio/img/project/winclean/bg.png",
+        "title": "WinClean",
         "context": "personnel",
+        "start-date": "2022-08-15",
+        "background": "/portfolio/img/project/winclean/bg.png",
+        "abstract": "Application de nettoyage et optimisation Windows",
+        "team": [],
+        "technologies": [
+            "csharp",
+            "github",
+            "inno-setup",
+            "powershell",
+            "visual-studio"
+        ],
+        "tags": [
+            "full-stack",
+            "oop",
+            "software",
+            "ui",
+            "ux",
+            "but-realiser",
+            "cli"
+        ],
         "gallery": {
             "Exécution des scripts": {
                 "url": "/portfolio/img/project/winclean/gallery/1.png"
@@ -771,35 +810,31 @@
             "url": "/portfolio/img/project/winclean/logo.png"
         },
         "references": {},
-        "start-date": "2022-08-15",
         "story": {
             "$include": "project/story/winclean.phtml"
-        },
-        "tags": [
-            "full-stack",
-            "oop",
-            "software",
-            "ui",
-            "ux",
-            "but-realiser",
-            "cli"
-        ],
-        "team": [],
-        "technologies": [
-            "csharp",
-            "github",
-            "inno-setup",
-            "powershell",
-            "visual-studio"
-        ],
-        "title": "WinClean"
+        }
     },
     "wpfzard": {
+        "title": "WPFZard",
+        "context": "Personnel",
+        "end-date": "2022-11-23",
+        "start-date": "2022-07-21",
+        "story": "todo (frustation Winclean wizard xctk license...)",
+        "team": [],
+        "tags": [
+            "oop",
+            "library",
+            "ui"
+        ],
+        "technologies": [
+            "csharp",
+            "visual-studio",
+            "dotnet",
+            "wpf"
+        ],
         "abstract": {
             "$include": "project/abstract/wpfzard.phtml"
         },
-        "context": "Personnel",
-        "end-date": "2022-11-23",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
@@ -811,28 +846,26 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/project/wpfzard/logo.png"
         },
-        "references": {},
-        "start-date": "2022-07-21",
-        "story": "todo (frustation Winclean wizard xctk license...)",
-        "tags": [
-            "oop",
-            "library",
-            "ui"
-        ],
-        "team": [],
-        "technologies": [
-            "csharp",
-            "visual-studio",
-            "dotnet",
-            "wpf"
-        ],
-        "title": "WPFZard"
+        "references": {}
     },
     "ztest": {
+        "story": "todo",
+        "title": "ztest",
+        "context": "Personnel",
+        "start-date": "2024-06-01",
+        "team": [],
+        "technologies": [
+            "zig",
+            "vs-code"
+        ],
+        "tags": [
+            "software",
+            "cli",
+            "low-level"
+        ],
         "abstract": {
             "$include": "project/abstract/ztest.phtml"
         },
-        "context": "Personnel",
         "gallery": {},
         "links": {
             "Dépôt GitHub": {
@@ -840,19 +873,25 @@
                 "href": "https://github.com/5cover/ztest"
             }
         },
+        "references": {}
+    },
+    "the-last-teacher": {
+        "title": "The Last Teacher",
+        "context": "Personnel",
+        "end-date": "2023-06-27",
+        "start-date": "2022-11-15",
+        "abstract": "Nouvelle post-apocalyptique",
+        "story": {
+            "$include": "project/story/the-last-teacher.phtml"
+        },
+        "background": "/portfolio/img/project/the-last-teacher/bg.webp",
+        "links": {},
         "references": {},
-        "start-date": "2024-06-01",
-        "story": "todo",
+        "gallery": {},
         "tags": [
-            "software",
-            "cli",
-            "low-level"
+            "art"
         ],
-        "team": [],
-        "technologies": [
-            "zig",
-            "vs-code"
-        ],
-        "title": "ztest"
+        "technologies": [],
+        "team": []
     }
 }
