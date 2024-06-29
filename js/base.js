@@ -103,7 +103,10 @@ async function createDefinitionTooltip(defId, def, types, onEnter, onLeave) {
     const tooltip = $(single(definitionTooltipTemplate.content.children).cloneNode(true));
     tooltip.attr('data-definition-id', defId);
 
-    // Fill the tooltip with content
+    if (def['background'] !== undefined) {
+        tooltip.css('--bg-img-definition', `url(${def['background']})`);
+    }
+
     $('.title a', tooltip)
         .attr('href', def.wiki)
         .html(def.names[0]);

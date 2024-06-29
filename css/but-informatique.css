@@ -824,13 +824,20 @@ h3 {
   font-size: 1.5em;
   font-weight: 500;
   line-height: 2.6315789474ex;
-  margin-bottom: 1lh;
+  margin-bottom: 0.5lh;
 }
 
 h4 {
   font-size: 1.25em;
   font-weight: 500;
   line-height: 2.7027027027ex;
+}
+
+h5 {
+  font-size: 0.9em;
+  font-weight: 500;
+  line-height: 2.5ex;
+  margin: 0.9lh 0;
 }
 
 body {
@@ -1047,11 +1054,15 @@ main {
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
 }
-#resultat-pour-moi article,
 #resultat-pour-moi div {
   display: flex;
   flex-flow: column nowrap;
-  gap: 1lh;
+  gap: 1.5lh;
+}
+#resultat-pour-moi ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5lh;
 }
 #resultat-pour-moi li {
   max-width: 60ch;
