@@ -56,8 +56,9 @@ put_head($page, $lang);
             <a href="projects.html" class="lvl button-link"><?php echo $lang->get('indexAllMyProjects') ?></a>
         </section>
         <article id="contact" class="lvl content-block">
-            <address>
+            <div>
                 <h2><?php echo $lang->get('indexContact') ?></h2>
+                <address>
                     <ul>
                         <li title="E-mail"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="mailto:bardini.raphael@gmail.com"><?php
                         echo get_svg_element('portfolio/img/social/email.svg', baseHeight: 24) ?><span>bardini.raphael@gmail.com</span></a>
@@ -72,7 +73,8 @@ put_head($page, $lang);
                         echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 24) ?><span>5cover</span></a>
                         </li>
                     </ul>
-            </address>
+                </address>
+            </div>
             <a href="/portfolio/cv_bardini_raphael.pdf" target="_blank" rel="noopener noreferrer">
                 <img src="/portfolio/img/cv_preview.webp" alt="<?php echo $lang->get('indexMyResumePreview') ?>" width="1241" height="1755" loading="lazy">
                 <span><?php echo $lang->get('indexMyResume') ?></span>

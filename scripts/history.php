@@ -76,7 +76,7 @@ require_once 'project.php';
                                 </div>
                                 <div class="ag-timeline-card_info">
                                     <div class="ag-timeline-card_title"><abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique</div>
-                                    <div class="ag-timeline-card_desc">Après le Bac, j'ai été accepté en BUT Informatique via Parcoursup. <a class="link" class="link" href="but-informatique.html">Plus de détails sur le <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique et l'<abbr title="Institut Universitaire Technologique">IUT</abbr> de Lannion</a></div>
+                                    <div class="ag-timeline-card_desc">Après le Bac, j'ai été accepté en BUT Informatique via Parcoursup. <a class="link" href="but-informatique.html">Plus de détails sur le <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique et l'<abbr title="Institut Universitaire Technologique">IUT</abbr> de Lannion</a></div>
                                 </div>
                             </div>
                             <div class="ag-timeline-card_arrow"></div>
