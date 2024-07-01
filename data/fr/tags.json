@@ -25,5 +25,5 @@
     "but-administrer": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Administrer</span>",
     "algorithms": "Algorithmes",
     "data": "Data",
-    "idea": "Idée"
+    "idea": "<abbr title=\"Quelquechose n'ayant pas encore mené à de réalisation concrète mais a beaucoup de potentiel\">Idée</abbr>"
 }

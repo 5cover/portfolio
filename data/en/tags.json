@@ -25,5 +25,5 @@
     "but-collaborer": "<span class=\"iconed-text\"><img src=\"/portfolio/img/but.webp\" alt=\"BUT Informatique\" width=\"95\" height=\"96\" title=\"BUT Informatique\"><span>Collaborate</span>",
     "algorithms": "Algorithms",
     "data": "Data",
-    "idea": "Idea"
+    "idea": "<abbr title=\"Something that hasn't yet led to a concrete realization but has a lot of potential\">Idea</abbr>"
 }

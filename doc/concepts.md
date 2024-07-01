@@ -41,3 +41,16 @@ Markup string expressed in JSON support special instructions evaluated in PHP.
 ## Tags
 
 - Idea: something that hasn't yet led to a concrete realization but has a lot of potential
+
+## Perspectives
+
+Basically rants, research, one-offs. Something that doesn't lead to a concreate realization (hence not being a project) but still is worth knowing about and was coined by myself.
+
+External examples
+
+- [Valores decimales en CSS](https://www.danielclemente.com/html/medios_px/index.html): research made by the individual. it doesn't really go anywhere but it's still interesting
+- [Playing with infinity in CSS](https://codersblock.com/blog/playing-with-infinity-in-css/): a blog article written mostly for fun and education. its more personal than a project. it's not entirely a rant though and some concrete things are learned.
+
+## Passions
+
+Something that is more fun and that I'm excited to talk about and share.

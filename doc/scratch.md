@@ -58,7 +58,9 @@ need to put in theme
 - transparency
 - maybe more?
 
-## thème "tableau craie"
+make content blocks appear like windows, with a (non-interactive) title bar (backround image?)
+
+## thème "tableau craie" (chalkboard)
 
 bordures : blanc brillant (*c.f.* cmd.exe)
 
@@ -104,6 +106,24 @@ annoying we have to duplicate logic from php -> js.
 ## Formaliser le contexte
 
 mettre dans un json traduit et utiliser des clés primaires dans projects (comme avec types pour les définiitons...)
+
+## consistent whitespace around titles
+
+currently it is a mess. sometimes we use margin, sometimes we use gap... i guess i should remove all margins on titles from base but put them in `.text`.
+
+`.text` represents textual content. note that textual content may not only be text. it may be figures or other stuff as long as it is displayed in the "standard" way. it is used to enforce typygraphical conventions such as `text-indent`...
+
+btw, should i put text-indent on all paragraphs or only the first one?
+
+and also i should find a better name for `.text`.
+
+## Add title to sections
+
+such as story, technoligies, team...
+
+some do not have titles. that's because we don't want to see a title. but it would be better if there was a title for semantics. so add a title and use a class like `.hide-title` that `display: none` the title.
+
+## Fix accent color contrast
 
 ## Save.tf link?
 
@@ -161,8 +181,6 @@ Reprendre la structure des compte rendus d'anglais
 GitLab for SAÉs. Put the in a group called BUT.
 
 S1.01 : host doxygen generated html on gh-pages, add link
-
-## Fix accent color contrast
 
 ## Passions page
 

@@ -1,0 +1,12 @@
+{
+    "the-goal-of-a-programming-language": {
+        "image": {
+            "isThemedSvg": false,
+            "url": "(todo generate something with ai)"
+        },
+        "references": {},
+        "story": {"$include": "perspective/the-goal-of-a-programming-language.phtml"},
+        "synopsis": "Comment Zig résout les problèmes du C",
+        "title": "L'objectif d'un langage de programmation"
+    }
+}

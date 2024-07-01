@@ -1,0 +1,40 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "perspectives",
+    "type": "object",
+    "additionalProperties": {
+        "type": "object",
+        "properties": {
+            "background": {
+                "type": "string",
+                "format": "uri-reference",
+                "title": "Background URI"
+            },
+            "title": {
+                "$ref": "util/html.json"
+            },
+            "synopsis": {
+                "$ref": "util/html.json"
+            },
+            "image": {
+                "$ref": "util/graphic.json"
+            },
+            "story": {
+                "$ref": "util/html.json"
+            },
+            "references": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "util/anchor.json"
+                }
+            }
+        },
+        "required": [
+            "title",
+            "synopsis",
+            "image",
+            "story",
+            "references"
+        ]
+    }
+}
