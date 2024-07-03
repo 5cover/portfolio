@@ -1,6 +1,6 @@
-        <!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="fr">
-    
+
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
@@ -13,21 +13,30 @@
                         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
-        <meta name="description" content="Bonjour ! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous !">
+        <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
         <meta name="msapplication-TileColor" content="#2d89ef">
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Raphaël Bardini</title>
-        <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');</script>
-    </head>
+        <script>
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+        </script>
+        <script defer src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script defer type="module" src="/portfolio/js/base.js"></script>
+            </head>
 
-    <body>
-            <template id="template-definition-tooltip">
+        <body>    <template id="template-definition-tooltip">
         <article class="lvl definition-tooltip" role="tooltip">
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer"><!-- href="wiki"; name --></a></h4>
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer">
+                    <!-- href="wiki"; name -->
+                </a></h4>
             <!-- logo graphic -->
-            <p class="type"><small><!-- type --></small></p>
-            <p class="synopsis"><!-- synopsis --></p>
+            <p class="type"><small>
+                    <!-- type -->
+                </small></p>
+            <p class="synopsis">
+                <!-- synopsis -->
+            </p>
         </article>
     </template>
     <header class="lvl">
@@ -83,66 +92,69 @@
         </div>
     </header>
         <main >
-            <section id="header">        <ul class="list-rect">
+            <header>
+                        <ul class="list-rect">
             <li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li>        </ul>
                     <h1>Chevalier d'un Jour</h1>
                                         <p class="abstract">Planification d'un évènement de <em>team building</em> et réalisation d'un film promotionnel. Organisation d'un travail d'équipe (S2.06)</p>
                     <div class="status-context">        <small>BUT</small>
     <small><time datetime="2024-04-18">18 avril 2024</time> &ndash; <time datetime="2024-06-06">6 juin 2024</time></small>
     </div>
-            </section>
-            <section>                    <ul id="links" class="lvl list-link">
-                                            <li>
-                <a target="_blank" rel="noopener noreferrer" href="todo">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    <span>Dépôt GitHub</span>
-                </a>
-            </li>
-                                </ul>
-                            </section>
-            <section>                    <h3>Coéquipiers</h3>
-                    <ul id="team" class="lvl">                            <li>    <article class="definition" >
+            </header>
+                            <section id="links">
+                    <h3>Liens</h3>
+                            <ul class="lvl list-link">
+                            <li>
+                    <a target="_blank" rel="noopener noreferrer" href="todo">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                        <span>Dépôt GitHub</span>
+                    </a>
+                </li>
+                    </ul>
+                    </section>
+                            <section id="team">
+                    <h3>Équipe</h3>
+                        <ul class="lvl list-definition">
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://icelos6.wixsite.com/portfolio-marius-cha">Marius Chartier--Le Goff</a>
         </h4>
         <img src="/portfolio/img/definition/chartier--le-goff-marius/logo.webp" alt="Logo Marius Chartier--Le Goff" title="Logo Marius Chartier--Le Goff" class="logo" width="589" height="620" loading="lazy">        <p class="type"><small>Personne</small></p>
         <p class="synopsis">Marius Chartier--Le Goff est né en <time datetime="2005">2005</time> et est étudiant en BUT informatique à l'IUT de Lannion. Il souhaite continuer ses études jusqu'au titre d'ingénieur.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition" >
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://matteo-k.github.io/Matteo-K_Portfolio.github.io/">Mattéo Kervadec</a>
         </h4>
         <img src="/portfolio/img/definition/kervadec-matteo/logo.jpg" alt="Logo Mattéo Kervadec" title="Logo Mattéo Kervadec" class="logo" width="800" height="800" loading="lazy">        <p class="type"><small>Personne</small></p>
         <p class="synopsis">Mattéo Kervadec est un étudiant en 1<sup>ère</sup> année de <abbr title="Bachelor Universitaire Technologique">BUT</abbr> en filière Informatique à l'IUT de Lannion. Il a un baccalauréat avec les spécialités <a class="link" target="_blank" rel="noopener noreferrer" href="https://cache.media.education.gouv.fr/file/SPE8_MENJ_25_7_2019/90/7/spe246_annexe_1158907.pdf">Mathématiques</a> et <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"><abbr title="Numériques Sciences Informatiques">NSI</abbr></a> obtenu au lycée <a class="link" target="_blank" rel="noopener noreferrer" href="https://sainteanne-saintlouis.fr">Sainte-Anne</a> à Sainte-Anne-d'Auray. Il est passionné par le tennis et le cinéma autant dans les films que le jeu vidéo. Il porte aussi un intérêt pour le développement de logiciels informatiques.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition" >
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://vitovitae.github.io/">Paolo Toé</a>
         </h4>
         <img src="/portfolio/img/definition/toe-paolo/logo.jpg" alt="Logo Paolo Toé" title="Logo Paolo Toé" class="logo" width="512" height="512" loading="lazy">        <p class="type"><small>Personne</small></p>
         <p class="synopsis">Paolo Vito Toé est un étudiant en BUT Informatique à l'IUT de Lannion. Son parcours le pousse à s'améliorer en permanence, car l'informatique est une de ses grandes passions. Né aux États-Unis et ayant grandi dans plusieurs pays différents, il est suis aussi passionné par les cultures étrangères. Outre ses études, il est passionné par la lecture et la création de jeux.</p>
     </article>
 </li>
-                                            </ul>
-                            </section>
-            <div id="story" class="text">todo</div>
-            <section>                    <h3>Technologies</h3>
-                    <ul id="technologies" class="lvl">                            <li>    <article class="definition" >
+            </ul>
+                </section>
+                        <section id="story" class="text">
+                <h3>Histoire</h3>
+                todo            </section>
+                            <section id="technologies">
+                    <h3>Technologies</h3>
+                        <ul class="lvl list-definition">
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/GitHub">GitHub</a>
         </h4>
         <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)" title="Logo GitHub" class="logo"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>        <p class="type"><small>Site Web</small></p>
         <p class="synopsis">GitHub est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git.</p>
     </article>
 </li>
-                                            </ul>
-                            </section>
-            <section>            </section>
-            <section>            </section>
-        </main>
-            <footer class="lvl">
+            </ul>
+                </section>
+                    </main>
+        <footer class="lvl">
         <small>&copy; 2024 Raphaël Bardini</small>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="Dépôt GitHub de ce site"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
     </footer>
-            <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <script src="/portfolio/js/base.js"></script>
-        </body>
-
-    </html>
+</body>

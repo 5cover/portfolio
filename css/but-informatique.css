@@ -6,9 +6,10 @@
 /* Horizontal margin of an element whose width spans over the entire viewport */
 /* Vertical margin of an element whose width spans over the entire viewport */
 /* Maximum length of a line of text */
+/* Paragraph vertical margin */
 /* Utilities
  * 
- * Increase stylesheet expressivity. May not be semantic.
+ * Mixins that increase stylesheet expressivity.
  */
 /* Super annotation
  *
@@ -38,19 +39,19 @@
  *
  * $width: border-width value -> border width
  */
-/* Accent color foreground 
+/* Accent color foreground
  *
- * Adapt the foreground to the accent color for better contrast.
+ * Adapt the foreground colors for an accent color background
  */
-/* Accent color
+/* Accent color background
  *
  * Set the background to the accent color and adapt the foreground color.
  *
  * $opacity: number [0..1] -> accent background color opacity
  */
-/* Level content
+/* Strip content
  *
- * Content spanning over the width of the entire viewport. One level of nesting inside the main element (direct child of the main element).
+ * Content spanning over the width of the entire viewport.
  *
  * $border-width: border-width value -> border width
  */
@@ -60,7 +61,9 @@
  */
 /* Hover card 
  *
- * Position relatively. Represents an interactive card covered by an anchor.
+ * Represents an interactive card covered by an anchor.
+ *
+ * Alters the z-index of relevant elements to have them stand out above the link.
  */
 /* Hover card target
  *
@@ -107,24 +110,6 @@
   opacity: 0.5;
 }
 
-/* Adapet for accent background color
- *
- * Appropriate styles to maintain legibility when the element has an accent background color.
- */
-/* Components
- * 
- * Provide reusable components. Semantic.
- *
- * Definition of a component:
- *
- * - semantics over utilities
- * - name related to the content
- * - reusing requires a similar markup structure
- * - can be specialized in page stylesheets
- *
- * Mixin: use to reference the component from stylesheet
- * Class: use to reference the component from HTML with the default arguments (do not use @extend)
- */
 /* Home nav link
  *
  * The link to the homepage in the navbar.
@@ -133,57 +118,22 @@
  *
  * A link that looks like a button.
  */
-.button-link {
-  padding: 0.5lh 2ch;
-  border-radius: 0.25lh;
-  background-color: var(--color-lvl);
-  display: block;
-  margin: 0 auto;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.button-link:is(:hover, :focus-within, :focus) {
-  color: var(--color-accent-fg);
-  --color-fg: var(--color-accent-fg);
-  --color-fg-rgb: var(--color-accent-fg-rgb);
-  background-color: rgba(var(--color-accent-rgb), 1);
-  /* Adapt foreground to accent color (except tag list). */
-  /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
-}
-@media (prefers-reduced-motion: no-preference) {
-  .button-link:is(:hover, :focus-within, :focus) {
-    transform: scale(1.05);
-  }
-}
-.button-link:is(:hover, :focus-within, :focus) .list-rect > li {
-  background-color: var(--color-lvl);
-}
-.button-link:is(:hover, :focus-within, :focus) :not(.list-rect, .list-rect *) {
-  color: var(--color-accent-fg);
-  --color-fg: var(--color-accent-fg);
-  --color-fg-rgb: var(--color-accent-fg-rgb);
-}
-.button-link:is(:hover, :focus-within, :focus) .link {
-  color: var(--color-fg);
-  text-decoration: underline;
-}
-.button-link:is(:hover, :focus-within, :focus) :link {
-  text-decoration: none;
-}
-
 /* Iconed text
  *
  * An element containing a graphic that is sized to the neighbouring text.
  */
-.iconed-text :is(img, svg) {
-  height: 1em;
-  width: auto;
-  margin-right: 0.5ch;
-}
-.iconed-text * {
-  vertical-align: middle;
-}
-
+/* Card link list
+ *
+ * A .list-link styled specifically for being displayed inside a detail card
+ */
+/* Detail card list
+ *
+ * Common styles for detail card lists.
+ */
+/* Components
+ * 
+ * Component classes. Must be used only once.
+ */
 /* Flag list
  *
  * List of flags.
@@ -251,6 +201,47 @@
   cursor: pointer;
 }
 
+/* Button link
+ *
+ * Default button link
+ */
+.button-link {
+  padding: 0.5lh 2ch;
+  border-radius: 0.25lh;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(var(--color-fg-rgb), 0.15);
+  background-color: var(--color-lvl);
+  display: block;
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.button-link:is(:hover, :focus-within, :focus) {
+  color: var(--color-accent-fg);
+  --color-fg: var(--color-accent-fg);
+  --color-fg-rgb: var(--color-accent-fg-rgb);
+  background-color: rgba(var(--color-accent-rgb), 1);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .button-link:is(:hover, :focus-within, :focus) {
+    transform: scale(1.05);
+  }
+}
+
+/* Iconed text
+ *
+ * Default iconed text
+ */
+.iconed-text :is(img, svg) {
+  height: 1em;
+  width: auto;
+  margin-right: 0.5ch;
+}
+.iconed-text * {
+  vertical-align: middle;
+}
+
 /* Rectangle list
  *
  * A list of small, (ideally) horizontal rectancgles
@@ -276,59 +267,157 @@
   list-style: none;
 }
 
-/* Project list
+/* Split card detail list
  *
- * A list of projects
-
+ * A list of detail cards, shown in the "split" style (wide card, logo on the left)
+ *
  * Domain classes:
- * - logo: project logo graphic
- * - abstract: project abstract text
- * - context: project context text
- * - status: project status text
+ * - logo: logo graphic
+ * - abstract: abstract text
  */
-.list-project {
+.list-detail-split-card {
   gap: 1em;
-  display: flex;
-  flex-flow: row wrap;
+  list-style: none;
+  display: grid;
+  grid-auto-flow: row;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 50%;
+  place-self: center;
+}
+.list-detail-split-card > li {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(var(--color-fg-rgb), 0.15);
+  position: relative;
   /* Increase z-index to stand out above the card link */
 }
-.list-project :is(.list-link, .list-rect) > li {
+.list-detail-split-card > li :is(.list-link, .list-rect) > li {
   z-index: 1;
 }
-.list-project .link,
-.list-project abbr {
+.list-detail-split-card > li .link, .list-detail-split-card > li a[id^=cite-],
+.list-detail-split-card > li abbr {
   z-index: 1;
   /* Creates a stacking context */
   position: relative;
 }
-.list-project > li {
-  position: relative;
-  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.85), rgba(var(--color-lvl-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-lvl-rgb))) no-repeat;
+.list-detail-split-card > li:is(:hover, :focus-within, :focus) {
+  /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
+}
+.list-detail-split-card > li:is(:hover, :focus-within, :focus) .link, .list-detail-split-card > li:is(:hover, :focus-within, :focus) a[id^=cite-] {
+  color: var(--color-fg);
+  text-decoration: underline;
+}
+.list-detail-split-card > li h3 > a {
+  text-decoration: none;
+}
+.list-detail-split-card > li h3 > a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.list-detail-split-card > li {
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: max(7.5em, 7.5vw) 1fr;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.list-detail-split-card > li .logo {
+  display: block;
+  background-color: var(--color-lvl-next);
+  padding: 0.5em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1;
+}
+.list-detail-split-card > li > div {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  padding: 1em 1em 1em 1.6180339888em;
+  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.85), rgba(var(--color-lvl-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-lvl-rgb))) no-repeat;
   background-size: cover;
+}
+.list-detail-split-card > li > div h3 {
+  grid-column: 2;
+}
+.list-detail-split-card > li > div .abstract {
+  grid-row: 2;
+  grid-column: 2;
+}
+.list-detail-split-card > li > div .list-link {
+  gap: 0.5em;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  grid-row: 3;
+  grid-column: 2;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .list-detail-split-card > li > div .list-link > :is(:hover, :focus-within, :focus) {
+    transform: scale(1.15);
+  }
+}
+.list-detail-split-card > li > div .list-link :is(img, svg) {
+  max-width: 100%;
+  max-height: 100%;
+  height: 1.5em;
+  width: 1.5em;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.list-detail-split-card > li:is(:hover, :focus-within, :focus) > div {
+  background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.85), rgba(var(--color-accent-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-accent-rgb))) no-repeat;
+  background-size: cover;
+  color: var(--color-accent-fg);
+  --color-fg: var(--color-accent-fg);
+  --color-fg-rgb: var(--color-accent-fg-rgb);
+}
+
+/* Project card list
+ *
+ * A list of project cards
+
+ * Domain classes:
+ * - logo: logo graphic
+ * - abstract: abstract text
+ * - context: context text
+ * - status: status text
+ */
+.list-project {
+  gap: 1em;
   list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+}
+.list-project > li {
   border-width: 1px;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.15);
-  display: grid;
-  grid-template: min-content repeat(3, auto) 1fr min-content/1fr auto;
-  row-gap: 0.75em;
-  border-radius: 0.75em;
-  padding: 0.75em;
-  flex-basis: 20em;
-  /* Required to clip the :before pseudo-element to the card's boundaries */
-  overflow: hidden;
-  /* Tag list */
+  position: relative;
+  /* Increase z-index to stand out above the card link */
 }
-.list-project > li .list-rect {
-  grid-column: 1/3;
-}
-.list-project > li .list-rect > li:is(:hover, :focus-within, :focus) {
+.list-project > li :is(.list-link, .list-rect) > li {
   z-index: 1;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .list-project > li .list-rect > li:is(:hover, :focus-within, :focus) {
-    transform: scale(1.15);
-  }
+.list-project > li .link, .list-project > li a[id^=cite-],
+.list-project > li abbr {
+  z-index: 1;
+  /* Creates a stacking context */
+  position: relative;
+}
+.list-project > li:is(:hover, :focus-within, :focus) {
+  /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
+}
+.list-project > li:is(:hover, :focus-within, :focus) .link, .list-project > li:is(:hover, :focus-within, :focus) a[id^=cite-] {
+  color: var(--color-fg);
+  text-decoration: underline;
 }
 .list-project > li h3 > a {
   text-decoration: none;
@@ -340,6 +429,25 @@
   top: 0;
   right: 0;
   bottom: 0;
+}
+.list-project > li {
+  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.85), rgba(var(--color-lvl-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-lvl-rgb))) no-repeat;
+  background-size: cover;
+  border-radius: 0.75em;
+  display: grid;
+  flex-basis: 20em;
+  grid-template: min-content repeat(3, auto) 1fr min-content/1fr auto;
+  padding: 0.75em;
+  row-gap: 0.75em;
+  /* Tag list */
+}
+.list-project > li .list-rect {
+  grid-column: 1/3;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .list-project > li .list-rect > li:is(:hover, :focus-within, :focus) {
+    transform: scale(1.15);
+  }
 }
 .list-project > li .logo {
   max-width: 100%;
@@ -366,17 +474,14 @@
 .list-project > li .abstract {
   grid-column: 1/3;
   grid-row: 5;
-  align-content: center;
+  align-self: center;
 }
 .list-project > li .list-link {
   gap: 0.5em;
-  grid-row: 6;
-  grid-column: 1/3;
   flex-direction: row-reverse;
   align-items: flex-end;
-}
-.list-project > li .list-link > :is(:hover, :focus-within, :focus) {
-  z-index: 1;
+  grid-row: 6;
+  grid-column: 1/3;
 }
 @media (prefers-reduced-motion: no-preference) {
   .list-project > li .list-link > :is(:hover, :focus-within, :focus) {
@@ -392,11 +497,9 @@
      object-fit: contain;
 }
 .list-project > li:is(:hover, :focus-within, :focus) {
-  /* Invert the colors: background in orange */
-  background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.85), rgba(var(--color-accent-rgb), 0.85)), padding-box var(--bg-img-project, rgb(var(--color-accent-rgb))) no-repeat;
+  background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.85), rgba(var(--color-accent-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-accent-rgb))) no-repeat;
   background-size: cover;
   /* Adapt foreground to accent color (except tag list). */
-  /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
 }
 .list-project > li:is(:hover, :focus-within, :focus) .list-rect > li {
   background-color: var(--color-lvl);
@@ -405,10 +508,6 @@
   color: var(--color-accent-fg);
   --color-fg: var(--color-accent-fg);
   --color-fg-rgb: var(--color-accent-fg-rgb);
-}
-.list-project > li:is(:hover, :focus-within, :focus) .link {
-  color: var(--color-fg);
-  text-decoration: underline;
 }
 .list-project > li:not(:is(:hover, :focus-within, :focus)) .list-rect > li {
   color: var(--color-accent-fg);
@@ -435,7 +534,8 @@
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.15);
   position: relative;
-  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.9), rgba(var(--color-lvl-rgb), 0.9)), padding-box var(--bg-img-definition, rgb(var(--color-lvl-rgb))) no-repeat;
+  /* Increase z-index to stand out above the card link */
+  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.85), rgba(var(--color-lvl-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-lvl-rgb))) no-repeat;
   background-size: cover;
   background-color: var(--color-lvl);
   border-radius: 0.75em;
@@ -445,7 +545,17 @@
   padding: 0.75em;
   row-gap: 0.75em;
 }
-.definition .link, .definition-tooltip .link,
+.definition :is(.list-link, .list-rect) > li, .definition-tooltip :is(.list-link, .list-rect) > li {
+  z-index: 1;
+}
+.definition .link, .definition a[id^=cite-], .definition-tooltip .link, .definition-tooltip a[id^=cite-],
+.definition abbr,
+.definition-tooltip abbr {
+  z-index: 1;
+  /* Creates a stacking context */
+  position: relative;
+}
+.definition .link, .definition a[id^=cite-], .definition-tooltip .link, .definition-tooltip a[id^=cite-],
 .definition abbr,
 .definition-tooltip abbr {
   z-index: 1;
@@ -484,6 +594,7 @@
 }
 .definition-tooltip {
   position: fixed;
+  z-index: 1;
   /*&:is(:hover, :focus-within, :focus), i am hovered
   &-trigger:is(:hover, :focus-within, :focus) ~ & my trigger is hover
   {
@@ -517,6 +628,62 @@
 }
 .content-block h2 {
   margin-bottom: 0.5em;
+}
+
+/* Definition list
+ *
+ * A list of definition cards.
+ */
+.list-definition {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.list-definition > li {
+  position: relative;
+  /* Increase z-index to stand out above the card link */
+  flex-shrink: 1;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  display: contents;
+}
+.list-definition > li :is(.list-link, .list-rect) > li {
+  z-index: 1;
+}
+.list-definition > li .link, .list-definition > li a[id^=cite-],
+.list-definition > li abbr {
+  z-index: 1;
+  /* Creates a stacking context */
+  position: relative;
+}
+.list-definition > li article:is(:hover, :focus-within, :focus) {
+  background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.9), rgba(var(--color-accent-rgb), 0.9)), padding-box var(--bg-img-card, rgb(var(--color-accent-rgb))) no-repeat;
+  background-size: cover;
+}
+
+/* Text
+ *
+ * Textual content. May be applied to a container of paragraphs or a single paragraph.
+*/
+.text p:first-of-type:not(:last-of-type),
+p.text:first-of-type:not(:last-of-type) {
+  text-indent: 2cap;
+}
+
+.text p:not(:last-child) {
+  margin-bottom: 3.125ex;
+}
+
+.text:has(> :not(:only-child)) {
+  text-align: justify;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  -moz-column-width: 60ch;
+       column-width: 60ch;
+}
+.text:has(> :not(:only-child)) > * {
+  max-width: 60ch;
 }
 
 @property --bg-img {
@@ -793,22 +960,6 @@ p {
   max-width: 60ch;
 }
 
-.text p:first-of-type:not(:last-of-type),
-p.text:first-of-type:not(:last-of-type) {
-  text-indent: 2cap;
-}
-
-p.text {
-  margin: 3.125ex 0;
-}
-
-.text p:not(:first-child) {
-  margin-top: 3.125ex;
-}
-.text p:not(:last-child) {
-  margin-bottom: 3.125ex;
-}
-
 h1 {
   font-size: 2em;
   font-weight: 500;
@@ -855,8 +1006,22 @@ a {
   text-decoration: none;
 }
 
-a:not(.link, .fi) {
+a:not(.link, a[id^=cite-], .fi) {
   color: inherit;
+}
+
+/* Reference citation links */
+a[id^=cite-] {
+  align-self: normal;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  padding-left: 1px;
+  text-indent: initial;
+  unicode-bidi: isolate;
+  vertical-align: text-top;
+  white-space: nowrap;
+  font-size: 0.6em;
 }
 
 /* Opt-in basic style classes
@@ -867,20 +1032,20 @@ a:not(.link, .fi) {
  *
  * Intended for: <a>
  */
-.link:link {
+.link:link, a[id^=cite-]:link {
   color: #a66144;
 }
 
-.link:visited {
+.link:visited, a[id^=cite-]:visited {
   color: #91553b;
 }
 
-.link:is(:hover, :focus-within, :focus) {
+.link:is(:hover, :focus-within, :focus), a[id^=cite-]:is(:hover, :focus-within, :focus) {
   color: #be7c60;
   text-decoration: underline;
 }
 
-.link[target=_blank]:after {
+.link[target=_blank]:after, a[target=_blank][id^=cite-]:after {
   align-self: normal;
   font-style: normal;
   font-weight: normal;

@@ -1,11 +1,8 @@
-"use strict";
+import * as util from "./modules/util.js";
+import * as dom from "./modules/dom.js";
+import * as i12y from "./modules/i12y.js";
 
-$(document).ready(async _ => {
-    function createLi(contents) {
-        const li = document.createElement('li');
-        li.append(contents);
-        return li;
-    }
+$(async () => {
 
     const titleDataList = document.getElementById('project-titles');
     const projectList = document.getElementById('project-list');
@@ -22,9 +19,9 @@ $(document).ready(async _ => {
     }
 
     const [projects, tags, anchors] = await Promise.all([
-        getDataJson(`${document.documentElement.lang}/projects`),
-        getDataJson(`${document.documentElement.lang}/tags`),
-        getDataJson('anchors'),
+        util.getDataJson(`${document.documentElement.lang}/projects`),
+        util.getDataJson(`${document.documentElement.lang}/tags`),
+        util.getDataJson('anchors'),
     ]);
 
     const allowedTags = new Set();
@@ -54,7 +51,7 @@ $(document).ready(async _ => {
         label.htmlFor = input.id = htmlId;
 
         label.appendChild(input);
-        listTags.appendChild(createLi(label));
+        listTags.appendChild(dom.createLi(label));
     }
 
     document.querySelectorAll('input').forEach(input => {
@@ -76,12 +73,13 @@ $(document).ready(async _ => {
     // Initial rendering
     await renderProjectList(requestedTag);
 
+
     async function renderProjectList() {
         const searchTerm = searchInput.value || '';
         const sortBy = document.querySelector('input[name="sorting"]:checked').value; // asc or desc
         const filteredProjects = Object.entries(projects)
             .map(([key, project]) => {
-                project.title = parseHtml(project.title).textContent;
+                project.title = dom.parseHtml(project.title).textContent;
                 return [key, project]
             })
             .filter(([_, project]) =>
@@ -97,25 +95,26 @@ $(document).ready(async _ => {
             });
 
         // Generate the project list HTML
-        const projectListHTML = (await Promise.all(filteredProjects.map(([id, project]) => getProjectHtml(id, project)))).join('');
+        const projectListHTML = (await Promise.all(filteredProjects.map(([id, project]) => getProjectCardHtml(id, project)))).join('');
 
         // Update the project list
         projectList.innerHTML = projectListHTML;
+        i12y.setupElementInteractivity(projectList);
     }
 
-    async function getProjectHtml(id, project) {
-        return `<li${map(project.background, b => ` style="--bg-img-project: url(${b})"`, '')}>
+    async function getProjectCardHtml(id, project) {
+        return `<li${util.map(project.background, b => ` style="--bg-img-card: url(${b})"`, '')}>
         <ul class="list-rect">${project.tags.map(id => `<li><a href="?tag=${id}">${tags[id]}</a></li>`).join('')}</ul>
-            ${await map(project.logo, async info =>
-            (await getGraphicElement(info, project.title /* todo: format title*/, ['logo'])).outerHTML,
+            ${await util.map(project.logo, async info =>
+            (await dom.getGraphicElement(info, project.title /* todo: format title*/, ['logo'])).outerHTML,
             '')}
             <h3><a href="project/${id}.html">${project.title}</a></h3>
-            <p class="context"><small>${ucfirst(project.context)}</small></p>
+            <p class="context"><small>${util.ucfirst(project.context)}</small></p>
             <p class="status">${getStatus(project)}</p>
             <p class="abstract">${project.abstract}</p>
             <ul class="list-link">
                 ${(await Promise.all(Object.entries(project.links).map(async ([name, link]) => {
-                const icon = await getGraphicElement(anchors[link.anchor]);
+                const icon = await dom.getGraphicElement(anchors[link.anchor]);
                 return `<li><a href="${link.href}" title="${name}" target="_blank" rel="noopener noreferrer">${icon.outerHTML}</a></li>`;
             }))).join('')}
             </ul>
@@ -124,7 +123,7 @@ $(document).ready(async _ => {
 
     function getStatus(project) {
         const startDate = formatDate(project['start-date']);
-        const endDate = map(project['end-date'], formatDate, 'en cours');
+        const endDate = util.map(project['end-date'], formatDate, 'en cours');
         return `<small>${startDate} – ${endDate}</small>`;
     }
 });

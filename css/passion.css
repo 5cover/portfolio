@@ -1164,157 +1164,177 @@ body > footer {
   }
 }
 
-section {
-  border-width: 1px 0;
+/* Comon styles for detail pages */
+/* Basic styles */
+#links h3,
+#story h3 {
+  display: none;
+}
+
+body {
+  /* Reset body gap and use padding instead of margin to suit background image */
+  gap: 0;
+}
+
+main {
+  background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.9), rgba(var(--color-lvl-rgb), 0.9)), padding-box var(--bg-img, rgb(var(--color-lvl-rgb))) no-repeat;
+  background-size: cover;
+  padding: 2.5lh min(2.5vw, 2.5lh);
+}
+
+/* Customizables */
+/* Detail header
+ *
+ * Common header for detail pages
+ *
+ * $row-count:    integer -> number of rows
+ * $row-title:    integer -> title row
+ * $row-logo:     integer -> logo row
+ * $row-abstract: integer -> abstract row
+ */
+/* Components */
+/* Gallery
+ *
+ * A list of figures related to a detail.
+ */
+.gallery {
+  align-items: center;
+  -moz-column-gap: 3em;
+       column-gap: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  row-gap: min(3vw, 3em);
+}
+.gallery > li {
+  display: contents;
+}
+.gallery > li > * {
+  padding: inherit;
+  margin: inherit;
+  border-radius: inherit;
+  flex: 1;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  min-width: 25ch;
+}
+.gallery figure {
+  display: flex;
+  flex-flow: column;
+}
+.gallery iframe {
+  background-color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  min-height: 13em;
+}
+.gallery iframe + figcaption {
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: rgba(var(--color-fg-rgb), 0.15);
+}
+
+/* Reference list
+ *
+ * A list of references
+ */
+.list-reference {
+  padding-left: 2em;
+}
+.list-reference .link {
+  text-decoration: none;
+}
+.list-reference .link :is(img, svg) {
+  height: 1em;
+  width: auto;
+  margin-right: 0.5ch;
+}
+.list-reference .link * {
+  vertical-align: middle;
+}
+.list-reference .link:is(:hover, :focus-within, :focus) * {
+  text-decoration: underline;
+}
+
+/* Reference backlinck
+ *
+ * Leads back up to the reference link.
+ */
+.ref-backlink {
+  vertical-align: top;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 0.8em;
+}
+
+/* Link list
+ *
+ * A list of links for a detail.
+ */
+.list-link {
+  gap: 1em;
+  flex-wrap: wrap;
+}
+.list-link a {
+  padding: 0.375lh 1.5ch;
+  border-radius: 0.25lh;
+  border-width: 1px;
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.15);
   background-color: var(--color-lvl);
-  padding: 1em min(2.5vw, 2.5lh);
-}
-
-.list-piano-tiles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  width: 100%;
-}
-.list-piano-tiles > li {
-  position: relative;
-  /* Increase z-index to stand out above the card link */
-  flex-basis: calc(min(100%, 1920px) / 8);
-  flex-shrink: 1;
-  min-width: 180px;
-}
-.list-piano-tiles > li :is(.list-link, .list-rect) > li {
-  z-index: 1;
-}
-.list-piano-tiles > li .link,
-.list-piano-tiles > li abbr {
-  z-index: 1;
-  /* Creates a stacking context */
-  position: relative;
-}
-@media screen and (max-width: 1440px) {
-  .list-piano-tiles > li h2 {
-    font-size: 1.25em;
-  }
-}
-.list-piano-tiles > li a {
-  text-decoration: none;
-}
-.list-piano-tiles > li a:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-.list-piano-tiles > li img {
-  max-width: 100%;
-  height: auto;
   display: block;
 }
-.list-piano-tiles > li figcaption {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-.list-piano-tiles > li figcaption div {
-  background-color: rgba(var(--color-lvl-rgb), 0.6666666667);
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.list-piano-tiles > li figcaption div > * {
-  padding: 0.25lh 1ch;
-  border-radius: 0lh;
-}
-.list-piano-tiles > li:is(:hover, :focus-within, :focus), .list-piano-tiles > li.hover {
-  z-index: 1;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .list-piano-tiles > li:is(:hover, :focus-within, :focus), .list-piano-tiles > li.hover {
-    transform: scale(1.05);
-  }
-}
-.list-piano-tiles > li:not(.list-piano-tiles > li:is(:hover, :focus-within, :focus)) figcaption {
-  opacity: 0;
-}
-
-#me {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-}
-#me > img {
-  width: auto;
-  height: 8em;
-  border-radius: 0.5em;
-  align-self: center;
-}
-
-#ongoing-projects {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1em;
-}
-#ongoing-projects h2 {
-  text-align: center;
-}
-
-#contact {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  -moz-column-gap: 1em;
-       column-gap: 1em;
-}
-#contact ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3333333333lh;
-}
-#contact ul > li {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-#contact > a {
-  height: 100%;
-  position: relative;
-}
-#contact > a img {
-  min-height: 0;
-  max-height: 12em;
-  width: auto;
-  opacity: 0.5;
-  border-radius: 0.5em;
-}
-#contact > a span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 0.25lh 1ch;
-  border-radius: 0.25lh;
-  width: -moz-max-content;
-  width: max-content;
-  background-color: var(--color-lvl);
-}
-@media (prefers-reduced-motion: no-preference) {
-  #contact > a:is(:hover, :focus-within, :focus) {
-    transform: scale(1.05);
-  }
-}
-#contact > a:is(:hover, :focus-within, :focus) img {
-  opacity: 1;
-}
-#contact > a:is(:hover, :focus-within, :focus) span {
+.list-link a:is(:hover, :focus-within, :focus) {
   color: var(--color-accent-fg);
   --color-fg: var(--color-accent-fg);
   --color-fg-rgb: var(--color-accent-fg-rgb);
   background-color: rgba(var(--color-accent-rgb), 1);
-}/*# sourceMappingURL=index.css.map */
+}
+@media (prefers-reduced-motion: no-preference) {
+  .list-link a:is(:hover, :focus-within, :focus) {
+    transform: scale(1.05);
+  }
+}
+.list-link a :is(img, svg) {
+  height: 2em;
+  width: auto;
+  margin-right: 1ch;
+}
+.list-link a * {
+  vertical-align: middle;
+}
+
+main > header {
+  display: grid;
+  grid-template: repeat(2, auto)/auto auto;
+  row-gap: 0.75lh;
+}
+main > header h1 {
+  margin: 0.75lh 0;
+  grid-row: 1;
+}
+main > header .logo {
+  place-self: center right;
+  max-width: 100%;
+  max-height: 100%;
+  height: 9lh;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media screen and (min-width: 701px) {
+  main > header .logo {
+    grid-column: 2;
+    grid-row: 1/3;
+  }
+}
+@media screen and (max-width: 700px) {
+  main > header .logo {
+    grid-row: 1;
+  }
+}
+main > header .abstract {
+  grid-row: 2;
+}/*# sourceMappingURL=passion.css.map */

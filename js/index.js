@@ -1,7 +1,3 @@
-"use strict";
-
-/* Index script */
-
 $(document).ready(_ => {
     const duration = 200;
     const wait = 100;

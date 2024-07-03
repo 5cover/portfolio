@@ -1,6 +1,6 @@
-        <!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="fr">
-    
+
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
@@ -13,21 +13,30 @@
                         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
-        <meta name="description" content="Bonjour ! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous !">
+        <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
         <meta name="msapplication-TileColor" content="#2d89ef">
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Raphaël Bardini</title>
-        <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');</script>
-    </head>
+        <script>
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+        </script>
+        <script defer src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script defer type="module" src="/portfolio/js/base.js"></script>
+            </head>
 
-    <body>
-            <template id="template-definition-tooltip">
+        <body>    <template id="template-definition-tooltip">
         <article class="lvl definition-tooltip" role="tooltip">
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer"><!-- href="wiki"; name --></a></h4>
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer">
+                    <!-- href="wiki"; name -->
+                </a></h4>
             <!-- logo graphic -->
-            <p class="type"><small><!-- type --></small></p>
-            <p class="synopsis"><!-- synopsis --></p>
+            <p class="type"><small>
+                    <!-- type -->
+                </small></p>
+            <p class="synopsis">
+                <!-- synopsis -->
+            </p>
         </article>
     </template>
     <header class="lvl">
@@ -83,24 +92,28 @@
         </div>
     </header>
         <main  style="--bg-img: url(/portfolio/img/project/psdc/bg.png)">
-            <section id="header">        <ul class="list-rect">
+            <header>
+                        <ul class="list-rect">
             <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=compiler">Compilateur</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li>        </ul>
                     <h1>Psdc</h1>
                                         <p class="abstract">Compilateur pseudocode de l'IUT de Lannion</p>
                     <div class="status-context">        <small>Personnel</small>
     <small><time datetime="2023-11-15">15 novembre 2023</time> &ndash; en cours</small>
     </div>
-            </section>
-            <section>                    <ul id="links" class="lvl list-link">
-                                            <li>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/psdc">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    <span>Dépôt GitHub</span>
-                </a>
-            </li>
-                                </ul>
-                            </section>
-            <section>            </section>
-            <div id="story" class="text"><p>Psdc répond à un besoin. Celui d'automatiser la tâche fastidieuse de traduire des programmes entre différents langages de programmation.</p>
+            </header>
+                            <section id="links">
+                    <h3>Liens</h3>
+                            <ul class="lvl list-link">
+                            <li>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/psdc">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                        <span>Dépôt GitHub</span>
+                    </a>
+                </li>
+                    </ul>
+                    </section>
+                        <section id="story" class="text">
+                <h3>Histoire</h3>
+                <p>Psdc répond à un besoin. Celui d'automatiser la tâche fastidieuse de traduire des programmes entre différents langages de programmation.</p>
 <p>Au cours de ma formation de BUT Informatique, j'ai appris l'algorithmie avec le Pseudocode, un pseudolangage de programmation inventé pour les besoins de l'IUT de Lannion. Inspiré du <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Pascal_(langage)" data-definition-id="pascal" class="link definition-tooltip-trigger">Pascal</a>, le Pseudocode permet d'énoncer un algorithme dans un langage plus proche de celui de l'homme que de celui de l'ordinateur, tout en gardant l'aspect exhaustif de tout langage de programmation.</p>
 <p>Au cours de nos TP, nous avons très souvent dû traduire des programmes en pseudocode vers le C. Cette tâche est assez réberbative, d'où mon désir de l'automatiser. Et c'est ce qui ma mené à découvrir la conception de compilateurs.</p>
 <p>À titre d'exemple, voici un simple programme en pseudocode qui affiche <q>Bonjour</q> à l'écran&nbsp;:</p>
@@ -122,80 +135,78 @@ int main() {
 <p>Une fois le sommet atteint, on est à mi-chemin de la compilation. On a une vue imprenable sur la sémantique du code, soit le sens que l'utilisateur lui donne à travers la syntaxe de notre langage.</p>
 <p>Alors entamons notre descente. Convertissons successivement notre représentation de haut niveau en des formes se rapprochant de notre objectif final&nbsp;: le langage machine, qui sera exécuté directement par le processeur.</p>
 <p>Je n'ai découvert Crafting Interpreters qu'assez tard dans le projet. À l'origine, je me suis basé sur la playlist Creating a Compiler<a class="link" id="cite-ref-2" href="#ref-2">2</a> de <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@pixeled-yt">Pixeled</a> sur YouTube, où l'on assiste à la conception et à l'implémentation d'un compilateur pour un language <em>ex-nihilo</em> nommé Hydrogen. Le compilateur transforme le code en assembleur, puis utilise NASM<a class="link" id="cite-ref-3" href="#ref-3">3</a> pour générer le code machine.</p>
-<p>C'est dans ces vidéos que j'ai appris les bases de l'analyse lexicale<a class="link" id="cite-ref-4" href="#ref-4">4</a>, des grammaires formelles<a class="link" id="cite-ref-5" href="#ref-5">5</a>, ou encore de l'analyse syntaxique<a class="link" id="cite-ref-6" href="#ref-6">6</a>. C'est vraiment intéressant et j'apprends beaucoup de choses.</p></div>
-            <section>                    <h3>Technologies</h3>
-                    <ul id="technologies" class="lvl">                            <li>    <article class="definition"  style="--bg-img-definition: url(/portfolio/img/definition/csharp/bg.png)">
+<p>C'est dans ces vidéos que j'ai appris les bases de l'analyse lexicale<a class="link" id="cite-ref-4" href="#ref-4">4</a>, des grammaires formelles<a class="link" id="cite-ref-5" href="#ref-5">5</a>, ou encore de l'analyse syntaxique<a class="link" id="cite-ref-6" href="#ref-6">6</a>. C'est vraiment intéressant et j'apprends beaucoup de choses.</p>            </section>
+                            <section id="technologies">
+                    <h3>Technologies</h3>
+                        <ul class="lvl list-definition">
+                    <li>    <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/csharp/bg.png)">
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_Sharp">C#</a>
         </h4>
         <img src="/portfolio/img/definition/csharp/logo.png" alt="Logo C#" title="Logo C#" class="logo" width="256" height="256" loading="lazy">        <p class="type"><small>Langage de programmation</small></p>
         <p class="synopsis">C# est un langage de programmation orienté objet, commercialisé par Microsoft depuis <time datetime="2002">2002</time>.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition" >
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form">EBNF</a>
         </h4>
                 <p class="type"><small>Language informatique</small></p>
         <p class="synopsis">L'Extended Backus-Naur Form est une extension du métalangage <abbr title="Backus-Naur Form">BNF</abbr>, créée par Niklaus Wirth en <time datetime="1996">1996</time>. Ce langage exprime des grammaires formelles afin de notamment concevoir des compilateurs.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition"  style="--bg-img-definition: url(/portfolio/img/definition/vs-code/bg.png)">
+                    <li>    <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/vs-code/bg.png)">
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code">Visual Studio Code</a>
         </h4>
         <img src="/portfolio/img/definition/vs-code/logo.svg" alt="Logo Visual Studio Code" title="Logo Visual Studio Code" class="logo" height="30" loading="lazy">        <p class="type"><small>Environnement de développement intégré</small></p>
         <p class="synopsis">Visual Studio Code est un éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition"  style="--bg-img-definition: url(/portfolio/img/definition/markdown/bg.png)">
+                    <li>    <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/markdown/bg.png)">
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Markdown">Markdown</a>
         </h4>
         <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 208 128" title="Logo Markdown" class="logo"><rect x="5" y="5" ry="10" stroke-width="10" fill="none" style="stroke: var(--color-fg)"/><path d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39zm125 0l-30-33h20V30h20v35h20z" style="fill: var(--color-fg)"/></svg>        <p class="type"><small>Langage de balisage</small></p>
         <p class="synopsis">Markdown est un langage de balisage léger créé en <time datetime="2004">2004</time> par John Gruber, avec l'aide d'Aaron Swartz.</p>
     </article>
 </li>
-                                            </ul>
-                            </section>
-            <section>            </section>
-            <section>                    <h3>Références</h3>
-                    <ol id="references" class="list-reference">
-                                            <li id="ref-1"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-1">&uarr;</a></span>
-                <a class="link" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Analyse_lexicale">
-                    <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                    <span>Analyse lexicale, Wikipédia</span>
-                </a>
-            </li>
-                    <li id="ref-2"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-2">&uarr;</a></span>
-                <a class="link" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Analyse_syntaxique">
-                    <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                    <span>Analyse syntaxique, Wikipédia</span>
-                </a>
-            </li>
-                    <li id="ref-3"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-3">&uarr;</a></span>
-                <a class="link" target="_blank" rel="noopener noreferrer" href="https://craftinginterpreters.com">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                    <span>Crafting Interpreters, Robert Nystrom (anglais)</span>
-                </a>
-            </li>
-                    <li id="ref-4"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-4">&uarr;</a></span>
-                <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs">
-                    <img src="/portfolio/img/social/youtube.svg" alt="" height="30" loading="lazy">                    <span>Creating a Compiler, Pixeled, sur YouTube (anglais)</span>
-                </a>
-            </li>
-                    <li id="ref-5"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-5">&uarr;</a></span>
-                <a class="link" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Grammaire_formelle">
-                    <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                    <span>Grammaire formelle, Wikipédia</span>
-                </a>
-            </li>
-                    <li id="ref-6"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-6">&uarr;</a></span>
-                <a class="link" target="_blank" rel="noopener noreferrer" href="https://nasm.us/">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                    <span>NASM, site officiel (anglais)</span>
-                </a>
-            </li>
-                                </ol>
-                            </section>
-        </main>
-            <footer class="lvl">
+            </ul>
+                </section>
+                            <section id="references">
+                    <h3>Références</h3>
+                            <ol class="list-reference">
+                            <li id="ref-1"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-1">&uarr;</a></span>
+                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Analyse_lexicale">
+                        <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                        <span>Analyse lexicale, Wikipédia</span>
+                    </a>
+                </li>
+                            <li id="ref-2"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-2">&uarr;</a></span>
+                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Analyse_syntaxique">
+                        <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                        <span>Analyse syntaxique, Wikipédia</span>
+                    </a>
+                </li>
+                            <li id="ref-3"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-3">&uarr;</a></span>
+                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://craftinginterpreters.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                        <span>Crafting Interpreters, Robert Nystrom (anglais)</span>
+                    </a>
+                </li>
+                            <li id="ref-4"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-4">&uarr;</a></span>
+                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs">
+                        <img src="/portfolio/img/social/youtube.svg" alt="" height="30" loading="lazy">                        <span>Creating a Compiler, Pixeled, sur YouTube (anglais)</span>
+                    </a>
+                </li>
+                            <li id="ref-5"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-5">&uarr;</a></span>
+                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Grammaire_formelle">
+                        <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                        <span>Grammaire formelle, Wikipédia</span>
+                    </a>
+                </li>
+                            <li id="ref-6"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-6">&uarr;</a></span>
+                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://nasm.us/">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                        <span>NASM, site officiel (anglais)</span>
+                    </a>
+                </li>
+                    </ol>
+                    </section>
+                    </main>
+        <footer class="lvl">
         <small>&copy; 2024 Raphaël Bardini</small>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="Dépôt GitHub de ce site"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
     </footer>
-            <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <script src="/portfolio/js/base.js"></script>
-        </body>
-
-    </html>
+</body>

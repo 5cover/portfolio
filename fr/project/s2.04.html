@@ -1,6 +1,6 @@
-        <!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="fr">
-    
+
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
@@ -13,21 +13,30 @@
                         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
-        <meta name="description" content="Bonjour ! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous !">
+        <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
         <meta name="msapplication-TileColor" content="#2d89ef">
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Raphaël Bardini</title>
-        <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');</script>
-    </head>
+        <script>
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+        </script>
+        <script defer src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script defer type="module" src="/portfolio/js/base.js"></script>
+            </head>
 
-    <body>
-            <template id="template-definition-tooltip">
+        <body>    <template id="template-definition-tooltip">
         <article class="lvl definition-tooltip" role="tooltip">
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer"><!-- href="wiki"; name --></a></h4>
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer">
+                    <!-- href="wiki"; name -->
+                </a></h4>
             <!-- logo graphic -->
-            <p class="type"><small><!-- type --></small></p>
-            <p class="synopsis"><!-- synopsis --></p>
+            <p class="type"><small>
+                    <!-- type -->
+                </small></p>
+            <p class="synopsis">
+                <!-- synopsis -->
+            </p>
         </article>
     </template>
     <header class="lvl">
@@ -83,101 +92,104 @@
         </div>
     </header>
         <main >
-            <section id="header">        <ul class="list-rect">
+            <header>
+                        <ul class="list-rect">
             <li><a href="/portfolio/fr/projects.html?tag=but-gerer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique">Gérer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=data">Data</a></li><li><a href="/portfolio/fr/projects.html?tag=db"><abbr title="Base de données">BdD</abbr></a></li>        </ul>
                     <h1>Exploitation d'une base de données</h1>
                                         <p class="abstract">Data mining sur l'open-data des collèges et lycées français (S2.04)</p>
                     <div class="status-context">        <small>BUT</small>
     <small><time datetime="2024-04-23">23 avril 2024</time> &ndash; <time datetime="2024-06-12">12 juin 2024</time></small>
     </div>
-            </section>
-            <section>                    <ul id="links" class="lvl list-link">
-                                            <li>
-                <a target="_blank" rel="noopener noreferrer" href="todo">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    <span>Dépôt GitHub</span>
-                </a>
-            </li>
-                                </ul>
-                            </section>
-            <section>                    <h3>Coéquipiers</h3>
-                    <ul id="team" class="lvl">                            <li>    <article class="definition" >
+            </header>
+                            <section id="links">
+                    <h3>Liens</h3>
+                            <ul class="lvl list-link">
+                            <li>
+                    <a target="_blank" rel="noopener noreferrer" href="todo">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                        <span>Dépôt GitHub</span>
+                    </a>
+                </li>
+                    </ul>
+                    </section>
+                            <section id="team">
+                    <h3>Équipe</h3>
+                        <ul class="lvl list-definition">
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://matteo-k.github.io/Matteo-K_Portfolio.github.io/">Mattéo Kervadec</a>
         </h4>
         <img src="/portfolio/img/definition/kervadec-matteo/logo.jpg" alt="Logo Mattéo Kervadec" title="Logo Mattéo Kervadec" class="logo" width="800" height="800" loading="lazy">        <p class="type"><small>Personne</small></p>
         <p class="synopsis">Mattéo Kervadec est un étudiant en 1<sup>ère</sup> année de <abbr title="Bachelor Universitaire Technologique">BUT</abbr> en filière Informatique à l'IUT de Lannion. Il a un baccalauréat avec les spécialités <a class="link" target="_blank" rel="noopener noreferrer" href="https://cache.media.education.gouv.fr/file/SPE8_MENJ_25_7_2019/90/7/spe246_annexe_1158907.pdf">Mathématiques</a> et <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"><abbr title="Numériques Sciences Informatiques">NSI</abbr></a> obtenu au lycée <a class="link" target="_blank" rel="noopener noreferrer" href="https://sainteanne-saintlouis.fr">Sainte-Anne</a> à Sainte-Anne-d'Auray. Il est passionné par le tennis et le cinéma autant dans les films que le jeu vidéo. Il porte aussi un intérêt pour le développement de logiciels informatiques.</p>
     </article>
 </li>
-                                            </ul>
-                            </section>
-            <div id="story" class="text">todo</div>
-            <section>                    <h3>Technologies</h3>
-                    <ul id="technologies" class="lvl">                            <li>    <article class="definition" >
+            </ul>
+                </section>
+                        <section id="story" class="text">
+                <h3>Histoire</h3>
+                todo            </section>
+                            <section id="technologies">
+                    <h3>Technologies</h3>
+                        <ul class="lvl list-definition">
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Replit">Replit</a>
         </h4>
         <img src="/portfolio/img/definition/replit/logo.svg" alt="Logo Replit" title="Logo Replit" class="logo" height="30" loading="lazy">        <p class="type"><small>Site Web</small></p>
         <p class="synopsis">Replit est une start-up américaine et un <abbr title="Environnement de Développement Intégré">IDE</abbr> en ligne, qui permet de créer des projets de programmation en ligne appelés <em>repls</em>.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition"  style="--bg-img-definition: url(/portfolio/img/definition/sql/bg.png)">
+                    <li>    <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/sql/bg.png)">
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Structured_Query_Language">SQL</a>
         </h4>
                 <p class="type"><small>Langage de programmation</small></p>
         <p class="synopsis">Structured Query Language est un langage informatique créé en <time datetime="1974">1974</time> servant à exploiter des bases de données relationnelles.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition" >
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/MySQL">MySQL</a>
         </h4>
         <img src="/portfolio/img/definition/mysql/logo.svg" alt="Logo MySQL" title="Logo MySQL" class="logo" height="30" loading="lazy">        <p class="type"><small>Système de gestion de base de données</small></p>
         <p class="synopsis">MySQL est un système de gestion de bases de données relationnelles.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition"  style="--bg-img-definition: url(/portfolio/img/definition/python/bg.png)">
+                    <li>    <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/python/bg.png)">
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Python_(langage)">Python</a>
         </h4>
         <img src="/portfolio/img/definition/python/logo.svg" alt="Logo Python" title="Logo Python" class="logo" height="30" loading="lazy">        <p class="type"><small>Langage de programmation</small></p>
         <p class="synopsis">Python est un langage de programmation interprété, multiparadigme et multiplateformes.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition"  style="--bg-img-definition: url(/portfolio/img/definition/sql-workbench/bg.png)">
+                    <li>    <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/sql-workbench/bg.png)">
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://www.sql-workbench.eu/">SQL Workbench/J</a>
         </h4>
         <img src="/portfolio/img/definition/sql-workbench/logo.jpg" alt="Logo SQL Workbench/J" title="Logo SQL Workbench/J" class="logo" width="800" height="122" loading="lazy">        <p class="type"><small>Logiciel</small></p>
         <p class="synopsis">SQL Workbench/J est un outil de requête SQL multiplateforme indépendant du SGBD.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition" >
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Pandas">Pandas</a>
         </h4>
                 <p class="type"><small>Bibliothèque</small></p>
         <p class="synopsis">Pandas est une bibliothèque écrite pour le langage de programmation Python permettant la manipulation et l'analyse de données. Elle propose en particulier des structures de données et des opérations de manipulation de tableaux numériques et de séries temporelles.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition" >
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Matplotlib">Matplotlib</a>
         </h4>
                 <p class="type"><small>Bibliothèque</small></p>
         <p class="synopsis">Matplotlib est une bibliothèque du langage de programmation Python destinée à tracer et visualiser des données sous forme de graphiques5. Elle peut être combinée avec les bibliothèques python de calcul scientifique NumPy et SciPy.</p>
     </article>
 </li>
-                                                    <li>    <article class="definition" >
+                    <li>    <article class="definition" >
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/NumPy">NumPy</a>
         </h4>
                 <p class="type"><small>Bibliothèque</small></p>
         <p class="synopsis">NumPy est une bibliothèque pour langage de programmation Python, destinée à manipuler des matrices ou tableaux multidimensionnels ainsi que des fonctions mathématiques opérant sur ces tableaux.</p>
     </article>
 </li>
-                                            </ul>
-                            </section>
-            <section>            </section>
-            <section>            </section>
-        </main>
-            <footer class="lvl">
+            </ul>
+                </section>
+                    </main>
+        <footer class="lvl">
         <small>&copy; 2024 Raphaël Bardini</small>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="Dépôt GitHub de ce site"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
     </footer>
-            <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <script src="/portfolio/js/base.js"></script>
-        </body>
-
-    </html>
+</body>
