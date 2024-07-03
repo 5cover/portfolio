@@ -37,17 +37,26 @@ generate() {
 # link data JSONs
 ./linker.py "$data_dir" ../data/**/*.json
 
+# generate detail pages
+# $1: lang
+# $2: detail kind
+generate_details() {
+    >&2 echo generating $kind details
+    local details="$data_dir/$1/${2}s.json"
+    for id in $(jq -r 'keys[]' "$details"); do
+        generate "$outdir/$1/$2/$id.html" "$1" "$2/$id" "$2.php" "$(jq -r ".\"$id\"" "$details")"
+    done
+}
+
 # shellcheck disable=SC2043
 # todo: add lang 'en' once translations are finished
 for lang in fr; do
     # Simple page
-    for page in definitions-test index projects but-informatique history passions perspectives; do
-        generate "$outdir/$lang/$page.html" "$lang" "$page" "$page.php"
+    for page in definitions-test index but-informatique history projects passions perspectives; do
+        generate "$outdir/$lang/$page.html" $lang "$page" "$page.php"
     done
 
-    # Project pages
-    projects="$data_dir/$lang/projects.json"
-    for id in $(jq -r 'keys[]' "$projects"); do
-        generate "$outdir/$lang/project/$id.html" "$lang" "project/$id" project.php "$(jq -r ".\"$id\"" "$projects")"
+    for kind in project perspective passion; do
+        generate_details $lang $kind
     done
 done

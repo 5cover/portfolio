@@ -53,3 +53,15 @@ Format:
 - *name*: brief name
 - *description*: brief description
 - *information*: unrestricted text
+
+## Components and utilities
+
+Definition of a component:
+
+- semantics over utilities
+- name related to the content
+- reusing requires a similar markup structure
+- can be specialized in page stylesheets
+
+- Mixin: use to reference the component from stylesheet
+- Class: use to reference the component from HTML with the default arguments (do not use @extend)

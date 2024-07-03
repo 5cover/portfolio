@@ -1,6 +1,3 @@
-@forward 'components';
-@forward 'const';
-@forward 'util';
 @use 'sass:list';
 @use 'sass:color';
 @use 'components';
@@ -201,29 +198,6 @@ p {
     max-width: const.$max-line-length;
 }
 
-$p-margin: calc(1ex / 0.32);
-
-.text p,
-p.text {
-    &:first-of-type:not(:last-of-type) {
-        text-indent: 2cap;
-    }
-}
-
-p.text {
-    margin: $p-margin 0;
-}
-
-.text p {
-    &:not(:first-child) {
-        margin-top: $p-margin;
-    }
-
-    &:not(:last-child) {
-        margin-bottom: $p-margin;
-    }
-}
-
 h1 {
     font-size: 2em;
     font-weight: 500;
@@ -273,6 +247,14 @@ a {
 
 a:not(.link, .fi) {
     color: inherit;
+}
+
+/* Reference citation links */
+a[id^="cite-"] {
+    @extend .link;
+    @include util.sup-annotation;
+    white-space: nowrap;
+    font-size: .6em;
 }
 
 /* Opt-in basic style classes
@@ -331,7 +313,7 @@ a:not(.link, .fi) {
 /* Page structure */
 body {
     > header {
-        @include util.lvl-content(0 0 1px 0);
+        @include util.strip-content(0 0 1px 0);
         align-items: center;
         display: flex;
         flex-wrap: wrap;
@@ -348,7 +330,7 @@ body {
             row-gap: 1.5em;
 
             > a {
-                @include components.nav-home-link;
+                @include util.nav-home-link;
             }
 
             > ul {
@@ -378,7 +360,7 @@ body {
     }
 
     > footer {
-        @include util.lvl-content(1px 0 0 0);
+        @include util.strip-content(1px 0 0 0);
         grid-row: 3;
         position: relative;
         display: flex;

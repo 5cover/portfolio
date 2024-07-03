@@ -343,3 +343,9 @@ for types, definitions, tags, anchors
 ## Increase the contrast between lvl 1 and 2
 
 currently it is too small, which result in small elements not standing out from the background enough. this is an accesssibility concern.
+
+## Add title to sections
+
+such as story, technoligies, team...
+
+some do not have titles. that's because we don't want to see a title. but it would be better if there was a title for semantics. so add a title and use a class like `.hide-title` that `display: none` the title.

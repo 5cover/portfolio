@@ -10,5 +10,6 @@
     "website": "site Web",
     "person": "personne",
     "ide": "environnement de développement intégré",
-    "ui": "composant d'interface utilisateur"
+    "ui": "composant d'interface utilisateur",
+    "game-server": "serveur de jeu"
 }

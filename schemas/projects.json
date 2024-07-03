@@ -4,114 +4,50 @@
     "$schema": "https://json-schema.org/draft-07/schema",
     "additionalProperties": {
         "type": "object",
-        "required": [
-            "abstract",
-            "links",
-            "references",
-            "context",
-            "gallery",
-            "start-date",
-            "story",
-            "tags",
-            "technologies",
-            "title",
-            "team"
-        ],
-        "properties": {
-            "abstract": {
-                "$ref": "util/html.json"
+        "allOf": [
+            {
+                "$ref": "util/detail.json"
             },
-            "background": {
-                "type": "string",
-                "format": "uri-reference",
-                "title": "Background URI"
-            },
-            "context": {
-                "$ref": "util/html.json"
-            },
-            "end-date": {
-                "format": "date",
-                "type": "string"
-            },
-            "gallery": {
-                "type": "object",
-                "additionalProperties": {
-                    "oneOf": [
-                        {
-                            "additionalProperties": false,
-                            "properties": {
-                                "url": {
-                                    "minLength": 1,
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        {
-                            "additionalProperties": false,
-                            "properties": {
-                                "content": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        {
-                            "additionalProperties": false,
-                            "properties": {
-                                "iframe-src": {
-                                    "minLength": 1,
-                                    "type": "string"
-                                }
-                            }
+            {
+                "required": [
+                    "context",
+                    "start-date",
+                    "tags",
+                    "team",
+                    "technologies"
+                ],
+                "properties": {
+                    "end-date": {
+                        "format": "date",
+                        "type": "string"
+                    },
+                    "start-date": {
+                        "format": "date",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "tags.json#/propertyNames"
                         }
-                    ]
+                    },
+                    "team": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "definitions.json#/propertyNames"
+                        }
+                    },
+                    "technologies": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "definitions.json#/propertyNames"
+                        }
+                    }
                 }
-            },
-            "links": {
-                "type": "object",
-                "additionalProperties": {
-                    "$ref": "util/anchor.json"
-                }
-            },
-            "logo": {
-                "$ref": "util/graphic.json"
-            },
-            "references": {
-                "type": "object",
-                "additionalProperties": {
-                    "$ref": "util/anchor.json"
-                }
-            },
-            "start-date": {
-                "format": "date",
-                "type": "string"
-            },
-            "story": {
-                "$ref": "util/html.json"
-            },
-            "tags": {
-                "uniqueItems": true,
-                "type": "array",
-                "items": {
-                    "$ref": "tags.json#/propertyNames"
-                }
-            },
-            "team": {
-                "uniqueItems": true,
-                "type": "array",
-                "items": {
-                    "$ref": "definitions.json#/propertyNames"
-                }
-            },
-            "technologies": {
-                "uniqueItems": true,
-                "type": "array",
-                "items": {
-                    "$ref": "definitions.json#/propertyNames"
-                }
-            },
-            "title": {
-                "$ref": "util/html.json"
             }
-        }
+        ]
     }
 }

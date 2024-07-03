@@ -34,7 +34,7 @@ final class Lang {
         return sprintf($this->strings['formatTitle'], $title);
     }
 
-    public function get_data(string $name): array {
+    public function get_data_json(string $name): array {
         return get_data_json($this->tag . '/' . $name);
     }
 

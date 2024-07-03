@@ -117,12 +117,6 @@ btw, should i put text-indent on all paragraphs or only the first one?
 
 and also i should find a better name for `.text`.
 
-## Add title to sections
-
-such as story, technoligies, team...
-
-some do not have titles. that's because we don't want to see a title. but it would be better if there was a title for semantics. so add a title and use a class like `.hide-title` that `display: none` the title.
-
 ## Fix accent color contrast
 
 ## Save.tf link?
@@ -182,16 +176,6 @@ GitLab for SAÉs. Put the in a group called BUT.
 
 S1.01 : host doxygen generated html on gh-pages, add link
 
-## Passions page
-
-Content:
-
-- Montagne: Ski/randonnée (hiver/été). exposer la dualité entre les deux
-- Jeux-vidéos bac-à-sable
-- voyager's software
-
-même structure que pour les perspectives
-
 ## Perspectives page
 
 My opiniated rants on some things
@@ -207,6 +191,8 @@ chacun mêne vers une page individuelle.
 On the future of AI : individualization after democratization
 
 Won't replace programmers or most human jobs.
+
+LM studio...
 
 ### The lie we tell ourselves
 
@@ -238,3 +224,31 @@ Of course it will be around forever since so much stuff is written in it and it 
 However, I still think C is an invaluable language to learn. It forces you to leave your comfort zone of abstactions and face the actual challenge of implementating stuff that we use every day as programmers, such a lists or hash tables.
 
 ~~Learning C is better than any amount of Leetcode challenges.~~
+
+### voyager's software
+
+a marvel of engineering. a timeless lesson for all of us programmers.
+
+## Passions page
+
+même structure que pour les perspectives
+
+## Passions, perspectives, projects... same thing?
+
+Passions and perspectives could also use having references.
+
+Although i probably won't need team, technologies. I could need gallery for passions though, if i want to pre.
+
+I can reuse the generation code for projects. But i should change the name.
+
+Proposed names:
+
+- "content page": too generic
+- "article": wrongly refers to the html element
+- **"detail page"**
+
+from now on, invidual project pages will be called detail pages. Passions and perspectives will also generate detail pages.
+
+The only difference with projects is that the card HTML will differ.
+
+Actually, what about status and context? Passions and perspectives have no use for those.

@@ -1,11 +1,11 @@
 <?php
 require_once 'help.php';
 require_once 'content.php';
-require_once 'project.php';
+require_once 'detail.php';
 
 [$lang, $page] = parse_args();
 
-$projects = array_map(fn($p) => new Project($p), $lang->get_data('projects'));
+$projects = array_map(fn($p) => new Project($p), $lang->get_data_json('projects'));
 
 $piano_tiles = [
     "passions.html#mountain",
@@ -32,11 +32,11 @@ put_head($page, $lang);
                 ?>
                 <li>
                     <figure>
-                        <img src="<?php echo $src ?>" alt="<?php echo $lang->get("indexPianoTile{$num}Title") ?>" width="240" height="480" loading="lazy" title="<?php echo strip_tags($lang->get("indexPianoTile{$num}Desc")) ?>">
+                        <img src="<?php echo $src ?>" alt="<?php echo $lang->get("pianoTile{$num}Title") ?>" width="240" height="480" loading="lazy" title="<?php echo strip_tags($lang->get("pianoTile{$num}Desc")) ?>">
                         <figcaption>
                             <div>
-                                <h2><a href="<?php echo $href ?>"><?php echo $lang->get("indexPianoTile{$num}Title") ?></a></h2>
-                                <p><?php echo $lang->get("indexPianoTile{$num}Desc") ?></p>
+                                <h2><a href="<?php echo $href ?>"><?php echo $lang->get("pianoTile{$num}Title") ?></a></h2>
+                                <p><?php echo $lang->get("pianoTile{$num}Desc") ?></p>
                             </div>
                         </figcaption>
                     </figure>
@@ -52,7 +52,7 @@ put_head($page, $lang);
         </article>
         <section id="ongoing-projects" class="lvl">
             <h2><?php echo $lang->get('indexOngoingProjects') ?></h2>
-            <?php put_project_cards_list($lang, array_filter($projects, fn($p) => !array_key_exists('end-date', $p->data))) ?>
+            <?php Project::put_cards_list($lang, array_filter($projects, fn($p) => !array_key_exists('end-date', $p->data))) ?>
             <a href="projects.html" class="lvl button-link"><?php echo $lang->get('indexAllMyProjects') ?></a>
         </section>
         <article id="contact" class="lvl content-block">
@@ -82,7 +82,6 @@ put_head($page, $lang);
         </article>
     </main>
     <?php put_footer($page, $lang) ?>
-    <?php put_scripts($page) ?>
 </body>
 
 </html>

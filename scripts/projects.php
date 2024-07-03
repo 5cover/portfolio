@@ -33,7 +33,6 @@ require_once 'help.php';
         </ul>
     </main>
     <?php put_footer($page, $lang) ?>
-    <?php put_scripts($page) ?>
 </body>
 
 </html>

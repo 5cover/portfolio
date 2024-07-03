@@ -10,5 +10,6 @@
     "website": "website",
     "person": "person",
     "ide": "integrated development environment",
-    "ui": "user interface component"
+    "ui": "user interface component",
+    "game-server": "game server"
 }

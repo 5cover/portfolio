@@ -1,7 +1,7 @@
 <?php
 require_once 'help.php';
 require_once 'content.php';
-require_once 'project.php';
+require_once 'detail.php';
 
 [$lang, $page] = parse_args();
 ?> <?php put_doctype_html($page, $lang) ?>
@@ -87,7 +87,6 @@ require_once 'project.php';
         </div>
     </main>
     <?php put_footer($page, $lang) ?>
-    <?php put_scripts($page) ?>
 </body>
 
 </html>

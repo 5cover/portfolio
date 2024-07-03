@@ -1,17 +1,17 @@
 <?php
 require_once 'help.php';
 require_once 'content.php';
-require_once 'project.php';
+require_once 'detail.php';
 
 define('MAX_PROJECTS_PER_SKILL', 4);
 
 [$lang, $page] = parse_args();
 
-$projects = array_map(fn($p) => new Project($p), $lang->get_data('projects'));
+$projects = array_map(fn($p) => new Project($p), $lang->get_data_json('projects'));
 
 function put_skill_project_list($skillId) {
     global $lang, $projects;
-    put_project_cards_list($lang,
+    Project::put_cards_list($lang,
         array_slice(
             array_filter($projects,
                 fn($p) => in_array($skillId, $p->data['tags'])), 0, MAX_PROJECTS_PER_SKILL, true));
@@ -96,7 +96,6 @@ function put_skill_project_list($skillId) {
         </div>
     </main>
     <?php put_footer($page, $lang) ?>
-    <?php put_scripts($page) ?>
 </body>
 
 </html>

@@ -1,18 +1,20 @@
 @use 'base';
+@use 'const';
+@use 'util';
 
 #search-bar {
-    @include base.lvl-content(1px 1px 1px 0);
-    @include base.gapped(1.5);
-    min-width: calc(100% / base.$phi);
+    @include util.strip-content(1px 1px 1px 0);
+    @include util.gapped(1.5);
+    min-width: calc(100% / const.$phi);
     width: min-content;
     max-width: 100%;
     border-radius: 0 1em 1em 0;
 
     #search-input {
-        max-width: base.$max-line-length;
+        max-width: const.$max-line-length;
         font-size: .9em;
-        @include base.horizontal-box(2, Infinity);
-        @include base.basic-border(1px);
+        @include util.horizontal-box(2, Infinity);
+        @include util.basic-border(1px);
     }
 
     h3 {
@@ -22,7 +24,7 @@
 
 #list-tag,
 #list-sorting {
-    @include base.shallow-li;
+    @include util.shallow-li;
 
     input {
         display: none;
@@ -32,21 +34,21 @@
         cursor: pointer;
         background-color: var(--color-lvl-next);
 
-        &:has(input#{base.$hover}) {
-            @include base.color-accent(.5);
+        &:has(input#{const.$hover}) {
+            @include util.color-accent-bg(.5);
         }
 
         &:has(input:checked) {
-            @include base.color-accent;
+            @include util.color-accent-bg;
         }
     }
 }
 
 #list-sorting > li {
-    @include base.horizontal-box(1, Infinity);
+    @include util.horizontal-box(1, Infinity);
     
 }
 
 #project-list {
-    margin: 0 base.$full-width-horizontal-margin;
+    margin: 0 const.$full-width-horizontal-margin;
 }

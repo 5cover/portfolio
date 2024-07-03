@@ -100,15 +100,22 @@ function get_graphic_element(bool $isThemedSvg, string $url, string|null $title 
     );
 }
 
+$_dataJsonCache = [];
+
 /**
- * Decode a data JSON file.
+ * Decode and cache a data JSON file.
  * @param string $name the filename of the JSON file, relative to the data directory, without the extension.
  * @return array The decoded JSON, in associative mode.
  */
 function get_data_json(string $name, bool $linked = true): array {
+    global $_dataJsonCache;
+    return $_dataJsonCache[$name] ??= _get_data_json_fetch($name, $linked);
+}
+
+function _get_data_json_fetch(string $name, bool $linked): array {
     $f = file_get_contents($linked
         ? _get_web_filename("/portfolio/data/$name.json")
-        : __DIR__."/../../data/$name.json");
+        : __DIR__ . "/../../data/$name.json");
     if ($f === false) {
         throw new Exception("failed to open JSON data '$name'");
     }

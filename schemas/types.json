@@ -16,7 +16,8 @@
             "website",
             "person",
             "ide",
-            "ui"
+            "ui",
+            "game-server"
         ]
     },
     "additionalProperties": {

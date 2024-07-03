@@ -13,7 +13,7 @@
             }
         },
         "references": {},
-        "gallery": {},
+        "gallery": [],
         "story": "todo",
         "team": [],
         "title": "Island Maps",
@@ -26,7 +26,7 @@
         "abstract": "Assset de route française standardisée",
         "context": "personnel",
         "end-date": "2022-10-02",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Article Steam Workshop": {
                 "anchor": "steam",
@@ -53,7 +53,7 @@
         "abstract": "Bibliothèque d'entrée utilisateur correcte et facile à utiliser en C",
         "context": "Personnel",
         "end-date": "2024-03-09",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -79,7 +79,7 @@
         "abstract": "Jeu de démineur en interface graphique",
         "context": "NSI Lycée",
         "end-date": "2022-04-24",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -111,7 +111,7 @@
         },
         "context": "Personnel",
         "end-date": "2022-11-23",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -142,7 +142,7 @@
         "abstract": "Projet NSI de suivi des notes scolaires",
         "context": "NSI Lycée",
         "end-date": "2022-11-09",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -170,9 +170,9 @@
         "title": "ED++"
     },
     "ethercrash": {
-        "abstract": "Analyse statistique et data mining des parties sur Ethercrash",
+        "abstract": "Statistiques et data mining des parties sur Ethercrash",
         "context": "personnel",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -201,7 +201,7 @@
         "abstract": "Détecteur de signature de fichier",
         "context": "NSI Lycée",
         "end-date": "2022-05-08",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -226,7 +226,7 @@
             "$include": "project/abstract/jslave.phtml"
         },
         "context": "Personnel",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -252,7 +252,7 @@
     "portfolio": {
         "abstract": "Mon portfolio",
         "context": "BUT",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -286,7 +286,7 @@
         "abstract": "Compilateur pseudocode de l'IUT de Lannion",
         "background": "/portfolio/img/project/psdc/bg.png",
         "context": "personnel",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -344,7 +344,7 @@
         "abstract": "Jeu de Puissance 4 en console",
         "context": "NSI Lycée",
         "end-date": "2021-12-05",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -371,26 +371,32 @@
         "background": "/portfolio/img/project/s1.01/bg.png",
         "context": "BUT",
         "end-date": "2023-11-27",
-        "gallery": {
-            "Algorithme en pseudocode": {
+        "gallery": [
+            {
+                "caption": "Algorithme en pseudocode",
                 "iframe-src": "/portfolio/img/project/s1.01/algorithme-pseudocode.html"
             },
-            "Cahier de tests (extrait)": {
+            {
+                "caption": "Cahier de tests (extrait)",
                 "iframe-src": "/portfolio/img/project/s1.01/cahier-de-tests.html"
             },
-            "Liste de fonctions (extrait)": {
+            {
+                "caption": "Liste de fonctions (extrait)",
                 "iframe-src": "/portfolio/img/project/s1.01/liste-de-fonctions.html"
             },
-            "Maquette (extrait)": {
+            {
+                "caption": "Maquette (extrait)",
                 "url": "/portfolio/img/project/s1.01/maquette.png"
             },
-            "Programme final (extrait)": {
+            {
+                "caption": "Programme final (extrait)",
                 "iframe-src": "/portfolio/img/project/s1.01/programme-final.html"
             },
-            "Tests (extrait)": {
+            {
+                "caption": "Tests (extrait)",
                 "iframe-src": "/portfolio/img/project/s1.01/tests.html"
             }
-        },
+        ],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -422,7 +428,7 @@
         "background": "/portfolio/img/project/s1.02/bg.png",
         "context": "BUT",
         "end-date": "2024-05-20",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -459,7 +465,7 @@
         "abstract": "Automatisation, scripts et conteneurisation (S1.03)",
         "context": "BUT",
         "end-date": "2023-01-21",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -496,7 +502,7 @@
         "abstract": "Création d'une base de données (S1.04)",
         "context": "BUT",
         "end-date": "2024-01-22",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -526,7 +532,7 @@
         "abstract": "Création d'un site de streaming factice (S1.05)",
         "context": "BUT",
         "end-date": "2024-01-21",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -563,7 +569,7 @@
         "abstract": "Analyse du rapport <abbr title=\"Responsabilité sociétale des entreprises\">RSE</abbr> de Focus Entertainment (S1.06)",
         "context": "BUT",
         "end-date": "2023-06-11",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -591,7 +597,7 @@
         "abstract": "Développement d'une application de gestion de salle de spectacle (S2.01)",
         "context": "BUT",
         "end-date": "2024-06-17",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -624,7 +630,7 @@
         "abstract": "Des solutions innovantes au <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"/portfolio/img/project/s2.02/sujet-sae.pdf\">problème des N reines</a>. Exploration algorithmique d'un problème (S2.02)",
         "context": "BUT",
         "end-date": "2024-03-27",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -654,13 +660,13 @@
             "markdown",
             "mermaid"
         ],
-        "title": "Analyse du problème des N reines"
+        "title": "Problème des N reines"
     },
     "s2.03": {
         "abstract": "Mise en place d'un serveur Web. Installation de services réseau (S2.03)",
         "context": "BUT",
         "end-date": "2024-06-05",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -698,7 +704,7 @@
         "abstract": "Data mining sur l'open-data des collèges et lycées français (S2.04)",
         "context": "BUT",
         "end-date": "2024-06-12",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -733,7 +739,7 @@
         "abstract": "Application Java de gestion d'une salle de spectacle. Gestion d'un projet (S2.05)",
         "context": "BUT",
         "end-date": "2024-06-17",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -762,7 +768,7 @@
         "abstract": "Planification d'un évènement de <em>team building</em> et réalisation d'un film promotionnel. Organisation d'un travail d'équipe (S2.06)",
         "context": "BUT",
         "end-date": "2024-06-06",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -790,7 +796,7 @@
         "background": "/portfolio/img/project/the-last-teacher/bg.webp",
         "context": "Personnel",
         "end-date": "2023-06-27",
-        "gallery": {},
+        "gallery": [],
         "links": {},
         "references": {},
         "start-date": "2022-11-15",
@@ -807,7 +813,7 @@
     "tregoria": {
         "abstract": "Un recul sur notre environnement dans Cities: Skylines",
         "context": "personnel",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Publication Instagram": {
                 "anchor": "instagram",
@@ -841,14 +847,16 @@
         "abstract": "Application de nettoyage et optimisation Windows",
         "background": "/portfolio/img/project/winclean/bg.png",
         "context": "personnel",
-        "gallery": {
-            "Exécution des scripts": {
+        "gallery": [
+            {
+                "caption": "Exécution des scripts",
                 "url": "/portfolio/img/project/winclean/gallery/1.png"
             },
-            "Fenêtre principale de l'application": {
+            {
+                "caption": "Fenêtre principale de l'application",
                 "url": "/portfolio/img/project/winclean/gallery/2.png"
             }
-        },
+        ],
         "links": {
             "Article CommentÇaMarche": {
                 "anchor": "ccm",
@@ -893,7 +901,7 @@
         },
         "context": "Personnel",
         "end-date": "2022-11-23",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
@@ -926,7 +934,7 @@
             "$include": "project/abstract/ztest.phtml"
         },
         "context": "Personnel",
-        "gallery": {},
+        "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",

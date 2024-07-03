@@ -3,80 +3,8 @@
 
 /* Components
  * 
- * Provide reusable components. Semantic.
- *
- * Definition of a component:
- *
- * - semantics over utilities
- * - name related to the content
- * - reusing requires a similar markup structure
- * - can be specialized in page stylesheets
- *
- * Mixin: use to reference the component from stylesheet
- * Class: use to reference the component from HTML with the default arguments (do not use @extend)
+ * Component classes. Must be used only once.
  */
-/* Home nav link
- *
- * The link to the homepage in the navbar.
- */
-@mixin nav-home-link {
-    font-size: 1.75em;
-    font-weight: 500;
-    width: fit-content;
-}
-
-/* Button link
- *
- * A link that looks like a button.
- */
-@mixin button-link($padding-factor: 1) {
-    @include util.horizontal-box($padding-factor);
-    background-color: var(--color-lvl);
-
-    &#{const.$hover} {
-        @include util.bring-out(1.05);
-        @include util.color-accent;
-        @include util.adapt-accent-bg;
-
-        :link {
-            text-decoration: none;
-        }
-    }
-}
-
-.button-link {
-    @include button-link(2);
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-}
-
-/* Iconed text
- *
- * An element containing a graphic that is sized to the neighbouring text.
- */
-@mixin iconed-text($factor: 1, $underline: false) {
-    #{const.$graphic} {
-        height: calc(1em * $factor);
-        width: auto;
-        margin-right: calc(.5ch * $factor);
-    }
-
-    * {
-        vertical-align: middle;
-    }
-
-    @if $underline {
-        &#{const.$hover} * {
-            text-decoration: underline;
-        }
-    }
-}
-
-.iconed-text {
-    @include iconed-text;
-}
-
 /* Flag list
  *
  * List of flags.
@@ -121,11 +49,11 @@
         }
 
         &:has(input#{const.$hover}) {
-            @include util.color-accent(.5);
+            @include util.color-accent-bg(.5);
         }
 
         &:has(input:checked) {
-            @include util.color-accent;
+            @include util.color-accent-bg;
         }
 
         + label {
@@ -136,6 +64,25 @@
             cursor: pointer;
         }
     }
+}
+
+/* Button link
+ *
+ * Default button link
+ */
+.button-link {
+    @include util.button-link(2);
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+/* Iconed text
+ *
+ * Default iconed text
+ */
+.iconed-text {
+    @include util.iconed-text;
 }
 
 /* Rectangle list
@@ -163,47 +110,94 @@
     list-style: none;
 }
 
-/* Project list
+/* Split card detail list
  *
- * A list of projects
+ * A list of detail cards, shown in the "split" style (wide card, logo on the left)
+ *
+ * Domain classes:
+ * - logo: logo graphic
+ * - abstract: abstract text
+ */
+.list-detail-split-card {
+    @include util.list-detail;
+    display: grid;
+    grid-auto-flow: row;
+    min-width: fit-content;
+    width: 50%;
+    place-self: center;
+
+    > li {
+        $space: 1em;
+        border-radius: $space;
+        display: grid;
+        grid-template-columns: max(7.5em, 7.5vw) 1fr;
+        min-width: fit-content;
+
+        .logo {
+            display: block;
+            background-color: var(--color-lvl-next);
+            padding: calc($space / 2);
+            border-top-left-radius: $space;
+            border-bottom-left-radius: $space;
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+            aspect-ratio: 1;
+        }
+
+        > div {
+            border-top-right-radius: $space;
+            border-bottom-right-radius: $space;
+            padding: $space $space $space calc($space * const.$phi);
+            @include util.transparent-background-image(--bg-img-card, var(--color-lvl-rgb), .15);
+
+            h3 {
+                grid-column: 2;
+            }
+
+            .abstract {
+                grid-row: 2;
+                grid-column: 2;
+            }
+
+            .list-link {
+                @include util.link-list-card;
+                grid-row: 3;
+                grid-column: 2;
+            }
+        }
+
+        &#{const.$hover} > div {
+            @include util.transparent-background-image(--bg-img-card, var(--color-accent-rgb), .15);
+            @include util.color-accent-fg;
+        }
+    }
+}
+
+/* Project card list
+ *
+ * A list of project cards
 
  * Domain classes:
- * - logo: project logo graphic
- * - abstract: project abstract text
- * - context: project context text
- * - status: project status text
+ * - logo: logo graphic
+ * - abstract: abstract text
+ * - context: context text
+ * - status: status text
  */
 .list-project {
-    gap: 1em;
+    @include util.list-detail;
     display: flex;
     flex-flow: row wrap;
 
-    /* Increase z-index to stand out above the card link */
-    :is(.list-link, .list-rect) > li {
-        z-index: 1;
-    }
-
-    .link,
-    abbr {
-        z-index: 1;
-        /* Creates a stacking context */
-        position: relative;
-    }
-
     > li {
-        @include util.hover-card;
-        @include util.transparent-background-image(--bg-img-project, var(--color-lvl-rgb), .15);
-        list-style: none;
-        @include util.basic-border(1px);
-        display: grid;
-        grid-template: min-content repeat(3, auto) 1fr min-content / 1fr auto;
+        @include util.transparent-background-image(--bg-img-card, var(--color-lvl-rgb), .15);
         $space: .75em;
-        row-gap: $space;
         border-radius: $space;
-        padding: $space;
+        display: grid;
         flex-basis: 20em;
-        /* Required to clip the :before pseudo-element to the card's boundaries */
-        overflow: hidden;
+        grid-template: min-content repeat(3, auto) 1fr min-content / 1fr auto;
+        padding: $space;
+        row-gap: $space;
 
         /* Tag list */
         .list-rect {
@@ -211,12 +205,7 @@
 
             > li#{const.$hover} {
                 @include util.bring-out(1.15);
-                z-index: 1;
             }
-        }
-
-        h3 > a {
-            @include util.hover-card-target;
         }
 
         .logo {
@@ -243,35 +232,31 @@
         .abstract {
             grid-column: 1/3;
             grid-row: 5;
-            align-content: center;
+            align-self: center;
         }
 
         .list-link {
-            gap: .5em;
+            @include util.link-list-card;
             grid-row: 6;
             grid-column: 1 / 3;
-            flex-direction: row-reverse;
-            align-items: flex-end;
-
-            > #{const.$hover} {
-                @include util.bring-out(1.15);
-                z-index: 1;
-            }
-
-            #{const.$graphic} {
-                @include util.size-graphic(1.5em, 1.5em);
-            }
         }
 
         &#{const.$hover} {
-            /* Invert the colors: background in orange */
-            @include util.transparent-background-image(--bg-img-project, var(--color-accent-rgb), .15);
-            @include util.adapt-accent-bg;
+            @include util.transparent-background-image(--bg-img-card, var(--color-accent-rgb), .15);
+
+            .list-rect > li {
+                background-color: var(--color-lvl);
+            }
+
+            /* Adapt foreground to accent color (except tag list). */
+            :not(.list-rect, .list-rect *) {
+                @include util.color-accent-fg;
+            }
         }
 
         &:not(#{const.$hover}) {
             .list-rect > li {
-                @include util.color-accent;
+                @include util.color-accent-bg;
             }
         }
     }
@@ -293,7 +278,7 @@
 .definition {
     @include util.basic-border(1px);
     @include util.hover-card;
-    @include util.transparent-background-image(--bg-img-definition, var(--color-lvl-rgb), .1);
+    @include util.transparent-background-image(--bg-img-card, var(--color-lvl-rgb), .15);
     $space: .75em;
     background-color: var(--color-lvl);
     border-radius: $space;
@@ -334,6 +319,7 @@
     &-tooltip {
         @extend .definition;
         position: fixed;
+        z-index: 1;
 
         &-trigger {
             cursor: pointer;
@@ -347,7 +333,6 @@
             z-index: 2;
             transition-delay: 500ms;
         }*/
-
         /*&-trigger:not(#{const.$hover}) ~ &:not(#{const.$hover}) my trigger is not hover and i am not hover
         {
             transition-delay: 250ms;
@@ -371,5 +356,53 @@
 
     h2 {
         margin-bottom: .5em;
+    }
+}
+
+/* Definition list
+ *
+ * A list of definition cards.
+ */
+.list-definition {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    > li {
+        @include util.hover-card;
+        flex-shrink: 1;
+        min-width: min-content;
+        display: contents;
+
+        article#{const.$hover} {
+            @include util.transparent-background-image(--bg-img-card, var(--color-accent-rgb), .1);
+        }
+    }
+}
+
+/* Text
+ *
+ * Textual content. May be applied to a container of paragraphs or a single paragraph.
+*/
+.text p,
+p.text {
+    &:first-of-type:not(:last-of-type) {
+        text-indent: 2cap;
+    }
+}
+
+.text p {
+    &:not(:last-child) {
+        margin-bottom: const.$p-margin;
+    }
+}
+
+.text:has(> :not(:only-child)) {
+    @include util.justify;
+    column-width: const.$max-line-length;
+
+    > * {
+        max-width: const.$max-line-length;
     }
 }

@@ -1,7 +1,9 @@
 @use 'base';
+@use 'const';
+@use 'util';
 
 section {
-    @include base.lvl-content(1px 0);
+    @include util.strip-content(1px 0);
 }
 
 .list-piano-tiles {
@@ -13,7 +15,7 @@ section {
     width: 100%;
 
     > li {
-        @include base.hover-card;
+        @include util.hover-card;
         $min-width: 180px;
         flex-basis: calc(min(100%, 1920px) / $tile-count);
         flex-shrink: 1;
@@ -26,7 +28,7 @@ section {
         }
 
         a {
-            @include base.hover-card-target;
+            @include util.hover-card-target;
         }
 
         img {
@@ -36,25 +38,25 @@ section {
         }
 
         figcaption {
-            @include base.absolute-fill;
+            @include util.absolute-fill;
 
             div {
                 background-color: rgba(var(--color-lvl-rgb), calc(2/3));
                 height: fit-content;
 
                 > * {
-                    @include base.horizontal-box(1, 0);
+                    @include util.horizontal-box(1, 0);
                 }
             }
         }
 
-        &#{base.$hover},
+        &#{const.$hover},
         &.hover {
-            @include base.bring-out(1.05);
+            @include util.bring-out(1.05);
             z-index: 1;
         }
 
-        &:not(&#{base.$hover}) figcaption {
+        &:not(&#{const.$hover}) figcaption {
             opacity: 0;
         }
     }
@@ -113,21 +115,21 @@ section {
         }
 
         span {
-            @include base.absolute-center;
-            @include base.horizontal-box;
+            @include util.absolute-center;
+            @include util.horizontal-box;
             width: max-content;
             background-color: var(--color-lvl);
         }
 
-        &#{base.$hover} {
-            @include base.bring-out(1.05);
+        &#{const.$hover} {
+            @include util.bring-out(1.05);
 
             img {
                 opacity: 1;
             }
 
             span {
-                @include base.color-accent;
+                @include util.color-accent-bg;
             }
         }
     }

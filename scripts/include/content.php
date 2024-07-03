@@ -16,16 +16,6 @@ function put_footer(Page $page, Lang $lang) { ?>
     </footer>
 <?php }
 
-function put_scripts(Page $page) { ?>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <script src="/portfolio/js/base.js"></script>
-    <?php
-    $g = glob_web('/portfolio/js/' . $page->name . '.js');
-    if (count($g) == 1) { ?>
-        <script src="<?php echo get_web_url($g[0]) ?>"></script>
-    <?php }
-}
-
 function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css') { ?>
 
     <head>
@@ -52,16 +42,31 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Raphaël Bardini</title>
-        <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');</script>
+        <script>
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+        </script>
+        <script defer src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script defer type="module" src="/portfolio/js/base.js"></script>
+        <?php
+        $g = glob_web('/portfolio/js/' . $page->name . '.js');
+        if (count($g) == 1) { ?>
+            <script defer type="module" src="<?php echo get_web_url($g[0]) ?>"></script>
+        <?php } ?>
     </head>
 <?php }
 function put_header(Page $page, Lang $lang) { ?>
     <template id="template-definition-tooltip">
         <article class="lvl definition-tooltip" role="tooltip">
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer"><!-- href="wiki"; name --></a></h4>
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer">
+                    <!-- href="wiki"; name -->
+                </a></h4>
             <!-- logo graphic -->
-            <p class="type"><small><!-- type --></small></p>
-            <p class="synopsis"><!-- synopsis --></p>
+            <p class="type"><small>
+                    <!-- type -->
+                </small></p>
+            <p class="synopsis">
+                <!-- synopsis -->
+            </p>
         </article>
     </template>
     <header class="lvl">
@@ -129,17 +134,26 @@ function get_background_style_attr(string $bg, string $varname = 'bg-img'): stri
     END;
 }
 
-function put_definition_card(Lang $lang, array $types, string $id, array $def) {
+function put_definition_list(Lang $lang, array $defIds) {
+    $definitions = $lang->get_data_json('definitions');
+    ?>
+    <ul class="lvl list-definition">
+        <?php foreach ($defIds as $defId) { ?>
+            <li><?php put_definition_card($lang, $defId, $definitions[$defId]) ?></li>
+        <?php } ?>
+    </ul>
+<?php }
+
+function put_definition_card(Lang $lang, string $id, array $def) {
+    $types = $lang->get_data_json('types');
     $title = $def['names'][0];
     ?>
-    <article class="definition" <?php if ($bg = $def['background'] ?? null) {
-        echo get_background_style_attr($bg, 'bg-img-definition');
-    } ?>>
+    <article class="definition" <?php if ($bg = $def['background'] ?? null)
+        echo get_background_style_attr($bg, 'bg-img-card'); ?>>
         <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>"><?php echo $title ?></a>
         </h4>
-        <?php if ($logo = $def['logo'] ?? null) {
-            echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title), 'logo');
-        } ?>
+        <?php if ($logo = $def['logo'] ?? null)
+            echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title), 'logo'); ?>
         <p class="type"><small><?php echo ucfirst($types[$def['type']]) ?></small></p>
         <p class="synopsis"><?php echo $def['synopsis'] ?></p>
     </article>
@@ -150,6 +164,5 @@ function put_definition_tooltip_trigger(Lang $lang, string $id, array $def) {
 }
 
 function put_iframe(string $src, string $title) { ?>
-    <iframe src="<?php echo $src ?>" frameborder="0" loading="lazy" width="300" height="300" title="<?php echo $title ?>"></iframe> <?php }
-
-?>
+    <iframe src="<?php echo $src ?>" frameborder="0" loading="lazy" width="300" height="300" title="<?php echo $title ?>"></iframe>
+<?php } ?>

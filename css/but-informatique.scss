@@ -1,7 +1,9 @@
 @use 'base';
+@use 'const';
+@use 'util';
 
 main {
-    margin: 0 base.$full-width-horizontal-margin;
+    margin: 0 const.$full-width-horizontal-margin;
 }
 
 #resultat-pour-moi ul {
@@ -20,8 +22,8 @@ main {
 }
 
 #presentation {
-    @include base.justify;
-    column-width: base.$max-line-length;
+    @include util.justify;
+    column-width: const.$max-line-length;
 
     p:first-child {
         margin-top: 0;
@@ -36,10 +38,10 @@ main {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: base.$full-width-vertical-margin;
+    gap: const.$full-width-vertical-margin;
 
     > li {
-        @include base.transparent-background-image(--bg-img, var(--color-lvl-rgb), .1);
+        @include util.transparent-background-image(--bg-img, var(--color-lvl-rgb), .1);
         padding: 1.5em;
         border-radius: 1.5em;
     }
@@ -59,7 +61,7 @@ main {
     }
 
     div {
-        @include base.gapped(1.5);
+        @include util.gapped(1.5);
     }
 
     ul {
@@ -68,6 +70,6 @@ main {
         gap: .5lh;
     }
     li {
-        max-width: base.$max-line-length;
+        max-width: const.$max-line-length;
     }
 }

@@ -13,7 +13,7 @@ put_head($page, $lang);
     <main>
         <dl>
             <?php
-            $defs = $lang->get_data('definitions');
+            $defs = $lang->get_data_json('definitions');
             foreach ($defs as $id => $def) {
                 ?>
                 <dt id="<?php echo $id ?>"><?php echo $id ?></dt>
@@ -27,7 +27,6 @@ put_head($page, $lang);
         </dl>
     </main>
     <?php put_footer($page, $lang) ?>
-    <?php put_scripts($page) ?>
 </body>
 
 </html>
