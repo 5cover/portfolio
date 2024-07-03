@@ -5,9 +5,14 @@
 
 /* Basic styles */
 
-#links h3,
-#story h3 {
-    display: none;
+/* Section titles */
+h3 {
+    margin-bottom: const.$heading-margin;
+
+    #links &,
+    #story & {
+        display: none;
+    }
 }
 
 body {
@@ -32,7 +37,7 @@ main {
  * $row-abstract: integer -> abstract row
  */
  @mixin header($row-count: 2, $row-title: 1, $row-abstract: 2) {
-    $gap: .75lh;
+    $gap: .5lh;
     display: grid;
     grid-template: repeat(calc($row-count), auto) / auto auto;
     row-gap: $gap;

@@ -217,7 +217,6 @@
 
         h3 {
             grid-row: 2;
-            margin: 0;
         }
 
         .context {
@@ -353,10 +352,6 @@
     padding: 1.5em;
     align-self: center;
     max-width: 100%;
-
-    h2 {
-        margin-bottom: .5em;
-    }
 }
 
 /* Definition list
@@ -392,9 +387,15 @@ p.text {
     }
 }
 
-.text p {
-    &:not(:last-child) {
-        margin-bottom: const.$p-margin;
+.text {
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: const.$heading-margin;
+    }
+
+    p {
+        &:not(:last-child) {
+            margin-bottom: const.$p-margin;
+        }
     }
 }
 

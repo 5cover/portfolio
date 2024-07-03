@@ -136,6 +136,8 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 ul,
 ol,
 p,
@@ -200,33 +202,31 @@ p {
 
 h1 {
     font-size: 2em;
-    font-weight: 500;
+    line-height: calc(1ex / 0.4);
 }
 
 h2 {
     font-size: 1.75em;
-    font-weight: 500;
     line-height: calc(1ex / 0.42);
 }
 
 h3 {
     font-size: 1.5em;
-    font-weight: 500;
     line-height: calc(1ex / 0.38);
-    margin-bottom: .5lh;
 }
 
 h4 {
     font-size: 1.25em;
-    font-weight: 500;
     line-height: calc(1ex / 0.37);
 }
 
 h5 {
-    font-size: .9em;
-    font-weight: 500;
+    font-size: 1.125em;
     line-height: calc(1ex / 0.4);
-    margin: .9lh 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
 }
 
 body {
