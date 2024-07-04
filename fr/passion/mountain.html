@@ -10,8 +10,7 @@
         <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
 
                     <link rel="stylesheet" type="text/css" href="/portfolio/css/passion.css">
-                        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
-        <meta charset="UTF-8">
+                        <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
         <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
         <meta name="msapplication-TileColor" content="#2d89ef">
@@ -21,8 +20,14 @@
         <script>
             document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
         </script>
-        <script defer src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <script defer type="module" src="/portfolio/js/base.js"></script>
+        <!-- Flag icons -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+        <!-- JQuery -->
+        <script async src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <!-- Highlight.JS -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+        <script async src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+        <script type="module" src="/portfolio/js/base.js"></script>
             </head>
 
         <body>    <template id="template-definition-tooltip">
@@ -99,13 +104,13 @@
                         <section id="story" class="text">
                 <h3>Histoire</h3>
                 <p>Étant enfant mes parents m'ont fait découvrir Val d'Isère, une station de ski située dans les Alpes. Depuis, nous y retournons deux fois par an, en été et en hiver.</p>
-<figure>
+<figure class="figure">
     <p>(comparaison photo été/hiver slider (vue depuis appart))</p>
     <figcaption>vue depuis notre appartement été/hiver</figcaption>
 </figure>
 <h4>L'hiver</h4>
 <p>En hiver, nous faisons principalement du ski. Le domaine skiable est le plus grand d'Europe, et donc même après toute ces années, nous n'avons pas encore été partout.</p>
-<figure>
+<figure class="figure">
     <p>(photo ski télésiège brouillard)</p>
     <figcaption>on y voit rien!</figcaption>
 </figure>
@@ -115,7 +120,7 @@
 <p>Ce n'est pas si grave, il restera toujours les activités estivales.</p>
 <h4>L'été</h4>
 <p>L'été, nous faisons surtout de la randonnée. Il y a énormément de sentiers accessibles aux piétons dans les environs. Cependant les meilleures vues ne se trouvent pas toujours sur les chemins les plus fréquentés&nbsp;:</p>
-<figure>
+<figure class="figure">
     <p>(pissaillas glacier)</p>
     <figcaption>Nous avons grimpé jusqu'au glacier du Pissaillas depuis le col de l'Iseran. Nous étions seuls et le paysage était simplement merveilleux.</figcaption>
 </figure>            </section>

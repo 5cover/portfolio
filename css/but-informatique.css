@@ -52,7 +52,7 @@
  */
 /* Strip content
  *
- * Content spanning over the width of the entire viewport.
+ * Content spanning over the width of the entire parent element.
  *
  * $border-width: border-width value -> border width
  */
@@ -323,7 +323,7 @@
 .list-detail-split-card > li {
   border-radius: 1em;
   display: grid;
-  grid-template-columns: max(7.5em, 7.5vw) 1fr;
+  grid-template-columns: max(7.5em, 7.5%) 1fr;
   min-width: -moz-fit-content;
   min-width: fit-content;
 }
@@ -340,25 +340,22 @@
   aspect-ratio: 1;
 }
 .list-detail-split-card > li > div {
+  display: grid;
+  gap: 1em;
+  grid-auto-flow: row;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
   padding: 1em 1em 1em 1.6180339888em;
   background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.85), rgba(var(--color-lvl-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-lvl-rgb))) no-repeat;
   background-size: cover;
 }
-.list-detail-split-card > li > div h3 {
-  grid-column: 2;
-}
 .list-detail-split-card > li > div .abstract {
-  grid-row: 2;
-  grid-column: 2;
+  align-self: center;
 }
 .list-detail-split-card > li > div .list-link {
   gap: 0.5em;
   flex-direction: row-reverse;
   align-items: flex-end;
-  grid-row: 3;
-  grid-column: 2;
 }
 @media (prefers-reduced-motion: no-preference) {
   .list-detail-split-card > li > div .list-link > :is(:hover, :focus-within, :focus) {
@@ -671,7 +668,7 @@ p.text:first-of-type:not(:last-of-type) {
 .text h1, .text h2, .text h3, .text h4, .text h5, .text h6 {
   margin-bottom: 0.5lh;
 }
-.text p:not(:last-child) {
+.text > p:not(:last-child), .text > .figure:not(:last-child) {
   margin-bottom: 3.125ex;
 }
 
@@ -931,10 +928,10 @@ address {
 
 blockquote {
   padding-left: calc(1em - 0.3090169944ch);
-  margin-left: calc(min(1vw, 1em) - 0.3090169944ch);
+  margin-left: max(0, min(2.5%, 1em) - 0.3090169944ch);
   width: -moz-fit-content;
   width: fit-content;
-  border-left: 0.6180339887ch solid var(--color-lvl);
+  border-left: 0.6180339887ch solid var(--color-lvl-next);
 }
 blockquote footer {
   text-align: right;
@@ -948,6 +945,7 @@ blockquote footer {
 
 pre {
   background-color: var(--color-lvl-next);
+  white-space: pre-wrap;
   padding: 0.5lh 2ch;
   border-radius: 0.25lh;
 }
@@ -958,8 +956,11 @@ small {
 }
 
 p {
-  line-height: 3.125ex;
   max-width: 60ch;
+}
+
+p, figcaption {
+  line-height: 3.125ex;
 }
 
 h1 {
@@ -985,6 +986,11 @@ h4 {
 h5 {
   font-size: 1.125em;
   line-height: 2.5ex;
+}
+
+h6 {
+  font-size: 1.0625em;
+  line-height: 2ex;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1073,6 +1079,8 @@ a[id^=cite-] {
   border-color: rgba(var(--color-fg-rgb), 0.15);
   background-color: var(--color-lvl);
   max-width: min(100%, 26em);
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
 }
 .figure > figcaption {
   padding: 0.625lh 2.5ch;
@@ -1094,7 +1102,7 @@ body > header {
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.15);
   background-color: var(--color-lvl);
-  padding: 1em min(2.5vw, 2.5lh);
+  padding: 1em min(2.5%, 2.5lh);
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -1145,7 +1153,7 @@ body > footer {
   border-style: solid;
   border-color: rgba(var(--color-fg-rgb), 0.15);
   background-color: var(--color-lvl);
-  padding: 1em min(2.5vw, 2.5lh);
+  padding: 1em min(2.5%, 2.5lh);
   grid-row: 3;
   position: relative;
   display: flex;
@@ -1165,7 +1173,7 @@ body > footer {
 }
 
 main {
-  margin: 0 min(2.5vw, 2.5lh);
+  margin: 0 min(2.5%, 2.5lh);
 }
 
 #resultat-pour-moi ul {

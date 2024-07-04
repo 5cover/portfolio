@@ -10,8 +10,7 @@
         <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
 
                     <link rel="stylesheet" type="text/css" href="/portfolio/css/project.css">
-                        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
-        <meta charset="UTF-8">
+                        <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
         <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
         <meta name="msapplication-TileColor" content="#2d89ef">
@@ -21,8 +20,14 @@
         <script>
             document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
         </script>
-        <script defer src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <script defer type="module" src="/portfolio/js/base.js"></script>
+        <!-- Flag icons -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+        <!-- JQuery -->
+        <script async src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <!-- Highlight.JS -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+        <script async src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+        <script type="module" src="/portfolio/js/base.js"></script>
             </head>
 
         <body>    <template id="template-definition-tooltip">
@@ -117,25 +122,24 @@
 <p>Au cours de ma formation de BUT Informatique, j'ai appris l'algorithmie avec le Pseudocode, un pseudolangage de programmation inventé pour les besoins de l'IUT de Lannion. Inspiré du <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Pascal_(langage)" data-definition-id="pascal" class="link definition-tooltip-trigger">Pascal</a>, le Pseudocode permet d'énoncer un algorithme dans un langage plus proche de celui de l'homme que de celui de l'ordinateur, tout en gardant l'aspect exhaustif de tout langage de programmation.</p>
 <p>Au cours de nos TP, nous avons très souvent dû traduire des programmes en pseudocode vers le C. Cette tâche est assez réberbative, d'où mon désir de l'automatiser. Et c'est ce qui ma mené à découvrir la conception de compilateurs.</p>
 <p>À titre d'exemple, voici un simple programme en pseudocode qui affiche <q>Bonjour</q> à l'écran&nbsp;:</p>
-<pre><code>programme Afficher Bonjour c'est début
+<pre><code>programme AfficherBonjour c'est début
     écrireÉcran("Bonjour");
-fin</code></pre>
-<p>Voici un programme équivalent en C&nbsp;:</p>
-<pre><code lang="en">#include &lt;stdio.h&gt;
+fin</code></pre><p>Voici un programme équivalent en C&nbsp;:</p>
+<pre><code>#include &lt;stdio.h&gt;;
 
 int main() {
-    printf("<span lang="fr">Bonjour</span>\n");
+    printf("Bonjour&lt;/span&gt;
+");
     return 0;
-}</code></pre>
-<p>Comment automatiser cette transformation&nbsp;? Et bien, en réalité, ce n'est pas si complexe. Le livre Crafting Interpreters<a class="link" id="cite-ref-1" href="#ref-1">1</a> métaphorise le problème par l'ascension d'une montagne&nbsp;:</p>
+}</code></pre><p>Comment automatiser cette transformation&nbsp;? Et bien, en réalité, ce n'est pas si complexe. Le livre Crafting Interpreters<a class="link" id="cite-ref-" href="#ref-"></a> métaphorise le problème par l'ascension d'une montagne&nbsp;:</p>
 <figure class="figure"><img alt="Métaphore de la montagne" src="/portfolio/img/project/psdc/mountain.png" width="1824" height="833" loading="lazy">
     <figcaption>Robert Nystrom &mdash; &copy; 2015 &ndash; 2021, license MIT</figcaption>
 </figure>
 <p>Commencons avec le code source original, au pied de la montagne. Au fil des étapes (<em>scanning</em>, <em>parsing</em>, <em>analysis</em>), la représentation du code devient de plus en plus haut niveau, c'est-à-dire qu'elle se focalise plus sur la sémantique exprimée que sur les détails d'implémentation.</p>
 <p>Une fois le sommet atteint, on est à mi-chemin de la compilation. On a une vue imprenable sur la sémantique du code, soit le sens que l'utilisateur lui donne à travers la syntaxe de notre langage.</p>
 <p>Alors entamons notre descente. Convertissons successivement notre représentation de haut niveau en des formes se rapprochant de notre objectif final&nbsp;: le langage machine, qui sera exécuté directement par le processeur.</p>
-<p>Je n'ai découvert Crafting Interpreters qu'assez tard dans le projet. À l'origine, je me suis basé sur la playlist Creating a Compiler<a class="link" id="cite-ref-2" href="#ref-2">2</a> de <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@pixeled-yt">Pixeled</a> sur YouTube, où l'on assiste à la conception et à l'implémentation d'un compilateur pour un language <em>ex-nihilo</em> nommé Hydrogen. Le compilateur transforme le code en assembleur, puis utilise NASM<a class="link" id="cite-ref-3" href="#ref-3">3</a> pour générer le code machine.</p>
-<p>C'est dans ces vidéos que j'ai appris les bases de l'analyse lexicale<a class="link" id="cite-ref-4" href="#ref-4">4</a>, des grammaires formelles<a class="link" id="cite-ref-5" href="#ref-5">5</a>, ou encore de l'analyse syntaxique<a class="link" id="cite-ref-6" href="#ref-6">6</a>. C'est vraiment intéressant et j'apprends beaucoup de choses.</p>            </section>
+<p>Je n'ai découvert Crafting Interpreters qu'assez tard dans le projet. À l'origine, je me suis basé sur la playlist Creating a Compiler<a class="link" id="cite-ref-1" href="#ref-1">1</a> de <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@pixeled-yt">Pixeled</a> sur YouTube, où l'on assiste à la conception et à l'implémentation d'un compilateur pour un language <em>ex-nihilo</em> nommé Hydrogen. Le compilateur transforme le code en assembleur, puis utilise NASM<a class="link" id="cite-ref-2" href="#ref-2">2</a> pour générer le code machine.</p>
+<p>C'est dans ces vidéos que j'ai appris les bases de l'analyse lexicale<a class="link" id="cite-ref-3" href="#ref-3">3</a>, des grammaires formelles<a class="link" id="cite-ref-4" href="#ref-4">4</a>, ou encore de l'analyse syntaxique<a class="link" id="cite-ref-5" href="#ref-5">5</a>. C'est vraiment intéressant et j'apprends beaucoup de choses.</p>            </section>
                             <section id="technologies">
                     <h3>Technologies</h3>
                         <ul class="lvl list-definition">
