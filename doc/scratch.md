@@ -198,57 +198,22 @@ LM studio...
 
 Capitalism realism, individual unability to change the world. But together we can make it better
 
-### What makes a programming language good?
+### failure is success
 
-Your video about Zig prompted me to learn the language, and so far I absolutely love it! I''m implementing a clone of the test command to learn it. It fixes all the problems i have with C:
+fail early. a program that crashes is better than a program that hides its failure
 
-- generics (they are such a pain in C)
-- explicit and exhaustive error handling (imagine putting every printf in an if statement)
-- explicit integer sizes (seemed annoying at first; but it makes sense if you think about it: YOU give the values, so YOU should be the one who decides on the size, not the compiler)
-- <span lang="en">defer</span> (best thing since sliced bread)
-- an useful standard library (no need to download an stb lib for arena or hashtable - or feel too lazy to implement them myself)
-- a simple build system (no more cmake or make; finally free!)
-- compile time guarantees and invariants: Zig is much, much closer than C to the (ultimately unnatainable) ideal of "if it compiles, it works".
-- encapsulation (no need to prefix internal functions with an underscore anymore; pub is all you'll need)
+or why i don't like javascript
 
-Some things I hope will be added to the language in the future
-
-- Costless interfaces (duck typing can only get you so far - it's not because a type implements a method named Foo that this method does what you expect). They would only exist at compile-time to enforce a type respects a certain contract.
-
-At then end of the day, everything that can be done in Zig can also be done in C, but the invariants and restrictions Zig enforces is stuff you don't have to worry about getting wrong, unlike when you do it manually in C.
-
-I believe this is the goal of any language; to allow expressive code in order to give as much compile-time guarantees of correctness as posssible. Overall I feel C has run its course as a language.
-
-Of course it will be around forever since so much stuff is written in it and it would be ludicrous to expect everything to be rewritten in Rust or Zig. But I wouldn't expect it to be used for any new projects.
-
-However, I still think C is an invaluable language to learn. It forces you to leave your comfort zone of abstactions and face the actual challenge of implementating stuff that we use every day as programmers, such a lists or hash tables.
-
-~~Learning C is better than any amount of Leetcode challenges.~~
+the compiler is your friend
 
 ### voyager's software
 
 a marvel of engineering. a timeless lesson for all of us programmers.
 
-## Passions page
+## standardisze definition abbr policy
 
-même structure que pour les perspectives
+and add it to conventions
 
-## Passions, perspectives, projects... same thing?
+do we add an abbr element at the start of the synopspsis
 
-Passions and perspectives could also use having references.
-
-Although i probably won't need team, technologies. I could need gallery for passions though, if i want to pre.
-
-I can reuse the generation code for projects. But i should change the name.
-
-Proposed names:
-
-- "content page": too generic
-- "article": wrongly refers to the html element
-- **"detail page"**
-
-from now on, invidual project pages will be called detail pages. Passions and perspectives will also generate detail pages.
-
-The only difference with projects is that the card HTML will differ.
-
-Actually, what about status and context? Passions and perspectives have no use for those.
+should the title be an abbr

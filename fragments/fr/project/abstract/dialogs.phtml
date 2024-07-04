@@ -1,5 +1,5 @@
 <?php
-require 'fragment.php';
-define('LANG', 'fr');
+require_once 'fragment.php';
+$f = start('fr');
 ?>
-Un adapteur managé pour les <?php definition(LANG, 'task-dialog') ?> Windows qui supporte toutes les fonctionnalités natives.
+Un adapteur managé pour les <?php echo $f->def('task-dialog') ?> Windows qui supporte toutes les fonctionnalités natives.

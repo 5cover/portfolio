@@ -1,5 +1,5 @@
 <?php
-require 'fragment.php';
-define('LANG', 'fr');
+require_once 'fragment.php';
+$f = start('fr');
 ?>
-Une simple bibliothèque d'<?php definition(LANG, 'wizard') ?> pour <?php definition(LANG, 'wpf') ?>
+Une simple bibliothèque d'<?php echo $f->def('wizard') ?> pour <?php echo $f->def('wpf') ?>

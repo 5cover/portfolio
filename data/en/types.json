@@ -11,5 +11,6 @@
     "person": "person",
     "ide": "integrated development environment",
     "ui": "user interface component",
-    "game-server": "game server"
+    "game-server": "game server",
+    "game-mod": "game mod"
 }

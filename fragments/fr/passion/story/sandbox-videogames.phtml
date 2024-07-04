@@ -1,16 +1,16 @@
 <?php
-require 'fragment.php';
-define('LANG', 'fr');
+require_once 'fragment.php';
+$f = start('fr');
 ?>
-<p>Avez-vous déjà entendu parler de SurvivalWorld<?php reference() ?>, ou Dreamfinity<?php reference() ?>&nbsp;? Ils ont une chose en commun&nbsp;: ce sont des serveurs <?php definition(LANG, 'minecraft') ?> orientés survie, ou les joueurs sont libres de construire ce qu'il veulent, d'amasser des richesses et d'échanger avec les autres joueurs dans une économie simulée.</p>
+<p>Avez-vous déjà entendu parler de <?php echo $f->def('survivalworld') ?>, ou <?php echo $f->def('dreamfinity') ?>&nbsp;? Ils ont une chose en commun&nbsp;: ce sont des serveurs <?php echo $f->def('minecraft') ?> orientés survie, ou les joueurs sont libres de construire ce qu'il veulent, d'amasser des richesses et d'échanger avec les autres joueurs dans une économie simulée.</p>
 <h4>SurvivalWorld</h4>
-<figure>
+<figure class="figure">
     <p>(screen survivalworld)</p>
     <figcaption>Ma base sur SurvivalWorld</figcaption>
 </figure>
 <p>Le serveur de survive francophone mythique. Il a traversé les versions du jeu. Ouvert en 2016, je ne l'ai rejoint qu'en 2019. Bien que je sois inactif depuis mon entrée en BUT Informatique, j'aurai passé d'excellents moments avec sa communauté accueillante.</p>
 <p>Avec la pléthore de temps libre que m'a donné le confinement en 2020, j'ai bâti un empire commercial. Je suis devenu un des plus riches joueurs du serveur.</p>
-<figure>
+<figure class="figure">
     <p>(screen nether quartz tower)</p>
     <figcaption>Et oui, j'avais pas mal de temps libre.</figcaption>
 </figure>
@@ -18,10 +18,10 @@ define('LANG', 'fr');
 <p>Cependant, avec le temps je me suis progressivement lassé du jeu et j'ai choisi de faire don de toutes mes possessions à un ami.</p>
 <p>Mais bon, peut-être qu'un de ces jours je reviendrai y faire un tour.</p>
 <h4>Dreamfinity</h4>
-<p><?php definition(LANG, 'minecraft') ?> est un jeu très complet, mais j'ai toujours eu un intérêt pour les mods. En particuler par rapport à l'industrialisation et l'automatisation.</p>
+<p><?php echo $f->def('minecraft') ?> est un jeu très complet, mais j'ai toujours eu un intérêt pour les mods. En particuler par rapport à l'industrialisation et l'automatisation.</p>
 <p>Car oui, dans les jeux-vidéos ce qui me plaît le plus c'est exploiter l'environnement, construire des usines, automatiser la production. Mieux vaut faire cela dans un jeu-vidéo que dans la vraie vie.</p>
-<p>Pour cela il faut des mods comme BuildCraft<?php reference() ?>, IndustrialCraft<?php reference() ?>, GalactiCraft<?php reference() ?>, Immersive Engineering<?php reference() ?>&hellip; J'avais déjà fait de nombreuses parties en solo mais j'en étais lassé. Je voulais goûter à l'expérience en multijoueur.</p>
-<p>C'est pour ça que j'ai choisi de rejoindre <?php definition(LANG, 'dreamfinity') ?>, un serveur survie/faction sur ce même thème de l'automatisation.</p>
+<p>Pour cela il faut des mods comme <?php echo $f->def('buildcraft') ?>, <?php echo $f->def('industrialcraft-2') ?>, <?php echo $f->def('galacticraft') ?>, <?php echo $f->def('immersive-engineering') ?>&hellip; J'avais déjà fait de nombreuses parties en solo mais j'en étais lassé. Je voulais goûter à l'expérience en multijoueur.</p>
+<p>C'est pour ça que j'ai choisi de rejoindre <?php echo $f->def('dreamfinity') ?>, un serveur survie/faction sur ce même thème de l'automatisation.</p>
 <p>J'ai commencé sur Spacecross. J'ai parcouru le monde pendant un temps avant de poser mes valises dans steppe, entre 3 collines.</p>
 <h5>Ma (brève) conquête spatiale</h5>
 <p>La conquête de la Lune aura été un passage court mais intense de ma partie.</p>
@@ -39,7 +39,7 @@ define('LANG', 'fr');
 <h5>Technocracie et la grande réinitialisation</h5>
 <p>Bon. Quelques mois après cette expériences assez frustrante j'ai rejoint Technocracy. Ce sous-serveur est similaire à Spacecross, à la différence qu'il n'est pas orienté vers la conquête spatiale mais l'industrialisation sur Terre. Ce qui est, au final, ce que je voulais. Et donc un système de claim est proposé pour protéger ses constructions des pillages.</p>
 <p>J'ai construit ma base&nbsp;:</p>
-<figure>
+<figure class="figure">
     <p>(screen de ma base)</p>
     <figcaption>Capture d'écran de ma base sur Technocracy. Un silo qui s'enfonçe sous terre avec un dôme en verre et une flèche symbolisant la puissance et la gloire de mon empire industriel.</figcaption>
 </figure>

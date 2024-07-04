@@ -74,11 +74,11 @@ main {
  */
  .gallery {
     align-items: center;
-    column-gap: 3em;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    row-gap: min(3vw, 3em);
+    column-gap: min(3vw, 3em);
+    row-gap: 3em;
 
     @include util.shallow-li {
         flex: 1;

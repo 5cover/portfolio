@@ -11,5 +11,6 @@
     "person": "personne",
     "ide": "environnement de développement intégré",
     "ui": "composant d'interface utilisateur",
-    "game-server": "serveur de jeu"
+    "game-server": "serveur de jeu",
+    "game-mod": "modification de jeu"
 }

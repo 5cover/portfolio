@@ -34,7 +34,6 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
             <link rel="stylesheet" type="text/css" href="/portfolio/css/<?php echo $fallbackStylesheet ?>">
         <?php } ?>
         <?php #echo implode('', array_map(fn($url) => "<link rel=\"stylesheet\" href=\"/portfolio/css/$url\">", $additionalStylesheets)) ?>
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
         <meta name="description" content="<?php echo $lang->get('siteDescription') ?>">
@@ -45,12 +44,18 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <script>
             document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
         </script>
-        <script defer src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <script defer type="module" src="/portfolio/js/base.js"></script>
+        <!-- Flag icons -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+        <!-- JQuery -->
+        <script async src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <!-- Highlight.JS -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+        <script async src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+        <script type="module" src="/portfolio/js/base.js"></script>
         <?php
         $g = glob_web('/portfolio/js/' . $page->name . '.js');
         if (count($g) == 1) { ?>
-            <script defer type="module" src="<?php echo get_web_url($g[0]) ?>"></script>
+            <script type="module" src="<?php echo get_web_url($g[0]) ?>"></script>
         <?php } ?>
     </head>
 <?php }
@@ -159,10 +164,13 @@ function put_definition_card(Lang $lang, string $id, array $def) {
     </article>
 <?php }
 
-function put_definition_tooltip_trigger(Lang $lang, string $id, array $def) {
-    ?><a target="_blank" rel="noopener noreferrer" href="<?php echo $def['wiki'] ?>" data-definition-id="<?php echo $id ?>" class="link definition-tooltip-trigger"><?php echo $def['names'][0] ?></a><?php
+function get_definition_tooltip_trigger(Lang $lang, string $id, array $def): string {
+    return '<a target="_blank" rel="noopener noreferrer" href="' . $def['wiki']
+        . '" data-definition-id="' . $id
+        . '" class="link definition-tooltip-trigger">'
+        . $def['names'][0] . '</a>';
 }
 
-function put_iframe(string $src, string $title) { ?>
-    <iframe src="<?php echo $src ?>" frameborder="0" loading="lazy" width="300" height="300" title="<?php echo $title ?>"></iframe>
-<?php } ?>
+function get_iframe(string $src, string $title): string {
+    return '<iframe src="'.$src.'" frameborder="0" loading="lazy" width="300" height="300" title="'.$title.'"></iframe>';
+}

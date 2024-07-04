@@ -35,10 +35,10 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/definition/dreamfinity/logo.svg"
         },
-        "references": {},
         "story": {
             "$include": "passion/story/sandbox-videogames.phtml"
         },
-        "title": "Jeux-vidéos bac à sable"
+        "title": "Jeux-vidéos bac à sable",
+        "references": {}
     }
 }

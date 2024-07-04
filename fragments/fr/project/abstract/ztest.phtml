@@ -1,5 +1,5 @@
 <?php
-require 'fragment.php';
-define('LANG', 'fr');
+require_once 'fragment.php';
+$f = start('fr');
 ?>
-La commande Unix <code lang="en">test</code> implémentée en <?php definition(LANG, 'zig') ?>
+La commande Unix <?php echo $f->code('test') ?> implémentée en <?php echo $f->def('zig') ?>

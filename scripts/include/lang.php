@@ -34,8 +34,8 @@ final class Lang {
         return sprintf($this->strings['formatTitle'], $title);
     }
 
-    public function get_data_json(string $name): array {
-        return get_data_json($this->tag . '/' . $name);
+    public function get_data_json(string $name, bool $linked = true): array {
+        return get_data_json($this->tag . '/' . $name, $linked);
     }
 
     public function equals(Lang $other): bool {

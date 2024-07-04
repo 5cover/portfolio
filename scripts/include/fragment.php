@@ -1,32 +1,65 @@
 <?php
-# Do not include_once or require_once
-
 require_once 'content.php';
 
-$_refNum = 1; # because of this
-
-function link_a(string $content, string $href) {
-    ?><a class="link" href="<?php echo $href ?>"><?php echo $content ?></a><?php
+function start($lang): Fragment {
+    return new Fragment($lang);
 }
 
-function link_blank(string $content, string $href) {
-    ?><a class="link" target="_blank" rel="noopener noreferrer" href="<?php echo $href ?>"><?php echo $content ?></a><?php
-}
+final class Fragment {
+    public readonly Lang $lang;
 
-function reference() {
-    global $_refNum;
-    ?><a class="link" id="cite-ref-<?php echo $_refNum ?>" href="#ref-<?php echo $_refNum ?>"><?php echo $_refNum++ ?></a><?php
-}
+    private $refNum = 1;
 
-$_definitions = [];
+    function __construct(string $langTag) {
+        $this->lang = Lang::instances()[$langTag];
+    }
 
-/**
- * Put a definition tooltip trigger.
- * 
- * Uses the unlinked *definitions* data JSON.
- */
-function definition(string $lang, string $id) {
-    global $_definitions;
-    $def = ($_definitions[$lang] ??= get_data_json("$lang/definitions", false))[$id];
-    put_definition_tooltip_trigger(Lang::instances()[$lang], $id, $def);
+    /** Get a term in another language */
+    function term(string $content, string $lang = 'en'): string {
+        return '<span lang="' . $lang . '">' . $content . '</span>';
+    }
+
+    /** Get an inline code */
+    function code(string $content): string {
+        return '<code>' . htmlspecialchars($content, ENT_HTML5) . '</code>';
+    }
+
+    /** Get a code block */
+    function codeblock(string $content): string {
+        return '<pre>' . $this->code($content) . '</pre>';
+    }
+
+    /** Get a year time */
+    function year(int $year): string {
+        return '<time datetime="' . $year . '">' . $year . '</time>';
+    }
+
+    /** Get a site-local anchor
+     * 
+     * @param string $href the url relative to the site lang directory
+     */
+    function a(string $content, string $href): string {
+        return '<a class="link" href="/portfolio/' . $this->lang->tag . "/$href" . '">' . $content . '</a>';
+    }
+
+    /** Get an external anchor */
+    function blank(string $content, string $href): string {
+        return '<a class="link" target="_blank" rel="noopener noreferrer" href="' . $href . '">' . $content . '</a>';
+    }
+
+    /** Get a reference citatiion */
+    function ref(): string {
+        global $refNum;
+        return '<a class="link" id="cite-ref-' . $refNum . '" href="#ref-' . $refNum . '">' . $refNum++ . '</a>';
+    }
+
+    /**
+     * Get a definition tooltip trigger.
+     * 
+     * Uses the unlinked *definitions* data JSON.
+     */
+    function def(string $id): string {
+        $def = $this->lang->get_data_json('definitions', false)[$id];
+        return get_definition_tooltip_trigger($this->lang, $id, $def);
+    }
 }

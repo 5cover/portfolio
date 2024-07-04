@@ -1,4 +1,94 @@
 {
+    "buildcraft": {
+        "wiki": "https://mod-buildcraft.com/",
+        "logo": {
+            "url": "/portfolio/img/definition/buildcraft/logo.png",
+            "isThemedSvg": false
+        },
+        "names": [
+            "BuildCraft"
+        ],
+        "type": "game-mod",
+        "synopsis": "BuildCraft est un mod pour le jeu vidéo Minecraft qui se concentre sur l'ajout de fonctionnalités de construction et d'automatisation au jeu. Ce mod a été créé par le développeur SpaceToad."
+    },
+    "industrialcraft-2": {
+        "wiki": "https://wiki.industrial-craft.net/index.php?title=Main_Page",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/industrialcraft-2/logo.png"
+        },
+        "names": [
+            "IndustrialCraft²"
+        ],
+        "type": "game-mod",
+        "synopsis": "<abbr title=\"IndustrialCraft²\">IC²</abbr> est un mod pour le jeu vidéo Minecraft qui se concentre sur l'ajout de nouvelles fonctionnalités industrielles et technologiques au jeu. Ce mod a été créé par le développeur Alblaka."
+    },
+    "galacticraft": {
+        "wiki": "https://galacticraft.net/",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/galacticraft/logo.png"
+        },
+        "names": [
+            "Galacticraft"
+        ],
+        "type": "game-mod",
+        "synopsis": "Galacticraft est un mod pour le jeu vidéo Minecraft qui ajoute une dimension spatiale au jeu, permettant aux joueurs de voyager dans l'espace, d'explorer de nouvelles planètes et de construire des colonies spatiales. Ce mod a été créé par le développeur Micdoodle8."
+    },
+    "immersive-engineering": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/immersive-engineering/logo.png"
+        },
+        "wiki": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering",
+        "names": [
+            "Immersive Engineering"
+        ],
+        "type": "game-mod",
+        "synopsis": "Immersive Engineering est un mod pour le jeu vidéo Minecraft qui vise à ajouter une expérience de jeu plus réaliste et immersive en se concentrant sur l'ingénierie, la construction et l'automatisation. Ce mod a été créé par le développeur BluSunrize."
+    },
+    "cmake": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/cmake/logo.svg"
+        },
+        "names": ["CMake"],
+        "wiki": "https://fr.wikipedia.org/wiki/CMake",
+        "type": "software",
+        "synopsis": "<abbr title=\"Cross-platform Make\">CMake</abbr> est un logiciel open source de génération de fichiers de build pour des projets logiciels. Il a été créé en <time datetime=\"2000\">2000</time> par Kitware et est maintenant développé et maintenu par une communauté active de développeurs."
+    },
+    "go": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/go/logo.svg"
+        },
+        "names": ["Go"],
+        "wiki": "https://fr.wikipedia.org/wiki/Go_(langage)",
+        "type": "programming-language",
+        "synopsis": "Le langage de programmation Go, souvent appelé Golang, est un langage de programmation open source créé par Google en <time datetime=\"2009\">2009</time>. Il a été conçu par Robert Griesemer, Rob Pike et Ken Thompson pour améliorer la productivité des développeurs lors de la création de logiciels fiables et efficaces."
+    },
+    "rust": {
+        "logo": {
+            "isThemedSvg": true,
+            "url": "/portfolio/img/definition/rust/logo.svg"
+        },
+        "names": ["Rust"],
+        "wiki": "https://fr.wikipedia.org/wiki/Rust_(langage)",
+        "type": "programming-language",
+        "synopsis": "Rust est un langage de programmation système open source créé par Mozilla Research en <time datetime=\"2010\">2010</time>. Il a été conçu pour offrir une alternative plus sûre et plus fiable au langage C++, tout en conservant des performances similaires. Rust est un langage compilé et statiquement typé, ce qui signifie que le code est vérifié pour les erreurs de type avant l'exécution. Il prend en charge la programmation concurrente et la gestion de la mémoire, ce qui permet aux développeurs d'écrire des programmes fiables et efficaces. Il est également réputé pour sa courbe d'apprentissage abrupte, mais sa syntaxe claire et concise en fait un langage apprécié des développeurs expérimentés. Rust est couramment utilisé pour les systèmes d'exploitation, les moteurs de jeux, les applications réseau, les navigateurs web et bien plus encore. Il est apprécié pour sa sécurité mémoire, sa prévention des erreurs à l'exécution, sa rapidité d'exécution et sa gestion efficace de la mémoire."
+    },
+    "survivalworld": {
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/survivalworld/logo.png"
+        },
+        "names": [
+            "SurvivalWorld"
+        ],
+        "synopsis": "<q cite=\"https://top-serveurs.net/minecraft/survivalworld-65355b32ec669\">SurvivalWorld est la référence des serveurs Minecraft Survie dans toute la francophonie ! Retrouvez-vous avec vos amis, ou venez encore vous en faire, pour survivre dans les vastes plaines de nos mondes.</q>",
+        "type": "game-server",
+        "wiki": "https://www.survivalworld.fr/"
+    },
     "dreamfinity": {
         "logo": {
             "isThemedSvg": false,
@@ -7,7 +97,7 @@
         "names": [
             "Dreamfinity"
         ],
-        "synopsis": "Nous vous présentons le serveurs Minecraft les plus moderne et innovant à ce jour &mdash; le projet Dreamfinity&nbsp;! Nos serveurs uniques combinent tous les meilleurs mods, nouvelles fonctionnalités et fonctionnalités de jeu disponibles pour jouer à Minecraft en ligne. Au fil de nombreuses années, nous avons analysé les besoins d’une variété de joueurs et nous pouvons affirmer avec certitude que vous aimerez notre collaboration&nbsp;!",
+        "synopsis": "<q cite=\"https://dreamfinity.org/\">Nous vous présentons le serveurs Minecraft les plus moderne et innovant à ce jour &mdash; le projet Dreamfinity&nbsp;! Nos serveurs uniques combinent tous les meilleurs mods, nouvelles fonctionnalités et fonctionnalités de jeu disponibles pour jouer à Minecraft en ligne. Au fil de nombreuses années, nous avons analysé les besoins d’une variété de joueurs et nous pouvons affirmer avec certitude que vous aimerez notre collaboration&nbsp;!</q>",
         "type": "game-server",
         "wiki": "https://dreamfinity.org/"
     },
@@ -584,11 +674,11 @@
             "url": "/portfolio/img/definition/sass/logo.svg"
         },
         "names": [
-            "SASS",
             "Syntactically Awesome Style Sheets",
+            "SASS",
             "SCSS"
         ],
-        "synopsis": "Syntactically Awesome Style Sheets est un langage de script préprocesseur qui est compilé ou interprété en CSS.",
+        "synopsis": "<abbr title=\"Syntactically Awesome Style Sheets\">SASS</abbr> est un langage de script préprocesseur qui est compilé ou interprété en CSS.",
         "type": "computer-language",
         "wiki": "https://fr.wikipedia.org/wiki/Sass_(langage)"
     },

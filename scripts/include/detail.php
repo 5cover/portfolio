@@ -122,7 +122,7 @@ abstract class Details {
                                 if ($url = $figure['url'] ?? null) {
                                     echo get_img_element($url, $caption, baseHeight: 300);
                                 } elseif ($src = $figure['iframe-src'] ?? null) {
-                                    put_iframe($src, $caption);
+                                    echo get_iframe($src, $caption);
                                 } else {
                                     echo $figure['content'];
                                 }

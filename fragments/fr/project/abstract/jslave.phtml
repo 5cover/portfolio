@@ -1,5 +1,5 @@
 <?php
-require 'fragment.php';
-define('LANG', 'fr');
+require_once 'fragment.php';
+$f = start('fr');
 ?>
-Language formel de métaprogrammation <?php definition(LANG, 'java') ?>
+Language formel de métaprogrammation <?php echo $f->def('java') ?>

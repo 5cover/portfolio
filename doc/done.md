@@ -344,8 +344,32 @@ for types, definitions, tags, anchors
 
 currently it is too small, which result in small elements not standing out from the background enough. this is an accesssibility concern.
 
-## Add title to sections
+## Add title to all sections
 
 such as story, technoligies, team...
 
 some do not have titles. that's because we don't want to see a title. but it would be better if there was a title for semantics. so add a title and use a class like `.hide-title` that `display: none` the title.
+
+## Passions page
+
+même structure que pour les perspectives
+
+## Passions, perspectives, projects... same thing?
+
+Passions and perspectives could also use having references.
+
+Although i probably won't need team, technologies. I could need gallery for passions though, if i want to pre.
+
+I can reuse the generation code for projects. But i should change the name.
+
+Proposed names:
+
+- "content page": too generic
+- "article": wrongly refers to the html element
+- **"detail page"**
+
+from now on, invidual project pages will be called detail pages. Passions and perspectives will also generate detail pages.
+
+The only difference with projects is that the card HTML will differ.
+
+Actually, what about status and context? Passions and perspectives have no use for those.

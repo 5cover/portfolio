@@ -8,7 +8,7 @@ $graphic: selector.parse(":is(img, svg)");
 /* Golden ratio */
 $phi: 1.61803398875;
 /* Horizontal margin of an element whose width spans over the entire viewport */
-$full-width-horizontal-margin: min(2.5vw, 2.5lh);
+$full-width-horizontal-margin: min(2.5%, 2.5lh);
 /* Vertical margin of an element whose width spans over the entire viewport */
 $full-width-vertical-margin: 2.5lh;
 /* Maximum length of a line of text */

@@ -20,7 +20,7 @@ put_head($page, $lang);
                 <dd>
                     <?php echo implode(', ', array_splice($def['names'], 1)) ?>
                     <div>
-                        <?php put_definition_tooltip_trigger($lang, $id, $def) ?>
+                        <?php echo get_definition_tooltip_trigger($lang, $id, $def) ?>
                     </div>
                 </dd>
             <?php } ?>
