@@ -1,7 +1,7 @@
-import * as i12y from "./modules/i12y.js";
+import * as i11y from "./modules/i11y.js";
 
 $(() => {
-    i12y.setupElementInteractivity(document.documentElement);
+    i11y.setupElementInteractivity(document.documentElement);
 
     // Theme switches
 

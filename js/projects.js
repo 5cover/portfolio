@@ -1,6 +1,6 @@
 import * as util from "./modules/util.js";
 import * as dom from "./modules/dom.js";
-import * as i12y from "./modules/i12y.js";
+import * as i11y from "./modules/i11y.js";
 
 $(async () => {
 
@@ -99,7 +99,7 @@ $(async () => {
 
         // Update the project list
         projectList.innerHTML = projectListHTML;
-        i12y.setupElementInteractivity(projectList);
+        i11y.setupElementInteractivity(projectList);
     }
 
     async function getProjectCardHtml(id, project) {
