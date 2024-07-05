@@ -214,6 +214,12 @@ the compiler is your friend
 
 a marvel of engineering. a timeless lesson for all of us programmers.
 
+## only show each definition trigger as a link once per title
+
+that way we don't repeat it too much while still providing it regularily?
+
+do we even need to do this?
+
 ## standardisze definition abbr policy
 
 and add it to conventions
@@ -222,16 +228,25 @@ do we add an abbr element at the start of the synopspsis
 
 should the title be an abbr
 
-## plural def titles
+more info below
 
-## only show each definition trigger as a link once per title
+## consistent def titles
 
-that way we don't repeat it too much while still providing it regularily?
+instead of using an array, give variants of titles
 
-do we even need to do this?
+- full
+- abbreviated
+
+put it in an object
+
+no plural because as the defined creation is unique and it doesn't make sense to put it at plural (Cs?, NASMs?)
 
 ## remove glyph on definition links
 
 ## use another target blank glyph
 
 the current one doesn't display properly in all browsers (doesnt display correctly on samsung internet).
+
+## don't use key names for html content
+
+i'm talking to you, references!

@@ -54,3 +54,11 @@ External examples
 ## Passions
 
 Something that is more fun and that I'm excited to talk about and share.
+
+## In PHTMLS: use
+
+1. a definition? to refer to a definable creation. basically a term that is a proper noun
+2. a reference? to refer to a relevant piece of information that brings context, defines a term or for "further reading"
+3. a term? to highlight a foreign term, facultatively of a different lang (for screen readers). may be combined with references.
+3. a regular link? to link to a page of the current site
+4. a blank link.

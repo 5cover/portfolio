@@ -1,3 +1,7 @@
+<?php
+require_once 'fragment.php';
+$f = start('fr');
+?>
 <div class="cols">
-    <p>L'objectif de ce projet est de créer une application de gestion d'une salle de spectacle en Java avec une IHM (interface homme machine) en Java FX qui permet au directeur de la salle de gérer les spectacles.</p>
+    <p>L'objectif de ce projet est de créer une application de gestion d'une salle de spectacle en <?= $f->def('java') ?> avec une <abbr title="Interface Homme Machine">IHM</abbr> en <?= $f->def('javafx') ?> qui permet au directeur de la salle de gérer les spectacles.</p>
 </div>

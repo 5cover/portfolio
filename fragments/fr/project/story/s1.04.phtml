@@ -1,3 +1,7 @@
+<?php
+require_once 'fragment.php';
+$f = start('fr');
+?>
 <div class="cols">
-    <p>L'objectif de ce projet était de créer un diagramme de classe et d'implémenter une base de données en SQL.</p>
+    <p>L'objectif de ce projet était de créer un diagramme de classe et d'implémenter une base de données en <?= $f->def('sql') ?>.</p>
 </div>

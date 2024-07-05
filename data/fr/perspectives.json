@@ -10,7 +10,7 @@
         "gallery": [],
         "links": {},
         "references": {
-            "Implementation of a generic vector (anglais)": {
+            "Implémentation d'un vecteur générique en C (anglais)": {
                 "anchor": "website",
                 "href": "https://constantsmatter.com/posts/generic-ds-c/"
             },

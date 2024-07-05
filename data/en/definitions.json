@@ -84,7 +84,7 @@
     "chartier--le-goff-marius": {
         "type": "person",
         "wiki": "https://icelos6.wixsite.com/portfolio-marius-cha",
-        "synopsis": "Marius Chartier--Le Goff est né en 2005 et est étudiant en BUT informatique à l'IUT de Lannion. Il souhaite continuer ses études jusqu'au titre d'ingénieur.",
+        "synopsis": "Marius Chartier--Le Goff est né en <time datetime=\"2005\">2005</time> et est étudiant en BUT informatique à l'IUT de Lannion. Il souhaite continuer ses études jusqu'au titre d'ingénieur.",
         "names": [
             "Marius Chartier--Le Goff",
             "Marius CHARTIER--LE GOFF",
@@ -100,7 +100,7 @@
         "type": "game",
         "wiki": "https://en.wikipedia.org/wiki/Cities:_Skylines",
         "background": "/portfolio/img/definition/cities-skylines/bg.jpg",
-        "synopsis": "Cities: Skylines is a 2015 city-building game developed by Colossal Order and published by Paradox Interactive. The game is a single-player open-ended city-building simulation.",
+        "synopsis": "Cities: Skylines is a <time datetime=\"2015\">2015</time> city-building game developed by Colossal Order and published by Paradox Interactive. The game is a single-player open-ended city-building simulation.",
         "names": [
             "Cities: Skylines",
             "Cities Skylines"
@@ -359,7 +359,7 @@
         "type": "game",
         "wiki": "https://en.wikipedia.org/wiki/Minecraft",
         "background": "/portfolio/img/definition/minecraft/bg.png",
-        "synopsis": "Minecraft is a 2011 sandbox game developed by Mojang Studios and originally released in 2009.",
+        "synopsis": "Minecraft is a <time datetime=\"2011\">2011</time> sandbox game developed by Mojang Studios and originally released in 2009.",
         "names": [
             "Minecraft"
         ],
@@ -504,7 +504,7 @@
     "smalltalk": {
         "type": "programming-language",
         "wiki": "https://en.wikipedia.org/wiki/Smalltalk",
-        "synopsis": "Smalltalk is a purely object oriented programming language (OOP) that was originally created in 1972 for educational use.",
+        "synopsis": "Smalltalk is a purely object oriented programming language (OOP) that was originally created in <time datetime=\"1972\">1972</time> for educational use.",
         "names": [
             "Smalltalk"
         ],
@@ -672,7 +672,7 @@
         "type": "programming-language",
         "background": "/portfolio/img/definition/zig/bg.png",
         "wiki": "https://en.wikipedia.org/wiki/Zig_(programming_language)",
-        "synopsis": "Zig is an imperative, general-purpose, statically typed, compiled system programming language designed by Andrew Kelley in 2015 as a successor to C.",
+        "synopsis": "Zig is an imperative, general-purpose, statically typed, compiled system programming language designed by Andrew Kelley in <time datetime=\"2015\">2015</time> as a successor to C.",
         "names": [
             "Zig"
         ],

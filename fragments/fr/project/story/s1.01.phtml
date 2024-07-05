@@ -1,5 +1,9 @@
+<?php
+require_once 'fragment.php';
+$f = start('fr');
+?>
 <div class="cols">
-    <p>L'objectif de ce projet était de créer un jeu de Sudoku fonctionnel en langage C, jouable via le terminal de Linux.</p>
+    <p>L'objectif de ce projet était de créer un jeu de Sudoku fonctionnel en langage <?= $f->def('c') ?>, jouable via le terminal de Linux.</p>
     <blockquote>
         <p>L’association <q>Les têtes à clic</q> intervient dans les collèges pour familiariser les élèves à l’utilisation de logiciels. Elle développe aussi des petits jeux de société sur ordinateur pour les enfants. Stagiaire dans cette association, vous êtes chargés de développer un programme permettant à un collégien de remplir une grille de Sudoku.</p>
         <footer>— <cite>Sujet du projet</cite></footer>

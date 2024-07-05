@@ -1,4 +1,28 @@
 {
+    "nasm": {
+        "wiki": "https://fr.wikipedia.org/wiki/Netwide_Assembler",
+        "synopsis": "Netwide Assembler (NASM) est un assembleur pour l'architecture x86, utilisant la syntaxe Intel. Il peut être utilisé pour produire à la fois des programmes 16 bits et 32 bits (IA-32) ; depuis la version 2 de NASM il est possible de produire aussi des programmes 64 bits (x64).",
+        "type": "software",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/nasm/logo.svg"
+        },
+        "names": [
+            "NASM"
+        ]
+    },
+    "pdf": {
+        "wiki": "https://fr.wikipedia.org/wiki/Portable_Document_Format",
+        "synopsis": "Le Portable Document Format, communément abrégé en PDF, est un langage de description de page présenté par la société Adobe Systems en <time datetime=\"1992\">1992</time et qui est devenu une norme ISO en <time datetime=\"2008\">2008</time>.",
+        "logo": {
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/pdf/logo.svg"
+        },
+        "type": "data-format",
+        "names": [
+            "PDF"
+        ]
+    },
     "buildcraft": {
         "wiki": "https://mod-buildcraft.com/",
         "logo": {
@@ -52,7 +76,9 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/definition/cmake/logo.svg"
         },
-        "names": ["CMake"],
+        "names": [
+            "CMake"
+        ],
         "wiki": "https://fr.wikipedia.org/wiki/CMake",
         "type": "software",
         "synopsis": "<abbr title=\"Cross-platform Make\">CMake</abbr> est un logiciel open source de génération de fichiers de build pour des projets logiciels. Il a été créé en <time datetime=\"2000\">2000</time> par Kitware et est maintenant développé et maintenu par une communauté active de développeurs."
@@ -62,7 +88,9 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/definition/go/logo.svg"
         },
-        "names": ["Go"],
+        "names": [
+            "Go"
+        ],
         "wiki": "https://fr.wikipedia.org/wiki/Go_(langage)",
         "type": "programming-language",
         "synopsis": "Le langage de programmation Go, souvent appelé Golang, est un langage de programmation open source créé par Google en <time datetime=\"2009\">2009</time>. Il a été conçu par Robert Griesemer, Rob Pike et Ken Thompson pour améliorer la productivité des développeurs lors de la création de logiciels fiables et efficaces."
@@ -72,7 +100,9 @@
             "isThemedSvg": true,
             "url": "/portfolio/img/definition/rust/logo.svg"
         },
-        "names": ["Rust"],
+        "names": [
+            "Rust"
+        ],
         "wiki": "https://fr.wikipedia.org/wiki/Rust_(langage)",
         "type": "programming-language",
         "synopsis": "Rust est un langage de programmation système open source créé par Mozilla Research en <time datetime=\"2010\">2010</time>. Il a été conçu pour offrir une alternative plus sûre et plus fiable au langage C++, tout en conservant des performances similaires. Rust est un langage compilé et statiquement typé, ce qui signifie que le code est vérifié pour les erreurs de type avant l'exécution. Il prend en charge la programmation concurrente et la gestion de la mémoire, ce qui permet aux développeurs d'écrire des programmes fiables et efficaces. Il est également réputé pour sa courbe d'apprentissage abrupte, mais sa syntaxe claire et concise en fait un langage apprécié des développeurs expérimentés. Rust est couramment utilisé pour les systèmes d'exploitation, les moteurs de jeux, les applications réseau, les navigateurs web et bien plus encore. Il est apprécié pour sa sécurité mémoire, sa prévention des erreurs à l'exécution, sa rapidité d'exécution et sa gestion efficace de la mémoire."
@@ -831,8 +861,8 @@
             "url": "/portfolio/img/definition/vs-code/logo.svg"
         },
         "names": [
-            "Visual Studio Code",
             "VS Code",
+            "Visual Studio Code",
             "VSC",
             "VSCode"
         ],
@@ -899,7 +929,7 @@
         "names": [
             "Zig"
         ],
-        "synopsis": "Zig est un langage de programmation compilé impératif polyvalent, typé statiquement, conçu par Andrew Kelley en 2015 pour servir de successeur au C.",
+        "synopsis": "Zig est un langage de programmation compilé impératif polyvalent, typé statiquement, conçu par Andrew Kelley en <time datetime=\"2015\">2015</time> pour servir de successeur au C.",
         "type": "programming-language",
         "wiki": "https://fr.wikipedia.org/wiki/Zig_(langage)"
     }

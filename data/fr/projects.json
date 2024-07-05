@@ -313,10 +313,6 @@
             "Grammaire formelle, Wikipédia": {
                 "anchor": "wikipedia",
                 "href": "https://fr.wikipedia.org/wiki/Grammaire_formelle"
-            },
-            "NASM, site officiel (anglais)": {
-                "anchor": "website",
-                "href": "https://nasm.us/"
             }
         },
         "start-date": "2023-11-15",

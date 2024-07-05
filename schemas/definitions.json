@@ -48,6 +48,8 @@
             "scheme",
             "smalltalk",
             "spyder",
+            "pdf",
+            "nasm",
             "sql",
             "sql-workbench",
             "sqlite",

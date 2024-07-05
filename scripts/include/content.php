@@ -10,7 +10,7 @@ function put_doctype_html(Page $page, Lang $lang) { ?>
 
 function put_footer(Page $page, Lang $lang) { ?>
     <footer class="lvl">
-        <small>&copy; 2024 Raphaël Bardini</small>
+        <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="<?= $lang->get('footerGitHubAnchorTitle') ?>"><?php
            echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60) ?></a>
     </footer>

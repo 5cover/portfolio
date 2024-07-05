@@ -1,3 +1,7 @@
+<?php
+require_once 'fragment.php';
+$f = start('fr');
+?>
 <div lang="en">
     <h3>Prologue &mdash; The Evening</h3>
     <p>On a Friday eveneing, in the home of the Martinaches, safely isolated from the freezing cold of the barren nights of late winter, Emmanuel and his wife are watching TV news.</p>
@@ -13,7 +17,7 @@
     <p>Emmanuel held tightly for what seemed to be hours, deadly silece sometimes troubled by sounds of roofs cracking open and trees falling down.</p>
     <p>He was scared, but he was alive.</p>
     <h3>Chapter 1: Pitch-black</h3>
-    <h4>May 2034</h4>
+    <h4>May <?= $f->year(2034) ?></h4>
     <h5>Tuesday</h5>
     <p>11 years ago, there was a nuclear war. No one remembers much about the specifics of who started it but it didn't take long until the whole world was involved. Cities all over were nuked and most people died.</p>
     <p>When I saw that mushroom cloud I knew my life would never be the same. My old life as an English Teacher in a quiet town is long gone. All that's left now is the bitter pain of memory. But scattered relics of a kinder past remain.</p>
