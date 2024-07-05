@@ -275,13 +275,13 @@
     }
 
     /* Opt-in basic style classes
- *
- * Define basic styles for common elements with explicit opt-in
- */
+     *
+     * Define basic styles for common elements with explicit opt-in
+     */
     /* Link
- *
- * Intended for: <a>
- */
+     *
+     * Intended for: <a>
+     */
     .link:link {
         color: #a66144;
     }
@@ -295,7 +295,7 @@
         text-decoration: underline;
     }
 
-    .link[target='_blank']::after {
+    .link[target='_blank']:not(.definition-tooltip-trigger)::after {
         @include util.sup-annotation;
         content: '↗';
         display: inline-block;
@@ -305,9 +305,9 @@
     }
 
     /* Figure
- *
- * Intended for: <figure>
- */
+     *
+     * Intended for: <figure>
+     */
     .figure {
         @include util.basic-border(1px);
         background-color: var(--color-lvl);

@@ -399,3 +399,5 @@ i'm talking to you, references!
 ## use another target blank glyph
 
 the current one doesn't display properly in all browsers (doesnt display correctly on samsung internet). because it was part of Supplemental Arrow-C. I picked one from Arrows which is more compatible.
+
+## remove glyph on definition links
