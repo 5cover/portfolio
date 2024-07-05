@@ -109,8 +109,8 @@ $(async () => {
             (await dom.getGraphicElement(info, project.title /* todo: format title*/, ['logo'])).outerHTML,
             '')}
             <h3><a href="project/${id}.html">${project.title}</a></h3>
-            <p class="context"><small>${util.ucfirst(project.context)}</small></p>
-            <p class="status">${getStatus(project)}</p>
+            <small class="context">${util.ucfirst(project.context)}</small>
+            <small class="status">${getStatus(project)}</small>
             <p class="abstract">${project.abstract}</p>
             <ul class="list-link">
                 ${(await Promise.all(Object.entries(project.links).map(async ([name, link]) => {
@@ -124,6 +124,6 @@ $(async () => {
     function getStatus(project) {
         const startDate = formatDate(project['start-date']);
         const endDate = util.map(project['end-date'], formatDate, 'en cours');
-        return `<small>${startDate} – ${endDate}</small>`;
+        return `${startDate} – ${endDate}`;
     }
 });
