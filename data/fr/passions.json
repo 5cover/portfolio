@@ -20,7 +20,7 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/piano-tile/1.jpg"
         },
-        "references": {},
+        "references": [],
         "story": {
             "$include": "passion/story/mountain.phtml"
         },
@@ -39,6 +39,6 @@
             "$include": "passion/story/sandbox-videogames.phtml"
         },
         "title": "Jeux-vidéos bac à sable",
-        "references": {}
+        "references": []
     }
 }

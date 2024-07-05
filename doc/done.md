@@ -391,3 +391,7 @@ currently it is a mess. sometimes we use margin, sometimes we use gap... i guess
 `.text` represents textual content. note that textual content may not only be text. it may be figures or other stuff as long as it is displayed in the "standard" way. it is used to enforce typygraphical conventions such as `text-indent`...
 
 btw, should i put text-indent on all paragraphs or only the first one? only the first one, since we already have marings to separate paragraphs.
+
+## don't use key names for html content
+
+i'm talking to you, references!

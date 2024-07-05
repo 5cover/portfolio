@@ -4,24 +4,29 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/definition/zig/logo.svg"
         },
-        "story": {"$include": "perspective/story/the-goal-of-a-programming-language.phtml"},
+        "story": {
+            "$include": "perspective/story/the-goal-of-a-programming-language.phtml"
+        },
         "abstract": "Comment Zig résout les problèmes du C",
         "title": "L'objectif d'un langage de programmation",
         "gallery": [],
         "links": {},
-        "references": {
-            "Implémentation d'un vecteur générique en C (anglais)": {
+        "references": [
+            {
+                "caption": "Implémentation d'un vecteur générique en C (anglais)",
                 "anchor": "website",
                 "href": "https://constantsmatter.com/posts/generic-ds-c/"
             },
-            "Vol 501 d'Ariane 5": {
+            {
+                "caption": "Vol 501 d'Ariane 5",
                 "anchor": "wikipedia",
                 "href": "https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5"
             },
-            "Dépôt des bibliothèques STB appartenant au domaine public (anglais)": {
+            {
+                "caption": "Dépôt des bibliothèques STB appartenant au domaine public (anglais)",
                 "anchor": "github",
                 "href": "https://github.com/nothings/stb"
             }
-        }
+        ]
     }
 }

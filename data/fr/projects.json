@@ -12,9 +12,11 @@
                 "href": "https://anno2070.fandom.com/wiki/User_blog:Scover32/Anno_2070:_Island_maps"
             }
         },
-        "references": {},
+        "references": [],
         "gallery": [],
-        "story": {"$include": "project/story/island-maps.phtml"},
+        "story": {
+            "$include": "project/story/island-maps.phtml"
+        },
         "team": [],
         "title": "Island Maps",
         "tags": [
@@ -33,7 +35,7 @@
                 "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2021-06-15",
         "story": {
             "$include": "project/story/2l2w-french-rural-road.phtml"
@@ -60,9 +62,11 @@
                 "href": "https://github.com/5cover/stb_cori"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2023-10-09",
-        "story": {"$include": "project/story/cori.phtml"},
+        "story": {
+            "$include": "project/story/cori.phtml"
+        },
         "tags": [
             "low-level",
             "library"
@@ -90,9 +94,11 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/project/demineur-python/logo.png"
         },
-        "references": {},
+        "references": [],
         "start-date": "2022-03-01",
-        "story": {"$include": "project/story/demineur-python.phtml"},
+        "story": {
+            "$include": "project/story/demineur-python.phtml"
+        },
         "tags": [
             "game",
             "oop"
@@ -122,9 +128,11 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/project/dialogs/logo.png"
         },
-        "references": {},
+        "references": [],
         "start-date": "2023-06-25",
-        "story": {"$include": "project/story/dialogs.phtml"},
+        "story": {
+            "$include": "project/story/dialogs.phtml"
+        },
         "tags": [
             "oop",
             "library",
@@ -153,9 +161,11 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/project/edplusplus/logo.png"
         },
-        "references": {},
+        "references": [],
         "start-date": "2022-10-21",
-        "story": {"$include": "project/story/edplusplus.phtml"},
+        "story": {
+            "$include": "project/story/edplusplus.phtml"
+        },
         "tags": [
             "software",
             "db",
@@ -179,9 +189,11 @@
                 "href": "https://github.com/5cover/ethercrash"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2023-05-24",
-        "story": {"$include": "project/story/ethercrash.phtml"},
+        "story": {
+            "$include": "project/story/ethercrash.phtml"
+        },
         "tags": [
             "data",
             "cli"
@@ -208,9 +220,11 @@
                 "href": "https://github.com/5cover/FileSignatureDetector"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2022-04-07",
-        "story": {"$include": "project/story/file-signature-detector.phtml"},
+        "story": {
+            "$include": "project/story/file-signature-detector.phtml"
+        },
         "tags": [
             "software"
         ],
@@ -233,9 +247,11 @@
                 "href": "https://github.com/5cover/jslave"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2024-05-30",
-        "story": {"$include": "project/story/jslave.phtml"},
+        "story": {
+            "$include": "project/story/jslave.phtml"
+        },
         "tags": [
             "low-level",
             "cli",
@@ -259,9 +275,11 @@
                 "href": "https://github.com/5cover/portfolio"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2024-06-17",
-        "story": {"$include": "project/story/portfolio.phtml"},
+        "story": {
+            "$include": "project/story/portfolio.phtml"
+        },
         "tags": [
             "web",
             "but-realiser",
@@ -293,28 +311,33 @@
                 "href": "https://github.com/5cover/psdc"
             }
         },
-        "references": {
-            "Analyse lexicale, Wikipédia": {
+        "references": [
+            {
+                "caption": "Analyse lexicale, Wikipédia",
                 "anchor": "wikipedia",
                 "href": "https://fr.wikipedia.org/wiki/Analyse_lexicale"
             },
-            "Analyse syntaxique, Wikipédia": {
+            {
+                "caption": "Analyse syntaxique, Wikipédia",
                 "anchor": "wikipedia",
                 "href": "https://fr.wikipedia.org/wiki/Analyse_syntaxique"
             },
-            "Crafting Interpreters, Robert Nystrom (anglais)": {
+            {
+                "caption": "Crafting Interpreters, Robert Nystrom (anglais)",
                 "anchor": "website",
                 "href": "https://craftinginterpreters.com"
             },
-            "Creating a Compiler, Pixeled, sur YouTube (anglais)": {
+            {
+                "caption": "Creating a Compiler, Pixeled, sur YouTube (anglais)",
                 "anchor": "youtube",
                 "href": "https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs"
             },
-            "Grammaire formelle, Wikipédia": {
+            {
+                "caption": "Grammaire formelle, Wikipédia",
                 "anchor": "wikipedia",
                 "href": "https://fr.wikipedia.org/wiki/Grammaire_formelle"
             }
-        },
+        ],
         "start-date": "2023-11-15",
         "story": {
             "$include": "project/story/psdc.phtml"
@@ -347,9 +370,11 @@
                 "href": "https://github.com/5cover/Puissance-4"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2021-11-15",
-        "story": {"$include": "project/story/puissance-4.phtml"},
+        "story": {
+            "$include": "project/story/puissance-4.phtml"
+        },
         "tags": [
             "game",
             "high-level",
@@ -399,7 +424,7 @@
                 "href": "https://github.com/5cover/s1.01-sudoku"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2023-10-16",
         "story": {
             "$include": "project/story/s1.01.phtml"
@@ -431,9 +456,11 @@
                 "href": "https://github.com/Matteo-K/Sudoku-Solver"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2023-11-27",
-        "story": { "$include": "project/story/s1.02.phtml" },
+        "story": {
+            "$include": "project/story/s1.02.phtml"
+        },
         "tags": [
             "software",
             "but-optimiser",
@@ -468,9 +495,11 @@
                 "href": "todo"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2023-10-25",
-        "story": { "$include": "project/story/s1.03.phtml" },
+        "story": {
+            "$include": "project/story/s1.03.phtml"
+        },
         "tags": [
             "but-administrer",
             "but-collaborer",
@@ -505,9 +534,11 @@
                 "href": "todo"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2023-11-27",
-        "story": {"$include": "project/story/s1.04.phtml"},
+        "story": {
+            "$include": "project/story/s1.04.phtml"
+        },
         "tags": [
             "but-gerer",
             "but-collaborer",
@@ -535,9 +566,11 @@
                 "href": "todo"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2023-10-09",
-        "story": {"$include": "project/story/s1.05.phtml"},
+        "story": {
+            "$include": "project/story/s1.05.phtml"
+        },
         "tags": [
             "but-conduire",
             "but-collaborer",
@@ -572,9 +605,11 @@
                 "href": "todo"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2023-09-08",
-        "story": {"$include": "project/story/s1.06.phtml"},
+        "story": {
+            "$include": "project/story/s1.06.phtml"
+        },
         "tags": [
             "but-collaborer"
         ],
@@ -600,9 +635,11 @@
                 "href": "todo"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2024-05-28",
-        "story": {"$include": "project/story/s2.01.phtml"},
+        "story": {
+            "$include": "project/story/s2.01.phtml"
+        },
         "tags": [
             "but-realiser",
             "oop",
@@ -633,7 +670,7 @@
                 "href": "todo (clone exploration algo in my own public repo)"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2024-03-11",
         "story": {
             "$include": "project/story/s2.02.phtml"
@@ -669,9 +706,11 @@
                 "href": "todo"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2024-05-14",
-        "story": {"$include": "project/story/s2.03.phtml"},
+        "story": {
+            "$include": "project/story/s2.03.phtml"
+        },
         "tags": [
             "but-administrer",
             "but-collaborer",
@@ -707,9 +746,11 @@
                 "href": "todo"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2024-04-23",
-        "story": {"$include": "project/story/s2.04.phtml"},
+        "story": {
+            "$include": "project/story/s2.04.phtml"
+        },
         "tags": [
             "but-gerer",
             "but-collaborer",
@@ -742,9 +783,11 @@
                 "href": "todo"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2024-05-15",
-        "story": {"$include": "project/story/s2.05.phtml"},
+        "story": {
+            "$include": "project/story/s2.05.phtml"
+        },
         "tags": [
             "but-conduire",
             "but-collaborer",
@@ -771,9 +814,11 @@
                 "href": "todo"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2024-04-18",
-        "story": {"$include": "project/story/s2.06.phtml"},
+        "story": {
+            "$include": "project/story/s2.06.phtml"
+        },
         "tags": [
             "but-collaborer"
         ],
@@ -794,7 +839,7 @@
         "end-date": "2023-06-27",
         "gallery": [],
         "links": {},
-        "references": {},
+        "references": [],
         "start-date": "2022-11-15",
         "story": {
             "$include": "project/story/the-last-teacher.phtml"
@@ -816,16 +861,18 @@
                 "href": "https://www.instagram.com/p/CjxQUO3LryP"
             }
         },
-        "references": {
-            "Cities Skylines: Bordertown, Two Dollars Twenty, sur YouTube (anglais)": {
+        "references": [
+            {
+                "caption": "Cities Skylines: Bordertown, Two Dollars Twenty, sur YouTube (anglais)",
                 "anchor": "youtube",
                 "href": "https://youtube.com/playlist?list=PL0vu9rx9cHrUoRedRsFzX367j3DlE_dTk"
             },
-            "Cities Skylines: MARS, Citywokcitywall, sur YouTube (anglais)": {
+            {
+                "caption": "Cities Skylines: MARS, Citywokcitywall, sur YouTube (anglais)",
                 "anchor": "youtube",
                 "href": "https://youtube.com/playlist?list=PLkBlOw_hzgdfL6Gqw0l9P1TYKn_WIgrd-"
             }
-        },
+        ],
         "start-date": "2022-10-15",
         "story": {
             "$include": "project/story/tregoria.phtml"
@@ -867,7 +914,7 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/project/winclean/logo.png"
         },
-        "references": {},
+        "references": [],
         "start-date": "2022-08-15",
         "story": {
             "$include": "project/story/winclean.phtml"
@@ -908,9 +955,11 @@
             "isThemedSvg": false,
             "url": "/portfolio/img/project/wpfzard/logo.png"
         },
-        "references": {},
+        "references": [],
         "start-date": "2022-07-21",
-        "story": {"$include": "project/story/wpfzard.phtml"},
+        "story": {
+            "$include": "project/story/wpfzard.phtml"
+        },
         "tags": [
             "oop",
             "library",
@@ -937,9 +986,11 @@
                 "href": "https://github.com/5cover/ztest"
             }
         },
-        "references": {},
+        "references": [],
         "start-date": "2024-06-01",
-        "story": {"$include": "project/story/ztest.phtml"},
+        "story": {
+            "$include": "project/story/ztest.phtml"
+        },
         "tags": [
             "software",
             "cli",

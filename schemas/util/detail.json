@@ -38,7 +38,9 @@
                                 "type": "string"
                             }
                         },
-                        "required": ["url"]
+                        "required": [
+                            "url"
+                        ]
                     },
                     {
                         "properties": {
@@ -46,7 +48,9 @@
                                 "type": "string"
                             }
                         },
-                        "required": ["content"]
+                        "required": [
+                            "content"
+                        ]
                     },
                     {
                         "properties": {
@@ -55,7 +59,9 @@
                                 "type": "string"
                             }
                         },
-                        "required": ["iframe-src"]
+                        "required": [
+                            "iframe-src"
+                        ]
                     }
                 ]
             }
@@ -70,9 +76,23 @@
             "$ref": "graphic.json"
         },
         "references": {
-            "type": "object",
-            "additionalProperties": {
-                "$ref": "anchor.json"
+            "type": "array",
+            "items": {
+                "allOf": [
+                    {
+                        "required": [
+                            "caption"
+                        ],
+                        "properties": {
+                            "caption": {
+                                "$ref": "html.json"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "anchor.json"
+                    }
+                ]
             }
         },
         "story": {

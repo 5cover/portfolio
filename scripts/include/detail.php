@@ -86,12 +86,12 @@ abstract class Details {
         ?>
         <ol class="list-reference">
             <?php $ref_num = 1;
-            foreach ($this->data['references'] as $name => $ref) { ?>
+            foreach ($this->data['references'] as $ref) { ?>
                 <li id="ref-<?= $ref_num ?>"><span class="ref-backlink" aria-label="<?= $lang->get('refJumpUp') ?>" title="<?= $lang->get('refJumpUp') ?>"><a class="link" href="#cite-ref-<?= $ref_num++ ?>">&uarr;</a></span>
                     <a class="link" target="_blank" rel="noopener noreferrer" href="<?= $ref['href'] ?>">
                         <?php $a = $anchors[$ref['anchor']];
                         echo get_graphic_element($a['isThemedSvg'], $a['url']) ?>
-                        <span><?= $name ?></span>
+                        <span><?= $ref['caption'] ?></span>
                     </a>
                 </li>
             <?php } ?>

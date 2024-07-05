@@ -246,7 +246,3 @@ no plural because as the defined creation is unique and it doesn't make sense to
 ## use another target blank glyph
 
 the current one doesn't display properly in all browsers (doesnt display correctly on samsung internet).
-
-## don't use key names for html content
-
-i'm talking to you, references!
