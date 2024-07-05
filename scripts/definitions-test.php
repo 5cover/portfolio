@@ -16,11 +16,11 @@ put_head($page, $lang);
             $defs = $lang->get_data_json('definitions');
             foreach ($defs as $id => $def) {
                 ?>
-                <dt id="<?php echo $id ?>"><?php echo $id ?></dt>
+                <dt id="<?= $id ?>"><?= $id ?></dt>
                 <dd>
-                    <?php echo implode(', ', array_splice($def['names'], 1)) ?>
+                    <?= implode(', ', array_splice($def['names'], 1)) ?>
                     <div>
-                        <?php echo get_definition_tooltip_trigger($lang, $id, $def) ?>
+                        <?= get_definition_tooltip_trigger($lang, $id, $def) ?>
                     </div>
                 </dd>
             <?php } ?>

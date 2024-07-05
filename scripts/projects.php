@@ -12,16 +12,16 @@ require_once 'help.php';
             <!-- Fill this up dynamically -->
         </datalist>
         <section class="lvl" id="search-bar">
-            <h1><?php echo $lang->get('projectSearchSearch') ?></h1>
-            <input incremental type="search" id="search-input" placeholder="<?php echo $lang->get('projectSearchPlaceholder') ?>" autocomplete="on" list="project-titles">
+            <h1><?= $lang->get('projectSearchSearch') ?></h1>
+            <input incremental type="search" id="search-input" placeholder="<?= $lang->get('projectSearchPlaceholder') ?>" autocomplete="on" list="project-titles">
             <section>
-                <h3><?php echo $lang->get('projectSearchTags') ?></h3>
+                <h3><?= $lang->get('projectSearchTags') ?></h3>
                 <ul class="lvl list-rect" id="list-tag">
                     <!-- Tags will be added here -->
                 </ul>
             </section>
             <section>
-                <h3><?php echo $lang->get('projectSearchSort') ?></h3>
+                <h3><?= $lang->get('projectSearchSort') ?></h3>
                 <ul class="lvl list-rect" id="list-sorting">
                     <li><label for="sort-asc">A-Z<input type="radio" name="sorting" id="sort-asc" value="asc" checked></label></li>
                     <li><label for="sort-desc">Z-A<input type="radio" name="sorting" id="sort-desc" value="desc"></label></li>

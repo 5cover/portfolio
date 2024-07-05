@@ -47,7 +47,7 @@ abstract class Details {
     abstract function put_card(Lang $lang, string $id, int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL);
 
     protected function put_abstract() { ?>
-        <p class="abstract"><?php echo $this->data['abstract'] ?></p>
+        <p class="abstract"><?= $this->data['abstract'] ?></p>
     <?php }
 
     protected function put_card_link_list() {
@@ -56,7 +56,7 @@ abstract class Details {
         <ul class="list-link">
             <?php foreach ($this->data['links'] as $name => $link) { ?>
                 <li>
-                    <a href="<?php echo $link['href'] ?>" title="<?php echo $name ?>" target="_blank" rel="noopener noreferrer">
+                    <a href="<?= $link['href'] ?>" title="<?= $name ?>" target="_blank" rel="noopener noreferrer">
                         <?php $a = $anchors[$link['anchor']];
                         echo get_graphic_element($a['isThemedSvg'], $a['url']) ?>
                     </a>
@@ -71,10 +71,10 @@ abstract class Details {
         <ul class="lvl list-link">
             <?php foreach ($this->data['links'] as $name => $link) { ?>
                 <li>
-                    <a target="_blank" rel="noopener noreferrer" href="<?php echo $link['href'] ?>">
+                    <a target="_blank" rel="noopener noreferrer" href="<?= $link['href'] ?>">
                         <?php $a = $anchors[$link['anchor']];
                         echo get_graphic_element($a['isThemedSvg'], $a['url']) ?>
-                        <span><?php echo $name ?></span>
+                        <span><?= $name ?></span>
                     </a>
                 </li>
             <?php } ?>
@@ -87,11 +87,11 @@ abstract class Details {
         <ol class="list-reference">
             <?php $ref_num = 1;
             foreach ($this->data['references'] as $name => $ref) { ?>
-                <li id="ref-<?php echo $ref_num ?>"><span class="ref-backlink" aria-label="<?php echo $lang->get('refJumpUp') ?>" title="<?php echo $lang->get('refJumpUp') ?>"><a class="link" href="#cite-ref-<?php echo $ref_num++ ?>">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="<?php echo $ref['href'] ?>">
+                <li id="ref-<?= $ref_num ?>"><span class="ref-backlink" aria-label="<?= $lang->get('refJumpUp') ?>" title="<?= $lang->get('refJumpUp') ?>"><a class="link" href="#cite-ref-<?= $ref_num++ ?>">&uarr;</a></span>
+                    <a class="link" target="_blank" rel="noopener noreferrer" href="<?= $ref['href'] ?>">
                         <?php $a = $anchors[$ref['anchor']];
                         echo get_graphic_element($a['isThemedSvg'], $a['url']) ?>
-                        <span><?php echo $name ?></span>
+                        <span><?= $name ?></span>
                     </a>
                 </li>
             <?php } ?>
@@ -100,8 +100,8 @@ abstract class Details {
 
     protected function put_story(Lang $lang) { ?>
         <section id="story">
-            <h2><?php echo $lang->get('story') ?></h2>
-            <?php echo $this->data['story'] ?>
+            <h2><?= $lang->get('story') ?></h2>
+            <?= $this->data['story'] ?>
         </section>
     <?php }
 
@@ -121,11 +121,11 @@ abstract class Details {
         $gallery_num = 1;
         if (count($gallery = $this->data['gallery']) > 0) { ?>
             <section id="gallery">
-                <h2><?php echo $lang->get('gallery') ?></h2>
+                <h2><?= $lang->get('gallery') ?></h2>
                 <ul class="lvl gallery">
                     <?php foreach ($gallery as $figure) { ?>
                         <li>
-                            <figure id="gallery-<?php echo $gallery_num++ ?>" class="figure">
+                            <figure id="gallery-<?= $gallery_num++ ?>" class="figure">
                                 <?php
                                 $caption = $figure['caption'];
                                 if ($url = $figure['url'] ?? null) {
@@ -136,7 +136,7 @@ abstract class Details {
                                     echo $figure['content'];
                                 }
                                 ?>
-                                <figcaption><?php echo $caption ?></figcaption>
+                                <figcaption><?= $caption ?></figcaption>
                             </figure>
                         </li>
                     <?php } ?>
@@ -155,20 +155,20 @@ final class Passion extends Details {
         ?>
         <main <?php $this->put_background_style_attr() ?>>
             <header>
-                <h1><?php echo $this->data['title'] ?></h1>
+                <h1><?= $this->data['title'] ?></h1>
                 <?php $this->put_logo($lang) ?>
                 <?php $this->put_abstract() ?>
             </header>
             <?php if (count($this->data['links']) > 0) { ?>
                 <section id="links">
-                    <h2><?php echo $lang->get('links') ?></h2>
+                    <h2><?= $lang->get('links') ?></h2>
                     <?php $this->put_page_link_list() ?>
                 </section>
             <?php }
             $this->put_story($lang);
             if (count($this->data['references']) > 0) { ?>
                 <section id="references">
-                    <h2><?php echo $lang->get('references') ?></h2>
+                    <h2><?= $lang->get('references') ?></h2>
                     <?php $this->put_reference_list($lang); ?>
                 </section>
             <?php }
@@ -178,7 +178,7 @@ final class Passion extends Details {
 
     function put_card(Lang $lang, string $id, int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL) {
         ?>
-        <li id="<?php echo $id ?>" <?php $this->put_background_style_attr('bg-img-card') ?>>
+        <li id="<?= $id ?>" <?php $this->put_background_style_attr('bg-img-card') ?>>
             <?php $this->put_logo($lang) ?>
             <div>
                 <?php element("h$headingLevel", "<a href=\"passion/$id.html\">{$this->data['title']}</a>") ?>
@@ -208,20 +208,20 @@ final class Perspective extends Details {
         ?>
         <main <?php $this->put_background_style_attr() ?>>
             <header>
-                <h1><?php echo $this->data['title'] ?></h1>
+                <h1><?= $this->data['title'] ?></h1>
                 <?php $this->put_logo($lang) ?>
                 <?php $this->put_abstract() ?>
             </header>
             <?php if (count($this->data['links']) > 0) { ?>
                 <section id="links">
-                    <h2><?php echo $lang->get('links') ?></h2>
+                    <h2><?= $lang->get('links') ?></h2>
                     <?php $this->put_page_link_list() ?>
                 </section>
             <?php }
             $this->put_story($lang);
             if (count($this->data['references']) > 0) { ?>
                 <section id="references">
-                    <h2><?php echo $lang->get('references') ?></h2>
+                    <h2><?= $lang->get('references') ?></h2>
                     <?php $this->put_reference_list($lang); ?>
                 </section>
             <?php }
@@ -231,7 +231,7 @@ final class Perspective extends Details {
 
     function put_card(Lang $lang, string $id, int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL) {
         ?>
-        <li id="<?php echo $id ?>" <?php $this->put_background_style_attr('bg-img-card') ?>>
+        <li id="<?= $id ?>" <?php $this->put_background_style_attr('bg-img-card') ?>>
             <?php $this->put_logo($lang) ?>
             <div>
                 <?php element("h$headingLevel", "<a href=\"perspective/$id.html\">{$this->data['title']}</a>") ?>
@@ -269,33 +269,33 @@ final class Project extends Details {
         <main <?php $this->put_background_style_attr() ?>>
             <header>
                 <?php $this->put_tags($lang) ?>
-                <h1><?php echo $this->data['title'] ?></h1>
+                <h1><?= $this->data['title'] ?></h1>
                 <?php $this->put_logo($lang) ?>
                 <?php $this->put_abstract() ?>
                 <div class="status-context"><?php $this->put_context() ?><?php $this->put_status($lang) ?></div>
             </header>
             <?php if (count($this->data['links']) > 0) { ?>
                 <section id="links">
-                    <h2><?php echo $lang->get('links') ?></h2>
+                    <h2><?= $lang->get('links') ?></h2>
                     <?php $this->put_page_link_list() ?>
                 </section>
             <?php }
             if (count($team = $this->data['team']) > 0) { ?>
                 <section id="team">
-                    <h2><?php echo $lang->get('team') ?></h2>
+                    <h2><?= $lang->get('team') ?></h2>
                     <?php put_definition_list($lang, $team) ?>
                 </section>
             <?php }
             $this->put_story($lang);
             if (count($this->data['references']) > 0) { ?>
                 <section id="references">
-                    <h2><?php echo $lang->get('references') ?></h2>
+                    <h2><?= $lang->get('references') ?></h2>
                     <?php $this->put_reference_list($lang); ?>
                 </section>
             <?php }
             if (count($technologies = $this->data['technologies']) > 0) { ?>
                 <section id="technologies">
-                    <h2><?php echo $lang->get('technologies') ?></h2>
+                    <h2><?= $lang->get('technologies') ?></h2>
                     <?php put_definition_list($lang, $technologies) ?>
                 </section>
             <?php }
@@ -340,7 +340,7 @@ final class Project extends Details {
     <?php }
 
     private function put_context() { ?>
-        <small class="context"><?php echo ucfirst($this->data['context']) ?></small>
+        <small class="context"><?= ucfirst($this->data['context']) ?></small>
     <?php }
 
     static function put_cards_list(Lang $lang, array $projects, int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL) { ?>
@@ -353,7 +353,7 @@ final class Project extends Details {
     }
 
     private static function put_date(Lang $lang, string $date) {
-        ?><time datetime="<?php echo $date ?>"><?php echo $lang->formatDate(parse_date($date)) ?></time><?php
+        ?><time datetime="<?= $date ?>"><?= $lang->formatDate(parse_date($date)) ?></time><?php
     }
 
 }

@@ -32,11 +32,11 @@ put_head($page, $lang);
                 ?>
                 <li>
                     <figure>
-                        <img src="<?php echo $src ?>" alt="<?php echo $lang->get("pianoTile{$num}Title") ?>" width="240" height="480" loading="lazy" title="<?php echo strip_tags($lang->get("pianoTile{$num}Desc")) ?>">
+                        <img src="<?= $src ?>" alt="<?= $lang->get("pianoTile{$num}Title") ?>" width="240" height="480" loading="lazy" title="<?= strip_tags($lang->get("pianoTile{$num}Desc")) ?>">
                         <figcaption>
                             <div>
-                                <h2><a href="<?php echo $href ?>"><?php echo $lang->get("pianoTile{$num}Title") ?></a></h2>
-                                <p><?php echo $lang->get("pianoTile{$num}Desc") ?></p>
+                                <h2><a href="<?= $href ?>"><?= $lang->get("pianoTile{$num}Title") ?></a></h2>
+                                <p><?= $lang->get("pianoTile{$num}Desc") ?></p>
                             </div>
                         </figcaption>
                     </figure>
@@ -45,19 +45,19 @@ put_head($page, $lang);
         </ul>
         <article id="me" class="lvl content-block">
             <div>
-                <h2><?php echo $lang->get('indexMe') ?></h2>
-                <?php echo $lang->get('indexAboutMeContent') ?>
+                <h2><?= $lang->get('indexMe') ?></h2>
+                <?= $lang->get('indexAboutMeContent') ?>
             </div>
-            <img src="/portfolio/img/me.jpg" alt="<?php echo $lang->get('indexMyPhoto') ?>" width="1600" height="1600" loading="lazy" title="<?php echo $lang->get('indexMyPhoto') ?>">
+            <img src="/portfolio/img/me.jpg" alt="<?= $lang->get('indexMyPhoto') ?>" width="1600" height="1600" loading="lazy" title="<?= $lang->get('indexMyPhoto') ?>">
         </article>
         <section id="ongoing-projects" class="lvl">
-            <h2><?php echo $lang->get('indexOngoingProjects') ?></h2>
+            <h2><?= $lang->get('indexOngoingProjects') ?></h2>
             <?php Project::put_cards_list($lang, array_filter($projects, fn($p) => !array_key_exists('end-date', $p->data))) ?>
-            <a href="projects.html" class="lvl button-link"><?php echo $lang->get('indexAllMyProjects') ?></a>
+            <a href="projects.html" class="lvl button-link"><?= $lang->get('indexAllMyProjects') ?></a>
         </section>
         <article id="contact" class="lvl content-block">
             <div>
-                <h2><?php echo $lang->get('indexContact') ?></h2>
+                <h2><?= $lang->get('indexContact') ?></h2>
                 <address>
                     <ul>
                         <li title="E-mail"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="mailto:bardini.raphael@gmail.com"><?php
@@ -76,8 +76,8 @@ put_head($page, $lang);
                 </address>
             </div>
             <a href="/portfolio/cv_bardini_raphael.pdf" target="_blank" rel="noopener noreferrer">
-                <img src="/portfolio/img/cv_preview.webp" alt="<?php echo $lang->get('indexMyResumePreview') ?>" width="1241" height="1755" loading="lazy">
-                <span><?php echo $lang->get('indexMyResume') ?></span>
+                <img src="/portfolio/img/cv_preview.webp" alt="<?= $lang->get('indexMyResumePreview') ?>" width="1241" height="1755" loading="lazy">
+                <span><?= $lang->get('indexMyResume') ?></span>
             </a>
         </article>
     </main>
