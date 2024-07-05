@@ -297,9 +297,9 @@
 
     .link[target='_blank']::after {
         @include util.sup-annotation;
-        content: '🡭';
+        content: '↗';
         display: inline-block;
-        font-size: .4em;
+        font-size: .5em;
         text-decoration: none;
         user-select: none;
     }

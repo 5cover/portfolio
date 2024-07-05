@@ -395,3 +395,7 @@ btw, should i put text-indent on all paragraphs or only the first one? only the 
 ## don't use key names for html content
 
 i'm talking to you, references!
+
+## use another target blank glyph
+
+the current one doesn't display properly in all browsers (doesnt display correctly on samsung internet). because it was part of Supplemental Arrow-C. I picked one from Arrows which is more compatible.
