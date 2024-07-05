@@ -307,6 +307,7 @@
         @include hover-card;
 
         &#{const.$hover} {
+
             /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
             .link {
                 color: var(--color-fg);
@@ -317,5 +318,63 @@
         h3 > a {
             @include hover-card-target;
         }
+    }
+}
+
+/* Wraps anywhere on overflow and shows hyphens when words are cut */
+@mixin wrap-anywhere {
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+/* Emulates the gap property using margins */
+@mixin margin-gap($margin-top, $margin-bottom: $margin-top) {
+    &:not(:first-child) {
+        margin-top: $margin-top;
+    }
+    &:not(:last-child) {
+        margin-bottom: $margin-bottom;
+    }
+}
+
+/* Heading margins */
+@mixin heading-margins($min-level: 1, $max-level: 6) {
+
+    @for $i from $min-level through $max-level {
+        h#{$i} {
+            @include margin-gap(const.$heading-margin);
+        }
+    }
+}
+
+/* Text
+ *
+ * Textual content. Applied to a container.
+*/
+@mixin text {
+    @include heading-margins;
+
+    p:first-of-type {
+        @include justify;
+        text-indent: 2cap;
+    }
+
+    p,
+    .figure,
+    pre {
+        @include margin-gap(const.$p-margin);
+    }
+}
+
+/* Cols
+ *
+ * Line-sized columns on the element
+ */
+@mixin cols {
+    max-width: 100%;
+    column-width: const.$max-line-length;
+
+    > * {
+        max-width: const.$max-line-length;
     }
 }

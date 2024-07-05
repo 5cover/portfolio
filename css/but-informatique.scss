@@ -1,13 +1,10 @@
 @use 'base';
 @use 'const';
 @use 'util';
+@include util.heading-margins(2, 3);
 
 main {
     margin: 0 const.$full-width-horizontal-margin;
-}
-
-#resultat-pour-moi ul {
-    padding-left: 2em;
 }
 
 @mixin content-and-image {
@@ -17,39 +14,44 @@ main {
     justify-content: space-between;
 }
 
+:is(#presentation, #resultat-pour-moi) h2 {
+    display: none;
+}
+
+
 #titre {
     @include content-and-image;
 }
 
 #presentation {
-    @include util.justify;
-    column-width: const.$max-line-length;
-
-    p:first-child {
-        margin-top: 0;
-    }
-
-    p:last-child {
-        margin-bottom: 0;
+    @include util.text;
+    div {
+        @include util.cols;
     }
 }
 
-#competences > ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: const.$full-width-vertical-margin;
+#competences {
+    p:not(.list-project *) {
+        @include util.margin-gap(const.$p-margin);
+    }
 
-    > li {
-        @include util.transparent-background-image(--bg-img, var(--color-lvl-rgb), .1);
-        padding: 1.5em;
-        border-radius: 1.5em;
+    > ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: const.$full-width-vertical-margin;
+
+        > li {
+            @include util.transparent-background-image(--bg-img, var(--color-lvl-rgb), .1);
+            padding: 1.5em;
+            border-radius: 1.5em;
+        }
     }
 }
 
-#resultat-pour-moi {
+:has(> #resultat-pour-moi) {
     @include content-and-image;
-
+    
     figure {
         $border-radius: 1em;
         border-radius: $border-radius;
@@ -60,7 +62,8 @@ main {
         }
     }
 
-    div {
+    #resultat-pour-moi {
+        @include util.text;
         @include util.gapped(1.5);
     }
 
@@ -68,7 +71,9 @@ main {
         display: flex;
         flex-direction: column;
         gap: .5lh;
+        padding-left: 2em;
     }
+
     li {
         max-width: const.$max-line-length;
     }

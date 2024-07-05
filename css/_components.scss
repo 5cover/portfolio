@@ -13,7 +13,7 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: .5em
+    gap: .5em;
 }
 
 /* Theme switch control
@@ -372,34 +372,11 @@
     }
 }
 
-/* Text
- *
- * Textual content. May be applied to a container of paragraphs or a single paragraph.
-*/
-.text p,
-p.text {
-    &:first-of-type:not(:last-of-type) {
-        text-indent: 2cap;
-    }
-}
-
+/* Mixin classes */
 .text {
-    h1, h2, h3, h4, h5, h6 {
-        margin-bottom: const.$heading-margin;
-    }
-
-    > p, > .figure {
-        &:not(:last-child) {
-            margin-bottom: const.$p-margin;
-        }
-    }
+    @include util.text;
 }
 
-.text:has(> :not(:only-child)) {
-    @include util.justify;
-    column-width: const.$max-line-length;
-
-    > * {
-        max-width: const.$max-line-length;
-    }
+.cols {
+    @include util.cols;
 }

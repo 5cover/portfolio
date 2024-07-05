@@ -50,7 +50,7 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <script async src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
         <!-- Highlight.JS -->
         <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
-        <script async src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
         <script type="module" src="/portfolio/js/base.js"></script>
         <?php
         $g = glob_web('/portfolio/js/' . $page->name . '.js');

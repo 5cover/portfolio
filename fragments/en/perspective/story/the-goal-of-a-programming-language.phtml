@@ -2,12 +2,15 @@
 require_once 'fragment.php';
 $f = start('fr');
 ?>
-<p><?php echo $f->def('c') ?> is the first programming language I've learned, all the way back in <?php echo $f->year(2017) ?>. However I recently started learning <?php echo $f->def('zig') ?>. <?php echo $f->def('zig') ?> is similar to <?php echo $f->def('c') ?> in may ways. It is a low-level language destined for systems programming and hardware interaction. And I absolutely love it! I've implemented <?php echo $f->a('a clone of the GNU '.$f->code('test').' command', 'project/ztest.html') ?> to learn it. It fixes many of the problems and shortcomings of <?php echo $f->def('c') ?>.</p>
-
-<h4>Generics</h4>
-<p>Generics are a pain to do in <?php echo $f->def('c') ?>. There are multiple approaches: void pointers, macros, passing the type size. But there are very few guarantees of correctness and the syntax is tedious.</p>
-<figure class="figure">
-    <?php echo $f->codeblock(<<<CODE
+<div class="cols">
+    <p><?php echo $f->def('c') ?> is the first programming language I've learned, all the way back in <?php echo $f->year(2017) ?>. However I recently started learning <?php echo $f->def('zig') ?>. <?php echo $f->def('zig') ?> is similar to <?php echo $f->def('c') ?> in may ways. It is a low-level language destined for systems programming and hardware interaction. And I absolutely love it! I've implemented <?php echo $f->a('a clone of the GNU ' . $f->code('test') . ' command', 'project/ztest.html') ?> to learn it. This language fixes many of the problems and shortcomings of <?php echo $f->def('c') ?>.</p>
+</div>
+<article id="generics">
+    <h3>Generics</h3>
+    <div class="cols">
+        <p>Generics are a pain to do in <?php echo $f->def('c') ?>. There are multiple approaches: void pointers, macros, passing the type size. But there are very few guarantees of correctness and the syntax is tedious.</p>
+        <figure class="figure">
+            <?php echo $f->codeblock(<<<CODE
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,46 +18,46 @@ $f = start('fr');
 #define vector_MIN_CAP 32
 
 #define vector_struct(T) \
-  typedef struct T##_vector { \
-    T *buf; \
-    size_t capacity; \
-    size_t size; \
-  } T##_vector;
+    typedef struct T##_vector { \
+T *buf; \
+size_t capacity; \
+size_t size; \
+    } T##_vector;
 
 #define vector_init(T) \
-  void T##_vector_init(T##_vector *vec) { \
-    vec->capacity = vector_MIN_CAP; \
-    vec->buf = malloc(sizeof(T) * vec->capacity); \
-    vec->size = 0; \
-  }
+    void T##_vector_init(T##_vector *vec) { \
+vec->capacity = vector_MIN_CAP; \
+vec->buf = malloc(sizeof(T) * vec->capacity); \
+vec->size = 0; \
+    }
 
 #define vector_get(T) \
-  void *T##_vector_get(T##_vector *vec, size_t idx) { return vec->buf + idx; }
+    void *T##_vector_get(T##_vector *vec, size_t idx) { return vec->buf + idx; }
 
 #define vector_set(T) \
-  void T##_vector_set(T##_vector *vec, size_t idx, T data) { \
-    vec->buf[idx] = data; \
-  }
+    void T##_vector_set(T##_vector *vec, size_t idx, T data) { \
+vec->buf[idx] = data; \
+    }
 
 #define vector_push(T) \
-  void T##_vector_push(T##_vector *vec, T data) { \
-    if (vec->size == vec->capacity) { \
-      vec->capacity *= 2; \
-      vec->buf = realloc(vec->buf, sizeof(T) * vec->capacity); \
-    } \
-    T##_vector_set(vec, vec->size++, data); \
-  }
+    void T##_vector_push(T##_vector *vec, T data) { \
+if (vec->size == vec->capacity) { \
+    vec->capacity *= 2; \
+    vec->buf = realloc(vec->buf, sizeof(T) * vec->capacity); \
+} \
+T##_vector_set(vec, vec->size++, data); \
+    }
 
 #define vector(T) \
-  vector_struct(T); \
-  vector_init(T) vector_get(T) vector_set(T) vector_push(T)</code></pre>
+    vector_struct(T); \
+    vector_init(T) vector_get(T) vector_set(T) vector_push(T)
 CODE) ?>
-    <figcaption>Implementation of a generic vector using macros in <?php echo $f->def('c') ?><?php echo $f->ref() ?>. As you can see, the code is obfuscated and fragile. Usage would be unnecessarily verbose and tedious.</figcaption>
-</figure>
-<p>In <?php echo $f->def('zig') ?>, generics are easy as pie. You can pass type arguments to functions as first-class citizens. You can even store types in constants.</p>
-<p>What about generic data structures? Well, just make a generic function that defines the structure locally using the type arguments and returns an instance of it.</p>
-<figure class="figure">
-    <?php echo $f->codeblock(<<<CODE
+            <figcaption>Implementation of a generic vector using macros in <?php echo $f->def('c') ?><?php echo $f->ref() ?>. As you can see, the code is obfuscated and fragile. Usage would be unnecessarily verbose and tedious.</figcaption>
+        </figure>
+        <p>In <?php echo $f->def('zig') ?>, generics are easy as pie. You can pass type arguments to functions as first-class citizens. You can even store types in constants.</p>
+        <p>What about generic data structures? Well, just make a generic function that defines the structure locally using the type arguments and returns an instance of it.</p>
+        <figure class="figure">
+            <?php echo $f->codeblock(<<<CODE
 pub fn Binary(comptime T: type) type {
     return struct {
         left: T,
@@ -62,110 +65,105 @@ pub fn Binary(comptime T: type) type {
     };
 }
 CODE) ?>
-    <figcaption>Sample <?php echo $f->def('zig') ?> code for a generic data structure (a binary expression for a parser)</figcaption>
-</figure>
-
-<h4>Explicit and exhaustive error handling</h4>
-
-<figure class="figure">
-    <?php echo $f->codeblock('printf("Hello world\n");') ?>
-    <figcaption>This code can fail. <strong>The error is ignored.</strong></figcaption>
-</figure>
-
-<figure class="figure">
-    <?php echo $f->codeblock(<<<CODE
+            <figcaption>Sample <?php echo $f->def('zig') ?> code for a generic data structure (a binary expression for a parser)</figcaption>
+        </figure>
+    </div>
+</article>
+<article id="explicit-and-exhaustive-error-handling">
+    <h3>Explicit and exhaustive error handling</h3>
+    <div class="cols">
+        <figure class="figure">
+            <?php echo $f->codeblock('printf("Hello world\n");') ?>
+            <figcaption>This code can fail. <strong>The error is ignored.</strong></figcaption>
+        </figure>
+        <figure class="figure">
+            <?php echo $f->codeblock(<<<CODE
 const stdout = std.io.getStdOut().writer();
 try stdout.print("Hello world\n");
 CODE) ?>
-    <figcaption>This code can also fail. But the <?php echo $f->code('try') ?> indicates that in case of an error, the error is <strong>returned</strong>. If we're in the <?php echo $f->code('main') ?> function, it will crash the program.</figcaption>
-</figure>
-
-<p>According to <cite><?php echo $f->code('printf') ?>'s man page</cite>, <q>if an output error is encountered, a negative value is returned</q>. This means that, if we want to be 100% correct and handle all possible failures for our program, we shoud enclose every call to <?php echo $f->code('printf') ?> (or any other function of the family) in an <?php echo $f->code('if') ?> statement and handle the failure appropriately.</p>
-
-<p>However who does that? The return value of <?php echo $f->code('printf') ?> is almost always ignored. The reason is that we don't know have anything relevant to do on failure. If <?php echo $f->code('printf') ?> has failed, something must have gone very wrong, and the program is probably going to crash. Maybe we're out of memory or in the a kernel panic is occuring. Exiting seems like a good choice; but that is not the behavior expressed when you implicitly ignore <?php echo $f->code('printf') ?>'s return value; instead, the error is ignored and the program continues, as if nothing happened.</p>
-
-<p><?php echo $f->def('zig') ?>'s explicit error handling model is a must-have. It also makes use of the <q>errors as values</q> pattern with error sets. There are also compile-time invariants on the handling of every error.</p>
-
-<p>Ignorance is no longer the default. Together, we can ascend and build safer sofware.</p>
-
-<h4>Explicit number sizes</h4>
-
-<p><?php echo $f->def('zig') ?> does not have a generic integer or floating-point type whose size is determined by the compiler and architecture you're using. Instead, all number sizes are explicity indicated in the code: <?php echo $f->code('u32') ?> for a 32 bit unsigned integer, for instance.</p>
-
-<p>This annoyed me at first; but it makes sense if you think about it: <strong>you</strong> give a variable its value, so <strong>you</strong> should decide on its size, as it determines the range of values it supports.</p>
-
-<p>It's possible this explicit approach would have prevented Ariane 5's failure due to an integer overflow<?php echo $f->ref() ?></p>
-
-<h4><?php echo $f->code('defer') ?>: the best thing since sliced bread</h4>
-
-<p><?php echo $f->code('defer') ?> is such a simple concept, but it solves so many problems. It brings related statements close to each other in the code, even when they need to be executed at different times.</p>
-
-<p>Its initial purpose is for memory allocation, but it can be used for other things too. It helps to ensure that resources are cleaned up when they are no longer needed. Instead of needing to remember to manually free up the resource, you can add a <?php echo $f->code('defer') ?> statement right next to the statement that allocates the resource.</p>
-
-<figure class="figure">
-    <?php echo $f->codeblock(<<<CODE
+            <figcaption>This code can also fail. But the <?php echo $f->code('try') ?> indicates that in case of an error, the error is <strong>returned</strong>. If we're in the <?php echo $f->code('main') ?> function, it will crash the program.</figcaption>
+        </figure>
+        <p>According to <cite><?php echo $f->code('printf') ?>'s man page</cite>, <q>if an output error is encountered, a negative value is returned</q>. This means that to be 100% correct and handle all possible failures, we must enclose every call to <?php echo $f->code('printf') ?> (or any other function of the family) in an <?php echo $f->code('if') ?> statement and handle the failure appropriately.</p>
+        <p>However who does that? The return value of <?php echo $f->code('printf') ?> is almost always ignored. The reason is that we don't know have anything relevant to do on failure. If <?php echo $f->code('printf') ?> has failed, something must have gone very wrong, and the program is probably going to crash. Maybe we're out of memory or in the a kernel panic is occuring. Exiting seems like a good choice; but that is not the behavior expressed when you implicitly ignore <?php echo $f->code('printf') ?>'s return value; instead, the error is ignored and the program continues, as if nothing happened.</p>
+        <p><?php echo $f->def('zig') ?>'s explicit error handling model is a must-have. It also makes use of the <q>errors as values</q> pattern with error sets. There are also compile-time invariants on the handling of every error.</p>
+        <p>Ignorance is no longer the default. Together, we can ascend and build safer sofware.</p>
+    </div>
+</article>
+<article id="explicit-number-sizes">
+    <h3>Explicit number sizes</h3>
+    <div class="cols">
+        <p><?php echo $f->def('zig') ?> does not have a generic integer or floating-point type whose size is determined by the compiler and architecture you're using. Instead, all number sizes are explicity indicated in the code: <?php echo $f->code('u32') ?> for a 32 bit unsigned integer, for instance.</p>
+        <p>This annoyed me at first; but it makes sense if you think about it: <strong>you</strong> give a variable its value, so <strong>you</strong> should decide on its size, as it determines the range of values it supports.</p>
+        <p>It's possible this explicit approach would have prevented Ariane 5's failure due to an integer overflow<?php echo $f->ref() ?></p>
+    </div>
+</article>
+<article id="defer-the-best-thing-since-sliced-bread">
+    <h3><?php echo $f->code('defer') ?>: the best thing since sliced bread</h3>
+    <div class="cols">
+        <p><?php echo $f->code('defer') ?> is such a simple concept, but it solves so many problems. It brings related statements close to each other in the code, even when they need to be executed at different times.</p>
+        <p>Its initial purpose is for memory allocation, but it can be used for other things too. It helps to ensure that resources are cleaned up when they are no longer needed. Instead of needing to remember to manually free up the resource, you can add a <?php echo $f->code('defer') ?> statement right next to the statement that allocates the resource.</p>
+        <figure class="figure">
+            <?php echo $f->codeblock(<<<CODE
 var i: u8 = 1;
 while (i < 100) {
     defer i++;
-
     // i's value hasn't changed
     // Do some work
     // ...
 }
 CODE) ?>
-    <figcaption>Another usage of <?php echo $f->code('defer') ?> for incrementing a loop variant. The incremantion is done at the start of the loop, close to the condition and the variant declaration. It is actually executed at the end of the loop block.</figcaption>
-</figure>
-
-<h4>A richer standard library</h4>
-
-<p><?php echo $f->def('c') ?>'s standard library is quite rudimentary. You often need to download an STB library<?php echo $f->ref() ?> when you want an arena allocator or an hash table.</p>
-
-<p>You can also learn to implement these data structures and algorithms yourself, which is why I think learning <?php echo $f->def('c') ?> as my first language has really helped me become a better programmer.</p>
-
-<p><?php echo $f->def('zig') ?> solves this problem by having a richer standard library. This isn't unique to <?php echo $f->def('zig') ?>, though. Similar languages like <?php echo $f->def('go') ?> or <?php echo $f->def('rust') ?> also have rich standard libraries.</p>
-
-<h4>A standard build system</h4>
-
-<p><?php echo $f->def('c') ?> doesn't have an <q>official</q> build system; third-party build systems like <?php echo $f->def('make') ?> or <?php echo $f->def('cmake') ?> are used instead.</p>
-
-<p>The <?php echo $f->def('zig') ?> build system is shipped with the compiler. It uses a declarative approach. What I especially like about it that it does not introduce a new language. Instead, build commands are expressed in <?php echo $f->def('zig') ?>.</p>
-
-<h4>Namespaces</h4>
-
-<p>Ah, the joy of prefixing every symbol in a <?php echo $f->def('c') ?> program to avoid name conflicts with users of your library!</p>
-
-<p>Namespaces have become the <em>de facto</em> standard of modern programming languages. It is insanely useful and idiomatic to be able to manipulate a library or a module as what it is: a bag of names.</p>
-
-<h4>Encapsulation</h4>
-
-<p>No need to prefix internal functions with an underscore anymore! <?php echo $f->code('pub') ?> is all you'll need.</p>
-
-<p>Seriously though, encapsulation is non-existent in <?php echo $f->def('c') ?>. Although the convention of <q>if it starts with an underscore, don't touch it</q> has been around for a while now, it's always safer when the language enforces the invariant of <q>this thing can't be accessed outside this module / structure</q>.</p>
-
-<p>In <?php echo $f->def('c') ?>, you have to get creative. In order to avoid any name conflicts with internals from other librairies the user might implemenent, your internal prefix should not only start with an underscore, but also contain an (hopefully) unique string. In addition, the underscore may not be followed by an uppercase letter unless you want to violate the standard and open yourself to name conflics with compiler or standard library internals.</p>
-
-<p>For instance, <?php echo $f->a("Cori", 'project/cori.html') ?> uses the prefix <?php echo $f->code('_cori_') ?> on internal macros, functions, structures, type aliases, and so on.</p>
-
-<p>In <?php echo $f->def('zig') ?>, you don't need any of this madness. Private is the default. Export functions, structures and methods using the <?php echo $f->code('pub') ?> keyword.</p>
-
-<h4><q>If it compiles, it works</q></h4>
-
-<p><?php echo $f->def('zig') ?> is much, much closer than <?php echo $f->def('c') ?> to the ideal of <q>if it compiles, it works</q>.</p>
-
-<p>It is true that everything that can be done in <?php echo $f->def('zig') ?> can also be done in <?php echo $f->def('c') ?>, but the invariants and restrictions <?php echo $f->def('zig') ?> enforces is stuff you don't have to worry about getting wrong, unlike when you do it manually in <?php echo $f->def('c') ?>.</p>
-
-<p>I believe this is the goal of any language; to provide an expressive syntax in order to give as many compile-time guarantees of well-formedness and correctness as posssible.</p>
-
-<p>Overall I feel <?php echo $f->def('c') ?> has run its course as a language. Of course, it will be around forever since tons of software is written in it and it would be ludicrous to expect everything to be rewritten in <?php echo $f->def('rust') ?> or <?php echo $f->def('zig') ?>. Though I wouldn't expect it to be used for any greenfield project.</p>
-
-<p>Nonetheless I think <?php echo $f->def('c') ?> is an invaluable language to learn. It forces you to leave your comfort zone of abstactions and face the actual challenge of implementing stuff that we use every day as programmers, such a vectors or hash tables.</p>
-
-<h4>Conclusion</h4>
-
-<p>While <?php echo $f->def('c') ?> has been a cornerstone language for decades, the emergence of <?php echo $f->def('zig') ?> presents a promising alternative. As a programmer, my journey began with <?php echo $f->def('c') ?>, a language that has not only shaped my understanding of programming fundamentals but also played a pivotal role in the history of computer programming. Its simplicity, efficiency, and portability have made it a go-to language for system programming since its inception in <?php echo $f->year(1972) ?>.</p>
-
-<p>However, as we move towards a future where safety, performance, and developer productivity are paramount, <?php echo $f->def('zig') ?> emerges as a strong contender. <?php echo $f->def('zig') ?>'s design philosophy, which emphasizes maintaining the simplicity and low-level control of <?php echo $f->def('c') ?> while providing modern features to ensure compile-time correctness and enforce invariants, makes it an attractive choice.</p>
-
-<p>While <?php echo $f->def('c') ?> may not be as trendy or feature-rich as newer languages, its influence and importance cannot be understated. However, the tide seems to be turning with languages like <?php echo $f->def('zig') ?>, which offer the best of both worlds - the power of <?php echo $f->def('c') ?> and the safety of modern languages. As we continue to strive for better and safer code, I anticipate that <?php echo $f->def('zig') ?> will gradually phase out <?php echo $f->def('c') ?> in many domains, offering a new standard for system programming languages.</p>
-
-<p>In the end, the choice between <?php echo $f->def('c') ?> and <?php echo $f->def('zig') ?> will depend on the specific needs of the project and the familiarity of the developer. However, one thing is clear: <?php echo $f->def('zig') ?> is a language worth keeping an eye on, and I am excited to see how it will shape the future of programming.</p>
+            <figcaption>Another usage of <?php echo $f->code('defer') ?> for incrementing a loop variant. The incremantion is done at the start of the loop, close to the condition and the variant declaration. It is actually executed at the end of the loop block.</figcaption>
+        </figure>
+    </div>
+</article>
+<article id="a-richer-standard-library">
+    <h3>A richer standard library</h3>
+    <div class="cols">
+        <p><?php echo $f->def('c') ?>'s standard library is quite rudimentary. You often need to download an STB library<?php echo $f->ref() ?> when you want an arena allocator or an hash table.</p>
+        <p>You can also learn to implement these data structures and algorithms yourself, which is why I think learning <?php echo $f->def('c') ?> as my first language has really helped me become a better programmer.</p>
+        <p><?php echo $f->def('zig') ?> solves this problem by having a richer standard library. This isn't unique to <?php echo $f->def('zig') ?>, though. Similar languages like <?php echo $f->def('go') ?> or <?php echo $f->def('rust') ?> also have rich standard libraries.</p>
+    </div>
+</article>
+<article id="a-standard-build-system">
+    <h3>A standard build system</h3>
+    <div class="cols">
+        <p><?php echo $f->def('c') ?> doesn't have an <q>official</q> build system; third-party build systems like <?php echo $f->def('make') ?> or <?php echo $f->def('cmake') ?> are used instead.</p>
+        <p>The <?php echo $f->def('zig') ?> build system is shipped with the compiler. It uses a declarative approach. What I especially like about it that it does not introduce a new language. Instead, build commands are expressed in <?php echo $f->def('zig') ?>.</p>
+    </div>
+</article>
+<article id="namespaces">
+    <h3>Namespaces</h3>
+    <div class="cols">
+        <p>Ah, the joy of prefixing every symbol in a <?php echo $f->def('c') ?> program to avoid name conflicts with users of your library!</p>
+        <p>Namespaces have become the <em>de facto</em> standard of modern programming languages. It is insanely useful and idiomatic to be able to manipulate a library or a module as what it is: a bag of names.</p>
+    </div>
+</article>
+<article id="encapsulation">
+    <h3>Encapsulation</h3>
+    <div class="cols">
+        <p>No need to prefix internal functions with an underscore anymore! <?php echo $f->code('pub') ?> is all you'll need.</p>
+        <p>Seriously though, encapsulation is non-existent in <?php echo $f->def('c') ?>. Although the convention of <q>if it starts with an underscore, don't touch it</q> has been around for a while now, it's always safer when the language enforces the invariant of <q>this thing can't be accessed outside this module / structure</q>.</p>
+        <p>In <?php echo $f->def('c') ?>, you have to get creative. In order to avoid any name conflicts with internals from other librairies the user might implemenent, your internal prefix should not only start with an underscore, but also contain an (hopefully) unique string. In addition, the underscore may not be followed by an uppercase letter unless you want to violate the standard and open yourself to name conflics with compiler or standard library internals.</p>
+        <p>For instance, <?php echo $f->a("Cori", 'project/cori.html') ?> uses the prefix <?php echo $f->code('_cori_') ?> on internal macros, functions, structures, type aliases, and so on.</p>
+        <p>In <?php echo $f->def('zig') ?>, you don't need any of this madness. Private is the default. Export functions, structures and methods using the <?php echo $f->code('pub') ?> keyword.</p>
+    </div>
+</article>
+<article id="if-it-compiles-it-works">
+    <h3><q>If it compiles, it works</q></h3>
+    <div class="cols">
+        <p><?php echo $f->def('zig') ?> is much, much closer than <?php echo $f->def('c') ?> to the ideal of <q>if it compiles, it works</q>.</p>
+        <p>It is true that everything that can be done in <?php echo $f->def('zig') ?> can also be done in <?php echo $f->def('c') ?>, but the invariants and restrictions <?php echo $f->def('zig') ?> enforces is stuff you don't have to worry about getting wrong, unlike when you do it manually in <?php echo $f->def('c') ?>.</p>
+        <p>I believe this is the goal of any language; to provide an expressive syntax in order to give as many compile-time guarantees of well-formedness and correctness as posssible.</p>
+        <p>Overall I feel <?php echo $f->def('c') ?> has run its course as a language. Of course, it will be around forever since tons of software is written in it and it would be ludicrous to expect everything to be rewritten in <?php echo $f->def('rust') ?> or <?php echo $f->def('zig') ?>. Though I wouldn't expect it to be used for any greenfield project.</p>
+        <p>Nonetheless I think <?php echo $f->def('c') ?> is an invaluable language to learn. It forces you to leave your comfort zone of abstactions and face the actual challenge of implementing stuff that we use every day as programmers, such a vectors or hash tables.</p>
+    </div>
+</article>
+<article id="conclusion">
+    <h3>Conclusion</h3>
+    <div class="cols">
+        <p>While <?php echo $f->def('c') ?> has been a cornerstone language for decades, the emergence of <?php echo $f->def('zig') ?> presents a promising alternative. As a programmer, my journey began with <?php echo $f->def('c') ?>, a language that has not only shaped my understanding of programming fundamentals but also played a pivotal role in the history of computer programming. Its simplicity, efficiency, and portability have made it a go-to language for system programming since its inception in <?php echo $f->year(1972) ?>.</p>
+        <p>However, as we move towards a future where safety, performance, and developer productivity are paramount, <?php echo $f->def('zig') ?> emerges as a strong contender. <?php echo $f->def('zig') ?>'s design philosophy, which emphasizes maintaining the simplicity and low-level control of <?php echo $f->def('c') ?> while providing modern features to ensure compile-time correctness and enforce invariants, makes it an attractive choice.</p>
+        <p>While <?php echo $f->def('c') ?> may not be as trendy or feature-rich as newer languages, its influence and importance cannot be understated. However, the tide seems to be turning with languages like <?php echo $f->def('zig') ?>, which offer the best of both worlds &mdash; the power of <?php echo $f->def('c') ?> and the safety of modern languages. As we continue to strive for better and safer code, I anticipate that <?php echo $f->def('zig') ?> will gradually phase out <?php echo $f->def('c') ?> in many domains, offering a new standard for system programming languages.</p>
+        <p>In the end, the choice between <?php echo $f->def('c') ?> and <?php echo $f->def('zig') ?> will depend on the specific needs of the project and the familiarity of the developer. However, one thing is clear: <?php echo $f->def('zig') ?> is a language worth keeping an eye on, and I am excited to see how it will shape the future of programming.</p>
+    </div>
+</article>

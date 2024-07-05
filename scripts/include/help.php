@@ -2,6 +2,10 @@
 require_once 'lang.php';
 require_once 'page.php';
 
+function element(string $tagName, string $content) {
+    echo "<$tagName>$content</$tagName>";
+}
+
 function map(callable $transform, mixed $data): mixed {
     return $data === null ? null : $transform($data);
 }

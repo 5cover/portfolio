@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
+# [$1]: a page name, the single one to generate (for all langs). If unspecified, all pages are generated.
+
 set -euo pipefail
 shopt -s globstar
-
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-readonly outdir='../../portfolio'
-readonly data_dir='../../portfolio/data/'
+readonly outdir='../../portfolio' \
+       data_dir='../../portfolio/data/'
+
+if [[ $# -gt 1 ]]; then
+    >&2 echo "Usage: $0 [page-name]"
+    exit 1
+fi
 
 # minify html
 # stdin: html
@@ -24,39 +30,50 @@ minify_html() {
 # stdout: minified html
 generate() {
     >&2 echo -n "generate $1 $2 $3 $4..."
-    local dest="$1"
-    local lang="$2"
-    local page="$3"
-    local phpf="$4"
+    local dest="$1" lang="$2" page="$3" phpf="$4"
     shift 4
     mkdir -p "$(dirname "$dest")"
-     > "$dest" php -d include_path="include" -f "$phpf" "$lang" "$page" "$@";
+    > "$dest" php -d include_path="include" -f "$phpf" "$lang" "$page" "$@";
     >&2 echo ok
 }
-
-# link data JSONs
-./linker.py "$data_dir" ../data/**/*.json
 
 # generate detail pages
 # $1: lang
 # $2: detail kind
 generate_details() {
-    >&2 echo generating $kind details
+    >&2 echo generating "$2" details
     local details="$data_dir/$1/${2}s.json"
     for id in $(jq -r 'keys[]' "$details"); do
         generate "$outdir/$1/$2/$id.html" "$1" "$2/$id" "$2.php" "$(jq -r ".\"$id\"" "$details")"
     done
 }
 
-# shellcheck disable=SC2043
-# todo: add lang 'en' once translations are finished
-for lang in fr; do
-    # Simple page
-    for page in definitions-test index but-informatique history projects passions perspectives; do
-        generate "$outdir/$lang/$page.html" $lang "$page" "$page.php"
-    done
+# generate regular page
+# $1: lang
+# $2: page name
+generate_page() {
+    generate "$outdir/$1/$2.html" "$1" "$2" "$2.php"
+}
 
-    for kind in project perspective passion; do
-        generate_details $lang $kind
+# link data JSONs
+./linker.py "$data_dir" ../data/**/*.json
+
+# todo: add english
+readonly langs=(fr)
+
+if [[ $# -eq 1 ]]; then
+    for lang in "${langs[@]}"; do
+    generate_page "$lang" "$1"
     done
-done
+else
+    for lang in "${langs[@]}"; do
+        # Simple page
+        for page in definitions-test index but-informatique history projects passions perspectives; do
+            generate_page "$lang" $page
+        done
+
+        for kind in project perspective passion; do
+            generate_details "$lang" $kind
+        done
+    done
+fi

@@ -6,7 +6,7 @@ function start($lang): Fragment {
 }
 
 final class Fragment {
-    public readonly Lang $lang;
+    readonly Lang $lang;
 
     private $refNum = 1;
 

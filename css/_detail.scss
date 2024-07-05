@@ -6,12 +6,18 @@
 /* Basic styles */
 
 /* Section titles */
-h3 {
-    margin-bottom: const.$heading-margin;
-
+h2 {
     #links &,
     #story & {
         display: none;
+    }
+}
+
+#story {
+    @include util.text;
+
+    article {
+        @include util.margin-gap(2lh);
     }
 }
 
@@ -25,6 +31,8 @@ main {
     padding: const.$full-width-vertical-margin const.$full-width-horizontal-margin;
 }
 
+@include util.heading-margins(1,2);
+
 /* Customizables */
 
 /* Detail header
@@ -37,13 +45,10 @@ main {
  * $row-abstract: integer -> abstract row
  */
  @mixin header($row-count: 2, $row-title: 1, $row-abstract: 2) {
-    $gap: .5lh;
     display: grid;
     grid-template: repeat(calc($row-count), auto) / auto auto;
-    row-gap: $gap;
 
     h1 {
-        margin: $gap 0;
         grid-row: $row-title;
     }
 
@@ -63,6 +68,7 @@ main {
 
     .abstract {
         grid-row: $row-abstract;
+        margin-bottom: .5lh;
     }
 }
 
@@ -89,6 +95,7 @@ main {
     figure {
         display: flex;
         flex-flow: column;
+        max-width: min(100%, 26em);
     }
 
     iframe {

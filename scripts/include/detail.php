@@ -9,9 +9,11 @@ function validate_json_object(array $jsonObject, array $keys) {
 }
 
 abstract class Details {
-    public readonly array $data;
+    readonly array $data;
 
     private readonly string $stylesheet;
+
+    const DEFAULT_CARD_HEADING_LEVEL = 3;
 
     protected function __construct(string $stylesheet, array $jsonData, array $specificKeys) {
         validate_json_object($jsonData, [
@@ -42,7 +44,7 @@ abstract class Details {
     }
 
     abstract function put_page_main(Lang $lang);
-    abstract function put_card(Lang $lang, string $id);
+    abstract function put_card(Lang $lang, string $id, int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL);
 
     protected function put_abstract() { ?>
         <p class="abstract"><?php echo $this->data['abstract'] ?></p>
@@ -96,6 +98,13 @@ abstract class Details {
         </ol>
     <?php }
 
+    protected function put_story(Lang $lang) { ?>
+        <section id="story">
+            <h2><?php echo $lang->get('story') ?></h2>
+            <?php echo $this->data['story'] ?>
+        </section>
+    <?php }
+
     protected function put_logo(Lang $lang) {
         if ($logo = $this->data['logo'] ?? null) {
             echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($this->data['title']), 'logo');
@@ -112,7 +121,7 @@ abstract class Details {
         $gallery_num = 1;
         if (count($gallery = $this->data['gallery']) > 0) { ?>
             <section id="gallery">
-                <h3><?php echo $lang->get('gallery') ?></h3>
+                <h2><?php echo $lang->get('gallery') ?></h2>
                 <ul class="lvl gallery">
                     <?php foreach ($gallery as $figure) { ?>
                         <li>
@@ -152,30 +161,27 @@ final class Passion extends Details {
             </header>
             <?php if (count($this->data['links']) > 0) { ?>
                 <section id="links">
-                    <h3><?php echo $lang->get('links') ?></h3>
+                    <h2><?php echo $lang->get('links') ?></h2>
                     <?php $this->put_page_link_list() ?>
                 </section>
-            <?php } ?>
-            <section id="story" class="text">
-                <h3><?php echo $lang->get('story') ?></h3>
-                <?php echo $this->data['story'] ?>
-            </section>
-            <?php $this->put_gallery($lang);
+            <?php }
+            $this->put_story($lang);
             if (count($this->data['references']) > 0) { ?>
                 <section id="references">
-                    <h3><?php echo $lang->get('references') ?></h3>
+                    <h2><?php echo $lang->get('references') ?></h2>
                     <?php $this->put_reference_list($lang); ?>
                 </section>
-            <?php } ?>
+            <?php }
+            $this->put_gallery($lang); ?>
         </main>
     <?php }
 
-    function put_card(Lang $lang, string $id) {
+    function put_card(Lang $lang, string $id, int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL) {
         ?>
         <li id="<?php echo $id ?>" <?php $this->put_background_style_attr('bg-img-card') ?>>
             <?php $this->put_logo($lang) ?>
             <div>
-                <h3><a href="passion/<?php echo $id ?>.html"><?php echo $this->data['title'] ?></a></h3>
+                <?php element("h$headingLevel", "<a href=\"passion/$id.html\">{$this->data['title']}</a>") ?>
                 <?php $this->put_abstract() ?>
                 <?php $this->put_card_link_list() ?>
             </div>
@@ -208,30 +214,27 @@ final class Perspective extends Details {
             </header>
             <?php if (count($this->data['links']) > 0) { ?>
                 <section id="links">
-                    <h3><?php echo $lang->get('links') ?></h3>
+                    <h2><?php echo $lang->get('links') ?></h2>
                     <?php $this->put_page_link_list() ?>
                 </section>
-            <?php } ?>
-            <section id="story" class="text">
-                <h3><?php echo $lang->get('story') ?></h3>
-                <?php echo $this->data['story'] ?>
-            </section>
-            <?php $this->put_gallery($lang);
+            <?php }
+            $this->put_story($lang);
             if (count($this->data['references']) > 0) { ?>
                 <section id="references">
-                    <h3><?php echo $lang->get('references') ?></h3>
+                    <h2><?php echo $lang->get('references') ?></h2>
                     <?php $this->put_reference_list($lang); ?>
                 </section>
-            <?php } ?>
+            <?php }
+            $this->put_gallery($lang); ?>
         </main>
     <?php }
 
-    function put_card(Lang $lang, string $id) {
+    function put_card(Lang $lang, string $id, int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL) {
         ?>
         <li id="<?php echo $id ?>" <?php $this->put_background_style_attr('bg-img-card') ?>>
             <?php $this->put_logo($lang) ?>
             <div>
-                <h3><a href="perspective/<?php echo $id ?>.html"><?php echo $this->data['title'] ?></a></h3>
+                <?php element("h$headingLevel", "<a href=\"perspective/$id.html\">{$this->data['title']}</a>") ?>
                 <?php $this->put_abstract() ?>
                 <?php $this->put_card_link_list() ?>
             </div>
@@ -273,46 +276,45 @@ final class Project extends Details {
             </header>
             <?php if (count($this->data['links']) > 0) { ?>
                 <section id="links">
-                    <h3><?php echo $lang->get('links') ?></h3>
+                    <h2><?php echo $lang->get('links') ?></h2>
                     <?php $this->put_page_link_list() ?>
                 </section>
             <?php }
             if (count($team = $this->data['team']) > 0) { ?>
                 <section id="team">
-                    <h3><?php echo $lang->get('team') ?></h3>
+                    <h2><?php echo $lang->get('team') ?></h2>
                     <?php put_definition_list($lang, $team) ?>
                 </section>
-            <?php } ?>
-            <section id="story" class="text">
-                <h3><?php echo $lang->get('story') ?></h3>
-                <?php echo $this->data['story'] ?>
-            </section>
-            <?php if (count($technologies = $this->data['technologies']) > 0) { ?>
+            <?php }
+            $this->put_story($lang);
+            if (count($this->data['references']) > 0) { ?>
+                <section id="references">
+                    <h2><?php echo $lang->get('references') ?></h2>
+                    <?php $this->put_reference_list($lang); ?>
+                </section>
+            <?php }
+            if (count($technologies = $this->data['technologies']) > 0) { ?>
                 <section id="technologies">
-                    <h3><?php echo $lang->get('technologies') ?></h3>
+                    <h2><?php echo $lang->get('technologies') ?></h2>
                     <?php put_definition_list($lang, $technologies) ?>
                 </section>
             <?php }
-            $this->put_gallery($lang);
-            if (count($this->data['references']) > 0) { ?>
-                <section id="references">
-                    <h3><?php echo $lang->get('references') ?></h3>
-                    <?php $this->put_reference_list($lang); ?>
-                </section>
-            <?php } ?>
+            $this->put_gallery($lang); ?>
         </main>
     <?php }
 
-    function put_card(Lang $lang, string $id) {
+    function put_card(Lang $lang, string $id, int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL) {
         ?>
         <li <?php $this->put_background_style_attr('bg-img-card') ?>>
-            <?php $this->put_tags($lang) ?>
-            <?php $this->put_logo($lang) ?>
-            <h3><a href="project/<?php echo $id ?>.html"><?php echo $this->data['title'] ?></a></h3>
-            <p class="status"><?php $this->put_status($lang) ?></p>
-            <p class="context"><?php $this->put_context() ?></p>
-            <?php $this->put_abstract() ?>
-            <?php $this->put_card_link_list() ?>
+            <?php
+            $this->put_tags($lang);
+            $this->put_logo($lang) ?>
+            <?php element("h$headingLevel", "<a href=\"project/$id.html\">{$this->data['title']}</a>") ?>
+            <?php
+            $this->put_status($lang);
+            $this->put_context();
+            $this->put_abstract();
+            $this->put_card_link_list() ?>
         </li>
         <?php
     }
@@ -329,7 +331,7 @@ final class Project extends Details {
 
     private function put_status(Lang $lang) {
         $endDate = $this->data['end-date'] ?? false;
-        ?><small><?php static::put_date($lang, $this->data['start-date']) ?> &ndash; <?php
+        ?><small class="status"><?php static::put_date($lang, $this->data['start-date']) ?> &ndash; <?php
             if ($endDate) {
                 static::put_date($lang, $endDate);
             } else {
@@ -338,13 +340,13 @@ final class Project extends Details {
     <?php }
 
     private function put_context() { ?>
-        <small><?php echo ucfirst($this->data['context']) ?></small>
+        <small class="context"><?php echo ucfirst($this->data['context']) ?></small>
     <?php }
 
-    static function put_cards_list(Lang $lang, array $projects) { ?>
+    static function put_cards_list(Lang $lang, array $projects, int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL) { ?>
         <ul class="lvl list-project"><?php
         foreach ($projects as $id => $p) {
-            $p->put_card($lang, $id);
+            $p->put_card($lang, $id, $headingLevel);
         }
         ?>
         </ul> <?php

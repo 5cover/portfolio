@@ -1,5 +1,9 @@
 # Scratch area
 
+## global index page (empty path)
+
+simply a page that will redirect you to the index for your preferred language, or english by default.
+
 ## Final release
 
 - Minify HTML
@@ -87,6 +91,8 @@ At the bottom of each project page.
 
 Show up to a row, so maybe 5? that feels like a good number. Of course it may span over multiple rows on mobile.
 
+maybe i could show them in a sidebar?
+
 ## Large image preview
 
 for project gallery but not only
@@ -107,17 +113,15 @@ annoying we have to duplicate logic from php -> js.
 
 mettre dans un json traduit et utiliser des clés primaires dans projects (comme avec types pour les définiitons...)
 
-## consistent whitespace around titles
+## idea for the portfolio project card
 
-currently it is a mess. sometimes we use margin, sometimes we use gap... i guess i should remove all margins on titles from base but put them in `.text`.
+make its background a screenshot of the current page
 
-`.text` represents textual content. note that textual content may not only be text. it may be figures or other stuff as long as it is displayed in the "standard" way. it is used to enforce typygraphical conventions such as `text-indent`...
+if JS supports this, this will require making all project card generation dynamic
 
-btw, should i put text-indent on all paragraphs or only the first one?
+This will also mean no more project card HTML generation logic duplication between PHP and JS.
 
-and also i should find a better name for `.text`.
-
-## Fix accent color contrast
+## Fix contrast issues
 
 ## Save.tf link?
 
@@ -217,3 +221,17 @@ and add it to conventions
 do we add an abbr element at the start of the synopspsis
 
 should the title be an abbr
+
+## plural def titles
+
+## only show each definition trigger as a link once per title
+
+that way we don't repeat it too much while still providing it regularily?
+
+do we even need to do this?
+
+## remove glyph on definition links
+
+## use another target blank glyph
+
+the current one doesn't display properly in all browsers (doesnt display correctly on samsung internet).

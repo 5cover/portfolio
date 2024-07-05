@@ -14,7 +14,7 @@
         },
         "references": {},
         "gallery": [],
-        "story": "todo",
+        "story": {"$include": "project/story/island-maps.phtml"},
         "team": [],
         "title": "Island Maps",
         "tags": [
@@ -62,7 +62,7 @@
         },
         "references": {},
         "start-date": "2023-10-09",
-        "story": "todo.. raconter la difficulté et les problèmes du scanf en c...",
+        "story": {"$include": "project/story/cori.phtml"},
         "tags": [
             "low-level",
             "library"
@@ -92,7 +92,7 @@
         },
         "references": {},
         "start-date": "2022-03-01",
-        "story": "todo",
+        "story": {"$include": "project/story/demineur-python.phtml"},
         "tags": [
             "game",
             "oop"
@@ -124,7 +124,7 @@
         },
         "references": {},
         "start-date": "2023-06-25",
-        "story": "todo (frustation Winclean dialogs winforms, vanara...)",
+        "story": {"$include": "project/story/dialogs.phtml"},
         "tags": [
             "oop",
             "library",
@@ -155,7 +155,7 @@
         },
         "references": {},
         "start-date": "2022-10-21",
-        "story": "todo",
+        "story": {"$include": "project/story/edplusplus.phtml"},
         "tags": [
             "software",
             "db",
@@ -181,7 +181,7 @@
         },
         "references": {},
         "start-date": "2023-05-24",
-        "story": "todo",
+        "story": {"$include": "project/story/ethercrash.phtml"},
         "tags": [
             "data",
             "cli"
@@ -210,7 +210,7 @@
         },
         "references": {},
         "start-date": "2022-04-07",
-        "story": "todo",
+        "story": {"$include": "project/story/file-signature-detector.phtml"},
         "tags": [
             "software"
         ],
@@ -235,7 +235,7 @@
         },
         "references": {},
         "start-date": "2024-05-30",
-        "story": "todo (projet encore en phase embryonnaire)",
+        "story": {"$include": "project/story/jslave.phtml"},
         "tags": [
             "low-level",
             "cli",
@@ -261,7 +261,7 @@
         },
         "references": {},
         "start-date": "2024-06-17",
-        "story": "todo.. raconter comment d'abord j'aimais pas puis après c'était mieux... comment j'ai dépassé les objectifs du cours.. etc...",
+        "story": {"$include": "project/story/portfolio.phtml"},
         "tags": [
             "web",
             "but-realiser",
@@ -353,7 +353,7 @@
         },
         "references": {},
         "start-date": "2021-11-15",
-        "story": "todo",
+        "story": {"$include": "project/story/puissance-4.phtml"},
         "tags": [
             "game",
             "high-level",
@@ -437,7 +437,7 @@
         },
         "references": {},
         "start-date": "2023-11-27",
-        "story": "<p>L'objectif de ce projet était d'optimiser un algorithme de résolution de grilles de Sudoku afin qu'il puisse résoudre des grilles de différentes difficultés le plus rapidement possible.</p><p>Ce projet, réalisé en binôme, aura été une aventure particulièrement enrichissante. En effet, après le rendu, notre professeur a organisé un concours d'optimisation. Chaque participant soumetta son programme et notre professeur fit plusieurs <em>benchmarks</em> sur des grilles de Sudoku 3x3, 4x4, 5x5&hellip; afin de déterminer l'équipe qui a le programme le plus optimisé.</p><p>Moi et mon coéquipier Mattéo Kervadec avons remporté le concours haut la main.</p><p>Certes, nous y avons passé quelques nuits tardives, mais cela nous a permis d'apprendre toute sourtes d'astuces relatives à l'optimisation et de devenir de meilleurs prorammeurs en général.</p><p>De plus, ce projet a continué à grandir grâche à l'investissement personnel de Mattéo et moi. Nous l'avons amélioré sur notre temps libre, aboutissant finalement à Sudone.</p>",
+        "story": { "$include": "project/story/s1.02.phtml" },
         "tags": [
             "software",
             "but-optimiser",
@@ -474,7 +474,7 @@
         },
         "references": {},
         "start-date": "2023-10-25",
-        "story": "<p>L'objectif de ce projet était de créer un générateur de documents PDF grâce à la conteneurisation Docker et en utilisant également PHP, le scripting Bash etc. Nous étions en groupes de 4. De mon côté, je me suis occupé d'écrire un parser Markdown en PHP. Nos professeurs ont été malins&nbsp;: ils ont modifés la syntaxe Markdown pour pas que l'on puisse simplement copier un parser d'Internet.</p>",
+        "story": { "$include": "project/story/s1.03.phtml" },
         "tags": [
             "but-administrer",
             "but-collaborer",
@@ -511,7 +511,7 @@
         },
         "references": {},
         "start-date": "2023-11-27",
-        "story": "L'objectif de ce projet était de créer un diagramme de classe et d'implémenter une base de données en SQL.",
+        "story": {"$include": "project/story/s1.04.phtml"},
         "tags": [
             "but-gerer",
             "but-collaborer",
@@ -541,7 +541,7 @@
         },
         "references": {},
         "start-date": "2023-10-09",
-        "story": "L'objectif était de concevoir et réaliser un site web répondant aux besoins d’un client recueillis lors d’une interview faite au préalable. Le client était une entreprise qui propose des services de streaming en ligne.",
+        "story": {"$include": "project/story/s1.05.phtml"},
         "tags": [
             "but-conduire",
             "but-collaborer",
@@ -578,7 +578,7 @@
         },
         "references": {},
         "start-date": "2023-09-08",
-        "story": "Ce projet consiste à organiser un événement factice de team building pour favoriser la cohésion d'équipe d'une entreprise. En groupe de 4, nous avons produit un court film promotionnel pour cet évènement.",
+        "story": {"$include": "project/story/s1.06.phtml"},
         "tags": [
             "but-collaborer"
         ],
@@ -606,7 +606,7 @@
         },
         "references": {},
         "start-date": "2024-05-28",
-        "story": "L'objectif de ce projet est de créer une application de gestion d'une salle de spectacle en Java avec une IHM (interface homme machine) en Java FX qui permet au directeur de la salle de gérer les spectacles.",
+        "story": {"$include": "project/story/s2.01.phtml"},
         "tags": [
             "but-realiser",
             "oop",
@@ -675,7 +675,7 @@
         },
         "references": {},
         "start-date": "2024-05-14",
-        "story": "todo",
+        "story": {"$include": "project/story/s2.03.phtml"},
         "tags": [
             "but-administrer",
             "but-collaborer",
@@ -713,7 +713,7 @@
         },
         "references": {},
         "start-date": "2024-04-23",
-        "story": "todo",
+        "story": {"$include": "project/story/s2.04.phtml"},
         "tags": [
             "but-gerer",
             "but-collaborer",
@@ -748,7 +748,7 @@
         },
         "references": {},
         "start-date": "2024-05-15",
-        "story": "todo",
+        "story": {"$include": "project/story/s2.05.phtml"},
         "tags": [
             "but-conduire",
             "but-collaborer",
@@ -777,7 +777,7 @@
         },
         "references": {},
         "start-date": "2024-04-18",
-        "story": "todo",
+        "story": {"$include": "project/story/s2.06.phtml"},
         "tags": [
             "but-collaborer"
         ],
@@ -914,7 +914,7 @@
         },
         "references": {},
         "start-date": "2022-07-21",
-        "story": "todo (frustation Winclean wizard xctk license...)",
+        "story": {"$include": "project/story/wpfzard.phtml"},
         "tags": [
             "oop",
             "library",
@@ -943,7 +943,7 @@
         },
         "references": {},
         "start-date": "2024-06-01",
-        "story": "todo",
+        "story": {"$include": "project/story/ztest.phtml"},
         "tags": [
             "software",
             "cli",

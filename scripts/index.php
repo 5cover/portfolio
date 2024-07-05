@@ -43,7 +43,7 @@ put_head($page, $lang);
                 </li>
             <?php } ?>
         </ul>
-        <article id="me" class="lvl content-block text">
+        <article id="me" class="lvl content-block">
             <div>
                 <h2><?php echo $lang->get('indexMe') ?></h2>
                 <?php echo $lang->get('indexAboutMeContent') ?>

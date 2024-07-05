@@ -373,3 +373,21 @@ from now on, invidual project pages will be called detail pages. Passions and pe
 The only difference with projects is that the card HTML will differ.
 
 Actually, what about status and context? Passions and perspectives have no use for those.
+
+## show gallery after references
+
+since references relate to the story, they should be close to it.
+
+## single column layout for stories
+
+center the text.
+
+because it's annoying when you have to scroll back up to continue reading.
+
+## consistent whitespace around titles
+
+currently it is a mess. sometimes we use margin, sometimes we use gap... i guess i should remove all margins on titles from base but put them in `.text`.
+
+`.text` represents textual content. note that textual content may not only be text. it may be figures or other stuff as long as it is displayed in the "standard" way. it is used to enforce typygraphical conventions such as `text-indent`...
+
+btw, should i put text-indent on all paragraphs or only the first one? only the first one, since we already have marings to separate paragraphs.
