@@ -1,4 +1,5 @@
 <?php
+require_once 'help.php';
 require_once 'content.php';
 
 function start($lang): Fragment {
@@ -14,9 +15,9 @@ final class Fragment {
         $this->lang = Lang::instances()[$langTag];
     }
 
-    /** Get a term in another language */
-    function term(string $content, string $lang = 'en'): string {
-        return '<span lang="' . $lang . '">' . $content . '</span>';
+    /** Gets a term in a language (the current one by default) */
+    function term(string $content, string|null $lang = null): string {
+        return '<em' . map(fn($l) => " lang=\"$l\"", $lang) . '>' . $content . '</em>';
     }
 
     /** Get an inline code */
