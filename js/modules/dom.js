@@ -11,15 +11,15 @@ export async function createDefinitionTooltip(defId, def, onEnter, onLeave) {
     tooltip.attr('data-definition-id', defId);
 
     if (def['background'] !== undefined) {
-        tooltip.css('--bg-img-card', `url(${def['background']})`);
+        tooltip.css('--bg-img-card ', `url(${def['background']})`);
     }
 
     $('.title a', tooltip)
         .attr('href', def.wiki)
-        .html(def.names[0]);
+        .html(def.name['full']);
 
     if (def.logo) {
-        $('.title', tooltip).after(await getGraphicElement(def.logo, def.names[0] /* todo: format title*/, ['logo']));
+        $('.title', tooltip).after(await getGraphicElement(def.logo, def.name['full'] /* todo: format title */, ['logo']));
     }
 
     $('.type small', tooltip).html(util.ucfirst(types[def.type]));
@@ -32,6 +32,7 @@ export async function createDefinitionTooltip(defId, def, onEnter, onLeave) {
 
     return tooltip;
 }
+
 
 export function createLi(contents) {
     const li = document.createElement('li');
