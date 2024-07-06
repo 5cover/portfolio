@@ -412,3 +412,7 @@ instead of using an array, give variants of titles
 put it in an object
 
 no plural because as the defined creation is unique and it doesn't make sense to put it at plural (Cs?, NASMs?)
+
+## id/field.phtml fragment directory structure
+
+instead of `field/id.phtml`

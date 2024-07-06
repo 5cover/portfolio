@@ -22,7 +22,7 @@
         },
         "references": [],
         "story": {
-            "$include": "passion/story/mountain.phtml"
+            "$include": "passion/mountain/story.phtml"
         },
         "title": "Montagne"
     },
@@ -36,7 +36,7 @@
             "url": "/portfolio/img/definition/dreamfinity/logo.svg"
         },
         "story": {
-            "$include": "passion/story/sandbox-videogames.phtml"
+            "$include": "passion/sandbox-videogames/story.phtml"
         },
         "title": "Jeux-vidéos bac à sable",
         "references": []

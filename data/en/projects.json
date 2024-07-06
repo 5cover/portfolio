@@ -6,7 +6,7 @@
         "title": "2L2W French Rural Road",
         "abstract": "Up to code French road asset",
         "story": {
-            "$include": "projects/2l2w-french-rural-road.phtml"
+            "$include": "project/2l2w-french-rural-road/story.phtml"
         },
         "technologies": [
             "blender"
@@ -31,7 +31,7 @@
         "start-date": "2022-10-15",
         "abstract": "A perspective on our environment in Cities: Skylines",
         "story": {
-            "$include": "projects/tregoria.phtml"
+            "$include": "project/tregoria/story.phtml"
         },
         "technologies": [],
         "tags": [
@@ -54,7 +54,7 @@
         "background": "/portfolio/img/project/winclean/bg.png",
         "abstract": "Windows optimization and debloating utility",
         "story": {
-            "$include": "projects/winclean.phtml"
+            "$include": "project/winclean/story.phtml"
         },
         "tags": [
             "full-stack",

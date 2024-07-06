@@ -15,7 +15,7 @@
         "references": [],
         "gallery": [],
         "story": {
-            "$include": "project/story/island-maps.phtml"
+            "$include": "project/island-maps/story.phtml"
         },
         "team": [],
         "title": "Island Maps",
@@ -38,7 +38,7 @@
         "references": [],
         "start-date": "2021-06-15",
         "story": {
-            "$include": "project/story/2l2w-french-rural-road.phtml"
+            "$include": "project/2l2w-french-rural-road/story.phtml"
         },
         "tags": [
             "3d-modeling",
@@ -65,7 +65,7 @@
         "references": [],
         "start-date": "2023-10-09",
         "story": {
-            "$include": "project/story/cori.phtml"
+            "$include": "project/cori/story.phtml"
         },
         "tags": [
             "low-level",
@@ -97,7 +97,7 @@
         "references": [],
         "start-date": "2022-03-01",
         "story": {
-            "$include": "project/story/demineur-python.phtml"
+            "$include": "project/demineur-python/story.phtml"
         },
         "tags": [
             "game",
@@ -113,7 +113,7 @@
     },
     "dialogs": {
         "abstract": {
-            "$include": "project/abstract/dialogs.phtml"
+            "$include": "project/dialogs/abstract.phtml"
         },
         "context": "Personnel",
         "end-date": "2022-11-23",
@@ -131,7 +131,7 @@
         "references": [],
         "start-date": "2023-06-25",
         "story": {
-            "$include": "project/story/dialogs.phtml"
+            "$include": "project/dialogs/story.phtml"
         },
         "tags": [
             "oop",
@@ -164,7 +164,7 @@
         "references": [],
         "start-date": "2022-10-21",
         "story": {
-            "$include": "project/story/edplusplus.phtml"
+            "$include": "project/edplusplus/story.phtml"
         },
         "tags": [
             "software",
@@ -192,7 +192,7 @@
         "references": [],
         "start-date": "2023-05-24",
         "story": {
-            "$include": "project/story/ethercrash.phtml"
+            "$include": "project/ethercrash/story.phtml"
         },
         "tags": [
             "data",
@@ -223,7 +223,7 @@
         "references": [],
         "start-date": "2022-04-07",
         "story": {
-            "$include": "project/story/file-signature-detector.phtml"
+            "$include": "project/file-signature-detector/story.phtml"
         },
         "tags": [
             "software"
@@ -237,7 +237,7 @@
     },
     "jslave": {
         "abstract": {
-            "$include": "project/abstract/jslave.phtml"
+            "$include": "project/jslave/abstract.phtml"
         },
         "context": "Personnel",
         "gallery": [],
@@ -250,7 +250,7 @@
         "references": [],
         "start-date": "2024-05-30",
         "story": {
-            "$include": "project/story/jslave.phtml"
+            "$include": "project/jslave/story.phtml"
         },
         "tags": [
             "low-level",
@@ -278,7 +278,7 @@
         "references": [],
         "start-date": "2024-06-17",
         "story": {
-            "$include": "project/story/portfolio.phtml"
+            "$include": "project/portfolio/story.phtml"
         },
         "tags": [
             "web",
@@ -340,7 +340,7 @@
         ],
         "start-date": "2023-11-15",
         "story": {
-            "$include": "project/story/psdc.phtml"
+            "$include": "project/psdc/story.phtml"
         },
         "tags": [
             "software",
@@ -373,7 +373,7 @@
         "references": [],
         "start-date": "2021-11-15",
         "story": {
-            "$include": "project/story/puissance-4.phtml"
+            "$include": "project/puissance-4/story.phtml"
         },
         "tags": [
             "game",
@@ -427,7 +427,7 @@
         "references": [],
         "start-date": "2023-10-16",
         "story": {
-            "$include": "project/story/s1.01.phtml"
+            "$include": "project/s1.01/story.phtml"
         },
         "tags": [
             "software",
@@ -459,7 +459,7 @@
         "references": [],
         "start-date": "2023-11-27",
         "story": {
-            "$include": "project/story/s1.02.phtml"
+            "$include": "project/s1.02/story.phtml"
         },
         "tags": [
             "software",
@@ -498,7 +498,7 @@
         "references": [],
         "start-date": "2023-10-25",
         "story": {
-            "$include": "project/story/s1.03.phtml"
+            "$include": "project/s1.03/story.phtml"
         },
         "tags": [
             "but-administrer",
@@ -537,7 +537,7 @@
         "references": [],
         "start-date": "2023-11-27",
         "story": {
-            "$include": "project/story/s1.04.phtml"
+            "$include": "project/s1.04/story.phtml"
         },
         "tags": [
             "but-gerer",
@@ -569,7 +569,7 @@
         "references": [],
         "start-date": "2023-10-09",
         "story": {
-            "$include": "project/story/s1.05.phtml"
+            "$include": "project/s1.05/story.phtml"
         },
         "tags": [
             "but-conduire",
@@ -608,7 +608,7 @@
         "references": [],
         "start-date": "2023-09-08",
         "story": {
-            "$include": "project/story/s1.06.phtml"
+            "$include": "project/s1.06/story.phtml"
         },
         "tags": [
             "but-collaborer"
@@ -638,7 +638,7 @@
         "references": [],
         "start-date": "2024-05-28",
         "story": {
-            "$include": "project/story/s2.01.phtml"
+            "$include": "project/s2.01/story.phtml"
         },
         "tags": [
             "but-realiser",
@@ -673,7 +673,7 @@
         "references": [],
         "start-date": "2024-03-11",
         "story": {
-            "$include": "project/story/s2.02.phtml"
+            "$include": "project/s2.02/story.phtml"
         },
         "tags": [
             "but-optimiser",
@@ -709,7 +709,7 @@
         "references": [],
         "start-date": "2024-05-14",
         "story": {
-            "$include": "project/story/s2.03.phtml"
+            "$include": "project/s2.03/story.phtml"
         },
         "tags": [
             "but-administrer",
@@ -749,7 +749,7 @@
         "references": [],
         "start-date": "2024-04-23",
         "story": {
-            "$include": "project/story/s2.04.phtml"
+            "$include": "project/s2.04/story.phtml"
         },
         "tags": [
             "but-gerer",
@@ -786,7 +786,7 @@
         "references": [],
         "start-date": "2024-05-15",
         "story": {
-            "$include": "project/story/s2.05.phtml"
+            "$include": "project/s2.05/story.phtml"
         },
         "tags": [
             "but-conduire",
@@ -817,7 +817,7 @@
         "references": [],
         "start-date": "2024-04-18",
         "story": {
-            "$include": "project/story/s2.06.phtml"
+            "$include": "project/s2.06/story.phtml"
         },
         "tags": [
             "but-collaborer"
@@ -842,7 +842,7 @@
         "references": [],
         "start-date": "2022-11-15",
         "story": {
-            "$include": "project/story/the-last-teacher.phtml"
+            "$include": "project/the-last-teacher/story.phtml"
         },
         "tags": [
             "art"
@@ -875,7 +875,7 @@
         ],
         "start-date": "2022-10-15",
         "story": {
-            "$include": "project/story/tregoria.phtml"
+            "$include": "project/tregoria/story.phtml"
         },
         "tags": [
             "art"
@@ -917,7 +917,7 @@
         "references": [],
         "start-date": "2022-08-15",
         "story": {
-            "$include": "project/story/winclean.phtml"
+            "$include": "project/winclean/story.phtml"
         },
         "tags": [
             "full-stack",
@@ -940,7 +940,7 @@
     },
     "wpfzard": {
         "abstract": {
-            "$include": "project/abstract/wpfzard.phtml"
+            "$include": "project/wpfzard/abstract.phtml"
         },
         "context": "Personnel",
         "end-date": "2022-11-23",
@@ -958,7 +958,7 @@
         "references": [],
         "start-date": "2022-07-21",
         "story": {
-            "$include": "project/story/wpfzard.phtml"
+            "$include": "project/wpfzard/story.phtml"
         },
         "tags": [
             "oop",
@@ -976,7 +976,7 @@
     },
     "ztest": {
         "abstract": {
-            "$include": "project/abstract/ztest.phtml"
+            "$include": "project/ztest/abstract.phtml"
         },
         "context": "Personnel",
         "gallery": [],
@@ -989,7 +989,7 @@
         "references": [],
         "start-date": "2024-06-01",
         "story": {
-            "$include": "project/story/ztest.phtml"
+            "$include": "project/ztest/story.phtml"
         },
         "tags": [
             "software",
