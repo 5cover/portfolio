@@ -847,14 +847,14 @@
             hyphens: auto;
     text-indent: 2cap;
   }
-  .text p:not(:first-child),
-  .text .figure:not(:first-child),
-  .text pre:not(:first-child) {
+  .text :is(p,
+  .figure,
+  pre):not(.figure *):not(:first-child) {
     margin-top: 3.125ex;
   }
-  .text p:not(:last-child),
-  .text .figure:not(:last-child),
-  .text pre:not(:last-child) {
+  .text :is(p,
+  .figure,
+  pre):not(.figure *):not(:last-child) {
     margin-bottom: 3.125ex;
   }
   .cols {
@@ -1452,14 +1452,14 @@ section {
           hyphens: auto;
   text-indent: 2cap;
 }
-#me p:not(:first-child),
-#me .figure:not(:first-child),
-#me pre:not(:first-child) {
+#me :is(p,
+.figure,
+pre):not(.figure *):not(:first-child) {
   margin-top: 3.125ex;
 }
-#me p:not(:last-child),
-#me .figure:not(:last-child),
-#me pre:not(:last-child) {
+#me :is(p,
+.figure,
+pre):not(.figure *):not(:last-child) {
   margin-bottom: 3.125ex;
 }
 #me > img {
@@ -1535,14 +1535,14 @@ section {
           hyphens: auto;
   text-indent: 2cap;
 }
-#contact p:not(:first-child),
-#contact .figure:not(:first-child),
-#contact pre:not(:first-child) {
+#contact :is(p,
+.figure,
+pre):not(.figure *):not(:first-child) {
   margin-top: 3.125ex;
 }
-#contact p:not(:last-child),
-#contact .figure:not(:last-child),
-#contact pre:not(:last-child) {
+#contact :is(p,
+.figure,
+pre):not(.figure *):not(:last-child) {
   margin-bottom: 3.125ex;
 }
 #contact ul {

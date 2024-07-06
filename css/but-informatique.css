@@ -847,14 +847,14 @@
             hyphens: auto;
     text-indent: 2cap;
   }
-  .text p:not(:first-child),
-  .text .figure:not(:first-child),
-  .text pre:not(:first-child) {
+  .text :is(p,
+  .figure,
+  pre):not(.figure *):not(:first-child) {
     margin-top: 3.125ex;
   }
-  .text p:not(:last-child),
-  .text .figure:not(:last-child),
-  .text pre:not(:last-child) {
+  .text :is(p,
+  .figure,
+  pre):not(.figure *):not(:last-child) {
     margin-bottom: 3.125ex;
   }
   .cols {
@@ -1395,14 +1395,14 @@ main {
           hyphens: auto;
   text-indent: 2cap;
 }
-#presentation p:not(:first-child),
-#presentation .figure:not(:first-child),
-#presentation pre:not(:first-child) {
+#presentation :is(p,
+.figure,
+pre):not(.figure *):not(:first-child) {
   margin-top: 3.125ex;
 }
-#presentation p:not(:last-child),
-#presentation .figure:not(:last-child),
-#presentation pre:not(:last-child) {
+#presentation :is(p,
+.figure,
+pre):not(.figure *):not(:last-child) {
   margin-bottom: 3.125ex;
 }
 #presentation div {
@@ -1493,14 +1493,14 @@ main {
           hyphens: auto;
   text-indent: 2cap;
 }
-:has(> #resultat-pour-moi) #resultat-pour-moi p:not(:first-child),
-:has(> #resultat-pour-moi) #resultat-pour-moi .figure:not(:first-child),
-:has(> #resultat-pour-moi) #resultat-pour-moi pre:not(:first-child) {
+:has(> #resultat-pour-moi) #resultat-pour-moi :is(p,
+.figure,
+pre):not(.figure *):not(:first-child) {
   margin-top: 3.125ex;
 }
-:has(> #resultat-pour-moi) #resultat-pour-moi p:not(:last-child),
-:has(> #resultat-pour-moi) #resultat-pour-moi .figure:not(:last-child),
-:has(> #resultat-pour-moi) #resultat-pour-moi pre:not(:last-child) {
+:has(> #resultat-pour-moi) #resultat-pour-moi :is(p,
+.figure,
+pre):not(.figure *):not(:last-child) {
   margin-bottom: 3.125ex;
 }
 :has(> #resultat-pour-moi) ul {

@@ -847,14 +847,14 @@
             hyphens: auto;
     text-indent: 2cap;
   }
-  .text p:not(:first-child),
-  .text .figure:not(:first-child),
-  .text pre:not(:first-child) {
+  .text :is(p,
+  .figure,
+  pre):not(.figure *):not(:first-child) {
     margin-top: 3.125ex;
   }
-  .text p:not(:last-child),
-  .text .figure:not(:last-child),
-  .text pre:not(:last-child) {
+  .text :is(p,
+  .figure,
+  pre):not(.figure *):not(:last-child) {
     margin-bottom: 3.125ex;
   }
   .cols {
@@ -1373,14 +1373,14 @@
           hyphens: auto;
   text-indent: 2cap;
 }
-#story p:not(:first-child),
-#story .figure:not(:first-child),
-#story pre:not(:first-child) {
+#story :is(p,
+.figure,
+pre):not(.figure *):not(:first-child) {
   margin-top: 3.125ex;
 }
-#story p:not(:last-child),
-#story .figure:not(:last-child),
-#story pre:not(:last-child) {
+#story :is(p,
+.figure,
+pre):not(.figure *):not(:last-child) {
   margin-bottom: 3.125ex;
 }
 #story article:not(:first-child) {
