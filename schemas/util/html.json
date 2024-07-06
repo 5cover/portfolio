@@ -9,6 +9,7 @@
         },
         {
             "type": "object",
+            "description": "PHP inclusion",
             "properties": {
                 "$include": {
                     "description": "URI relative to the fragment/{language-tag} directory",
@@ -16,7 +17,9 @@
                     "format": "uri-reference"
                 }
             },
-            "required": ["$include"]
+            "required": [
+                "$include"
+            ]
         }
     ]
 }

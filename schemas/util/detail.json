@@ -22,6 +22,7 @@
         "gallery": {
             "type": "array",
             "items": {
+                "type": "object",
                 "required": [
                     "caption"
                 ],
@@ -78,6 +79,7 @@
         "references": {
             "type": "array",
             "items": {
+                "type": "object",
                 "allOf": [
                     {
                         "required": [

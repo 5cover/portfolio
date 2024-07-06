@@ -401,3 +401,14 @@ i'm talking to you, references!
 the current one doesn't display properly in all browsers (doesnt display correctly on samsung internet). because it was part of Supplemental Arrow-C. I picked one from Arrows which is more compatible.
 
 ## remove glyph on definition links
+
+## consistent def titles
+
+instead of using an array, give variants of titles
+
+- full
+- abbr
+
+put it in an object
+
+no plural because as the defined creation is unique and it doesn't make sense to put it at plural (Cs?, NASMs?)

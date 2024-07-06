@@ -12,7 +12,7 @@ function put_footer(Page $page, Lang $lang) { ?>
     <footer class="lvl">
         <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="<?= $lang->get('footerGitHubAnchorTitle') ?>"><?php
-           echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60) ?></a>
+          echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60) ?></a>
     </footer>
 <?php }
 
@@ -139,38 +139,6 @@ function get_background_style_attr(string $bg, string $varname = 'bg-img'): stri
     END;
 }
 
-function put_definition_list(Lang $lang, array $defIds) {
-    $definitions = $lang->get_data_json('definitions');
-    ?>
-    <ul class="lvl list-definition">
-        <?php foreach ($defIds as $defId) { ?>
-            <li><?php put_definition_card($lang, $defId, $definitions[$defId]) ?></li>
-        <?php } ?>
-    </ul>
-<?php }
-
-function put_definition_card(Lang $lang, string $id, array $def) {
-    $types = $lang->get_data_json('types');
-    $title = $def['names'][0];
-    ?>
-    <article class="definition" <?php if ($bg = $def['background'] ?? null)
-        echo get_background_style_attr($bg, 'bg-img-card'); ?>>
-        <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="<?= $def['wiki'] ?>"><?= $title ?></a>
-        </h4>
-        <?php if ($logo = $def['logo'] ?? null)
-            echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $lang->formatTitle($title), 'logo'); ?>
-        <p class="type"><small><?= ucfirst($types[$def['type']]) ?></small></p>
-        <p class="synopsis"><?= $def['synopsis'] ?></p>
-    </article>
-<?php }
-
-function get_definition_tooltip_trigger(Lang $lang, string $id, array $def): string {
-    return '<a target="_blank" rel="noopener noreferrer" href="' . $def['wiki']
-        . '" data-definition-id="' . $id
-        . '" class="link definition-tooltip-trigger">'
-        . $def['names'][0] . '</a>';
-}
-
 function get_iframe(string $src, string $title): string {
-    return '<iframe src="'.$src.'" frameborder="0" loading="lazy" width="300" height="300" title="'.$title.'"></iframe>';
+    return '<iframe src="' . $src . '" frameborder="0" loading="lazy" width="300" height="300" title="' . $title . '"></iframe>';
 }

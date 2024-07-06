@@ -61,6 +61,6 @@ final class Fragment {
      */
     function def(string $id): string {
         $def = $this->lang->get_data_json('definitions', false)[$id];
-        return get_definition_tooltip_trigger($this->lang, $id, $def);
+        return (new Definition($this->lang, $id, $def))->get_tooltip_trigger();
     }
 }

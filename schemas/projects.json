@@ -9,6 +9,7 @@
                 "$ref": "util/detail.json"
             },
             {
+                "type": "object",
                 "required": [
                     "context",
                     "start-date",

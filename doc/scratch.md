@@ -229,14 +229,3 @@ do we add an abbr element at the start of the synopspsis
 should the title be an abbr
 
 more info below
-
-## consistent def titles
-
-instead of using an array, give variants of titles
-
-- full
-- abbreviated
-
-put it in an object
-
-no plural because as the defined creation is unique and it doesn't make sense to put it at plural (Cs?, NASMs?)

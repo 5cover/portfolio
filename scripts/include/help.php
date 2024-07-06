@@ -2,8 +2,20 @@
 require_once 'lang.php';
 require_once 'page.php';
 
-function element(string $tagName, string $content) {
-    echo "<$tagName>$content</$tagName>";
+$_dom = new DOMDocument('1.0', 'utf-8');
+
+function array_map_entries(callable $transform, array $array): array {
+    return array_map($transform, array_keys($array), $array);
+}
+
+function element(string $tagName, string $content, array $attributes = []): string {
+    global $_dom;
+    $elem = $_dom->createElement($tagName);
+    setInnerHTML($elem, $content);
+    foreach ($attributes as $name => $value) {
+        $elem->setAttribute($name, $value);
+    }
+    return $elem->C14N();
 }
 
 function map(callable $transform, mixed $data): mixed {
@@ -194,4 +206,26 @@ function get_web_url(string $filename): string {
 
     return '/' . substr($filename, $i);
 
+}
+
+function clearChildren(DOMNode $node) {
+    foreach ($node->childNodes as $child) {
+        $node->removeChild($child);
+    }
+}
+
+function setInnerHTML($node, $html) {
+    clearChildren($node);
+
+    if (empty($html)) {
+        return;
+    }
+
+    $doc = $node->ownerDocument;
+    $htmlclip = new DOMDocument();
+    $htmlclip->loadHTML('<meta http-equiv="Content-Type" content="text/html;charset=utf-8"><div>' . $html . '</div>');
+    $clipNode = $doc->importNode($htmlclip->documentElement->lastChild->firstChild, true);
+    while ($item = $clipNode->firstChild) {
+        $node->appendChild($item);
+    }
 }

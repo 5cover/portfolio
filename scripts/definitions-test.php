@@ -13,14 +13,13 @@ put_head($page, $lang);
     <main>
         <dl>
             <?php
-            $defs = $lang->get_data_json('definitions');
-            foreach ($defs as $id => $def) {
+            foreach ($lang->definitions() as $definition) {
                 ?>
-                <dt id="<?= $id ?>"><?= $id ?></dt>
+                <dt id="<?= $definition->id ?>"><?= $definition->id ?></dt>
                 <dd>
-                    <?= implode(', ', array_splice($def['names'], 1)) ?>
+                    <?= implode(', ', $definition->data['name']) ?>
                     <div>
-                        <?= get_definition_tooltip_trigger($lang, $id, $def) ?>
+                        <?= $definition->get_tooltip_trigger() ?>
                     </div>
                 </dd>
             <?php } ?>

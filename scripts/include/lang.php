@@ -1,4 +1,5 @@
 <?php
+require_once 'data.php';
 require_once 'help.php';
 
 final class Lang {
@@ -36,6 +37,27 @@ final class Lang {
 
     function get_data_json(string $name, bool $linked = true): array {
         return get_data_json($this->tag . '/' . $name, $linked);
+    }
+
+    private readonly array $datas;
+    private function get_data(string $name, callable $makeObject): iterable {
+        return $this->datas[$name] ??= array_map_entries($makeObject, $this->get_data_json($name));
+    }
+
+    function definitions(): iterable {
+        return $this->get_data('definitions', fn($id, $json) => new Definition($this, $id, $json));
+
+    }
+    function projects(): iterable {
+        return $this->get_data('projects', fn($id, $json) => new Project($this, $id, $json));
+    }
+
+    function passions(): iterable {
+        return $this->get_data('passions', fn($id, $json) => new Passion($this, $id, $json));
+    }
+
+    function perspectives(): array {
+        return $this->get_data('perspectives', fn($id, $json) => new Perspective($this, $id, $json));
     }
 
     function equals(Lang $other): bool {

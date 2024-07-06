@@ -1,11 +1,9 @@
 <?php
 require_once 'help.php';
 require_once 'content.php';
-require_once 'detail.php';
+require_once 'data.php';
 
 [$lang, $page] = parse_args();
-
-$projects = array_map(fn($p) => new Project($p), $lang->get_data_json('projects'));
 
 $piano_tiles = [
     "passions.html#mountain",
@@ -52,7 +50,7 @@ put_head($page, $lang);
         </article>
         <section id="ongoing-projects" class="lvl">
             <h2><?= $lang->get('indexOngoingProjects') ?></h2>
-            <?php Project::put_cards_list($lang, array_filter($projects, fn($p) => !array_key_exists('end-date', $p->data))) ?>
+            <?php Project::put_card_list(array_filter($lang->projects(), fn($p) => !array_key_exists('end-date', $p->data))) ?>
             <a href="projects.html" class="lvl button-link"><?= $lang->get('indexAllMyProjects') ?></a>
         </section>
         <article id="contact" class="lvl content-block">
