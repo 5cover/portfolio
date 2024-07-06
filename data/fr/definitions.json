@@ -102,8 +102,8 @@
     },
     "rust": {
         "logo": {
-            "isThemedSvg": true,
-            "url": "/portfolio/img/definition/rust/logo.svg"
+            "isThemedSvg": false,
+            "url": "/portfolio/img/definition/rust/logo.png"
         },
         "name": {
             "full": "Rust"

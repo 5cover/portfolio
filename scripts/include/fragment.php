@@ -50,8 +50,7 @@ final class Fragment {
 
     /** Get a reference citatiion */
     function ref(): string {
-        global $refNum;
-        return '<a class="link" id="cite-ref-' . $refNum . '" href="#ref-' . $refNum . '">' . $refNum++ . '</a>';
+        return '<a class="link" id="cite-ref-' . $this->refNum . '" href="#ref-' . $this->refNum . '">' . $this->refNum++ . '</a>';
     }
 
     /**

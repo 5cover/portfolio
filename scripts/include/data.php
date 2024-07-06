@@ -234,9 +234,10 @@ final class Passion extends Details {
         <li id="<?= $this->id ?>" <?php $this->put_background_style_attr('bg-img-card') ?>>
             <?php $this->put_logo() ?>
             <div>
-                <?php element("h$headingLevel", "<a href=\"passion/$this->id.html\">{$this->data['title']}</a>") ?>
-                <?php $this->put_abstract() ?>
-                <?php $this->put_card_link_list() ?>
+                <?php
+                echo element("h$headingLevel", "<a href=\"passion/$this->id.html\">{$this->data['title']}</a>");
+                $this->put_abstract();
+                $this->put_card_link_list() ?>
             </div>
         </li>
         <?php
@@ -287,9 +288,10 @@ final class Perspective extends Details {
         <li id="<?= $this->id ?>" <?php $this->put_background_style_attr('bg-img-card') ?>>
             <?php $this->put_logo() ?>
             <div>
-                <?php element("h$headingLevel", "<a href=\"perspective/$this->id.html\">{$this->data['title']}</a>") ?>
-                <?php $this->put_abstract() ?>
-                <?php $this->put_card_link_list() ?>
+                <?php
+                echo element("h$headingLevel", "<a href=\"perspective/$this->id.html\">{$this->data['title']}</a>");
+                $this->put_abstract();
+                $this->put_card_link_list() ?>
             </div>
         </li>
         <?php
@@ -361,9 +363,8 @@ final class Project extends Details {
         <li <?php $this->put_background_style_attr('bg-img-card') ?>>
             <?php
             $this->put_tags();
-            $this->put_logo() ?>
-            <?php element("h$headingLevel", "<a href=\"project/$this->id.html\">{$this->data['title']}</a>") ?>
-            <?php
+            $this->put_logo();
+            echo element("h$headingLevel", "<a href=\"project/$this->id.html\">{$this->data['title']}</a>");
             $this->put_status();
             $this->put_context();
             $this->put_abstract();

@@ -16,11 +16,7 @@ final class Lang {
     }
 
     function formatDate(DateTimeInterface $dateTime) {
-        $res = $this->fmt->format($dateTime);
-        if ($res === false) {
-            throw new Exception("IntlDateFormatter::format failed");
-        }
-        return $res;
+        return expect($this->fmt->format($dateTime), 'IntlDateFormatter::format');
     }
 
     function get(string $name): string {

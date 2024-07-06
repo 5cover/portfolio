@@ -5,9 +5,9 @@
             "url": "/portfolio/img/definition/zig/logo.svg"
         },
         "story": {
-            "$include": "perspective/story/the-goal-of-a-programming-language.phtml"
+            "$include": "perspective/the-goal-of-a-programming-language/story.phtml"
         },
-        "abstract": "Comment Zig résout les problèmes du C",
+        "abstract": {"$include": "perspective/the-goal-of-a-programming-language/abstract.phtml"},
         "title": "L'objectif d'un langage de programmation",
         "gallery": [],
         "links": {},

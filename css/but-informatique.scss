@@ -18,13 +18,13 @@ main {
     display: none;
 }
 
-
 #titre {
     @include content-and-image;
 }
 
 #presentation {
     @include util.text;
+
     div {
         @include util.cols;
     }
@@ -51,7 +51,7 @@ main {
 
 :has(> #resultat-pour-moi) {
     @include content-and-image;
-    
+
     figure {
         $border-radius: 1em;
         border-radius: $border-radius;

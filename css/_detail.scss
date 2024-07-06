@@ -1,12 +1,11 @@
 /* Comon styles for detail pages */
-
 @use 'const';
 @use 'util';
 
 /* Basic styles */
-
 /* Section titles */
 h2 {
+
     #links &,
     #story & {
         display: none;
@@ -31,10 +30,9 @@ main {
     padding: const.$full-width-vertical-margin const.$full-width-horizontal-margin;
 }
 
-@include util.heading-margins(1,2);
+@include util.heading-margins(1, 2);
 
 /* Customizables */
-
 /* Detail header
  *
  * Common header for detail pages
@@ -44,7 +42,7 @@ main {
  * $row-logo:     integer -> logo row
  * $row-abstract: integer -> abstract row
  */
- @mixin header($row-count: 2, $row-title: 1, $row-abstract: 2) {
+@mixin header($row-count: 2, $row-title: 1, $row-abstract: 2) {
     display: grid;
     grid-template: repeat(calc($row-count), auto) / auto auto;
 
@@ -73,12 +71,11 @@ main {
 }
 
 /* Components */
-
 /* Gallery
  *
  * A list of figures related to a detail.
  */
- .gallery {
+.gallery {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -147,5 +144,3 @@ main {
         display: block;
     }
 }
-
-

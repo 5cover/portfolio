@@ -220,12 +220,8 @@ that way we don't repeat it too much while still providing it regularily?
 
 do we even need to do this?
 
-## standardisze definition abbr policy
+## fix tooltips
 
-and add it to conventions
+sometimes they don't go away
 
-do we add an abbr element at the start of the synopspsis
-
-should the title be an abbr
-
-more info below
+fade transition

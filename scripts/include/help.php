@@ -2,19 +2,18 @@
 require_once 'lang.php';
 require_once 'page.php';
 
-$_dom = new DOMDocument('1.0', 'utf-8');
-
 function array_map_entries(callable $transform, array $array): array {
     return array_map($transform, array_keys($array), $array);
 }
 
 function element(string $tagName, string $content, array $attributes = []): string {
-    global $_dom;
-    $elem = $_dom->createElement($tagName);
+    $d = new DOMDocument();
+    $elem = $d->createElement($tagName);
     setInnerHTML($elem, $content);
     foreach ($attributes as $name => $value) {
         $elem->setAttribute($name, $value);
     }
+    expect($d->appendChild($elem), 'append child'); // necessary so C14N returns something
     return $elem->C14N();
 }
 
@@ -35,11 +34,15 @@ function _get_web_filename(string $url) {
 }
 
 function parse_date(string $date): DateTimeImmutable {
-    $res = DateTimeImmutable::createFromFormat('Y-m-d', $date);
-    if ($res === false) {
-        throw new Exception("DateTimeImmutable::createFromFormat failed on '$date'");
+    return expect(DateTimeImmutable::createFromFormat('Y-m-d', $date),
+        "DateTimeImmutable::createFromFormat on '$date'");
+}
+
+function expect(mixed $result, string $msg) {
+    if ($result === false) {
+        throw new Exception("$msg failed");
     }
-    return $res;
+    return $result;
 }
 
 function get_img_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string {
@@ -48,10 +51,7 @@ function get_img_element(string $url, string|null $title = null, string|null $cl
         height="$baseHeight"
         END;
     } else {
-        $size = getimagesize(_get_web_filename($url));
-        if ($size === false) {
-            throw new Exception('getimagesize failed');
-        }
+        $size = expect(getimagesize(_get_web_filename($url)), 'getimagesize');
         $sizePart = $size[3];
     }
 
@@ -67,7 +67,7 @@ function get_svg_element(string $url, string|null $title = null, string|null $cl
     $domDocument = new DOMDocument();
 
     // Load the SVG code as XML
-    $domDocument->load(_get_web_filename($url)) or throw new Exception("failed to load DOMDocument at '$url'");
+    expect($domDocument->load(_get_web_filename($url)), "loading DOMDocument at '$url'");
 
     // Extract the <svg> element
     $svgElements = $domDocument->getElementsByTagName('svg');
@@ -129,12 +129,10 @@ function get_data_json(string $name, bool $linked = true): array {
 }
 
 function _get_data_json_fetch(string $name, bool $linked): array {
-    $f = file_get_contents($linked
-        ? _get_web_filename("/portfolio/data/$name.json")
-        : __DIR__ . "/../../data/$name.json");
-    if ($f === false) {
-        throw new Exception("failed to open JSON data '$name'");
-    }
+    $f = expect(file_get_contents($linked
+            ? _get_web_filename("/portfolio/data/$name.json")
+            : __DIR__ . "/../../data/$name.json"),
+        "opening JSON data '$name'");
     return json_decode($f, true);
 }
 
@@ -144,11 +142,7 @@ function _get_data_json_fetch(string $name, bool $linked): array {
  * @return array The filenames *glob* matched in the website folder.
  */
 function glob_web(string $glob): array {
-    $g = glob(_get_web_filename("$glob"));
-    if ($g === false) {
-        throw new Exception('glob failed');
-    }
-    return $g;
+    return expect(glob(_get_web_filename("$glob")), 'glob');
 }
 
 
@@ -162,7 +156,7 @@ function glob_web_single(string $glob): string {
     if (count($g) != 1) {
         throw new Exception("glob '$glob' matched " . count($g) . ' filename(s). Expected 1');
     }
-    return realpath($g[0]);
+    return expect(realpath($g[0]), 'realpath');
 }
 
 /**
@@ -178,7 +172,7 @@ function glob_web_optional(string $glob): string|null {
     if (count($g) > 1) {
         throw new Exception("glob '$glob' matched " . count($g) . ' filename(s). Expected 0 or 1');
     }
-    return realpath($g[0]);
+    return expect(realpath($g[0]), 'realpath');
 }
 
 /**
@@ -187,7 +181,7 @@ function glob_web_optional(string $glob): string|null {
  * @return string An URL suitable for use as an HTML `href`, CSS `url()`...
  */
 function get_web_url(string $filename): string {
-    $filename = realpath($filename);
+    $filename = expect(realpath($filename), 'realpath');
 
     // remove common prefix between __DIR__ and filename
     $s1 = __DIR__;
@@ -208,24 +202,12 @@ function get_web_url(string $filename): string {
 
 }
 
-function clearChildren(DOMNode $node) {
-    foreach ($node->childNodes as $child) {
-        $node->removeChild($child);
+function setInnerHTML(DOMElement $element, string $html)
+{
+    $fragment = $element->ownerDocument->createDocumentFragment();
+    expect($fragment->appendXML($html), 'append html');
+    while ($element->hasChildNodes()) {
+        expect($element->removeChild($element->firstChild), 'remove child');
     }
-}
-
-function setInnerHTML($node, $html) {
-    clearChildren($node);
-
-    if (empty($html)) {
-        return;
-    }
-
-    $doc = $node->ownerDocument;
-    $htmlclip = new DOMDocument();
-    $htmlclip->loadHTML('<meta http-equiv="Content-Type" content="text/html;charset=utf-8"><div>' . $html . '</div>');
-    $clipNode = $doc->importNode($htmlclip->documentElement->lastChild->firstChild, true);
-    while ($item = $clipNode->firstChild) {
-        $node->appendChild($item);
-    }
+    expect($element->appendChild($fragment), 'append child');
 }

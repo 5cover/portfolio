@@ -110,9 +110,9 @@ img {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
     transition: transform .5s, opacity .5s;
     position: relative;
-
     $br: .75em;
     border-radius: $br;
+
     img {
         border-top-left-radius: $br;
         border-top-right-radius: $br;

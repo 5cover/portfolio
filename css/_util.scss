@@ -332,6 +332,7 @@
     &:not(:first-child) {
         margin-top: $margin-top;
     }
+
     &:not(:last-child) {
         margin-bottom: $margin-bottom;
     }
@@ -339,7 +340,6 @@
 
 /* Heading margins */
 @mixin heading-margins($min-level: 1, $max-level: 6) {
-
     @for $i from $min-level through $max-level {
         h#{$i} {
             @include margin-gap(const.$heading-margin);
@@ -359,9 +359,9 @@
         text-indent: 2cap;
     }
 
-    p,
-    .figure,
-    pre {
+    :is(p,
+        .figure,
+        pre):not(.figure *) {
         @include margin-gap(const.$p-margin);
     }
 }
