@@ -99,12 +99,12 @@ $(async () => {
 
         // Update the project list
         projectList.innerHTML = projectListHTML;
-        i11y.setupElementInteractivity(projectList);
+        i11y.setupInteractivity(projectList);
     }
 
     async function getProjectCardHtml(id, project) {
         return `<li${util.map(project.background, b => ` style="--bg-img-card: url(${b})"`, '')}>
-        <ul class="list-rect">${project.tags.map(id => `<li><a href="?tag=${id}">${tags[id]}</a></li>`).join('')}</ul>
+            <ul class="list-rect">${project.tags.map(id => `<li><a href="?tag=${id}">${tags[id]}</a></li>`).join('')}</ul>
             ${await util.map(project.logo, async info =>
             (await dom.getGraphicElement(info, project.title /* todo: format title*/, ['logo'])).outerHTML,
             '')}
