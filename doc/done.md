@@ -416,3 +416,41 @@ no plural because as the defined creation is unique and it doesn't make sense to
 ## id/field.phtml fragment directory structure
 
 instead of `field/id.phtml`
+
+## fixed tooltip eternal show bug
+
+Analyze what the current code does on:
+
+- trigger enter: clear timeout, schedule show
+- trigger leave: clear tiemout, hide
+- tooltip enter: clear timeout
+- tooltip leave: schedule hide
+
+### Scenario 1
+
+\#|event|delay before|what happens
+-|-|-|-
+1|trigger enter||show in 500
+2|trigger leave|< 500|cancel show
+
+### Scenario 2
+
+\#|event|delay before|what happens
+-|-|-|-
+1|trigger enter||show in 500
+2|trigger leave|> 500|hide in 250
+3|tooltip enter|< 250|cancel hide
+4|tooltip leave||hide in 250
+
+### Scenario 3 (bug)
+
+\#|event|delay before|what happens
+-|-|-|-
+1|trigger enter||show in 500
+2|trigger leave|> 500|hide in 250
+3|tooltip enter|< 250|cancel hide
+4|tooltip leave||hide in 250
+5|trigger enter|< 250|cancel hide, show in 500
+6|trigger leave||cancel show, schedul hide
+
+**Result**: since we didn't check if the tooltip was already show in `scheduleShowTooltip`, we overwrote the old tooltip with a new tooltip on 5, while is was not necessarily shown (depending on the delay between 5 and 6), it meant that the old tooltip was unreferenced and would not be hidden. this was as imple fix

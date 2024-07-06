@@ -14,7 +14,7 @@ simply a page that will redirect you to the index for your preferred language, o
 
 it's better
 
-## On firefox 128 release (9 juillet)
+## After firefox 128 release (9 juillet)
 
 Take advantage of @property support. Replace *bg-img-project* and *bg-img-definition* by *bg-img*.
 
@@ -225,3 +225,7 @@ do we even need to do this?
 sometimes they don't go away
 
 fade transition
+
+Fix bug: when you hover the card and go back to the tooltip, the definition doesn't go away
+
+What we can do: add the tooltip to the DOM once when it's shown for the first time, and then never remove it, just hide it.
