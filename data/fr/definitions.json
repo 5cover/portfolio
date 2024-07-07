@@ -14,7 +14,7 @@
     },
     "pdf": {
         "wiki": "https://fr.wikipedia.org/wiki/Portable_Document_Format",
-        "synopsis": "Langage de description de page présenté par la société Adobe Systems en <time datetime=\"1992\">1992</time et qui est devenu une norme ISO en <time datetime=\"2008\">2008</time>.",
+        "synopsis": "Langage de description de page présenté par la société Adobe Systems en <time datetime=\"1992\">1992</time> et qui est devenu une norme ISO en <time datetime=\"2008\">2008</time>.",
         "logo": {
             "isThemedSvg": false,
             "url": "/portfolio/img/definition/pdf/logo.svg"
@@ -110,7 +110,7 @@
         },
         "wiki": "https://fr.wikipedia.org/wiki/Rust_(langage)",
         "type": "programming-language",
-        "synopsis": "Langage de programmation système open source créé par Mozilla Research en <time datetime=\"2010\">2010</time>. Il a été conçu pour offrir une alternative plus sûre et plus fiable au langage C++, tout en conservant des performances similaires. Rust est un langage compilé et statiquement typé, ce qui signifie que le code est vérifié pour les erreurs de type avant l'exécution. Il prend en charge la programmation concurrente et la gestion de la mémoire, ce qui permet aux développeurs d'écrire des programmes fiables et efficaces. Il est également réputé pour sa courbe d'apprentissage abrupte, mais sa syntaxe claire et concise en fait un langage apprécié des développeurs expérimentés. Rust est couramment utilisé pour les systèmes d'exploitation, les moteurs de jeux, les applications réseau, les navigateurs web et bien plus encore. Il est apprécié pour sa sécurité mémoire, sa prévention des erreurs à l'exécution, sa rapidité d'exécution et sa gestion efficace de la mémoire."
+        "synopsis": "langage de programmation système axé sur la sécurité, la prévention des erreurs de segmentation et la concurrence. Il a été développé par Mozilla Research et est conçu pour être un langage de programmation système sûr, concurrent et pratique. Rust vise à fournir une gestion de la mémoire sûre, une concurrence sans course de données, une abstraction de bas niveau et une performance de haut niveau, tout en offrant une syntaxe agréable et des outils de développement modernes."
     },
     "survivalworld": {
         "logo": {

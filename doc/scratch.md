@@ -219,13 +219,3 @@ a marvel of engineering. a timeless lesson for all of us programmers.
 that way we don't repeat it too much while still providing it regularily?
 
 do we even need to do this?
-
-## fix tooltips
-
-sometimes they don't go away
-
-fade transition
-
-Fix bug: when you hover the card and go back to the tooltip, the definition doesn't go away
-
-What we can do: add the tooltip to the DOM once when it's shown for the first time, and then never remove it, just hide it.

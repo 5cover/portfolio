@@ -313,12 +313,20 @@
 
     &-tooltip {
         @extend .definition;
-        position: fixed;
-        z-index: 1;
+        position: absolute;
 
         &-trigger {
             cursor: pointer;
             font-style: italic;
+        }
+
+        
+        &:not(.show) {
+            opacity: 0;
+        }
+        
+        &.hide {
+            display: none;
         }
 
         /*&#{const.$hover}, i am hovered

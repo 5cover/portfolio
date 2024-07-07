@@ -454,3 +454,13 @@ Analyze what the current code does on:
 6|trigger leave||cancel show, schedul hide
 
 **Result**: since we didn't check if the tooltip was already show in `scheduleShowTooltip`, we overwrote the old tooltip with a new tooltip on 5, while is was not necessarily shown (depending on the delay between 5 and 6), it meant that the old tooltip was unreferenced and would not be hidden. this was as imple fix
+
+## fix definition tooltips
+
+sometimes they don't go away
+
+fade transition
+
+Fix bug: when you hover the card and go back to the tooltip, the definition doesn't go away
+
+What we can do: add the tooltip to the DOM once when it's shown for the first time, and then never remove it, just hide it.
