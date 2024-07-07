@@ -5,7 +5,7 @@ const definitionTooltipTemplate = document.getElementById('template-definition-t
 
 const types = await util.getDataJson(`${document.documentElement.lang}/types`);
 
-export async function createDefinitionTooltip(defId, def, onEnter, onLeave) {
+export async function createDefinitionTooltip(defId, def) {
     // Clone the tooltip template
     const tooltip = $(util.single(definitionTooltipTemplate.content.children).cloneNode(true));
     tooltip.attr('data-definition-id', defId);
@@ -24,11 +24,6 @@ export async function createDefinitionTooltip(defId, def, onEnter, onLeave) {
 
     $('.type small', tooltip).html(util.ucfirst(types[def.type]));
     $('.synopsis', tooltip).html(def.synopsis);
-
-    tooltip.on({
-        'mouseenter focusin': onEnter,
-        'mouseleave focusout': onLeave,
-    });
 
     return tooltip;
 }

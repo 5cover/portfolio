@@ -1,7 +1,7 @@
 import * as i11y from "./modules/i11y.js";
 
 $(() => {
-    i11y.setupInteractivity(document.documentElement);
+    i11y.setup(document.documentElement);
 
     // Theme switches
 

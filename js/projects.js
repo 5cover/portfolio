@@ -99,7 +99,7 @@ $(async () => {
 
         // Update the project list
         projectList.innerHTML = projectListHTML;
-        i11y.setupInteractivity(projectList);
+        i11y.setup(projectList);
     }
 
     async function getProjectCardHtml(id, project) {

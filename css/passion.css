@@ -741,8 +741,7 @@
     align-content: center;
   }
   .definition-tooltip {
-    position: fixed;
-    z-index: 1;
+    position: absolute;
     /*&:is(:hover, :focus-within, :focus), i am hovered
     &-trigger:is(:hover, :focus-within, :focus) ~ & my trigger is hover
     {
@@ -761,6 +760,12 @@
   .definition-tooltip-trigger {
     cursor: pointer;
     font-style: italic;
+  }
+  .definition-tooltip:not(.show) {
+    opacity: 0;
+  }
+  .definition-tooltip.hide {
+    display: none;
   }
   /* Content block
    *
