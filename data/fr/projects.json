@@ -388,7 +388,7 @@
         "title": "Puissance 4"
     },
     "s1.01": {
-        "abstract": "Implémentation d'un besoin client (S1.01)",
+        "abstract": "Jeu de Sudoku. Implémentation d'un besoin client (S1.01)",
         "background": "/portfolio/img/project/s1.01/bg.png",
         "context": "BUT",
         "end-date": "2023-11-27",
@@ -421,7 +421,7 @@
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
-                "href": "https://github.com/5cover/s1.01-sudoku"
+                "href": "https://github.com/5cover/S1.01"
             }
         },
         "references": [],
@@ -485,14 +485,14 @@
         "title": "Sudone"
     },
     "s1.03": {
-        "abstract": "Automatisation, scripts et conteneurisation (S1.03)",
+        "abstract": "Automatisation, scripts et conteneurisation. Installation d'un poste pour le développement (S1.03)",
         "context": "BUT",
         "end-date": "2023-01-21",
         "gallery": [],
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
-                "href": "todo"
+                "href": "https://github.com/5cover/S1.03"
             }
         },
         "references": [],
@@ -531,7 +531,7 @@
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
-                "href": "todo"
+                "href": "https://github.com/5cover/S1.04"
             }
         },
         "references": [],
@@ -563,7 +563,7 @@
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
-                "href": "todo"
+                "href": "https://github.com/Matteo-K/TabasKho"
             }
         },
         "references": [],
@@ -600,9 +600,9 @@
         "end-date": "2023-06-11",
         "gallery": [],
         "links": {
-            "Dépôt GitHub": {
+            "Projet GitHub": {
                 "anchor": "github",
-                "href": "todo"
+                "href": "https://github.com/users/5cover/projects/3"
             }
         },
         "references": [],
@@ -632,7 +632,7 @@
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
-                "href": "todo"
+                "href": "https://github.com/5cover/S2.05/tree/main/lot10"
             }
         },
         "references": [],
@@ -667,7 +667,7 @@
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
-                "href": "todo (clone exploration algo in my own public repo)"
+                "href": "https://github.com/5cover/S2.02"
             }
         },
         "references": [],
@@ -703,7 +703,7 @@
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
-                "href": "todo"
+                "href": "https://github.com/5cover/S2.03"
             }
         },
         "references": [],
@@ -743,7 +743,7 @@
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
-                "href": "todo"
+                "href": "https://github.com/5cover/S2.04"
             }
         },
         "references": [],
@@ -780,7 +780,7 @@
         "links": {
             "Dépôt GitHub": {
                 "anchor": "github",
-                "href": "todo"
+                "href": "https://github.com/5cover/S2.05"
             }
         },
         "references": [],
@@ -809,9 +809,9 @@
         "end-date": "2024-06-06",
         "gallery": [],
         "links": {
-            "Dépôt GitHub": {
+            "Projet GitHub": {
                 "anchor": "github",
-                "href": "todo"
+                "href": "https://github.com/users/5cover/projects/9"
             }
         },
         "references": [],

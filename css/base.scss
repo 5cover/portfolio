@@ -54,9 +54,6 @@
         color-scheme: dark;
         $fg: #eee;
         $c0: #111;
-        /*$c1: #222;
-    $c2: #333;
-    $c3: #444;*/
         $step: 8%;
         $c1: color.scale($c0, $lightness: $step);
         $c2: color.scale($c1, $lightness: $step);

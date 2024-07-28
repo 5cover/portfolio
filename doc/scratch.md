@@ -1,5 +1,9 @@
 # Scratch area
 
+## show counts for every tag
+
+that way we can get stats
+
 ## global index page (empty path)
 
 simply a page that will redirect you to the index for your preferred language, or english by default.
@@ -174,12 +178,6 @@ Reprendre la structure des compte rendus d'anglais
 
 - \+ Livrables
 
-### Project repositories
-
-GitLab for SAÉs. Put the in a group called BUT.
-
-S1.01 : host doxygen generated html on gh-pages, add link
-
 ## Perspectives page
 
 My opiniated rants on some things
@@ -219,3 +217,9 @@ a marvel of engineering. a timeless lesson for all of us programmers.
 that way we don't repeat it too much while still providing it regularily?
 
 do we even need to do this?
+
+### Project repositories
+
+GitLab for SAÉs. Put the in a group called BUT.
+
+S1.01 : host doxygen generated html on gh-pages, add link
