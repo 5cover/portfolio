@@ -462,10 +462,10 @@
     color: var(--color-fg);
     text-decoration: underline;
   }
-  .list-detail-split-card > li h3 > a {
+  .list-detail-split-card > li h3 a {
     text-decoration: none;
   }
-  .list-detail-split-card > li h3 > a:after {
+  .list-detail-split-card > li h3 a:after {
     content: "";
     position: absolute;
     left: 0;
@@ -569,10 +569,10 @@
     color: var(--color-fg);
     text-decoration: underline;
   }
-  .list-project > li h3 > a {
+  .list-project > li h3 a {
     text-decoration: none;
   }
-  .list-project > li h3 > a:after {
+  .list-project > li h3 a:after {
     content: "";
     position: absolute;
     left: 0;
@@ -881,9 +881,6 @@
   }
   :root[data-theme=dark] {
     color-scheme: dark;
-    /*$c1: #222;
-    $c2: #333;
-    $c3: #444;*/
     accent-color: #a66144;
     /* workaround until relative alpha colors get widespread support */
     --color-accent: #a66144;
@@ -965,9 +962,6 @@
   @media (prefers-color-scheme: dark) {
     :root[data-theme=system] {
       color-scheme: dark;
-      /*$c1: #222;
-      $c2: #333;
-      $c3: #444;*/
       accent-color: #a66144;
       /* workaround until relative alpha colors get widespread support */
       --color-accent: #a66144;
