@@ -301,6 +301,22 @@
         user-select: none;
     }
 
+    /* UL
+     *
+     *
+     * Intended for: <ul>
+     */
+    .ul {
+        display: flex;
+        flex-direction: column;
+        gap: .5lh;
+        padding-left: 2em;
+
+        .ul {
+            padding-left: 4em;
+        }
+    }
+
     /* Figure
      *
      * Intended for: <figure>

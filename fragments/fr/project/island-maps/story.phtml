@@ -1,3 +1,32 @@
 <div class="cols">
-    <p>todo</p>
+    <p>Anno 2070 islands are not randomly generated, there is a set of islands defined in the game's files. They are rotated and placed randomly to create an illusion of randomness, but all Anno 2070 maps share the same islands.</p>
+    <p>So I reproduced them in Anno Designer.</p>
 </div>
+<article class="cols">
+    <h3>Possible usages</h3>
+
+    <ul class="ul">
+        <li><strong>Making island-wide layouts.</strong> I often use building layouts to optimize space usage, but layouts have a major flaw: they are assumed to be rectangles. Their space efficiency is based on their bounding box, but islands are not rectangles. Islands are irregular shapes. Which is why one can't solely rely on building layouts to build efficiently.</li>
+        <li><strong>Computing optimal island-wide layouts with an algorithm</strong> (really looking forward to that one).</li>
+    </ul>
+
+    <ul class="ul">
+    <li><strong>Black</strong>: Blocked tile (Rock, reef, river...)</li>
+    <li><strong>Yellow</strong>: Shore (near rivers and on the coast, some tiles can have roads built on them, but nothing else)</li>
+    <li><strong>Blank</strong>: Water or land.</li>
+    <li><strong>Purple</strong>: Oddity (oddly-behaving tiles)</li>
+    </ul>
+
+    <figure class="figure">
+        <img src="/portfolio/img/project/island-maps/3_mines_1_river.webp" alt="Island 1 - 3 mines 1 river slot" width="800" height="571" loading="lazy" title="Island 1 - 3 mines 1 river slot">
+        <figcaption>Island 1 - 3 mines 1 river slot</figcaption>
+    </figure>
+
+    <p>This is the first island I've reproduced. I think it's the smallest island in the game.</p>
+
+    <p>
+        <strong>Oddity</strong>: this tile, is not buildable, but it still makes a sound when you try to build a road on it.
+        3 mines 1 river
+    </p>
+    </div>
+</article>

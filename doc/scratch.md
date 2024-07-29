@@ -223,3 +223,7 @@ do we even need to do this?
 GitLab for SAÉs. Put the in a group called BUT.
 
 S1.01 : host doxygen generated html on gh-pages, add link
+
+## Translate and clean livestream projects story html (underway ones)
+
+i just wanted to eliminate todos
