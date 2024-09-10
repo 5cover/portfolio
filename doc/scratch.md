@@ -235,3 +235,7 @@ it's kind of annoying. i'm fine with the page being longer even though there are
 ## fix color change on hover of some cards
 
 links disappear sometimes
+
+## use Cody to make code backwards compatible
+
+Objective is to make it work okay on the IUT's fina
