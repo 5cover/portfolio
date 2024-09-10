@@ -227,3 +227,11 @@ S1.01 : host doxygen generated html on gh-pages, add link
 ## Translate and clean livestream projects story html (underway ones)
 
 i just wanted to eliminate todos
+
+## Stop double columns
+
+it's kind of annoying. i'm fine with the page being longer even though there are large horizontal margins.. this is fine and kind of trendy.. Better for the eyes.
+
+## fix color change on hover of some cards
+
+links disappear sometimes
