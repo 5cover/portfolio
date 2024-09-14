@@ -2,12 +2,12 @@
 require_once 'fragment.php';
 $f = start('fr');
 ?>
-<div class="cols">
+<div>
     <p><?= $f->def('c') ?> is the first programming language I've learned, all the way back in <?= $f->year(2017) ?>. However I recently started learning <?= $f->def('zig') ?>. <?= $f->def('zig') ?> is similar to <?= $f->def('c') ?> in may ways. It is a low-level language destined for systems programming and hardware interaction. And I absolutely love it! I've implemented <?= $f->a('a clone of the GNU ' . $f->code('test') . ' command', 'project/ztest.html') ?> to learn it. This language fixes many of the problems and shortcomings of <?= $f->def('c') ?>.</p>
 </div>
 <article id="generics">
     <h3>Generics</h3>
-    <div class="cols">
+    <div>
         <p>Generics are a pain to do in <?= $f->def('c') ?>. There are multiple approaches: void pointers, macros, passing the type size. But there are very few guarantees of correctness and the syntax is tedious.</p>
         <figure class="figure">
             <?= $f->codeblock(<<<CODE
@@ -71,7 +71,7 @@ CODE) ?>
 </article>
 <article id="explicit-and-exhaustive-error-handling">
     <h3>Explicit and exhaustive error handling</h3>
-    <div class="cols">
+    <div>
         <figure class="figure">
             <?= $f->codeblock('printf("Hello world\n");') ?>
             <figcaption>This code can fail. <strong>The error is ignored.</strong></figcaption>
@@ -91,7 +91,7 @@ CODE) ?>
 </article>
 <article id="explicit-number-sizes">
     <h3>Explicit number sizes</h3>
-    <div class="cols">
+    <div>
         <p><?= $f->def('zig') ?> does not have a generic integer or floating-point type whose size is determined by the compiler and architecture you're using. Instead, all number sizes are explicity indicated in the code: <?= $f->code('u32') ?> for a 32 bit unsigned integer, for instance.</p>
         <p>This annoyed me at first; but it makes sense if you think about it: <strong>you</strong> give a variable its value, so <strong>you</strong> should decide on its size, as it determines the range of values it supports.</p>
         <p>It's possible this explicit approach would have prevented Ariane 5's failure due to an integer overflow<?= $f->ref() ?></p>
@@ -99,7 +99,7 @@ CODE) ?>
 </article>
 <article id="defer-the-best-thing-since-sliced-bread">
     <h3><?= $f->code('defer') ?>: the best thing since sliced bread</h3>
-    <div class="cols">
+    <div>
         <p><?= $f->code('defer') ?> is such a simple concept, but it solves so many problems. It brings related statements close to each other in the code, even when they need to be executed at different times.</p>
         <p>Its initial purpose is for memory allocation, but it can be used for other things too. It helps to ensure that resources are cleaned up when they are no longer needed. Instead of needing to remember to manually free up the resource, you can add a <?= $f->code('defer') ?> statement right next to the statement that allocates the resource.</p>
         <figure class="figure">
@@ -118,7 +118,7 @@ CODE) ?>
 </article>
 <article id="a-richer-standard-library">
     <h3>A richer standard library</h3>
-    <div class="cols">
+    <div>
         <p><?= $f->def('c') ?>'s standard library is quite rudimentary. You often need to download an STB library<?= $f->ref() ?> when you want an arena allocator or an hash table.</p>
         <p>You can also learn to implement these data structures and algorithms yourself, which is why I think learning <?= $f->def('c') ?> as my first language has really helped me become a better programmer.</p>
         <p><?= $f->def('zig') ?> solves this problem by having a richer standard library. This isn't unique to <?= $f->def('zig') ?>, though. Similar languages like <?= $f->def('go') ?> or <?= $f->def('rust') ?> also have rich standard libraries.</p>
@@ -126,21 +126,21 @@ CODE) ?>
 </article>
 <article id="a-standard-build-system">
     <h3>A standard build system</h3>
-    <div class="cols">
+    <div>
         <p><?= $f->def('c') ?> doesn't have an <q>official</q> build system; third-party build systems like <?= $f->def('make') ?> or <?= $f->def('cmake') ?> are used instead.</p>
         <p>The <?= $f->def('zig') ?> build system is shipped with the compiler. It uses a declarative approach. What I especially like about it that it does not introduce a new language. Instead, build commands are expressed in <?= $f->def('zig') ?>.</p>
     </div>
 </article>
 <article id="namespaces">
     <h3>Namespaces</h3>
-    <div class="cols">
+    <div>
         <p>Ah, the joy of prefixing every symbol in a <?= $f->def('c') ?> program to avoid name conflicts with users of your library!</p>
         <p>Namespaces have become the <em>de facto</em> standard of modern programming languages. It is insanely useful and idiomatic to be able to manipulate a library or a module as what it is: a bag of names.</p>
     </div>
 </article>
 <article id="encapsulation">
     <h3>Encapsulation</h3>
-    <div class="cols">
+    <div>
         <p>No need to prefix internal functions with an underscore anymore! <?= $f->code('pub') ?> is all you'll need.</p>
         <p>Seriously though, encapsulation is non-existent in <?= $f->def('c') ?>. Although the convention of <q>if it starts with an underscore, don't touch it</q> has been around for a while now, it's always safer when the language enforces the invariant of <q>this thing can't be accessed outside this module / structure</q>.</p>
         <p>In <?= $f->def('c') ?>, you have to get creative. In order to avoid any name conflicts with internals from other librairies the user might implemenent, your internal prefix should not only start with an underscore, but also contain an (hopefully) unique string. In addition, the underscore may not be followed by an uppercase letter unless you want to violate the standard and open yourself to name conflics with compiler or standard library internals.</p>
@@ -150,7 +150,7 @@ CODE) ?>
 </article>
 <article id="if-it-compiles-it-works">
     <h3><q>If it compiles, it works</q></h3>
-    <div class="cols">
+    <div>
         <p><?= $f->def('zig') ?> is much, much closer than <?= $f->def('c') ?> to the ideal of <q>if it compiles, it works</q>.</p>
         <p>It is true that everything that can be done in <?= $f->def('zig') ?> can also be done in <?= $f->def('c') ?>, but the invariants and restrictions <?= $f->def('zig') ?> enforces is stuff you don't have to worry about getting wrong, unlike when you do it manually in <?= $f->def('c') ?>.</p>
         <p>I believe this is the goal of any language; to provide an expressive syntax in order to give as many compile-time guarantees of well-formedness and correctness as posssible.</p>
@@ -160,7 +160,7 @@ CODE) ?>
 </article>
 <article id="conclusion">
     <h3>Conclusion</h3>
-    <div class="cols">
+    <div>
         <p>While <?= $f->def('c') ?> has been a cornerstone language for decades, the emergence of <?= $f->def('zig') ?> presents a promising alternative. As a programmer, my journey began with <?= $f->def('c') ?>, a language that has not only shaped my understanding of programming fundamentals but also played a pivotal role in the history of computer programming. Its simplicity, efficiency, and portability have made it a go-to language for system programming since its inception in <?= $f->year(1972) ?>.</p>
         <p>However, as we move towards a future where safety, performance, and developer productivity are paramount, <?= $f->def('zig') ?> emerges as a strong contender. <?= $f->def('zig') ?>'s design philosophy, which emphasizes maintaining the simplicity and low-level control of <?= $f->def('c') ?> while providing modern features to ensure compile-time correctness and enforce invariants, makes it an attractive choice.</p>
         <p>While <?= $f->def('c') ?> may not be as trendy or feature-rich as newer languages, its influence and importance cannot be understated. However, the tide seems to be turning with languages like <?= $f->def('zig') ?>, which offer the best of both worlds &mdash; the power of <?= $f->def('c') ?> and the safety of modern languages. As we continue to strive for better and safer code, I anticipate that <?= $f->def('zig') ?> will gradually phase out <?= $f->def('c') ?> in many domains, offering a new standard for system programming languages.</p>

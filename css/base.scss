@@ -75,7 +75,7 @@
     :root {
         background-color: var(--color-lvl);
         color: var(--color-fg);
-        font-family: Roboto, system-ui;
+        font-family: Ubuntu, system-ui;
         font-size: 20px;
         scroll-behavior: smooth;
     }
@@ -325,7 +325,7 @@
         @include util.basic-border(1px);
         background-color: var(--color-lvl);
         break-inside: avoid;
-        max-width: min(100%, 26em);
+        max-width: 100%;
 
         > :not(figcaption) {
             width: 100%;

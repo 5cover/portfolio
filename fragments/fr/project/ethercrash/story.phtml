@@ -2,7 +2,7 @@
 require_once 'fragment.php';
 $f = start('fr');
 ?>
-<article class="cols">
+<article>
 <h3><code>scrape_crashes.py</code>: web-scraping game logs from Ethercrash</h3>
 <p>
 This script is a Python-based web scraper designed to extract data from the EtherCrash game logs. The script utilizes the <code>nodriver</code> library to automate the process of fetching game data from the EtherCrash website. The main purpose of this script is to scrape game logs, including the crash value, timestamp, player count, and the sum of all player's bets in Ethos.
@@ -24,7 +24,7 @@ The script outputs the scraped data to the standard output in CSV format. It sup
 Overall, this script is a useful tool for anyone interested in analyzing EtherCrash game logs. By automating the process of data extraction and implementing features to avoid detection, the script enables users to scrape large amounts of data efficiently and accurately.
 </p>
 </article>
-<article class="cols">
+<article>
 <h3><code>infinite_money.py</code>: compute an optimal game strategy from the <?= $f->def('csv') ?> game logs</h3>
 
 <p>

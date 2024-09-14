@@ -24,10 +24,6 @@ main {
 
 #presentation {
     @include util.text;
-
-    div {
-        @include util.cols;
-    }
 }
 
 #competences {

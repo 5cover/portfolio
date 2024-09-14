@@ -1,0 +1,1339 @@
+@charset "UTF-8";
+/* Emulates infinity. */
+/* Hover state selector  */
+/* Graphic element selector */
+/* Golden ratio */
+/* Horizontal margin of an element whose width spans over the entire viewport */
+/* Vertical margin of an element whose width spans over the entire viewport */
+/* Maximum length of a line of text */
+/* Paragraph vertical margin */
+/* Heading margin */
+/* Utilities
+ * 
+ * Mixins that increase stylesheet expressivity.
+ */
+/* Super annotation
+ *
+ * An annotation as an exponent
+ */
+/* Shallow list item
+ *
+ * Display contents on children <li>, inherit layout properties. Analogous to the HTML transparent content model.
+ */
+/* Gapped children
+ *
+ * Display flex, gap based on line height.
+ */
+/* Justify
+ *
+ * Justify and hyphenate. Replaces `text-align: justify`.
+ */
+/* Bring out
+ *
+ * Brings out the element by scaling it up.
+ *
+ * $factor: scale() argument -> scaling factor
+ */
+/* Basic border
+ *
+ * A basic border around the element. Color is foreground wih low opacity.
+ *
+ * $width: border-width value -> border width
+ */
+/* Accent color foreground
+ *
+ * Adapt the foreground colors for an accent color background
+ */
+/* Accent color background
+ *
+ * Set the background to the accent color and adapt the foreground color.
+ *
+ * $opacity: number [0..1] -> accent background color opacity
+ */
+/* Strip content
+ *
+ * Content spanning over the width of the entire parent element.
+ *
+ * $border-width: border-width value -> border width
+ */
+/* Absolue fill
+ *
+ * Position absolutely and fill all available space.
+ */
+/* Hover card 
+ *
+ * Represents an interactive card covered by an anchor.
+ *
+ * Alters the z-index of relevant elements to have them stand out above the link.
+ */
+/* Hover card target
+ *
+ * The anchor element of an hover card.
+ */
+/* Transparent background image
+ *
+ * Define a transparent background image.
+ *
+ * $varname-img: <image>                  -> the background image.
+ * $color-rgb:   rgb() or rgba() argument -> the backging color (also used as a fallback if $varname-img is not defined)
+ * $opacity:     real [0..1]              -> the opacity of the image
+ * $origin:      <visual-box>             -> origin of the background image layer
+ *
+ * As sometimes the gradient is a little bit smaller than the image, the origin of the color background layer is set to `border-box` as a workaround.
+ *
+ * Todo: fix background color transition. Currently: instant. Expected: transition-duration
+ */
+/* Absolute center
+ *
+ * Position absolutely and center in parent, horizontally and vertically.
+ */
+/* Horizontal box
+ *
+ * Appropriate padding and radius for an horizontal box.
+ *
+ * $padding-factor:       number -> padding multiplier
+ * $border-radius-factor: number -> border radius multiplier
+ */
+/* Size graphic
+ *
+ * Size the graphic accordingly.
+ *
+ * $height:     height value     -> children graphics height
+ * $width:      width value      -> children graphics width
+ * $object-fit: object-fit value -> children graphics object-fit
+ */
+/* Gray when not hover 
+ *
+ * The element is grayed out when it is not hovered.
+ */
+.gray-when-not-hover:not(:is(:hover, :focus-within, :focus)) {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+/* Home nav link
+ *
+ * The link to the homepage in the navbar.
+ */
+/* Button link
+ *
+ * A link that looks like a button.
+ */
+/* Iconed text
+ *
+ * An element containing a graphic that is sized to the neighbouring text.
+ */
+/* Card link list
+ *
+ * A .list-link styled specifically for being displayed inside a detail card
+ */
+/* Detail card list
+ *
+ * Common styles for detail card lists.
+ */
+/* Wraps anywhere on overflow and shows hyphens when words are cut */
+/* Emulates the gap property using margins */
+/* Heading margins */
+/* Text
+ *
+ * Textual content. Applied to a container.
+*/
+/* Cols
+ *
+ * Line-sized columns on the element
+ */
+@property --bg-img {
+  syntax: "*";
+  inherits: false;
+}
+@layer base, components;
+@layer components {
+  /* Emulates infinity. */
+  /* Hover state selector  */
+  /* Graphic element selector */
+  /* Golden ratio */
+  /* Horizontal margin of an element whose width spans over the entire viewport */
+  /* Vertical margin of an element whose width spans over the entire viewport */
+  /* Maximum length of a line of text */
+  /* Paragraph vertical margin */
+  /* Heading margin */
+  /* Utilities
+   * 
+   * Mixins that increase stylesheet expressivity.
+   */
+  /* Super annotation
+   *
+   * An annotation as an exponent
+   */
+  /* Shallow list item
+   *
+   * Display contents on children <li>, inherit layout properties. Analogous to the HTML transparent content model.
+   */
+  /* Gapped children
+   *
+   * Display flex, gap based on line height.
+   */
+  /* Justify
+   *
+   * Justify and hyphenate. Replaces `text-align: justify`.
+   */
+  /* Bring out
+   *
+   * Brings out the element by scaling it up.
+   *
+   * $factor: scale() argument -> scaling factor
+   */
+  /* Basic border
+   *
+   * A basic border around the element. Color is foreground wih low opacity.
+   *
+   * $width: border-width value -> border width
+   */
+  /* Accent color foreground
+   *
+   * Adapt the foreground colors for an accent color background
+   */
+  /* Accent color background
+   *
+   * Set the background to the accent color and adapt the foreground color.
+   *
+   * $opacity: number [0..1] -> accent background color opacity
+   */
+  /* Strip content
+   *
+   * Content spanning over the width of the entire parent element.
+   *
+   * $border-width: border-width value -> border width
+   */
+  /* Absolue fill
+   *
+   * Position absolutely and fill all available space.
+   */
+  /* Hover card 
+   *
+   * Represents an interactive card covered by an anchor.
+   *
+   * Alters the z-index of relevant elements to have them stand out above the link.
+   */
+  /* Hover card target
+   *
+   * The anchor element of an hover card.
+   */
+  /* Transparent background image
+   *
+   * Define a transparent background image.
+   *
+   * $varname-img: <image>                  -> the background image.
+   * $color-rgb:   rgb() or rgba() argument -> the backging color (also used as a fallback if $varname-img is not defined)
+   * $opacity:     real [0..1]              -> the opacity of the image
+   * $origin:      <visual-box>             -> origin of the background image layer
+   *
+   * As sometimes the gradient is a little bit smaller than the image, the origin of the color background layer is set to `border-box` as a workaround.
+   *
+   * Todo: fix background color transition. Currently: instant. Expected: transition-duration
+   */
+  /* Absolute center
+   *
+   * Position absolutely and center in parent, horizontally and vertically.
+   */
+  /* Horizontal box
+   *
+   * Appropriate padding and radius for an horizontal box.
+   *
+   * $padding-factor:       number -> padding multiplier
+   * $border-radius-factor: number -> border radius multiplier
+   */
+  /* Size graphic
+   *
+   * Size the graphic accordingly.
+   *
+   * $height:     height value     -> children graphics height
+   * $width:      width value      -> children graphics width
+   * $object-fit: object-fit value -> children graphics object-fit
+   */
+  /* Gray when not hover 
+   *
+   * The element is grayed out when it is not hovered.
+   */
+  .gray-when-not-hover:not(:is(:hover, :focus-within, :focus)) {
+    filter: grayscale(100%);
+    opacity: 0.5;
+  }
+  /* Home nav link
+   *
+   * The link to the homepage in the navbar.
+   */
+  /* Button link
+   *
+   * A link that looks like a button.
+   */
+  /* Iconed text
+   *
+   * An element containing a graphic that is sized to the neighbouring text.
+   */
+  /* Card link list
+   *
+   * A .list-link styled specifically for being displayed inside a detail card
+   */
+  /* Detail card list
+   *
+   * Common styles for detail card lists.
+   */
+  /* Wraps anywhere on overflow and shows hyphens when words are cut */
+  /* Emulates the gap property using margins */
+  /* Heading margins */
+  /* Text
+   *
+   * Textual content. Applied to a container.
+  */
+  /* Cols
+   *
+   * Line-sized columns on the element
+   */
+  /* Components
+   * 
+   * Component classes. Must be used only once.
+   */
+  /* Flag list
+   *
+   * List of flags.
+   */
+  .list-flags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+  /* Theme switch control
+   *
+   * Set of theme switches.
+   */
+  .theme-switches {
+    display: flex;
+    border-radius: 0.25em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), 0.15);
+  }
+  .theme-switches input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+  .theme-switches label {
+    position: relative;
+    padding: 0.25em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .theme-switches label:last-of-type {
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+  }
+  .theme-switches label:first-of-type {
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+  }
+  .theme-switches label:has(input:is(:hover, :focus-within, :focus)) {
+    color: var(--color-accent-fg);
+    --color-fg: var(--color-accent-fg);
+    --color-fg-rgb: var(--color-accent-fg-rgb);
+    background-color: rgba(var(--color-accent-rgb), 0.5);
+  }
+  .theme-switches label:has(input:checked) {
+    color: var(--color-accent-fg);
+    --color-fg: var(--color-accent-fg);
+    --color-fg-rgb: var(--color-accent-fg-rgb);
+    background-color: rgba(var(--color-accent-rgb), 1);
+  }
+  .theme-switches label + label {
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), 0.15);
+  }
+  .theme-switches label input {
+    cursor: pointer;
+  }
+  /* Button link
+   *
+   * Default button link
+   */
+  .button-link {
+    padding: 0.5lh 2ch;
+    border-radius: 0.25lh;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), 0.15);
+    background-color: var(--color-lvl);
+    display: block;
+    margin: 0 auto;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .button-link:is(:hover, :focus-within, :focus) {
+    color: var(--color-accent-fg);
+    --color-fg: var(--color-accent-fg);
+    --color-fg-rgb: var(--color-accent-fg-rgb);
+    background-color: rgba(var(--color-accent-rgb), 1);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .button-link:is(:hover, :focus-within, :focus) {
+      transform: scale(1.05);
+    }
+  }
+  /* Iconed text
+   *
+   * Default iconed text
+   */
+  .iconed-text :is(img, svg) {
+    height: 1em;
+    width: auto;
+    margin-right: 0.5ch;
+  }
+  .iconed-text * {
+    vertical-align: middle;
+  }
+  /* Rectangle list
+   *
+   * A list of small, (ideally) horizontal rectancgles
+   */
+  .list-rect {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+  .list-rect > li {
+    padding: 0.175lh 0.7ch;
+    border-radius: 0.35lh;
+    font-size: 0.9em;
+  }
+  /* Link list
+   *
+   * List of links
+   */
+  .list-link {
+    display: flex;
+    list-style: none;
+  }
+  /* Split card detail list
+   *
+   * A list of detail cards, shown in the "split" style (wide card, logo on the left)
+   *
+   * Domain classes:
+   * - logo: logo graphic
+   * - abstract: abstract text
+   */
+  .list-detail-split-card {
+    gap: 1em;
+    list-style: none;
+    display: grid;
+    grid-auto-flow: row;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    width: 50%;
+    place-self: center;
+  }
+  .list-detail-split-card > li {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), 0.15);
+    position: relative;
+    /* Increase z-index to stand out above the card link */
+  }
+  .list-detail-split-card > li :is(.list-link, .list-rect) > li {
+    z-index: 1;
+  }
+  .list-detail-split-card > li .link, .list-detail-split-card > li a[id^=cite-],
+  .list-detail-split-card > li abbr {
+    z-index: 1;
+    /* Creates a stacking context */
+    position: relative;
+  }
+  .list-detail-split-card > li:is(:hover, :focus-within, :focus) {
+    /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
+  }
+  .list-detail-split-card > li:is(:hover, :focus-within, :focus) .link, .list-detail-split-card > li:is(:hover, :focus-within, :focus) a[id^=cite-] {
+    color: var(--color-fg);
+    text-decoration: underline;
+  }
+  .list-detail-split-card > li h3 a {
+    text-decoration: none;
+  }
+  .list-detail-split-card > li h3 a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .list-detail-split-card > li {
+    border-radius: 1em;
+    display: grid;
+    grid-template-columns: max(7.5em, 7.5%) 1fr;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+  }
+  .list-detail-split-card > li .logo {
+    display: block;
+    background-color: var(--color-lvl-next);
+    padding: 0.5em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    -o-object-fit: contain;
+       object-fit: contain;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+  }
+  .list-detail-split-card > li > div {
+    display: grid;
+    gap: 1em;
+    grid-auto-flow: row;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding: 1em 1em 1em 1.6180339888em;
+    background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.85), rgba(var(--color-lvl-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-lvl-rgb))) no-repeat;
+    background-size: cover;
+  }
+  .list-detail-split-card > li > div .abstract {
+    align-self: center;
+  }
+  .list-detail-split-card > li > div .list-link {
+    gap: 0.5em;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .list-detail-split-card > li > div .list-link > :is(:hover, :focus-within, :focus) {
+      transform: scale(1.15);
+    }
+  }
+  .list-detail-split-card > li > div .list-link :is(img, svg) {
+    max-width: 100%;
+    max-height: 100%;
+    height: 1.5em;
+    width: 1.5em;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .list-detail-split-card > li:is(:hover, :focus-within, :focus) > div {
+    background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.85), rgba(var(--color-accent-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-accent-rgb))) no-repeat;
+    background-size: cover;
+    color: var(--color-accent-fg);
+    --color-fg: var(--color-accent-fg);
+    --color-fg-rgb: var(--color-accent-fg-rgb);
+  }
+  /* Project card list
+   *
+   * A list of project cards
+
+   * Domain classes:
+   * - logo: logo graphic
+   * - abstract: abstract text
+   * - context: context text
+   * - status: status text
+   */
+  .list-project {
+    gap: 1em;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .list-project > li {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), 0.15);
+    position: relative;
+    /* Increase z-index to stand out above the card link */
+  }
+  .list-project > li :is(.list-link, .list-rect) > li {
+    z-index: 1;
+  }
+  .list-project > li .link, .list-project > li a[id^=cite-],
+  .list-project > li abbr {
+    z-index: 1;
+    /* Creates a stacking context */
+    position: relative;
+  }
+  .list-project > li:is(:hover, :focus-within, :focus) {
+    /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
+  }
+  .list-project > li:is(:hover, :focus-within, :focus) .link, .list-project > li:is(:hover, :focus-within, :focus) a[id^=cite-] {
+    color: var(--color-fg);
+    text-decoration: underline;
+  }
+  .list-project > li h3 a {
+    text-decoration: none;
+  }
+  .list-project > li h3 a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .list-project > li {
+    background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.85), rgba(var(--color-lvl-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-lvl-rgb))) no-repeat;
+    background-size: cover;
+    border-radius: 0.75em;
+    display: grid;
+    flex-basis: 20em;
+    grid-template: min-content repeat(3, auto) 1fr min-content/1fr auto;
+    padding: 0.75em;
+    row-gap: 0.75em;
+    /* Tag list */
+  }
+  .list-project > li .list-rect {
+    grid-column: 1/3;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .list-project > li .list-rect > li:is(:hover, :focus-within, :focus) {
+      transform: scale(1.15);
+    }
+  }
+  .list-project > li .logo {
+    max-width: 100%;
+    max-height: 100%;
+    height: 3lh;
+    width: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    align-self: center;
+    grid-row: 2/4;
+    grid-column: 2;
+  }
+  .list-project > li h3 {
+    grid-row: 2;
+  }
+  .list-project > li .context {
+    grid-row: 3;
+  }
+  .list-project > li .status {
+    grid-column: 1/3;
+    grid-row: 4;
+  }
+  .list-project > li .abstract {
+    grid-column: 1/3;
+    grid-row: 5;
+    align-self: center;
+  }
+  .list-project > li .list-link {
+    gap: 0.5em;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    grid-row: 6;
+    grid-column: 1/3;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .list-project > li .list-link > :is(:hover, :focus-within, :focus) {
+      transform: scale(1.15);
+    }
+  }
+  .list-project > li .list-link :is(img, svg) {
+    max-width: 100%;
+    max-height: 100%;
+    height: 1.5em;
+    width: 1.5em;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .list-project > li:is(:hover, :focus-within, :focus) {
+    background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.85), rgba(var(--color-accent-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-accent-rgb))) no-repeat;
+    background-size: cover;
+    /* Adapt foreground to accent color (except tag list). */
+  }
+  .list-project > li:is(:hover, :focus-within, :focus) .list-rect > li {
+    background-color: var(--color-lvl);
+  }
+  .list-project > li:is(:hover, :focus-within, :focus) :not(.list-rect, .list-rect *) {
+    color: var(--color-accent-fg);
+    --color-fg: var(--color-accent-fg);
+    --color-fg-rgb: var(--color-accent-fg-rgb);
+  }
+  .list-project > li:not(:is(:hover, :focus-within, :focus)) .list-rect > li {
+    color: var(--color-accent-fg);
+    --color-fg: var(--color-accent-fg);
+    --color-fg-rgb: var(--color-accent-fg-rgb);
+    background-color: rgba(var(--color-accent-rgb), 1);
+  }
+  /* Definition
+   *
+   * Defines a term. Can be shown as a tooltip.
+
+   * Domain classes:
+   * - definition-tooltip: tooltip form of the definition
+   * - definition-tooltip-trigger: trigger of the definition tooltip form
+   *
+   * - title: definition title
+   * - logo: definition logo
+   * - type: definition types
+   * - synopsis: definition synopsis
+   */
+  .definition, .definition-tooltip {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), 0.15);
+    position: relative;
+    /* Increase z-index to stand out above the card link */
+    background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.85), rgba(var(--color-lvl-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-lvl-rgb))) no-repeat;
+    background-size: cover;
+    background-color: var(--color-lvl);
+    border-radius: 0.75em;
+    display: grid;
+    font-size: 0.8em;
+    grid-template: min-content min-content 1fr/1fr auto;
+    padding: 0.75em;
+    row-gap: 0.75em;
+  }
+  .definition :is(.list-link, .list-rect) > li, .definition-tooltip :is(.list-link, .list-rect) > li {
+    z-index: 1;
+  }
+  .definition .link, .definition a[id^=cite-], .definition-tooltip .link, .definition-tooltip a[id^=cite-],
+  .definition abbr,
+  .definition-tooltip abbr {
+    z-index: 1;
+    /* Creates a stacking context */
+    position: relative;
+  }
+  .definition .link, .definition a[id^=cite-], .definition-tooltip .link, .definition-tooltip a[id^=cite-],
+  .definition abbr,
+  .definition-tooltip abbr {
+    z-index: 1;
+    /* Creates a stacking context */
+    position: relative;
+  }
+  .definition .title a, .definition-tooltip .title a {
+    text-decoration: none;
+  }
+  .definition .title a:after, .definition-tooltip .title a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .definition .logo, .definition-tooltip .logo {
+    max-width: 100%;
+    max-height: 100%;
+    height: 2.5lh;
+    width: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    grid-row: 1/3;
+    grid-column: 2;
+  }
+  .definition .type, .definition-tooltip .type {
+    grid-row: 2;
+    grid-column: 1/3;
+  }
+  .definition .synopsis, .definition-tooltip .synopsis {
+    grid-row: 3;
+    grid-column: 1/3;
+    align-content: center;
+  }
+  .definition-tooltip {
+    position: absolute;
+    /*&:is(:hover, :focus-within, :focus), i am hovered
+    &-trigger:is(:hover, :focus-within, :focus) ~ & my trigger is hover
+    {
+        opacity: 1;
+        z-index: 2;
+        transition-delay: 500ms;
+    }*/
+    /*&-trigger:not(:is(:hover, :focus-within, :focus)) ~ &:not(:is(:hover, :focus-within, :focus)) my trigger is not hover and i am not hover
+    {
+        transition-delay: 250ms;
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+    }*/
+  }
+  .definition-tooltip-trigger {
+    cursor: pointer;
+    font-style: italic;
+  }
+  .definition-tooltip:not(.show) {
+    opacity: 0;
+  }
+  .definition-tooltip.hide {
+    display: none;
+  }
+  /* Content block
+   *
+   * A block containing a limited amount of content, defined by a singular purpose.
+   */
+  .content-block {
+    border-radius: 1.5em;
+    background-color: var(--color-lvl);
+    padding: 1.5em;
+    align-self: center;
+    max-width: 100%;
+  }
+  /* Definition list
+   *
+   * A list of definition cards.
+   */
+  .list-definition {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  .list-definition > li {
+    position: relative;
+    /* Increase z-index to stand out above the card link */
+    flex-shrink: 1;
+    min-width: -moz-min-content;
+    min-width: min-content;
+    display: contents;
+  }
+  .list-definition > li :is(.list-link, .list-rect) > li {
+    z-index: 1;
+  }
+  .list-definition > li .link, .list-definition > li a[id^=cite-],
+  .list-definition > li abbr {
+    z-index: 1;
+    /* Creates a stacking context */
+    position: relative;
+  }
+  .list-definition > li article:is(:hover, :focus-within, :focus) {
+    background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.9), rgba(var(--color-accent-rgb), 0.9)), padding-box var(--bg-img-card, rgb(var(--color-accent-rgb))) no-repeat;
+    background-size: cover;
+  }
+  /* Mixin classes */
+  .text h1:not(:first-child) {
+    margin-top: 1lh;
+  }
+  .text h1:not(:last-child) {
+    margin-bottom: 1lh;
+  }
+  .text h2:not(:first-child) {
+    margin-top: 1lh;
+  }
+  .text h2:not(:last-child) {
+    margin-bottom: 1lh;
+  }
+  .text h3:not(:first-child) {
+    margin-top: 1lh;
+  }
+  .text h3:not(:last-child) {
+    margin-bottom: 1lh;
+  }
+  .text h4:not(:first-child) {
+    margin-top: 1lh;
+  }
+  .text h4:not(:last-child) {
+    margin-bottom: 1lh;
+  }
+  .text h5:not(:first-child) {
+    margin-top: 1lh;
+  }
+  .text h5:not(:last-child) {
+    margin-bottom: 1lh;
+  }
+  .text h6:not(:first-child) {
+    margin-top: 1lh;
+  }
+  .text h6:not(:last-child) {
+    margin-bottom: 1lh;
+  }
+  .text p:first-of-type {
+    text-align: justify;
+    -webkit-hyphens: auto;
+            hyphens: auto;
+    text-indent: 2cap;
+  }
+  .text :is(p,
+  .figure,
+  pre):not(.figure *):not(:first-child) {
+    margin-top: 3.125ex;
+  }
+  .text :is(p,
+  .figure,
+  pre):not(.figure *):not(:last-child) {
+    margin-bottom: 3.125ex;
+  }
+  .cols {
+    max-width: 100%;
+    -moz-column-width: 60ch;
+         column-width: 60ch;
+  }
+  .cols > * {
+    max-width: 60ch;
+  }
+}
+@layer base {
+  :root {
+    background-color: var(--color-lvl);
+    color: var(--color-fg);
+    font-family: Ubuntu, system-ui;
+    font-size: 20px;
+    scroll-behavior: smooth;
+  }
+  :root[data-theme=dark] {
+    color-scheme: dark;
+    accent-color: #a66144;
+    /* workaround until relative alpha colors get widespread support */
+    --color-accent: #a66144;
+    --color-accent-rgb: 166, 97, 68;
+    /* workaround until relative alpha colors get widespread support */
+    --color-accent-fg: white;
+    --color-accent-fg-rgb: 255, 255, 255;
+    /* workaround until relative alpha colors get widespread support */
+    --color-fg: #eee;
+    --color-fg-rgb: 238, 238, 238;
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl: #111;
+    --color-lvl-rgb: 17, 17, 17;
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl-next: #242424;
+    --color-lvl-next-rgb: 36, 36, 36;
+  }
+  :root[data-theme=dark] .lvl {
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl: #242424;
+    --color-lvl-rgb: 36, 36, 36;
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl-next: #363636;
+    --color-lvl-next-rgb: 54, 54, 54;
+  }
+  :root[data-theme=dark] .lvl .lvl {
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl: #363636;
+    --color-lvl-rgb: 54, 54, 54;
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl-next: #464646;
+    --color-lvl-next-rgb: 70, 70, 70;
+  }
+  :root[data-theme=dark] .lvl .lvl .lvl {
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl: #464646;
+    --color-lvl-rgb: 70, 70, 70;
+  }
+  :root[data-theme=light] {
+    color-scheme: light;
+    accent-color: #a66144;
+    /* workaround until relative alpha colors get widespread support */
+    --color-accent: #a66144;
+    --color-accent-rgb: 166, 97, 68;
+    /* workaround until relative alpha colors get widespread support */
+    --color-accent-fg: white;
+    --color-accent-fg-rgb: 255, 255, 255;
+    /* workaround until relative alpha colors get widespread support */
+    --color-fg: #111;
+    --color-fg-rgb: 17, 17, 17;
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl: #fafafa;
+    --color-lvl-rgb: 250, 250, 250;
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl-next: #e6e6e6;
+    --color-lvl-next-rgb: 230, 230, 230;
+  }
+  :root[data-theme=light] .lvl {
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl: #e6e6e6;
+    --color-lvl-rgb: 230, 230, 230;
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl-next: #d4d4d4;
+    --color-lvl-next-rgb: 212, 212, 212;
+  }
+  :root[data-theme=light] .lvl .lvl {
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl: #d4d4d4;
+    --color-lvl-rgb: 212, 212, 212;
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl-next: #c3c3c3;
+    --color-lvl-next-rgb: 195, 195, 195;
+  }
+  :root[data-theme=light] .lvl .lvl .lvl {
+    /* workaround until relative alpha colors get widespread support */
+    --color-lvl: #c3c3c3;
+    --color-lvl-rgb: 195, 195, 195;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root[data-theme=system] {
+      color-scheme: dark;
+      accent-color: #a66144;
+      /* workaround until relative alpha colors get widespread support */
+      --color-accent: #a66144;
+      --color-accent-rgb: 166, 97, 68;
+      /* workaround until relative alpha colors get widespread support */
+      --color-accent-fg: white;
+      --color-accent-fg-rgb: 255, 255, 255;
+      /* workaround until relative alpha colors get widespread support */
+      --color-fg: #eee;
+      --color-fg-rgb: 238, 238, 238;
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl: #111;
+      --color-lvl-rgb: 17, 17, 17;
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl-next: #242424;
+      --color-lvl-next-rgb: 36, 36, 36;
+    }
+    :root[data-theme=system] .lvl {
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl: #242424;
+      --color-lvl-rgb: 36, 36, 36;
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl-next: #363636;
+      --color-lvl-next-rgb: 54, 54, 54;
+    }
+    :root[data-theme=system] .lvl .lvl {
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl: #363636;
+      --color-lvl-rgb: 54, 54, 54;
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl-next: #464646;
+      --color-lvl-next-rgb: 70, 70, 70;
+    }
+    :root[data-theme=system] .lvl .lvl .lvl {
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl: #464646;
+      --color-lvl-rgb: 70, 70, 70;
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    :root[data-theme=system] {
+      color-scheme: light;
+      accent-color: #a66144;
+      /* workaround until relative alpha colors get widespread support */
+      --color-accent: #a66144;
+      --color-accent-rgb: 166, 97, 68;
+      /* workaround until relative alpha colors get widespread support */
+      --color-accent-fg: white;
+      --color-accent-fg-rgb: 255, 255, 255;
+      /* workaround until relative alpha colors get widespread support */
+      --color-fg: #111;
+      --color-fg-rgb: 17, 17, 17;
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl: #fafafa;
+      --color-lvl-rgb: 250, 250, 250;
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl-next: #e6e6e6;
+      --color-lvl-next-rgb: 230, 230, 230;
+    }
+    :root[data-theme=system] .lvl {
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl: #e6e6e6;
+      --color-lvl-rgb: 230, 230, 230;
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl-next: #d4d4d4;
+      --color-lvl-next-rgb: 212, 212, 212;
+    }
+    :root[data-theme=system] .lvl .lvl {
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl: #d4d4d4;
+      --color-lvl-rgb: 212, 212, 212;
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl-next: #c3c3c3;
+      --color-lvl-next-rgb: 195, 195, 195;
+    }
+    :root[data-theme=system] .lvl .lvl .lvl {
+      /* workaround until relative alpha colors get widespread support */
+      --color-lvl: #c3c3c3;
+      --color-lvl-rgb: 195, 195, 195;
+    }
+  }
+  /* Chromium issue: transitions stack (children wait for parents to finish their transition before doing their own) */
+  /* Solution: apply all transitions only to leaf elements. In non-leaf elements, transition only properties that are unrelated to the textual content */
+  * {
+    box-sizing: border-box;
+    transition-duration: 0.3333333333s;
+    transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, -webkit-background-clip;
+    transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter;
+    transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, -webkit-background-clip;
+  }
+  /* Leaf elements */
+  :not(:has(*)) {
+    transition-property: background-color, background-attachment, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, color, fill, stroke, -webkit-background-clip, -webkit-text-decoration;
+    transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, color, text-decoration, fill, stroke;
+    transition-property: background-color, background-attachment, background-clip, background-image, background-origin, background-position, background-repeat, background-size, transform, opacity, filter, color, text-decoration, fill, stroke, -webkit-background-clip, -webkit-text-decoration;
+  }
+  .fi {
+    color: transparent;
+  }
+  /* Resets */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  p,
+  figure,
+  input,
+  samp,
+  code,
+  kbd,
+  pre,
+  blockquote {
+    margin: 0;
+    padding: 0;
+  }
+  input {
+    border: none;
+    font: inherit;
+  }
+  /* Basic styles */
+  abbr {
+    -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted;
+  }
+  address {
+    font-style: normal;
+  }
+  blockquote {
+    padding-left: calc(1em - 0.3090169944ch);
+    margin-left: max(0, min(2.5%, 1em) - 0.3090169944ch);
+    width: -moz-fit-content;
+    width: fit-content;
+    border-left: 0.6180339887ch solid var(--color-lvl-next);
+  }
+  blockquote footer {
+    text-align: right;
+  }
+  :not(pre) > :is(code, samp, kbd) {
+    background-color: var(--color-lvl-next);
+    padding: 0.1lh 0.4ch;
+    border-radius: 0.25lh;
+  }
+  pre {
+    background-color: var(--color-lvl-next);
+    white-space: pre-wrap;
+    text-align: initial;
+    padding: 0.5lh 2ch;
+    border-radius: 0.25lh;
+  }
+  small {
+    font-size: 1em;
+    color: rgba(var(--color-fg-rgb), 0.6666666667);
+  }
+  p {
+    max-width: 60ch;
+  }
+  p,
+  figcaption {
+    line-height: 3.125ex;
+  }
+  h1 {
+    font-weight: 500;
+    font-size: 2em;
+    line-height: 2.5ex;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 1.75em;
+    line-height: 2.380952381ex;
+  }
+  h3 {
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 2.6315789474ex;
+  }
+  h4 {
+    font-weight: 500;
+    font-size: 1.25em;
+    line-height: 2.7027027027ex;
+  }
+  h5 {
+    font-weight: 500;
+    font-size: 1.125em;
+    line-height: 2.5ex;
+  }
+  h6 {
+    font-weight: 500;
+    font-size: 1.0625em;
+    line-height: 2ex;
+  }
+  body {
+    max-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    gap: 2.5lh;
+    grid-template-rows: auto 1fr auto;
+  }
+  body > * {
+    max-width: inherit;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:not(.link, a[id^=cite-], .fi) {
+    color: inherit;
+  }
+  /* Reference citation links */
+  a[id^=cite-] {
+    align-self: normal;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 1px;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    vertical-align: text-top;
+    white-space: nowrap;
+    font-size: 0.6em;
+  }
+  /* Opt-in basic style classes
+   *
+   * Define basic styles for common elements with explicit opt-in
+   */
+  /* Link
+   *
+   * Intended for: <a>
+   */
+  .link:link, a[id^=cite-]:link {
+    color: #a66144;
+  }
+  .link:visited, a[id^=cite-]:visited {
+    color: #91553b;
+  }
+  .link:is(:hover, :focus-within, :focus), a[id^=cite-]:is(:hover, :focus-within, :focus) {
+    color: #be7c60;
+    text-decoration: underline;
+  }
+  .link[target=_blank]:not(.definition-tooltip-trigger)::after, a[target=_blank][id^=cite-]:not(.definition-tooltip-trigger)::after {
+    align-self: normal;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 1px;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    vertical-align: text-top;
+    content: "↗";
+    display: inline-block;
+    font-size: 0.5em;
+    text-decoration: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  /* UL
+   *
+   *
+   * Intended for: <ul>
+   */
+  .ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5lh;
+    padding-left: 2em;
+  }
+  .ul .ul {
+    padding-left: 4em;
+  }
+  /* Figure
+   *
+   * Intended for: <figure>
+   */
+  .figure {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), 0.15);
+    background-color: var(--color-lvl);
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
+    max-width: min(100%, 26em);
+  }
+  .figure > :not(figcaption) {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .figure > figcaption {
+    padding: 0.625lh 2.5ch;
+    border-radius: 0.3125lh;
+    text-align: center;
+  }
+  /* Page structure */
+  body > header {
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), 0.15);
+    background-color: var(--color-lvl);
+    padding: 1em min(2.5%, 2.5lh);
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    -moz-column-gap: 2em;
+         column-gap: 2em;
+    row-gap: 1em;
+    justify-content: space-between;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  body > header nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    -moz-column-gap: 3em;
+         column-gap: 3em;
+    row-gap: 1.5em;
+  }
+  body > header nav > a {
+    font-size: 1.75em;
+    font-weight: 500;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  body > header nav > ul {
+    display: flex;
+    list-style: none;
+    -moz-column-gap: 2em;
+         column-gap: 2em;
+    row-gap: 1em;
+    flex-wrap: wrap;
+  }
+  body > header nav > ul a {
+    font-size: 1.25em;
+  }
+  body > header nav a:is(:hover, :focus-within, :focus),
+  body > header nav a[href="#"] {
+    text-decoration: underline;
+  }
+  body > main {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5lh;
+  }
+  body > footer {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: rgba(var(--color-fg-rgb), 0.15);
+    background-color: var(--color-lvl);
+    padding: 1em min(2.5%, 2.5lh);
+    grid-row: 3;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media screen and (min-width: 570px) {
+    body > footer small {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    body > footer a > :is(img, svg):is(:hover, :focus-within, :focus) {
+      transform: scale(1.15);
+    }
+  }
+}/*# sourceMappingURL=base.css.map */

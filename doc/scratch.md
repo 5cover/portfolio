@@ -212,18 +212,14 @@ the compiler is your friend
 
 a marvel of engineering. a timeless lesson for all of us programmers.
 
-## only show each definition trigger as a link once per title
+### The Mercs argue about programming languages
 
-that way we don't repeat it too much while still providing it regularily?
+Script & video
 
-do we even need to do this?
+### Make compatible with older browers
 
-### Project repositories
+provide replacement for lh unit
 
-GitLab for SAÉs. Put the in a group called BUT.
+among other things.
 
-S1.01 : host doxygen generated html on gh-pages, add link
-
-## Translate and clean livestream projects story html (underway ones)
-
-i just wanted to eliminate todos
+to make it work on IUT's PCs.

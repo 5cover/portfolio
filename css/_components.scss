@@ -384,7 +384,3 @@
 .text {
     @include util.text;
 }
-
-.cols {
-    @include util.cols;
-}
