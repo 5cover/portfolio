@@ -23,6 +23,7 @@ main {
 }
 
 #presentation {
+    @include util.text-strip;
     @include util.text;
 }
 

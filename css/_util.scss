@@ -354,9 +354,8 @@
 @mixin text {
     @include heading-margins;
 
-    p:first-of-type {
+    p {
         @include justify;
-        text-indent: 2cap;
     }
 
     :is(p,
@@ -378,3 +377,14 @@
         max-width: const.$max-line-length;
     }
 }
+
+/* Text strip
+ *
+ * Place in the center and limit width to max line length
+ */
+
+ @mixin text-strip {
+    width: const.$max-line-length;
+    margin-left: auto;
+    margin-right: auto;
+ }

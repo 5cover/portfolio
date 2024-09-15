@@ -107,6 +107,10 @@ for project gallery but not only
 
 use maybe a map with cached jsons?
 
+## custom 404
+
+maybe http.cat?
+
 ## js langs
 
 format title based on value of the html lang attr
@@ -125,7 +129,9 @@ if JS supports this, this will require making all project card generation dynami
 
 This will also mean no more project card HTML generation logic duplication between PHP and JS.
 
-## Fix contrast issues
+## make contact accessible on every page
+
+This will increase the chance of actually getting contacted.
 
 ## Save.tf link?
 
@@ -223,3 +229,9 @@ provide replacement for lh unit
 among other things.
 
 to make it work on IUT's PCs.
+
+## history: add tro breizh volunteering
+
+## page but informatique: add my expectations for second year
+
+## fix contact link underlines

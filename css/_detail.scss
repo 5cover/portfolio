@@ -13,9 +13,7 @@ h2 {
 }
 
 #story {
-    width: const.$max-line-length;
-    margin-left: auto;
-    margin-right: auto;
+    @include util.text-strip;
     @include util.text;
 
     article {
@@ -95,7 +93,7 @@ main {
     figure {
         display: flex;
         flex-flow: column;
-        max-width: 100%;
+        max-width: min(26em, 100%);
     }
 
     iframe {
