@@ -142,6 +142,10 @@
  *
  * Line-sized columns on the element
  */
+/* Text strip
+ *
+ * Place in the center and limit width to max line length
+ */
 @property --bg-img {
   syntax: "*";
   inherits: false;
@@ -290,6 +294,10 @@
    *
    * Line-sized columns on the element
    */
+  /* Text strip
+   *
+   * Place in the center and limit width to max line length
+   */
   /* Components
    * 
    * Component classes. Must be used only once.
@@ -396,7 +404,7 @@
     margin-right: 0.5ch;
   }
   .iconed-text * {
-    vertical-align: middle;
+    vertical-align: text-bottom;
   }
   /* Rectangle list
    *
@@ -846,11 +854,10 @@
   .text h6:not(:last-child) {
     margin-bottom: 1lh;
   }
-  .text p:first-of-type {
+  .text p {
     text-align: justify;
     -webkit-hyphens: auto;
             hyphens: auto;
-    text-indent: 2cap;
   }
   .text :is(p,
   .figure,
@@ -862,21 +869,13 @@
   pre):not(.figure *):not(:last-child) {
     margin-bottom: 3.125ex;
   }
-  .cols {
-    max-width: 100%;
-    -moz-column-width: 60ch;
-         column-width: 60ch;
-  }
-  .cols > * {
-    max-width: 60ch;
-  }
 }
 @layer base {
   :root {
     background-color: var(--color-lvl);
     color: var(--color-fg);
-    font-family: Roboto, system-ui;
-    font-size: 20px;
+    font-family: Ubuntu, system-ui;
+    font-size: 19px;
     scroll-behavior: smooth;
   }
   :root[data-theme=dark] {
@@ -1221,6 +1220,20 @@
        -moz-user-select: none;
             user-select: none;
   }
+  /* UL
+   *
+   *
+   * Intended for: <ul>
+   */
+  .ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5lh;
+    padding-left: 2em;
+  }
+  .ul .ul {
+    padding-left: 4em;
+  }
   /* Figure
    *
    * Intended for: <figure>
@@ -1232,7 +1245,7 @@
     background-color: var(--color-lvl);
     -moz-column-break-inside: avoid;
          break-inside: avoid;
-    max-width: min(100%, 26em);
+    max-width: 100%;
   }
   .figure > :not(figcaption) {
     width: 100%;
@@ -1330,6 +1343,11 @@
   display: none;
 }
 
+#story {
+  width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
 #story h1:not(:first-child) {
   margin-top: 1lh;
 }
@@ -1366,11 +1384,10 @@
 #story h6:not(:last-child) {
   margin-bottom: 1lh;
 }
-#story p:first-of-type {
+#story p {
   text-align: justify;
   -webkit-hyphens: auto;
           hyphens: auto;
-  text-indent: 2cap;
 }
 #story :is(p,
 .figure,
@@ -1453,7 +1470,7 @@ h2:not(:last-child) {
 .gallery figure {
   display: flex;
   flex-flow: column;
-  max-width: min(100%, 26em);
+  max-width: min(26em, 100%);
 }
 .gallery iframe {
   background-color: white;
@@ -1484,7 +1501,7 @@ h2:not(:last-child) {
   margin-right: 0.5ch;
 }
 .list-reference .link * {
-  vertical-align: middle;
+  vertical-align: text-bottom;
 }
 .list-reference .link:is(:hover, :focus-within, :focus) * {
   text-decoration: underline;
@@ -1536,7 +1553,7 @@ h2:not(:last-child) {
   margin-right: 1ch;
 }
 .list-link a * {
-  vertical-align: middle;
+  vertical-align: text-bottom;
 }
 
 main > header {
