@@ -230,14 +230,6 @@ among other things.
 
 to make it work on IUT's PCs.
 
-## history: add tro breizh volunteering
-
-i just wanted to eliminate todos
-
-## Stop double columns
-
-it's kind of annoying. i'm fine with the page being longer even though there are large horizontal margins.. this is fine and kind of trendy.. Better for the eyes.
-
 ## fix color change on hover of some cards
 
 links disappear sometimes

@@ -466,3 +466,7 @@ Fix bug: when you hover the card and go back to the tooltip, the definition does
 What we can do: add the tooltip to the DOM once when it's shown for the first time, and then never remove it, just hide it.
 
 ## fix contact link underlines
+
+## Stop double columns
+
+it's kind of annoying. i'm fine with the page being longer even though there are large horizontal margins.. this is fine and kind of trendy.. Better for the eyes.
