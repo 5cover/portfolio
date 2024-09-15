@@ -233,5 +233,3 @@ to make it work on IUT's PCs.
 ## history: add tro breizh volunteering
 
 ## page but informatique: add my expectations for second year
-
-## fix contact link underlines

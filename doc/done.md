@@ -464,3 +464,5 @@ fade transition
 Fix bug: when you hover the card and go back to the tooltip, the definition doesn't go away
 
 What we can do: add the tooltip to the DOM once when it's shown for the first time, and then never remove it, just hide it.
+
+## fix contact link underlines
