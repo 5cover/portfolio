@@ -3,20 +3,48 @@
 require_once 'page.php';
 require_once 'lang.php';
 
-function put_doctype_html(Page $page, Lang $lang) { ?>
+function put_doctype_html(Page $page, Lang $lang)
+{ ?>
     <!DOCTYPE html>
-    <html lang="<?= $lang->tag ?>">
+    <html lang="<?= $lang->key ?>">
 <?php }
 
-function put_footer(Page $page, Lang $lang) { ?>
+function put_footer(Page $page, Lang $lang)
+{ ?>
     <footer class="lvl">
         <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="<?= $lang->get('footerGitHubAnchorTitle') ?>"><?php
-          echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60) ?></a>
+                                                                                                                                                        echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60) ?></a>
     </footer>
 <?php }
 
-function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css') { ?>
+function put_head_light(Page $page, Lang $lang, callable $putAdditionalContent)
+{ ?>
+
+    <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png">
+        <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
+        <link rel="manifest" href="/portfolio/site.webmanifest">
+        <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
+        <meta charset="UTF-8">
+        <meta name="author" content="Raphaël Bardini">
+        <meta name="description" content="<?= $lang->get('siteDescription') ?>">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Raphaël Bardini</title>
+        <script>
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+        </script>
+        <?php $putAdditionalContent() ?>
+    </head>
+<?php }
+
+function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css')
+{ ?>
 
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
@@ -33,7 +61,6 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <?php } else { ?>
             <link rel="stylesheet" type="text/css" href="/portfolio/css/<?= $fallbackStylesheet ?>">
         <?php } ?>
-        <?php #echo implode('', array_map(fn($url) => "<link rel=\"stylesheet\" href=\"/portfolio/css/$url\">", $additionalStylesheets)) ?>
         <meta charset="UTF-8">
         <meta name="author" content="Raphaël Bardini">
         <meta name="description" content="<?= $lang->get('siteDescription') ?>">
@@ -59,7 +86,8 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <?php } ?>
     </head>
 <?php }
-function put_header(Page $page, Lang $lang) { ?>
+function put_header(Page $page, Lang $lang)
+{ ?>
     <template id="template-definition-tooltip">
         <article class="lvl definition-tooltip" role="tooltip">
             <h4 class="title"><a target="_blank" rel="noopener noreferrer">
@@ -94,8 +122,8 @@ function put_header(Page $page, Lang $lang) { ?>
                 $isSameLang = $lang->equals($otherLang);
                 $class = 'fi ' . $otherLang->get('flagClass') . ($isSameLang ? '' : ' gray-when-not-hover');
                 $title = $otherLang->name . ($isSameLang ? '' : " / {$otherLang->nameof($lang)}");
-                ?>
-                <li><a class="<?= $class ?>" title="<?= $title ?>" href="/portfolio/<?= $otherLang->tag ?>/<?= $page->name ?>.html"></a></li>
+            ?>
+                <li><a class="<?= $class ?>" title="<?= $title ?>" href="/portfolio/<?= $otherLang->name ?>/<?= $page->name ?>.html"></a></li>
             <?php } ?>
         </ul>
         <div class="theme-switches">
@@ -133,12 +161,14 @@ function put_header(Page $page, Lang $lang) { ?>
     </header>
 <?php }
 
-function get_background_style_attr(string $bg, string $varname = 'bg-img'): string {
+function get_background_style_attr(string $bg, string $varname = 'bg-img'): string
+{
     return <<<END
      style="--$varname: url($bg)"
     END;
 }
 
-function get_iframe(string $src, string $title): string {
+function get_iframe(string $src, string $title): string
+{
     return '<iframe src="' . $src . '" frameborder="0" loading="lazy" width="300" height="300" title="' . $title . '"></iframe>';
 }

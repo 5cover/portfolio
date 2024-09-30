@@ -16,6 +16,6 @@ final class Page {
      * @return string *pageName*, unless it is the current page, then `#`.
      */
     function get_nav_href(Lang $lang, string $pageName): string {
-        return $pageName == $this->name ? "#" : "/portfolio/$lang->tag/$pageName.html";
+        return $pageName == $this->name ? "#" : "/portfolio/$lang->name/$pageName.html";
     }
 }

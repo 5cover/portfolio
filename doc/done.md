@@ -470,3 +470,5 @@ What we can do: add the tooltip to the DOM once when it's shown for the first ti
 ## Stop double columns
 
 it's kind of annoying. i'm fine with the page being longer even though there are large horizontal margins.. this is fine and kind of trendy.. Better for the eyes.
+
+## global index page: automatically redirects to the user's preferred language

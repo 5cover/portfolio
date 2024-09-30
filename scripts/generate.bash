@@ -33,7 +33,11 @@ generate() {
     local dest="$1" lang="$2" page="$3" phpf="$4"
     shift 4
     mkdir -p "$(dirname "$dest")"
-    > "$dest" php -d include_path="include" -f "$phpf" "$lang" "$page" "$@";
+# specifying intl is not needed if is already installed on the local system
+#                  -d extension=intl\
+    > "$dest" php -d include_path=include\
+                  -d zend.assertions=1\
+                  -f "$phpf" "$lang" "$page" "$@";
     >&2 echo ok
 }
 
@@ -61,6 +65,12 @@ generate_page() {
 # todo: add english
 readonly langs=(fr)
 
+# Use only for debugging! Keep commented otherwise. Pushing a phpinfo page is.. eh.
+#generate_page '' phpinfo; exit
+
+# generate root index page
+generate "$outdir/index.html" '' root-index root-index.php
+exit;
 if [[ $# -eq 1 ]]; then
     for lang in "${langs[@]}"; do
     generate_page "$lang" "$1"

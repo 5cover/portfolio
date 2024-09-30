@@ -40,7 +40,7 @@ final class Fragment {
      * @param string $href the url relative to the site lang directory
      */
     function a(string $content, string $href): string {
-        return '<a class="link" href="/portfolio/' . $this->lang->tag . "/$href" . '">' . $content . '</a>';
+        return '<a class="link" href="/portfolio/' . $this->lang->name . "/$href" . '">' . $content . '</a>';
     }
 
     /** Get an external anchor */

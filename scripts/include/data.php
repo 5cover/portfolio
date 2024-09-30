@@ -93,7 +93,8 @@ abstract class Details extends Data {
         put_header($page, $this->lang);
         $this->put_page_main();
         put_footer($page, $this->lang);
-        ?></body><?php
+        ?></body>
+        </html><?php
     }
 
     abstract function put_page_main();
@@ -378,7 +379,7 @@ final class Project extends Details {
         ?>
         <ul class="list-rect">
             <?php foreach ($this->data['tags'] as $tagId) {
-                echo "<li><a href=\"/portfolio/{$this->lang->tag}/projects.html?tag=$tagId\">{$tags[$tagId]}</a></li>";
+                echo "<li><a href=\"/portfolio/{$this->lang->name}/projects.html?tag=$tagId\">{$tags[$tagId]}</a></li>";
             } ?>
         </ul>
     <?php }
