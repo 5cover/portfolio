@@ -5,9 +5,7 @@
 #search-bar {
     @include util.strip-content(1px 1px 1px 0);
     @include util.heading-margins(1, 3);
-    min-width: calc(100% / const.$phi);
-    width: min-content;
-    max-width: 100%;
+    max-width: min(50em, 95%);
     border-radius: 0 1em 1em 0;
 
     #search-input {
