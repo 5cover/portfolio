@@ -1,2 +1,4 @@
 # SCSS
 *.css.map
+# Make sure we never ever push this
+phpinfo.html
