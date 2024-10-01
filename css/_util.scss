@@ -258,7 +258,7 @@
  *
  * An element containing a graphic that is sized to the neighbouring text.
  */
-@mixin iconed-text($factor: 1, $underline: false) {
+@mixin iconed-text($vertical-align: text-bottom, $factor: 1, $underline: false) {
     #{const.$graphic} {
         height: calc(1em * $factor);
         width: auto;
@@ -266,7 +266,7 @@
     }
 
     * {
-        vertical-align: text-bottom;
+        vertical-align: $vertical-align;
     }
 
     @if $underline {

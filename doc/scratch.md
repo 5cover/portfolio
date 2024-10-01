@@ -4,10 +4,6 @@
 
 that way we can get stats
 
-## global index page (empty path)
-
-simply a page that will redirect you to the index for your preferred language, or english by default.
-
 ## Final release
 
 - Minify HTML
@@ -218,24 +214,12 @@ the compiler is your friend
 
 a marvel of engineering. a timeless lesson for all of us programmers.
 
-### The Mercs argue about programming languages
+## Project: The Mercs argue about programming languages
 
 Script & video
 
-### Make compatible with older browers
+## English translation
 
-provide replacement for lh unit
+currently translating definitions.json and adding missing keys
 
-among other things.
-
-to make it work on IUT's PCs.
-
-## fix color change on hover of some cards
-
-links disappear sometimes
-
-## use Cody to make code backwards compatible
-
-Objective is to make it work okay on the IUT's fina
-
-## fix icon alignment in buttons
+translate and add other files

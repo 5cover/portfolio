@@ -113,6 +113,7 @@ function put_header(Page $page, Lang $lang) { ?>
         </nav>
         <ul class="list-flags">
             <?php foreach (Lang::instances() as $otherLang) {
+                if ($otherLang->name == '') continue;
                 $isSameLang = $lang->equals($otherLang);
                 $class = 'fi ' . $otherLang->get('flagClass') . ($isSameLang ? '' : ' gray-when-not-hover');
                 $title = $otherLang->name . ($isSameLang ? '' : " / {$otherLang->nameof($lang)}");

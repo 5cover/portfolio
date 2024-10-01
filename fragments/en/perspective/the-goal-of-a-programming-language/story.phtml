@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('fr');
+$f = start('en');
 ?>
 <div>
     <p><?= $f->def('c') ?> is the first programming language I've learned, all the way back in <?= $f->year(2017) ?>. However I recently started learning <?= $f->def('zig') ?>. <?= $f->def('zig') ?> is similar to <?= $f->def('c') ?> in may ways. It is a low-level language destined for systems programming and hardware interaction. And I absolutely love it! I've implemented <?= $f->a('a clone of the GNU ' . $f->code('test') . ' command', 'project/ztest.html') ?> to learn it. This language fixes many of the problems and shortcomings of <?= $f->def('c') ?>.</p>

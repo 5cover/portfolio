@@ -1,32 +1,34 @@
 {
-    "the-goal-of-a-programming-language": {
-        "logo": {
-            "isThemedSvg": false,
-            "url": "/portfolio/img/definition/zig/logo.svg"
-        },
-        "story": {
-            "$include": "perspective/the-goal-of-a-programming-language/story.phtml"
-        },
-        "abstract": {"$include": "perspective/the-goal-of-a-programming-language/abstract.phtml"},
-        "title": "L'objectif d'un langage de programmation",
-        "gallery": [],
-        "links": {},
-        "references": [
-            {
-                "caption": "Implémentation d'un vecteur générique en C (anglais)",
-                "anchor": "website",
-                "href": "https://constantsmatter.com/posts/generic-ds-c/"
-            },
-            {
-                "caption": "Vol 501 d'Ariane 5",
-                "anchor": "wikipedia",
-                "href": "https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5"
-            },
-            {
-                "caption": "Dépôt des bibliothèques STB appartenant au domaine public (anglais)",
-                "anchor": "github",
-                "href": "https://github.com/nothings/stb"
-            }
-        ]
-    }
+  "the-goal-of-a-programming-language": {
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/definition/zig/logo.svg"
+    },
+    "story": {
+      "$include": "perspective/the-goal-of-a-programming-language/story.phtml"
+    },
+    "abstract": {
+      "$include": "perspective/the-goal-of-a-programming-language/abstract.phtml"
+    },
+    "title": "L'objectif d'un langage de programmation",
+    "gallery": [],
+    "links": {},
+    "references": [
+      {
+        "caption": "Implémentation d'un vecteur générique en C (anglais)",
+        "anchor": "website",
+        "href": "https://constantsmatter.com/posts/generic-ds-c/"
+      },
+      {
+        "caption": "Vol 501 d'Ariane 5",
+        "anchor": "wikipedia",
+        "href": "https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5"
+      },
+      {
+        "caption": "Dépôt des bibliothèques C STB appartenant au domaine public (anglais)",
+        "anchor": "github",
+        "href": "https://github.com/nothings/stb"
+      }
+    ]
+  }
 }

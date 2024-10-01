@@ -1,6 +1,6 @@
 {
     "island-maps": {
-        "abstract": "Cartographier les îles du jeu Anno 2070",
+        "abstract": "Cartographier les îles du jeu Anno 2070 pour la recherche et l'automatisation",
         "start-date": "2023-04-27",
         "context": "Personnel",
         "technologies": [
@@ -26,7 +26,7 @@
     },
     "2l2w-french-rural-road": {
         "abstract": "Assset de route française standardisée",
-        "context": "personnel",
+        "context": "Personnel",
         "end-date": "2022-10-02",
         "gallery": [],
         "links": {
@@ -147,7 +147,7 @@
         "title": "Dialogs"
     },
     "edplusplus": {
-        "abstract": "Projet NSI de suivi des notes scolaires",
+        "abstract": "Application graphique de suivi des notes scolaires",
         "context": "NSI Lycée",
         "end-date": "2022-11-09",
         "gallery": [],
@@ -181,7 +181,7 @@
     },
     "ethercrash": {
         "abstract": "Statistiques et data mining des parties sur Ethercrash",
-        "context": "personnel",
+        "context": "Personnel",
         "gallery": [],
         "links": {
             "Dépôt GitHub": {
@@ -303,7 +303,7 @@
     "psdc": {
         "abstract": "Compilateur pseudocode de l'IUT de Lannion",
         "background": "/portfolio/img/project/psdc/bg.png",
-        "context": "personnel",
+        "context": "Personnel",
         "gallery": [],
         "links": {
             "Dépôt GitHub": {
@@ -360,7 +360,7 @@
         "title": "Psdc"
     },
     "puissance-4": {
-        "abstract": "Jeu de Puissance 4 en console",
+        "abstract": "Jeu de Puissance 4 en ligne de commande",
         "context": "NSI Lycée",
         "end-date": "2021-12-05",
         "gallery": [],
@@ -388,7 +388,7 @@
         "title": "Puissance 4"
     },
     "s1.01": {
-        "abstract": "Jeu de Sudoku. Implémentation d'un besoin client (S1.01)",
+        "abstract": "Jeu de Sudoku en ligne de commande. Implémentation d'un besoin client (S1.01)",
         "background": "/portfolio/img/project/s1.01/bg.png",
         "context": "BUT",
         "end-date": "2023-11-27",
@@ -442,10 +442,10 @@
             "c",
             "doxygen"
         ],
-        "title": "Jeu de Sudoku"
+        "title": "Jeu de Sudoku en C"
     },
     "s1.02": {
-        "abstract": "Résolution de Sudoku et optimisation. Comparaison d'approches algorithmiques (S1.02)",
+        "abstract": "Solveur de grilles de Sudoku optimisé. Comparaison d'approches algorithmiques (S1.02)",
         "background": "/portfolio/img/project/s1.02/bg.png",
         "context": "BUT",
         "end-date": "2024-05-20",
@@ -485,7 +485,7 @@
         "title": "Sudone"
     },
     "s1.03": {
-        "abstract": "Automatisation, scripts et conteneurisation. Installation d'un poste pour le développement (S1.03)",
+        "abstract": "Automatisation, scripts, conteneurisation, parseur Markdown. Installation d'un poste pour le développement (S1.03)",
         "context": "BUT",
         "end-date": "2023-01-21",
         "gallery": [],
@@ -521,10 +521,10 @@
             "markdown",
             "gitlab"
         ],
-        "title": "Installation d'un poste de développement"
+        "title": "Générateur de documentation"
     },
     "s1.04": {
-        "abstract": "Création d'une base de données (S1.04)",
+        "abstract": "Concevoir et implémenter une base de données. Création d'une base de données (S1.04)",
         "context": "BUT",
         "end-date": "2024-01-22",
         "gallery": [],
@@ -556,7 +556,7 @@
         "title": "Création d'une base de données"
     },
     "s1.05": {
-        "abstract": "Création d'un site de streaming factice (S1.05)",
+        "abstract": "Créer un site de streaming factice. Recueil des besoins (S1.05)",
         "context": "BUT",
         "end-date": "2024-01-21",
         "gallery": [],
@@ -592,7 +592,7 @@
             "vs-code",
             "markdown"
         ],
-        "title": "Recueil des besoins"
+        "title": "Tabas'Kho"
     },
     "s1.06": {
         "abstract": "Analyse du rapport <abbr title=\"Responsabilité sociétale des entreprises\">RSE</abbr> de Focus Entertainment (S1.06)",
@@ -622,10 +622,10 @@
             "github",
             "markdown"
         ],
-        "title": "Environnement économique"
+        "title": "Analyse de Focus Entertainment"
     },
     "s2.01": {
-        "abstract": "Développement d'une application de gestion de salle de spectacle (S2.01)",
+        "abstract": "Développement d'une application de gestion de salle de spectacle. Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr> (S2.01)",
         "context": "BUT",
         "end-date": "2024-06-17",
         "gallery": [],
@@ -657,7 +657,7 @@
             "java",
             "javafx"
         ],
-        "title": "Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr>"
+        "title": "Billeterie Le Patio"
     },
     "s2.02": {
         "abstract": "Des solutions innovantes au <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"/portfolio/img/project/s2.02/sujet-sae.pdf\">problème des N reines</a>. Exploration algorithmique d'un problème (S2.02)",
@@ -736,7 +736,7 @@
         "title": "Site de météo"
     },
     "s2.04": {
-        "abstract": "Data mining sur l'open-data des collèges et lycées français (S2.04)",
+        "abstract": "Data mining sur l'open-data des collèges et lycées français. Exploitation d'une base de données (S2.04)",
         "context": "BUT",
         "end-date": "2024-06-12",
         "gallery": [],
@@ -770,10 +770,10 @@
             "matplotlib",
             "numpy"
         ],
-        "title": "Exploitation d'une base de données"
+        "title": "Data mining et OSINT sur l'éducation"
     },
     "s2.05": {
-        "abstract": "Application Java de gestion d'une salle de spectacle. Gestion d'un projet (S2.05)",
+        "abstract": "Gestion de projet traditionelle (Waterfall) pour l'application de billeterie Le Patio. Gestion d'un projet (S2.05)",
         "context": "BUT",
         "end-date": "2024-06-17",
         "gallery": [],
@@ -801,7 +801,7 @@
         "technologies": [
             "github"
         ],
-        "title": "Gestion d'un projet de développement d'application"
+        "title": "Gestion du projet d'application Billeterie Le Patio"
     },
     "s2.06": {
         "abstract": "Planification d'un évènement de <em>team building</em> et réalisation d'un film promotionnel. Organisation d'un travail d'équipe (S2.06)",
@@ -853,7 +853,7 @@
     },
     "tregoria": {
         "abstract": "Un recul sur notre environnement dans Cities: Skylines",
-        "context": "personnel",
+        "context": "Personnel",
         "gallery": [],
         "links": {
             "Publication Instagram": {
@@ -889,7 +889,7 @@
     "winclean": {
         "abstract": "Application de nettoyage et optimisation Windows",
         "background": "/portfolio/img/project/winclean/bg.png",
-        "context": "personnel",
+        "context": "Personnel",
         "gallery": [
             {
                 "caption": "Exécution des scripts",

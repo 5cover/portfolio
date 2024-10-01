@@ -63,7 +63,7 @@ generate_page() {
 ./linker.py "$data_dir" ../data/**/*.json
 
 # todo: add english
-readonly langs=(fr)
+readonly langs=(fr en)
 
 # Use only for debugging! Keep commented otherwise. Pushing a phpinfo page is.. eh.
 #generate_page '' phpinfo; exit

@@ -1,0 +1,44 @@
+{
+  "mountain": {
+    "abstract": "Ski and hiking",
+    "gallery": [
+      {
+        "caption": "The Sache, the longest slope in the Espace Killy. It's a black slope, and as such one of the domain's hardest. However it's worth it. The sight on Tignes is astonishing.",
+        "content": "(photo sache)"
+      },
+      {
+        "caption": "Tignes 1500, the domain's lowest point. It's where the Sache ends. I was exhausted. But I was happy.",
+        "content": "(photo tignes 1500)"
+      },
+      {
+        "caption": "Pays Désert, the half backcountry skiing in the Pissaillas. Magnificient sights and untouched powder snow.",
+        "content": "(photos pays desert)"
+      }
+    ],
+    "links": {},
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/piano-tile/1.jpg"
+    },
+    "references": [],
+    "story": {
+      "$include": "passion/mountain/story.phtml"
+    },
+    "title": "Montagne"
+  },
+  "sandbox-videogames": {
+    "abstract": "Infinite possibilities",
+    "background": "/portfolio/img/definition/minecraft/bg.png",
+    "gallery": [],
+    "links": {},
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/definition/dreamfinity/logo.svg"
+    },
+    "references": [],
+    "story": {
+      "$include": "passion/sandbox-videogames/story.phtml"
+    },
+    "title": "Sandbox videogames"
+  }
+}

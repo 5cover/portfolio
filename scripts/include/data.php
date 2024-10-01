@@ -45,7 +45,7 @@ final class Definition extends Data {
         $types = $this->lang->get_data_json('types');
 ?>
         <article class="definition" <?php if ($bg = $this->data['background'] ?? null)
-                                        echo get_background_style_attr(as_string($bg), 'bg-img-card'); ?>>
+                                        echo get_background_style_attr(as_string($bg), 'bg-img-card') ?>>
             <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="<?= $this->data['wiki'] ?>"><?= $this->title ?></a>
             </h4>
             <?php if ($logo = $this->data['logo'] ?? null) {
