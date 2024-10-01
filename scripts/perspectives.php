@@ -1,5 +1,5 @@
 <?php
-require_once 'help.php';
+require_once 'util.php';
 require_once 'content.php';
 require_once 'lang.php';
 

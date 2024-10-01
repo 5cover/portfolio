@@ -70,7 +70,7 @@ readonly langs=(fr)
 
 # generate root index page
 generate "$outdir/index.html" '' root-index root-index.php
-exit;
+
 if [[ $# -eq 1 ]]; then
     for lang in "${langs[@]}"; do
     generate_page "$lang" "$1"

@@ -1,14 +1,16 @@
 <?php
-require_once 'help.php';
+require_once 'util.php';
 require_once 'content.php';
 require_once 'data.php';
 
 [$lang, $page] = parse_args();
 put_doctype_html($page, $lang);
-put_head_light($page, $lang, function() {
+put_head_light($page, $lang, function () {
 ?>
     <script type="module">
-        import { getDataJson } from "./js/modules/util.js";
+        import {
+            getDataJson
+        } from "./js/modules/util.js";
 
         async function getPreferredLanguage() {
             const langs = Object.keys(await getDataJson('langs'));
@@ -24,6 +26,8 @@ put_head_light($page, $lang, function() {
 <?php
 });
 ?>
+
 <body>
 </body>
+
 </html>

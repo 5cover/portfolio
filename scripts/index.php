@@ -1,5 +1,5 @@
 <?php
-require_once 'help.php';
+require_once 'util.php';
 require_once 'content.php';
 require_once 'data.php';
 
@@ -27,7 +27,7 @@ put_head($page, $lang);
             <?php foreach ($piano_tiles as $i => $href) {
                 $num = $i + 1;
                 $src = get_web_url(glob_web_single("/portfolio/img/piano-tile/$num.*"));
-                ?>
+            ?>
                 <li>
                     <figure>
                         <img src="<?= $src ?>" alt="<?= $lang->get("pianoTile{$num}Title") ?>" width="240" height="480" loading="lazy" title="<?= strip_tags($lang->get("pianoTile{$num}Desc")) ?>">
@@ -58,17 +58,13 @@ put_head($page, $lang);
                 <h2><?= $lang->get('indexContact') ?></h2>
                 <address>
                     <ul>
-                        <li title="E-mail"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="mailto:bardini.raphael@gmail.com"><?php
-                        echo get_svg_element('portfolio/img/social/email.svg', baseHeight: 24) ?><span>bardini.raphael@gmail.com</span></a>
+                        <li title="E-mail"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="mailto:bardini.raphael@gmail.com"><?= get_svg_element('portfolio/img/social/email.svg', baseHeight: 24) ?><span>bardini.raphael@gmail.com</span></a>
                         </li>
-                        <li title="LinkedIn"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/"><?php
-                        echo get_svg_element('portfolio/img/social/linkedin.svg', baseHeight: 24) ?><span>Raphaël Bardini</span></a>
+                        <li title="LinkedIn"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/"><?= get_svg_element('portfolio/img/social/linkedin.svg', baseHeight: 24) ?><span>Raphaël Bardini</span></a>
                         </li>
-                        <li title="Instagram"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/bardiniraphael/"><?php
-                        echo get_svg_element('portfolio/img/social/instagram.svg', baseHeight: 24) ?><span>bardiniraphael</span></a>
+                        <li title="Instagram"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/bardiniraphael/"><?= get_svg_element('portfolio/img/social/instagram.svg', baseHeight: 24) ?><span>bardiniraphael</span></a>
                         </li>
-                        <li title="GitHub"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover"><?php
-                        echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 24) ?><span>5cover</span></a>
+                        <li title="GitHub"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover"><?= get_svg_element('portfolio/img/social/github.svg', baseHeight: 24) ?><span>5cover</span></a>
                         </li>
                     </ul>
                 </address>

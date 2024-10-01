@@ -1,5 +1,5 @@
 <?php
-require_once 'help.php';
+require_once 'util.php';
 require_once 'content.php';
 
 [$lang, $page] = parse_args();
@@ -14,10 +14,10 @@ put_head($page, $lang);
         <dl>
             <?php
             foreach ($lang->definitions() as $definition) {
-                ?>
+            ?>
                 <dt id="<?= $definition->id ?>"><?= $definition->id ?></dt>
                 <dd>
-                    <?= implode(', ', $definition->data['name']) ?>
+                    <?= implode(', ', as_array($definition->data['name'])) ?>
                     <div>
                         <?= $definition->get_tooltip_trigger() ?>
                     </div>

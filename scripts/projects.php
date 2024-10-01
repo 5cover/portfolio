@@ -1,6 +1,6 @@
 <?php
 require_once 'content.php';
-require_once 'help.php';
+require_once 'util.php';
 [$lang, $page] = parse_args();
 ?> <?php put_doctype_html($page, $lang) ?>
 <?php put_head($page, $lang) ?>

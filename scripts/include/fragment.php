@@ -1,8 +1,8 @@
 <?php
-require_once 'help.php';
+require_once 'util.php';
 require_once 'content.php';
 
-function start($lang): Fragment {
+function start(string $lang): Fragment {
     return new Fragment($lang);
 }
 
@@ -59,7 +59,7 @@ final class Fragment {
      * Uses the unlinked *definitions* data JSON.
      */
     function def(string $id): string {
-        $def = $this->lang->get_data_json('definitions', false)[$id];
+        $def = as_array($this->lang->get_data_json('definitions', false)[$id]);
         return (new Definition($this->lang, $id, $def))->get_tooltip_trigger();
     }
 }

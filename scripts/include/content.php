@@ -3,23 +3,19 @@
 require_once 'page.php';
 require_once 'lang.php';
 
-function put_doctype_html(Page $page, Lang $lang)
-{ ?>
+function put_doctype_html(Page $page, Lang $lang) { ?>
     <!DOCTYPE html>
     <html lang="<?= $lang->key ?>">
 <?php }
 
-function put_footer(Page $page, Lang $lang)
-{ ?>
+function put_footer(Page $page, Lang $lang) { ?>
     <footer class="lvl">
         <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="<?= $lang->get('footerGitHubAnchorTitle') ?>"><?php
-                                                                                                                                                        echo get_svg_element('portfolio/img/social/github.svg', baseHeight: 60) ?></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="<?= $lang->get('footerGitHubAnchorTitle') ?>"><?= get_svg_element('portfolio/img/social/github.svg', baseHeight: 60) ?></a>
     </footer>
 <?php }
 
-function put_head_light(Page $page, Lang $lang, callable $putAdditionalContent)
-{ ?>
+function put_head_light(Page $page, Lang $lang, callable $putAdditionalContent) { ?>
 
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
@@ -43,8 +39,7 @@ function put_head_light(Page $page, Lang $lang, callable $putAdditionalContent)
     </head>
 <?php }
 
-function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css')
-{ ?>
+function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css') { ?>
 
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
@@ -86,8 +81,7 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <?php } ?>
     </head>
 <?php }
-function put_header(Page $page, Lang $lang)
-{ ?>
+function put_header(Page $page, Lang $lang) { ?>
     <template id="template-definition-tooltip">
         <article class="lvl definition-tooltip" role="tooltip">
             <h4 class="title"><a target="_blank" rel="noopener noreferrer">
@@ -161,14 +155,12 @@ function put_header(Page $page, Lang $lang)
     </header>
 <?php }
 
-function get_background_style_attr(string $bg, string $varname = 'bg-img'): string
-{
+function get_background_style_attr(string $bg, string $varname = 'bg-img'): string {
     return <<<END
      style="--$varname: url($bg)"
     END;
 }
 
-function get_iframe(string $src, string $title): string
-{
+function get_iframe(string $src, string $title): string {
     return '<iframe src="' . $src . '" frameborder="0" loading="lazy" width="300" height="300" title="' . $title . '"></iframe>';
 }

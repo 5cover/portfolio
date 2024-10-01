@@ -1,18 +1,25 @@
 <?php
-require_once 'help.php';
+require_once 'util.php';
 require_once 'content.php';
 require_once 'data.php';
 
-define('MAX_PROJECTS_PER_SKILL', 4);
+const MAX_PROJECTS_PER_SKILL = 4;
 
 [$lang, $page] = parse_args();
 
-function put_skill_project_list(string $skillId) {
-    global $lang, $projects;
+function put_skill_project_list(Lang $lang, string $skillId) {
     Project::put_card_list(
         array_slice(
-            array_filter($lang->projects(),
-                fn($p) => in_array($skillId, $p->data['tags'])), 0, MAX_PROJECTS_PER_SKILL, true), 4);
+            array_filter(
+                $lang->projects(),
+                fn($p) => in_array($skillId, as_array($p->data['tags']))
+            ),
+            0,
+            MAX_PROJECTS_PER_SKILL,
+            true
+        ),
+        4
+    );
 }
 
 ?> <?php put_doctype_html($page, $lang) ?>
@@ -42,32 +49,32 @@ function put_skill_project_list(string $skillId) {
                 <li style="--bg-img: url(/portfolio/img/skill/1.jpg)">
                     <h3>Compétence 1. Réaliser</h3>
                     <p>Développer — c’est-à-dire concevoir, coder, tester et intégrer une solution informatique pour un client.</p>
-                    <?php put_skill_project_list('but-realiser') ?>
+                    <?php put_skill_project_list($lang, 'but-realiser') ?>
                 </li>
                 <li style="--bg-img: url(/portfolio/img/skill/2.jpg)">
                     <h3>Compétence 2. Optimiser</h3>
                     <p>Proposer des applications informatiques optimisées en fonction de critères spécifiques&nbsp;: temps d’exécution, précision, consommation de ressources.</p>
-                    <?php put_skill_project_list('but-optimiser') ?>
+                    <?php put_skill_project_list($lang, 'but-optimiser') ?>
                 </li>
                 <li style="--bg-img: url(/portfolio/img/skill/3.jpg)">
                     <h3>Compétence 3. Administrer</h3>
                     <p>Installer, configurer, mettre à disposition, maintenir en conditions opérationnelles des infrastructures, des services et des réseaux et optimiser le système informatique d’une organisation. </p>
-                    <?php put_skill_project_list('but-administrer') ?>
+                    <?php put_skill_project_list($lang, 'but-administrer') ?>
                 </li>
                 <li style="--bg-img: url(/portfolio/img/skill/4.jpg)">
                     <h3>Compétence 4. Gérer</h3>
                     <p>Concevoir, gérer, administrer et exploiter les données de l’entreprise et mettre à disposition toutes les informations pour un bon pilotage de l’entreprise.</p>
-                    <?php put_skill_project_list('but-gerer') ?>
+                    <?php put_skill_project_list($lang, 'but-gerer') ?>
                 </li>
                 <li style="--bg-img: url(/portfolio/img/skill/5.jpg)">
                     <h3>Compétence 5. Conduire</h3>
                     <p>Satisfaire les besoins des utilisateurs au regard de la chaîne de valeur du client, organiser et piloter un projet informatique avec des méthodes classiques ou agiles.</p>
-                    <?php put_skill_project_list('but-conduire') ?>
+                    <?php put_skill_project_list($lang, 'but-conduire') ?>
                 </li>
                 <li style="--bg-img: url(/portfolio/img/skill/6.jpg)">
                     <h3>Compétence 6. Collaborer</h3>
                     <p>Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une équipe informatique.</p>
-                    <?php put_skill_project_list('but-collaborer') ?>
+                    <?php put_skill_project_list($lang, 'but-collaborer') ?>
                 </li>
             </ul>
         </section>
