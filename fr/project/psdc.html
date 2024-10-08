@@ -60,9 +60,8 @@
             </ul>
         </nav>
         <ul class="list-flags">
-                            <li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/project/psdc.html"></a></li>
                             <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/project/psdc.html"></a></li>
-                            <li><a class="fi fi-us gray-when-not-hover" title=" / Anglais" href="/portfolio//project/psdc.html"></a></li>
+                            <li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/project/psdc.html"></a></li>
                     </ul>
         <div class="theme-switches">
             <label for="theme-switch-light" title="Thème clair">
@@ -104,7 +103,8 @@
                     <h1>Psdc</h1>
                                         <p class="abstract">Compilateur pseudocode de l'IUT de Lannion</p>
                     <div class="status-context">        <small class="context">Personnel</small>
-    <small class="status"><time datetime="2023-11-15">15 novembre 2023</time> &ndash; en cours</small>
+    <small class="status"><time datetime="2023-11-15">15 novembre 2023</time> &ndash;
+            en cours</small>
     </div>
             </header>
                             <section id="links">
@@ -112,7 +112,7 @@
                             <ul class="lvl list-link">
                             <li>
                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/psdc">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                        <span>Dépôt GitHub</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                        <span>Dépôt GitHub</span>
                     </a>
                 </li>
                     </ul>
@@ -136,13 +136,14 @@ int main() {
     <figure class="figure"><img alt="Métaphore de la montagne" src="/portfolio/img/project/psdc/mountain.png" width="1824" height="833" loading="lazy">
         <figcaption><cite>Crafting Interpreters</cite>, Robert Nystrom &mdash; &copy; <time datetime="2015">2015</time> &ndash; <time datetime="2021">2021</time>, license MIT</figcaption>
     </figure>
-    <p>Commencons avec le code source original, au pied de la montagne. Au fil des étapes (<em lang="en">scanning</em>, <em lang="en">parsing</em>, <em lang="en">analysis</em>), la représentation du code devient de plus en plus haut niveau, c'est-à-dire qu'elle se focalise plus sur la sémantique exprimée que sur les détails d'implémentation.</p>
+    <p>Commençons avec le code source original, au pied de la montagne. Au fil des étapes (<em lang="en">scanning</em>, <em lang="en">parsing</em>, <em lang="en">analysis</em>), la représentation du code devient de plus en plus haut niveau, c'est-à-dire qu'elle se focalise plus sur la sémantique exprimée que sur les détails d'implémentation.</p>
     <p>Une fois le sommet atteint, on est à mi-chemin de la compilation. On a une vue imprenable sur la sémantique du code, soit le sens que l'utilisateur lui donne à travers la syntaxe de notre langage.</p>
     <p>Alors entamons notre descente. Convertissons successivement notre représentation de haut niveau en des formes se rapprochant de notre objectif final&nbsp;: le langage machine, qui sera exécuté directement par le processeur.</p>
     <p>Je n'ai découvert Crafting Interpreters qu'assez tard dans le projet. À l'origine, je me suis basé sur la playlist <em lang="en">Creating a Compiler</em><a class="link" id="cite-ref-2" href="#ref-2">2</a> de <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@pixeled-yt">Pixeled</a> sur YouTube, où l'on assiste à la conception et à l'implémentation d'un compilateur pour un language <em>ex-nihilo</em> nommé Hydrogen. Le compilateur transforme le code en assembleur, puis utilise <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Netwide_Assembler" data-definition-id="nasm" class="link definition-tooltip-trigger">NASM</a> pour générer le code machine.</p>
     <p>C'est dans ces vidéos que j'ai appris les bases de l'analyse lexicale<a class="link" id="cite-ref-3" href="#ref-3">3</a>, des grammaires formelles<a class="link" id="cite-ref-4" href="#ref-4">4</a>, ou encore de l'analyse syntaxique<a class="link" id="cite-ref-5" href="#ref-5">5</a>. C'est vraiment intéressant et j'apprends beaucoup de choses.</p>
+    <p>Ce projet est loin d'être terminé &mdash; de nombreuses fonctionnalités restent à implémenter, notamment pour l'intégration <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code" data-definition-id="vs-code" class="link definition-tooltip-trigger">VS Code</a> avec serveur de langage.</p>
 </div>        </section>
-                    <section id="references">
+                        <section id="references">
                     <h2>Références</h2>
                             <ol class="list-reference">
                             <li id="ref-1"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-1">&uarr;</a></span>
@@ -176,29 +177,25 @@ int main() {
                     <h2>Technologies</h2>
                             <ul class="lvl list-definition">
                             <li>        <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/csharp/bg.png)">
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_Sharp">C#</a>
-            </h4>
+            <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_Sharp">C#</a></h4>
             <img src="/portfolio/img/definition/csharp/logo.png" alt="Logo C#" title="Logo C#" class="logo" width="256" height="256" loading="lazy">            <p class="type"><small>Langage de programmation</small></p>
             <p class="synopsis">Langage de programmation orienté objet, commercialisé par Microsoft depuis <time datetime="2002">2002</time>.</p>
         </article>
     </li>
                             <li>        <article class="definition" >
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form">Extended Backus-Naur Form</a>
-            </h4>
+            <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form">Extended Backus-Naur Form</a></h4>
                         <p class="type"><small>Language informatique</small></p>
             <p class="synopsis">Extension du métalangage <abbr title="Backus-Naur Form">BNF</abbr>, créée par Niklaus Wirth en <time datetime="1996">1996</time>. Ce langage exprime des grammaires formelles afin de notamment concevoir des compilateurs.</p>
         </article>
     </li>
                             <li>        <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/markdown/bg.png)">
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Markdown">Markdown</a>
-            </h4>
+            <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Markdown">Markdown</a></h4>
             <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 208 128" title="Logo Markdown" class="logo"><rect x="5" y="5" ry="10" stroke-width="10" fill="none" style="stroke: var(--color-fg)"/><path d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39zm125 0l-30-33h20V30h20v35h20z" style="fill: var(--color-fg)"/></svg>            <p class="type"><small>Langage de balisage</small></p>
             <p class="synopsis">Langage de balisage léger créé en <time datetime="2004">2004</time> par John Gruber, avec l'aide d'Aaron Swartz.</p>
         </article>
     </li>
                             <li>        <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/vs-code/bg.png)">
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code">Visual Studio Code</a>
-            </h4>
+            <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code">Visual Studio Code</a></h4>
             <img src="/portfolio/img/definition/vs-code/logo.svg" alt="Logo Visual Studio Code" title="Logo Visual Studio Code" class="logo" height="30" loading="lazy">            <p class="type"><small>Environnement de développement intégré</small></p>
             <p class="synopsis">Éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.</p>
         </article>
@@ -211,4 +208,5 @@ int main() {
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="Dépôt GitHub de ce site"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
     </footer>
 </body>
+
         </html>

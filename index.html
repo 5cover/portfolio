@@ -20,7 +20,9 @@
             document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
         </script>
             <script type="module">
-        import { getDataJson } from "./js/modules/util.js";
+        import {
+            getDataJson
+        } from "./js/modules/util.js";
 
         async function getPreferredLanguage() {
             const langs = Object.keys(await getDataJson('langs'));
@@ -34,6 +36,8 @@
         window.location.href = `/portfolio/${await getPreferredLanguage()}`;
     </script>
     </head>
+
 <body>
 </body>
+
 </html>

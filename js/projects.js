@@ -108,7 +108,7 @@ $(async () => {
             ${await util.map(project.logo, async info =>
             (await dom.getGraphicElement(info, project.title /* todo: format title*/, ['logo'])).outerHTML,
             '')}
-            <h3><a href="project/${id}.html">${project.title}</a></h3>
+            <h3><a class="foil" href="project/${id}.html">${project.title}</a></h3>
             <small class="context">${util.ucfirst(project.context)}</small>
             <small class="status">${getStatus(project)}</small>
             <p class="abstract">${project.abstract}</p>

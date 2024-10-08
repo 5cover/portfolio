@@ -66,10 +66,6 @@
  *
  * Alters the z-index of relevant elements to have them stand out above the link.
  */
-/* Hover card target
- *
- * The anchor element of an hover card.
- */
 /* Transparent background image
  *
  * Define a transparent background image.
@@ -86,6 +82,18 @@
 /* Absolute center
  *
  * Position absolutely and center in parent, horizontally and vertically.
+ */
+/* Horizontal box border readius
+ *
+ * Appropriate border radius for an horizontal box.
+ *
+ * $border-radius-factor: number -> border radius multiplier
+ */
+/* Horizontal box border padding
+ *
+ * Appropriate padding for an horizontal box.
+ *
+ * $padding-factor: number -> padding multiplier
  */
 /* Horizontal box
  *
@@ -219,10 +227,6 @@
    *
    * Alters the z-index of relevant elements to have them stand out above the link.
    */
-  /* Hover card target
-   *
-   * The anchor element of an hover card.
-   */
   /* Transparent background image
    *
    * Define a transparent background image.
@@ -239,6 +243,18 @@
   /* Absolute center
    *
    * Position absolutely and center in parent, horizontally and vertically.
+   */
+  /* Horizontal box border readius
+   *
+   * Appropriate border radius for an horizontal box.
+   *
+   * $border-radius-factor: number -> border radius multiplier
+   */
+  /* Horizontal box border padding
+   *
+   * Appropriate padding for an horizontal box.
+   *
+   * $padding-factor: number -> padding multiplier
    */
   /* Horizontal box
    *
@@ -408,7 +424,7 @@
   }
   /* Rectangle list
    *
-   * A list of small, (ideally) horizontal rectancgles
+   * A list of small, horizontal rectangles whose list items contain only one element
    */
   .list-rect {
     list-style: none;
@@ -417,9 +433,13 @@
     gap: 0.5em;
   }
   .list-rect > li {
-    padding: 0.175lh 0.7ch;
-    border-radius: 0.35lh;
     font-size: 0.9em;
+    border-radius: 0.35lh;
+  }
+  .list-rect > li > :only-child {
+    border-radius: inherit;
+    display: list-item;
+    padding: 0.175lh 0.7ch;
   }
   /* Link list
    *
@@ -469,17 +489,6 @@
   .list-detail-split-card > li:is(:hover, :focus-within, :focus) .link, .list-detail-split-card > li:is(:hover, :focus-within, :focus) a[id^=cite-] {
     color: var(--color-fg);
     text-decoration: underline;
-  }
-  .list-detail-split-card > li h3 a {
-    text-decoration: none;
-  }
-  .list-detail-split-card > li h3 a:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
   }
   .list-detail-split-card > li {
     border-radius: 1em;
@@ -577,17 +586,6 @@
     color: var(--color-fg);
     text-decoration: underline;
   }
-  .list-project > li h3 a {
-    text-decoration: none;
-  }
-  .list-project > li h3 a:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
   .list-project > li {
     background: border-box linear-gradient(rgba(var(--color-lvl-rgb), 0.85), rgba(var(--color-lvl-rgb), 0.85)), padding-box var(--bg-img-card, rgb(var(--color-lvl-rgb))) no-repeat;
     background-size: cover;
@@ -680,7 +678,6 @@
    * - definition-tooltip: tooltip form of the definition
    * - definition-tooltip-trigger: trigger of the definition tooltip form
    *
-   * - title: definition title
    * - logo: definition logo
    * - type: definition types
    * - synopsis: definition synopsis
@@ -717,17 +714,6 @@
     z-index: 1;
     /* Creates a stacking context */
     position: relative;
-  }
-  .definition .title a, .definition-tooltip .title a {
-    text-decoration: none;
-  }
-  .definition .title a:after, .definition-tooltip .title a:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
   }
   .definition .logo, .definition-tooltip .logo {
     max-width: 100%;
@@ -767,7 +753,7 @@
   }
   .definition-tooltip-trigger {
     cursor: pointer;
-    font-style: italic;
+    font-weight: 600;
   }
   .definition-tooltip:not(.show) {
     opacity: 0;
@@ -868,6 +854,21 @@
   .figure,
   pre):not(.figure *):not(:last-child) {
     margin-bottom: 3.125ex;
+  }
+  /* Hover card foil
+   *
+   * The anchor element of an hover card. Designs the element that deploys over the whole hover card, rendering it interactive.
+   */
+  .foil {
+    text-decoration: none;
+  }
+  .foil:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 @layer base {
@@ -1247,13 +1248,11 @@
          break-inside: avoid;
     max-width: 100%;
   }
-  .figure > :not(figcaption) {
-    width: 100%;
+  .figure > :first-child {
     max-width: 100%;
     height: auto;
-    max-height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .figure > figcaption {
     padding: 0.625lh 2.5ch;
@@ -1361,7 +1360,7 @@ main {
 #titre {
   align-items: center;
   display: flex;
-  gap: 1em;
+  gap: 3em;
   justify-content: space-between;
 }
 
@@ -1447,11 +1446,14 @@ pre):not(.figure *):not(:last-child) {
 :has(> #resultat-pour-moi) {
   align-items: center;
   display: flex;
-  gap: 1em;
+  gap: 3em;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 :has(> #resultat-pour-moi) figure {
+  flex: 1 1 20em;
   border-radius: 1em;
+  max-width: max(20em, 40%);
 }
 :has(> #resultat-pour-moi) figure img {
   border-top-left-radius: 1em;

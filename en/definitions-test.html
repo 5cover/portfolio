@@ -1,0 +1,490 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png">
+        <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
+        <link rel="manifest" href="/portfolio/site.webmanifest">
+        <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
+
+                    <link rel="stylesheet" type="text/css" href="/portfolio/css/base.css">
+                <meta charset="UTF-8">
+        <meta name="author" content="Raphaël Bardini">
+        <meta name="description" content="Hello! My name is Raphaël Bardini. This is my portfolio website. Make yourself at home!">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Raphaël Bardini</title>
+        <script>
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+        </script>
+        <!-- Flag icons -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+        <!-- JQuery -->
+        <script async src="/portfolio/js/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <!-- Highlight.JS -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script type="module" src="/portfolio/js/base.js"></script>
+            </head>
+
+<body>
+        <template id="template-definition-tooltip">
+        <article class="lvl definition-tooltip" role="tooltip">
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer">
+                    <!-- href="wiki"; name -->
+                </a></h4>
+            <!-- logo graphic -->
+            <p class="type"><small>
+                    <!-- type -->
+                </small></p>
+            <p class="synopsis">
+                <!-- synopsis -->
+            </p>
+        </article>
+    </template>
+    <header class="lvl">
+        <nav>
+            <a href="/portfolio/en/index.html">Raphaël Bardini</a>
+            <ul>
+                <li><a href="/portfolio/en/projects.html">Projects</a>
+                </li>
+                <li><a href="/portfolio/en/history.html">History</a>
+                </li>
+                <li><a href="/portfolio/en/passions.html">Passions</a>
+                </li>
+                <li><a href="/portfolio/en/perspectives.html">Perspectives</a>
+                <li><a href="/portfolio/en/but-informatique.html">BUT Computer Science</a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="list-flags">
+                            <li><a class="fi fi-fr gray-when-not-hover" title="fr / French" href="/portfolio/fr/definitions-test.html"></a></li>
+                            <li><a class="fi fi-us" title="en" href="/portfolio/en/definitions-test.html"></a></li>
+                    </ul>
+        <div class="theme-switches">
+            <label for="theme-switch-light" title="Light theme">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.9966 13.3333C12.8804 13.3333 14.4075 11.8409 14.4075 10C14.4075 8.15905 12.8804 6.66666 10.9966 6.66666C9.11284 6.66666 7.58575 8.15905 7.58575 10C7.58575 11.8409 9.11284 13.3333 10.9966 13.3333Z" style="stroke:var(--color-fg);fill:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10.9966 1.66666V3.33333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10.9966 16.6667V18.3333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M4.9679 4.10833L6.17022 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M15.8229 14.7167L17.0253 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M2.46942 10H4.17485" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M17.8183 10H19.5237" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.17022 14.7167L4.9679 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M17.0253 4.10833L15.8229 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input id="theme-switch-light" name="theme" value="auto" type="radio" onclick="">
+            </label>
+            <label for="theme-switch-system" title="System theme">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15.0014" cy="15.0014" r="9" style="stroke:var(--color-fg);" stroke-width="2" />
+                    <mask id="path-2-inside-1_316_18" style="fill:var(--color-bg);">
+                        <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" />
+                    </mask>
+                    <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" style="fill:var(--color-fg);stroke:var(--color-fg);" stroke-width="4" mask="url(#path-2-inside-1_316_18)" />
+                </svg>
+                <input id="theme-switch-system" name="theme" value="light" type="radio" onclick="">
+            </label>
+            <label for="theme-switch-dark" title="Dark theme">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.99939 1.5C8.00483 2.49456 7.44609 3.84348 7.44609 5.25C7.44609 6.65652 8.00483 8.00544 8.99939 9C9.99395 9.99456 11.3429 10.5533 12.7494 10.5533C14.1559 10.5533 15.5048 9.99456 16.4994 9C16.4994 10.4834 16.0595 11.9334 15.2354 13.1668C14.4113 14.4001 13.24 15.3614 11.8695 15.9291C10.4991 16.4968 8.99107 16.6453 7.53622 16.3559C6.08136 16.0665 4.74499 15.3522 3.69609 14.3033C2.6472 13.2544 1.93289 11.918 1.6435 10.4632C1.35411 9.00832 1.50264 7.50032 2.0703 6.12987C2.63795 4.75943 3.59925 3.58809 4.83262 2.76398C6.06598 1.93987 7.51603 1.5 8.99939 1.5Z" style="stroke:var(--color-fg);" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input id="theme-switch-dark" name="theme" value="dark" type="radio" onclick="">
+            </label>
+        </div>
+    </header>
+    <main>
+        <dl>
+                            <dt id="anno2070">anno2070</dt>
+                <dd>
+                    Anno 2070                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Anno_2070" data-definition-id="anno2070" class="link definition-tooltip-trigger">Anno 2070</a>                    </div>
+                </dd>
+                            <dt id="apache2">apache2</dt>
+                <dd>
+                    Apache HTTP Server, Apache                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Apache_HTTP_Server" data-definition-id="apache2" class="link definition-tooltip-trigger">Apache</a>                    </div>
+                </dd>
+                            <dt id="bash">bash</dt>
+                <dd>
+                    Bash, Bourne-Again shell                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" data-definition-id="bash" class="link definition-tooltip-trigger">Bash</a>                    </div>
+                </dd>
+                            <dt id="blender">blender</dt>
+                <dd>
+                    Blender                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Blender_(software)" data-definition-id="blender" class="link definition-tooltip-trigger">Blender</a>                    </div>
+                </dd>
+                            <dt id="buildcraft">buildcraft</dt>
+                <dd>
+                    BuildCraft                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://mod-buildcraft.com/" data-definition-id="buildcraft" class="link definition-tooltip-trigger">BuildCraft</a>                    </div>
+                </dd>
+                            <dt id="c">c</dt>
+                <dd>
+                    C                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-definition-id="c" class="link definition-tooltip-trigger">C</a>                    </div>
+                </dd>
+                            <dt id="chartier--le-goff-marius">chartier--le-goff-marius</dt>
+                <dd>
+                    Marius Chartier--Le Goff                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://icelos6.wixsite.com/portfolio-marius-cha" data-definition-id="chartier--le-goff-marius" class="link definition-tooltip-trigger">Marius Chartier--Le Goff</a>                    </div>
+                </dd>
+                            <dt id="cities-skylines">cities-skylines</dt>
+                <dd>
+                    Cities Skylines                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Cities:_Skylines" data-definition-id="cities-skylines" class="link definition-tooltip-trigger">Cities Skylines</a>                    </div>
+                </dd>
+                            <dt id="cmake">cmake</dt>
+                <dd>
+                    CMake, Cross-platform Make                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/CMake" data-definition-id="cmake" class="link definition-tooltip-trigger">CMake</a>                    </div>
+                </dd>
+                            <dt id="cpp">cpp</dt>
+                <dd>
+                    C++                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C%2B%2B" data-definition-id="cpp" class="link definition-tooltip-trigger">C++</a>                    </div>
+                </dd>
+                            <dt id="csharp">csharp</dt>
+                <dd>
+                    C#                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" data-definition-id="csharp" class="link definition-tooltip-trigger">C#</a>                    </div>
+                </dd>
+                            <dt id="css">css</dt>
+                <dd>
+                    CSS, Cascading Style Sheets                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/CSS" data-definition-id="css" class="link definition-tooltip-trigger">CSS</a>                    </div>
+                </dd>
+                            <dt id="csv">csv</dt>
+                <dd>
+                    CSV, Comma-separated values                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Comma-separated_values" data-definition-id="csv" class="link definition-tooltip-trigger">CSV</a>                    </div>
+                </dd>
+                            <dt id="docker">docker</dt>
+                <dd>
+                    Docker                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Docker_(software)" data-definition-id="docker" class="link definition-tooltip-trigger">Docker</a>                    </div>
+                </dd>
+                            <dt id="dotnet">dotnet</dt>
+                <dd>
+                    Microsoft .NET, .NET                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/.NET" data-definition-id="dotnet" class="link definition-tooltip-trigger">.NET</a>                    </div>
+                </dd>
+                            <dt id="doxygen">doxygen</dt>
+                <dd>
+                    Doxygen                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Doxygen" data-definition-id="doxygen" class="link definition-tooltip-trigger">Doxygen</a>                    </div>
+                </dd>
+                            <dt id="dreamfinity">dreamfinity</dt>
+                <dd>
+                    Dreamfinity                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://dreamfinity.org" data-definition-id="dreamfinity" class="link definition-tooltip-trigger">Dreamfinity</a>                    </div>
+                </dd>
+                            <dt id="ebnf">ebnf</dt>
+                <dd>
+                    EBNF, Extended Backus-Naur Form                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form" data-definition-id="ebnf" class="link definition-tooltip-trigger">EBNF</a>                    </div>
+                </dd>
+                            <dt id="eclipse">eclipse</dt>
+                <dd>
+                    Eclipse                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Eclipse_(software)" data-definition-id="eclipse" class="link definition-tooltip-trigger">Eclipse</a>                    </div>
+                </dd>
+                            <dt id="figma">figma</dt>
+                <dd>
+                    Figma                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Figma" data-definition-id="figma" class="link definition-tooltip-trigger">Figma</a>                    </div>
+                </dd>
+                            <dt id="galacticraft">galacticraft</dt>
+                <dd>
+                    Galacticraft                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://galacticraft.net/" data-definition-id="galacticraft" class="link definition-tooltip-trigger">Galacticraft</a>                    </div>
+                </dd>
+                            <dt id="gcov">gcov</dt>
+                <dd>
+                    Gcov                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Gcov" data-definition-id="gcov" class="link definition-tooltip-trigger">Gcov</a>                    </div>
+                </dd>
+                            <dt id="github">github</dt>
+                <dd>
+                    GitHub                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/GitHub" data-definition-id="github" class="link definition-tooltip-trigger">GitHub</a>                    </div>
+                </dd>
+                            <dt id="gitlab">gitlab</dt>
+                <dd>
+                    GitLab                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/GitLab" data-definition-id="gitlab" class="link definition-tooltip-trigger">GitLab</a>                    </div>
+                </dd>
+                            <dt id="gloomaps">gloomaps</dt>
+                <dd>
+                    GlooMaps                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.gloomaps.com" data-definition-id="gloomaps" class="link definition-tooltip-trigger">GlooMaps</a>                    </div>
+                </dd>
+                            <dt id="go">go</dt>
+                <dd>
+                    Golang, Go                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Go_(programming_language)" data-definition-id="go" class="link definition-tooltip-trigger">Go</a>                    </div>
+                </dd>
+                            <dt id="gprof">gprof</dt>
+                <dd>
+                    Gprof                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Gprof" data-definition-id="gprof" class="link definition-tooltip-trigger">Gprof</a>                    </div>
+                </dd>
+                            <dt id="html">html</dt>
+                <dd>
+                    HTML, HyperText Markup Language                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/HTML" data-definition-id="html" class="link definition-tooltip-trigger">HTML</a>                    </div>
+                </dd>
+                            <dt id="immersive-engineering">immersive-engineering</dt>
+                <dd>
+                    Immersive Engineering                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.curseforge.com/minecraft/mc-mods/immersive-engineering" data-definition-id="immersive-engineering" class="link definition-tooltip-trigger">Immersive Engineering</a>                    </div>
+                </dd>
+                            <dt id="industrialcraft-2">industrialcraft-2</dt>
+                <dd>
+                    IC², IndustrialCraft²                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://wiki.industrial-craft.net/index.php?title=Main_Page" data-definition-id="industrialcraft-2" class="link definition-tooltip-trigger">IC²</a>                    </div>
+                </dd>
+                            <dt id="inno-setup">inno-setup</dt>
+                <dd>
+                    Inno Setup                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Inno_Setup" data-definition-id="inno-setup" class="link definition-tooltip-trigger">Inno Setup</a>                    </div>
+                </dd>
+                            <dt id="java">java</dt>
+                <dd>
+                    Java                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Java_(programming_language)" data-definition-id="java" class="link definition-tooltip-trigger">Java</a>                    </div>
+                </dd>
+                            <dt id="javafx">javafx</dt>
+                <dd>
+                    JavaFX                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/JavaFX" data-definition-id="javafx" class="link definition-tooltip-trigger">JavaFX</a>                    </div>
+                </dd>
+                            <dt id="javascript">javascript</dt>
+                <dd>
+                    JavaScript                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/JavaScript" data-definition-id="javascript" class="link definition-tooltip-trigger">JavaScript</a>                    </div>
+                </dd>
+                            <dt id="json">json</dt>
+                <dd>
+                    JSON, JavaScript Object Notation                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/JSON" data-definition-id="json" class="link definition-tooltip-trigger">JSON</a>                    </div>
+                </dd>
+                            <dt id="kervadec-matteo">kervadec-matteo</dt>
+                <dd>
+                    Mattéo Kervadec                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://matteo-k.github.io/Matteo-K_Portfolio.github.io/" data-definition-id="kervadec-matteo" class="link definition-tooltip-trigger">Mattéo Kervadec</a>                    </div>
+                </dd>
+                            <dt id="lua">lua</dt>
+                <dd>
+                    Lua                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Lua_(programming_language)" data-definition-id="lua" class="link definition-tooltip-trigger">Lua</a>                    </div>
+                </dd>
+                            <dt id="make">make</dt>
+                <dd>
+                    Make                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Make_(software)" data-definition-id="make" class="link definition-tooltip-trigger">Make</a>                    </div>
+                </dd>
+                            <dt id="markdown">markdown</dt>
+                <dd>
+                    Markdown                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Markdown" data-definition-id="markdown" class="link definition-tooltip-trigger">Markdown</a>                    </div>
+                </dd>
+                            <dt id="matplotlib">matplotlib</dt>
+                <dd>
+                    Matplotlib                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Matplotlib" data-definition-id="matplotlib" class="link definition-tooltip-trigger">Matplotlib</a>                    </div>
+                </dd>
+                            <dt id="mermaid">mermaid</dt>
+                <dd>
+                    Mermaid JS, Mermaid                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://mermaid.js.org/" data-definition-id="mermaid" class="link definition-tooltip-trigger">Mermaid</a>                    </div>
+                </dd>
+                            <dt id="minecraft">minecraft</dt>
+                <dd>
+                    Minecraft                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Minecraft" data-definition-id="minecraft" class="link definition-tooltip-trigger">Minecraft</a>                    </div>
+                </dd>
+                            <dt id="mousepad">mousepad</dt>
+                <dd>
+                    Mousepad                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/codebrainz/mousepad" data-definition-id="mousepad" class="link definition-tooltip-trigger">Mousepad</a>                    </div>
+                </dd>
+                            <dt id="mysql">mysql</dt>
+                <dd>
+                    MySQL                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/MySQL" data-definition-id="mysql" class="link definition-tooltip-trigger">MySQL</a>                    </div>
+                </dd>
+                            <dt id="nasm">nasm</dt>
+                <dd>
+                    NASM, Netwide Assembler                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Netwide_Assembler" data-definition-id="nasm" class="link definition-tooltip-trigger">NASM</a>                    </div>
+                </dd>
+                            <dt id="numpy">numpy</dt>
+                <dd>
+                    NumPy                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/NumPy" data-definition-id="numpy" class="link definition-tooltip-trigger">NumPy</a>                    </div>
+                </dd>
+                            <dt id="pandas">pandas</dt>
+                <dd>
+                    Pandas                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Pandas_(software)" data-definition-id="pandas" class="link definition-tooltip-trigger">Pandas</a>                    </div>
+                </dd>
+                            <dt id="pascal">pascal</dt>
+                <dd>
+                    Pascal                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Pascal_(programming_language)" data-definition-id="pascal" class="link definition-tooltip-trigger">Pascal</a>                    </div>
+                </dd>
+                            <dt id="pdf">pdf</dt>
+                <dd>
+                    PDF, Portable Document Format                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/PDF" data-definition-id="pdf" class="link definition-tooltip-trigger">PDF</a>                    </div>
+                </dd>
+                            <dt id="pgsql">pgsql</dt>
+                <dd>
+                    PostgreSQL                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/PostgreSQL" data-definition-id="pgsql" class="link definition-tooltip-trigger">PostgreSQL</a>                    </div>
+                </dd>
+                            <dt id="php">php</dt>
+                <dd>
+                    PHP, PHP: Hypertext Preprocessor                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/PHP" data-definition-id="php" class="link definition-tooltip-trigger">PHP</a>                    </div>
+                </dd>
+                            <dt id="powershell">powershell</dt>
+                <dd>
+                    Windows PowerShell, PowerShell                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/PowerShell" data-definition-id="powershell" class="link definition-tooltip-trigger">PowerShell</a>                    </div>
+                </dd>
+                            <dt id="python">python</dt>
+                <dd>
+                    Python                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Python_(programming_language)" data-definition-id="python" class="link definition-tooltip-trigger">Python</a>                    </div>
+                </dd>
+                            <dt id="replit">replit</dt>
+                <dd>
+                    Replit                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Replit" data-definition-id="replit" class="link definition-tooltip-trigger">Replit</a>                    </div>
+                </dd>
+                            <dt id="rolland-stanislas">rolland-stanislas</dt>
+                <dd>
+                    Stanislas Rolland                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://stanislasrolland.github.io/Portfolio/" data-definition-id="rolland-stanislas" class="link definition-tooltip-trigger">Stanislas Rolland</a>                    </div>
+                </dd>
+                            <dt id="rust">rust</dt>
+                <dd>
+                    Rust                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Rust_(programming_language)" data-definition-id="rust" class="link definition-tooltip-trigger">Rust</a>                    </div>
+                </dd>
+                            <dt id="sass">sass</dt>
+                <dd>
+                    SASS, Syntactically Awesome Style Sheets                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Sass_(style_sheet_language)" data-definition-id="sass" class="link definition-tooltip-trigger">SASS</a>                    </div>
+                </dd>
+                            <dt id="scheme">scheme</dt>
+                <dd>
+                    Scheme                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Scheme_(programming_language)" data-definition-id="scheme" class="link definition-tooltip-trigger">Scheme</a>                    </div>
+                </dd>
+                            <dt id="smalltalk">smalltalk</dt>
+                <dd>
+                    Smalltalk                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Smalltalk" data-definition-id="smalltalk" class="link definition-tooltip-trigger">Smalltalk</a>                    </div>
+                </dd>
+                            <dt id="spyder">spyder</dt>
+                <dd>
+                    Spyder                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.spyder-ide.org/" data-definition-id="spyder" class="link definition-tooltip-trigger">Spyder</a>                    </div>
+                </dd>
+                            <dt id="sql">sql</dt>
+                <dd>
+                    SQL, Structured Query Language                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/SQL" data-definition-id="sql" class="link definition-tooltip-trigger">SQL</a>                    </div>
+                </dd>
+                            <dt id="sql-workbench">sql-workbench</dt>
+                <dd>
+                    SQL Workbench/J                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.sql-workbench.eu/" data-definition-id="sql-workbench" class="link definition-tooltip-trigger">SQL Workbench/J</a>                    </div>
+                </dd>
+                            <dt id="sqlite">sqlite</dt>
+                <dd>
+                    SQLite                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/SQLite" data-definition-id="sqlite" class="link definition-tooltip-trigger">SQLite</a>                    </div>
+                </dd>
+                            <dt id="survivalworld">survivalworld</dt>
+                <dd>
+                    SurvivalWorld                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.survivalworld.fr/" data-definition-id="survivalworld" class="link definition-tooltip-trigger">SurvivalWorld</a>                    </div>
+                </dd>
+                            <dt id="svg">svg</dt>
+                <dd>
+                    SVG, Scalable Vector Graphics                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/SVG" data-definition-id="svg" class="link definition-tooltip-trigger">SVG</a>                    </div>
+                </dd>
+                            <dt id="task-dialog">task-dialog</dt>
+                <dd>
+                    Task dialog                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en/windows/win32/controls/task-dialogs-overview" data-definition-id="task-dialog" class="link definition-tooltip-trigger">Task dialog</a>                    </div>
+                </dd>
+                            <dt id="tkinter">tkinter</dt>
+                <dd>
+                    Tkinter                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Tkinter" data-definition-id="tkinter" class="link definition-tooltip-trigger">Tkinter</a>                    </div>
+                </dd>
+                            <dt id="toe-paolo">toe-paolo</dt>
+                <dd>
+                    Paolo Vito Toé, Paolo Toé                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://vitovitae.github.io/" data-definition-id="toe-paolo" class="link definition-tooltip-trigger">Paolo Toé</a>                    </div>
+                </dd>
+                            <dt id="visual-paradigm">visual-paradigm</dt>
+                <dd>
+                    Visual Paradigm                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.visual-paradigm.com/" data-definition-id="visual-paradigm" class="link definition-tooltip-trigger">Visual Paradigm</a>                    </div>
+                </dd>
+                            <dt id="visual-studio">visual-studio</dt>
+                <dd>
+                    Microsoft Visual Studio, Visual Studio                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Visual_Studio" data-definition-id="visual-studio" class="link definition-tooltip-trigger">Visual Studio</a>                    </div>
+                </dd>
+                            <dt id="vs-code">vs-code</dt>
+                <dd>
+                    VS Code, Visual Studio Code                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Visual_Studio_Code" data-definition-id="vs-code" class="link definition-tooltip-trigger">VS Code</a>                    </div>
+                </dd>
+                            <dt id="winforms">winforms</dt>
+                <dd>
+                    WinForms, Windows Forms                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Windows_Forms" data-definition-id="winforms" class="link definition-tooltip-trigger">WinForms</a>                    </div>
+                </dd>
+                            <dt id="wizard">wizard</dt>
+                <dd>
+                    Wizard                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en/windows/win32/uxguide/win-wizards" data-definition-id="wizard" class="link definition-tooltip-trigger">Wizard</a>                    </div>
+                </dd>
+                            <dt id="wpf">wpf</dt>
+                <dd>
+                    WPF, Windows Presentation Foundation                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Windows_Presentation_Foundation" data-definition-id="wpf" class="link definition-tooltip-trigger">WPF</a>                    </div>
+                </dd>
+                            <dt id="xml">xml</dt>
+                <dd>
+                    XML, Extensible Markup Language                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/XML" data-definition-id="xml" class="link definition-tooltip-trigger">XML</a>                    </div>
+                </dd>
+                            <dt id="zig">zig</dt>
+                <dd>
+                    Zig                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Zig_(programming_language)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>                    </div>
+                </dd>
+                    </dl>
+    </main>
+        <footer class="lvl">
+        <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="This site's GitHub repository"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+    </footer>
+</body>
+
+</html>

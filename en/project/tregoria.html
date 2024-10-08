@@ -1,0 +1,161 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png">
+        <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
+        <link rel="manifest" href="/portfolio/site.webmanifest">
+        <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
+
+                    <link rel="stylesheet" type="text/css" href="/portfolio/css/project.css">
+                <meta charset="UTF-8">
+        <meta name="author" content="Raphaël Bardini">
+        <meta name="description" content="Hello! My name is Raphaël Bardini. This is my portfolio website. Make yourself at home!">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Raphaël Bardini</title>
+        <script>
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+        </script>
+        <!-- Flag icons -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+        <!-- JQuery -->
+        <script async src="/portfolio/js/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <!-- Highlight.JS -->
+        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script type="module" src="/portfolio/js/base.js"></script>
+            </head>
+
+        <body>    <template id="template-definition-tooltip">
+        <article class="lvl definition-tooltip" role="tooltip">
+            <h4 class="title"><a target="_blank" rel="noopener noreferrer">
+                    <!-- href="wiki"; name -->
+                </a></h4>
+            <!-- logo graphic -->
+            <p class="type"><small>
+                    <!-- type -->
+                </small></p>
+            <p class="synopsis">
+                <!-- synopsis -->
+            </p>
+        </article>
+    </template>
+    <header class="lvl">
+        <nav>
+            <a href="/portfolio/en/index.html">Raphaël Bardini</a>
+            <ul>
+                <li><a href="/portfolio/en/projects.html">Projects</a>
+                </li>
+                <li><a href="/portfolio/en/history.html">History</a>
+                </li>
+                <li><a href="/portfolio/en/passions.html">Passions</a>
+                </li>
+                <li><a href="/portfolio/en/perspectives.html">Perspectives</a>
+                <li><a href="/portfolio/en/but-informatique.html">BUT Computer Science</a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="list-flags">
+                            <li><a class="fi fi-fr gray-when-not-hover" title="fr / French" href="/portfolio/fr/project/tregoria.html"></a></li>
+                            <li><a class="fi fi-us" title="en" href="/portfolio/en/project/tregoria.html"></a></li>
+                    </ul>
+        <div class="theme-switches">
+            <label for="theme-switch-light" title="Light theme">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.9966 13.3333C12.8804 13.3333 14.4075 11.8409 14.4075 10C14.4075 8.15905 12.8804 6.66666 10.9966 6.66666C9.11284 6.66666 7.58575 8.15905 7.58575 10C7.58575 11.8409 9.11284 13.3333 10.9966 13.3333Z" style="stroke:var(--color-fg);fill:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10.9966 1.66666V3.33333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10.9966 16.6667V18.3333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M4.9679 4.10833L6.17022 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M15.8229 14.7167L17.0253 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M2.46942 10H4.17485" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M17.8183 10H19.5237" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.17022 14.7167L4.9679 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M17.0253 4.10833L15.8229 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input id="theme-switch-light" name="theme" value="auto" type="radio" onclick="">
+            </label>
+            <label for="theme-switch-system" title="System theme">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15.0014" cy="15.0014" r="9" style="stroke:var(--color-fg);" stroke-width="2" />
+                    <mask id="path-2-inside-1_316_18" style="fill:var(--color-bg);">
+                        <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" />
+                    </mask>
+                    <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" style="fill:var(--color-fg);stroke:var(--color-fg);" stroke-width="4" mask="url(#path-2-inside-1_316_18)" />
+                </svg>
+                <input id="theme-switch-system" name="theme" value="light" type="radio" onclick="">
+            </label>
+            <label for="theme-switch-dark" title="Dark theme">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.99939 1.5C8.00483 2.49456 7.44609 3.84348 7.44609 5.25C7.44609 6.65652 8.00483 8.00544 8.99939 9C9.99395 9.99456 11.3429 10.5533 12.7494 10.5533C14.1559 10.5533 15.5048 9.99456 16.4994 9C16.4994 10.4834 16.0595 11.9334 15.2354 13.1668C14.4113 14.4001 13.24 15.3614 11.8695 15.9291C10.4991 16.4968 8.99107 16.6453 7.53622 16.3559C6.08136 16.0665 4.74499 15.3522 3.69609 14.3033C2.6472 13.2544 1.93289 11.918 1.6435 10.4632C1.35411 9.00832 1.50264 7.50032 2.0703 6.12987C2.63795 4.75943 3.59925 3.58809 4.83262 2.76398C6.06598 1.93987 7.51603 1.5 8.99939 1.5Z" style="stroke:var(--color-fg);" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input id="theme-switch-dark" name="theme" value="dark" type="radio" onclick="">
+            </label>
+        </div>
+    </header>
+        <main >
+            <header>
+                        <ul class="list-rect">
+            <li><a href="/portfolio/en/projects.html?tag=art">Art</a></li>        </ul>
+                    <h1>Trégoria</h1>
+                                        <p class="abstract">A look back at our environment in Cities: Skylines</p>
+                    <div class="status-context">        <small class="context">Personal</small>
+    <small class="status"><time datetime="2022-10-15">October 15, 2022</time> &ndash;
+            ongoing</small>
+    </div>
+            </header>
+                            <section id="links">
+                    <h2>Links</h2>
+                            <ul class="lvl list-link">
+                            <li>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/p/CjxQUO3LryP">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>                        <span>Instagram post</span>
+                    </a>
+                </li>
+                    </ul>
+                    </section>
+                    <section id="story">
+            <h2>Story</h2>
+            <div>
+    <p>Trégoria is a fictional group of municipalities located in the North-East of Côtes d'Armor. It is made in <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Cities:_Skylines" data-definition-id="cities-skylines" class="link definition-tooltip-trigger">Cities Skylines</a>, a city-building video game that allows for a limitless level of detail and customization. Trégoria was born above all from a deep affection for my place of life and a particular attention to the invisible details of our environment. You know, all those things we see without seeing, the streetlights, the power lines, the bales of hay in the fields...</p>
+    <p>What's the point? Of course, Trégoria may not be <q>art</q>, at least not in the same way as a film, a monument or even a sculpture. However, Trégoria has a message to convey. Which one? Well, let's start with one of the villages in the group. Coatlédan, let's say. Then, let's zoom out. What do we see? Fields, a few houses, more fields... Ah! Trees.</p>
+    <p>You only have to look up to see what Man is doing to Mother Nature's land. It's a real domination that is taking place before us. Where will this lead us?</p>
+    <p>Trégoria is far from being finished, but it is far from being alone. The game community creates a huge number of worlds that carry a message, a reflection or a personal interpretation of reality. We could think for example of MARS<a class="link" id="cite-ref-1" href="#ref-1">1</a> by <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@Citywokcitywall">Citywokcitywall</a>, on inequality and the excesses of capitalism. Or Bordertown<a class="link" id="cite-ref-2" href="#ref-2">2</a>, by <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@twodollarstwenty">Two Dollars Twenty</a>, on the geopolitical stakes posed by a city built on the Mexican-American border and the repercussions on architecture, urban planning and social dynamics.</p>
+</div>        </section>
+                        <section id="references">
+                    <h2>References</h2>
+                            <ol class="list-reference">
+                            <li id="ref-1"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-1">&uarr;</a></span>
+                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://youtube.com/playlist?list=PL0vu9rx9cHrUoRedRsFzX367j3DlE_dTk">
+                        <img src="/portfolio/img/social/youtube.svg" alt="" height="30" loading="lazy">                        <span>Cities Skylines: Bordertown, Two Dollars Twenty, YouTube</span>
+                    </a>
+                </li>
+                            <li id="ref-2"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-2">&uarr;</a></span>
+                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://youtube.com/playlist?list=PLkBlOw_hzgdfL6Gqw0l9P1TYKn_WIgrd-">
+                        <img src="/portfolio/img/social/youtube.svg" alt="" height="30" loading="lazy">                        <span>Cities Skylines: MARS, Citywokcitywall, YouTube</span>
+                    </a>
+                </li>
+                    </ol>
+                    </section>
+                            <section id="technologies">
+                    <h2>Technologies</h2>
+                            <ul class="lvl list-definition">
+                            <li>        <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/cities-skylines/bg.jpg)">
+            <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Cities:_Skylines">Cities Skylines</a></h4>
+            <img src="/portfolio/img/definition/cities-skylines/logo.png" alt="Cities Skylines logo" title="Cities Skylines logo" class="logo" width="333" height="128" loading="lazy">            <p class="type"><small>Videogame</small></p>
+            <p class="synopsis">A <time datetime="2015">2015</time> city-building game developed by Colossal Order and published by Paradox Interactive. The game is a single-player open-ended city-building simulation.</p>
+        </article>
+    </li>
+                    </ul>
+                    </section>
+                    </main>
+        <footer class="lvl">
+        <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="This site's GitHub repository"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+    </footer>
+</body>
+
+        </html>
