@@ -8,5 +8,5 @@ if ($argc != 4) {
 
 [$lang, $page] = parse_args();
 
-$p = new Passion($lang, $argv[2], as_array(json_decode($argv[3], true)));
+$p = new Passion($lang, $argv[2], json_decode($argv[3], true));
 $p->put_page($page);

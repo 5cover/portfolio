@@ -146,19 +146,6 @@
     }
 }
 
-/* Hover card target
- *
- * The anchor element of an hover card.
- */
-@mixin hover-card-target {
-    text-decoration: none;
-
-    &:after {
-        content: "";
-        @include absolute-fill;
-    }
-}
-
 /* Transparent background image
  *
  * Define a transparent background image.
@@ -192,6 +179,27 @@
     transform: translate(-50%, -50%);
 }
 
+/* Horizontal box border readius
+ *
+ * Appropriate border radius for an horizontal box.
+ *
+ * $border-radius-factor: number -> border radius multiplier
+ */
+ @mixin horizontal-box-border-radius($border-radius-factor: 1) {
+    border-radius: calc($border-radius-factor * .25lh);
+}
+
+/* Horizontal box border padding
+ *
+ * Appropriate padding for an horizontal box.
+ *
+ * $padding-factor: number -> padding multiplier
+ */
+ @mixin horizontal-box-padding($padding-factor: 1) {
+    padding: calc($padding-factor * .25lh) calc($padding-factor * 1ch);
+}
+
+
 /* Horizontal box
  *
  * Appropriate padding and radius for an horizontal box.
@@ -200,8 +208,8 @@
  * $border-radius-factor: number -> border radius multiplier
  */
 @mixin horizontal-box($padding-factor: 1, $border-radius-factor: 1) {
-    padding: calc($padding-factor * .25lh) calc($padding-factor * 1ch);
-    border-radius: calc($border-radius-factor * .25lh);
+    @include horizontal-box-padding($padding-factor);
+    @include horizontal-box-border-radius($border-radius-factor);
 }
 
 /* Size graphic
@@ -313,10 +321,6 @@
                 color: var(--color-fg);
                 text-decoration: underline;
             }
-        }
-
-        h3 a {
-            @include hover-card-target;
         }
     }
 }

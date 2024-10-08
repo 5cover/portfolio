@@ -10,7 +10,7 @@ main {
 @mixin content-and-image {
     align-items: center;
     display: flex;
-    gap: 1em;
+    gap: 3em;
     justify-content: space-between;
 }
 
@@ -48,10 +48,13 @@ main {
 
 :has(> #resultat-pour-moi) {
     @include content-and-image;
+    flex-wrap: wrap;
 
     figure {
+        flex: 1 1 20em;
         $border-radius: 1em;
         border-radius: $border-radius;
+        max-width: max(20em, 40%);
 
         img {
             border-top-left-radius: $border-radius;

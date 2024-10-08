@@ -26,10 +26,6 @@ section {
             font-size: max(1.224em, 1.7vw);
         }
 
-        a {
-            @include util.hover-card-target;
-        }
-
         img {
             max-width: 100%;
             height: auto;

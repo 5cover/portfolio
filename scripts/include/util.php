@@ -55,14 +55,15 @@ function element(string $tagName, string $content, array $attributes = []): stri
  */
 function parse_args(): array {
     global $argc, $argv;
+    error_reporting(E_ALL);
     if ($argc < 3) {
         exit("Usage: {$argv[0]} <lang> <page name>" . PHP_EOL);
     }
     return [Lang::instances()[$argv[1]], new Page($argv[2])];
 }
 
-function _get_web_filename(string $url) {
-    return __DIR__ . '/../../../' . $url;
+function get_web_filename(string $path) {
+    return __DIR__ . '/../../../' . $path;
 }
 
 function parse_date(string $date): DateTimeImmutable {
@@ -95,37 +96,13 @@ function notnull(mixed $value, string $thing): mixed {
     return $value;
 }
 
-/**
- * Asserts that a value is a string
- */
-function as_string(mixed $value): string {
-    assert(is_string($value));
-    return $value;
-}
-
-/**
- * Asserts that a value is an array
- */
-function as_array(mixed $value): array {
-    assert(is_array($value));
-    return $value;
-}
-
-/**
- * Asserts that a value is a boolean
- */
-function as_bool(mixed $value): bool {
-    assert(is_bool($value));
-    return $value;
-}
-
 function get_img_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string {
     if (str_ends_with($url, '.svg')) {
         $sizePart = <<<END
         height="$baseHeight"
         END;
     } else {
-        $size = notfalse(getimagesize(_get_web_filename($url)), 'getimagesize');
+        $size = notfalse(getimagesize(get_web_filename($url)), 'getimagesize');
         $sizePart = $size[3];
     }
 
@@ -141,7 +118,7 @@ function get_svg_element(string $url, string|null $title = null, string|null $cl
     $domDocument = new DOMDocument();
 
     // Load the SVG code as XML
-    notfalse($domDocument->load(_get_web_filename($url)), "loading DOMDocument at '$url'");
+    notfalse($domDocument->load(get_web_filename($url)), "loading DOMDocument at '$url'");
 
     // Extract the <svg> element
     $svgElements = $domDocument->getElementsByTagName('svg');
@@ -217,7 +194,7 @@ function get_data_json(string $name, bool $linked = true) {
 function _get_data_json_fetch(string $name, bool $linked) {
     $f = notfalse(
         file_get_contents($linked
-            ? _get_web_filename("/portfolio/data/$name.json")
+            ? get_web_filename("/portfolio/data/$name.json")
             : __DIR__ . "/../../data/$name.json"),
         "opening JSON data '$name'"
     );
@@ -230,7 +207,7 @@ function _get_data_json_fetch(string $name, bool $linked) {
  * @return string[] The filenames *glob* matched in the website folder.
  */
 function glob_web(string $glob): array {
-    return notfalse(glob(_get_web_filename("$glob")), 'glob');
+    return notfalse(glob(get_web_filename("$glob")), 'glob');
 }
 
 

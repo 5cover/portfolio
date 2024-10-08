@@ -45,13 +45,12 @@ final class Definition extends Data {
         $types = $this->lang->get_data_json('types');
 ?>
         <article class="definition" <?php if ($bg = $this->data['background'] ?? null)
-                                        echo get_background_style_attr(as_string($bg), 'bg-img-card') ?>>
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer" href="<?= $this->data['wiki'] ?>"><?= $this->title ?></a>
-            </h4>
+                                        echo get_background_style_attr($bg, 'bg-img-card') ?>>
+            <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="<?= $this->data['wiki'] ?>"><?= $this->title ?></a></h4>
             <?php if ($logo = $this->data['logo'] ?? null) {
-                echo get_graphic_element(as_bool($logo['isThemedSvg']), as_string($logo['url']), $this->lang->formatTitle($this->title), 'logo');
+                echo get_graphic_element($logo['isThemedSvg'], $logo['url'], $this->lang->fmtTitle($this->title), 'logo');
             } ?>
-            <p class="type"><small><?= ucfirst(as_string($types[$this->data['type']])) ?></small></p>
+            <p class="type"><small><?= ucfirst($types[$this->data['type']]) ?></small></p>
             <p class="synopsis"><?= $this->data['synopsis'] ?></p>
         </article>
     <?php }
@@ -114,11 +113,11 @@ abstract class Details extends Data {
                 $anchors = get_data_json('anchors');
     ?>
         <ul class="list-link">
-            <?php foreach (as_array($this->data['links']) as $name => $link) { ?>
+            <?php foreach ($this->data['links'] as $name => $link) { ?>
                 <li>
                     <a href="<?= $link['href'] ?>" title="<?= $name ?>" target="_blank" rel="noopener noreferrer">
                         <?php $a = $anchors[$link['anchor']];
-                        echo get_graphic_element(as_bool($a['isThemedSvg']), as_string(($a['url']))) ?>
+                        echo get_graphic_element($a['isThemedSvg'], ($a['url'])) ?>
                     </a>
                 </li>
             <?php } ?>
@@ -129,11 +128,11 @@ abstract class Details extends Data {
                 $anchors = get_data_json('anchors');
     ?>
         <ul class="lvl list-link">
-            <?php foreach (as_array($this->data['links']) as $name => $link) { ?>
+            <?php foreach ($this->data['links'] as $name => $link) { ?>
                 <li>
                     <a target="_blank" rel="noopener noreferrer" href="<?= $link['href'] ?>">
                         <?php $a = $anchors[$link['anchor']] ?>
-                        <?= get_graphic_element(as_bool($a['isThemedSvg']), as_string($a['url'])) ?>
+                        <?= get_graphic_element($a['isThemedSvg'], $a['url']) ?>
                         <span><?= $name ?></span>
                     </a>
                 </li>
@@ -146,11 +145,11 @@ abstract class Details extends Data {
     ?>
         <ol class="list-reference">
             <?php $ref_num = 1;
-                foreach (as_array($this->data['references']) as $ref) { ?>
+                foreach ($this->data['references'] as $ref) { ?>
                 <li id="ref-<?= $ref_num ?>"><span class="ref-backlink" aria-label="<?= $this->lang->get('refJumpUp') ?>" title="<?= $this->lang->get('refJumpUp') ?>"><a class="link" href="#cite-ref-<?= $ref_num++ ?>">&uarr;</a></span>
                     <a class="link" target="_blank" rel="noopener noreferrer" href="<?= $ref['href'] ?>">
                         <?php $a = $anchors[$ref['anchor']];
-                        echo get_graphic_element(as_bool($a['isThemedSvg']), as_string($a['url'])) ?>
+                        echo get_graphic_element($a['isThemedSvg'], $a['url']) ?>
                         <span><?= $ref['caption'] ?></span>
                     </a>
                 </li>
@@ -168,9 +167,9 @@ abstract class Details extends Data {
             protected function put_logo() {
                 if ($logo = $this->data['logo'] ?? null) {
                     echo get_graphic_element(
-                        as_bool($logo['isThemedSvg']),
-                        as_string($logo['url']),
-                        $this->lang->formatTitle(as_string($this->data['title'])),
+                        $logo['isThemedSvg'],
+                        $logo['url'],
+                        $this->lang->fmtTitle($this->data['title']),
                         'logo'
                     );
                 }
@@ -178,13 +177,13 @@ abstract class Details extends Data {
 
             protected function put_background_style_attr(string $varname = 'bg-img') {
                 if ($bg = $this->data['background'] ?? null) {
-                    echo get_background_style_attr(as_string($bg), $varname);
+                    echo get_background_style_attr($bg, $varname);
                 }
             }
 
             protected function put_gallery() {
                 $gallery_num = 1;
-                if (count($gallery = as_array($this->data['gallery'])) > 0) { ?>
+                if (count($gallery = $this->data['gallery']) > 0) { ?>
             <section id="gallery">
                 <h2><?= $this->lang->get('gallery') ?></h2>
                 <ul class="lvl gallery">
@@ -192,11 +191,11 @@ abstract class Details extends Data {
                         <li>
                             <figure id="gallery-<?= $gallery_num++ ?>" class="figure">
                                 <?php
-                                $caption = as_string($figure['caption']);
+                                $caption = $figure['caption'];
                                 if ($url = $figure['url'] ?? null) {
-                                    echo get_img_element(as_string($url), $caption, baseHeight: 300);
+                                    echo get_img_element($url, $caption, baseHeight: 300);
                                 } elseif ($src = $figure['iframe-src'] ?? null) {
-                                    echo get_iframe(as_string($src), $caption);
+                                    echo get_iframe($src, $caption);
                                 } else {
                                     echo $figure['content'];
                                 }
@@ -224,14 +223,14 @@ abstract class Details extends Data {
                 <?php $this->put_logo() ?>
                 <?php $this->put_abstract() ?>
             </header>
-            <?php if (count(as_array($this->data['links'])) > 0) { ?>
+            <?php if (count($this->data['links']) > 0) { ?>
                 <section id="links">
                     <h2><?= $this->lang->get('links') ?></h2>
                     <?php $this->put_page_link_list() ?>
                 </section>
             <?php }
                 $this->put_story();
-                if (count(as_array($this->data['references'])) > 0) { ?>
+                if (count($this->data['references']) > 0) { ?>
                 <section id="references">
                     <h2><?= $this->lang->get('references') ?></h2>
                     <?php $this->put_reference_list(); ?>
@@ -246,9 +245,11 @@ abstract class Details extends Data {
         <li id="<?= $this->id ?>" <?php $this->put_background_style_attr('bg-img-card') ?>>
             <?php $this->put_logo() ?>
             <div>
-                <?= element("h$headingLevel", "<a href=\"passion/$this->id.html\">{$this->data['title']}</a>") ?>
-                <?php $this->put_abstract();
-                $this->put_card_link_list() ?>
+                <?php
+                echo element("h$headingLevel", "<a class=\"foil\" href=\"passion/$this->id.html\">{$this->data['title']}</a>");
+                $this->put_abstract();
+                $this->put_card_link_list()
+                ?>
             </div>
         </li>
     <?php
@@ -261,11 +262,12 @@ abstract class Details extends Data {
              * @return void
              */
             static function put_card_list(iterable $passions) { ?>
-        <ul class="lvl list-detail-split-card"><?php
-                                                foreach ($passions as $p) {
-                                                    $p->put_card();
-                                                }
-                                                ?>
+        <ul class="lvl list-detail-split-card">
+            <?php
+                foreach ($passions as $p) {
+                    $p->put_card();
+                }
+            ?>
         </ul> <?php
             }
         }
@@ -283,14 +285,14 @@ abstract class Details extends Data {
                 <?php $this->put_logo() ?>
                 <?php $this->put_abstract() ?>
             </header>
-            <?php if (count(as_array($this->data['links'])) > 0) { ?>
+            <?php if (count($this->data['links']) > 0) { ?>
                 <section id="links">
                     <h2><?= $this->lang->get('links') ?></h2>
                     <?php $this->put_page_link_list() ?>
                 </section>
             <?php }
                 $this->put_story();
-                if (count(as_array($this->data['references'])) > 0) { ?>
+                if (count($this->data['references']) > 0) { ?>
                 <section id="references">
                     <h2><?= $this->lang->get('references') ?></h2>
                     <?php $this->put_reference_list(); ?>
@@ -299,13 +301,12 @@ abstract class Details extends Data {
                 $this->put_gallery(); ?>
         </main>
     <?php }
-
             function put_card(int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL) {
     ?>
         <li id="<?= $this->id ?>" <?php $this->put_background_style_attr('bg-img-card') ?>>
             <?php $this->put_logo() ?>
             <div>
-                <?= element("h$headingLevel", "<a href=\"perspective/$this->id.html\">{$this->data['title']}</a>") ?>
+                <?= element("h$headingLevel", "<a class=\"foil\" href=\"perspective/$this->id.html\">{$this->data['title']}</a>") ?>
                 <?php $this->put_abstract();
                 $this->put_card_link_list() ?>
             </div>
@@ -319,11 +320,12 @@ abstract class Details extends Data {
              * @return void
              */
             static function put_card_list(iterable $perspectives) { ?>
-        <ul class="lvl list-detail-split-card"><?php
-                                                foreach ($perspectives as $p) {
-                                                    $p->put_card();
-                                                }
-                                                ?>
+        <ul class="lvl list-detail-split-card">
+            <?php
+                foreach ($perspectives as $p) {
+                    $p->put_card();
+                }
+            ?>
         </ul> <?php }
         }
 
@@ -349,26 +351,26 @@ abstract class Details extends Data {
                 <?php $this->put_abstract() ?>
                 <div class="status-context"><?php $this->put_context() ?><?php $this->put_status() ?></div>
             </header>
-            <?php if (count(as_array($this->data['links'])) > 0) { ?>
+            <?php if (count($this->data['links']) > 0) { ?>
                 <section id="links">
                     <h2><?= $this->lang->get('links') ?></h2>
                     <?php $this->put_page_link_list() ?>
                 </section>
             <?php }
-                if (count($team = as_array($this->data['team'])) > 0) { ?>
+                if (count($team = $this->data['team']) > 0) { ?>
                 <section id="team">
                     <h2><?= $this->lang->get('team') ?></h2>
                     <?php Definition::put_card_list(array_filter($this->lang->definitions(), fn($d) => in_array($d->id, $team))) ?>
                 </section>
             <?php }
                 $this->put_story();
-                if (count(as_array($this->data['references'])) > 0) { ?>
+                if (count($this->data['references']) > 0) { ?>
                 <section id="references">
                     <h2><?= $this->lang->get('references') ?></h2>
                     <?php $this->put_reference_list(); ?>
                 </section>
             <?php }
-                if (count($technologies = as_array($this->data['technologies'])) > 0) { ?>
+                if (count($technologies = $this->data['technologies']) > 0) { ?>
                 <section id="technologies">
                     <h2><?= $this->lang->get('technologies') ?></h2>
                     <?php Definition::put_card_list(array_filter($this->lang->definitions(), fn($d) => in_array($d->id, $technologies))) ?>
@@ -384,7 +386,7 @@ abstract class Details extends Data {
             <?php
                 $this->put_tags();
                 $this->put_logo();
-                echo element("h$headingLevel", "<a href=\"project/$this->id.html\">{$this->data['title']}</a>");
+                echo element("h$headingLevel", "<a class=\"foil\" href=\"project/$this->id.html\">{$this->data['title']}</a>");
                 $this->put_status();
                 $this->put_context();
                 $this->put_abstract();
@@ -396,7 +398,7 @@ abstract class Details extends Data {
                 $tags = $this->lang->get_data_json('tags');
     ?>
         <ul class="list-rect">
-            <?php foreach (as_array($this->data['tags']) as $tagId) {
+            <?php foreach ($this->data['tags'] as $tagId) {
                     echo "<li><a href=\"/portfolio/{$this->lang->name}/projects.html?tag=$tagId\">{$tags[$tagId]}</a></li>";
                 } ?>
         </ul>
@@ -404,17 +406,17 @@ abstract class Details extends Data {
 
             private function put_status() {
                 $endDate = $this->data['end-date'] ?? false;
-    ?><small class="status"><?php $this->put_date(as_string($this->data['start-date'])) ?> &ndash;
+    ?><small class="status"><?php $this->put_date($this->data['start-date']) ?> &ndash;
             <?php
                 if ($endDate) {
-                    $this->put_date(as_string($endDate));
+                    $this->put_date($endDate);
                 } else {
                     echo $this->lang->get('ongoing');
                 } ?></small>
     <?php }
 
             private function put_context() { ?>
-        <small class="context"><?= ucfirst(as_string($this->data['context'])) ?></small>
+        <small class="context"><?= ucfirst($this->data['context']) ?></small>
     <?php }
             /**
              * Puts a list of cards for displaying projects.
@@ -423,14 +425,13 @@ abstract class Details extends Data {
              * @return void
              */
             static function put_card_list(iterable $projects, int $headingLevel = Details::DEFAULT_CARD_HEADING_LEVEL) { ?>
-        <ul class="lvl list-project"><?php
-                                        foreach ($projects as $p) {
-                                            $p->put_card($headingLevel);
-                                        }
-                                        ?>
+        <ul class="lvl list-project">
+            <?php
+                foreach ($projects as $p) {
+                    $p->put_card($headingLevel);
+                }
+            ?>
         </ul> <?php }
-
             private function put_date(string $date) {
-                ?><time datetime="<?= $date ?>"><?= $this->lang->formatDate(parse_date($date))
-                                                ?></time><?php }
-                                                    }
+                ?><time datetime="<?= $date ?>"><?= $this->lang->formatDate(parse_date($date)) ?></time><?php }
+                                                                                                }

@@ -3,8 +3,55 @@ require_once 'util.php';
 require_once 'content.php';
 
 [$lang, $page] = parse_args();
-?> <?php put_doctype_html($page, $lang) ?>
-<?php put_head($page, $lang) ?>
+
+put_doctype_html($page, $lang);
+put_head($page, $lang);
+
+$history = $lang->get('history');
+
+function put_card(string $year, int $index, string $imgSrc, string $imgAlt) {
+    /** @var array */
+    global $history;
+    /** @var array<string, string> */
+    $entry = $history[$index];
+?>
+    <div class="lvl js-timeline_item ag-timeline_item">
+        <div class="ag-timeline-card_box">
+            <?php if ($index % 2) {
+            ?>
+                <div class="ag-timeline-card_meta-box">
+                    <div class="ag-timeline-card_meta"><?= $entry['meta'] ?></div>
+                </div>
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                    <div class="ag-timeline-card_point"><?= $year ?></div>
+                </div>
+            <?php
+            } else {
+            ?>
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                    <div class="ag-timeline-card_point"><?= $year ?></div>
+                </div>
+                <div class="ag-timeline-card_meta-box">
+                    <div class="ag-timeline-card_meta"><?= $entry['meta'] ?></div>
+                </div>
+            <?php
+            }
+            ?>
+        </div>
+        <div class="ag-timeline-card_item">
+            <div class="ag-timeline-card_inner">
+                <div class="ag-timeline-card_img-box">
+                    <img src="<?= $imgSrc ?>" alt="<?= $imgAlt ?>" class="ag-timeline-card_img" />
+                </div>
+                <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title"><?= $entry['title'] ?></div>
+                    <div class="ag-timeline-card_desc"><?= $entry['body'] ?></div>
+                </div>
+            </div>
+            <div class="ag-timeline-card_arrow"></div>
+        </div>
+    </div>
+<?php } ?>
 
 <body>
     <?php put_header($page, $lang) ?>
@@ -15,72 +62,12 @@ require_once 'content.php';
                     <div class="js-timeline_line-progress ag-timeline_line-progress"></div>
                 </div>
                 <div class="ag-timeline_list">
-                    <div class="lvl js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                            <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                                <div class="ag-timeline-card_point">2020</div>
-                            </div>
-                            <div class="ag-timeline-card_meta-box">
-                                <div class="ag-timeline-card_meta">Lycée</div>
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_item">
-                            <div class="ag-timeline-card_inner">
-                                <div class="ag-timeline-card_img-box">
-                                    <img src="/portfolio/img/bossuet.jpeg" alt="Lycée Saint-Joseph-Bossuet" class="ag-timeline-card_img" />
-                                </div>
-                                <div class="ag-timeline-card_info">
-                                    <div class="ag-timeline-card_title">Lycée</div>
-                                    <div class="ag-timeline-card_desc">J'ai été scolarisé au <a class="link" href="https://www.saintjosephlannion.fr/">Lycée Saint-Joseph-Bossuet</a> à Lannion. J'ai suivi la filère générale. En première, je suis les spécialités <a class="link" href="https://www.letudiant.fr/lycee/specialites-bac-general/article/la-specialite-mathematiques-au-lycee-en-un-clin-d-oeil.html">Mathématiques</a>, <a class="link" href="https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"><abbr title="Numériques Sciences Informatiques">NSI</abbr></a> et <a class="link" href="https://www.lyceeschoelcher972.fr/specialite-llcer-amc/"><abbr title="Anglais Monde Contemporain">AMC</abbr></a>. En terminale, je décide d'abandonner les mathématiques au profit de mes deux autres spécialités. Au baccalauréat, j'ai eu la mention Bien.</div>
-                                </div>
-                            </div>
-                            <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
-                    <div class="lvl js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                            <div class="ag-timeline-card_meta-box">
-                                <div class="ag-timeline-card_meta">Cambridge</div>
-                            </div>
-                            <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                                <div class="ag-timeline-card_point">2023</div>
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_item">
-                            <div class="ag-timeline-card_inner">
-                                <div class="ag-timeline-card_img-box">
-                                    <img src="/portfolio/img/cambridge-first.jpg" alt="Cambridge First Certificate" class="ag-timeline-card_img" />
-                                </div>
-                                <div class="ag-timeline-card_info">
-                                    <div class="ag-timeline-card_title">Cambridge First Certificate</div>
-                                    <div class="ag-timeline-card_desc">J'ai pu passer cette certification d'anglais dans le contexte de ma spécialité AMC. Il y avait un test oral et écrit. Passer cette épreuve m'a permis de certifier mon niveau en anglais (C1).</div>
-                                </div>
-                            </div>
-                            <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
-                    <div class="lvl js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                            <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                                <div class="ag-timeline-card_point">2023</div>
-                            </div>
-                            <div class="ag-timeline-card_meta-box">
-                                <div class="ag-timeline-card_meta">BUT</div>
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_item">
-                            <div class="ag-timeline-card_inner">
-                                <div class="ag-timeline-card_img-box">
-                                    <img src="/portfolio/img/iut-lannion.jpg" class="ag-timeline-card_img" alt="L'IUT de Lannion" />
-                                </div>
-                                <div class="ag-timeline-card_info">
-                                    <div class="ag-timeline-card_title"><abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique</div>
-                                    <div class="ag-timeline-card_desc">Après le Bac, j'ai été accepté en BUT Informatique via Parcoursup. <a class="link" href="but-informatique.html">Plus de détails sur le <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique et l'<abbr title="Institut Universitaire Technologique">IUT</abbr> de Lannion</a></div>
-                                </div>
-                            </div>
-                            <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
+                    <?php
+                    put_card(2020, 0, '/portfolio/img/bossuet.jpeg', 'Lycée Saint-Joseph-Bossuet');
+                    put_card(2023, 1, '/portfolio/img/cambridge-first.jpg', 'Cambridge First Certificate');
+                    put_card(2023, 2, '/portfolio/img/iut-lannion.jpg', "L'IUT de Lannion");
+                    put_card(2024, 3, '/portfolio/img/tro-breizh.jpg', "Le Tro Breizh");
+                    ?>
                 </div>
             </div>
         </div>

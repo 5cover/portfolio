@@ -18,4 +18,8 @@ final class Page {
     function get_nav_href(Lang $lang, string $pageName): string {
         return $pageName == $this->name ? "#" : "/portfolio/$lang->name/$pageName.html";
     }
+
+    function get_web_dir(Lang $lang): string {
+        return get_web_filename("portfolio/$lang->name"); // chaud: there might be an issue here if $this->name contains slashes
+    }
 }

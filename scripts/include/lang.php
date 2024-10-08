@@ -6,15 +6,17 @@ const INVARIANT_LANG_KEY = 'en';
 
 final class Lang {
     private static array|null $instances = null;
-    /** @var array<string, string> */
-    private readonly array $strings;
-    readonly string $key; # Key used to lookup strings
-    readonly string $name; # Unique identifier
+    /** @var array<string, mixed> Lang data array */
+    private readonly array $data;
+    /** @var string Key used to lookup strings */
+    readonly string $key;
+    /** @var string Unique identifier */
+    readonly string $name;
     private readonly IntlDateFormatter $fmt;
-    function __construct(string $name, string $key, array $strings) {
+    function __construct(string $name, string $key, array $data) {
         $this->name = $name;
         $this->key = $key;
-        $this->strings = $strings;
+        $this->data = $data;
         $this->fmt = new IntlDateFormatter($key, IntlDateFormatter::LONG, IntlDateFormatter::NONE);
     }
 
@@ -22,16 +24,16 @@ final class Lang {
         return notfalse($this->fmt->format($dateTime), 'IntlDateFormatter::format');
     }
 
-    function get(string $name): string {
-        return $this->strings[$name];
+    function get(string $name): mixed {
+        return $this->data[$name];
     }
 
     function nameof(Lang $other): string {
-        return $this->strings['names'][$other->key];
+        return $this->data['names'][$other->key];
     }
 
-    function formatTitle(string $title): string {
-        return sprintf($this->strings['formatTitle'], $title);
+    function fmtTitle(string $title): string {
+        return sprintf($this->data['fmtTitle'], $title);
     }
 
     /**
@@ -107,11 +109,11 @@ final class Lang {
      */
     private static function fetch_instances(): array {
         $inst = [];
-        foreach (get_data_json('langs') as $key => $strings) {
-            $inst[$key] = new static($key, $key, as_array($strings));
+        foreach (get_data_json('langs') as $key => $data) {
+            $inst[$key] = new static($key, $key, $data);
         }
         assert(array_key_exists(INVARIANT_LANG_KEY, $inst), 'Lang of invariant language key must exist');
-        $inst[''] = new static('', INVARIANT_LANG_KEY, $inst[INVARIANT_LANG_KEY]->strings);
+        $inst[''] = new static('', INVARIANT_LANG_KEY, $inst[INVARIANT_LANG_KEY]->data);
         return $inst;
     }
 }

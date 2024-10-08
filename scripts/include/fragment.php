@@ -59,7 +59,7 @@ final class Fragment {
      * Uses the unlinked *definitions* data JSON.
      */
     function def(string $id): string {
-        $def = as_array($this->lang->get_data_json('definitions', false)[$id]);
+        $def = $this->lang->get_data_json('definitions', false)[$id];
         return (new Definition($this->lang, $id, $def))->get_tooltip_trigger();
     }
 }

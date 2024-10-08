@@ -33,11 +33,7 @@ generate() {
     local dest="$1" lang="$2" page="$3" phpf="$4"
     shift 4
     mkdir -p "$(dirname "$dest")"
-# specifying intl is not needed if is already installed on the local system
-#                  -d extension=intl\
-    > "$dest" php -d include_path=include\
-                  -d zend.assertions=1\
-                  -f "$phpf" "$lang" "$page" "$@";
+    > "$dest" php -c php.ini -f "$phpf" "$lang" "$page" "$@";
     >&2 echo ok
 }
 
@@ -68,14 +64,14 @@ readonly langs=(fr en)
 # Use only for debugging! Keep commented otherwise. Pushing a phpinfo page is.. eh.
 #generate_page '' phpinfo; exit
 
-# generate root index page
-generate "$outdir/index.html" '' root-index root-index.php
-
 if [[ $# -eq 1 ]]; then
     for lang in "${langs[@]}"; do
     generate_page "$lang" "$1"
     done
 else
+    # generate root index page
+    generate "$outdir/index.html" '' root-index root-index.php
+
     for lang in "${langs[@]}"; do
         # Simple page
         for page in definitions-test index but-informatique history projects passions perspectives; do

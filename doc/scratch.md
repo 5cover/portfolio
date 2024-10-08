@@ -223,3 +223,6 @@ Script & video
 currently translating definitions.json and adding missing keys
 
 translate and add other files
+
+- translate history
+- translate but informatique

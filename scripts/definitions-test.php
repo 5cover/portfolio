@@ -17,7 +17,7 @@ put_head($page, $lang);
             ?>
                 <dt id="<?= $definition->id ?>"><?= $definition->id ?></dt>
                 <dd>
-                    <?= implode(', ', as_array($definition->data['name'])) ?>
+                    <?= implode(', ', $definition->data['name']) ?>
                     <div>
                         <?= $definition->get_tooltip_trigger() ?>
                     </div>

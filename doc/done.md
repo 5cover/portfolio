@@ -130,7 +130,7 @@ Right now this is a mess.
 
 ~~No need for lang class, just have an helper function that reads the JSON file in object mode.~~
 
-Yes need for lang class, because translation is sometimes associated with more complex logic (*fFormatTitle*...). Although i could use format strings for this, provided PHP has support for this. Look it up in the documentation I guess.
+Yes need for lang class, because translation is sometimes associated with more complex logic (*fmtTitle*...). Although i could use format strings for this, provided PHP has support for this. Look it up in the documentation I guess.
 
 ## Définir mes amis
 

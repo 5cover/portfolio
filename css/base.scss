@@ -327,12 +327,10 @@
         break-inside: avoid;
         max-width: 100%;
 
-        > :not(figcaption) {
-            width: 100%;
+        > :first-child {
             max-width: 100%;
             height: auto;
-            max-height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         > figcaption {

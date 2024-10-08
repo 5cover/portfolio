@@ -87,7 +87,7 @@
 
 /* Rectangle list
  *
- * A list of small, (ideally) horizontal rectancgles
+ * A list of small, horizontal rectangles whose list items contain only one element
  */
 .list-rect {
     list-style: none;
@@ -96,8 +96,13 @@
     gap: .5em;
 
     > li {
-        @include util.horizontal-box(.7, 1.4);
         font-size: .9em;
+        @include util.horizontal-box-border-radius(1.4);
+        > :only-child {
+            border-radius: inherit;
+            display: list-item;
+            @include util.horizontal-box-padding(.7);
+        }   
     }
 }
 
@@ -265,7 +270,6 @@
  * - definition-tooltip: tooltip form of the definition
  * - definition-tooltip-trigger: trigger of the definition tooltip form
  *
- * - title: definition title
  * - logo: definition logo
  * - type: definition types
  * - synopsis: definition synopsis
@@ -288,10 +292,6 @@
         z-index: 1;
         /* Creates a stacking context */
         position: relative;
-    }
-
-    .title a {
-        @include util.hover-card-target;
     }
 
     .logo {
@@ -317,7 +317,7 @@
 
         &-trigger {
             cursor: pointer;
-            font-style: italic;
+            font-weight: 600;
         }
 
         
@@ -383,4 +383,17 @@
 /* Mixin classes */
 .text {
     @include util.text;
+}
+
+/* Hover card foil
+ *
+ * The anchor element of an hover card. Designs the element that deploys over the whole hover card, rendering it interactive.
+ */
+ .foil {
+    text-decoration: none;
+
+    &:after {
+        content: "";
+        @include util.absolute-fill;
+    }
 }

@@ -33,7 +33,7 @@ put_head($page, $lang);
                         <img src="<?= $src ?>" alt="<?= $lang->get("pianoTile{$num}Title") ?>" width="240" height="480" loading="lazy" title="<?= strip_tags($lang->get("pianoTile{$num}Desc")) ?>">
                         <figcaption>
                             <div>
-                                <h2><a href="<?= $href ?>"><?= $lang->get("pianoTile{$num}Title") ?></a></h2>
+                                <h2><a class="foil" href="<?= $href ?>"><?= $lang->get("pianoTile{$num}Title") ?></a></h2>
                                 <p><?= $lang->get("pianoTile{$num}Desc") ?></p>
                             </div>
                         </figcaption>
@@ -69,8 +69,15 @@ put_head($page, $lang);
                     </ul>
                 </address>
             </div>
-            <a href="/portfolio/cv_bardini_raphael.pdf" target="_blank" rel="noopener noreferrer">
-                <img src="/portfolio/img/cv_preview.webp" alt="<?= $lang->get('indexMyResumePreview') ?>" width="1241" height="1755" loading="lazy">
+            <?php
+            $CV_URL = 'cv-bardini-raphael.pdf';
+            $CV_URL_PREVIEW =  'cv-bardini-raphael-preview.jpg';
+            exec("echo quit | gs -dSAFER -dBATCH -sDEVICE=jpeg -sOutputFile='"
+                . $page->get_web_dir($lang) . "/$CV_URL_PREVIEW' '"
+                . $page->get_web_dir($lang) . "/$CV_URL'");
+            ?>
+            <a href="<?= $CV_URL ?>" target="_blank" rel="noopener noreferrer">
+                <img src="<?= $CV_URL_PREVIEW ?>" alt="<?= $lang->get('indexMyResumePreview') ?>" width="300" height="212" loading="lazy">
                 <span><?= $lang->get('indexMyResume') ?></span>
             </a>
         </article>

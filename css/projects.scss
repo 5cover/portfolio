@@ -22,8 +22,6 @@
 
 #list-tag,
 #list-sorting {
-    @include util.shallow-li;
-
     input {
         display: none;
     }
