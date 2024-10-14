@@ -24,7 +24,7 @@ put_head_light($page, $lang, function () {
         window.location.href = `/portfolio/${await getPreferredLanguage()}`;
     </script>
 <?php
-});
+                             });
 ?>
 
 <body>

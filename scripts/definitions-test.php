@@ -13,7 +13,7 @@ put_head($page, $lang);
     <main>
         <dl>
             <?php
-            foreach ($lang->definitions() as $definition) {
+                foreach ($lang->definitions() as $definition) {
             ?>
                 <dt id="<?= $definition->id ?>"><?= $definition->id ?></dt>
                 <dd>

@@ -98,11 +98,12 @@
     > li {
         font-size: .9em;
         @include util.horizontal-box-border-radius(1.4);
+
         > :only-child {
             border-radius: inherit;
             display: list-item;
             @include util.horizontal-box-padding(.7);
-        }   
+        }
     }
 }
 
@@ -320,11 +321,10 @@
             font-weight: 600;
         }
 
-        
         &:not(.show) {
             opacity: 0;
         }
-        
+
         &.hide {
             display: none;
         }
@@ -389,7 +389,7 @@
  *
  * The anchor element of an hover card. Designs the element that deploys over the whole hover card, rendering it interactive.
  */
- .foil {
+.foil {
     text-decoration: none;
 
     &:after {

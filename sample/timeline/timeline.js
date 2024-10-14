@@ -56,7 +56,7 @@
                 var agTop = $(this).find(agTimelinePoint).offset().top;
 
                 (agTop + agPosY - $(window).scrollTop()) < agPosY + .5 * agOuterHeight ? $(this).addClass('js-ag-active') : $(this).removeClass('js-ag-active');
-            })
+            });
         }
 
         function fnUpdateFrame() {

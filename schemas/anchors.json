@@ -1,36 +1,37 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "anchors",
+  "propertyNames": {
+    "description": "anchor ID",
+    "enum": [
+      "ccm",
+      "email",
+      "github",
+      "instagram",
+      "linkedin",
+      "steam",
+      "website",
+      "wikipedia",
+      "youtube",
+      "nuget"
+    ]
+  },
+  "additionalProperties": {
     "type": "object",
-    "title": "anchors",
-    "propertyNames": {
-        "description": "anchor ID",
-        "enum": [
-            "ccm",
-            "email",
-            "github",
-            "instagram",
-            "linkedin",
-            "steam",
-            "website",
-            "wikipedia",
-            "youtube"
-        ]
+    "properties": {
+      "url": {
+        "type": "string",
+        "minLength": 1
+      },
+      "isThemedSvg": {
+        "description": "Whether to include this image as an SVG element that will be affected by the site's theming. Useful for black & white images that would contrast badly with the background. If this is true, the url must point to an SVG file.",
+        "type": "boolean"
+      }
     },
-    "additionalProperties": {
-        "type": "object",
-        "properties": {
-            "url": {
-                "type": "string",
-                "minLength": 1
-            },
-            "isThemedSvg": {
-                "description": "Whether to include this image as an SVG element that will be affected by the site's theming. Useful for black & white images that would contrast badly with the background. If this is true, the url must point to an SVG file.",
-                "type": "boolean"
-            }
-        },
-        "required": [
-            "url",
-            "isThemedSvg"
-        ]
-    }
+    "required": [
+      "url",
+      "isThemedSvg"
+    ]
+  }
 }

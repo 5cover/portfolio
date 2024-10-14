@@ -1,38 +1,42 @@
 {
-    "steam": {
-        "isThemedSvg": false,
-        "url": "/portfolio/img/social/steam.svg"
-    },
-    "github": {
-        "isThemedSvg": true,
-        "url": "/portfolio/img/social/github.svg"
-    },
-    "email": {
-        "isThemedSvg": true,
-        "url": "/portfolio/img/social/email.svg"
-    },
-    "instagram": {
-        "isThemedSvg": true,
-        "url": "/portfolio/img/social/instagram.svg"
-    },
-    "linkedin": {
-        "isThemedSvg": true,
-        "url": "/portfolio/img/social/linkedin.svg"
-    },
-    "ccm": {
-        "isThemedSvg": false,
-        "url": "/portfolio/img/social/ccm.png"
-    },
-    "website": {
-        "isThemedSvg": true,
-        "url": "/portfolio/img/social/website.svg"
-    },
-    "youtube": {
-        "isThemedSvg": false,
-        "url": "/portfolio/img/social/youtube.svg"
-    },
-    "wikipedia": {
-        "isThemedSvg": false,
-        "url": "/portfolio/img/social/wikipedia.svg"
-    }
+  "steam": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/social/steam.svg"
+  },
+  "github": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/social/github.svg"
+  },
+  "email": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/social/email.svg"
+  },
+  "instagram": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/social/instagram.svg"
+  },
+  "linkedin": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/social/linkedin.svg"
+  },
+  "ccm": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/social/ccm.png"
+  },
+  "website": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/social/website.svg"
+  },
+  "youtube": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/social/youtube.svg"
+  },
+  "wikipedia": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/social/wikipedia.svg"
+  },
+  "nuget": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/nuget/logo.svg"
+  }
 }

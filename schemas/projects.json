@@ -1,54 +1,54 @@
 {
+  "type": "object",
+  "title": "Projects",
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "additionalProperties": {
     "type": "object",
-    "title": "Projects",
-    "$schema": "https://json-schema.org/draft-07/schema",
-    "additionalProperties": {
+    "allOf": [
+      {
+        "$ref": "util/detail.json"
+      },
+      {
         "type": "object",
-        "allOf": [
-            {
-                "$ref": "util/detail.json"
-            },
-            {
-                "type": "object",
-                "required": [
-                    "context",
-                    "start-date",
-                    "tags",
-                    "team",
-                    "technologies"
-                ],
-                "properties": {
-                    "end-date": {
-                        "format": "date",
-                        "type": "string"
-                    },
-                    "start-date": {
-                        "format": "date",
-                        "type": "string"
-                    },
-                    "tags": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "items": {
-                            "$ref": "tags.json#/propertyNames"
-                        }
-                    },
-                    "team": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "items": {
-                            "$ref": "definitions.json#/propertyNames"
-                        }
-                    },
-                    "technologies": {
-                        "uniqueItems": true,
-                        "type": "array",
-                        "items": {
-                            "$ref": "definitions.json#/propertyNames"
-                        }
-                    }
-                }
+        "required": [
+          "context",
+          "start-date",
+          "tags",
+          "team",
+          "technologies"
+        ],
+        "properties": {
+          "end-date": {
+            "format": "date",
+            "type": "string"
+          },
+          "start-date": {
+            "format": "date",
+            "type": "string"
+          },
+          "tags": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "tags.json#/propertyNames"
             }
-        ]
-    }
+          },
+          "team": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "definitions.json#/propertyNames"
+            }
+          },
+          "technologies": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "definitions.json#/propertyNames"
+            }
+          }
+        }
+      }
+    ]
+  }
 }

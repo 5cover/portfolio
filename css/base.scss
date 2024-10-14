@@ -52,7 +52,7 @@
 
     @mixin theme-dark {
         color-scheme: dark;
-        $fg: #eee;
+        $fg: #d5d5d5;
         $c0: #111;
         $step: 8%;
         $c1: color.scale($c0, $lightness: $step);
@@ -264,11 +264,11 @@
     }
 
     /* Reference citation links */
-    a[id^="cite-"] {
+    sup[id^="cite-"] {
         @extend .link;
         @include util.sup-annotation;
         white-space: nowrap;
-        font-size: .6em;
+        font-size: .8em;
     }
 
     /* Opt-in basic style classes
@@ -301,23 +301,26 @@
         user-select: none;
     }
 
-    /* UL
+    /* List
      *
+     * Text-based list
      *
-     * Intended for: <ul>
+     * Intended for: <ul>, <ol>
      */
-    .ul {
+    .list {
         display: flex;
         flex-direction: column;
         gap: .5lh;
         padding-left: 2em;
 
-        .ul {
+        .list {
             padding-left: 4em;
         }
     }
 
     /* Figure
+     *
+     * Regular figure
      *
      * Intended for: <figure>
      */

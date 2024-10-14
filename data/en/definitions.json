@@ -1,4 +1,83 @@
 {
+  "chain-of-responsibility": {
+    "type": "design-pattern",
+    "name": {
+      "full": "Chain of Responsibility"
+    },
+    "synopsis": "A software design pattern that allows an event to be handled by a chain of objects.",
+    "wiki": "https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern"
+  },
+  "facade": {
+    "type": "design-pattern",
+    "name": {
+      "full": "Facade"
+    },
+    "synopsis": "A software design pattern that provides a simplified interface to a larger body of code.",
+    "wiki": "https://en.wikipedia.org/wiki/Facade_pattern"
+  },
+  "adapter": {
+    "type": "design-pattern",
+    "name": {
+      "full": "Adapter"
+    },
+    "synopsis": "A software design pattern that allows the interface of an existing class to be used as another interface.",
+    "wiki": "https://en.wikipedia.org/wiki/Adapter_pattern"
+  },
+  "ci-cd": {
+    "type": "paradigm",
+    "name": {
+      "abbr": "CI/CD",
+      "full": "Continuous Integration/Continuous Deployment"
+    },
+    "synopsis": "A software development practice where developers integrate code into a shared repository frequently, and then automatically build and test the software.",
+    "wiki": "https://en.wikipedia.org/wiki/CI/CD"
+  },
+  "nuget": {
+    "type": "library",
+    "name": {
+      "full": "NuGet"
+    },
+    "synopsis": "A package manager for the Microsoft development platform, including .NET.",
+    "wiki": "https://en.wikipedia.org/wiki/NuGet",
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/definition/nuget/logo.svg"
+    }
+  },
+  "oop": {
+    "type": "paradigm",
+    "name": {
+      "abbr": "OOP",
+      "full": "Object-oriented programming"
+    },
+    "synopsis": "A programming paradigm based on the concept of <q>objects</q>, which can contain data and code.",
+    "wiki": "https://en.wikipedia.org/wiki/Object-oriented_programming"
+  },
+  "nunit": {
+    "type": "library",
+    "name": {
+      "full": "NUnit"
+    },
+    "synopsis": "An open-source .NET unit testing framework, focused on simplicity and ease of use.",
+    "wiki": "https://en.wikipedia.org/wiki/NUnit",
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/definition/nunit/logo.png"
+    }
+  },
+  "uml": {
+    "name": {
+      "abbr": "UML",
+      "full": "Unified Modeling Language"
+    },
+    "synopsis": "A graphical modeling language used to describe, specify, construct, and document software systems.",
+    "wiki": "https://en.wikipedia.org/wiki/Unified_Modeling_Language",
+    "type": "computer-language",
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/definition/uml/logo.svg"
+    }
+  },
   "anno2070": {
     "logo": {
       "isThemedSvg": false,
@@ -720,7 +799,7 @@
     "name": {
       "full": "Spyder"
     },
-    "synopsis": "A free and open source scientific environment written in Python, for Python, and designed by and for scientists, engineers and data analysts. It features a unique combination of the advanced editing, analysis, debugging, and profiling functionality of a comprehensive development tool with the data exploration, interactive execution, deep inspection, and beautiful visualization capabilities of a scientific package.",
+    "synopsis": "Spyder is an open-source IDE specifically designed for scientific programming in the Python language. It is part of the Anaconda distribution but can also be installed independently.",
     "type": "ide",
     "wiki": "https://www.spyder-ide.org/"
   },
@@ -787,7 +866,7 @@
   },
   "task-dialog": {
     "name": {
-      "full": "Task dialog"
+      "full": "task dialog"
     },
     "synopsis": "A dialog box that can be used to display information and receive simple input from the user. Like a message box, it is formatted by the operating system according to parameters you set. However, a task dialog has many more features than a message box.",
     "type": "ui",

@@ -1,55 +1,61 @@
+<?php
+require_once 'fragment.php';
+$f = start('fr');
+?>
 <div>
-<p>A language to define declarative &quot;blueprints&quot; that generate Java classes.</p>
-<p>Supports automatic and customizable generation of:</p>
-<ul  class="ul">
-<li>Inheritance trees (<code>extend</code>, <code>implement</code>, <code>permits</code>)</li>
-<li>Attributes</li>
-<li>Getters/setters</li>
-<li><code>hashCode</code> method</li>
-<li><code>equals</code> method</li>
-<li><code>toString</code> method</li>
-<li>Method stubs</li>
+<p>Un langage pour définir des <q>blueprints</q> déclaratifs pour générer des classes <?= $f->def('java') ?>.</p>
+<p>Prend en charge la génération automatique et personnalisable de&nbsp;:</p>
+<ul class="list">
+<li><p>Arborescences d'héritage (<code>extend</code>, <code>implement</code>, <code>permits</code>)</p></li>
+<li><p>Attributs</p></li>
+<li><p><?= $f->term('Getters', 'en', 'Obteneurs') ?>/<? $f->term('setters', 'en', 'définisseurs') ?></p></li>
+<li><p>méthode <code>hashCode</code></p></li>
+<li><p>méthode <code>equals</code></p></li>
+<li><p>méthode <code>toString</code></p></li>
+<li><p>Stubs de méthode</p></li>
 </ul>
-<p>Addtional features include:</p>
-<ul  class="ul">
-<li>Nested and static classes</li>
-<li>Arbitrary Java code blocks</li>
+<p>Fonctionnalités supplémentaires&nbsp;:</p>
+<ul class="list">
+<li><p>Classes imbriquées et statiques</p></li>
+<li><p>Blocs de code Java arbitraires</p></li>
 </ul>
-</div><article>
-<h3 id="advantages-over-snippets">Advantages over snippets</h3>
-<p>A Jslave blueprint is self-contained and can be automated, unlike snippets/shortcuts which are IDE-dependent and require manual input. This approach has the following advantages:</p>
-<ul  class="ul">
-<li>Blueprints can be passed around as files</li>
-<li>Blueprints can generate to something else than Java</li>
-<li>Generation is predictable and deterministic</li>
-<li>Generation can be automated in a script</li>
+</div>
+<article>
+<h3 id="avantages-sur-les-extraits">Avantages par rapport aux extraits</h3>
+<p>Un blueprint Jslave est autonome et peut être automatisé, contrairement aux extraits/raccourcis qui dépendent de l'IDE et nécessitent une saisie manuelle. Cette approche présente les avantages suivants&nbsp;:</p>
+<ul class="list">
+<li><p>Les blueprints peuvent être transmis sous forme de fichiers</p></li>
+<li><p>Les blueprints peuvent être générés vers autre chose que Java</p></li>
+<li><p>La génération est prévisible et déterministe</p></li>
+<li><p>La génération peut être automatisée dans un script</p></li>
 </ul>
-<p>Cons:</p>
-<ul  class="ul">
-<li>Since we&#39;re no longer in a Java context, we won&#39;t recieve help much from the IDE while writing JSlave (syntax highlighting, auto-completion&hellip;). This issue is mitigated by the simplicity of the language, and the future VSCode extension.</li>
+<p>Inconvénients&nbsp;:</p>
+<ul class="list">
+<li><p>Étant donné que nous ne sommes plus dans un contexte Java, nous ne recevrons pas beaucoup d'aide de l'IDE lors de l'écriture de JSlave (coloration syntaxique, auto-complétion&hellip;). Ce problème est atténué par la simplicité du langage et la future extension <?= $f->def('vs-code') ?>.</p></li>
 </ul>
-</article><article>
-<h3 id="getting-started">Getting started</h3>
-<h4 id="1-write-your-jslave-file">1. Write your JSlave file</h4>
-<p>Your JSlave file (idomatically called a <strong>blueprint</strong>) defines the structure of your Java code, and provides syntax for common patterns in order to avoid writing all that pesky Java boilerplate.</p>
-<p>More details about the syntax can be found in the <a href=".">documentation</a>, but the main idom is as follows:</p>
-<p>A blueprint is a list of <strong>definitions</strong> that generate to the corresponding Java type (classes, records, interfaces&hellip;). Each definitions contains zero or more <strong>members</strong> that determine the contents of the type.</p>
-<p>Members can be of two kinds:</p>
-<ul class="ul">
-<li><strong>attributes</strong> define the data fields of the type. They generate to Java class attributes, and getter/setter methods.</li>
-<li><strong>methods</strong> define the behaviors of the type. Methods that have a special meaning in Java (<code>equals</code>, <code>hashCode</code>, <code>toString</code>) are called <strong>special methods</strong>. They can be expressed in three forms:<ul>
-<li><strong>stub</strong>: an empty method to implement either from the generated Java or with a code block (more on these later)</li>
-<li><strong>default implementation</strong>: a default, general-purpose implementation that should work for most cases</li>
-<li><strong>custom implementation</strong>: the default implementation, customized by passing arguments to the method</li>
+</article>
+<article>
+<h3 id="getting-started">Premiers pas</h3>
+<h4 id="1-write-your-jslave-file">1. Écrivez votre fichier JSlave</h4>
+<p>Votre fichier JSlave (appelé idiomatiquement un <strong>blueprint</strong>) définit la structure de votre code Java et fournit la syntaxe des modèles courants afin d'éviter d'écrire tout ce code Java répétitif.</p>
+<p>Vous trouverez plus de détails sur la syntaxe dans la <?= $f->blank('documentation', 'https://github.com/5cover/jslave/blob/main/doc/Language%20reference.md') ?>, mais l'idiome principal est le suivant&nbsp;:</p>
+<p>Un blueprint est une liste de <strong>définitions</strong> qui génèrent le type Java correspondant (classes, enregistrements, interfaces&hellip;). Chaque définition contient zéro ou plusieurs <strong>membres</strong> qui déterminent le contenu du type.</p>
+<p>Les membres peuvent être de deux types&nbsp;:</p>
+<ul class="list">
+<li><p><strong>Les attributs</strong> définissent les champs de données du type. Ils génèrent des attributs de classe Java et des méthodes getter/setter.</p></li>
+<li><p><strong>Les méthodes</strong> définissent les comportements du type. Les méthodes qui ont une signification particulière en Java (<code>equals</code>, <code>hashCode</code>, <code>toString</code>) sont appelées <strong>méthodes spéciales</strong>. Elles peuvent être exprimées sous trois formes&nbsp;:</p>
+<ul class="list">
+<li><p><strong>Stub</strong>&nbsp;: une méthode vide à implémenter soit à partir du code Java généré, soit avec un bloc de code</p></li>
+<li><p><strong>Implémentation par défaut</strong>&nbsp;: une implémentation par défaut à usage général qui devrait fonctionner dans la plupart des cas</p></li>
+<li><p><strong>Implémentation personnalisée</strong>&nbsp;: l'implémentation par défaut, personnalisée en passant des arguments à la méthode</p></li>
 </ul>
 </li>
 </ul>
-<h4 id="2-generate-it">2. Generate it</h4>
-<p>From the VSCode extension GUI or using the standalone binary, generate your blueprint.</p>
-<p>Multiple targets are available</p>
-<ul class="ul">
-<li>Java (obviously): generates Java code</li>
-<li>Mermaid: generates a <a href="https://mermaid.js.org/syntax/classDiagram.html">Mermaid class diagram</a> that represents the structure of the blueprint</li>
+<h4 id="2-generate-it">2. Générez-le</h4>
+<p>À partir de l'interface graphique de l'extension VSCode ou en utilisant le binaire autonome, générez votre blueprint.</p>
+<p>Plusieurs cibles sont disponibles</p>
+<ul class="list">
+<li><p><?= $f->def('java') ?> (évidemment)&nbsp;: génère du code Java</p></li>
+<li><p><?= $f->def('mermaid') ?>&nbsp;: génère un diagramme de classe Mermaid<?= $f->ref() ?> représentant la structure du blueprint</p></li>
 </ul>
-
 </article>

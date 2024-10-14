@@ -3,19 +3,23 @@
 require_once 'page.php';
 require_once 'lang.php';
 
-function put_doctype_html(Page $page, Lang $lang) { ?>
+function put_doctype_html(Page $page, Lang $lang)
+{
+    ?>
     <!DOCTYPE html>
     <html lang="<?= $lang->key ?>">
 <?php }
 
-function put_footer(Page $page, Lang $lang) { ?>
+function put_footer(Page $page, Lang $lang)
+{ ?>
     <footer class="lvl">
         <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="<?= $lang->get('footerGitHubAnchorTitle') ?>"><?= get_svg_element('portfolio/img/social/github.svg', baseHeight: 60) ?></a>
     </footer>
 <?php }
 
-function put_head_light(Page $page, Lang $lang, callable $putAdditionalContent) { ?>
+function put_head_light(Page $page, Lang $lang, callable $putAdditionalContent)
+{ ?>
 
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
@@ -37,9 +41,12 @@ function put_head_light(Page $page, Lang $lang, callable $putAdditionalContent) 
         </script>
         <?php $putAdditionalContent() ?>
     </head>
-<?php }
+<?php
+}
 
-function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css') { ?>
+function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css')
+{
+    ?>
 
     <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
@@ -51,7 +58,8 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
 
         <?php
         $g = glob_web('/portfolio/css/' . $page->name . '.css');
-        if (count($g) == 1) { ?>
+        if (count($g) == 1) {
+            ?>
             <link rel="stylesheet" type="text/css" href="<?= get_web_url($g[0]) ?>">
         <?php } else { ?>
             <link rel="stylesheet" type="text/css" href="/portfolio/css/<?= $fallbackStylesheet ?>">
@@ -76,12 +84,17 @@ function put_head(Page $page, Lang $lang, string $fallbackStylesheet = 'base.css
         <script type="module" src="/portfolio/js/base.js"></script>
         <?php
         $g = glob_web('/portfolio/js/' . $page->name . '.js');
-        if (count($g) == 1) { ?>
+        if (count($g) == 1) {
+            ?>
             <script type="module" src="<?= get_web_url($g[0]) ?>"></script>
         <?php } ?>
     </head>
-<?php }
-function put_header(Page $page, Lang $lang) { ?>
+<?php
+}
+
+function put_header(Page $page, Lang $lang)
+{
+    ?>
     <template id="template-definition-tooltip">
         <article class="lvl definition-tooltip" role="tooltip">
             <h4 class="title"><a target="_blank" rel="noopener noreferrer">
@@ -98,28 +111,32 @@ function put_header(Page $page, Lang $lang) { ?>
     </template>
     <header class="lvl">
         <nav>
-            <a href="<?= $page->get_nav_href($lang, "index") ?>">Raphaël Bardini</a>
+            <a href="<?= $page->get_nav_href($lang, 'index') ?>">Raphaël Bardini</a>
             <ul>
-                <li><a href="<?= $page->get_nav_href($lang, "projects") ?>"><?= $lang->get('namePageProjects') ?></a>
+                <li><a href="<?= $page->get_nav_href($lang, 'projects') ?>"><?= $lang->get('namePageProjects') ?></a>
                 </li>
-                <li><a href="<?= $page->get_nav_href($lang, "history") ?>"><?= $lang->get('namePageHistory') ?></a>
+                <li><a href="<?= $page->get_nav_href($lang, 'history') ?>"><?= $lang->get('namePageHistory') ?></a>
                 </li>
-                <li><a href="<?= $page->get_nav_href($lang, "passions") ?>"><?= $lang->get('namePagePassions') ?></a>
+                <li><a href="<?= $page->get_nav_href($lang, 'passions') ?>"><?= $lang->get('namePagePassions') ?></a>
                 </li>
-                <li><a href="<?= $page->get_nav_href($lang, "perspectives") ?>"><?= $lang->get('namePagePerspectives') ?></a>
-                <li><a href="<?= $page->get_nav_href($lang, "but-informatique") ?>"><?= $lang->get('namePageButInformatique') ?></a>
+                <li><a href="<?= $page->get_nav_href($lang, 'perspectives') ?>"><?= $lang->get('namePagePerspectives') ?></a>
+                <li><a href="<?= $page->get_nav_href($lang, 'but-informatique') ?>"><?= $lang->get('namePageButInformatique') ?></a>
                 </li>
             </ul>
         </nav>
         <ul class="list-flags">
-            <?php foreach (Lang::instances() as $otherLang) {
-                if ($otherLang->name == '') continue;
+            <?php
+            foreach (Lang::instances() as $otherLang) {
+                if ($otherLang->name == '') {
+                    continue;
+                }
+
                 $isSameLang = $lang->equals($otherLang);
-                $class = 'fi ' . $otherLang->get('flagClass') . ($isSameLang ? '' : ' gray-when-not-hover');
-                $title = $otherLang->name . ($isSameLang ? '' : " / {$otherLang->nameof($lang)}");
-            ?>
-                <li><a class="<?= $class ?>" title="<?= $title ?>" href="/portfolio/<?= $otherLang->name ?>/<?= $page->name ?>.html"></a></li>
-            <?php } ?>
+                $class      = 'fi ' . $otherLang->get('flagClass') . ($isSameLang ? '' : ' gray-when-not-hover');
+                $title      = $otherLang->name . ($isSameLang ? '' : " / {$otherLang->nameof($lang)}");
+            ?><li><a class="<?= $class ?>" title="<?= $title ?>" href="/portfolio/<?= $otherLang->name ?>/<?= $page->name ?>.html"></a></li><?php
+            }
+        ?>
         </ul>
         <div class="theme-switches">
             <label for="theme-switch-light" title="<?= $lang->get('nameLightTheme') ?>">
@@ -154,14 +171,17 @@ function put_header(Page $page, Lang $lang) { ?>
             </label>
         </div>
     </header>
-<?php }
-
-function get_background_style_attr(string $bg, string $varname = 'bg-img'): string {
-    return <<<END
-     style="--$varname: url($bg)"
-    END;
+<?php
 }
 
-function get_iframe(string $src, string $title): string {
+function get_background_style_attr(string $bg, string $varname = 'bg-img'): string
+{
+    return <<<END
+ style="--$varname: url($bg)"
+END;
+}
+
+function get_iframe(string $src, string $title): string
+{
     return '<iframe src="' . $src . '" frameborder="0" loading="lazy" width="300" height="300" title="' . $title . '"></iframe>';
 }

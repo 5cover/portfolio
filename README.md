@@ -28,11 +28,11 @@ JSON
 - Compétences liées
 - Tags
 - Outils
-    - Logiciels
-    - Langages de prog.
+  - Logiciels
+  - Langages de prog.
 - Liens
-    - Git{hub, lab}
-    - Articles
+  - Git{hub, lab}
+  - Articles
 - Gallerie
 
 ### Page d'acceuil

@@ -8,10 +8,10 @@ $f = start('fr');
     <p>Au cours de nos TP, nous avons très souvent dû traduire des programmes en pseudocode vers le <?= $f->def('c') ?>. Cette tâche est assez réberbative, d'où mon désir de l'automatiser. Et c'est ce qui ma mené à découvrir la conception de compilateurs.</p>
     <p>À titre d'exemple, voici un simple programme en pseudocode qui affiche <q>Bonjour</q> à l'écran&nbsp;:</p>
     <?= $f->codeblock(<<<CODE
-    programme AfficherBonjour c'est début
-        écrireÉcran("Bonjour");
-    fin
-    CODE) ?>
+programme AfficherBonjour c'est début
+    écrireÉcran("Bonjour");
+fin
+CODE) ?>
     <p>Voici un programme équivalent en <?= $f->def('c') ?>&nbsp;:</p>
     <?= $f->codeblock(<<<CODE
 #include <stdio.h>;
@@ -28,7 +28,7 @@ CODE) ?>
     <p>Commençons avec le code source original, au pied de la montagne. Au fil des étapes (<?= $f->term('scanning', 'en') ?>, <?= $f->term('parsing', 'en') ?>, <?= $f->term('analysis', 'en') ?>), la représentation du code devient de plus en plus haut niveau, c'est-à-dire qu'elle se focalise plus sur la sémantique exprimée que sur les détails d'implémentation.</p>
     <p>Une fois le sommet atteint, on est à mi-chemin de la compilation. On a une vue imprenable sur la sémantique du code, soit le sens que l'utilisateur lui donne à travers la syntaxe de notre langage.</p>
     <p>Alors entamons notre descente. Convertissons successivement notre représentation de haut niveau en des formes se rapprochant de notre objectif final&nbsp;: le langage machine, qui sera exécuté directement par le processeur.</p>
-    <p>Je n'ai découvert Crafting Interpreters qu'assez tard dans le projet. À l'origine, je me suis basé sur la playlist <?= $f->term('Creating a Compiler', 'en') ?><?= $f->ref() ?> de <?= $f->blank("Pixeled", "https://www.youtube.com/@pixeled-yt") ?> sur YouTube, où l'on assiste à la conception et à l'implémentation d'un compilateur pour un language <?= $f->term('ex-nihilo') ?> nommé Hydrogen. Le compilateur transforme le code en assembleur, puis utilise <?= $f->def('nasm') ?> pour générer le code machine.</p>
+    <p>Je n'ai découvert Crafting Interpreters qu'assez tard dans le projet. À l'origine, je me suis basé sur la playlist <?= $f->term('Creating a Compiler', 'en') ?><?= $f->ref() ?> de <?= $f->blank('Pixeled', 'https://www.youtube.com/@pixeled-yt') ?> sur YouTube, où l'on assiste à la conception et à l'implémentation d'un compilateur pour un language <?= $f->term('ex-nihilo') ?> nommé Hydrogen. Le compilateur transforme le code en assembleur, puis utilise <?= $f->def('nasm') ?> pour générer le code machine.</p>
     <p>C'est dans ces vidéos que j'ai appris les bases de l'analyse lexicale<?= $f->ref() ?>, des grammaires formelles<?= $f->ref() ?>, ou encore de l'analyse syntaxique<?= $f->ref() ?>. C'est vraiment intéressant et j'apprends beaucoup de choses.</p>
     <p>Ce projet est loin d'être terminé &mdash; de nombreuses fonctionnalités restent à implémenter, notamment pour l'intégration <?= $f->def('vs-code') ?> avec serveur de langage.</p>
 </div>

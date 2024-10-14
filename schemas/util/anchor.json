@@ -1,17 +1,17 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
-    "title": "anchor",
-    "type": "object",
-    "required": [
-        "href"
-    ],
-    "properties": {
-        "href": {
-            "format": "uri-reference",
-            "type": "string"
-        },
-        "anchor": {
-            "$ref": "../anchors.json#/propertyNames"
-        }
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "anchor",
+  "type": "object",
+  "required": [
+    "href"
+  ],
+  "properties": {
+    "href": {
+      "format": "uri-reference",
+      "type": "string"
+    },
+    "anchor": {
+      "$ref": "../anchors.json#/propertyNames"
     }
+  }
 }

@@ -6,12 +6,13 @@ require_once 'data.php';
 const MAX_PROJECTS_PER_SKILL = 4;
 
 [$lang, $page] = parse_args();
-$but = $lang->get('but');
+$but           = $lang->get('but');
 
 put_doctype_html($page, $lang);
 put_head($page, $lang);
 
-function put_skill_project_list(string $skillTag) {
+function put_skill_project_list(string $skillTag)
+{
     global $lang;
     Project::put_card_list(
         array_slice(
@@ -27,10 +28,11 @@ function put_skill_project_list(string $skillTag) {
     );
 }
 
-function put_skill(int $index, string $skillTag) {
+function put_skill(int $index, string $skillTag)
+{
     global $but;
     $skill = $but['skills'][$index];
-?>
+    ?>
     <li style="--bg-img: url(/portfolio/img/skill/<?= $index ?>.jpg)">
         <h3><?= sprintf($but['fmt-h3-skill'], $index + 1, $skill['name']) ?></h3>
         <p><?= $skill['desc'] ?></p>
@@ -52,12 +54,13 @@ function put_skill(int $index, string $skillTag) {
             <p><?= $but['skills-abstract'] ?></p>
             <ul class="lvl">
                 <?php
-                put_skill(0, 'but-realiser');
-                put_skill(1, 'but-optimiser');
-                put_skill(2, 'but-administrer');
-                put_skill(3, 'but-gerer');
-                put_skill(4, 'but-conduire');
-                put_skill(5, 'but-collaborer') ?>
+                    put_skill(0, 'but-realiser');
+                    put_skill(1, 'but-optimiser');
+                    put_skill(2, 'but-administrer');
+                    put_skill(3, 'but-gerer');
+                    put_skill(4, 'but-conduire');
+                    put_skill(5, 'but-collaborer')
+                ?>
                 </li>
             </ul>
         </section>

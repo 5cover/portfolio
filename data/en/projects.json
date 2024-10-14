@@ -1,1006 +1,1049 @@
 {
   "island-maps": {
-      "abstract": "Mapping islands from Anno 2070 videogame maps for insight and automation",
-      "start-date": "2023-04-27",
-      "context": "Personal",
-      "technologies": [
-          "anno2070"
-      ],
-      "links": {
-          "Blog": {
-              "anchor": "website",
-              "href": "https://anno2070.fandom.com/wiki/User_blog:Scover32/Anno_2070:_Island_maps"
-          }
-      },
-      "references": [],
-      "gallery": [],
-      "story": {
-          "$include": "project/island-maps/story.phtml"
-      },
-      "team": [],
-      "title": "Island Maps",
-      "tags": [
-          "idea",
-          "algorithms"
-      ]
+    "abstract": "Mapping islands from Anno 2070 videogame maps for insight and automation",
+    "start-date": "2023-04-27",
+    "context": "Personal",
+    "technologies": [
+      "anno2070"
+    ],
+    "links": {
+      "Blog": {
+        "anchor": "website",
+        "href": "https://anno2070.fandom.com/wiki/User_blog:Scover32/Anno_2070:_Island_maps"
+      }
+    },
+    "references": [],
+    "gallery": [],
+    "story": {
+      "$include": "project/island-maps/story.phtml"
+    },
+    "team": [],
+    "title": "Island Maps",
+    "tags": [
+      "idea",
+      "algorithms"
+    ]
   },
   "2l2w-french-rural-road": {
-      "abstract": "Up to code French road asset",
-      "context": "Personal",
-      "end-date": "2022-10-02",
-      "gallery": [],
-      "links": {
-          "Steam Workshop article": {
-              "anchor": "steam",
-              "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993"
-          }
-      },
-      "references": [],
-      "start-date": "2021-06-15",
-      "story": {
-          "$include": "project/2l2w-french-rural-road/story.phtml"
-      },
-      "tags": [
-          "3d-modeling",
-          "asset-creation"
-      ],
-      "team": [],
-      "technologies": [
-          "blender",
-          "cities-skylines"
-      ],
-      "title": "2L2W French Rural Road"
+    "abstract": "Up to code French road asset",
+    "context": "Personal",
+    "end-date": "2022-10-02",
+    "gallery": [],
+    "links": {
+      "Steam Workshop article": {
+        "anchor": "steam",
+        "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993"
+      }
+    },
+    "references": [],
+    "start-date": "2021-06-15",
+    "story": {
+      "$include": "project/2l2w-french-rural-road/story.phtml"
+    },
+    "tags": [
+      "3d-modeling",
+      "asset-creation"
+    ],
+    "team": [],
+    "technologies": [
+      "blender",
+      "cities-skylines"
+    ],
+    "title": "2L2W French Rural Road"
   },
   "cori": {
-      "abstract": "Correct and easy to use C user input library",
-      "context": "Personal",
-      "end-date": "2024-03-09",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/stb_cori"
-          }
+    "abstract": "Correct and easy to use C user input library",
+    "context": "Personal",
+    "end-date": "2024-03-09",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/stb_cori"
+      }
+    },
+    "references": [
+      {
+        "anchor": "website",
+        "href": "https://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html",
+        "caption": "Felix Palmen &mdash; A beginner's guide <em>away</em> from <code>scanf()</code>"
       },
-      "references": [],
-      "start-date": "2023-10-09",
-      "story": {
-          "$include": "project/cori/story.phtml"
+      {
+        "anchor": "github",
+        "href": "https://github.com/nothings/stb",
+        "caption": "Sean Barrett &mdash; STB-style public domain libraries repository"
       },
-      "tags": [
-          "low-level",
-          "library"
-      ],
-      "team": [],
-      "technologies": [
-          "vs-code",
-          "c",
-          "make"
-      ],
-      "title": "<abbr title=\"Correct Input\">Cori</abbr>"
+      {
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/X_macro",
+        "caption": "Wikipedia &mdash; X macro pattern"
+      }
+    ],
+    "start-date": "2023-10-09",
+    "story": {
+      "$include": "project/cori/story.phtml"
+    },
+    "tags": [
+      "low-level",
+      "library"
+    ],
+    "team": [],
+    "technologies": [
+      "vs-code",
+      "c",
+      "make"
+    ],
+    "title": "<abbr title=\"Correct Input\">Cori</abbr>"
   },
   "demineur-python": {
-      "abstract": "GUI Minesweeper game",
-      "context": "NSI High-school",
-      "end-date": "2022-04-24",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/Demineur-Python"
-          }
-      },
-      "logo": {
-          "isThemedSvg": false,
-          "url": "/portfolio/img/project/demineur-python/logo.png"
-      },
-      "references": [],
-      "start-date": "2022-03-01",
-      "story": {
-          "$include": "project/demineur-python/story.phtml"
-      },
-      "tags": [
-          "game",
-          "oop"
-      ],
-      "team": [],
-      "technologies": [
-          "python",
-          "tkinter",
-          "spyder"
-      ],
-      "title": "Python Minesweeper"
+    "abstract": "GUI Minesweeper game",
+    "context": "NSI High-school",
+    "end-date": "2022-04-24",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/Demineur-Python"
+      }
+    },
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/project/demineur-python/logo.png"
+    },
+    "references": [
+      {
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller",
+        "caption": "Wikipedia &mdash; Model–view–controller"
+      }
+    ],
+    "start-date": "2022-03-01",
+    "story": {
+      "$include": "project/demineur-python/story.phtml"
+    },
+    "tags": [
+      "game",
+      "oop"
+    ],
+    "team": [],
+    "technologies": [
+      "python",
+      "tkinter",
+      "spyder"
+    ],
+    "title": "Python Minesweeper"
   },
   "dialogs": {
-      "abstract": {
-          "$include": "project/dialogs/abstract.phtml"
+    "abstract": {
+      "$include": "project/dialogs/abstract.phtml"
+    },
+    "context": "Personal",
+    "start-date": "2022-11-23",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/Dialogs"
       },
-      "context": "Personal",
-      "end-date": "2022-11-23",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/Dialogs"
-          }
+      "NuGet package": {
+        "anchor": "nuget",
+        "href": "https://www.nuget.org/packages/Scover.Dialogs"
+      }
+    },
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/project/dialogs/logo.png"
+    },
+    "references": [
+      {
+        "anchor": "website",
+        "href": "https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview",
+        "caption": "Microsoft &mdash; About Task Dialogs"
       },
-      "logo": {
-          "isThemedSvg": false,
-          "url": "/portfolio/img/project/dialogs/logo.png"
-      },
-      "references": [],
-      "start-date": "2023-06-25",
-      "story": {
-          "$include": "project/dialogs/story.phtml"
-      },
-      "tags": [
-          "oop",
-          "library",
-          "ui"
-      ],
-      "team": [],
-      "technologies": [
-          "visual-studio",
-          "csharp",
-          "dotnet"
-      ],
-      "title": "Dialogs"
+      {
+        "anchor": "youtube",
+        "href": "https://youtu.be/443UNeGrFoM?t=6949",
+        "caption": "Eskil Steenberg &mdash; How I program C (at 1h55m49s)"
+      }
+    ],
+    "end-date": "2023-06-25",
+    "story": {
+      "$include": "project/dialogs/story.phtml"
+    },
+    "tags": [
+      "oop",
+      "library",
+      "ui"
+    ],
+    "team": [],
+    "technologies": [
+      "visual-studio",
+      "csharp",
+      "dotnet"
+    ],
+    "title": "Dialogs"
   },
   "edplusplus": {
-      "abstract": "GUI application for tracking School Grades",
-      "context": "NSI High-school",
-      "end-date": "2022-11-09",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/EDPlusPlus"
-          }
-      },
-      "logo": {
-          "isThemedSvg": false,
-          "url": "/portfolio/img/project/edplusplus/logo.png"
-      },
-      "references": [],
-      "start-date": "2022-10-21",
-      "story": {
-          "$include": "project/edplusplus/story.phtml"
-      },
-      "tags": [
-          "software",
-          "db",
-          "oop"
-      ],
-      "team": [],
-      "technologies": [
-          "python",
-          "sqlite",
-          "spyder"
-      ],
-      "title": "ED++"
+    "abstract": "GUI application for tracking School Grades",
+    "context": "NSI High-school",
+    "end-date": "2022-11-09",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/EDPlusPlus"
+      }
+    },
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/project/edplusplus/logo.png"
+    },
+    "references": [],
+    "start-date": "2022-10-21",
+    "story": {
+      "$include": "project/edplusplus/story.phtml"
+    },
+    "tags": [
+      "software",
+      "db",
+      "oop"
+    ],
+    "team": [],
+    "technologies": [
+      "python",
+      "sqlite",
+      "spyder"
+    ],
+    "title": "ED++"
   },
   "ethercrash": {
-      "abstract": "Stats and data mining on Ethercrash game logs",
-      "context": "Personal",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/ethercrash"
-          }
-      },
-      "references": [],
-      "start-date": "2023-05-24",
-      "story": {
-          "$include": "project/ethercrash/story.phtml"
-      },
-      "tags": [
-          "data",
-          "cli"
-      ],
-      "team": [],
-      "technologies": [
-          "python",
-          "numpy",
-          "c",
-          "csharp",
-          "matplotlib",
-          "csv"
-      ],
-      "title": "Ethercrash"
+    "abstract": "Stats and data mining on Ethercrash game logs",
+    "context": "Personal",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/ethercrash"
+      }
+    },
+    "references": [],
+    "start-date": "2023-05-24",
+    "story": {
+      "$include": "project/ethercrash/story.phtml"
+    },
+    "tags": [
+      "data",
+      "cli"
+    ],
+    "team": [],
+    "technologies": [
+      "python",
+      "numpy",
+      "c",
+      "csharp",
+      "matplotlib",
+      "csv"
+    ],
+    "title": "Ethercrash"
   },
   "file-signature-detector": {
-      "abstract": "File signature (magic number) detector",
-      "context": "NSI High-school",
-      "end-date": "2022-05-08",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/FileSignatureDetector"
-          }
-      },
-      "references": [],
-      "start-date": "2022-04-07",
-      "story": {
-          "$include": "project/file-signature-detector/story.phtml"
-      },
-      "tags": [
-          "software"
-      ],
-      "team": [],
-      "technologies": [
-          "python",
-          "csv"
-      ],
-      "title": "FileSignatureDetector"
+    "abstract": "File signature (magic number) detector",
+    "context": "NSI High-school",
+    "end-date": "2022-05-08",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/FileSignatureDetector"
+      }
+    },
+    "references": [],
+    "start-date": "2022-04-07",
+    "story": {
+      "$include": "project/file-signature-detector/story.phtml"
+    },
+    "tags": [
+      "software"
+    ],
+    "team": [],
+    "technologies": [
+      "python",
+      "csv"
+    ],
+    "title": "FileSignatureDetector"
   },
   "jslave": {
-      "abstract": {
-          "$include": "project/jslave/abstract.phtml"
-      },
-      "context": "Personal",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/jslave"
-          }
-      },
-      "references": [],
-      "start-date": "2024-05-30",
-      "story": {
-          "$include": "project/jslave/story.phtml"
-      },
-      "tags": [
-          "low-level",
-          "cli",
-          "software"
-      ],
-      "team": [],
-      "technologies": [
-          "vs-code",
-          "ebnf",
-          "zig"
-      ],
-      "title": "JSlave"
+    "abstract": {
+      "$include": "project/jslave/abstract.phtml"
+    },
+    "context": "Personal",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/jslave"
+      }
+    },
+    "references": [
+      {
+        "anchor": "website",
+        "href": "https://mermaid.js.org/syntax/classDiagram.html",
+        "caption": "Mermaid.js &mdash; Class diagram syntax"
+      }
+    ],
+    "start-date": "2024-05-30",
+    "story": {
+      "$include": "project/jslave/story.phtml"
+    },
+    "tags": [
+      "low-level",
+      "cli",
+      "software"
+    ],
+    "team": [],
+    "technologies": [
+      "vs-code",
+      "ebnf",
+      "zig"
+    ],
+    "title": "JSlave"
   },
   "portfolio": {
-      "abstract": "My portfolio",
-      "context": "BUT",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/portfolio"
-          }
-      },
-      "references": [],
-      "start-date": "2024-06-17",
-      "story": {
-          "$include": "project/portfolio/story.phtml"
-      },
-      "tags": [
-          "web",
-          "but-realiser",
-          "ux"
-      ],
-      "team": [],
-      "technologies": [
-          "html",
-          "sass",
-          "php",
-          "vs-code",
-          "bash",
-          "json",
-          "markdown",
-          "python",
-          "javascript",
-          "svg"
-      ],
-      "title": "Portfolio"
+    "abstract": "My portfolio",
+    "context": "BUT",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/portfolio"
+      }
+    },
+    "references": [],
+    "start-date": "2024-06-17",
+    "story": {
+      "$include": "project/portfolio/story.phtml"
+    },
+    "tags": [
+      "web",
+      "but-realiser",
+      "ux"
+    ],
+    "team": [],
+    "technologies": [
+      "html",
+      "sass",
+      "php",
+      "vs-code",
+      "bash",
+      "json",
+      "markdown",
+      "python",
+      "javascript",
+      "svg"
+    ],
+    "title": "Portfolio"
   },
   "psdc": {
-      "abstract": "Lannion IUT Pseudocode compiler",
-      "background": "/portfolio/img/project/psdc/bg.png",
-      "context": "Personal",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/psdc"
-          }
+    "abstract": "Lannion IUT Pseudocode compiler",
+    "background": "/portfolio/img/project/psdc/bg.png",
+    "context": "Personal",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/psdc"
+      }
+    },
+    "references": [
+      {
+        "caption": "Lexical analysis, Wikipedia",
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Lexical_analysis"
       },
-      "references": [
-          {
-              "caption": "Lexical analysis, Wikipedia",
-              "anchor": "wikipedia",
-              "href": "https://en.wikipedia.org/wiki/Lexical_analysis"
-          },
-          {
-              "caption": "Parsing, Wikipedia",
-              "anchor": "wikipedia",
-              "href": "https://en.wikipedia.org/wiki/Parsing"
-          },
-          {
-              "caption": "Crafting Interpreters, Robert Nystrom",
-              "anchor": "website",
-              "href": "https://craftinginterpreters.com"
-          },
-          {
-              "caption": "Creating a Compiler, Pixeled, YouTube",
-              "anchor": "youtube",
-              "href": "https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs"
-          },
-          {
-              "caption": "Formal grammar, Wikipedia",
-              "anchor": "wikipedia",
-              "href": "https://en.wikipedia.org/wiki/Formal_grammar"
-          }
-      ],
-      "start-date": "2023-11-15",
-      "story": {
-          "$include": "project/psdc/story.phtml"
+      {
+        "caption": "Parsing, Wikipedia",
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Parsing"
       },
-      "tags": [
-          "software",
-          "oop",
-          "compiler",
-          "but-realiser",
-          "but-optimiser",
-          "cli"
-      ],
-      "team": [],
-      "technologies": [
-          "csharp",
-          "ebnf",
-          "vs-code",
-          "markdown"
-      ],
-      "title": "Psdc"
+      {
+        "caption": "Crafting Interpreters, Robert Nystrom",
+        "anchor": "website",
+        "href": "https://craftinginterpreters.com"
+      },
+      {
+        "caption": "Creating a Compiler, Pixeled, YouTube",
+        "anchor": "youtube",
+        "href": "https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs"
+      },
+      {
+        "caption": "Formal grammar, Wikipedia",
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Formal_grammar"
+      }
+    ],
+    "start-date": "2023-11-15",
+    "story": {
+      "$include": "project/psdc/story.phtml"
+    },
+    "tags": [
+      "software",
+      "oop",
+      "compiler",
+      "but-realiser",
+      "but-optimiser",
+      "cli"
+    ],
+    "team": [],
+    "technologies": [
+      "csharp",
+      "ebnf",
+      "vs-code",
+      "markdown"
+    ],
+    "title": "Psdc"
   },
   "puissance-4": {
-      "abstract": "Command-line Connect 4 game",
-      "context": "NSI High-school",
-      "end-date": "2021-12-05",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/Puissance-4"
-          }
-      },
-      "references": [],
-      "start-date": "2021-11-15",
-      "story": {
-          "$include": "project/puissance-4/story.phtml"
-      },
-      "tags": [
-          "game",
-          "high-level",
-          "cli"
-      ],
-      "team": [],
-      "technologies": [
-          "python",
-          "spyder"
-      ],
-      "title": "Puissance 4"
+    "abstract": "Command-line Connect 4 game",
+    "context": "NSI High-school",
+    "end-date": "2021-12-05",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/Puissance-4"
+      }
+    },
+    "references": [],
+    "start-date": "2021-11-15",
+    "story": {
+      "$include": "project/puissance-4/story.phtml"
+    },
+    "tags": [
+      "game",
+      "high-level",
+      "cli"
+    ],
+    "team": [],
+    "technologies": [
+      "python",
+      "spyder"
+    ],
+    "title": "Puissance 4"
   },
   "s1.01": {
-      "abstract": "Command-line Sudoku game. Implementing a client's needs (S1.01)",
-      "background": "/portfolio/img/project/s1.01/bg.png",
-      "context": "BUT",
-      "end-date": "2023-11-27",
-      "gallery": [
-          {
-              "caption": "Pseudocode algorithm",
-              "iframe-src": "/portfolio/img/project/s1.01/algorithme-pseudocode.html"
-          },
-          {
-              "caption": "Test book (extract)",
-              "iframe-src": "/portfolio/img/project/s1.01/cahier-de-tests.html"
-          },
-          {
-              "caption": "Function list (extract)",
-              "iframe-src": "/portfolio/img/project/s1.01/liste-de-fonctions.html"
-          },
-          {
-              "caption": "Model (extract)",
-              "url": "/portfolio/img/project/s1.01/maquette.png"
-          },
-          {
-              "caption": "Final program (extract)",
-              "iframe-src": "/portfolio/img/project/s1.01/programme-final.html"
-          },
-          {
-              "caption": "Tests (extract)",
-              "iframe-src": "/portfolio/img/project/s1.01/tests.html"
-          }
-      ],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/S1.01"
-          }
+    "abstract": "Command-line Sudoku game. Implementing a client's needs (S1.01)",
+    "background": "/portfolio/img/project/s1.01/bg.png",
+    "context": "BUT",
+    "end-date": "2023-11-27",
+    "gallery": [
+      {
+        "caption": "Pseudocode algorithm",
+        "iframe-src": "/portfolio/img/project/s1.01/algorithme-pseudocode.html"
       },
-      "references": [],
-      "start-date": "2023-10-16",
-      "story": {
-          "$include": "project/s1.01/story.phtml"
+      {
+        "caption": "Test book (extract)",
+        "iframe-src": "/portfolio/img/project/s1.01/cahier-de-tests.html"
       },
-      "tags": [
-          "software",
-          "but-realiser",
-          "algorithms",
-          "cli",
-          "low-level"
-      ],
-      "team": [],
-      "technologies": [
-          "vs-code",
-          "c",
-          "doxygen"
-      ],
-      "title": "C Sudoku game"
+      {
+        "caption": "Function list (extract)",
+        "iframe-src": "/portfolio/img/project/s1.01/liste-de-fonctions.html"
+      },
+      {
+        "caption": "Model (extract)",
+        "url": "/portfolio/img/project/s1.01/maquette.png"
+      },
+      {
+        "caption": "Final program (extract)",
+        "iframe-src": "/portfolio/img/project/s1.01/programme-final.html"
+      },
+      {
+        "caption": "Tests (extract)",
+        "iframe-src": "/portfolio/img/project/s1.01/tests.html"
+      }
+    ],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/S1.01"
+      }
+    },
+    "references": [],
+    "start-date": "2023-10-16",
+    "story": {
+      "$include": "project/s1.01/story.phtml"
+    },
+    "tags": [
+      "software",
+      "but-realiser",
+      "algorithms",
+      "cli",
+      "low-level"
+    ],
+    "team": [],
+    "technologies": [
+      "vs-code",
+      "c",
+      "doxygen"
+    ],
+    "title": "C Sudoku game"
   },
   "s1.02": {
-      "abstract": "Optimized Sudoku grid solver. Comparing algorithmic approaches (S1.02)",
-      "background": "/portfolio/img/project/s1.02/bg.png",
-      "context": "BUT",
-      "end-date": "2024-05-20",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/Matteo-K/Sudoku-Solver"
-          }
-      },
-      "references": [],
-      "start-date": "2023-11-27",
-      "story": {
-          "$include": "project/s1.02/story.phtml"
-      },
-      "tags": [
-          "software",
-          "but-optimiser",
-          "but-collaborer",
-          "algorithms",
-          "cli",
-          "low-level"
-      ],
-      "team": [
-          "kervadec-matteo"
-      ],
-      "technologies": [
-          "vs-code",
-          "c",
-          "markdown",
-          "gprof",
-          "gcov",
-          "make",
-          "bash",
-          "python"
-      ],
-      "title": "Sudone"
+    "abstract": "Optimized Sudoku grid solver. Comparing algorithmic approaches (S1.02)",
+    "background": "/portfolio/img/project/s1.02/bg.png",
+    "context": "BUT",
+    "end-date": "2024-05-20",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/Matteo-K/Sudoku-Solver"
+      }
+    },
+    "references": [],
+    "start-date": "2023-11-27",
+    "story": {
+      "$include": "project/s1.02/story.phtml"
+    },
+    "tags": [
+      "software",
+      "but-optimiser",
+      "but-collaborer",
+      "algorithms",
+      "cli",
+      "low-level"
+    ],
+    "team": [
+      "kervadec-matteo"
+    ],
+    "technologies": [
+      "vs-code",
+      "c",
+      "markdown",
+      "gprof",
+      "gcov",
+      "make",
+      "bash",
+      "python"
+    ],
+    "title": "Sudone"
   },
   "s1.03": {
-      "abstract": "Automation, scripts, containerization, Markdown parser. Setting up a development environment (S1.03)",
-      "context": "BUT",
-      "end-date": "2023-01-21",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/S1.03"
-          }
-      },
-      "references": [],
-      "start-date": "2023-10-25",
-      "story": {
-          "$include": "project/s1.03/story.phtml"
-      },
-      "tags": [
-          "but-administrer",
-          "but-collaborer",
-          "cli",
-          "sysadmin"
-      ],
-      "team": [
-          "chartier--le-goff-marius",
-          "kervadec-matteo",
-          "toe-paolo"
-      ],
-      "technologies": [
-          "bash",
-          "php",
-          "docker",
-          "github",
-          "css",
-          "html",
-          "markdown",
-          "gitlab"
-      ],
-      "title": "Documentation generator"
+    "abstract": "Automation, scripts, containerization, Markdown parser. Setting up a development environment (S1.03)",
+    "context": "BUT",
+    "end-date": "2023-01-21",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/S1.03"
+      }
+    },
+    "references": [],
+    "start-date": "2023-10-25",
+    "story": {
+      "$include": "project/s1.03/story.phtml"
+    },
+    "tags": [
+      "but-administrer",
+      "but-collaborer",
+      "cli",
+      "sysadmin"
+    ],
+    "team": [
+      "chartier--le-goff-marius",
+      "kervadec-matteo",
+      "toe-paolo"
+    ],
+    "technologies": [
+      "bash",
+      "php",
+      "docker",
+      "github",
+      "css",
+      "html",
+      "markdown",
+      "gitlab"
+    ],
+    "title": "Documentation generator"
   },
   "s1.04": {
-      "abstract": "Design and implement a database. Creating a database (S1.04)",
-      "context": "BUT",
-      "end-date": "2024-01-22",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/S1.04"
-          }
-      },
-      "references": [],
-      "start-date": "2023-11-27",
-      "story": {
-          "$include": "project/s1.04/story.phtml"
-      },
-      "tags": [
-          "but-gerer",
-          "but-collaborer",
-          "db"
-      ],
-      "team": [
-          "chartier--le-goff-marius"
-      ],
-      "technologies": [
-          "sql",
-          "sql-workbench",
-          "pgsql",
-          "markdown"
-      ],
-      "title": "Creating a database"
+    "abstract": "Design and implement a database. Creating a database (S1.04)",
+    "context": "BUT",
+    "end-date": "2024-01-22",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/S1.04"
+      }
+    },
+    "references": [],
+    "start-date": "2023-11-27",
+    "story": {
+      "$include": "project/s1.04/story.phtml"
+    },
+    "tags": [
+      "but-gerer",
+      "but-collaborer",
+      "db"
+    ],
+    "team": [
+      "chartier--le-goff-marius"
+    ],
+    "technologies": [
+      "sql",
+      "sql-workbench",
+      "pgsql",
+      "markdown"
+    ],
+    "title": "Creating a database"
   },
   "s1.05": {
-      "abstract": "Create a fake streaming website. Collecting needs (S1.05)",
-      "context": "BUT",
-      "end-date": "2024-01-21",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/Matteo-K/TabasKho"
-          }
-      },
-      "references": [],
-      "start-date": "2023-10-09",
-      "story": {
-          "$include": "project/s1.05/story.phtml"
-      },
-      "tags": [
-          "but-conduire",
-          "but-collaborer",
-          "communication",
-          "web"
-      ],
-      "team": [
-          "chartier--le-goff-marius",
-          "kervadec-matteo",
-          "rolland-stanislas"
-      ],
-      "technologies": [
-          "gitlab",
-          "html",
-          "css",
-          "javascript",
-          "figma",
-          "gloomaps",
-          "vs-code",
-          "markdown"
-      ],
-      "title": "Tabas'Kho"
+    "abstract": "Create a fake streaming website. Collecting needs (S1.05)",
+    "context": "BUT",
+    "end-date": "2024-01-21",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/Matteo-K/TabasKho"
+      }
+    },
+    "references": [],
+    "start-date": "2023-10-09",
+    "story": {
+      "$include": "project/s1.05/story.phtml"
+    },
+    "tags": [
+      "but-conduire",
+      "but-collaborer",
+      "communication",
+      "web"
+    ],
+    "team": [
+      "chartier--le-goff-marius",
+      "kervadec-matteo",
+      "rolland-stanislas"
+    ],
+    "technologies": [
+      "gitlab",
+      "html",
+      "css",
+      "javascript",
+      "figma",
+      "gloomaps",
+      "vs-code",
+      "markdown"
+    ],
+    "title": "Tabas'Kho"
   },
   "s1.06": {
-      "abstract": "Analysis of Focus Entertainment's <abbr title=\"Corporate Social Responsibility\">CSR</abbr> report Economic environment (S1.06)",
-      "context": "BUT",
-      "end-date": "2023-06-11",
-      "gallery": [],
-      "links": {
-          "GitHub project": {
-              "anchor": "github",
-              "href": "https://github.com/users/5cover/projects/3"
-          }
-      },
-      "references": [],
-      "start-date": "2023-09-08",
-      "story": {
-          "$include": "project/s1.06/story.phtml"
-      },
-      "tags": [
-          "but-collaborer"
-      ],
-      "team": [
-          "chartier--le-goff-marius",
-          "kervadec-matteo",
-          "toe-paolo"
-      ],
-      "technologies": [
-          "github",
-          "markdown"
-      ],
-      "title": "Focus Entertainment analysis"
+    "abstract": "Analysis of Focus Entertainment's <abbr title=\"Corporate Social Responsibility\">CSR</abbr> report Economic environment (S1.06)",
+    "context": "BUT",
+    "end-date": "2023-06-11",
+    "gallery": [],
+    "links": {
+      "GitHub project": {
+        "anchor": "github",
+        "href": "https://github.com/users/5cover/projects/3"
+      }
+    },
+    "references": [],
+    "start-date": "2023-09-08",
+    "story": {
+      "$include": "project/s1.06/story.phtml"
+    },
+    "tags": [
+      "but-collaborer"
+    ],
+    "team": [
+      "chartier--le-goff-marius",
+      "kervadec-matteo",
+      "toe-paolo"
+    ],
+    "technologies": [
+      "github",
+      "markdown"
+    ],
+    "title": "Focus Entertainment analysis"
   },
   "s2.01": {
-      "abstract": "Development of a performance hall management application. Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr> (S2.01)",
-      "context": "BUT",
-      "end-date": "2024-06-17",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/S2.05/tree/main/lot10"
-          }
-      },
-      "references": [],
-      "start-date": "2024-05-28",
-      "story": {
-          "$include": "project/s2.01/story.phtml"
-      },
-      "tags": [
-          "but-realiser",
-          "oop",
-          "ui",
-          "ux"
-      ],
-      "team": [
-          "chartier--le-goff-marius",
-          "kervadec-matteo",
-          "toe-paolo"
-      ],
-      "technologies": [
-          "github",
-          "eclipse",
-          "java",
-          "javafx"
-      ],
-      "title": "Le Patio box office"
+    "abstract": "Development of a performance hall management application. Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr> (S2.01)",
+    "context": "BUT",
+    "end-date": "2024-06-17",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/S2.05/tree/main/lot10"
+      }
+    },
+    "references": [],
+    "start-date": "2024-05-28",
+    "story": {
+      "$include": "project/s2.01/story.phtml"
+    },
+    "tags": [
+      "but-realiser",
+      "oop",
+      "ui",
+      "ux"
+    ],
+    "team": [
+      "chartier--le-goff-marius",
+      "kervadec-matteo",
+      "toe-paolo"
+    ],
+    "technologies": [
+      "github",
+      "eclipse",
+      "java",
+      "javafx"
+    ],
+    "title": "Le Patio box office"
   },
   "s2.02": {
-      "abstract": "Innovative solutions to the <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"/portfolio/img/project/s2.02/sujet-sae.pdf\">N-queens problem</a>. Algorithmically exploring a problem (S2.02)",
-      "context": "BUT",
-      "end-date": "2024-03-27",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/N-queens-problem"
-          }
-      },
-      "references": [],
-      "start-date": "2024-03-11",
-      "story": {
-          "$include": "project/s2.02/story.phtml"
-      },
-      "tags": [
-          "but-optimiser",
-          "but-collaborer",
-          "high-level",
-          "algorithms"
-      ],
-      "team": [
-          "chartier--le-goff-marius",
-          "kervadec-matteo",
-          "toe-paolo"
-      ],
-      "technologies": [
-          "python",
-          "github",
-          "json",
-          "markdown",
-          "mermaid"
-      ],
-      "title": "N-queens problem"
+    "abstract": "Innovative solutions to the <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"/portfolio/img/project/s2.02/sujet-sae.pdf\">N-queens problem</a>. Algorithmically exploring a problem (S2.02)",
+    "context": "BUT",
+    "end-date": "2024-03-27",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/N-queens-problem"
+      }
+    },
+    "references": [],
+    "start-date": "2024-03-11",
+    "story": {
+      "$include": "project/s2.02/story.phtml"
+    },
+    "tags": [
+      "but-optimiser",
+      "but-collaborer",
+      "high-level",
+      "algorithms"
+    ],
+    "team": [
+      "chartier--le-goff-marius",
+      "kervadec-matteo",
+      "toe-paolo"
+    ],
+    "technologies": [
+      "python",
+      "github",
+      "json",
+      "markdown",
+      "mermaid"
+    ],
+    "title": "N-queens problem"
   },
   "s2.03": {
-      "abstract": "Set up a Web server. Setting up network services (S2.03)",
-      "context": "BUT",
-      "end-date": "2024-06-05",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/S2.03"
-          }
-      },
-      "references": [],
-      "start-date": "2024-05-14",
-      "story": {
-          "$include": "project/s2.03/story.phtml"
-      },
-      "tags": [
-          "but-administrer",
-          "but-collaborer",
-          "web",
-          "sysadmin"
-      ],
-      "team": [
-          "chartier--le-goff-marius",
-          "kervadec-matteo",
-          "toe-paolo"
-      ],
-      "technologies": [
-          "github",
-          "php",
-          "apache2",
-          "mysql",
-          "bash",
-          "vs-code",
-          "css",
-          "html",
-          "mousepad"
-      ],
-      "title": "Weather website"
+    "abstract": "Set up a Web server. Setting up network services (S2.03)",
+    "context": "BUT",
+    "end-date": "2024-06-05",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/S2.03"
+      }
+    },
+    "references": [],
+    "start-date": "2024-05-14",
+    "story": {
+      "$include": "project/s2.03/story.phtml"
+    },
+    "tags": [
+      "but-administrer",
+      "but-collaborer",
+      "web",
+      "sysadmin"
+    ],
+    "team": [
+      "chartier--le-goff-marius",
+      "kervadec-matteo",
+      "toe-paolo"
+    ],
+    "technologies": [
+      "github",
+      "php",
+      "apache2",
+      "mysql",
+      "bash",
+      "vs-code",
+      "css",
+      "html",
+      "mousepad"
+    ],
+    "title": "Weather website"
   },
   "s2.04": {
-      "abstract": "Data mining and OSINT from french middle and high schools. Operating a database (S2.04)",
-      "context": "BUT",
-      "end-date": "2024-06-12",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/S2.04"
-          }
-      },
-      "references": [],
-      "start-date": "2024-04-23",
-      "story": {
-          "$include": "project/s2.04/story.phtml"
-      },
-      "tags": [
-          "but-gerer",
-          "but-collaborer",
-          "data",
-          "db"
-      ],
-      "team": [
-          "kervadec-matteo"
-      ],
-      "technologies": [
-          "replit",
-          "sql",
-          "mysql",
-          "python",
-          "sql-workbench",
-          "pandas",
-          "matplotlib",
-          "numpy"
-      ],
-      "title": "OSINT and data mining on education"
+    "abstract": "Data mining and OSINT from french middle and high schools. Operating a database (S2.04)",
+    "context": "BUT",
+    "end-date": "2024-06-12",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/S2.04"
+      }
+    },
+    "references": [],
+    "start-date": "2024-04-23",
+    "story": {
+      "$include": "project/s2.04/story.phtml"
+    },
+    "tags": [
+      "but-gerer",
+      "but-collaborer",
+      "data",
+      "db"
+    ],
+    "team": [
+      "kervadec-matteo"
+    ],
+    "technologies": [
+      "replit",
+      "sql",
+      "mysql",
+      "python",
+      "sql-workbench",
+      "pandas",
+      "matplotlib",
+      "numpy"
+    ],
+    "title": "OSINT and data mining on education"
   },
   "s2.05": {
-      "abstract": "Traditional (Waterfall) management for the Patio box office application. Managing a project (S2.05)",
-      "context": "BUT",
-      "end-date": "2024-06-17",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/S2.05"
-          }
-      },
-      "references": [],
-      "start-date": "2024-05-15",
-      "story": {
-          "$include": "project/s2.05/story.phtml"
-      },
-      "tags": [
-          "but-conduire",
-          "but-collaborer",
-          "communication"
-      ],
-      "team": [
-          "chartier--le-goff-marius",
-          "kervadec-matteo",
-          "toe-paolo"
-      ],
-      "technologies": [
-          "github"
-      ],
-      "title": "Le Patio box office application project management"
+    "abstract": "Traditional (Waterfall) management for the Patio box office application. Managing a project (S2.05)",
+    "context": "BUT",
+    "end-date": "2024-06-17",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/S2.05"
+      }
+    },
+    "references": [],
+    "start-date": "2024-05-15",
+    "story": {
+      "$include": "project/s2.05/story.phtml"
+    },
+    "tags": [
+      "but-conduire",
+      "but-collaborer",
+      "communication"
+    ],
+    "team": [
+      "chartier--le-goff-marius",
+      "kervadec-matteo",
+      "toe-paolo"
+    ],
+    "technologies": [
+      "github"
+    ],
+    "title": "Le Patio box office application project management"
   },
   "s2.06": {
-      "abstract": "Planning a <em>team building</em> event and making a promotional film. Organizing teamwork (S2.06)",
-      "context": "BUT",
-      "end-date": "2024-06-06",
-      "gallery": [],
-      "links": {
-          "GitHub project": {
-              "anchor": "github",
-              "href": "https://github.com/users/5cover/projects/9"
-          }
-      },
-      "references": [],
-      "start-date": "2024-04-18",
-      "story": {
-          "$include": "project/s2.06/story.phtml"
-      },
-      "tags": [
-          "but-collaborer"
-      ],
-      "team": [
-          "chartier--le-goff-marius",
-          "kervadec-matteo",
-          "toe-paolo"
-      ],
-      "technologies": [
-          "github"
-      ],
-      "title": "Knight for a Day"
+    "abstract": "Planning a <em>team building</em> event and making a promotional film. Organizing teamwork (S2.06)",
+    "context": "BUT",
+    "end-date": "2024-06-06",
+    "gallery": [],
+    "links": {
+      "GitHub project": {
+        "anchor": "github",
+        "href": "https://github.com/users/5cover/projects/9"
+      }
+    },
+    "references": [],
+    "start-date": "2024-04-18",
+    "story": {
+      "$include": "project/s2.06/story.phtml"
+    },
+    "tags": [
+      "but-collaborer"
+    ],
+    "team": [
+      "chartier--le-goff-marius",
+      "kervadec-matteo",
+      "toe-paolo"
+    ],
+    "technologies": [
+      "github"
+    ],
+    "title": "Knight for a Day"
   },
   "the-last-teacher": {
-      "abstract": "Post-apocalyptic story",
-      "background": "/portfolio/img/project/the-last-teacher/bg.webp",
-      "context": "Personal",
-      "end-date": "2023-06-27",
-      "gallery": [],
-      "links": {},
-      "references": [],
-      "start-date": "2022-11-15",
-      "story": {
-          "$include": "project/the-last-teacher/story.phtml"
-      },
-      "tags": [
-          "art"
-      ],
-      "team": [],
-      "technologies": [],
-      "title": "The Last Teacher"
+    "abstract": "Post-apocalyptic story",
+    "background": "/portfolio/img/project/the-last-teacher/bg.webp",
+    "context": "Personal",
+    "end-date": "2023-06-27",
+    "gallery": [],
+    "links": {},
+    "references": [],
+    "start-date": "2022-11-15",
+    "story": {
+      "$include": "project/the-last-teacher/story.phtml"
+    },
+    "tags": [
+      "art"
+    ],
+    "team": [],
+    "technologies": [],
+    "title": "The Last Teacher"
   },
   "tregoria": {
-      "abstract": "A look back at our environment in Cities: Skylines",
-      "context": "Personal",
-      "gallery": [],
-      "links": {
-          "Instagram post": {
-              "anchor": "instagram",
-              "href": "https://www.instagram.com/p/CjxQUO3LryP"
-          }
+    "abstract": "A look back at our environment in Cities: Skylines",
+    "context": "Personal",
+    "gallery": [],
+    "links": {
+      "Instagram post": {
+        "anchor": "instagram",
+        "href": "https://www.instagram.com/p/CjxQUO3LryP"
+      }
+    },
+    "references": [
+      {
+        "caption": "Cities Skylines: Bordertown, Two Dollars Twenty, YouTube",
+        "anchor": "youtube",
+        "href": "https://youtube.com/playlist?list=PL0vu9rx9cHrUoRedRsFzX367j3DlE_dTk"
       },
-      "references": [
-          {
-              "caption": "Cities Skylines: Bordertown, Two Dollars Twenty, YouTube",
-              "anchor": "youtube",
-              "href": "https://youtube.com/playlist?list=PL0vu9rx9cHrUoRedRsFzX367j3DlE_dTk"
-          },
-          {
-              "caption": "Cities Skylines: MARS, Citywokcitywall, YouTube",
-              "anchor": "youtube",
-              "href": "https://youtube.com/playlist?list=PLkBlOw_hzgdfL6Gqw0l9P1TYKn_WIgrd-"
-          }
-      ],
-      "start-date": "2022-10-15",
-      "story": {
-          "$include": "project/tregoria/story.phtml"
-      },
-      "tags": [
-          "art"
-      ],
-      "team": [],
-      "technologies": [
-          "cities-skylines"
-      ],
-      "title": "Trégoria"
+      {
+        "caption": "Cities Skylines: MARS, Citywokcitywall, YouTube",
+        "anchor": "youtube",
+        "href": "https://youtube.com/playlist?list=PLkBlOw_hzgdfL6Gqw0l9P1TYKn_WIgrd-"
+      }
+    ],
+    "start-date": "2022-10-15",
+    "story": {
+      "$include": "project/tregoria/story.phtml"
+    },
+    "tags": [
+      "art"
+    ],
+    "team": [],
+    "technologies": [
+      "cities-skylines"
+    ],
+    "title": "Trégoria"
   },
   "winclean": {
-      "abstract": "Windows optimization and debloating utility",
-      "background": "/portfolio/img/project/winclean/bg.png",
-      "context": "Personal",
-      "gallery": [
-          {
-              "caption": "Script execution",
-              "url": "/portfolio/img/project/winclean/gallery/1.png"
-          },
-          {
-              "caption": "Application main window",
-              "url": "/portfolio/img/project/winclean/gallery/2.png"
-          }
-      ],
-      "links": {
-          "CommentÇaMarche article (French)": {
-              "anchor": "ccm",
-              "href": "https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean"
-          },
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/WinClean"
-          }
+    "abstract": "Windows optimization and debloating utility",
+    "background": "/portfolio/img/project/winclean/bg.png",
+    "context": "Personal",
+    "gallery": [
+      {
+        "caption": "Script execution",
+        "url": "/portfolio/img/project/winclean/gallery/1.png"
       },
-      "logo": {
-          "isThemedSvg": false,
-          "url": "/portfolio/img/project/winclean/logo.png"
+      {
+        "caption": "Application main window",
+        "url": "/portfolio/img/project/winclean/gallery/2.png"
+      }
+    ],
+    "links": {
+      "CommentÇaMarche article (French)": {
+        "anchor": "ccm",
+        "href": "https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean"
       },
-      "references": [],
-      "start-date": "2022-08-15",
-      "story": {
-          "$include": "project/winclean/story.phtml"
-      },
-      "tags": [
-          "full-stack",
-          "oop",
-          "software",
-          "ui",
-          "ux",
-          "but-realiser",
-          "cli"
-      ],
-      "team": [],
-      "technologies": [
-          "csharp",
-          "github",
-          "inno-setup",
-          "powershell",
-          "visual-studio"
-      ],
-      "title": "WinClean"
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/WinClean"
+      }
+    },
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/project/winclean/logo.png"
+    },
+    "references": [],
+    "start-date": "2022-08-15",
+    "story": {
+      "$include": "project/winclean/story.phtml"
+    },
+    "tags": [
+      "full-stack",
+      "oop",
+      "software",
+      "ui",
+      "ux",
+      "but-realiser",
+      "cli"
+    ],
+    "team": [],
+    "technologies": [
+      "csharp",
+      "github",
+      "inno-setup",
+      "powershell",
+      "visual-studio"
+    ],
+    "title": "WinClean"
   },
   "wpfzard": {
-      "abstract": {
-          "$include": "project/wpfzard/abstract.phtml"
-      },
-      "context": "Personal",
-      "end-date": "2022-11-23",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/WPFZard"
-          }
-      },
-      "logo": {
-          "isThemedSvg": false,
-          "url": "/portfolio/img/project/wpfzard/logo.png"
-      },
-      "references": [],
-      "start-date": "2022-07-21",
-      "story": {
-          "$include": "project/wpfzard/story.phtml"
-      },
-      "tags": [
-          "oop",
-          "library",
-          "ui"
-      ],
-      "team": [],
-      "technologies": [
-          "csharp",
-          "visual-studio",
-          "dotnet",
-          "wpf"
-      ],
-      "title": "WPFZard"
+    "abstract": {
+      "$include": "project/wpfzard/abstract.phtml"
+    },
+    "context": "Personal",
+    "end-date": "2022-11-23",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/WPFZard"
+      }
+    },
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/project/wpfzard/logo.png"
+    },
+    "references": [],
+    "start-date": "2022-07-21",
+    "story": {
+      "$include": "project/wpfzard/story.phtml"
+    },
+    "tags": [
+      "oop",
+      "library",
+      "ui"
+    ],
+    "team": [],
+    "technologies": [
+      "csharp",
+      "visual-studio",
+      "dotnet",
+      "wpf"
+    ],
+    "title": "WPFZard"
   },
   "ztest": {
-      "abstract": {
-          "$include": "project/ztest/abstract.phtml"
-      },
-      "context": "Personal",
-      "gallery": [],
-      "links": {
-          "GitHub repository": {
-              "anchor": "github",
-              "href": "https://github.com/5cover/ztest"
-          }
-      },
-      "references": [],
-      "start-date": "2024-06-01",
-      "story": {
-          "$include": "project/ztest/story.phtml"
-      },
-      "tags": [
-          "software",
-          "cli",
-          "low-level"
-      ],
-      "team": [],
-      "technologies": [
-          "zig",
-          "vs-code"
-      ],
-      "title": "ztest"
+    "abstract": {
+      "$include": "project/ztest/abstract.phtml"
+    },
+    "context": "Personal",
+    "gallery": [],
+    "links": {
+      "GitHub repository": {
+        "anchor": "github",
+        "href": "https://github.com/5cover/ztest"
+      }
+    },
+    "references": [],
+    "start-date": "2024-06-01",
+    "story": {
+      "$include": "project/ztest/story.phtml"
+    },
+    "tags": [
+      "software",
+      "cli",
+      "low-level"
+    ],
+    "team": [],
+    "technologies": [
+      "zig",
+      "vs-code"
+    ],
+    "title": "ztest"
   }
 }

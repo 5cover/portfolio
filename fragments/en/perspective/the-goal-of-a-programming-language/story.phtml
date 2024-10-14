@@ -79,7 +79,7 @@ CODE) ?>
         <figure class="figure">
             <?= $f->codeblock(<<<CODE
 const stdout = std.io.getStdOut().writer();
-try stdout.print("Hello world\n");
+try stdout.print("Hello world\\n");
 CODE) ?>
             <figcaption>This code can also fail. But the <?= $f->code('try') ?> indicates that in case of an error, the error is <strong>returned</strong>. If we're in the <?= $f->code('main') ?> function, it will crash the program.</figcaption>
         </figure>
@@ -144,7 +144,7 @@ CODE) ?>
         <p>No need to prefix internal functions with an underscore anymore! <?= $f->code('pub') ?> is all you'll need.</p>
         <p>Seriously though, encapsulation is non-existent in <?= $f->def('c') ?>. Although the convention of <q>if it starts with an underscore, don't touch it</q> has been around for a while now, it's always safer when the language enforces the invariant of <q>this thing can't be accessed outside this module / structure</q>.</p>
         <p>In <?= $f->def('c') ?>, you have to get creative. In order to avoid any name conflicts with internals from other librairies the user might implemenent, your internal prefix should not only start with an underscore, but also contain an (hopefully) unique string. In addition, the underscore may not be followed by an uppercase letter unless you want to violate the standard and open yourself to name conflics with compiler or standard library internals.</p>
-        <p>For instance, <?= $f->a("Cori", 'project/cori.html') ?> uses the prefix <?= $f->code('_cori_') ?> on internal macros, functions, structures, type aliases, and so on.</p>
+        <p>For instance, <?= $f->a('Cori', 'project/cori.html') ?> uses the prefix <?= $f->code('_cori_') ?> on internal macros, functions, structures, type aliases, and so on.</p>
         <p>In <?= $f->def('zig') ?>, you don't need any of this madness. Private is the default. Export functions, structures and methods using the <?= $f->code('pub') ?> keyword.</p>
     </div>
 </article>

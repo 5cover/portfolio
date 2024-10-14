@@ -8,10 +8,10 @@ $f = start('en');
     <p>During our practical work, we very often had to translate pseudocode programs to <?= $f->def('c') ?>. This task is quite daunting, hence my desire to automate it. And that's what led me to discover compiler design.</p>
     <p>As an example, here's a simple pseudocode program that prints <q>Hello</q> to the screen:</p>
     <?= $f->codeblock(<<<CODE
-    programme AfficherBonjour c'est début
-        écrireÉcran("Hello");
-    fin
-    CODE) ?>
+programme AfficherBonjour c'est début
+    écrireÉcran("Hello");
+fin
+CODE) ?>
     <p>Here is an equivalent program in <?= $f->def('c') ?>:</p>
     <?= $f->codeblock(<<<CODE
 #include <stdio.h>;
@@ -28,7 +28,7 @@ CODE) ?>
     <p>Let's start with the original source code, at the foot of the mountain. As the steps go by (scanning, parsing, analysis), the representation of the code becomes more and more high-level, that is, it focuses more on the expressed semantics than on implementation details.</p>
     <p>Once the top is reached, we are halfway through the compilation. We have a breathtaking view of the semantics of the code, that is, the meaning that the user gives it through the syntax of our language.</p>
     <p>So let's begin our descent. Let's successively convert our high-level representation into forms that approximate our final goal: the machine language, which will be executed directly by the processor.</p>
-    <p>I only discovered Crafting Interpreters quite late in the project. I originally based it on the playlist <?= $f->term('Creating a Compiler', 'en') ?><?= $f->ref() ?> by <?= $f->blank("Pixeled", "https://www.youtube.com/@pixeled-yt") ?> on YouTube, where we see the design and implementation of a compiler for a language <?= $f->term('ex-nihilo') ?> called Hydrogen. The compiler transforms the code into assembly, then uses <?= $f->def('nasm') ?> to generate the machine code.</p>
+    <p>I only discovered Crafting Interpreters quite late in the project. I originally based it on the playlist <?= $f->term('Creating a Compiler', 'en') ?><?= $f->ref() ?> by <?= $f->blank('Pixeled', 'https://www.youtube.com/@pixeled-yt') ?> on YouTube, where we see the design and implementation of a compiler for a language <?= $f->term('ex-nihilo') ?> called Hydrogen. The compiler transforms the code into assembly, then uses <?= $f->def('nasm') ?> to generate the machine code.</p>
     <p>It is in these videos that I learned the basics of lexical analysis<?= $f->ref() ?>, formal grammars<?= $f->ref() ?>, or syntactic analysis<?= $f->ref() ?>. It is really interesting and I've learned a lot.</p>
     <p>This project is far from being done &mdash; many features are yet to implemented, notably for <?= $f->def('vs-code') ?> integration with a language server.</p>
 </div>

@@ -16,7 +16,7 @@
     padding-left: 1px;
     text-indent: initial;
     unicode-bidi: isolate;
-    vertical-align: text-top;
+    vertical-align: super;
 }
 
 /* Shallow list item
@@ -185,7 +185,7 @@
  *
  * $border-radius-factor: number -> border radius multiplier
  */
- @mixin horizontal-box-border-radius($border-radius-factor: 1) {
+@mixin horizontal-box-border-radius($border-radius-factor: 1) {
     border-radius: calc($border-radius-factor * .25lh);
 }
 
@@ -195,10 +195,9 @@
  *
  * $padding-factor: number -> padding multiplier
  */
- @mixin horizontal-box-padding($padding-factor: 1) {
+@mixin horizontal-box-padding($padding-factor: 1) {
     padding: calc($padding-factor * .25lh) calc($padding-factor * 1ch);
 }
-
 
 /* Horizontal box
  *
@@ -386,9 +385,8 @@
  *
  * Place in the center and limit width to max line length
  */
-
- @mixin text-strip {
+@mixin text-strip {
     width: const.$max-line-length;
     margin-left: auto;
     margin-right: auto;
- }
+}

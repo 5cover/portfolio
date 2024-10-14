@@ -48,8 +48,8 @@ a|link
 ## Margins
 
 - Between blocks
-    - Vertical : 60px
-    - Horizontal : 0,03125vw
+  - Vertical : 60px
+  - Horizontal : 0,03125vw
 - Between items : 50px
 
 Base border radius : 25px

@@ -108,17 +108,13 @@ main {
     }
 }
 
-/* Reference list
+/* Reference cite
  *
- * A list of references
+ * A reference citation link with a backlink.
  */
-.list-reference {
-    padding-left: 2em;
-
-    .link {
-        text-decoration: none;
-        @include util.iconed-text($underline: true);
-    }
+.ref-cite {
+    text-decoration: none;
+    @include util.iconed-text($underline: true);
 }
 
 /* Reference backlinck

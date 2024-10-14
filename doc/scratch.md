@@ -218,11 +218,12 @@ a marvel of engineering. a timeless lesson for all of us programmers.
 
 Script & video
 
-## English translation
+## Psdc Blog
 
-currently translating definitions.json and adding missing keys
+Some ideas for blog articles i want to make.
 
-translate and add other files
+### Panic and synchronize: how a parser handles errors
 
-- translate history
-- translate but informatique
+### C#: functional programming, at the cost of performance
+
+### The case of `nomFichierLog`: control flow analysis or quantum physics?

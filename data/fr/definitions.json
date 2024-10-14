@@ -1,4 +1,83 @@
 {
+  "chain-of-responsibility": {
+    "type": "design-pattern",
+    "name": {
+      "full": "Chaîne de responsabilité"
+    },
+    "synopsis": "Un patron de conception logiciel qui permet à un événement d'être traité par une chaîne d'objets.",
+    "wiki": "https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_responsabilit%C3%A9"
+  },
+  "facade": {
+    "type": "design-pattern",
+    "name": {
+      "full": "Façade"
+    },
+    "synopsis": "Un patron de conception logiciel qui fournit une interface simplifiée pour un corps de code plus important.",
+    "wiki": "https://fr.wikipedia.org/wiki/Fa%C3%A7ade_(patron_de_conception)"
+  },
+  "adapter": {
+    "type": "design-pattern",
+    "name": {
+      "full": "Adaptateur"
+    },
+    "synopsis": "Un patron de conception logiciel qui permet à l'interface d'une classe existante d'être utilisée comme une autre interface.",
+    "wiki": "https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)"
+  },
+  "ci-cd": {
+    "type": "paradigm",
+    "name": {
+      "abbr": "CI/CD",
+      "full": "Intégration continue/Déploiement continu"
+    },
+    "synopsis": "Une pratique de développement logiciel où les développeurs intègrent du code dans un dépôt partagé fréquemment, puis construisent et testent automatiquement le logiciel.",
+    "wiki": "https://fr.wikipedia.org/wiki/CI/CD"
+  },
+  "nuget": {
+    "type": "library",
+    "name": {
+      "full": "NuGet"
+    },
+    "synopsis": "Un gestionnaire de paquets pour la plateforme de développement Microsoft, incluant .NET.",
+    "wiki": "https://fr.wikipedia.org/wiki/NuGet",
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/definition/nuget/logo.svg"
+    }
+  },
+  "oop": {
+    "type": "paradigm",
+    "name": {
+      "abbr": "POO",
+      "full": "Prograammation orientée objet"
+    },
+    "synopsis": "Un paradigme de programmation basé sur le concept d'<q>objets</q>, qui peuvent contenir des données et du code.",
+    "wiki": "https://fr.wikipedia.org/wiki/Programmation_orient%C3%A9e_objet"
+  },
+  "nunit": {
+    "type": "library",
+    "name": {
+      "full": "NUnit"
+    },
+    "synopsis": "Un framework de test unitaire open-source pour .NET, axé sur la simplicité et la facilité d'utilisation.",
+    "wiki": "https://en.wikipedia.org/wiki/NUnit",
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/definition/nunit/logo.png"
+    }
+  },
+  "uml": {
+    "name": {
+      "abbr": "UML",
+      "full": "Unified Modeling Language"
+    },
+    "synopsis": "Langage de modélisation graphique utilisé pour décrire, spécifier, construire et documenter des systèmes logiciels.",
+    "wiki": "https://fr.wikipedia.org/wiki/UML_(informatique)",
+    "type": "computer-language",
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/definition/uml/logo.svg"
+    }
+  },
   "anno2070": {
     "logo": {
       "isThemedSvg": false,
@@ -720,7 +799,7 @@
     "name": {
       "full": "Spyder"
     },
-    "synopsis": "Environnement scientifique gratuit et open source écrit en Python, pour Python, et conçu par et pour des scientifiques, ingénieurs et analystes de données. Il présente une combinaison unique des fonctionnalités avancées d'édition, d'analyse, de débogage et de profilage d'un outil de développement complet avec l'exploration des données, l'exécution interactive, l'inspection approfondie et les superbes capacités de visualisation d'un package scientifique.",
+    "synopsis": "Spyder est un environnement de développement intégré (IDE) open source spécialement conçu pour la programmation scientifique en langage Python. Il fait partie de la distribution Anaconda mais peut également être installé indépendamment.",
     "type": "ide",
     "wiki": "https://www.spyder-ide.org/"
   },
@@ -787,7 +866,7 @@
   },
   "task-dialog": {
     "name": {
-      "full": "Dialogue de tâche"
+      "full": "dialogue de tâche"
     },
     "synopsis": "Une boîte de dialogue utilisée pour afficher des informations et recevoir une entrée simple de l’utilisateur. Comme une boîte de message, elle est mise en forme par le système d’exploitation en fonction des paramètres que vous définissez. Toutefois, une boîte de dialogue de tâche a beaucoup plus de fonctionnalités qu’une boîte de message.",
     "type": "ui",

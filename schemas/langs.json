@@ -53,7 +53,10 @@
                 "$ref": "util/html.json"
               }
             },
-            "required": ["name", "desc"]
+            "required": [
+              "name",
+              "desc"
+            ]
           }
         },
         "additionalProperties": {

@@ -1,25 +1,25 @@
 {
-    "$schema": "https://json-schema.org/draft-07/schema",
-    "title": "HTML content",
-    "oneOf": [
-        {
-            "description": "direct HTML",
-            "type": "string",
-            "minLength": 1
-        },
-        {
-            "type": "object",
-            "description": "PHP inclusion",
-            "properties": {
-                "$include": {
-                    "description": "URI relative to the fragment/{language-tag} directory",
-                    "type": "string",
-                    "format": "uri-reference"
-                }
-            },
-            "required": [
-                "$include"
-            ]
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "HTML content",
+  "oneOf": [
+    {
+      "description": "direct HTML",
+      "type": "string",
+      "minLength": 1
+    },
+    {
+      "type": "object",
+      "description": "PHP inclusion",
+      "properties": {
+        "$include": {
+          "description": "URI relative to the fragment/{language-tag} directory",
+          "type": "string",
+          "format": "uri-reference"
         }
-    ]
+      },
+      "required": [
+        "$include"
+      ]
+    }
+  ]
 }

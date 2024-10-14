@@ -6,14 +6,14 @@ require_once 'data.php';
 [$lang, $page] = parse_args();
 
 $piano_tiles = [
-    "passions.html#mountain",
-    "passions.html#sandbox-videogames",
-    "project/tregoria.html",
-    "project/2l2w-french-rural-road.html",
-    "project/ethercrash.html",
-    "project/psdc.html",
-    "project/sudone.html",
-    "project/winclean.html",
+    'passions.html#mountain',
+    'passions.html#sandbox-videogames',
+    'project/tregoria.html',
+    'project/2l2w-french-rural-road.html',
+    'project/ethercrash.html',
+    'project/psdc.html',
+    'project/s1.02.html',
+    'project/winclean.html',
 ];
 
 put_doctype_html($page, $lang);
@@ -24,9 +24,10 @@ put_head($page, $lang);
     <?php put_header($page, $lang) ?>
     <main>
         <ul class="lvl list-piano-tiles">
-            <?php foreach ($piano_tiles as $i => $href) {
-                $num = $i + 1;
-                $src = get_web_url(glob_web_single("/portfolio/img/piano-tile/$num.*"));
+            <?php
+                foreach ($piano_tiles as $i => $href) {
+                    $num = $i + 1;
+                    $src = get_web_url(glob_web_single("/portfolio/img/piano-tile/$num.*"));
             ?>
                 <li>
                     <figure>
@@ -70,11 +71,11 @@ put_head($page, $lang);
                 </address>
             </div>
             <?php
-            $CV_URL = 'cv-bardini-raphael.pdf';
-            $CV_URL_PREVIEW =  'cv-bardini-raphael-preview.jpg';
-            exec("echo quit | gs -dSAFER -dBATCH -sDEVICE=jpeg -sOutputFile='"
-                . $page->get_web_dir($lang) . "/$CV_URL_PREVIEW' '"
-                . $page->get_web_dir($lang) . "/$CV_URL'");
+                $CV_URL         = 'cv-bardini-raphael.pdf';
+                $CV_URL_PREVIEW = 'cv-bardini-raphael-preview.jpg';
+                exec("echo quit | gs -dSAFER -dBATCH -sDEVICE=jpeg -sOutputFile='"
+                         . $page->get_web_dir($lang) . "/$CV_URL_PREVIEW' '"
+                         . $page->get_web_dir($lang) . "/$CV_URL'");
             ?>
             <a href="<?= $CV_URL ?>" target="_blank" rel="noopener noreferrer">
                 <img src="<?= $CV_URL_PREVIEW ?>" alt="<?= $lang->get('indexMyResumePreview') ?>" width="300" height="212" loading="lazy">

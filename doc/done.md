@@ -474,3 +474,12 @@ it's kind of annoying. i'm fine with the page being longer even though there are
 ## global index page: automatically redirects to the user's preferred language
 
 ## fix icon alignment in buttons
+
+## English translation
+
+currently translating definitions.json and adding missing keys
+
+translate and add other files
+
+- translate history
+- translate but informatique

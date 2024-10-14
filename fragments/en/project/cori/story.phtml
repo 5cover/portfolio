@@ -1,3 +1,56 @@
-<div>
-    <p>todo.. raconter la difficulté et les problèmes du scanf en c...</p>
-</div>
+<?php
+require_once 'fragment.php';
+$f = start('en');
+?>
+<p>Cori is a single-file <?= $f->def('c') ?> library designed to simplify the process of getting user input in C programs. It provides a comprehensive set of functions that handle common input scenarios and potential errors, allowing programmers to focus more on their program's logic rather than the intricacies of input handling. Additionally, Cori aims to serve as a safer and more user-friendly replacement for the <code>scanf</code> function, which is often misused by beginners and can easily lead to undefined behavior<?= $f->ref() ?>.</p>
+<h3 id="problems-cori-intends-to-solve">Problems Cori intends to solve</h3>
+<ol class="list">
+    <li><p>Simplify user input handling: Cori provides a set of functions that handle various types of user input, making it easier for programmers to collect and process input without worrying about the underlying complexities.</p></li>
+    <li><p>Replace <code>scanf</code>: The <code>scanf</code> function is notoriously difficult to use correctly, especially for beginners. Cori offers a safer and more intuitive alternative, reducing the risk of undefined behavior and making input handling more straightforward.</p></li>
+</ol>
+<h3 id="core-concepts">Core concepts</h3>
+<h4 id="types-of-input">Types of input</h4>
+<p>Cori supports a wide range of input types, each represented by a specific C type:</p>
+<ul class="list">
+    <li><p>Signed integers: <code>intmax</code>, <code>longlong</code>, <code>long</code>, <code>int</code>, <code>short</code></p></li>
+    <li><p>Unsigned integers: <code>uintmax</code>, <code>ulonglong</code>, <code>ulong</code>, <code>uint</code>, <code>ushort</code></p></li>
+    <li><p>Floating point numbers: <code>longdouble</code>, <code>double</code>, <code>float</code></p></li>
+    <li><p>Text: <code>character</code>, <code>until</code>, <code>line</code>, <code>linel</code></p></li>
+    <li><p>Other: <code>boolean</code></p></li>
+</ul>
+<h4 id="error-handling-system">Error handling system</h4>
+<p>Cori includes a robust error handling system that allows programmers to define custom error handlers. The library defines an enumeration <code>InputError</code> that represents all possible error conditions, such as empty input, end-of-file (EOF), invalid boolean characters, multiple characters, not a number, number out of bounds, out of memory, and unsupported numeric base.</p>
+<h4 id="function-families">Function families</h4>
+<p>For each type of input, Cori provides a family of functions to handle different scenarios:</p>
+<ul class="list">
+    <li><p><code>read_&lt;typename&gt;</code>: Reads input from <code>stdin</code> and handles errors using a NO-OP (no operation) error handler.</p></li>
+    <li><p><code>read_&lt;typename&gt;_or</code>: Reads input from <code>stdin</code> and handles errors using a specified error handler.</p></li>
+    <li><p><code>read_&lt;typename&gt;_from</code>: Reads input from a specified <code>FILE *</code> stream and handles errors using a NO-OP error handler.</p></li>
+    <li><p><code>read_&lt;typename&gt;_or_from</code>: Reads input from a specified <code>FILE *</code> stream and handles errors using a specified error handler.</p></li>
+    <li><p><code>tryRead_&lt;typename&gt;</code>: Reads input from <code>stdin</code> once and returns an error code if an error occurs.</p></li>
+    <li><p><code>tryRead_&lt;typename&gt;_from</code>: Reads input from a specified <code>FILE *</code> stream once and returns an error code if an error occurs.</p></li>
+</ul>
+<h3 id="techniques-and-patterns-used">Techniques and patterns used</h3>
+<h4 id="stb-style-libraries">STB-Style Libraries</h4>
+<p>Cori is designed as an STB-style library<?= $f->ref() ?>, which means it consists of a single header file that contains both the interface and the implementation. This makes it easy to share and reuse, as users only need to include the header file in their projects. However, this approach can lead to large header files, so it is best suited for simple, single-purpose libraries like Cori.</p>
+<h4 id="heavy-usage-of-macros">Heavy usage of macros</h4>
+<p>Cori makes extensive use of macros for metaprogramming, allowing for the generation of repetitive code patterns. One notable pattern used is the X-macro pattern<?= $f->ref() ?>, which enables the definition of a set of related functions and data structures in a concise and maintainable way. This approach reduces code duplication and makes the library more flexible and easier to extend.</p>
+<h3 id="example">Example</h3>
+<p>Cori is designed with simplicity in mind.</p>
+<figure class="figure">
+    <?= $f->codeblock(<<<CODE
+#define CORI_IMPLEMENTATION
+#include "stb_cori.h"
+
+int main() {
+    int result;
+    printf("Type an integer: ");
+    result = read_int();
+    printf("Recieved %d\\n", result);
+}
+CODE) ?>
+    <figcaption>Sample program using Cori to read an integer from standard input.</figcaption>
+</figure>
+<h3 id="conclusion">Conclusion</h3>
+<p>Cori is a powerful and user-friendly library for handling console input in C programs. By providing a comprehensive set of functions and a robust error handling system, Cori simplifies the input handling process and offers a safer alternative to the <code>scanf</code> function. Its design as an STB-style library and the use of advanced macro techniques make it easy to integrate and extend, making it an excellent choice for both beginners and experienced C programmers, specifically for simple, quick programs</p>
+<p>For more details on how to use Cori, please refer to the <?= $f->blank('README', 'https://github.com/5cover/stb_cori/blob/main/README.md') ?> file.</p>

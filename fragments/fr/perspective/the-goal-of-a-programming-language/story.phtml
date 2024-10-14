@@ -1,6 +1,7 @@
 <?php
 require_once 'fragment.php';
-$f = start('fr'); ?>
+$f = start('fr');
+?>
 <div>
     <p><?= $f->def('c') ?> est le premier langage de programmation que j'ai appris, en <?= $f->year(2017) ?>. Cependant j'ai récemment commencé à apprendre le <?= $f->def('zig') ?>. <?= $f->def('zig') ?> est similaire au <?= $f->def('c') ?> dans ses fondements. C'est un langage de bas niveau, destiné à la programmation système et à l'interaction avec le matériel. Et je suis un grand fan&nbsp;! J'ai implémenté <?= $f->a('un clone de la commande ' . $f->code('test') . ' GNU', 'project/ztest.html') ?> pour me familiariser avec celui-ci. Ce langage résout de nombreux problèmes et limitations du <?= $f->def('c') ?>.</p>
 </div>
@@ -78,7 +79,7 @@ CODE) ?>
         <figure class="figure">
             <?= $f->codeblock(<<<CODE
 const stdout = std.io.getStdOut().writer();
-try stdout.print("Hello world\n");
+try stdout.print("Hello world\\n");
 CODE) ?>
             <figcaption>Ce code peut aussi échouer. Mais le <?= $f->code('try') ?> indique qu'en cas d'erreur, celle-ci est <strong>retournée</strong>. Si nous sommes dans la fonction <?= $f->code('main') ?>, cela fera planter le programme.</figcaption>
         </figure>
@@ -144,7 +145,7 @@ CODE) ?>
         <p>Plus de besoin de préfixer les fonctions internes avec un underscore&nbsp;! <?= $f->code('pub') ?> est tout ce dont vous avez besoin.</p>
         <p>Plus sérieusement, l'encapsulation n'existe pas en <?= $f->def('c') ?>. Bien que la convention de <q>si ça commence par un underscore, ne pas y toucher</q> se soit répandue depuis un moment maintenant, c'est toujours plus sûr quand le langage impose l'invariant de <q>on ne peut pas accéder à ceci en dehors de ce module / cette structure</q>.</p>
         <p>En <?= $f->def('c') ?>, il faut être créatif. Pour éviter tout conflit de nom avec des internes de d'autres bibliothèques que l'utilisateur pourrait implémenter, votre préfixe interne ne devrait pas seulement commencer par un underscore, mais aussi contenir une suite de caractères unique (espérons-le). De plus, l'underscore ne devrait pas être suivi par une lettre majuscule, sauf si vous voulez violer le standard et vous exposer à des conflits de nom avec le compilateur ou des internes de la bibliothèque standard.</p>
-        <p>Par exemple, <?= $f->a("Cori", 'project/cori.html') ?> utilise le préfixe <?= $f->code('_cori_') ?> pour les fonctions, macros, structures, alias de type, etc. internes.</p>
+        <p>Par exemple, <?= $f->a('Cori', 'project/cori.html') ?> utilise le préfixe <?= $f->code('_cori_') ?> pour les fonctions, macros, structures, alias de type, etc. internes.</p>
         <p>En <?= $f->def('zig') ?>, vous n'avez pas besoin de toute cette folie. Privé est par défaut. Exportes des fonctions, des structres et des méthodes avec le mot-clé <?= $f->code('pub') ?>.</p>
     </div>
 </article>
