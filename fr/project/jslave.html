@@ -60,9 +60,7 @@
             </ul>
         </nav>
         <ul class="list-flags">
-                            <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/project/jslave.html"></a></li>
-                            <li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/project/jslave.html"></a></li>
-                    </ul>
+            <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/project/jslave.html"></a></li><li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/project/jslave.html"></a></li>        </ul>
         <div class="theme-switches">
             <label for="theme-switch-light" title="Thème clair">
                 <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,61 +118,73 @@
                     <section id="story">
             <h2>Histoire</h2>
             <div>
-<p>A language to define declarative &quot;blueprints&quot; that generate Java classes.</p>
-<p>Supports automatic and customizable generation of:</p>
-<ul  class="ul">
-<li>Inheritance trees (<code>extend</code>, <code>implement</code>, <code>permits</code>)</li>
-<li>Attributes</li>
-<li>Getters/setters</li>
-<li><code>hashCode</code> method</li>
-<li><code>equals</code> method</li>
-<li><code>toString</code> method</li>
-<li>Method stubs</li>
+<p>Un langage pour définir des <q>blueprints</q> déclaratifs pour générer des classes <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Java_(langage)" data-definition-id="java" class="link definition-tooltip-trigger">Java</a>.</p>
+<p>Prend en charge la génération automatique et personnalisable de&nbsp;:</p>
+<ul class="list">
+<li><p>Arborescences d'héritage (<code>extend</code>, <code>implement</code>, <code>permits</code>)</p></li>
+<li><p>Attributs</p></li>
+<li><p><abbr title="Obteneurs"><em lang="en">Getters</em></abbr>/<? $f->term('setters', 'en', 'définisseurs') ?></p></li>
+<li><p>méthode <code>hashCode</code></p></li>
+<li><p>méthode <code>equals</code></p></li>
+<li><p>méthode <code>toString</code></p></li>
+<li><p>Stubs de méthode</p></li>
 </ul>
-<p>Addtional features include:</p>
-<ul  class="ul">
-<li>Nested and static classes</li>
-<li>Arbitrary Java code blocks</li>
+<p>Fonctionnalités supplémentaires&nbsp;:</p>
+<ul class="list">
+<li><p>Classes imbriquées et statiques</p></li>
+<li><p>Blocs de code Java arbitraires</p></li>
 </ul>
-</div><article>
-<h3 id="advantages-over-snippets">Advantages over snippets</h3>
-<p>A Jslave blueprint is self-contained and can be automated, unlike snippets/shortcuts which are IDE-dependent and require manual input. This approach has the following advantages:</p>
-<ul  class="ul">
-<li>Blueprints can be passed around as files</li>
-<li>Blueprints can generate to something else than Java</li>
-<li>Generation is predictable and deterministic</li>
-<li>Generation can be automated in a script</li>
+</div>
+<article>
+<h3 id="avantages-sur-les-extraits">Avantages par rapport aux extraits</h3>
+<p>Un blueprint Jslave est autonome et peut être automatisé, contrairement aux extraits/raccourcis qui dépendent de l'IDE et nécessitent une saisie manuelle. Cette approche présente les avantages suivants&nbsp;:</p>
+<ul class="list">
+<li><p>Les blueprints peuvent être transmis sous forme de fichiers</p></li>
+<li><p>Les blueprints peuvent être générés vers autre chose que Java</p></li>
+<li><p>La génération est prévisible et déterministe</p></li>
+<li><p>La génération peut être automatisée dans un script</p></li>
 </ul>
-<p>Cons:</p>
-<ul  class="ul">
-<li>Since we&#39;re no longer in a Java context, we won&#39;t recieve help much from the IDE while writing JSlave (syntax highlighting, auto-completion&hellip;). This issue is mitigated by the simplicity of the language, and the future VSCode extension.</li>
+<p>Inconvénients&nbsp;:</p>
+<ul class="list">
+<li><p>Étant donné que nous ne sommes plus dans un contexte Java, nous ne recevrons pas beaucoup d'aide de l'IDE lors de l'écriture de JSlave (coloration syntaxique, auto-complétion&hellip;). Ce problème est atténué par la simplicité du langage et la future extension <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code" data-definition-id="vs-code" class="link definition-tooltip-trigger">VS Code</a>.</p></li>
 </ul>
-</article><article>
-<h3 id="getting-started">Getting started</h3>
-<h4 id="1-write-your-jslave-file">1. Write your JSlave file</h4>
-<p>Your JSlave file (idomatically called a <strong>blueprint</strong>) defines the structure of your Java code, and provides syntax for common patterns in order to avoid writing all that pesky Java boilerplate.</p>
-<p>More details about the syntax can be found in the <a href=".">documentation</a>, but the main idom is as follows:</p>
-<p>A blueprint is a list of <strong>definitions</strong> that generate to the corresponding Java type (classes, records, interfaces&hellip;). Each definitions contains zero or more <strong>members</strong> that determine the contents of the type.</p>
-<p>Members can be of two kinds:</p>
-<ul class="ul">
-<li><strong>attributes</strong> define the data fields of the type. They generate to Java class attributes, and getter/setter methods.</li>
-<li><strong>methods</strong> define the behaviors of the type. Methods that have a special meaning in Java (<code>equals</code>, <code>hashCode</code>, <code>toString</code>) are called <strong>special methods</strong>. They can be expressed in three forms:<ul>
-<li><strong>stub</strong>: an empty method to implement either from the generated Java or with a code block (more on these later)</li>
-<li><strong>default implementation</strong>: a default, general-purpose implementation that should work for most cases</li>
-<li><strong>custom implementation</strong>: the default implementation, customized by passing arguments to the method</li>
+</article>
+<article>
+<h3 id="getting-started">Premiers pas</h3>
+<h4 id="1-write-your-jslave-file">1. Écrivez votre fichier JSlave</h4>
+<p>Votre fichier JSlave (appelé idiomatiquement un <strong>blueprint</strong>) définit la structure de votre code Java et fournit la syntaxe des modèles courants afin d'éviter d'écrire tout ce code Java répétitif.</p>
+<p>Vous trouverez plus de détails sur la syntaxe dans la <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/jslave/blob/main/doc/Language%20reference.md">documentation</a>, mais l'idiome principal est le suivant&nbsp;:</p>
+<p>Un blueprint est une liste de <strong>définitions</strong> qui génèrent le type Java correspondant (classes, enregistrements, interfaces&hellip;). Chaque définition contient zéro ou plusieurs <strong>membres</strong> qui déterminent le contenu du type.</p>
+<p>Les membres peuvent être de deux types&nbsp;:</p>
+<ul class="list">
+<li><p><strong>Les attributs</strong> définissent les champs de données du type. Ils génèrent des attributs de classe Java et des méthodes getter/setter.</p></li>
+<li><p><strong>Les méthodes</strong> définissent les comportements du type. Les méthodes qui ont une signification particulière en Java (<code>equals</code>, <code>hashCode</code>, <code>toString</code>) sont appelées <strong>méthodes spéciales</strong>. Elles peuvent être exprimées sous trois formes&nbsp;:</p>
+<ul class="list">
+<li><p><strong>Stub</strong>&nbsp;: une méthode vide à implémenter soit à partir du code Java généré, soit avec un bloc de code</p></li>
+<li><p><strong>Implémentation par défaut</strong>&nbsp;: une implémentation par défaut à usage général qui devrait fonctionner dans la plupart des cas</p></li>
+<li><p><strong>Implémentation personnalisée</strong>&nbsp;: l'implémentation par défaut, personnalisée en passant des arguments à la méthode</p></li>
 </ul>
 </li>
 </ul>
-<h4 id="2-generate-it">2. Generate it</h4>
-<p>From the VSCode extension GUI or using the standalone binary, generate your blueprint.</p>
-<p>Multiple targets are available</p>
-<ul class="ul">
-<li>Java (obviously): generates Java code</li>
-<li>Mermaid: generates a <a href="https://mermaid.js.org/syntax/classDiagram.html">Mermaid class diagram</a> that represents the structure of the blueprint</li>
+<h4 id="2-generate-it">2. Générez-le</h4>
+<p>À partir de l'interface graphique de l'extension VSCode ou en utilisant le binaire autonome, générez votre blueprint.</p>
+<p>Plusieurs cibles sont disponibles</p>
+<ul class="list">
+<li><p><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Java_(langage)" data-definition-id="java" class="link definition-tooltip-trigger">Java</a> (évidemment)&nbsp;: génère du code Java</p></li>
+<li><p><a target="_blank" rel="noopener noreferrer" href="https://mermaid.js.org/" data-definition-id="mermaid" class="link definition-tooltip-trigger">Mermaid</a>&nbsp;: génère un diagramme de classe Mermaid<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup> représentant la structure du blueprint</p></li>
 </ul>
-
 </article>        </section>
-                        <section id="technologies">
+                        <section id="references">
+                    <h2>Références</h2>
+                            <ol class="list">
+                            <li id="ref-1"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-1">&uarr;</a></span>
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://mermaid.js.org/syntax/classDiagram.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                        <span>Mermaid.js &mdash; syntaxe des diagrammes de classes (anglais)</span>
+                    </a>
+                </li>
+                    </ol>
+                    </section>
+                            <section id="technologies">
                     <h2>Technologies</h2>
                             <ul class="lvl list-definition">
                             <li>        <article class="definition" >

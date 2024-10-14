@@ -60,9 +60,7 @@
             </ul>
         </nav>
         <ul class="list-flags">
-                            <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/project/dialogs.html"></a></li>
-                            <li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/project/dialogs.html"></a></li>
-                    </ul>
+            <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/project/dialogs.html"></a></li><li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/project/dialogs.html"></a></li>        </ul>
         <div class="theme-switches">
             <label for="theme-switch-light" title="Thème clair">
                 <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,10 +99,10 @@
                         <ul class="list-rect">
             <li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=library">Bibliothèque</a></li><li><a href="/portfolio/fr/projects.html?tag=ui"><abbr title="Interface utilisateur">UI</span></abbr></a></li>        </ul>
                     <h1>Dialogs</h1>
-                <img src="/portfolio/img/project/dialogs/logo.png" alt="Logo Dialogs" title="Logo Dialogs" class="logo" width="2048" height="2048" loading="lazy">                        <p class="abstract">Un adapteur managé pour les <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview" data-definition-id="task-dialog" class="link definition-tooltip-trigger">Dialogue de tâche</a> Windows qui supporte toutes les fonctionnalités natives.</p>
+                <img src="/portfolio/img/project/dialogs/logo.png" alt="Logo Dialogs" title="Logo Dialogs" class="logo" width="2048" height="2048" loading="lazy">                        <p class="abstract">Un adapteur managé pour les <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview" data-definition-id="task-dialog" class="link definition-tooltip-trigger">dialogue de tâche</a> Windows qui supporte toutes les fonctionnalités natives.</p>
                     <div class="status-context">        <small class="context">Personnel</small>
-    <small class="status"><time datetime="2023-06-25">25 juin 2023</time> &ndash;
-            <time datetime="2022-11-23">23 novembre 2022</time></small>
+    <small class="status"><time datetime="2022-11-23">23 novembre 2022</time> &ndash;
+            <time datetime="2023-06-25">25 juin 2023</time></small>
     </div>
             </header>
                             <section id="links">
@@ -115,14 +113,79 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                        <span>Dépôt GitHub</span>
                     </a>
                 </li>
+                            <li>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.nuget.org/packages/Scover.Dialogs">
+                                                <img src="/portfolio/img/definition/nuget/logo.svg" alt="" height="30" loading="lazy">                        <span>Paquet NuGet</span>
+                    </a>
+                </li>
                     </ul>
                     </section>
                     <section id="story">
             <h2>Histoire</h2>
-            <div>
-    <p>todo (frustation Winclean dialogs winforms, vanara...)</p>
-</div>        </section>
-                        <section id="technologies">
+            <h3 id="the-spark-of-an-idea">Dialogs &mdash; L'étincelle d'une idée</h3>
+<p>Le parcours de <strong>Dialogs</strong> a commencé avec un besoin simple. Je travaillais sur un autre de mes projets, une application open-source <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/.NET" data-definition-id="dotnet" class="link definition-tooltip-trigger">.NET</a> appelée <a class="link" href="/portfolio/fr/project/winclean.html">WinClean</a>. Dans le cadre de ce projet, j'avais besoin d'implémenter des boîtes de dialogue modales, ces fenêtres contextuelles qui nécessitent une interaction de l'utilisateur avant que l'application puisse continuer. Un <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview" data-definition-id="task-dialog" class="link definition-tooltip-trigger">dialogue de tâche</a> semblait être la solution idéale pour une interface moderne et conviviale. Cependant, les solutions existantes étaient loin d'être satisfaisantes.</p>
+<h3 id="the-problem-with-existing-solutions">Le problème des solutions existantes</h3>
+<p>L'API officielle managée TaskDialog, livrée avec <? $f->def('winforms') ?> était, pour le dire gentiment, terne. Elle manquait des fonctionnalités et de la flexibilité dont j'avais besoin. Des packages tiers étaient disponibles, mais aucun d'entre eux n'offrait la gamme complète des fonctionnalités que je recherchais, en particulier une navigation simple et des hyperliens. Cette frustration m'a conduit à une décision&nbsp;: si l'outil parfait n'existe pas, pourquoi ne pas le créer moi-même&nbsp;?</p>
+<h3 id="the-build-your-own-mountain-philosophy">La philosophie <q>Construire sa propre montagne</q></h3>
+<p>Je crois en la philosophie de <q>construire sa propre montagne</q><sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>. Si vous ne trouvez pas l'outil parfait pour le travail, créez-le. Cette approche résout non seulement votre problème immédiat, mais contribue également à la communauté, en aidant potentiellement d'autres personnes confrontées aux mêmes défis.</p>
+<h3 id="planning-and-design">Planification et conception</h3>
+<p>Avant de me plonger dans le code, j'ai pris du recul par rapport à la planification. J'ai créé un backlog de toutes les fonctionnalités dont j'avais besoin et j'ai étudié les subtilités des boîtes de dialogue des tâches Windows. Grâce à la documentation complète disponible en ligne<sup id="cite-ref-2"><a class="link" href="#ref-2">[2]</a></sup>, ce processus a été simple. J'ai ensuite pris un marqueur et j'ai collé une feuille de papier A3 sur mon mur. J'ai esquissé un diagramme de classe <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/UML_(informatique)" data-definition-id="uml" class="link definition-tooltip-trigger">UML</a> qui engloberait mes objectifs&nbsp;: une bibliothèque facile à utiliser avec un accès simple à toutes les fonctionnalités natives des dialogues de tâche, sans les limitations arbitraires des wrappers tiers.</p>
+<h3 id="implementation-and-learning">Implémentation et apprentissage</h3>
+<p>Avec un plan clair en tête, j'ai commencé à implémenter la bibliothèque en <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_Sharp" data-definition-id="csharp" class="link definition-tooltip-trigger">C#</a>. J'ai écrit des tests unitaires en utilisant le framework de test <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/NUnit" data-definition-id="nunit" class="link definition-tooltip-trigger">NUnit</a> pour m'assurer que tout fonctionnait comme prévu. Ce projet a pris environ six mois à réaliser, mais ce fut une expérience profondément enrichissante. J'ai mis mes connaissances en <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Programmation_orient%C3%A9e_objet" data-definition-id="oop" class="link definition-tooltip-trigger">POO</a> à l'épreuve et j'ai appris de nouvelles techniques et de nouveaux modèles, tels que l'<a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)" data-definition-id="adapter" class="link definition-tooltip-trigger">Adaptateur</a>, la <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Fa%C3%A7ade_(patron_de_conception)" data-definition-id="facade" class="link definition-tooltip-trigger">Façade</a> et la <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_responsabilit%C3%A9" data-definition-id="chain-of-responsibility" class="link definition-tooltip-trigger">Chaîne de responsabilité</a>. Je me suis également familiarisé avec les événements C# et l'interopérabilité native, avec une pincée de programmation fonctionnelle et d'immuabilité.</p>
+<h3 id="continuous-integration-and-deployment">Intégration et déploiement continus</h3>
+<p>L'une des parties les plus passionnantes de ce projet a été d'en apprendre davantage sur les pipelines <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/CI/CD" data-definition-id="ci-cd" class="link definition-tooltip-trigger">CI/CD</a>. J'ai mis en place un déploiement automatisé de <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/NuGet" data-definition-id="nuget" class="link definition-tooltip-trigger">NuGet</a> à l'aide d'un workflow <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/GitHub" data-definition-id="github" class="link definition-tooltip-trigger">GitHub</a>, ce qui a simplifié le processus de publication des mises à jour de la bibliothèque.</p>
+<h3 id="the-result">Le résultat</h3>
+<p>Au final, j'ai créé une bibliothèque de wrapper des dialogues de tâche .NET qualitative et complète qui a depuis été téléchargée des milliers de fois. Il est gratifiant de savoir que d'autres développeurs la trouvent utile et qu'elle comble une lacune dans l'écosystème .NET.</p>
+<h3 id="usage-examples">Exemples d'utilisation</h3>
+<p>Voici quelques exemples pour vous donner une idée de la facilité d'utilisation de <strong>Dialogs</strong>&nbsp;:</p>
+<h4 id="simple-task-dialog">Dialogue de tâche simple</h4>
+<pre><code>using Scover.Dialogs;
+
+using Page page = new()
+{
+    Content = "Sample text",
+    Buttons = { Button.Yes, Button.No, Button.Cancel }
+};
+
+var clickedButton = new Dialog(page).Show();</code></pre><h4 id="multi-page-task-dialog">Dialogue de tâche multi-page</h4>
+<pre><code>using Scover.Dialogs;
+
+using Page page1 = new()
+{
+    MainInstruction = "Page #1",
+    Buttons = new(ButtonStyle.CommandLinks)
+    {
+        { "Label", "Supplemental instruction" },
+        Button.Cancel
+    }
+};
+using Page page2 = new()
+{
+    MainInstruction = "Page #2",
+    Expander = new("Expanded information") 
+};
+
+var clickedButton = new MultiPageDialog(page1, new Dictionary&lt;Page, NextPageSelector&gt;
+{
+    [page1] = request =&gt; request.Kind is NavigationRequestKind.Cancel ? null : page2,
+}).Show();</code></pre><h3 id="conclusion">Conclusion</h3>
+<p><strong>Dialogs</strong> est bien plus qu'une simple bibliothèque&nbsp;; c'est un témoignage de la puissance de prendre les choses en main. Tout a commencé par une insatisfaction et s'est terminé par un outil qui non seulement répondait à mes besoins, mais qui a également profité à la communauté des développeurs au sens large. Ce projet a été un voyage d'apprentissage, de croissance et de contribution, et je suis fier de ce qu'il est devenu.</p>        </section>
+                        <section id="references">
+                    <h2>Références</h2>
+                            <ol class="list">
+                            <li id="ref-1"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-1">&uarr;</a></span>
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/fr-fr/windows/win32/controls/task-dialogs-overview">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                        <span>Microsoft - À propos des boîtes de dialogue de tâche</span>
+                    </a>
+                </li>
+                            <li id="ref-2"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-2">&uarr;</a></span>
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://youtu.be/443UNeGrFoM?t=6949">
+                        <img src="/portfolio/img/social/youtube.svg" alt="" height="30" loading="lazy">                        <span>Eskil Steenberg &mdash; How I program C (à 1h55m49s, anglais)</span>
+                    </a>
+                </li>
+                    </ol>
+                    </section>
+                            <section id="technologies">
                     <h2>Technologies</h2>
                             <ul class="lvl list-definition">
                             <li>        <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/csharp/bg.png)">

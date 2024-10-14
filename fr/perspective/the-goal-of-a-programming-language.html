@@ -60,9 +60,7 @@
             </ul>
         </nav>
         <ul class="list-flags">
-                            <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/perspective/the-goal-of-a-programming-language.html"></a></li>
-                            <li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/perspective/the-goal-of-a-programming-language.html"></a></li>
-                    </ul>
+            <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/perspective/the-goal-of-a-programming-language.html"></a></li><li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/perspective/the-goal-of-a-programming-language.html"></a></li>        </ul>
         <div class="theme-switches">
             <label for="theme-switch-light" title="Thème clair">
                 <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +148,7 @@
 
 #define vector(T) \
   vector_struct(T); \
-  vector_init(T) vector_get(T) vector_set(T) vector_push(T)</code></pre>            <figcaption>Impleméntation d'un vecteur générique utilisant les macros en <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a><a class="link" id="cite-ref-1" href="#ref-1">1</a>. Comme vous pouvez le voir, le code est embrouillé et fragile. L'utilisation serait inutilement verbeuse et pénible.</figcaption>
+  vector_init(T) vector_get(T) vector_set(T) vector_push(T)</code></pre>            <figcaption>Impleméntation d'un vecteur générique utilisant les macros en <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a><sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>. Comme vous pouvez le voir, le code est embrouillé et fragile. L'utilisation serait inutilement verbeuse et pénible.</figcaption>
         </figure>
         <p>En <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>, les génériques sont simples comme bonjour. Vous pouvez passer des arguments de types aux fonctions comme citoyens de première classe. Vous pouvez aussi stocker des types dans des constantes.</p>
         <p>Et pour les structures de données génériques&nbsp;? Définissez simplement une fonction générique qui définit la structure localement en utilisant les arguments de type et qui retourne une instance de celle-ci.</p>
@@ -172,8 +170,7 @@
         </figure>
         <figure class="figure">
             <pre><code>const stdout = std.io.getStdOut().writer();
-try stdout.print("Hello world
-");</code></pre>            <figcaption>Ce code peut aussi échouer. Mais le <code>try</code> indique qu'en cas d'erreur, celle-ci est <strong>retournée</strong>. Si nous sommes dans la fonction <code>main</code>, cela fera planter le programme.</figcaption>
+try stdout.print("Hello world\n");</code></pre>            <figcaption>Ce code peut aussi échouer. Mais le <code>try</code> indique qu'en cas d'erreur, celle-ci est <strong>retournée</strong>. Si nous sommes dans la fonction <code>main</code>, cela fera planter le programme.</figcaption>
         </figure>
         <p>Selon la <cite>page de manuel de <code>printf</code></cite>, <q>si une erreur de sortie est rencontrée, une valeur négative est retournée</q>. Cela signifie que pour être correct à 100% et gérer tous les cas d'erreur possibles, nous devons entourer tous les appels à <code>printf</code> (ou toute fonction de la même famille) dans une instruction <code>if</code> et gérer l'erreur de manière appropriée.</p>
         <p>Mais qui fait cela&nbsp;? La valeur de retour de <code>printf</code> est presque toujours ignorée. La raison est que nous ne savons pas quoi faire quand il y a une erreur. Si <code>printf</code> a échoué, quelque chose doit sérieusement clocher sur le système, et le programme va probablement bientôt planter. Peut-être que nous sommes à court de mémoire ou qu'une panique de noyau est en train d'avoir lieu. Quitter parait être bon un choix&nbsp;; mais ce n'est pas le comportement exprimé quand vous ignorez implicitement la valeur de retour de <code>printf</code>&nbsp;; au lieu de ça, l'erreur est ignorée et le programme continue, comme si rien ne s'était passé.</p>
@@ -186,7 +183,7 @@ try stdout.print("Hello world
     <div>
         <p><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a> n'a pas de type entier ou en point flottant dont la taille est déterminée par le compilateur et l'architecture que vous utilisez. Plutôt, toutes les tailles de nombre sont indiquées dans le code&nbsp;: <code>u32</code> pour un entier non signé sur 32 bits, par exemple.</p>
         <p>Je trouvais cela fastidieux au début&nbsp;; mais ça devient logique en y réfléchissant un peu&nbsp;: <strong>vous</strong> donnez à la variable sa valeur, donc <strong>vous</strong> devriez décider de sa taille, car elle détermine l'intervalle des valeurs qu'elle peut contenir.</p>
-        <p>Il est possible que cette approche explicite eut prévenu l'explosion de la fusée Ariane 5 causée par un dépassement d'entier<a class="link" id="cite-ref-2" href="#ref-2">2</a>.</p>
+        <p>Il est possible que cette approche explicite eut prévenu l'explosion de la fusée Ariane 5 causée par un dépassement d'entier<sup id="cite-ref-2"><a class="link" href="#ref-2">[2]</a></sup>.</p>
     </div>
 </article>
 <article id="defer-the-best-thing-since-sliced-bread">
@@ -209,7 +206,7 @@ while (i &lt; 100) {
 <article id="a-richer-standard-library">
     <h3>Une bibliothèque standard plus riche</h3>
     <div>
-        <p>La blibliothèque standard du <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> est plutôt rudimentaire. On a souvent besoin de télécharger une bibliothèque STB<a class="link" id="cite-ref-3" href="#ref-3">3</a> quand on a besoin d'un allocateur en arène ou d'une table de hachage.</p>
+        <p>La blibliothèque standard du <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> est plutôt rudimentaire. On a souvent besoin de télécharger une bibliothèque STB<sup id="cite-ref-3"><a class="link" href="#ref-3">[3]</a></sup> quand on a besoin d'un allocateur en arène ou d'une table de hachage.</p>
         <p>On peut aussi apprendre à implémenter ces structures de données et algorithmes soi-même, ce qui explique pourquoi je pense qu'apprendre le <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> comme premier langage de programmation m'a aidé à devenir un meilleur programmeur.</p>
         <p><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a> résout ce problème en ayant une bibliothèque standard plus riche. Cette approche n'est pas unique à <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>. Des langages similaires comme <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Go_(langage)" data-definition-id="go" class="link definition-tooltip-trigger">Go</a> ou <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Rust_(langage)" data-definition-id="rust" class="link definition-tooltip-trigger">Rust</a> ont eux aussi des bibliothèques standard riches.</p>
     </div>
@@ -259,19 +256,19 @@ while (i &lt; 100) {
 </article>        </section>
                         <section id="references">
                     <h2>Références</h2>
-                            <ol class="list-reference">
+                            <ol class="list">
                             <li id="ref-1"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-1">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://constantsmatter.com/posts/generic-ds-c/">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://constantsmatter.com/posts/generic-ds-c/">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                        <span>Implémentation d'un vecteur générique en C (anglais)</span>
                     </a>
                 </li>
                             <li id="ref-2"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-2">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5">
                         <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                        <span>Vol 501 d'Ariane 5</span>
                     </a>
                 </li>
                             <li id="ref-3"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-3">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/nothings/stb">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://github.com/nothings/stb">
                         <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                        <span>Dépôt des bibliothèques C STB appartenant au domaine public (anglais)</span>
                     </a>
                 </li>

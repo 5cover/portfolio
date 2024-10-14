@@ -60,9 +60,7 @@
             </ul>
         </nav>
         <ul class="list-flags">
-                            <li><a class="fi fi-fr gray-when-not-hover" title="fr / French" href="/portfolio/fr/perspective/the-goal-of-a-programming-language.html"></a></li>
-                            <li><a class="fi fi-us" title="en" href="/portfolio/en/perspective/the-goal-of-a-programming-language.html"></a></li>
-                    </ul>
+            <li><a class="fi fi-fr gray-when-not-hover" title="fr / French" href="/portfolio/fr/perspective/the-goal-of-a-programming-language.html"></a></li><li><a class="fi fi-us" title="en" href="/portfolio/en/perspective/the-goal-of-a-programming-language.html"></a></li>        </ul>
         <div class="theme-switches">
             <label for="theme-switch-light" title="Light theme">
                 <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +148,7 @@ T##_vector_set(vec, vec-&gt;size++, data); \
 
 #define vector(T) \
     vector_struct(T); \
-    vector_init(T) vector_get(T) vector_set(T) vector_push(T)</code></pre>            <figcaption>Implementation of a generic vector using macros in <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-definition-id="c" class="link definition-tooltip-trigger">C</a><a class="link" id="cite-ref-1" href="#ref-1">1</a>. As you can see, the code is obfuscated and fragile. Usage would be unnecessarily verbose and tedious.</figcaption>
+    vector_init(T) vector_get(T) vector_set(T) vector_push(T)</code></pre>            <figcaption>Implementation of a generic vector using macros in <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-definition-id="c" class="link definition-tooltip-trigger">C</a><sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>. As you can see, the code is obfuscated and fragile. Usage would be unnecessarily verbose and tedious.</figcaption>
         </figure>
         <p>In <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Zig_(programming_language)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>, generics are easy as pie. You can pass type arguments to functions as first-class citizens. You can even store types in constants.</p>
         <p>What about generic data structures? Well, just make a generic function that defines the structure locally using the type arguments and returns an instance of it.</p>
@@ -172,8 +170,7 @@ T##_vector_set(vec, vec-&gt;size++, data); \
         </figure>
         <figure class="figure">
             <pre><code>const stdout = std.io.getStdOut().writer();
-try stdout.print("Hello world
-");</code></pre>            <figcaption>This code can also fail. But the <code>try</code> indicates that in case of an error, the error is <strong>returned</strong>. If we're in the <code>main</code> function, it will crash the program.</figcaption>
+try stdout.print("Hello world\n");</code></pre>            <figcaption>This code can also fail. But the <code>try</code> indicates that in case of an error, the error is <strong>returned</strong>. If we're in the <code>main</code> function, it will crash the program.</figcaption>
         </figure>
         <p>According to <cite><code>printf</code>'s man page</cite>, <q>if an output error is encountered, a negative value is returned</q>. This means that to be 100% correct and handle all possible failures, we must enclose every call to <code>printf</code> (or any other function of the family) in an <code>if</code> statement and handle the failure appropriately.</p>
         <p>However who does that? The return value of <code>printf</code> is almost always ignored. The reason is that we don't know have anything relevant to do on failure. If <code>printf</code> has failed, something must have gone very wrong, and the program is probably going to crash. Maybe we're out of memory or in the a kernel panic is occuring. Exiting seems like a good choice; but that is not the behavior expressed when you implicitly ignore <code>printf</code>'s return value; instead, the error is ignored and the program continues, as if nothing happened.</p>
@@ -186,7 +183,7 @@ try stdout.print("Hello world
     <div>
         <p><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Zig_(programming_language)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a> does not have a generic integer or floating-point type whose size is determined by the compiler and architecture you're using. Instead, all number sizes are explicity indicated in the code: <code>u32</code> for a 32 bit unsigned integer, for instance.</p>
         <p>This annoyed me at first; but it makes sense if you think about it: <strong>you</strong> give a variable its value, so <strong>you</strong> should decide on its size, as it determines the range of values it supports.</p>
-        <p>It's possible this explicit approach would have prevented Ariane 5's failure due to an integer overflow<a class="link" id="cite-ref-2" href="#ref-2">2</a></p>
+        <p>It's possible this explicit approach would have prevented Ariane 5's failure due to an integer overflow<sup id="cite-ref-2"><a class="link" href="#ref-2">[2]</a></sup></p>
     </div>
 </article>
 <article id="defer-the-best-thing-since-sliced-bread">
@@ -208,7 +205,7 @@ while (i &lt; 100) {
 <article id="a-richer-standard-library">
     <h3>A richer standard library</h3>
     <div>
-        <p><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-definition-id="c" class="link definition-tooltip-trigger">C</a>'s standard library is quite rudimentary. You often need to download an STB library<a class="link" id="cite-ref-3" href="#ref-3">3</a> when you want an arena allocator or an hash table.</p>
+        <p><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-definition-id="c" class="link definition-tooltip-trigger">C</a>'s standard library is quite rudimentary. You often need to download an STB library<sup id="cite-ref-3"><a class="link" href="#ref-3">[3]</a></sup> when you want an arena allocator or an hash table.</p>
         <p>You can also learn to implement these data structures and algorithms yourself, which is why I think learning <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> as my first language has really helped me become a better programmer.</p>
         <p><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Zig_(programming_language)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a> solves this problem by having a richer standard library. This isn't unique to <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Zig_(programming_language)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>, though. Similar languages like <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Go_(programming_language)" data-definition-id="go" class="link definition-tooltip-trigger">Go</a> or <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Rust_(programming_language)" data-definition-id="rust" class="link definition-tooltip-trigger">Rust</a> also have rich standard libraries.</p>
     </div>
@@ -258,19 +255,19 @@ while (i &lt; 100) {
 </article>        </section>
                         <section id="references">
                     <h2>References</h2>
-                            <ol class="list-reference">
+                            <ol class="list">
                             <li id="ref-1"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-1">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://constantsmatter.com/posts/generic-ds-c/">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://constantsmatter.com/posts/generic-ds-c/">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                        <span>Implementing a generic vector data structure in C</span>
                     </a>
                 </li>
                             <li id="ref-2"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-2">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Ariane_flight_V88">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Ariane_flight_V88">
                         <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                        <span>Ariane flight V88</span>
                     </a>
                 </li>
                             <li id="ref-3"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-3">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/nothings/stb">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://github.com/nothings/stb">
                         <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                        <span>Public domain STB-style C libraries repository</span>
                     </a>
                 </li>

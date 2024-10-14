@@ -60,9 +60,7 @@
             </ul>
         </nav>
         <ul class="list-flags">
-                            <li><a class="fi fi-fr gray-when-not-hover" title="fr / French" href="/portfolio/fr/project/psdc.html"></a></li>
-                            <li><a class="fi fi-us" title="en" href="/portfolio/en/project/psdc.html"></a></li>
-                    </ul>
+            <li><a class="fi fi-fr gray-when-not-hover" title="fr / French" href="/portfolio/fr/project/psdc.html"></a></li><li><a class="fi fi-us" title="en" href="/portfolio/en/project/psdc.html"></a></li>        </ul>
         <div class="theme-switches">
             <label for="theme-switch-light" title="Light theme">
                 <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,42 +130,42 @@ fin</code></pre>    <p>Here is an equivalent program in <a target="_blank" rel="
 int main() {
     printf("Bonjour\n");
     return 0;
-}</code></pre>    <p>How do you automate this transformation? Well, it's actually not that complex. The Crafting Interpreters book<a class="link" id="cite-ref-1" href="#ref-1">1</a> metaphorizes the problem as climbing a mountain:</p>
+}</code></pre>    <p>How do you automate this transformation? Well, it's actually not that complex. The Crafting Interpreters book<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup> metaphorizes the problem as climbing a mountain:</p>
     <figure class="figure"><img alt="Mountain Metaphor" src="/portfolio/img/project/psdc/mountain.png" width="1824" height="833" loading="lazy">
         <figcaption><cite>Crafting Interpreters</cite>, Robert Nystrom &mdash; &copy; <time datetime="2015">2015</time> &ndash; <time datetime="2021">2021</time>, MIT license</figcaption>
     </figure>
     <p>Let's start with the original source code, at the foot of the mountain. As the steps go by (scanning, parsing, analysis), the representation of the code becomes more and more high-level, that is, it focuses more on the expressed semantics than on implementation details.</p>
     <p>Once the top is reached, we are halfway through the compilation. We have a breathtaking view of the semantics of the code, that is, the meaning that the user gives it through the syntax of our language.</p>
     <p>So let's begin our descent. Let's successively convert our high-level representation into forms that approximate our final goal: the machine language, which will be executed directly by the processor.</p>
-    <p>I only discovered Crafting Interpreters quite late in the project. I originally based it on the playlist <em lang="en">Creating a Compiler</em><a class="link" id="cite-ref-2" href="#ref-2">2</a> by <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@pixeled-yt">Pixeled</a> on YouTube, where we see the design and implementation of a compiler for a language <em>ex-nihilo</em> called Hydrogen. The compiler transforms the code into assembly, then uses <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Netwide_Assembler" data-definition-id="nasm" class="link definition-tooltip-trigger">NASM</a> to generate the machine code.</p>
-    <p>It is in these videos that I learned the basics of lexical analysis<a class="link" id="cite-ref-3" href="#ref-3">3</a>, formal grammars<a class="link" id="cite-ref-4" href="#ref-4">4</a>, or syntactic analysis<a class="link" id="cite-ref-5" href="#ref-5">5</a>. It is really interesting and I've learned a lot.</p>
+    <p>I only discovered Crafting Interpreters quite late in the project. I originally based it on the playlist <em lang="en">Creating a Compiler</em><sup id="cite-ref-2"><a class="link" href="#ref-2">[2]</a></sup> by <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@pixeled-yt">Pixeled</a> on YouTube, where we see the design and implementation of a compiler for a language <em>ex-nihilo</em> called Hydrogen. The compiler transforms the code into assembly, then uses <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Netwide_Assembler" data-definition-id="nasm" class="link definition-tooltip-trigger">NASM</a> to generate the machine code.</p>
+    <p>It is in these videos that I learned the basics of lexical analysis<sup id="cite-ref-3"><a class="link" href="#ref-3">[3]</a></sup>, formal grammars<sup id="cite-ref-4"><a class="link" href="#ref-4">[4]</a></sup>, or syntactic analysis<sup id="cite-ref-5"><a class="link" href="#ref-5">[5]</a></sup>. It is really interesting and I've learned a lot.</p>
     <p>This project is far from being done &mdash; many features are yet to implemented, notably for <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Visual_Studio_Code" data-definition-id="vs-code" class="link definition-tooltip-trigger">VS Code</a> integration with a language server.</p>
 </div>        </section>
                         <section id="references">
                     <h2>References</h2>
-                            <ol class="list-reference">
+                            <ol class="list">
                             <li id="ref-1"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-1">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Lexical_analysis">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Lexical_analysis">
                         <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                        <span>Lexical analysis, Wikipedia</span>
                     </a>
                 </li>
                             <li id="ref-2"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-2">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Parsing">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Parsing">
                         <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                        <span>Parsing, Wikipedia</span>
                     </a>
                 </li>
                             <li id="ref-3"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-3">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://craftinginterpreters.com">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://craftinginterpreters.com">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                        <span>Crafting Interpreters, Robert Nystrom</span>
                     </a>
                 </li>
                             <li id="ref-4"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-4">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs">
                         <img src="/portfolio/img/social/youtube.svg" alt="" height="30" loading="lazy">                        <span>Creating a Compiler, Pixeled, YouTube</span>
                     </a>
                 </li>
                             <li id="ref-5"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-5">&uarr;</a></span>
-                    <a class="link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Formal_grammar">
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Formal_grammar">
                         <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                        <span>Formal grammar, Wikipedia</span>
                     </a>
                 </li>

@@ -60,9 +60,7 @@
             </ul>
         </nav>
         <ul class="list-flags">
-                            <li><a class="fi fi-fr gray-when-not-hover" title="fr / French" href="/portfolio/fr/project/cori.html"></a></li>
-                            <li><a class="fi fi-us" title="en" href="/portfolio/en/project/cori.html"></a></li>
-                    </ul>
+            <li><a class="fi fi-fr gray-when-not-hover" title="fr / French" href="/portfolio/fr/project/cori.html"></a></li><li><a class="fi fi-us" title="en" href="/portfolio/en/project/cori.html"></a></li>        </ul>
         <div class="theme-switches">
             <label for="theme-switch-light" title="Light theme">
                 <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,10 +117,76 @@
                     </section>
                     <section id="story">
             <h2>Story</h2>
-            <div>
-    <p>todo.. raconter la difficulté et les problèmes du scanf en c...</p>
-</div>        </section>
-                        <section id="technologies">
+            <p>Cori is a single-file <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> library designed to simplify the process of getting user input in C programs. It provides a comprehensive set of functions that handle common input scenarios and potential errors, allowing programmers to focus more on their program's logic rather than the intricacies of input handling. Additionally, Cori aims to serve as a safer and more user-friendly replacement for the <code>scanf</code> function, which is often misused by beginners and can easily lead to undefined behavior<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>.</p>
+<h3 id="problems-cori-intends-to-solve">Problems Cori intends to solve</h3>
+<ol class="list">
+    <li><p>Simplify user input handling: Cori provides a set of functions that handle various types of user input, making it easier for programmers to collect and process input without worrying about the underlying complexities.</p></li>
+    <li><p>Replace <code>scanf</code>: The <code>scanf</code> function is notoriously difficult to use correctly, especially for beginners. Cori offers a safer and more intuitive alternative, reducing the risk of undefined behavior and making input handling more straightforward.</p></li>
+</ol>
+<h3 id="core-concepts">Core concepts</h3>
+<h4 id="types-of-input">Types of input</h4>
+<p>Cori supports a wide range of input types, each represented by a specific C type:</p>
+<ul class="list">
+    <li><p>Signed integers: <code>intmax</code>, <code>longlong</code>, <code>long</code>, <code>int</code>, <code>short</code></p></li>
+    <li><p>Unsigned integers: <code>uintmax</code>, <code>ulonglong</code>, <code>ulong</code>, <code>uint</code>, <code>ushort</code></p></li>
+    <li><p>Floating point numbers: <code>longdouble</code>, <code>double</code>, <code>float</code></p></li>
+    <li><p>Text: <code>character</code>, <code>until</code>, <code>line</code>, <code>linel</code></p></li>
+    <li><p>Other: <code>boolean</code></p></li>
+</ul>
+<h4 id="error-handling-system">Error handling system</h4>
+<p>Cori includes a robust error handling system that allows programmers to define custom error handlers. The library defines an enumeration <code>InputError</code> that represents all possible error conditions, such as empty input, end-of-file (EOF), invalid boolean characters, multiple characters, not a number, number out of bounds, out of memory, and unsupported numeric base.</p>
+<h4 id="function-families">Function families</h4>
+<p>For each type of input, Cori provides a family of functions to handle different scenarios:</p>
+<ul class="list">
+    <li><p><code>read_&lt;typename&gt;</code>: Reads input from <code>stdin</code> and handles errors using a NO-OP (no operation) error handler.</p></li>
+    <li><p><code>read_&lt;typename&gt;_or</code>: Reads input from <code>stdin</code> and handles errors using a specified error handler.</p></li>
+    <li><p><code>read_&lt;typename&gt;_from</code>: Reads input from a specified <code>FILE *</code> stream and handles errors using a NO-OP error handler.</p></li>
+    <li><p><code>read_&lt;typename&gt;_or_from</code>: Reads input from a specified <code>FILE *</code> stream and handles errors using a specified error handler.</p></li>
+    <li><p><code>tryRead_&lt;typename&gt;</code>: Reads input from <code>stdin</code> once and returns an error code if an error occurs.</p></li>
+    <li><p><code>tryRead_&lt;typename&gt;_from</code>: Reads input from a specified <code>FILE *</code> stream once and returns an error code if an error occurs.</p></li>
+</ul>
+<h3 id="techniques-and-patterns-used">Techniques and patterns used</h3>
+<h4 id="stb-style-libraries">STB-Style Libraries</h4>
+<p>Cori is designed as an STB-style library<sup id="cite-ref-2"><a class="link" href="#ref-2">[2]</a></sup>, which means it consists of a single header file that contains both the interface and the implementation. This makes it easy to share and reuse, as users only need to include the header file in their projects. However, this approach can lead to large header files, so it is best suited for simple, single-purpose libraries like Cori.</p>
+<h4 id="heavy-usage-of-macros">Heavy usage of macros</h4>
+<p>Cori makes extensive use of macros for metaprogramming, allowing for the generation of repetitive code patterns. One notable pattern used is the X-macro pattern<sup id="cite-ref-3"><a class="link" href="#ref-3">[3]</a></sup>, which enables the definition of a set of related functions and data structures in a concise and maintainable way. This approach reduces code duplication and makes the library more flexible and easier to extend.</p>
+<h3 id="example">Example</h3>
+<p>Cori is designed with simplicity in mind.</p>
+<figure class="figure">
+    <pre><code>#define CORI_IMPLEMENTATION
+#include "stb_cori.h"
+
+int main() {
+    int result;
+    printf("Type an integer: ");
+    result = read_int();
+    printf("Recieved %d\n", result);
+}</code></pre>    <figcaption>Sample program using Cori to read an integer from standard input.</figcaption>
+</figure>
+<h3 id="conclusion">Conclusion</h3>
+<p>Cori is a powerful and user-friendly library for handling console input in C programs. By providing a comprehensive set of functions and a robust error handling system, Cori simplifies the input handling process and offers a safer alternative to the <code>scanf</code> function. Its design as an STB-style library and the use of advanced macro techniques make it easy to integrate and extend, making it an excellent choice for both beginners and experienced C programmers, specifically for simple, quick programs</p>
+<p>For more details on how to use Cori, please refer to the <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/stb_cori/blob/main/README.md">README</a> file.</p>        </section>
+                        <section id="references">
+                    <h2>References</h2>
+                            <ol class="list">
+                            <li id="ref-1"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-1">&uarr;</a></span>
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                        <span>Felix Palmen &mdash; A beginner's guide <em>away</em> from <code>scanf()</code></span>
+                    </a>
+                </li>
+                            <li id="ref-2"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-2">&uarr;</a></span>
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://github.com/nothings/stb">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                        <span>Sean Barrett &mdash; STB-style public domain libraries repository</span>
+                    </a>
+                </li>
+                            <li id="ref-3"><span class="ref-backlink" aria-label="Jump up" title="Jump up"><a class="link" href="#cite-ref-3">&uarr;</a></span>
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/X_macro">
+                        <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">                        <span>Wikipedia &mdash; X macro pattern</span>
+                    </a>
+                </li>
+                    </ol>
+                    </section>
+                            <section id="technologies">
                     <h2>Technologies</h2>
                             <ul class="lvl list-definition">
                             <li>        <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/c/bg.png)">

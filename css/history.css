@@ -477,7 +477,7 @@
   .list-detail-split-card > li :is(.list-link, .list-rect) > li {
     z-index: 1;
   }
-  .list-detail-split-card > li .link, .list-detail-split-card > li a[id^=cite-],
+  .list-detail-split-card > li .link, .list-detail-split-card > li sup[id^=cite-],
   .list-detail-split-card > li abbr {
     z-index: 1;
     /* Creates a stacking context */
@@ -486,7 +486,7 @@
   .list-detail-split-card > li:is(:hover, :focus-within, :focus) {
     /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
   }
-  .list-detail-split-card > li:is(:hover, :focus-within, :focus) .link, .list-detail-split-card > li:is(:hover, :focus-within, :focus) a[id^=cite-] {
+  .list-detail-split-card > li:is(:hover, :focus-within, :focus) .link, .list-detail-split-card > li:is(:hover, :focus-within, :focus) sup[id^=cite-] {
     color: var(--color-fg);
     text-decoration: underline;
   }
@@ -573,7 +573,7 @@
   .list-project > li :is(.list-link, .list-rect) > li {
     z-index: 1;
   }
-  .list-project > li .link, .list-project > li a[id^=cite-],
+  .list-project > li .link, .list-project > li sup[id^=cite-],
   .list-project > li abbr {
     z-index: 1;
     /* Creates a stacking context */
@@ -582,7 +582,7 @@
   .list-project > li:is(:hover, :focus-within, :focus) {
     /* Since links will have the same color as other text now, always underline them to still differenciate them from regular text. */
   }
-  .list-project > li:is(:hover, :focus-within, :focus) .link, .list-project > li:is(:hover, :focus-within, :focus) a[id^=cite-] {
+  .list-project > li:is(:hover, :focus-within, :focus) .link, .list-project > li:is(:hover, :focus-within, :focus) sup[id^=cite-] {
     color: var(--color-fg);
     text-decoration: underline;
   }
@@ -701,14 +701,14 @@
   .definition :is(.list-link, .list-rect) > li, .definition-tooltip :is(.list-link, .list-rect) > li {
     z-index: 1;
   }
-  .definition .link, .definition a[id^=cite-], .definition-tooltip .link, .definition-tooltip a[id^=cite-],
+  .definition .link, .definition sup[id^=cite-], .definition-tooltip .link, .definition-tooltip sup[id^=cite-],
   .definition abbr,
   .definition-tooltip abbr {
     z-index: 1;
     /* Creates a stacking context */
     position: relative;
   }
-  .definition .link, .definition a[id^=cite-], .definition-tooltip .link, .definition-tooltip a[id^=cite-],
+  .definition .link, .definition sup[id^=cite-], .definition-tooltip .link, .definition-tooltip sup[id^=cite-],
   .definition abbr,
   .definition-tooltip abbr {
     z-index: 1;
@@ -793,7 +793,7 @@
   .list-definition > li :is(.list-link, .list-rect) > li {
     z-index: 1;
   }
-  .list-definition > li .link, .list-definition > li a[id^=cite-],
+  .list-definition > li .link, .list-definition > li sup[id^=cite-],
   .list-definition > li abbr {
     z-index: 1;
     /* Creates a stacking context */
@@ -889,8 +889,8 @@
     --color-accent-fg: white;
     --color-accent-fg-rgb: 255, 255, 255;
     /* workaround until relative alpha colors get widespread support */
-    --color-fg: #eee;
-    --color-fg-rgb: 238, 238, 238;
+    --color-fg: #d5d5d5;
+    --color-fg-rgb: 213, 213, 213;
     /* workaround until relative alpha colors get widespread support */
     --color-lvl: #111;
     --color-lvl-rgb: 17, 17, 17;
@@ -970,8 +970,8 @@
       --color-accent-fg: white;
       --color-accent-fg-rgb: 255, 255, 255;
       /* workaround until relative alpha colors get widespread support */
-      --color-fg: #eee;
-      --color-fg-rgb: 238, 238, 238;
+      --color-fg: #d5d5d5;
+      --color-fg-rgb: 213, 213, 213;
       /* workaround until relative alpha colors get widespread support */
       --color-lvl: #111;
       --color-lvl-rgb: 17, 17, 17;
@@ -1170,11 +1170,11 @@
   a {
     text-decoration: none;
   }
-  a:not(.link, a[id^=cite-], .fi) {
+  a:not(.link, sup[id^=cite-], .fi) {
     color: inherit;
   }
   /* Reference citation links */
-  a[id^=cite-] {
+  sup[id^=cite-] {
     align-self: normal;
     font-style: normal;
     font-weight: normal;
@@ -1182,9 +1182,9 @@
     padding-left: 1px;
     text-indent: initial;
     unicode-bidi: isolate;
-    vertical-align: text-top;
+    vertical-align: super;
     white-space: nowrap;
-    font-size: 0.6em;
+    font-size: 0.8em;
   }
   /* Opt-in basic style classes
    *
@@ -1194,17 +1194,17 @@
    *
    * Intended for: <a>
    */
-  .link:link, a[id^=cite-]:link {
+  .link:link, sup[id^=cite-]:link {
     color: #a66144;
   }
-  .link:visited, a[id^=cite-]:visited {
+  .link:visited, sup[id^=cite-]:visited {
     color: #91553b;
   }
-  .link:is(:hover, :focus-within, :focus), a[id^=cite-]:is(:hover, :focus-within, :focus) {
+  .link:is(:hover, :focus-within, :focus), sup[id^=cite-]:is(:hover, :focus-within, :focus) {
     color: #be7c60;
     text-decoration: underline;
   }
-  .link[target=_blank]:not(.definition-tooltip-trigger)::after, a[target=_blank][id^=cite-]:not(.definition-tooltip-trigger)::after {
+  .link[target=_blank]:not(.definition-tooltip-trigger)::after, sup[target=_blank][id^=cite-]:not(.definition-tooltip-trigger)::after {
     align-self: normal;
     font-style: normal;
     font-weight: normal;
@@ -1212,7 +1212,7 @@
     padding-left: 1px;
     text-indent: initial;
     unicode-bidi: isolate;
-    vertical-align: text-top;
+    vertical-align: super;
     content: "↗";
     display: inline-block;
     font-size: 0.5em;
@@ -1221,21 +1221,24 @@
        -moz-user-select: none;
             user-select: none;
   }
-  /* UL
+  /* List
    *
+   * Text-based list
    *
-   * Intended for: <ul>
+   * Intended for: <ul>, <ol>
    */
-  .ul {
+  .list {
     display: flex;
     flex-direction: column;
     gap: 0.5lh;
     padding-left: 2em;
   }
-  .ul .ul {
+  .list .list {
     padding-left: 4em;
   }
   /* Figure
+   *
+   * Regular figure
    *
    * Intended for: <figure>
    */
