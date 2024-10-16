@@ -876,8 +876,8 @@
     background-color: var(--color-lvl);
     color: var(--color-fg);
     font-family: Ubuntu, system-ui;
-    font-size: 19px;
     scroll-behavior: smooth;
+    font-size: 1.1em;
   }
   :root[data-theme=dark] {
     color-scheme: dark;
@@ -889,8 +889,8 @@
     --color-accent-fg: white;
     --color-accent-fg-rgb: 255, 255, 255;
     /* workaround until relative alpha colors get widespread support */
-    --color-fg: #d5d5d5;
-    --color-fg-rgb: 213, 213, 213;
+    --color-fg: #d3d3d3;
+    --color-fg-rgb: 211, 211, 211;
     /* workaround until relative alpha colors get widespread support */
     --color-lvl: #111;
     --color-lvl-rgb: 17, 17, 17;
@@ -970,8 +970,8 @@
       --color-accent-fg: white;
       --color-accent-fg-rgb: 255, 255, 255;
       /* workaround until relative alpha colors get widespread support */
-      --color-fg: #d5d5d5;
-      --color-fg-rgb: 213, 213, 213;
+      --color-fg: #d3d3d3;
+      --color-fg-rgb: 211, 211, 211;
       /* workaround until relative alpha colors get widespread support */
       --color-lvl: #111;
       --color-lvl-rgb: 17, 17, 17;

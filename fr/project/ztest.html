@@ -117,10 +117,31 @@
                     </section>
                     <section id="story">
             <h2>Histoire</h2>
-            <div>
-    <p>todo</p>
-</div>        </section>
-                        <section id="technologies">
+            <p>Pendant longtemps, j'ai été intrigué par <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>, un langage de programmation qui promettait de remédier à certaines des lacunes du <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> tout en offrant de nouvelles perspectives sur la programmation de bas niveau. J'ai décidé de me lancer et de créer un projet qui m'aiderait non seulement à apprendre Zig, mais fournirait également une application pratique du langage. Ainsi, <strong>ztest</strong> est né &mdash; une implémentation Zig de la commande Unix <code>test</code>.</p>
+<h3 id="the-challenge">Le défi</h3>
+<p>L'une des tâches les plus ardues de ce projet était l'analyse des arguments. Contrairement à l'analyse d'une seule chaîne, je devais gérer une liste d'arguments passés au programme, chacun étant une chaîne. Concevoir un analyseur robuste avec une gestion efficace des erreurs était un obstacle important.</p>
+<h3 id="reverse-engineering-the-original">Rétro-ingénierie de l'original</h3>
+<p>Pour comprendre les subtilités de l'analyse des arguments, je me suis plongé dans l'implémentation officielle de <code>test</code>, qui est écrite en C. Le code source<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup> a fourni des informations précieuses qui manquaient à la page de manuel. La rétro-ingénierie de l'implémentation originale m'a aidé à saisir les nuances de la façon dont les arguments sont traités.</p>
+<h3 id="writing-unit-tests">Rédaction de tests unitaires</h3>
+<p>Pour garantir la fiabilité de mon implémentation, j'ai écrit environ 50 tests unitaires en utilisant la syntaxe <code>test</code> intégrée de Zig. Ces tests étaient basés sur la suite de tests officielle, qui est écrite en Perl, un langage que je ne connais pas. Malgré cela, j'ai réussi à traduire efficacement les cas de test, en m'assurant que mon implémentation était robuste et précise.</p>
+<h3 id="impressions-of-zig">Impressions de Zig</h3>
+<p>Dans l'ensemble, j'ai été très impressionné par Zig. Sa syntaxe est intuitive et cohérente, ce qui la rend facile à comprendre. Les concepts sont simples, sans être trop dogmatiques ou coercitifs (contrairement au <em lang="en">borrow checker</em> de <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Rust_(langage)" data-definition-id="rust" class="link definition-tooltip-trigger">Rust</a> ou à la règle des 5 de <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C%2B%2B" data-definition-id="cpp" class="link definition-tooltip-trigger">C++</a>). La simplicité et la flexibilité de Zig en font un ajout précieux à ma boîte à outils pour de futurs projets plus <q>réels</q>.</p>
+<h3 id="the-build-system">Le système de build</h3>
+<p>L'une des fonctionnalités les plus remarquables de Zig est son système de build. Fini le temps des . Le système de build de Zig est convivial, ce qui rend le processus de développement plus fluide et plus agréable.</p>
+<h3 id="lessons-learned">Leçons apprises</h3>
+<p>Ce projet a été une expérience d'apprentissage fantastique. Il a non seulement approfondi ma compréhension de Zig, mais a également perfectionné mes compétences en analyse d'arguments, en rétro-ingénierie et en écriture de tests unitaires. Les défis auxquels j'ai été confronté et les solutions que j'ai conçues m'ont fourni des connaissances précieuses que je peux appliquer à de futurs projets.</p>
+<p><strong>ztest</strong> est plus qu'un simple projet&nbsp;; c'est un témoignage du pouvoir de la curiosité et de la joie d'apprendre. J'ai hâte de voir où mon voyage avec Zig me mènera ensuite.</p>        </section>
+                        <section id="references">
+                    <h2>Références</h2>
+                            <ol class="list">
+                            <li id="ref-1"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-1">&uarr;</a></span>
+                    <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://github.com/coreutils/coreutils/blob/master/src/test.c">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                        <span>test.c &mdash; dépôt GitHub GNU coreutils</span>
+                    </a>
+                </li>
+                    </ol>
+                    </section>
+                            <section id="technologies">
                     <h2>Technologies</h2>
                             <ul class="lvl list-definition">
                             <li>        <article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/vs-code/bg.png)">
