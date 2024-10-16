@@ -8,6 +8,7 @@
       "adapter",
       "facade",
       "chain-of-responsibility",
+      "anno-designer",
       "ci-cd",
       "nuget",
       "oop",

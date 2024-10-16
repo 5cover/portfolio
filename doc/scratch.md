@@ -107,6 +107,8 @@ use maybe a map with cached jsons?
 
 maybe http.cat?
 
+I know it's possible with GitHub pages
+
 ## js langs
 
 format title based on value of the html lang attr
@@ -227,3 +229,69 @@ Some ideas for blog articles i want to make.
 ### C#: functional programming, at the cost of performance
 
 ### The case of `nomFichierLog`: control flow analysis or quantum physics?
+
+### The Child Combinator: A Double-Edged Sword in CSS
+
+CSS, the language that brings style and structure to our web pages, has a plethora of tools. One such tool is the child combinator (`>`). But should we use it when combining selectors? Let's dive into this question with a fresh perspective.
+
+#### The Allure of the Child Combinator
+
+As a programmer, my instinct is to reach for the *least powerful tool* to get the job done. The child combinator, at first glance, seems less powerful than the descendant combinator. After all, the set of matching DOM elements is smaller with the child combinator.
+
+```css
+/* Child combinator: <ul> must be a direct child of <footer> */
+footer > ul {
+  /* styles */
+}
+
+/* Descendant combinator: Any level of nesting between <footer> and <ul> */
+footer ul {
+  /* styles */
+}
+```
+
+So, I started using the child combinator everywhere. My rationale was that its restrictive nature would prevent over-matching (a selector matching too many elements). But this approach turned out to be a mistake, as it increased the coupling between HTML and CSS.
+
+#### The Pitfall of Over-Restriction
+
+Consider the following HTML structure:
+
+```html
+<footer>
+  <div>
+    <ul>
+      <!-- list items -->
+    </ul>
+  </div>
+</footer>
+```
+
+We've enclosed the `ul` element in a `div`. There could be many reasons for this: semantics, styling, etc.
+
+Now, the `footer > ul` ruleset no longer matches. We have to change it to `footer > div > ul`, increasing specificity, size, and overall CSS complexity.
+
+In practice, over-matching rarely happens. So, this whole approach was yet another case of premature optimization or over-engineering. I trusted my instincts to solve a problem before I had it (over-matching with the descendant combinator), and it turns out this problem didn't actually need solving. But I created other problems along the way (HTML/CSS coupling, DOM rigidity).
+
+#### The Semantic Insight
+
+I realized that an element being the direct child of another just isn't a connection of semantic significance. Using it where it's not necessary decreases CSS reusability and complicates development.
+
+The child combinator does have legitimate uses, though. For instance, selecting a particular level in a nested list. I'm not saying it must be avoided like the plague. But it is actually more powerful than the descendant combinator, so it should only be used when necessary.
+
+This challenges the notion of the "power" of a selector. I used to think that the more elements a selector matched, the more powerful it could be considered. But in retrospect, it's the opposite. *The power of a selector comes from its ability to control which elements it applies to*. This corroborates the notion of specificity as a measure of a selector's "power".
+
+#### The Freedom of Semantic Neutrality
+
+Since the `div` and `span` elements have no semantic value, they should be able to be inserted anywhere in the DOM without affecting its style. The child combinator can hinder this flexibility.
+
+In conclusion, while the child combinator has its place, it should be used judiciously. Understanding its true power and impact can help us write more maintainable and flexible CSS.
+
+Happy styling! 🎨💻
+
+## Filter project by technology
+
+So that a recruiter can see all projects I've made that use particular technology
+
+## link only one data json at a time
+
+so we don't need to link everything at the start in generate.bash. This will decrease generation time.

@@ -52,7 +52,7 @@
 
     @mixin theme-dark {
         color-scheme: dark;
-        $fg: #d5d5d5;
+        $fg: #d3d3d3;
         $c0: #111;
         $step: 8%;
         $c1: color.scale($c0, $lightness: $step);
@@ -76,8 +76,8 @@
         background-color: var(--color-lvl);
         color: var(--color-fg);
         font-family: Ubuntu, system-ui;
-        font-size: 19px;
         scroll-behavior: smooth;
+        font-size: 1.1em;
     }
 
     :root[data-theme="dark"] {

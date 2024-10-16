@@ -1,4 +1,16 @@
 {
+  "anno-designer": {
+    "type": "software",
+    "name": {
+      "full": "Anno Designer"
+    },
+    "synopsis": "A program that lets you create and export building layouts for the Anno series of games.",
+    "wiki": "https://github.com/AnnoDesigner/anno-designer",
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/definition/anno-designer/logo.png"
+    }
+  },
   "chain-of-responsibility": {
     "type": "design-pattern",
     "name": {

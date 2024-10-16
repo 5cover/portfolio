@@ -81,14 +81,19 @@ final class Fragment
         return '<sup id="cite-ref-' . $this->refNum . '"><a class="link" href="#ref-' . $this->refNum . '">[' . $this->refNum++ . ']</a></sup>';
     }
 
+    private array $defined = [];
+
     /**
      * Get a definition tooltip trigger.
      *
      * Uses the unlinked *definitions* data JSON.
+     * 
+     * Defines each id only once. Subsequent calls retrive the localized definition name.
      */
-    public function def(string $id): string
+    public function def(string $id, ?string $name = null): string
     {
-        $def = $this->lang->get_data_json('definitions', false)[$id];
-        return (new Definition($this->lang, $id, $def))->get_tooltip_trigger();
+        return ($def = $this->defined[$id] ?? null)
+            ? $name ?? $def->term
+            : ($this->defined[$id] = new Definition($this->lang, $id,  $this->lang->get_data_json('definitions', false)[$id]))->get_tooltip_trigger($name);
     }
 }

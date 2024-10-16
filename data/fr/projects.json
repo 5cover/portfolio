@@ -12,7 +12,13 @@
         "href": "https://anno2070.fandom.com/wiki/User_blog:Scover32/Anno_2070:_Island_maps"
       }
     },
-    "references": [],
+    "references": [
+      {
+        "anchor": "wikipedia",
+        "href": "https://fr.wikipedia.org/wiki/NP-difficile",
+        "caption": "NP-difficile, Wikipédia"
+      }
+    ],
     "gallery": [],
     "story": {
       "$include": "project/island-maps/story.phtml"
@@ -228,6 +234,7 @@
     },
     "references": [],
     "start-date": "2023-05-24",
+    "end-date": "2023-06-29",
     "story": {
       "$include": "project/ethercrash/story.phtml"
     },
@@ -1029,7 +1036,13 @@
         "href": "https://github.com/5cover/ztest"
       }
     },
-    "references": [],
+    "references": [
+      {
+        "anchor": "github",
+        "caption": "test.c &mdash; dépôt GitHub GNU coreutils",
+        "href": "https://github.com/coreutils/coreutils/blob/master/src/test.c"
+      }
+    ],
     "start-date": "2024-06-01",
     "story": {
       "$include": "project/ztest/story.phtml"

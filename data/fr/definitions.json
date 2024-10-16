@@ -1,4 +1,16 @@
 {
+  "anno-designer": {
+    "type": "software",
+    "name": {
+      "full": "Anno Designer"
+    },
+    "synopsis": "Un programme qui vous permet de créer et exporter des plans de construction pour la série de jeux Anno.",
+    "wiki": "https://github.com/AnnoDesigner/anno-designer",
+    "logo": {
+      "isThemedSvg": false,
+      "url": "/portfolio/img/definition/anno-designer/logo.png"
+    }
+  },
   "chain-of-responsibility": {
     "type": "design-pattern",
     "name": {

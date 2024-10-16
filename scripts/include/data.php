@@ -29,7 +29,7 @@ abstract class Data
 final class Definition extends Data
 {
     private readonly string $title;
-    private readonly string $term;
+    public readonly string $term;
 
     public function __construct(Lang $lang, string $id, array $jsonData)
     {
@@ -39,12 +39,12 @@ final class Definition extends Data
         $this->term  = $name['abbr'] ?? $name['short'] ?? $name['full'];
     }
 
-    public function get_tooltip_trigger(): string
+    public function get_tooltip_trigger(?string $name = null): string
     {
         return '<a target="_blank" rel="noopener noreferrer" href="' . $this->data['wiki']
             . '" data-definition-id="' . $this->id
             . '" class="link definition-tooltip-trigger">'
-            . $this->term . '</a>';
+            . ($name ?? $this->term) . '</a>';
     }
 
     public function put_card()

@@ -483,3 +483,7 @@ translate and add other files
 
 - translate history
 - translate but informatique
+
+## Add anno designer definition
+
+And update island-maps story. (and french translation)
