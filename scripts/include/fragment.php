@@ -66,6 +66,20 @@ final class Fragment
     }
 
     /**
+     * Get a an anchor to another project
+     *
+     * @param string $projectId the project id
+     * @param string|null $name the project name, or `null` to use the project name from the data
+     */
+    public function a_project(string $projectId, ?string $name = null): string
+    {
+        return $this->a(
+            $name ?? $this->lang->get_data_json('projects', false)[$projectId]['title'],
+            'project/' . $projectId . '.html'
+        );
+    }
+
+    /**
      * Get an external anchor
      */
     public function blank(string $content, string $href): string
@@ -87,13 +101,13 @@ final class Fragment
      * Get a definition tooltip trigger.
      *
      * Uses the unlinked *definitions* data JSON.
-     * 
+     *
      * Defines each id only once. Subsequent calls retrive the localized definition name.
      */
     public function def(string $id, ?string $name = null): string
     {
         return ($def = $this->defined[$id] ?? null)
-            ? $name ?? $def->term
-            : ($this->defined[$id] = new Definition($this->lang, $id,  $this->lang->get_data_json('definitions', false)[$id]))->get_tooltip_trigger($name);
+                   ? $name ?? $def->term
+                   : ($this->defined[$id] = new Definition($this->lang, $id, $this->lang->get_data_json('definitions', false)[$id]))->get_tooltip_trigger($name);
     }
 }

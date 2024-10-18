@@ -1,37 +1,62 @@
 <?php
 require_once 'fragment.php';
-$f = start('en');
-?>
-<div>
-    <p>A language to define declarative <q>blueprints</q> to generate <?= $f->def('java') ?> classes.</p>
-    <p>Supports automatic and customizable generation of:</p>
-    <ul class="list">
-        <li><p>Inheritance trees (<code>extend</code>, <code>implement</code>, <code>permits</code>)</p></li>
-        <li><p>Attributes</p></li>
-        <li><p>Getters/setters</p></li>
-        <li><p><code>hashCode</code> method</p></li>
-        <li><p><code>equals</code> method</p></li>
-        <li><p><code>toString</code> method</p></li>
-        <li><p>Method stubs</p></li>
-    </ul>
-    <p>Addtional features include:</p>
-    <ul class="list">
-        <li><p>Nested and static classes</p></li>
-        <li><p>Arbitrary Java code blocks</p></li>
-    </ul>
-</div>
+$f = start('en') ?>
+<p>A language to define declarative <q>blueprints</q> to generate <?= $f->def('java') ?> classes.</p>
+<p>Supports automatic and customizable generation of:</p>
+<ul class="list">
+    <li>
+        <p>Inheritance trees (<code>extend</code>, <code>implement</code>, <code>permits</code>)</p>
+    </li>
+    <li>
+        <p>Attributes</p>
+    </li>
+    <li>
+        <p>Getters/setters</p>
+    </li>
+    <li>
+        <p><code>hashCode</code> method</p>
+    </li>
+    <li>
+        <p><code>equals</code> method</p>
+    </li>
+    <li>
+        <p><code>toString</code> method</p>
+    </li>
+    <li>
+        <p>Method stubs</p>
+    </li>
+</ul>
+<p>Addtional features include:</p>
+<ul class="list">
+    <li>
+        <p>Nested and static classes</p>
+    </li>
+    <li>
+        <p>Arbitrary Java code blocks</p>
+    </li>
+</ul>
 <article>
     <h3 id="advantages-over-snippets">Advantages over snippets</h3>
     <p>A Jslave blueprint is self-contained and can be automated, unlike snippets/shortcuts which are IDE-dependent and require manual input. This approach has the following advantages:</p>
     <ul class="list">
-        <li><p>Blueprints can be passed around as files</p></li>
-        <li><p>Blueprints can generate to something else than Java</p></li>
-        <li><p>Generation is predictable and deterministic</p></li>
-        <li><p>Generation can be automated in a script</p></li>
+        <li>
+            <p>Blueprints can be passed around as files</p>
+        </li>
+        <li>
+            <p>Blueprints can generate to something else than Java</p>
+        </li>
+        <li>
+            <p>Generation is predictable and deterministic</p>
+        </li>
+        <li>
+            <p>Generation can be automated in a script</p>
+        </li>
     </ul>
     <p>Cons:</p>
     <ul class="list">
-        <li><p>Since we're no longer in a Java context, we won't recieve help much from the IDE while writing JSlave (syntax highlighting, auto-completion&hellip;). This issue is mitigated by the simplicity of the language, and the future <?= $f->def('vs-code') ?> extension.</p></li>
+        <li>
+            <p>Since we're no longer in a Java context, we won't recieve help much from the IDE while writing JSlave (syntax highlighting, auto-completion&hellip;). This issue is mitigated by the simplicity of the language, and the future <?= $f->def('vs-code') ?> extension.</p>
+        </li>
     </ul>
 </article>
 <article>
@@ -42,12 +67,21 @@ $f = start('en');
     <p>A blueprint is a list of <strong>definitions</strong> that generate to the corresponding Java type (classes, records, interfaces&hellip;). Each definition contains zero or more <strong>members</strong> that determine the contents of the type.</p>
     <p>Members can be of two kinds:</p>
     <ul class="list">
-        <li><p><strong>Attributes</strong> define the data fields of the type. They generate to Java class attributes, and getter/setter methods.</p></li>
-        <li><p><strong>Methods</strong> define the behaviors of the type. Methods that have a special meaning in Java (<code>equals</code>, <code>hashCode</code>, <code>toString</code>) are called <strong>special methods</strong>. They can be expressed in three forms:</p>
+        <li>
+            <p><strong>Attributes</strong> define the data fields of the type. They generate to Java class attributes, and getter/setter methods.</p>
+        </li>
+        <li>
+            <p><strong>Methods</strong> define the behaviors of the type. Methods that have a special meaning in Java (<code>equals</code>, <code>hashCode</code>, <code>toString</code>) are called <strong>special methods</strong>. They can be expressed in three forms:</p>
             <ul class="list">
-                <li><p><strong>Stub</strong>: an empty method to implement either from the generated Java or with a code block</p></li>
-                <li><p><strong>Default implementation</strong>: a default, general-purpose implementation that should work for most cases</p></li>
-                <li><p><strong>Custom implementation</strong>: the default implementation, customized by passing arguments to the method</p></li>
+                <li>
+                    <p><strong>Stub</strong>: an empty method to implement either from the generated Java or with a code block</p>
+                </li>
+                <li>
+                    <p><strong>Default implementation</strong>: a default, general-purpose implementation that should work for most cases</p>
+                </li>
+                <li>
+                    <p><strong>Custom implementation</strong>: the default implementation, customized by passing arguments to the method</p>
+                </li>
             </ul>
         </li>
     </ul>
@@ -55,7 +89,11 @@ $f = start('en');
     <p>From the VSCode extension GUI or using the standalone binary, generate your blueprint.</p>
     <p>Multiple targets are available</p>
     <ul class="list">
-        <li><p><?= $f->def('java') ?> (obviously): generates Java code</p></li>
-        <li><p><?= $f->def('mermaid') ?>: generates a Mermaid class diagram<?= $f->ref() ?> that represents the structure of the blueprint</p></li>
+        <li>
+            <p><?= $f->def('java') ?> (obviously): generates Java code</p>
+        </li>
+        <li>
+            <p><?= $f->def('mermaid') ?>: generates a Mermaid class diagram<?= $f->ref() ?> that represents the structure of the blueprint</p>
+        </li>
     </ul>
 </article>

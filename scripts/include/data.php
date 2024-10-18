@@ -49,8 +49,7 @@ final class Definition extends Data
 
     public function put_card()
     {
-        $types = $this->lang->get_data_json('types');
-        ?>
+        $types = $this->lang->get_data_json('types') ?>
         <article class="definition" <?php
         if ($bg = $this->data['background'] ?? null) {
             echo get_background_style_attr($bg, 'bg-img-card');
@@ -91,29 +90,27 @@ abstract class Details extends Data
     protected function __construct(Lang $lang, string $id, array $jsonData, string $stylesheet, array $specificKeys = [])
     {
         parent::__construct($lang, $id, $jsonData, array_merge($specificKeys, [
-                                                                   'abstract',
-                                                                   // optional: 'background'
-                                                                   'gallery',
-                                                                   'links',
-                                                                   // optional: 'logo',
-                                                                   'references',
-                                                                   'story',
-                                                                   'title',
-                                                               ]));
+            'abstract',
+            // optional: 'background'
+            'gallery',
+            'links',
+            // optional: 'logo',
+            'references',
+            'story',
+            'title',
+        ]));
         $this->stylesheet = $stylesheet;
     }
 
     public function put_page(Page $page)
     {
         put_doctype_html($page, $this->lang);
-        put_head($page, $this->lang, $this->stylesheet);
-        ?>
+        put_head($page, $this->lang, $this->stylesheet) ?>
 
         <body><?php
         put_header($page, $this->lang);
         $this->put_page_main();
-        put_footer($page, $this->lang);
-?></body>
+        put_footer($page, $this->lang) ?></body>
 
         </html><?php
     }
@@ -130,8 +127,7 @@ abstract class Details extends Data
 
     protected function put_card_link_list()
     {
-        $anchors = get_data_json('anchors');
-        ?>
+        $anchors = get_data_json('anchors') ?>
         <ul class="list-link">
             <?php
             foreach ($this->data['links'] as $name => $link) {
@@ -151,8 +147,7 @@ abstract class Details extends Data
 
     protected function put_page_link_list()
     {
-        $anchors = get_data_json('anchors');
-        ?>
+        $anchors = get_data_json('anchors') ?>
         <ul class="lvl list-link">
             <?php foreach ($this->data['links'] as $name => $link) { ?>
                 <li>
@@ -169,8 +164,7 @@ abstract class Details extends Data
 
     protected function put_reference_list()
     {
-        $anchors = get_data_json('anchors');
-        ?>
+        $anchors = get_data_json('anchors') ?>
         <ol class="list">
             <?php
             $ref_num = 1;
@@ -279,10 +273,10 @@ final class Passion extends Details
         if (count($this->data['references']) > 0) { ?>
                 <section id="references">
                     <h2><?= $this->lang->get('references') ?></h2>
-                    <?php $this->put_reference_list(); ?>
+                    <?php $this->put_reference_list() ?>
                 </section>
             <?php }
-        $this->put_gallery(); ?>
+        $this->put_gallery() ?>
         </main>
     <?php
     }
@@ -348,10 +342,10 @@ final class Perspective extends Details
         if (count($this->data['references']) > 0) { ?>
                 <section id="references">
                     <h2><?= $this->lang->get('references') ?></h2>
-                    <?php $this->put_reference_list(); ?>
+                    <?php $this->put_reference_list() ?>
                 </section>
             <?php }
-        $this->put_gallery(); ?>
+        $this->put_gallery() ?>
         </main>
     <?php
     }
@@ -394,13 +388,13 @@ final class Project extends Details
     public function __construct(Lang $lang, string $id, array $jsonData)
     {
         parent::__construct($lang, $id, $jsonData, 'project.css', [
-                                                       'context',
-                                                       // optional: 'end-date'
-                                                       'start-date',
-                                                       'tags',
-                                                       'team',
-                                                       'technologies',
-                                                   ]);
+            'context',
+            // optional: 'end-date'
+            'start-date',
+            'tags',
+            'team',
+            'technologies',
+        ]);
     }
 
     public function put_page_main()
@@ -430,7 +424,7 @@ final class Project extends Details
         if (count($this->data['references']) > 0) { ?>
                 <section id="references">
                     <h2><?= $this->lang->get('references') ?></h2>
-                    <?php $this->put_reference_list(); ?>
+                    <?php $this->put_reference_list() ?>
                 </section>
             <?php }
         if (count($technologies = $this->data['technologies']) > 0) { ?>
@@ -439,7 +433,7 @@ final class Project extends Details
                     <?php Definition::put_card_list(array_filter($this->lang->definitions(), fn($d) => in_array($d->id, $technologies))) ?>
                 </section>
             <?php }
-        $this->put_gallery(); ?>
+        $this->put_gallery() ?>
         </main>
     <?php
     }
@@ -463,8 +457,7 @@ final class Project extends Details
 
     protected function put_tags()
     {
-        $tags = $this->lang->get_data_json('tags');
-        ?>
+        $tags = $this->lang->get_data_json('tags') ?>
         <ul class="list-rect">
             <?php foreach ($this->data['tags'] as $tagId) {
                 echo "<li><a href=\"/portfolio/{$this->lang->name}/projects.html?tag=$tagId\">{$tags[$tagId]}</a></li>";
@@ -475,8 +468,7 @@ final class Project extends Details
 
     private function put_status()
     {
-        $endDate = $this->data['end-date'] ?? false;
-    ?><small class="status"><?php $this->put_date($this->data['start-date']) ?> &ndash;
+        $endDate = $this->data['end-date'] ?? false ?><small class="status"><?php $this->put_date($this->data['start-date']) ?> &ndash;
             <?php
             if ($endDate) {
                 $this->put_date($endDate);

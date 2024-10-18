@@ -133,8 +133,7 @@ function put_header(Page $page, Lang $lang)
 
                 $isSameLang = $lang->equals($otherLang);
                 $class      = 'fi ' . $otherLang->get('flagClass') . ($isSameLang ? '' : ' gray-when-not-hover');
-                $title      = $otherLang->name . ($isSameLang ? '' : " / {$otherLang->nameof($lang)}");
-            ?><li><a class="<?= $class ?>" title="<?= $title ?>" href="/portfolio/<?= $otherLang->name ?>/<?= $page->name ?>.html"></a></li><?php
+                $title      = $otherLang->name . ($isSameLang ? '' : " / {$otherLang->nameof($lang)}") ?><li><a class="<?= $class ?>" title="<?= $title ?>" href="/portfolio/<?= $otherLang->name ?>/<?= $page->name ?>.html"></a></li><?php
             }
         ?>
         </ul>

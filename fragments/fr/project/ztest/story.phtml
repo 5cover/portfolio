@@ -1,7 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('fr');
-?>
+$f = start('fr') ?>
 <p>Pendant longtemps, j'ai été intrigué par <?= $f->def('zig') ?>, un langage de programmation qui promettait de remédier à certaines des lacunes du <?= $f->def('c') ?> tout en offrant de nouvelles perspectives sur la programmation de bas niveau. J'ai décidé de me lancer et de créer un projet qui m'aiderait non seulement à apprendre Zig, mais fournirait également une application pratique du langage. Ainsi, <strong>ztest</strong> est né &mdash; une implémentation Zig de la commande Unix <code>test</code>.</p>
 <h3 id="the-challenge">Le défi</h3>
 <p>L'une des tâches les plus ardues de ce projet était l'analyse des arguments. Contrairement à l'analyse d'une seule chaîne, je devais gérer une liste d'arguments passés au programme, chacun étant une chaîne. Concevoir un analyseur robuste avec une gestion efficace des erreurs était un obstacle important.</p>
@@ -12,7 +11,7 @@ $f = start('fr');
 <h3 id="impressions-of-zig">Impressions de Zig</h3>
 <p>Dans l'ensemble, j'ai été très impressionné par Zig. Sa syntaxe est intuitive et cohérente, ce qui la rend facile à comprendre. Les concepts sont simples, sans être trop dogmatiques ou coercitifs (contrairement au <?= $f->term('borrow checker', 'en') ?> de <?= $f->def('rust') ?> ou à la règle des 5 de <?= $f->def('cpp') ?>). La simplicité et la flexibilité de Zig en font un ajout précieux à ma boîte à outils pour de futurs projets plus <q>réels</q>.</p>
 <h3 id="the-build-system">Le système de build</h3>
-<p>L'une des fonctionnalités les plus remarquables de Zig est son système de build. Fini le temps des <?php $f->def('make', 'Makefile headaches') ?>. Le système de build de Zig est convivial, ce qui rend le processus de développement plus fluide et plus agréable.</p>
+<p>L'une des fonctionnalités les plus remarquables de Zig est son système de build. Fini le temps des <?= $f->def('make', 'Makefile headaches') ?>. Le système de build de Zig est convivial, ce qui rend le processus de développement plus fluide et plus agréable.</p>
 <h3 id="lessons-learned">Leçons apprises</h3>
 <p>Ce projet a été une expérience d'apprentissage fantastique. Il a non seulement approfondi ma compréhension de Zig, mais a également perfectionné mes compétences en analyse d'arguments, en rétro-ingénierie et en écriture de tests unitaires. Les défis auxquels j'ai été confronté et les solutions que j'ai conçues m'ont fourni des connaissances précieuses que je peux appliquer à de futurs projets.</p>
 <p><strong>ztest</strong> est plus qu'un simple projet&nbsp;; c'est un témoignage du pouvoir de la curiosité et de la joie d'apprendre. J'ai hâte de voir où mon voyage avec Zig me mènera ensuite.</p>

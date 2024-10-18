@@ -17,8 +17,7 @@ $piano_tiles = [
 ];
 
 put_doctype_html($page, $lang);
-put_head($page, $lang);
-?>
+put_head($page, $lang) ?>
 
 <body>
     <?php put_header($page, $lang) ?>
@@ -27,8 +26,7 @@ put_head($page, $lang);
             <?php
                 foreach ($piano_tiles as $i => $href) {
                     $num = $i + 1;
-                    $src = get_web_url(glob_web_single("/portfolio/img/piano-tile/$num.*"));
-            ?>
+                    $src = get_web_url(glob_web_single("/portfolio/img/piano-tile/$num.*")) ?>
                 <li>
                     <figure>
                         <img src="<?= $src ?>" alt="<?= $lang->get("pianoTile{$num}Title") ?>" width="240" height="480" loading="lazy" title="<?= strip_tags($lang->get("pianoTile{$num}Desc")) ?>">
@@ -75,8 +73,7 @@ put_head($page, $lang);
                 $CV_URL_PREVIEW = 'cv-bardini-raphael-preview.jpg';
                 exec("echo quit | gs -dSAFER -dBATCH -sDEVICE=jpeg -sOutputFile='"
                          . $page->get_web_dir($lang) . "/$CV_URL_PREVIEW' '"
-                         . $page->get_web_dir($lang) . "/$CV_URL'");
-            ?>
+                         . $page->get_web_dir($lang) . "/$CV_URL'") ?>
             <a href="<?= $CV_URL ?>" target="_blank" rel="noopener noreferrer">
                 <img src="<?= $CV_URL_PREVIEW ?>" alt="<?= $lang->get('indexMyResumePreview') ?>" width="300" height="212" loading="lazy">
                 <span><?= $lang->get('indexMyResume') ?></span>

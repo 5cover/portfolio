@@ -6,14 +6,12 @@ require_once 'lang.php';
 [$lang, $page] = parse_args();
 
 put_doctype_html($page, $lang);
-put_head($page, $lang);
-
-?>
+put_head($page, $lang) ?>
 
 <body>
     <?php put_header($page, $lang) ?>
     <main>
-        <h1><?php $lang->get('namePagePassions'); ?></h1>
+        <h1><?= $lang->get('namePagePassions') ?></h1>
         <?php Passion::put_card_list($lang->passions()) ?>
     </main>
     <?php put_footer($page, $lang) ?>

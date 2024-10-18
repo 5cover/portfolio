@@ -1,3 +1,9 @@
-<div>
-    <p>todo (frustation Winclean wizard xctk license...)</p>
-</div>
+<?php
+require_once 'fragment.php';
+$f = start('en') ?>
+<p><strong>WPFZard</strong> is a <?= $f->def('wpf') ?> <?= $f->def('wizard') ?> library that I've made for my other project, <?= $f->a_project('winclean') ?>, as I needed a library to provide a simple, easy-to-use wizard UX component.</p>
+<h3 id="the-problem">The problem</h3>
+<p>For making wizards, I initially used the Xceed Extended WPF Toolkit™<?=$f->ref()?>. It worked, but I had missed an important detail: my project uses the MIT License<?=$f->ref()?>, while the Xceed toolkit uses a custom license<?=$f->ref()?> which was, after careful inspection, not compatible with the MIT license. This means I was <strong>exposing myself to a lawsuit from Xceed</strong>. While it would have been unlikely for the issue to take such dramatic proportions, I indeed was exposing myself to legal troubles, even maybe a cease-and-desist letter from Xceed.</p>
+<p>So, I decided to make my own wizard library, in accordance with the <q>build your own mountain</q> philosophy.</p>
+<h3 id="result">Result</h3>
+<p>In the end, I did not end up using <strong>WPFZard</strong> in WinClean. This is because I've found that previous versions of the Xceed toolkit are licensed under MIT, so I can legally use them in WinClean. It was a nice project, though, and I taught me a lot about making reusable WPF components.</p>

@@ -1,19 +1,17 @@
 <?php
 require_once 'fragment.php';
-$f = start('en');
-?>
-<div>
-    <p>Psdc meets a need. That of automating the tedious task of translating programs between different programming languages.</p>
-    <p>During my BUT Informatique training, I learned algorithms with Pseudocode, a pseudo programming language invented for the needs of the IUT of Lannion. Inspired from <?= $f->def('pascal') ?>, Pseudocode allows an algorithm to be stated in a language closer to that of humans than to that of computers, while keeping the exhaustive aspect of any programming language.</p>
-    <p>During our practical work, we very often had to translate pseudocode programs to <?= $f->def('c') ?>. This task is quite daunting, hence my desire to automate it. And that's what led me to discover compiler design.</p>
-    <p>As an example, here's a simple pseudocode program that prints <q>Hello</q> to the screen:</p>
-    <?= $f->codeblock(<<<CODE
+$f = start('en') ?>
+<p>Psdc meets a need. That of automating the tedious task of translating programs between different programming languages.</p>
+<p>During my BUT Informatique training, I learned algorithms with Pseudocode, a pseudo programming language invented for the needs of the IUT of Lannion. Inspired from <?= $f->def('pascal') ?>, Pseudocode allows an algorithm to be stated in a language closer to that of humans than to that of computers, while keeping the exhaustive aspect of any programming language.</p>
+<p>During our practical work, we very often had to translate pseudocode programs to <?= $f->def('c') ?>. This task is quite daunting, hence my desire to automate it. And that's what led me to discover compiler design.</p>
+<p>As an example, here's a simple pseudocode program that prints <q>Hello</q> to the screen:</p>
+<?= $f->codeblock(<<<CODE
 programme AfficherBonjour c'est début
     écrireÉcran("Hello");
 fin
 CODE) ?>
-    <p>Here is an equivalent program in <?= $f->def('c') ?>:</p>
-    <?= $f->codeblock(<<<CODE
+<p>Here is an equivalent program in <?= $f->def('c') ?>:</p>
+<?= $f->codeblock(<<<CODE
 #include <stdio.h>;
 
 int main() {
@@ -21,14 +19,13 @@ int main() {
     return 0;
 }
 CODE) ?>
-    <p>How do you automate this transformation? Well, it's actually not that complex. The Crafting Interpreters book<?= $f->ref() ?> metaphorizes the problem as climbing a mountain:</p>
-    <figure class="figure"><img alt="Mountain Metaphor" src="/portfolio/img/project/psdc/mountain.png" width="1824" height="833" loading="lazy">
-        <figcaption><cite>Crafting Interpreters</cite>, Robert Nystrom &mdash; &copy; <?= $f->year(2015) ?> &ndash; <?= $f->year(2021) ?>, MIT license</figcaption>
-    </figure>
-    <p>Let's start with the original source code, at the foot of the mountain. As the steps go by (scanning, parsing, analysis), the representation of the code becomes more and more high-level, that is, it focuses more on the expressed semantics than on implementation details.</p>
-    <p>Once the top is reached, we are halfway through the compilation. We have a breathtaking view of the semantics of the code, that is, the meaning that the user gives it through the syntax of our language.</p>
-    <p>So let's begin our descent. Let's successively convert our high-level representation into forms that approximate our final goal: the machine language, which will be executed directly by the processor.</p>
-    <p>I only discovered Crafting Interpreters quite late in the project. I originally based it on the playlist <?= $f->term('Creating a Compiler', 'en') ?><?= $f->ref() ?> by <?= $f->blank('Pixeled', 'https://www.youtube.com/@pixeled-yt') ?> on YouTube, where we see the design and implementation of a compiler for a language <?= $f->term('ex-nihilo') ?> called Hydrogen. The compiler transforms the code into assembly, then uses <?= $f->def('nasm') ?> to generate the machine code.</p>
-    <p>It is in these videos that I learned the basics of lexical analysis<?= $f->ref() ?>, formal grammars<?= $f->ref() ?>, or syntactic analysis<?= $f->ref() ?>. It is really interesting and I've learned a lot.</p>
-    <p>This project is far from being done &mdash; many features are yet to implemented, notably for <?= $f->def('vs-code') ?> integration with a language server.</p>
-</div>
+<p>How do you automate this transformation? Well, it's actually not that complex. The Crafting Interpreters book<?= $f->ref() ?> metaphorizes the problem as climbing a mountain:</p>
+<figure class="figure"><img alt="Mountain Metaphor" src="/portfolio/img/project/psdc/mountain.png" width="1824" height="833" loading="lazy">
+    <figcaption><cite>Crafting Interpreters</cite>, Robert Nystrom &mdash; &copy; <?= $f->year(2015) ?> &ndash; <?= $f->year(2021) ?>, MIT license</figcaption>
+</figure>
+<p>Let's start with the original source code, at the foot of the mountain. As the steps go by (scanning, parsing, analysis), the representation of the code becomes more and more high-level, that is, it focuses more on the expressed semantics than on implementation details.</p>
+<p>Once the top is reached, we are halfway through the compilation. We have a breathtaking view of the semantics of the code, that is, the meaning that the user gives it through the syntax of our language.</p>
+<p>So let's begin our descent. Let's successively convert our high-level representation into forms that approximate our final goal: the machine language, which will be executed directly by the processor.</p>
+<p>I only discovered Crafting Interpreters quite late in the project. I originally based it on the playlist <?= $f->term('Creating a Compiler', 'en') ?><?= $f->ref() ?> by <?= $f->blank('Pixeled', 'https://www.youtube.com/@pixeled-yt') ?> on YouTube, where we see the design and implementation of a compiler for a language <?= $f->term('ex-nihilo') ?> called Hydrogen. The compiler transforms the code into assembly, then uses <?= $f->def('nasm') ?> to generate the machine code.</p>
+<p>It is in these videos that I learned the basics of lexical analysis<?= $f->ref() ?>, formal grammars<?= $f->ref() ?>, or syntactic analysis<?= $f->ref() ?>. It is really interesting and I've learned a lot.</p>
+<p>This project is far from being done &mdash; many features are yet to implemented, notably for <?= $f->def('vs-code') ?> integration with a language server.</p>

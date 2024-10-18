@@ -31,8 +31,7 @@ function put_skill_project_list(string $skillTag)
 function put_skill(int $index, string $skillTag)
 {
     global $but;
-    $skill = $but['skills'][$index];
-    ?>
+    $skill = $but['skills'][$index] ?>
     <li style="--bg-img: url(/portfolio/img/skill/<?= $index ?>.jpg)">
         <h3><?= sprintf($but['fmt-h3-skill'], $index + 1, $skill['name']) ?></h3>
         <p><?= $skill['desc'] ?></p>

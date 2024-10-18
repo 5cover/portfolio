@@ -1005,7 +1005,23 @@
       "isThemedSvg": false,
       "url": "/portfolio/img/project/wpfzard/logo.png"
     },
-    "references": [],
+    "references": [
+      {
+        "anchor": "github",
+        "href": "https://github.com/xceedsoftware/wpftoolkit",
+        "caption": "Xceed Extended WPF Toolkit™ &mdash; Dépôt GitHub (anglais)"
+      },
+      {
+        "anchor": "github",
+        "href": "https://github.com/5cover/WinClean/blob/master/LICENSE",
+        "caption": "Licence WinClean &mdash; GitHub (anglais)"
+      },
+      {
+        "anchor": "github",
+        "href": "https://github.com/xceedsoftware/wpftoolkit/blob/master/license.md",
+        "caption": "Licence Xceed Extended WPF Toolkit™ &mdash; GitHub (anglais)"
+      }
+    ],
     "start-date": "2022-07-21",
     "story": {
       "$include": "project/wpfzard/story.phtml"
