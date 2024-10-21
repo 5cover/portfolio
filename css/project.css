@@ -803,7 +803,17 @@
     background: border-box linear-gradient(rgba(var(--color-accent-rgb), 0.9), rgba(var(--color-accent-rgb), 0.9)), padding-box var(--bg-img-card, rgb(var(--color-accent-rgb))) no-repeat;
     background-size: cover;
   }
-  /* Mixin classes */
+  /* Margined main
+   *
+   * A main with an horizontal margin
+   */
+  main.margined {
+    margin: 0 min(2.5%, 2.5lh);
+  }
+  /*
+   * Mixin classes
+   *
+   */
   .text h1:not(:first-child) {
     margin-top: 1lh;
   }
