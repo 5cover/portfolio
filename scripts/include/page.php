@@ -1,31 +1,43 @@
 <?php
+require_once 'util.php';
+
+function generate_page(Lang $lang, string $name, callable $put_page)
+{
+    error_log("generate $lang->name $name");
+
+    notfalse(ob_start(), 'ob_start');
+    $put_page();
+    
+    $name = explode('/', $name);
+    $name_dir = array_slice($name, 0, -1);
+    $dirname = root_path("portfolio/$lang->name/" . implode('/', $name_dir));
+    wp_mkdir_p($dirname);
+    file_put_contents($dirname . "/{$name[count($name)-1]}.html", notfalse(ob_get_clean(), 'ob_get_clean'));
+}
 
 final class Page
 {
+    /** @var callable(Lang): void Put the page. */
+    private readonly Closure $_put;
     readonly string $name;
 
-    function __construct(string $name)
+    /**
+     * @param string $name The page name.
+     * @param callable(Lang): void $put Put the page.
+     */
+    function __construct(string $name, callable $put)
     {
+        $this->_put = $put;
         $this->name = $name;
     }
 
-    static function named(string $name): static
+    public function put(Lang $lang)
     {
-        return new static($name);
+        call_user_func($this->_put, $lang);
     }
 
-    /**
-     * Get the value of the `href` attribute to use for anchors in the navbar.
-     * @param string $pageName The name of the page the anchor leads to.
-     * @return string *pageName*, unless it is the current page, then `#`.
-     */
-    function get_nav_href(Lang $lang, string $pageName): string
+    function generate(Lang $lang)
     {
-        return $pageName == $this->name ? '#' : "/portfolio/$lang->name/$pageName.html";
-    }
-
-    function get_web_dir(Lang $lang): string
-    {
-        return get_web_filename("portfolio/$lang->name");  // chaud: there might be an issue here if $this->name contains slashes
+        generate_page($lang, $this->name, fn() => $this->put($lang));
     }
 }

@@ -1,27 +1,26 @@
 <?php
 require_once 'util.php';
+require_once 'linking.php';
 require_once 'content.php';
-
-function start(string $lang): Fragment
-{
-    return new Fragment($lang);
-}
 
 final class Fragment
 {
-    readonly Lang $lang;
-
+    private readonly Lang $lang;
+    private readonly string $name;
     private $refNum = 1;
 
-    public function __construct(string $langTag)
+    public function __construct(string $filename, string $lang)
     {
-        $this->lang = Lang::instances()[$langTag];
+        $this->lang = Lang::instances()[$lang];
+        $filenamePrefix = notfalse(realpath(__DIR__ . "/../../fragments/{$this->lang->name}"), 'realpath') . '/';
+        assert(str_starts_with($filename, $filenamePrefix), "invalid fragment filename: $filename (must start with $filenamePrefix)");
+        $this->name = substr($filename, strlen($filenamePrefix));
     }
 
     /**
      * Gets a term in a language (the current one by default)
      */
-    public function term(string $content, string|null $lang = null, string|null $translation = null): string
+    public function term(string $content, ?string $lang = null, ?string $translation = null): string
     {
         $html = '<em' . map(fn($l) => " lang=\"$l\"", $lang) . '>' . $content . '</em>';
         if ($translation !== null) {
@@ -62,20 +61,22 @@ final class Fragment
      */
     public function a(string $content, string $href): string
     {
-        return '<a class="link" href="/portfolio/' . $this->lang->name . "/$href" . '">' . $content . '</a>';
+        return "<a class=\"link\" href=\"/{$this->lang->name}/$href\">$content</a>";
     }
 
     /**
      * Get a an anchor to another project
      *
      * @param string $projectId the project id
-     * @param string|null $name the project name, or `null` to use the project name from the data
+     * @param ?string $name the project name, or `null` to use the project name from the data
      */
     public function a_project(string $projectId, ?string $name = null): string
     {
         return $this->a(
-            $name ?? $this->lang->get_data_json('projects', false)[$projectId]['title'],
-            'project/' . $projectId . '.html'
+            $name ?? LinkedData::get_json_file($this->lang, 'projects')
+                         ->get($projectId)
+                         ->get('title'),
+            'projects/' . $projectId . '.html'
         );
     }
 
@@ -107,7 +108,9 @@ final class Fragment
     public function def(string $id, ?string $name = null): string
     {
         return ($def = $this->defined[$id] ?? null)
-                   ? $name ?? $def->term
-                   : ($this->defined[$id] = new Definition($this->lang, $id, $this->lang->get_data_json('definitions', false)[$id]))->get_tooltip_trigger($name);
+            ? $name ?? $def->term
+            : ($this->defined[$id] = new Definition($this->lang, $id,
+                LinkedData::get_json_file($this->lang, 'definitions')
+                    ->get($id)))->get_tooltip_trigger($name);
     }
 }

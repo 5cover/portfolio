@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "translations",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "util/html.json"
+  },
+  "properties": {
+    "names": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "fmtTitle": {
+      "type": "string"
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "$ref": "util/html.json"
+          },
+          "body": {
+            "$ref": "util/html.json"
+          },
+          "meta": {
+            "$ref": "util/html.json"
+          }
+        },
+        "required": [
+          "meta",
+          "title",
+          "body"
+        ]
+      }
+    },
+    "but": {
+      "type": "object",
+      "properties": {
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "name": {
+              "$ref": "util/html.json"
+            },
+            "desc": {
+              "$ref": "util/html.json"
+            }
+          },
+          "required": [
+            "name",
+            "desc"
+          ]
+        }
+      },
+      "additionalProperties": {
+        "$ref": "util/html.json"
+      },
+      "required": [
+        "skills"
+      ]
+    }
+  },
+  "required": [
+    "names",
+    "fmtTitle",
+    "history",
+    "but"
+  ]
+}

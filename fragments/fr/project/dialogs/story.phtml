@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('fr') ?>
+$f = new Fragment(__FILE__, 'fr') ?>
 <h3 id="the-spark-of-an-idea">Dialogs &mdash; L'étincelle d'une idée</h3>
 <p>Le parcours de <strong>Dialogs</strong> a commencé avec un besoin simple. Je travaillais sur un autre de mes projets, une application open-source <?= $f->def('dotnet') ?> appelée <?= $f->a_project('winclean') ?>. Dans le cadre de ce projet, j'avais besoin d'implémenter des boîtes de dialogue modales, ces fenêtres contextuelles qui nécessitent une interaction de l'utilisateur avant que l'application puisse continuer. Un <?= $f->def('task-dialog') ?> semblait être la solution idéale pour une interface moderne et conviviale. Cependant, les solutions existantes étaient loin d'être satisfaisantes.</p>
 <h3 id="the-problem-with-existing-solutions">Le problème des solutions existantes</h3>

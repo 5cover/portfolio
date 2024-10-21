@@ -291,7 +291,3 @@ Happy styling! 🎨💻
 ## Filter project by technology
 
 So that a recruiter can see all projects I've made that use particular technology
-
-## link only one data json at a time
-
-so we don't need to link everything at the start in generate.bash. This will decrease generation time.

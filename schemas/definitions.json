@@ -5,6 +5,9 @@
   "propertyNames": {
     "description": "definition ID",
     "enum": [
+      "spe-math",
+      "amc",
+      "nsi",
       "adapter",
       "facade",
       "chain-of-responsibility",

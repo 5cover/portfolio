@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('fr') ?>
+$f = new Fragment(__FILE__, 'fr') ?>
 <p>Un langage pour définir des <q>blueprints</q> déclaratifs pour générer des classes <?= $f->def('java') ?>.</p>
 <p>Prend en charge la génération automatique et personnalisable de&nbsp;:</p>
 <ul class="list">

@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('fr') ?>
+$f = new Fragment(__FILE__, 'fr') ?>
 <p>Pendant longtemps, j'ai été intrigué par <?= $f->def('zig') ?>, un langage de programmation qui promettait de remédier à certaines des lacunes du <?= $f->def('c') ?> tout en offrant de nouvelles perspectives sur la programmation de bas niveau. J'ai décidé de me lancer et de créer un projet qui m'aiderait non seulement à apprendre Zig, mais fournirait également une application pratique du langage. Ainsi, <strong>ztest</strong> est né &mdash; une implémentation Zig de la commande Unix <code>test</code>.</p>
 <h3 id="the-challenge">Le défi</h3>
 <p>L'une des tâches les plus ardues de ce projet était l'analyse des arguments. Contrairement à l'analyse d'une seule chaîne, je devais gérer une liste d'arguments passés au programme, chacun étant une chaîne. Concevoir un analyseur robuste avec une gestion efficace des erreurs était un obstacle important.</p>

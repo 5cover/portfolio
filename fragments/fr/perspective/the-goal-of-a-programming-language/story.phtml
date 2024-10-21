@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('fr') ?>
+$f = new Fragment(__FILE__, 'fr') ?>
 <div>
     <p><?= $f->def('c') ?> est le premier langage de programmation que j'ai appris, en <?= $f->year(2017) ?>. Cependant j'ai récemment commencé à apprendre le <?= $f->def('zig') ?>. <?= $f->def('zig') ?> est similaire au <?= $f->def('c') ?> dans ses fondements. C'est un langage de bas niveau, destiné à la programmation système et à l'interaction avec le matériel. Et je suis un grand fan&nbsp;! J'ai implémenté <?= $f->a('un clone de la commande ' . $f->code('test') . ' GNU', 'project/ztest.html') ?> pour me familiariser avec celui-ci. Ce langage résout de nombreux problèmes et limitations du <?= $f->def('c') ?>.</p>
 </div>

@@ -487,3 +487,20 @@ translate and add other files
 ## Add anno designer definition
 
 And update island-maps story. (and french translation)
+
+## link only one data json at a time
+
+so we don't need to link everything at the start in generate.bash. This will decrease generation time.
+
+## use plural detail urls
+
+so instead of project/winclean we have projects/winclean . i know i concatenate a hard 's' somewhere.
+
+## remove bash
+
+- remove bash script
+- remove Page class (what the fuck)?
+
+## merge put_doctype_html and put_head, put_head_light?
+
+if there's nothing we insert in between, there's no reason not to.

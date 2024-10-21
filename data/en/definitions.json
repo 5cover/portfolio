@@ -1,4 +1,31 @@
 {
+  "spe-math": {
+    "type": "high-school-specialized-teaching",
+    "name": {
+      "full": "Mathématiques"
+    },
+    "synopsis": "The specialized teaching of mathematics aims to develop the ability to reason mathematically, to use mathematical language and to use mathematical tools to solve problems.",
+    "wiki": "https://www.letudiant.fr/lycee/specialites-bac-general/article/la-specialite-mathematiques-au-lycee-en-un-clin-d-oeil.html"
+  },
+  "amc": {
+    "type": "high-school-specialized-teaching",
+    "name": {
+      "abbr": "AMC",
+      "full": "Anglais Monde Contemporain"
+    },
+    "synopsis": "The LLCE-Anglais Monde Contemporain (AMC) specialized teaching aims to analyze some major social, economic, political, geopolitical, cultural, scientific, and technical issues of the contemporary english-speaking world.",
+    "wiki": "https://www.lyceeschoelcher972.fr/specialite-llcer-amc/"
+  },
+  "nsi": {
+    "type": "high-school-specialized-teaching",
+    "name": {
+      "abbr": "NSI",
+      "full": "Numériques Sciences Informatiques"
+    },
+    "synopsis": "This high school specialized teaching is about the basics of programming and algorithms. It explores the fundamental concepts of computer science, such as data structures, networks, and operating systems. It also aims to develop a digital culture and an understanding of the ethical and social issues related to computer science.",
+    "wiki": "https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448",
+    "background": "/portfolio/img/definition/nsi/bg.webp"
+  },
   "anno-designer": {
     "type": "software",
     "name": {

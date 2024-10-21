@@ -1,4 +1,31 @@
 {
+  "spe-math": {
+    "type": "high-school-specialized-teaching",
+    "name": {
+      "full": "Mathématiques"
+    },
+    "synopsis": "Au lycée général, la spécialité mathématiques consiste en un entraînement à la logique, au raisonnement et à l’esprit critique. Elle repose sur trois axes principaux&nbsp;: algèbre et géométrie, probabilités et statistiques, algorithmes et programmation.",
+    "wiki": "https://www.letudiant.fr/lycee/specialites-bac-general/article/la-specialite-mathematiques-au-lycee-en-un-clin-d-oeil.html"
+  },
+  "amc": {
+    "type": "high-school-specialized-teaching",
+    "name": {
+      "abbr": "AMC",
+      "full": "Anglais Monde Contemporain"
+    },
+    "synopsis": "La spécialité LLCER Licence de langues, littératures et civilisations étrangères et régionales &ndash; Anglais Monde Contemporain (AMC) se donne pour objectif d’analyser quelques grands enjeux sociaux, économiques, politiques, géopolitiques, culturels, scientifiques et techniques du monde anglophone contemporain.",
+    "wiki": "https://www.lyceeschoelcher972.fr/specialite-llcer-amc/"
+  },
+  "nsi": {
+    "type": "high-school-specialized-teaching",
+    "name": {
+      "abbr": "NSI",
+      "full": "Numériques Sciences Informatiques"
+    },
+    "synopsis": "Cette spécialité au lycée enseigne les bases de la programmation et de l'algorithmique, tout en explorant les concepts fondamentaux de l'informatique, tels que les structures de données, les réseaux et les systèmes d'exploitation. Elle vise également à développer une culture numérique et une compréhension des enjeux éthiques et sociétaux liés à l'informatique.",
+    "wiki": "https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448",
+    "background": "/portfolio/img/definition/nsi/bg.webp"
+  },
   "anno-designer": {
     "type": "software",
     "name": {

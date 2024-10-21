@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('fr') ?>
+$f = new Fragment(__FILE__, 'fr') ?>
 <div>
     <p>Les îles dans le <?= $f->def('anno2070') ?> ne sont pas générées aléatoirement. Il y un ensemble d'îles prédéfinies dans les fichiers du jeu. Elles sont pivotées et placées aléatoirement pour rendre chaque carte unique, mais toutes les cartes dans <?= $f->def('anno2070') ?> ont en réalité les mêmes îles.</p>
     <p>Je les ai donc reproduites dans <?= $f->def('anno-designer') ?>.</p>

@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('en') ?>
+$f = new Fragment(__FILE__, 'en') ?>
 <h3 id="the-spark-of-an-idea">Dialogs &mdash; The spark of an idea</h3>
 <p>The journey of <strong>Dialogs</strong> began with a simple need. I was working on another project of mine, an open-source <?= $f->def('dotnet') ?> application called <?= $f->a_project('winclean') ?>. As part of this project, I needed to implement modal dialogs &mdash; those pop-up windows that require user interaction before the application can proceed. A <?= $f->def('task-dialog') ?> seemed like the perfect fit for a modern and user-friendly interface. However, the existing solutions were far from satisfactory.</p>
 <h3 id="the-problem-with-existing-solutions">The problem with existing solutions</h3>

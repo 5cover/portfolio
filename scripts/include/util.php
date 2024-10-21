@@ -2,14 +2,100 @@
 require_once 'lang.php';
 require_once 'page.php';
 
+function for_get_prop_not_found(string $name): Exception
+{
+    return new Exception("property $name does not exist");
+}
+
+function wp_is_stream(string $path): bool
+{
+    $scheme_separator = strpos($path, '://');
+
+    if (false === $scheme_separator) {
+        // $path isn't a stream.
+        return false;
+    }
+
+    $stream = substr($path, 0, $scheme_separator);
+
+    return in_array($stream, stream_get_wrappers(), true);
+}
+
+function wp_mkdir_p(string $target): bool
+{
+    $wrapper = null;
+
+    // Strip the protocol.
+    if (wp_is_stream($target)) {
+        list($wrapper, $target) = explode('://', $target, 2);
+    }
+
+    // From php.net/mkdir user contributed notes.
+    $target = str_replace('//', '/', $target);
+
+    // Put the wrapper back on the target.
+    if (null !== $wrapper) {
+        $target = $wrapper . '://' . $target;
+    }
+
+    /*
+     * Safe mode fails with a trailing slash under certain PHP versions.
+     * Use rtrim() instead of untrailingslashit to avoid formatting.php dependency.
+     */
+    $target = rtrim($target, '/');
+    if (empty($target)) {
+        $target = '/';
+    }
+
+    if (file_exists($target)) {
+        return @is_dir($target);
+    }
+
+    // Do not allow path traversals.
+    if (str_contains($target, '../') || str_contains($target, '..' . DIRECTORY_SEPARATOR)) {
+        return false;
+    }
+
+    // We need to find the permissions of the parent folder that exists and inherit that.
+    $target_parent = dirname($target);
+    while ('.' !== $target_parent && !is_dir($target_parent) && dirname($target_parent) !== $target_parent) {
+        $target_parent = dirname($target_parent);
+    }
+
+    // Get the permission bits.
+    $stat = @stat($target_parent);
+    if ($stat) {
+        $dir_perms = $stat['mode'] & 07777;
+    } else {
+        $dir_perms = 0777;
+    }
+
+    if (@mkdir($target, $dir_perms, true)) {
+        /*
+         * If a umask is set that modifies $dir_perms, we'll have to re-set
+         * the $dir_perms correctly with chmod()
+         */
+        if (($dir_perms & ~umask()) !== $dir_perms) {
+            $folder_parts = explode('/', substr($target, strlen($target_parent) + 1));
+            for ($i = 1, $c = count($folder_parts); $i <= $c; $i++) {
+                chmod($target_parent . '/' . implode('/', array_slice($folder_parts, 0, $i)), $dir_perms);
+            }
+        }
+
+        return true;
+    }
+
+    return false;
+}
+
 /**
  * Applies a transformation function to the given data.
  *
  * @template T
  * @template U
  * @param callable(T): U $transform The transformation function to apply.
- * @param T|null $data The data to be transformed.
- * @return U|null The transformed data.
+ * @param ?T $data The data to be transformed.
+ * @return ?U The transformed data.
  */
 function map(callable $transform, mixed $data): mixed
 {
@@ -41,7 +127,7 @@ function array_map_entries(callable $transform, array $array): array
  */
 function element(string $tagName, string $content, array $attributes = []): string
 {
-    $d    = new DOMDocument();
+    $d = new DOMDocument();
     $elem = notfalse($d->createElement($tagName), 'createElement');
     setInnerHTML($elem, $content);
     foreach ($attributes as $name => $value) {
@@ -49,26 +135,6 @@ function element(string $tagName, string $content, array $attributes = []): stri
     }
     notfalse($d->appendChild($elem), 'append child');  // necessary so C14N returns something
     return $elem->C14N();
-}
-
-/**
- * Parses the command line arguments and returns an array containing the language and page name.
- *
- * @return array{Lang, Page} An array containing the language and page name.
- */
-function parse_args(): array
-{
-    global $argc, $argv;
-    error_reporting(E_ALL);
-    if ($argc < 3) {
-        exit("Usage: {$argv[0]} <lang> <page name>" . PHP_EOL);
-    }
-    return [Lang::instances()[$argv[1]], new Page($argv[2])];
-}
-
-function get_web_filename(string $path)
-{
-    return __DIR__ . '/../../../' . $path;
 }
 
 function parse_date(string $date): DateTimeImmutable
@@ -95,7 +161,7 @@ function notfalse(mixed $value, string $msg): mixed
 /**
  * @template T
  * Asserts that something is not null.
- * @param T|null $value Value, possibly null
+ * @param ?T $value Value, possibly null
  * @param string $thing The thing that we're checking
  * @return T Result, not null.
  */
@@ -105,14 +171,12 @@ function notnull(mixed $value, string $thing): mixed
     return $value;
 }
 
-function get_img_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
+function get_img_element(string $url, ?string $title = null, ?string $class = null, int $baseHeight = 30): string
 {
     if (str_ends_with($url, '.svg')) {
-        $sizePart = <<<END
-height="$baseHeight"
-END;
+        $sizePart = "height=\"$baseHeight\"";
     } else {
-        $size     = notfalse(getimagesize(get_web_filename($url)), 'getimagesize');
+        $size = notfalse(getimagesize(root_path($url)), 'getimagesize');
         $sizePart = $size[3];
     }
 
@@ -123,13 +187,13 @@ END;
 HTML;
 }
 
-function get_svg_element(string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
+function get_svg_element(string $url, ?string $title = null, ?string $class = null, int $baseHeight = 30): string
 {
     // Create a DOMDocument instance
     $domDocument = new DOMDocument();
 
     // Load the SVG code as XML
-    notfalse($domDocument->load(get_web_filename($url)), "loading DOMDocument at '$url'");
+    notfalse($domDocument->load(root_path($url)), "loading DOMDocument at '$url'");
 
     // Extract the <svg> element
     $svgElements = $domDocument->getElementsByTagName('svg');
@@ -137,7 +201,7 @@ function get_svg_element(string $url, string|null $title = null, string|null $cl
         $svgElement = $svgElements->item(0);
         assert($svgElement instanceof DOMElement, 'Expected retrieved element to be a DOMElement');
         if (!$svgElement->getAttribute('viewBox')) {
-            $width  = $svgElement->getAttribute('width');
+            $width = $svgElement->getAttribute('width');
             $height = $svgElement->getAttribute('height');
             if (!$width || !$height) {
                 throw new Exception("invalid SVG structure (no viewBox, no width or height) at '$url'");
@@ -164,13 +228,13 @@ function get_svg_element(string $url, string|null $title = null, string|null $cl
 /**
  * Get the HTML element to use for a graphic.
  * @param bool $isThemedSvg is it a themed SVG?
- * @param string $url The url of the image
- * @param string|null $title The title of the icon (also set as the `img` `alt` attribute). `null` for no title.
- * @param string|null $class The value of the `class` attribute on the generated element. `null` for no `class` attribute.
+ * @param string $filename The filename of the image
+ * @param ?string $title The title of the icon (also set as the `img` `alt` attribute). `null` for no title.
+ * @param ?string $class The value of the `class` attribute on the generated element. `null` for no `class` attribute.
  * @param int $baseHeight The default height of the element if it doesn't have an intrinsic one.
- * @return string|null An HTML element or `null` if *info* was `null`.
+ * @return ?string An HTML element or `null` if *info* was `null`.
  */
-function get_graphic_element(bool $isThemedSvg, string $url, string|null $title = null, string|null $class = null, int $baseHeight = 30): string
+function get_graphic_element(bool $isThemedSvg, string $url, ?string $title = null, ?string $class = null, int $baseHeight = 30): string
 {
     return $isThemedSvg ? get_svg_element(
         $url,
@@ -185,36 +249,6 @@ function get_graphic_element(bool $isThemedSvg, string $url, string|null $title 
     );
 }
 
-/** @var array<string, object> */
-$_dataJsonCache = [];
-
-/**
- * Decode and cache a data JSON file.
- * @param string $name the filename of the JSON file, relative to the data directory, without the extension.
- * @return array<string, mixed> The decoded JSON, in associative mode.
- */
-function get_data_json(string $name, bool $linked = true)
-{
-    global $_dataJsonCache;
-    return $_dataJsonCache[$name] ??= _get_data_json_fetch($name, $linked);
-}
-
-/**
- * Fetche and decodes a data JSON file
- * @param string $name the filename of the JSON file, relative to the data directory, without the extension.
- * @return array<string, mixed> The decoded JSON, in associative mode.
- */
-function _get_data_json_fetch(string $name, bool $linked)
-{
-    $f = notfalse(
-        file_get_contents($linked
-                              ? get_web_filename("/portfolio/data/$name.json")
-                              : __DIR__ . "/../../data/$name.json"),
-        "opening JSON data '$name'"
-    );
-    return json_decode($f, true);
-}
-
 /**
  * Expand a glob to filename in the website folder.
  * @param string $glob A glob relative to the website folder.
@@ -222,7 +256,7 @@ function _get_data_json_fetch(string $name, bool $linked)
  */
 function glob_web(string $glob): array
 {
-    return notfalse(glob(get_web_filename("$glob")), 'glob');
+    return notfalse(glob(root_path('portfolio/') . $glob), 'glob');
 }
 
 /**
@@ -242,9 +276,9 @@ function glob_web_single(string $glob): string
 /**
  * Expand a glob to a single filename in the website folder. Exit with an error if multiple exist.
  * @param string $glob A glob relative to the website folder.
- * @return string The expand filenames or `null` if it matched nothing.
+ * @return ?string The expand filenames or `null` if it matched nothing.
  */
-function glob_web_optional(string $glob): string|null
+function glob_web_optional(string $glob): ?string
 {
     $g = glob_web($glob);
     if (count($g) == 0) {
@@ -280,6 +314,14 @@ function get_web_url(string $filename): string
     for ($i = 0; $i < $len && $s1[$i] == $s2[$i]; $i++);
 
     return '/' . substr($filename, $i);
+}
+
+/**
+ * @return string Absolute path to the website root directory (with trailing slash)
+ */
+function root_path(string $rest): string
+{
+    return notfalse(realpath(__DIR__ . '/../../..'), 'realpath') . '/' . $rest;
 }
 
 /**

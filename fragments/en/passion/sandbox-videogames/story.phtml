@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('en') ?>
+$f = new Fragment(__FILE__, 'en') ?>
 <div>
     <p>Have you ever heard of <?= $f->def('survivalworld') ?>, or <?= $f->def('dreamfinity') ?>? They have one thing in common: they are survival-oriented <?= $f->def('minecraft') ?> servers, where players are free to build whatever they want, amass wealth, and trade with other players in a simulated economy.</p>
 </div>

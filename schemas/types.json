@@ -5,6 +5,7 @@
   "propertyNames": {
     "description": "type ID",
     "enum": [
+      "high-school-specialized-teaching",
       "paradigm",
       "markup-language",
       "programming-language",

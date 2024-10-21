@@ -1,3 +1,5 @@
-<div>
-    <p>todo</p>
-</div>
+<?php
+require_once 'fragment.php';
+$f = new Fragment(__FILE__, 'en')
+?>
+<p>This project is a simple Connect 4 game programmed in <?= $f->def('python') ?>. I made it in the context of the <?= $f->def('nsi') ?> speciality in high school. It allowed me to formalize my <?= $f->def('python') ?> skills as it was my first <q>real</q> project.</p>

@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('en') ?>
+$f = new Fragment(__FILE__, 'en') ?>
 <p>For a long time, I had been intrigued by <?= $f->def('zig') ?>, a programming language that promised to address some of the shortcomings of <?= $f->def('c') ?> while offering fresh perspectives on low-level programming. I decided to dive in and create a project that would not only help me learn Zig but also provide a practical application of the language. Thus, <strong>ztest</strong> was born &mdash; a Zig implementation of the Unix <code>test</code> command.</p>
 <h3 id="the-challenge">The Challenge</h3>
 <p>One of the most daunting tasks in this project was parsing the arguments. Unlike parsing a single string, I had to handle a list of arguments passed to the program, each of which was a string. Designing a robust parser with effective error handling was a significant hurdle.</p>

@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('fr') ?>
+$f = new Fragment(__FILE__, 'fr') ?>
 <p>Psdc répond à un besoin. Celui d'automatiser la tâche fastidieuse de traduire des programmes entre différents langages de programmation.</p>
 <p>Au cours de ma formation de BUT Informatique, j'ai appris l'algorithmie avec le Pseudocode, un pseudolangage de programmation inventé pour les besoins de l'IUT de Lannion. Inspiré du <?= $f->def('pascal') ?>, le Pseudocode permet d'énoncer un algorithme dans un langage plus proche de celui de l'homme que de celui de l'ordinateur, tout en gardant l'aspect exhaustif de tout langage de programmation.</p>
 <p>Au cours de nos TP, nous avons très souvent dû traduire des programmes en pseudocode vers le <?= $f->def('c') ?>. Cette tâche est assez réberbative, d'où mon désir de l'automatiser. Et c'est ce qui ma mené à découvrir la conception de compilateurs.</p>

@@ -1,3 +1,5 @@
-<div>
-    <p>todo</p>
-</div>
+<?php
+require_once 'fragment.php';
+$f = new Fragment(__FILE__, 'fr')
+?>
+<p>Ce projet est un simple jeu de Puissance 4 programmé en <?= $f->def('python') ?>. Je l'ai réalisé dans le contexte de la spécialité <?= $f->def('nsi') ?> au lycée. Il aura permis de formaliser mes compétences en <?= $f->def('python') ?> car c'était mon premier <q>vrai</q> projet.</p>

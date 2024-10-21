@@ -25,6 +25,7 @@ main {
 #presentation {
     @include util.cols;
     @include util.text;
+    font-size: 1.2em;
 }
 
 #competences {

@@ -1,6 +1,6 @@
 <?php
 require_once 'fragment.php';
-$f = start('fr') ?>
+$f = new Fragment(__FILE__, 'fr') ?>
 <p><strong>WPFZard</strong> est une bibliothèque d'<?= $f->def('wizard') ?> pour <?= $f->def('wpf') ?> que j'ai créée pour mon autre projet, <?= $f->a_project('winclean') ?>, car j'avais besoin d'une bibliothèque pour fournir un composant UX d'assistant simple et facile à utiliser.</p>
 <h3 id="the-problem">Le problème</h3>
 <p>Pour créer des assistants, j'ai d'abord utilisé le Xceed Extended WPF Toolkit™<?=$f->ref()?>. Cela a fonctionné, mais j'avais oublié un détail important&nbsp;: mon projet utilise la licence MIT<?=$f->ref()?>, tandis que le toolkit Xceed utilise une licence personnalisée<?=$f->ref()?> qui, après inspection, s'avéra incompatible avec la licence MIT. Cela signifie que je m'exposais à un procès de la part de Xceed. Bien qu'il aurait été peu probable que le problème prenne des proportions aussi dramatiques, je m'exposais effectivement à des ennuis juridiques, voire peut-être à une lettre de cessation et d'abstention de la part de Xceed.</p>
