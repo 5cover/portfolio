@@ -380,7 +380,18 @@
     }
 }
 
-/* Mixin classes */
+/* Margined main
+ *
+ * A main with an horizontal margin
+ */
+main.margined {
+    margin: 0 const.$full-width-horizontal-margin;
+}
+
+/*
+ * Mixin classes
+ *
+ */
 .text {
     @include util.text;
 }

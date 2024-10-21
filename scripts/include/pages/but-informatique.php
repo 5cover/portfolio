@@ -37,7 +37,7 @@ function page_but_informatique(): Page
     return new Page('but-informatique', fn(Lang $lang) => put_regular_page($lang, 'but-informatique', function () use ($lang) {
         $but = $lang->get('but');
 ?>
-<main>
+<main class="margined">
     <div id="titre">
         <h1><?= $but->get('h1') ?></h1>
         <img src="/portfolio/img/but.webp" alt="<?= $but->get('but-logo-alt') ?>" width="95" height="96" loading="lazy" title="<?= $but->get('but-logo-alt') ?>">

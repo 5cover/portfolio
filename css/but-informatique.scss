@@ -3,10 +3,6 @@
 @use 'util';
 @include util.heading-margins(2, 3);
 
-main {
-    margin: 0 const.$full-width-horizontal-margin;
-}
-
 @mixin content-and-image {
     align-items: center;
     display: flex;
