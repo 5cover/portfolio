@@ -1371,6 +1371,7 @@ main {
   max-width: 100%;
   -moz-column-width: 60ch;
        column-width: 60ch;
+  font-size: 1.2em;
 }
 #presentation > * {
   max-width: 60ch;

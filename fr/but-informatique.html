@@ -1,403 +1,297 @@
-    <!DOCTYPE html>
-    <html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 
-    <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png">
-        <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
-        <link rel="manifest" href="/portfolio/site.webmanifest">
-        <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png">
+    <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/portfolio/site.webmanifest">
+    <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
 
-                    <link rel="stylesheet" type="text/css" href="/portfolio/css/but-informatique.css">
-                <meta charset="UTF-8">
-        <meta name="author" content="Raphaël Bardini">
-        <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
-        <meta name="msapplication-TileColor" content="#2d89ef">
-        <meta name="theme-color" content="#ffffff">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Raphaël Bardini</title>
-        <script>
-            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
-        </script>
-        <!-- Flag icons -->
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
-        <!-- JQuery -->
-        <script async src="/portfolio/js/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <!-- Highlight.JS -->
-        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-        <script type="module" src="/portfolio/js/base.js"></script>
-            </head>
+        <link rel="stylesheet" type="text/css" href="/portfolio/css/but-informatique.css">
+        <meta charset="UTF-8">
+    <meta name="author" content="Raphaël Bardini">
+    <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raphaël Bardini</title>
+    <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+    </script>
+    <!-- Flag icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+    <!-- JQuery -->
+    <script async src="/portfolio/js/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <!-- Highlight.JS -->
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script type="module" src="/portfolio/js/base.js"></script>
+    </head>
 
 <body>
-        <template id="template-definition-tooltip">
-        <article class="lvl definition-tooltip" role="tooltip">
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer">
-                    <!-- href="wiki"; name -->
-                </a></h4>
-            <!-- logo graphic -->
-            <p class="type"><small>
-                    <!-- type -->
-                </small></p>
-            <p class="synopsis">
-                <!-- synopsis -->
-            </p>
-        </article>
-    </template>
-    <header class="lvl">
-        <nav>
-            <a href="/portfolio/fr/index.html">Raphaël Bardini</a>
-            <ul>
-                <li><a href="/portfolio/fr/projects.html">Projets</a>
-                </li>
-                <li><a href="/portfolio/fr/history.html">Parcours</a>
-                </li>
-                <li><a href="/portfolio/fr/passions.html">Passions</a>
-                </li>
-                <li><a href="/portfolio/fr/perspectives.html">Perspectives</a>
-                <li><a href="#">BUT Informatique</a>
-                </li>
-            </ul>
-        </nav>
-        <ul class="list-flags">
-            <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/but-informatique.html"></a></li><li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/but-informatique.html"></a></li>        </ul>
-        <div class="theme-switches">
-            <label for="theme-switch-light" title="Thème clair">
-                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.9966 13.3333C12.8804 13.3333 14.4075 11.8409 14.4075 10C14.4075 8.15905 12.8804 6.66666 10.9966 6.66666C9.11284 6.66666 7.58575 8.15905 7.58575 10C7.58575 11.8409 9.11284 13.3333 10.9966 13.3333Z" style="stroke:var(--color-fg);fill:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M10.9966 1.66666V3.33333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M10.9966 16.6667V18.3333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M4.9679 4.10833L6.17022 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M15.8229 14.7167L17.0253 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M2.46942 10H4.17485" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M17.8183 10H19.5237" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M6.17022 14.7167L4.9679 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M17.0253 4.10833L15.8229 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <input id="theme-switch-light" name="theme" value="auto" type="radio" onclick="">
-            </label>
-            <label for="theme-switch-system" title="Thème système">
-                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15.0014" cy="15.0014" r="9" style="stroke:var(--color-fg);" stroke-width="2" />
-                    <mask id="path-2-inside-1_316_18" style="fill:var(--color-bg);">
-                        <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" />
-                    </mask>
-                    <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" style="fill:var(--color-fg);stroke:var(--color-fg);" stroke-width="4" mask="url(#path-2-inside-1_316_18)" />
-                </svg>
-                <input id="theme-switch-system" name="theme" value="light" type="radio" onclick="">
-            </label>
-            <label for="theme-switch-dark" title="Thème sombre">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8.99939 1.5C8.00483 2.49456 7.44609 3.84348 7.44609 5.25C7.44609 6.65652 8.00483 8.00544 8.99939 9C9.99395 9.99456 11.3429 10.5533 12.7494 10.5533C14.1559 10.5533 15.5048 9.99456 16.4994 9C16.4994 10.4834 16.0595 11.9334 15.2354 13.1668C14.4113 14.4001 13.24 15.3614 11.8695 15.9291C10.4991 16.4968 8.99107 16.6453 7.53622 16.3559C6.08136 16.0665 4.74499 15.3522 3.69609 14.3033C2.6472 13.2544 1.93289 11.918 1.6435 10.4632C1.35411 9.00832 1.50264 7.50032 2.0703 6.12987C2.63795 4.75943 3.59925 3.58809 4.83262 2.76398C6.06598 1.93987 7.51603 1.5 8.99939 1.5Z" style="stroke:var(--color-fg);" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <input id="theme-switch-dark" name="theme" value="dark" type="radio" onclick="">
-            </label>
-        </div>
-    </header>
+    <template id="template-definition-tooltip">
+    <article class="lvl definition-tooltip" role="tooltip">
+        <h4 class="title"><a target="_blank" rel="noopener noreferrer">
+                <!-- href="wiki"; name -->
+            </a></h4>
+        <!-- logo graphic -->
+        <p class="type"><small>
+                <!-- type -->
+            </small></p>
+        <p class="synopsis">
+            <!-- synopsis -->
+        </p>
+    </article>
+</template>
+<header class="lvl">
+    <nav>
+        <a href="/portfolio/fr/index.html">Raphaël Bardini</a>
+        <ul>
+            <li><a href="/portfolio/fr/projects.html">Projets</a></li>
+            <li><a href="/portfolio/fr/history.html">Parcours</a></li>
+            <li><a href="/portfolio/fr/passions.html">Passions</a></li>
+            <li><a href="/portfolio/fr/perspectives.html">Perspectives</a>
+            <li><a href="/portfolio/fr/but-informatique.html">BUT Informatique</a></li>
+        </ul>
+    </nav>
+    <ul class="list-flags">
+        <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/but-informatique.html"></a></li><li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/but-informatique.html"></a></li>    </ul>
+    <div class="theme-switches">
+        <label for="theme-switch-light" title="Thème clair">
+            <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.9966 13.3333C12.8804 13.3333 14.4075 11.8409 14.4075 10C14.4075 8.15905 12.8804 6.66666 10.9966 6.66666C9.11284 6.66666 7.58575 8.15905 7.58575 10C7.58575 11.8409 9.11284 13.3333 10.9966 13.3333Z" style="stroke:var(--color-fg);fill:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.9966 1.66666V3.33333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.9966 16.6667V18.3333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4.9679 4.10833L6.17022 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15.8229 14.7167L17.0253 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2.46942 10H4.17485" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.8183 10H19.5237" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.17022 14.7167L4.9679 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.0253 4.10833L15.8229 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input id="theme-switch-light" name="theme" value="auto" type="radio" onclick="">
+        </label>
+        <label for="theme-switch-system" title="Thème système">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15.0014" cy="15.0014" r="9" style="stroke:var(--color-fg);" stroke-width="2" />
+                <mask id="path-2-inside-1_316_18" style="fill:var(--color-bg);">
+                    <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" />
+                </mask>
+                <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" style="fill:var(--color-fg);stroke:var(--color-fg);" stroke-width="4" mask="url(#path-2-inside-1_316_18)" />
+            </svg>
+            <input id="theme-switch-system" name="theme" value="light" type="radio" onclick="">
+        </label>
+        <label for="theme-switch-dark" title="Thème sombre">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.99939 1.5C8.00483 2.49456 7.44609 3.84348 7.44609 5.25C7.44609 6.65652 8.00483 8.00544 8.99939 9C9.99395 9.99456 11.3429 10.5533 12.7494 10.5533C14.1559 10.5533 15.5048 9.99456 16.4994 9C16.4994 10.4834 16.0595 11.9334 15.2354 13.1668C14.4113 14.4001 13.24 15.3614 11.8695 15.9291C10.4991 16.4968 8.99107 16.6453 7.53622 16.3559C6.08136 16.0665 4.74499 15.3522 3.69609 14.3033C2.6472 13.2544 1.93289 11.918 1.6435 10.4632C1.35411 9.00832 1.50264 7.50032 2.0703 6.12987C2.63795 4.75943 3.59925 3.58809 4.83262 2.76398C6.06598 1.93987 7.51603 1.5 8.99939 1.5Z" style="stroke:var(--color-fg);" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input id="theme-switch-dark" name="theme" value="dark" type="radio" onclick="">
+        </label>
+    </div>
+</header>
     <main>
-        <div id="titre">
-            <h1><abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique</h1>
-            <img src="/portfolio/img/but.webp" alt="Logo BUT Informatique" width="95" height="96" loading="lazy" title="Logo BUT Informatique">
-        </div>
-        <article id="presentation"><p>Concevoir, réaliser et mettre en œuvre des solutions informatiques qui répondent aux besoins de transformation numérique des entreprises, voilà le quotidien du titulaire du BUT informatique, quel que soit le secteur dans lequel travaille son entreprise.</p><p>En trois ans après le bac, le BUT offre une formation universitaire qui mêle théorie et pratique, avec un accent mis sur une professionnalisation progressive pour une insertion rapide, tout en garantissant un niveau scientifique suffisant pour permettre de continuer des études pour ceux qui le souhaitent.</p><p>Le titulaire du BUT spécialité informatique est compétent sur les plans technique et méthodologique tout en étant sensibilisé aux problématiques actuelles (sécurité des données, <em>cloud computing</em>, intelligence artificielle), sur les questions sociétales, juridiques, éthiques et environnementales liées aux usages du numérique.</p><p>À l’issue d’un tronc commun d’un an, l’étudiant pourra, en fonction de son projet professionnel, choisir l’un des quatre parcours proposés par la spécialité informatique.</p></article>
-        <a class="lvl button-link" target="_blank" rel="noopener noreferrer" href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf">Programme officiel du BUT Informatique</a>
-        <section id="competences">
-            <h2>Compétences du BUT</h2>
-            <p>Les apprentissages du BUT sont organisés en 6 compétences&nbsp;:</p>
-            <ul class="lvl">
-                    <li style="--bg-img: url(/portfolio/img/skill/0.jpg)">
-        <h3>Compétence 1&nbsp;: Réaliser</h3>
-        <p>Développer — c’est-à-dire concevoir, coder, tester et intégrer une solution informatique pour un client.</p>
-                <ul class="lvl list-project">
-                    <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=web">Web</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=ux"><abbr title="Expérience utilisateur">UX</span></abbr></a></li>        </ul>
-    <h4><a class="foil" href="project/portfolio.html">Portfolio</a></h4><small class="status"><time datetime="2024-06-17">17 juin 2024</time> &ndash;
-            en cours</small>
-            <small class="context">BUT</small>
-            <p class="abstract">Mon portfolio</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/portfolio" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
+    <div id="titre">
+        <h1><abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique</h1>
+        <img src="/portfolio/img/but.webp" alt="Logo BUT Informatique" width="95" height="96" loading="lazy" title="Logo BUT Informatique">
+    </div>
+    <article id="presentation"><p>Concevoir, réaliser et mettre en œuvre des solutions informatiques qui répondent aux besoins de transformation numérique des entreprises, voilà le quotidien du titulaire du BUT informatique, quel que soit le secteur dans lequel travaille son entreprise.</p><p>En trois ans après le bac, le BUT offre une formation universitaire qui mêle théorie et pratique, avec un accent mis sur une professionnalisation progressive pour une insertion rapide, tout en garantissant un niveau scientifique suffisant pour permettre de continuer des études pour ceux qui le souhaitent.</p><p>Le titulaire du BUT spécialité informatique est compétent sur les plans technique et méthodologique tout en étant sensibilisé aux problématiques actuelles (sécurité des données, <em>cloud computing</em>, intelligence artificielle), sur les questions sociétales, juridiques, éthiques et environnementales liées aux usages du numérique.</p><p>À l’issue d’un tronc commun d’un an, l’étudiant pourra, en fonction de son projet professionnel, choisir l’un des quatre parcours proposés par la spécialité informatique.</p></article>
+    <a class="lvl button-link" target="_blank" rel="noopener noreferrer" href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf">Programme officiel du BUT Informatique</a>
+    <section id="competences">
+        <h2>Compétences du BUT</h2>
+        <p>Les apprentissages du BUT sont organisés en 6 compétences&nbsp;:</p>
+        <ul class="lvl">
+            <li style="--bg-img: url(/portfolio/img/skill/0.jpg)">
+    <h3>Compétence 1&nbsp;: Réaliser</h3>
+    <p>Développer — c’est-à-dire concevoir, coder, tester et intégrer une solution informatique pour un client.</p>
+    <ul class="lvl list-project">
+    <li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=web">Web</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=ux"><abbr title="Expérience utilisateur">UX</span></abbr></a></li></ul>
+<h4><a class="foil" href="projects/portfolio.html">Portfolio</a></h4><small class="status"><time datetime="2024-06-17">17 juin 2024</time> &ndash;
+    en cours</small>
+<small class="context">BUT</small>
+<p class="abstract">Mon portfolio</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/portfolio" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li  style="--bg-img-card: url(/portfolio/img/project/psdc/bg.png)">
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=compiler">Compilateur</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li></ul>
+<h4><a class="foil" href="projects/psdc.html">Psdc</a></h4><small class="status"><time datetime="2023-11-15">15 novembre 2023</time> &ndash;
+    en cours</small>
+<small class="context">Personnel</small>
+<p class="abstract">Compilateur pseudocode de l'IUT de Lannion</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/psdc" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li  style="--bg-img-card: url(/portfolio/img/project/s1.01/bg.png)">
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=algorithms">Algorithmes</a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li></ul>
+<h4><a class="foil" href="projects/s1.01.html">Jeu de Sudoku en C</a></h4><small class="status"><time datetime="2023-10-16">16 octobre 2023</time> &ndash;
+    <time datetime="2023-11-27">27 novembre 2023</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Jeu de Sudoku en ligne de commande. Implémentation d'un besoin client (S1.01)</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/S1.01" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=ui"><abbr title="Interface utilisateur">UI</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=ux"><abbr title="Expérience utilisateur">UX</span></abbr></a></li></ul>
+<h4><a class="foil" href="projects/s2.01.html">Billeterie Le Patio</a></h4><small class="status"><time datetime="2024-05-28">28 mai 2024</time> &ndash;
+    <time datetime="2024-06-17">17 juin 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Développement d'une application de gestion de salle de spectacle. Création d'une <abbr title="Interface Homme Machine">IHM</abbr> (S2.01)</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/S2.05/tree/main/lot10" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+</ul> </li>
+<li style="--bg-img: url(/portfolio/img/skill/1.jpg)">
+    <h3>Compétence 2&nbsp;: Optimiser</h3>
+    <p>Proposer des applications informatiques optimisées en fonction de critères spécifiques&nbsp;: temps d’exécution, précision, consommation de ressources.</p>
+    <ul class="lvl list-project">
+    <li  style="--bg-img-card: url(/portfolio/img/project/psdc/bg.png)">
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=compiler">Compilateur</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li></ul>
+<h4><a class="foil" href="projects/psdc.html">Psdc</a></h4><small class="status"><time datetime="2023-11-15">15 novembre 2023</time> &ndash;
+    en cours</small>
+<small class="context">Personnel</small>
+<p class="abstract">Compilateur pseudocode de l'IUT de Lannion</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/psdc" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li  style="--bg-img-card: url(/portfolio/img/project/s1.02/bg.png)">
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=algorithms">Algorithmes</a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li></ul>
+<h4><a class="foil" href="projects/s1.02.html">Sudone</a></h4><small class="status"><time datetime="2023-11-27">27 novembre 2023</time> &ndash;
+    <time datetime="2024-05-20">20 mai 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Solveur de grilles de Sudoku optimisé. Comparaison d'approches algorithmiques (S1.02)</p>
+<ul class="list-link"><li><a href="https://github.com/Matteo-K/Sudoku-Solver" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=high-level">Haut niveau</a></li><li><a href="/portfolio/fr/projects.html?tag=algorithms">Algorithmes</a></li></ul>
+<h4><a class="foil" href="projects/s2.02.html">Problème des N reines</a></h4><small class="status"><time datetime="2024-03-11">11 mars 2024</time> &ndash;
+    <time datetime="2024-03-27">27 mars 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Des solutions innovantes au <a class="link" target="_blank" rel="noopener noreferrer" href="/portfolio/img/project/s2.02/sujet-sae.pdf">problème des N reines</a>. Exploration algorithmique d'un problème (S2.02)</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/N-queens-problem" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+</ul> </li>
+<li style="--bg-img: url(/portfolio/img/skill/2.jpg)">
+    <h3>Compétence 3&nbsp;: Administrer</h3>
+    <p>Installer, configurer, mettre à disposition, maintenir en conditions opérationnelles des infrastructures, des services et des réseaux et optimiser le système informatique d’une organisation.</p>
+    <ul class="lvl list-project">
+    <li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-administrer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Administrer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=sysadmin">Sysadmin</a></li></ul>
+<h4><a class="foil" href="projects/s1.03.html">Générateur de documentation</a></h4><small class="status"><time datetime="2023-10-25">25 octobre 2023</time> &ndash;
+    <time datetime="2023-01-21">21 janvier 2023</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Automatisation, scripts, conteneurisation, parseur Markdown. Installation d'un poste pour le développement (S1.03)</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/S1.03" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-administrer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Administrer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=web">Web</a></li><li><a href="/portfolio/fr/projects.html?tag=sysadmin">Sysadmin</a></li></ul>
+<h4><a class="foil" href="projects/s2.03.html">Site de météo</a></h4><small class="status"><time datetime="2024-05-14">14 mai 2024</time> &ndash;
+    <time datetime="2024-06-05">5 juin 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Mise en place d'un serveur Web. Installation de services réseau (S2.03)</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/S2.03" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+</ul> </li>
+<li style="--bg-img: url(/portfolio/img/skill/3.jpg)">
+    <h3>Compétence 4&nbsp;: Gérer</h3>
+    <p>Concevoir, gérer, administrer et exploiter les données de l’entreprise et mettre à disposition toutes les informations pour un bon pilotage de l’entreprise.</p>
+    <ul class="lvl list-project">
+    <li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-gerer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique">Gérer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=db"><abbr title="Base de données">BdD</abbr></a></li></ul>
+<h4><a class="foil" href="projects/s1.04.html">Création d'une base de données</a></h4><small class="status"><time datetime="2023-11-27">27 novembre 2023</time> &ndash;
+    <time datetime="2024-01-22">22 janvier 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Concevoir et implémenter une base de données. Création d'une base de données (S1.04)</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/S1.04" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-gerer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique">Gérer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=data">Data</a></li><li><a href="/portfolio/fr/projects.html?tag=db"><abbr title="Base de données">BdD</abbr></a></li></ul>
+<h4><a class="foil" href="projects/s2.04.html">Data mining et OSINT sur l'éducation</a></h4><small class="status"><time datetime="2024-04-23">23 avril 2024</time> &ndash;
+    <time datetime="2024-06-12">12 juin 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Data mining sur l'open-data des collèges et lycées français. Exploitation d'une base de données (S2.04)</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/S2.04" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+</ul> </li>
+<li style="--bg-img: url(/portfolio/img/skill/4.jpg)">
+    <h3>Compétence 5&nbsp;: Conduire</h3>
+    <p>Satisfaire les besoins des utilisateurs au regard de la chaîne de valeur du client, organiser et piloter un projet informatique avec des méthodes classiques ou agiles.</p>
+    <ul class="lvl list-project">
+    <li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-conduire"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Conduire</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=communication">Communication</a></li><li><a href="/portfolio/fr/projects.html?tag=web">Web</a></li></ul>
+<h4><a class="foil" href="projects/s1.05.html">Tabas'Kho</a></h4><small class="status"><time datetime="2023-10-09">9 octobre 2023</time> &ndash;
+    <time datetime="2024-01-21">21 janvier 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Créer un site de streaming factice. Recueil des besoins (S1.05)</p>
+<ul class="list-link"><li><a href="https://github.com/Matteo-K/TabasKho" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-conduire"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Conduire</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=communication">Communication</a></li></ul>
+<h4><a class="foil" href="projects/s2.05.html">Gestion du projet d'application Billeterie Le Patio</a></h4><small class="status"><time datetime="2024-05-15">15 mai 2024</time> &ndash;
+    <time datetime="2024-06-17">17 juin 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Gestion de projet traditionelle (Waterfall) pour l'application de billeterie Le Patio. Gestion d'un projet (S2.05)</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/S2.05" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+</ul> </li>
+<li style="--bg-img: url(/portfolio/img/skill/5.jpg)">
+    <h3>Compétence 6&nbsp;: Collaborer</h3>
+    <p>Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une équipe informatique.</p>
+    <ul class="lvl list-project">
+    <li  style="--bg-img-card: url(/portfolio/img/project/s1.02/bg.png)">
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=algorithms">Algorithmes</a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li></ul>
+<h4><a class="foil" href="projects/s1.02.html">Sudone</a></h4><small class="status"><time datetime="2023-11-27">27 novembre 2023</time> &ndash;
+    <time datetime="2024-05-20">20 mai 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Solveur de grilles de Sudoku optimisé. Comparaison d'approches algorithmiques (S1.02)</p>
+<ul class="list-link"><li><a href="https://github.com/Matteo-K/Sudoku-Solver" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-administrer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Administrer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=sysadmin">Sysadmin</a></li></ul>
+<h4><a class="foil" href="projects/s1.03.html">Générateur de documentation</a></h4><small class="status"><time datetime="2023-10-25">25 octobre 2023</time> &ndash;
+    <time datetime="2023-01-21">21 janvier 2023</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Automatisation, scripts, conteneurisation, parseur Markdown. Installation d'un poste pour le développement (S1.03)</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/S1.03" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-gerer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique">Gérer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=db"><abbr title="Base de données">BdD</abbr></a></li></ul>
+<h4><a class="foil" href="projects/s1.04.html">Création d'une base de données</a></h4><small class="status"><time datetime="2023-11-27">27 novembre 2023</time> &ndash;
+    <time datetime="2024-01-22">22 janvier 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Concevoir et implémenter une base de données. Création d'une base de données (S1.04)</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/S1.04" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=but-conduire"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Conduire</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=communication">Communication</a></li><li><a href="/portfolio/fr/projects.html?tag=web">Web</a></li></ul>
+<h4><a class="foil" href="projects/s1.05.html">Tabas'Kho</a></h4><small class="status"><time datetime="2023-10-09">9 octobre 2023</time> &ndash;
+    <time datetime="2024-01-21">21 janvier 2024</time></small>
+<small class="context">BUT</small>
+<p class="abstract">Créer un site de streaming factice. Recueil des besoins (S1.05)</p>
+<ul class="list-link"><li><a href="https://github.com/Matteo-K/TabasKho" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+</ul> </li>
             </li>
-            <li  style="--bg-img-card: url(/portfolio/img/project/psdc/bg.png)">
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=compiler">Compilateur</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li>        </ul>
-    <h4><a class="foil" href="project/psdc.html">Psdc</a></h4><small class="status"><time datetime="2023-11-15">15 novembre 2023</time> &ndash;
-            en cours</small>
-            <small class="context">Personnel</small>
-            <p class="abstract">Compilateur pseudocode de l'IUT de Lannion</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/psdc" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li  style="--bg-img-card: url(/portfolio/img/project/s1.01/bg.png)">
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=algorithms">Algorithmes</a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li>        </ul>
-    <h4><a class="foil" href="project/s1.01.html">Jeu de Sudoku en C</a></h4><small class="status"><time datetime="2023-10-16">16 octobre 2023</time> &ndash;
-            <time datetime="2023-11-27">27 novembre 2023</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Jeu de Sudoku en ligne de commande. Implémentation d'un besoin client (S1.01)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/S1.01" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=ui"><abbr title="Interface utilisateur">UI</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=ux"><abbr title="Expérience utilisateur">UX</span></abbr></a></li>        </ul>
-    <h4><a class="foil" href="project/s2.01.html">Billeterie Le Patio</a></h4><small class="status"><time datetime="2024-05-28">28 mai 2024</time> &ndash;
-            <time datetime="2024-06-17">17 juin 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Développement d'une application de gestion de salle de spectacle. Création d'une <abbr title="Interface Homme Machine">IHM</abbr> (S2.01)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/S2.05/tree/main/lot10" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            </ul>     </li>
-    <li style="--bg-img: url(/portfolio/img/skill/1.jpg)">
-        <h3>Compétence 2&nbsp;: Optimiser</h3>
-        <p>Proposer des applications informatiques optimisées en fonction de critères spécifiques&nbsp;: temps d’exécution, précision, consommation de ressources.</p>
-                <ul class="lvl list-project">
-                    <li  style="--bg-img-card: url(/portfolio/img/project/psdc/bg.png)">
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=compiler">Compilateur</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li>        </ul>
-    <h4><a class="foil" href="project/psdc.html">Psdc</a></h4><small class="status"><time datetime="2023-11-15">15 novembre 2023</time> &ndash;
-            en cours</small>
-            <small class="context">Personnel</small>
-            <p class="abstract">Compilateur pseudocode de l'IUT de Lannion</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/psdc" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li  style="--bg-img-card: url(/portfolio/img/project/s1.02/bg.png)">
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=algorithms">Algorithmes</a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li>        </ul>
-    <h4><a class="foil" href="project/s1.02.html">Sudone</a></h4><small class="status"><time datetime="2023-11-27">27 novembre 2023</time> &ndash;
-            <time datetime="2024-05-20">20 mai 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Solveur de grilles de Sudoku optimisé. Comparaison d'approches algorithmiques (S1.02)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/Matteo-K/Sudoku-Solver" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=high-level">Haut niveau</a></li><li><a href="/portfolio/fr/projects.html?tag=algorithms">Algorithmes</a></li>        </ul>
-    <h4><a class="foil" href="project/s2.02.html">Problème des N reines</a></h4><small class="status"><time datetime="2024-03-11">11 mars 2024</time> &ndash;
-            <time datetime="2024-03-27">27 mars 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Des solutions innovantes au <a class="link" target="_blank" rel="noopener noreferrer" href="/portfolio/img/project/s2.02/sujet-sae.pdf">problème des N reines</a>. Exploration algorithmique d'un problème (S2.02)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/N-queens-problem" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            </ul>     </li>
-    <li style="--bg-img: url(/portfolio/img/skill/2.jpg)">
-        <h3>Compétence 3&nbsp;: Administrer</h3>
-        <p>Installer, configurer, mettre à disposition, maintenir en conditions opérationnelles des infrastructures, des services et des réseaux et optimiser le système informatique d’une organisation.</p>
-                <ul class="lvl list-project">
-                    <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-administrer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Administrer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=sysadmin">Sysadmin</a></li>        </ul>
-    <h4><a class="foil" href="project/s1.03.html">Générateur de documentation</a></h4><small class="status"><time datetime="2023-10-25">25 octobre 2023</time> &ndash;
-            <time datetime="2023-01-21">21 janvier 2023</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Automatisation, scripts, conteneurisation, parseur Markdown. Installation d'un poste pour le développement (S1.03)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/S1.03" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-administrer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Administrer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=web">Web</a></li><li><a href="/portfolio/fr/projects.html?tag=sysadmin">Sysadmin</a></li>        </ul>
-    <h4><a class="foil" href="project/s2.03.html">Site de météo</a></h4><small class="status"><time datetime="2024-05-14">14 mai 2024</time> &ndash;
-            <time datetime="2024-06-05">5 juin 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Mise en place d'un serveur Web. Installation de services réseau (S2.03)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/S2.03" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            </ul>     </li>
-    <li style="--bg-img: url(/portfolio/img/skill/3.jpg)">
-        <h3>Compétence 4&nbsp;: Gérer</h3>
-        <p>Concevoir, gérer, administrer et exploiter les données de l’entreprise et mettre à disposition toutes les informations pour un bon pilotage de l’entreprise.</p>
-                <ul class="lvl list-project">
-                    <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-gerer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique">Gérer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=db"><abbr title="Base de données">BdD</abbr></a></li>        </ul>
-    <h4><a class="foil" href="project/s1.04.html">Création d'une base de données</a></h4><small class="status"><time datetime="2023-11-27">27 novembre 2023</time> &ndash;
-            <time datetime="2024-01-22">22 janvier 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Concevoir et implémenter une base de données. Création d'une base de données (S1.04)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/S1.04" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-gerer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique">Gérer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=data">Data</a></li><li><a href="/portfolio/fr/projects.html?tag=db"><abbr title="Base de données">BdD</abbr></a></li>        </ul>
-    <h4><a class="foil" href="project/s2.04.html">Data mining et OSINT sur l'éducation</a></h4><small class="status"><time datetime="2024-04-23">23 avril 2024</time> &ndash;
-            <time datetime="2024-06-12">12 juin 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Data mining sur l'open-data des collèges et lycées français. Exploitation d'une base de données (S2.04)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/S2.04" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            </ul>     </li>
-    <li style="--bg-img: url(/portfolio/img/skill/4.jpg)">
-        <h3>Compétence 5&nbsp;: Conduire</h3>
-        <p>Satisfaire les besoins des utilisateurs au regard de la chaîne de valeur du client, organiser et piloter un projet informatique avec des méthodes classiques ou agiles.</p>
-                <ul class="lvl list-project">
-                    <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-conduire"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Conduire</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=communication">Communication</a></li><li><a href="/portfolio/fr/projects.html?tag=web">Web</a></li>        </ul>
-    <h4><a class="foil" href="project/s1.05.html">Tabas'Kho</a></h4><small class="status"><time datetime="2023-10-09">9 octobre 2023</time> &ndash;
-            <time datetime="2024-01-21">21 janvier 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Créer un site de streaming factice. Recueil des besoins (S1.05)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/Matteo-K/TabasKho" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-conduire"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Conduire</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=communication">Communication</a></li>        </ul>
-    <h4><a class="foil" href="project/s2.05.html">Gestion du projet d'application Billeterie Le Patio</a></h4><small class="status"><time datetime="2024-05-15">15 mai 2024</time> &ndash;
-            <time datetime="2024-06-17">17 juin 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Gestion de projet traditionelle (Waterfall) pour l'application de billeterie Le Patio. Gestion d'un projet (S2.05)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/S2.05" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            </ul>     </li>
-    <li style="--bg-img: url(/portfolio/img/skill/5.jpg)">
-        <h3>Compétence 6&nbsp;: Collaborer</h3>
-        <p>Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une équipe informatique.</p>
-                <ul class="lvl list-project">
-                    <li  style="--bg-img-card: url(/portfolio/img/project/s1.02/bg.png)">
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=algorithms">Algorithmes</a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li>        </ul>
-    <h4><a class="foil" href="project/s1.02.html">Sudone</a></h4><small class="status"><time datetime="2023-11-27">27 novembre 2023</time> &ndash;
-            <time datetime="2024-05-20">20 mai 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Solveur de grilles de Sudoku optimisé. Comparaison d'approches algorithmiques (S1.02)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/Matteo-K/Sudoku-Solver" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-administrer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Administrer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=sysadmin">Sysadmin</a></li>        </ul>
-    <h4><a class="foil" href="project/s1.03.html">Générateur de documentation</a></h4><small class="status"><time datetime="2023-10-25">25 octobre 2023</time> &ndash;
-            <time datetime="2023-01-21">21 janvier 2023</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Automatisation, scripts, conteneurisation, parseur Markdown. Installation d'un poste pour le développement (S1.03)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/S1.03" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-gerer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique">Gérer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=db"><abbr title="Base de données">BdD</abbr></a></li>        </ul>
-    <h4><a class="foil" href="project/s1.04.html">Création d'une base de données</a></h4><small class="status"><time datetime="2023-11-27">27 novembre 2023</time> &ndash;
-            <time datetime="2024-01-22">22 janvier 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Concevoir et implémenter une base de données. Création d'une base de données (S1.04)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/S1.04" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=but-conduire"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Conduire</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-collaborer"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span></a></li><li><a href="/portfolio/fr/projects.html?tag=communication">Communication</a></li><li><a href="/portfolio/fr/projects.html?tag=web">Web</a></li>        </ul>
-    <h4><a class="foil" href="project/s1.05.html">Tabas'Kho</a></h4><small class="status"><time datetime="2023-10-09">9 octobre 2023</time> &ndash;
-            <time datetime="2024-01-21">21 janvier 2024</time></small>
-            <small class="context">BUT</small>
-            <p class="abstract">Créer un site de streaming factice. Recueil des besoins (S1.05)</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/Matteo-K/TabasKho" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            </ul>     </li>
-                </li>
-            </ul>
-        </section>
-        <div class="lvl">
-            <article id="resultat-pour-moi">
-                <h2>Résultat pour moi</h2>
-                <article>
-                    <h3>Pourquoi avoir choisi le BUT Informatique&nbsp;?</h3>
-                    <ul><li>L'affiliation de la formation avec mes intérêts et mes passions &rarr; le développement informatique&nbsp;;</li><li>La proximité de mon domicile à l'IUT de Lannion</li></ul>                </article>
-                <article>
-                    <h3>Mon bilan sur cette première année&nbsp;?</h3>
-                    <ul><li>J'ai énormément étendu mes horizons, j'ai découvert une pléthore de nouvelles disciplines de l'informatique&nbsp;;</li><li>J'ai maintenant la tête remplie d'idées de projets que je souhaite réaliser&nbsp;;</li><li>L'ambiance de formation a été conviviale. Le climat est propice à l'entraide et à la coopération, aussi bien entre étudiants qu'avec les professeurs.</li></ul>                </article>
-                <p><strong>Conclusion</strong>&nbsp;: je suis euphorique.</p>
-            </article>
-            <figure class="figure">
-                <img src="/portfolio/img/iut-lannion.jpg" alt="Entrée de l'IUT de Lannion" width="1200" height="630" loading="lazy" title="Entrée de l'IUT de Lannion">
-                <figcaption>L'IUT de Lannion (Côtes d'Armor). C'est ici que je fais mon BUT Informatique.</figcaption>
-            </figure>
-        </div>
-    </main>
-        <footer class="lvl">
-        <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="Dépôt GitHub de ce site"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-    </footer>
+        </ul>
+    </section>
+    <div class="lvl">
+        <article id="resultat-pour-moi">
+            <h2>Résultat pour moi</h2>
+            <article>
+                <h3>Pourquoi avoir choisi le BUT Informatique&nbsp;?</h3>
+                <ul><li>L'affiliation de la formation avec mes intérêts et mes passions &rarr; le développement informatique&nbsp;;</li><li>La proximité de mon domicile à l'IUT de Lannion</li></ul>            </article>
+            <article>
+                <h3>Mon bilan sur cette première année&nbsp;?</h3>
+                <ul><li>J'ai énormément étendu mes horizons, j'ai découvert une pléthore de nouvelles disciplines de l'informatique&nbsp;;</li><li>J'ai maintenant la tête remplie d'idées de projets que je souhaite réaliser&nbsp;;</li><li>L'ambiance de formation a été conviviale. Le climat est propice à l'entraide et à la coopération, aussi bien entre étudiants qu'avec les professeurs.</li></ul>            </article>
+            <p><strong>Conclusion</strong>&nbsp;: je suis euphorique.</p>
+        </article>
+        <figure class="figure">
+            <img src="/portfolio/img/iut-lannion.jpg" alt="Entrée de l'IUT de Lannion" width="1200" height="630" loading="lazy" title="Entrée de l'IUT de Lannion">
+            <figcaption>L'IUT de Lannion (Côtes d'Armor). C'est ici que je fais mon BUT Informatique.</figcaption>
+        </figure>
+    </div>
+</main>
+    <footer class="lvl">
+    <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="Dépôt GitHub de ce site"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+</footer>
 </body>
 
 </html>

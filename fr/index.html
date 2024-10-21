@@ -1,331 +1,283 @@
-    <!DOCTYPE html>
-    <html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 
-    <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png">
-        <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
-        <link rel="manifest" href="/portfolio/site.webmanifest">
-        <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png">
+    <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/portfolio/site.webmanifest">
+    <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
 
-                    <link rel="stylesheet" type="text/css" href="/portfolio/css/index.css">
-                <meta charset="UTF-8">
-        <meta name="author" content="Raphaël Bardini">
-        <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
-        <meta name="msapplication-TileColor" content="#2d89ef">
-        <meta name="theme-color" content="#ffffff">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Raphaël Bardini</title>
-        <script>
-            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
-        </script>
-        <!-- Flag icons -->
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
-        <!-- JQuery -->
-        <script async src="/portfolio/js/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-        <!-- Highlight.JS -->
-        <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-        <script type="module" src="/portfolio/js/base.js"></script>
-                    <script type="module" src="/portfolio/js/index.js"></script>
-            </head>
+        <link rel="stylesheet" type="text/css" href="/portfolio/css/index.css">
+        <meta charset="UTF-8">
+    <meta name="author" content="Raphaël Bardini">
+    <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raphaël Bardini</title>
+    <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+    </script>
+    <!-- Flag icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+    <!-- JQuery -->
+    <script async src="/portfolio/js/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <!-- Highlight.JS -->
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script type="module" src="/portfolio/js/base.js"></script>
+        <script type="module" src="/portfolio/js/index.js"></script>
+    </head>
 
 <body>
-        <template id="template-definition-tooltip">
-        <article class="lvl definition-tooltip" role="tooltip">
-            <h4 class="title"><a target="_blank" rel="noopener noreferrer">
-                    <!-- href="wiki"; name -->
-                </a></h4>
-            <!-- logo graphic -->
-            <p class="type"><small>
-                    <!-- type -->
-                </small></p>
-            <p class="synopsis">
-                <!-- synopsis -->
-            </p>
-        </article>
-    </template>
-    <header class="lvl">
-        <nav>
-            <a href="#">Raphaël Bardini</a>
-            <ul>
-                <li><a href="/portfolio/fr/projects.html">Projets</a>
-                </li>
-                <li><a href="/portfolio/fr/history.html">Parcours</a>
-                </li>
-                <li><a href="/portfolio/fr/passions.html">Passions</a>
-                </li>
-                <li><a href="/portfolio/fr/perspectives.html">Perspectives</a>
-                <li><a href="/portfolio/fr/but-informatique.html">BUT Informatique</a>
-                </li>
-            </ul>
-        </nav>
-        <ul class="list-flags">
-            <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/index.html"></a></li><li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/index.html"></a></li>        </ul>
-        <div class="theme-switches">
-            <label for="theme-switch-light" title="Thème clair">
-                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.9966 13.3333C12.8804 13.3333 14.4075 11.8409 14.4075 10C14.4075 8.15905 12.8804 6.66666 10.9966 6.66666C9.11284 6.66666 7.58575 8.15905 7.58575 10C7.58575 11.8409 9.11284 13.3333 10.9966 13.3333Z" style="stroke:var(--color-fg);fill:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M10.9966 1.66666V3.33333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M10.9966 16.6667V18.3333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M4.9679 4.10833L6.17022 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M15.8229 14.7167L17.0253 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M2.46942 10H4.17485" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M17.8183 10H19.5237" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M6.17022 14.7167L4.9679 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M17.0253 4.10833L15.8229 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <input id="theme-switch-light" name="theme" value="auto" type="radio" onclick="">
-            </label>
-            <label for="theme-switch-system" title="Thème système">
-                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="15.0014" cy="15.0014" r="9" style="stroke:var(--color-fg);" stroke-width="2" />
-                    <mask id="path-2-inside-1_316_18" style="fill:var(--color-bg);">
-                        <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" />
-                    </mask>
-                    <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" style="fill:var(--color-fg);stroke:var(--color-fg);" stroke-width="4" mask="url(#path-2-inside-1_316_18)" />
-                </svg>
-                <input id="theme-switch-system" name="theme" value="light" type="radio" onclick="">
-            </label>
-            <label for="theme-switch-dark" title="Thème sombre">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8.99939 1.5C8.00483 2.49456 7.44609 3.84348 7.44609 5.25C7.44609 6.65652 8.00483 8.00544 8.99939 9C9.99395 9.99456 11.3429 10.5533 12.7494 10.5533C14.1559 10.5533 15.5048 9.99456 16.4994 9C16.4994 10.4834 16.0595 11.9334 15.2354 13.1668C14.4113 14.4001 13.24 15.3614 11.8695 15.9291C10.4991 16.4968 8.99107 16.6453 7.53622 16.3559C6.08136 16.0665 4.74499 15.3522 3.69609 14.3033C2.6472 13.2544 1.93289 11.918 1.6435 10.4632C1.35411 9.00832 1.50264 7.50032 2.0703 6.12987C2.63795 4.75943 3.59925 3.58809 4.83262 2.76398C6.06598 1.93987 7.51603 1.5 8.99939 1.5Z" style="stroke:var(--color-fg);" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <input id="theme-switch-dark" name="theme" value="dark" type="radio" onclick="">
-            </label>
-        </div>
-    </header>
+    <template id="template-definition-tooltip">
+    <article class="lvl definition-tooltip" role="tooltip">
+        <h4 class="title"><a target="_blank" rel="noopener noreferrer">
+                <!-- href="wiki"; name -->
+            </a></h4>
+        <!-- logo graphic -->
+        <p class="type"><small>
+                <!-- type -->
+            </small></p>
+        <p class="synopsis">
+            <!-- synopsis -->
+        </p>
+    </article>
+</template>
+<header class="lvl">
+    <nav>
+        <a href="/portfolio/fr/index.html">Raphaël Bardini</a>
+        <ul>
+            <li><a href="/portfolio/fr/projects.html">Projets</a></li>
+            <li><a href="/portfolio/fr/history.html">Parcours</a></li>
+            <li><a href="/portfolio/fr/passions.html">Passions</a></li>
+            <li><a href="/portfolio/fr/perspectives.html">Perspectives</a>
+            <li><a href="/portfolio/fr/but-informatique.html">BUT Informatique</a></li>
+        </ul>
+    </nav>
+    <ul class="list-flags">
+        <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/index.html"></a></li><li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/index.html"></a></li>    </ul>
+    <div class="theme-switches">
+        <label for="theme-switch-light" title="Thème clair">
+            <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.9966 13.3333C12.8804 13.3333 14.4075 11.8409 14.4075 10C14.4075 8.15905 12.8804 6.66666 10.9966 6.66666C9.11284 6.66666 7.58575 8.15905 7.58575 10C7.58575 11.8409 9.11284 13.3333 10.9966 13.3333Z" style="stroke:var(--color-fg);fill:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.9966 1.66666V3.33333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.9966 16.6667V18.3333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4.9679 4.10833L6.17022 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15.8229 14.7167L17.0253 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2.46942 10H4.17485" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.8183 10H19.5237" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.17022 14.7167L4.9679 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.0253 4.10833L15.8229 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input id="theme-switch-light" name="theme" value="auto" type="radio" onclick="">
+        </label>
+        <label for="theme-switch-system" title="Thème système">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15.0014" cy="15.0014" r="9" style="stroke:var(--color-fg);" stroke-width="2" />
+                <mask id="path-2-inside-1_316_18" style="fill:var(--color-bg);">
+                    <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" />
+                </mask>
+                <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" style="fill:var(--color-fg);stroke:var(--color-fg);" stroke-width="4" mask="url(#path-2-inside-1_316_18)" />
+            </svg>
+            <input id="theme-switch-system" name="theme" value="light" type="radio" onclick="">
+        </label>
+        <label for="theme-switch-dark" title="Thème sombre">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.99939 1.5C8.00483 2.49456 7.44609 3.84348 7.44609 5.25C7.44609 6.65652 8.00483 8.00544 8.99939 9C9.99395 9.99456 11.3429 10.5533 12.7494 10.5533C14.1559 10.5533 15.5048 9.99456 16.4994 9C16.4994 10.4834 16.0595 11.9334 15.2354 13.1668C14.4113 14.4001 13.24 15.3614 11.8695 15.9291C10.4991 16.4968 8.99107 16.6453 7.53622 16.3559C6.08136 16.0665 4.74499 15.3522 3.69609 14.3033C2.6472 13.2544 1.93289 11.918 1.6435 10.4632C1.35411 9.00832 1.50264 7.50032 2.0703 6.12987C2.63795 4.75943 3.59925 3.58809 4.83262 2.76398C6.06598 1.93987 7.51603 1.5 8.99939 1.5Z" style="stroke:var(--color-fg);" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input id="theme-switch-dark" name="theme" value="dark" type="radio" onclick="">
+        </label>
+    </div>
+</header>
     <main>
-        <ul class="lvl list-piano-tiles">
-                            <li>
-                    <figure>
-                        <img src="/portfolio/img/piano-tile/1.jpg" alt="Val d'Isère" width="240" height="480" loading="lazy" title="Station de ski dans les Alpes">
-                        <figcaption>
-                            <div>
-                                <h2><a class="foil" href="passions.html#mountain">Val d'Isère</a></h2>
-                                <p>Station de ski dans les Alpes</p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </li>
-                            <li>
-                    <figure>
-                        <img src="/portfolio/img/piano-tile/2.png" alt="Jeu-vidéo bac-à-sable" width="240" height="480" loading="lazy" title="L'art et la fonctionnalité conjointes">
-                        <figcaption>
-                            <div>
-                                <h2><a class="foil" href="passions.html#sandbox-videogames">Jeu-vidéo bac-à-sable</a></h2>
-                                <p>L'art et la fonctionnalité conjointes</p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </li>
-                            <li>
-                    <figure>
-                        <img src="/portfolio/img/piano-tile/3.png" alt="Un monde virtuel" width="240" height="480" loading="lazy" title="Une infinité de possibilités">
-                        <figcaption>
-                            <div>
-                                <h2><a class="foil" href="project/tregoria.html">Un monde virtuel</a></h2>
-                                <p>Une infinité de possibilités</p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </li>
-                            <li>
-                    <figure>
-                        <img src="/portfolio/img/piano-tile/4.png" alt="Blender" width="240" height="480" loading="lazy" title="Modélisation 3D et montage vidéo">
-                        <figcaption>
-                            <div>
-                                <h2><a class="foil" href="project/2l2w-french-rural-road.html">Blender</a></h2>
-                                <p>Modélisation 3D et montage vidéo</p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </li>
-                            <li>
-                    <figure>
-                        <img src="/portfolio/img/piano-tile/5.png" alt="Science des données" width="240" height="480" loading="lazy" title="Data science">
-                        <figcaption>
-                            <div>
-                                <h2><a class="foil" href="project/ethercrash.html">Science des données</a></h2>
-                                <p>Data science</p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </li>
-                            <li>
-                    <figure>
-                        <img src="/portfolio/img/piano-tile/6.png" alt="Grammaires formelles" width="240" height="480" loading="lazy" title="Sur les traces de Noam Chomsky…">
-                        <figcaption>
-                            <div>
-                                <h2><a class="foil" href="project/psdc.html">Grammaires formelles</a></h2>
-                                <p>Sur les traces de Noam Chomsky…</p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </li>
-                            <li>
-                    <figure>
-                        <img src="/portfolio/img/piano-tile/7.png" alt="Optimisation" width="240" height="480" loading="lazy" title="L'optimisation ne se termine jamais">
-                        <figcaption>
-                            <div>
-                                <h2><a class="foil" href="project/s1.02.html">Optimisation</a></h2>
-                                <p>L'optimisation ne se termine jamais</p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </li>
-                            <li>
-                    <figure>
-                        <img src="/portfolio/img/piano-tile/8.png" alt="Expérience utilisateur" width="240" height="480" loading="lazy" title="Mon projet best-seller">
-                        <figcaption>
-                            <div>
-                                <h2><a class="foil" href="project/winclean.html">Expérience utilisateur</a></h2>
-                                <p>Mon projet <q>best-seller</q></p>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </li>
-                    </ul>
-        <article id="me" class="lvl content-block">
-            <div>
-                <h2>À propos de moi</h2>
-                <p>Bonjour, je m'appelle <strong>Raphaël Bardini</strong>. J'ai 18 ans et suis étudiant en 2<sup>ème</sup> année de <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique, à l'<a class="link" target="_blank" rel="noopener noreferrer" href="https://iut-lannion.univ-rennes.fr/"><abbr title="Institut Universitaire Technologique">IUT</abbr> de Lannion</a>.</p><p>J'ai un baccalauréat général avec spécialités <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.lyceeschoelcher972.fr/specialite-llcer-amc/"><abbr title="Langues, littératures et cultures étrangères et régionales &mdash; Anglais Monde Contemporain">LLCER AMC</abbr></a> et <a class="link" target="_blank" rel="noopener noreferrer" href="https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"><abbr title="Numérique Sciences Informatiques">NSI</abbr></a>. J'ai un très bon niveau en anglais.</p><p>Je suis passionné par le <strong>développement logiciel</strong> et je suis investi dans le milieu <strong>open-source</strong>. Je suis également un grand amateur de <a class="link" target="_blank" rel="noopener noreferrer" href="https://youtube.com/playlist?list=PL1weKnP9ENMdJbMr338lNOMSF487f8nGm">jazz</a>. Rejoignez-moi dans cette aventure&nbsp;! &#9749;</p>            </div>
-            <img src="/portfolio/img/me.jpg" alt="Ma photo" width="1600" height="1600" loading="lazy" title="Ma photo">
-        </article>
-        <section id="ongoing-projects" class="lvl">
-            <h2>Mes projets en cours</h2>
-                    <ul class="lvl list-project">
-                    <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=idea"><abbr title="Quelquechose n'ayant pas encore mené à de réalisation concrète mais a beaucoup de potentiel">Idée</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=algorithms">Algorithmes</a></li>        </ul>
-    <h3><a class="foil" href="project/island-maps.html">Island Maps</a></h3><small class="status"><time datetime="2023-04-27">27 avril 2023</time> &ndash;
-            en cours</small>
-            <small class="context">Personnel</small>
-            <p class="abstract">Cartographier les îles du jeu Anno 2070 pour la recherche et l'automatisation</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://anno2070.fandom.com/wiki/User_blog:Scover32/Anno_2070:_Island_maps" title="Blog" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li>        </ul>
-    <h3><a class="foil" href="project/jslave.html">JSlave</a></h3><small class="status"><time datetime="2024-05-30">30 mai 2024</time> &ndash;
-            en cours</small>
-            <small class="context">Personnel</small>
-            <p class="abstract">Language formel de métaprogrammation <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Java_(langage)" data-definition-id="java" class="link definition-tooltip-trigger">Java</a></p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/jslave" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=web">Web</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=ux"><abbr title="Expérience utilisateur">UX</span></abbr></a></li>        </ul>
-    <h3><a class="foil" href="project/portfolio.html">Portfolio</a></h3><small class="status"><time datetime="2024-06-17">17 juin 2024</time> &ndash;
-            en cours</small>
-            <small class="context">BUT</small>
-            <p class="abstract">Mon portfolio</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/portfolio" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li  style="--bg-img-card: url(/portfolio/img/project/psdc/bg.png)">
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=compiler">Compilateur</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li>        </ul>
-    <h3><a class="foil" href="project/psdc.html">Psdc</a></h3><small class="status"><time datetime="2023-11-15">15 novembre 2023</time> &ndash;
-            en cours</small>
-            <small class="context">Personnel</small>
-            <p class="abstract">Compilateur pseudocode de l'IUT de Lannion</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/psdc" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=art">Art</a></li>        </ul>
-    <h3><a class="foil" href="project/tregoria.html">Trégoria</a></h3><small class="status"><time datetime="2022-10-15">15 octobre 2022</time> &ndash;
-            en cours</small>
-            <small class="context">Personnel</small>
-            <p class="abstract">Un recul sur notre environnement dans Cities: Skylines</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://www.instagram.com/p/CjxQUO3LryP" title="Publication Instagram" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li  style="--bg-img-card: url(/portfolio/img/project/winclean/bg.png)">
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=full-stack">Full-stack</a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=ui"><abbr title="Interface utilisateur">UI</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=ux"><abbr title="Expérience utilisateur">UX</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li>        </ul>
-    <img src="/portfolio/img/project/winclean/logo.png" alt="Logo WinClean" title="Logo WinClean" class="logo" width="82" height="133" loading="lazy"><h3><a class="foil" href="project/winclean.html">WinClean</a></h3><small class="status"><time datetime="2022-08-15">15 août 2022</time> &ndash;
-            en cours</small>
-            <small class="context">Personnel</small>
-            <p class="abstract">Application de nettoyage et optimisation Windows</p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean" title="Article CommentÇaMarche" target="_blank" rel="noopener noreferrer">
-                        <img src="/portfolio/img/social/ccm.png" alt="" width="56" height="64" loading="lazy">                    </a>
-                </li>
-                            <li>
-                    <a href="https://github.com/5cover/WinClean" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            <li >
-                    <ul class="list-rect">
-            <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li>        </ul>
-    <h3><a class="foil" href="project/ztest.html">ztest</a></h3><small class="status"><time datetime="2024-06-01">1 juin 2024</time> &ndash;
-            en cours</small>
-            <small class="context">Personnel</small>
-            <p class="abstract">La commande Unix <code>test</code> implémentée en <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a></p>
-            <ul class="list-link">
-                            <li>
-                    <a href="https://github.com/5cover/ztest" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>                    </a>
-                </li>
-                    </ul>
-            </li>
-            </ul>             <a href="projects.html" class="lvl button-link">Tous mes projets</a>
-        </section>
-        <article id="contact" class="lvl content-block">
-            <div>
-                <h2>Contact</h2>
-                <address>
-                    <ul>
-                        <li title="E-mail"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="mailto:bardini.raphael@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z"/></svg><span>bardini.raphael@gmail.com</span></a>
-                        </li>
-                        <li title="LinkedIn"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg><span>Raphaël Bardini</span></a>
-                        </li>
-                        <li title="Instagram"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/bardiniraphael/"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span>bardiniraphael</span></a>
-                        </li>
-                        <li title="GitHub"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><span>5cover</span></a>
-                        </li>
-                    </ul>
-                </address>
-            </div>
-                        <a href="cv-bardini-raphael.pdf" target="_blank" rel="noopener noreferrer">
-                <img src="cv-bardini-raphael-preview.jpg" alt="Aperçu de mon CV" width="300" height="212" loading="lazy">
-                <span>Mon CV</span>
-            </a>
-        </article>
-    </main>
-        <footer class="lvl">
-        <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="Dépôt GitHub de ce site"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-    </footer>
+    <ul class="lvl list-piano-tiles">
+                <li>
+            <figure>
+                <img src="/portfolio/img/piano-tile/1.jpg" alt="Val d'Isère" width="240" height="480" loading="lazy" title="Station de ski dans les Alpes">
+                <figcaption>
+                    <div>
+                        <h2><a class="foil" href="passions.html#mountain">Val d'Isère</a></h2>
+                        <p>Station de ski dans les Alpes</p>
+                    </div>
+                </figcaption>
+            </figure>
+        </li>
+                <li>
+            <figure>
+                <img src="/portfolio/img/piano-tile/2.png" alt="Jeu-vidéo bac-à-sable" width="240" height="480" loading="lazy" title="L'art et la fonctionnalité conjointes">
+                <figcaption>
+                    <div>
+                        <h2><a class="foil" href="passions.html#sandbox-videogames">Jeu-vidéo bac-à-sable</a></h2>
+                        <p>L'art et la fonctionnalité conjointes</p>
+                    </div>
+                </figcaption>
+            </figure>
+        </li>
+                <li>
+            <figure>
+                <img src="/portfolio/img/piano-tile/3.png" alt="Un monde virtuel" width="240" height="480" loading="lazy" title="Une infinité de possibilités">
+                <figcaption>
+                    <div>
+                        <h2><a class="foil" href="projects/tregoria.html">Un monde virtuel</a></h2>
+                        <p>Une infinité de possibilités</p>
+                    </div>
+                </figcaption>
+            </figure>
+        </li>
+                <li>
+            <figure>
+                <img src="/portfolio/img/piano-tile/4.png" alt="Blender" width="240" height="480" loading="lazy" title="Modélisation 3D et montage vidéo">
+                <figcaption>
+                    <div>
+                        <h2><a class="foil" href="projects/2l2w-french-rural-road.html">Blender</a></h2>
+                        <p>Modélisation 3D et montage vidéo</p>
+                    </div>
+                </figcaption>
+            </figure>
+        </li>
+                <li>
+            <figure>
+                <img src="/portfolio/img/piano-tile/5.png" alt="Science des données" width="240" height="480" loading="lazy" title="Data science">
+                <figcaption>
+                    <div>
+                        <h2><a class="foil" href="projects/ethercrash.html">Science des données</a></h2>
+                        <p>Data science</p>
+                    </div>
+                </figcaption>
+            </figure>
+        </li>
+                <li>
+            <figure>
+                <img src="/portfolio/img/piano-tile/6.png" alt="Grammaires formelles" width="240" height="480" loading="lazy" title="Sur les traces de Noam Chomsky…">
+                <figcaption>
+                    <div>
+                        <h2><a class="foil" href="projects/psdc.html">Grammaires formelles</a></h2>
+                        <p>Sur les traces de Noam Chomsky…</p>
+                    </div>
+                </figcaption>
+            </figure>
+        </li>
+                <li>
+            <figure>
+                <img src="/portfolio/img/piano-tile/7.png" alt="Optimisation" width="240" height="480" loading="lazy" title="L'optimisation ne se termine jamais">
+                <figcaption>
+                    <div>
+                        <h2><a class="foil" href="projects/s1.02.html">Optimisation</a></h2>
+                        <p>L'optimisation ne se termine jamais</p>
+                    </div>
+                </figcaption>
+            </figure>
+        </li>
+                <li>
+            <figure>
+                <img src="/portfolio/img/piano-tile/8.png" alt="Expérience utilisateur" width="240" height="480" loading="lazy" title="Mon projet best-seller">
+                <figcaption>
+                    <div>
+                        <h2><a class="foil" href="projects/winclean.html">Expérience utilisateur</a></h2>
+                        <p>Mon projet <q>best-seller</q></p>
+                    </div>
+                </figcaption>
+            </figure>
+        </li>
+            </ul>
+    <article id="me" class="lvl content-block">
+        <div>
+            <h2>À propos de moi</h2>
+            <p>Bonjour, je m'appelle <strong>Raphaël Bardini</strong>. J'ai 18 ans et suis étudiant en 2<sup>ème</sup> année de <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique, à l'<a class="link" target="_blank" rel="noopener noreferrer" href="https://iut-lannion.univ-rennes.fr/"><abbr title="Institut Universitaire Technologique">IUT</abbr> de Lannion</a></a>.</p>
+<p>J'ai un baccalauréat général avec spécialités <a target="_blank" rel="noopener noreferrer" href="https://www.lyceeschoelcher972.fr/specialite-llcer-amc/" data-definition-id="amc" class="link definition-tooltip-trigger">AMC</a> et <a target="_blank" rel="noopener noreferrer" href="https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448" data-definition-id="nsi" class="link definition-tooltip-trigger">NSI</a>. J'ai un bon niveau en anglais.</p>
+<p>Je suis passionné par le <strong>développement logiciel</strong> et je suis investi dans le milieu <strong>open-source</strong>. Je suis également un grand amateur de <a class="link" target="_blank" rel="noopener noreferrer" href="https://youtube.com/playlist?list=PL1weKnP9ENMdJbMr338lNOMSF487f8nGm">jazz</a>. Rejoignez-moi dans cette aventure&nbsp;! &#9749;</p>        </div>
+        <img src="/portfolio/img/me.jpg" alt="Ma photo" width="1600" height="1600" loading="lazy" title="Ma photo">
+    </article>
+    <section id="ongoing-projects" class="lvl">
+        <h2>Mes projets en cours</h2>
+        <ul class="lvl list-project">
+    <li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=idea"><abbr title="Quelquechose n'ayant pas encore mené à de réalisation concrète mais a beaucoup de potentiel">Idée</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=algorithms">Algorithmes</a></li></ul>
+<h3><a class="foil" href="projects/island-maps.html">Island Maps</a></h3><small class="status"><time datetime="2023-04-27">27 avril 2023</time> &ndash;
+    en cours</small>
+<small class="context">Personnel</small>
+<p class="abstract">Cartographier les îles du jeu Anno 2070 pour la recherche et l'automatisation</p>
+<ul class="list-link"><li><a href="https://anno2070.fandom.com/wiki/User_blog:Scover32/Anno_2070:_Island_maps" title="Blog" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li></ul>
+<h3><a class="foil" href="projects/jslave.html">JSlave</a></h3><small class="status"><time datetime="2024-05-30">30 mai 2024</time> &ndash;
+    en cours</small>
+<small class="context">Personnel</small>
+<p class="abstract">Language formel de métaprogrammation <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Java_(langage)" data-definition-id="java" class="link definition-tooltip-trigger">Java</a></p>
+<ul class="list-link"><li><a href="https://github.com/5cover/jslave" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=web">Web</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=ux"><abbr title="Expérience utilisateur">UX</span></abbr></a></li></ul>
+<h3><a class="foil" href="projects/portfolio.html">Portfolio</a></h3><small class="status"><time datetime="2024-06-17">17 juin 2024</time> &ndash;
+    en cours</small>
+<small class="context">BUT</small>
+<p class="abstract">Mon portfolio</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/portfolio" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li  style="--bg-img-card: url(/portfolio/img/project/psdc/bg.png)">
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=compiler">Compilateur</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li></ul>
+<h3><a class="foil" href="projects/psdc.html">Psdc</a></h3><small class="status"><time datetime="2023-11-15">15 novembre 2023</time> &ndash;
+    en cours</small>
+<small class="context">Personnel</small>
+<p class="abstract">Compilateur pseudocode de l'IUT de Lannion</p>
+<ul class="list-link"><li><a href="https://github.com/5cover/psdc" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=art">Art</a></li></ul>
+<h3><a class="foil" href="projects/tregoria.html">Trégoria</a></h3><small class="status"><time datetime="2022-10-15">15 octobre 2022</time> &ndash;
+    en cours</small>
+<small class="context">Personnel</small>
+<p class="abstract">Un recul sur notre environnement dans Cities: Skylines</p>
+<ul class="list-link"><li><a href="https://www.instagram.com/p/CjxQUO3LryP" title="Publication Instagram" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></li></ul></li>
+<li  style="--bg-img-card: url(/portfolio/img/project/winclean/bg.png)">
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=full-stack">Full-stack</a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=ui"><abbr title="Interface utilisateur">UI</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=ux"><abbr title="Expérience utilisateur">UX</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li></ul>
+<img src="/portfolio/img/project/winclean/logo.png" alt="Logo WinClean" title="Logo WinClean" class="logo" width="82" height="133" loading="lazy"><h3><a class="foil" href="projects/winclean.html">WinClean</a></h3><small class="status"><time datetime="2022-08-15">15 août 2022</time> &ndash;
+    en cours</small>
+<small class="context">Personnel</small>
+<p class="abstract">Application de nettoyage et optimisation Windows</p>
+<ul class="list-link"><li><a href="https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean" title="Article CommentÇaMarche" target="_blank" rel="noopener noreferrer"><img src="/portfolio/img/social/ccm.png" alt="" width="56" height="64" loading="lazy"></a></li><li><a href="https://github.com/5cover/WinClean" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+<li >
+    <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li></ul>
+<h3><a class="foil" href="projects/ztest.html">ztest</a></h3><small class="status"><time datetime="2024-06-01">1 juin 2024</time> &ndash;
+    en cours</small>
+<small class="context">Personnel</small>
+<p class="abstract">La commande Unix <code>test</code> implémentée en <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a></p>
+<ul class="list-link"><li><a href="https://github.com/5cover/ztest" title="Dépôt GitHub" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></li></ul></li>
+</ul>         <a href="projects.html" class="lvl button-link">Tous mes projets</a>
+    </section>
+    <article id="contact" class="lvl content-block">
+        <div>
+            <h2>Contact</h2>
+            <address>
+                <ul>
+                    <li title="E-mail"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="mailto:bardini.raphael@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z"/></svg><span>bardini.raphael@gmail.com</span></a>
+                    </li>
+                    <li title="LinkedIn"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg><span>Raphaël Bardini</span></a>
+                    </li>
+                    <li title="Instagram"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/bardiniraphael/"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span>bardiniraphael</span></a>
+                    </li>
+                    <li title="GitHub"><a class="link iconed-text" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><span>5cover</span></a>
+                    </li>
+                </ul>
+            </address>
+        </div>
+                <a href="cv-bardini-raphael.pdf" target="_blank" rel="noopener noreferrer">
+            <img src="cv-bardini-raphael-preview.jpg" alt="Aperçu de mon CV" width="300" height="212" loading="lazy">
+            <span>Mon CV</span>
+        </a>
+    </article>
+</main>
+    <footer class="lvl">
+    <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="Dépôt GitHub de ce site"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+</footer>
 </body>
 
 </html>

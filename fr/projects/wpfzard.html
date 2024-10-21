@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png">
+    <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/portfolio/site.webmanifest">
+    <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
+
+        <link rel="stylesheet" type="text/css" href="/portfolio/css/project.css">
+        <meta charset="UTF-8">
+    <meta name="author" content="Raphaël Bardini">
+    <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raphaël Bardini</title>
+    <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+    </script>
+    <!-- Flag icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+    <!-- JQuery -->
+    <script async src="/portfolio/js/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <!-- Highlight.JS -->
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script type="module" src="/portfolio/js/base.js"></script>
+    </head>
+
+<body>
+    <template id="template-definition-tooltip">
+    <article class="lvl definition-tooltip" role="tooltip">
+        <h4 class="title"><a target="_blank" rel="noopener noreferrer">
+                <!-- href="wiki"; name -->
+            </a></h4>
+        <!-- logo graphic -->
+        <p class="type"><small>
+                <!-- type -->
+            </small></p>
+        <p class="synopsis">
+            <!-- synopsis -->
+        </p>
+    </article>
+</template>
+<header class="lvl">
+    <nav>
+        <a href="/portfolio/fr/index.html">Raphaël Bardini</a>
+        <ul>
+            <li><a href="/portfolio/fr/projects.html">Projets</a></li>
+            <li><a href="/portfolio/fr/history.html">Parcours</a></li>
+            <li><a href="/portfolio/fr/passions.html">Passions</a></li>
+            <li><a href="/portfolio/fr/perspectives.html">Perspectives</a>
+            <li><a href="/portfolio/fr/but-informatique.html">BUT Informatique</a></li>
+        </ul>
+    </nav>
+    <ul class="list-flags">
+        <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/projects/wpfzard.html"></a></li><li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/projects/wpfzard.html"></a></li>    </ul>
+    <div class="theme-switches">
+        <label for="theme-switch-light" title="Thème clair">
+            <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.9966 13.3333C12.8804 13.3333 14.4075 11.8409 14.4075 10C14.4075 8.15905 12.8804 6.66666 10.9966 6.66666C9.11284 6.66666 7.58575 8.15905 7.58575 10C7.58575 11.8409 9.11284 13.3333 10.9966 13.3333Z" style="stroke:var(--color-fg);fill:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.9966 1.66666V3.33333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.9966 16.6667V18.3333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4.9679 4.10833L6.17022 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15.8229 14.7167L17.0253 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2.46942 10H4.17485" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.8183 10H19.5237" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.17022 14.7167L4.9679 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.0253 4.10833L15.8229 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input id="theme-switch-light" name="theme" value="auto" type="radio" onclick="">
+        </label>
+        <label for="theme-switch-system" title="Thème système">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15.0014" cy="15.0014" r="9" style="stroke:var(--color-fg);" stroke-width="2" />
+                <mask id="path-2-inside-1_316_18" style="fill:var(--color-bg);">
+                    <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" />
+                </mask>
+                <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" style="fill:var(--color-fg);stroke:var(--color-fg);" stroke-width="4" mask="url(#path-2-inside-1_316_18)" />
+            </svg>
+            <input id="theme-switch-system" name="theme" value="light" type="radio" onclick="">
+        </label>
+        <label for="theme-switch-dark" title="Thème sombre">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.99939 1.5C8.00483 2.49456 7.44609 3.84348 7.44609 5.25C7.44609 6.65652 8.00483 8.00544 8.99939 9C9.99395 9.99456 11.3429 10.5533 12.7494 10.5533C14.1559 10.5533 15.5048 9.99456 16.4994 9C16.4994 10.4834 16.0595 11.9334 15.2354 13.1668C14.4113 14.4001 13.24 15.3614 11.8695 15.9291C10.4991 16.4968 8.99107 16.6453 7.53622 16.3559C6.08136 16.0665 4.74499 15.3522 3.69609 14.3033C2.6472 13.2544 1.93289 11.918 1.6435 10.4632C1.35411 9.00832 1.50264 7.50032 2.0703 6.12987C2.63795 4.75943 3.59925 3.58809 4.83262 2.76398C6.06598 1.93987 7.51603 1.5 8.99939 1.5Z" style="stroke:var(--color-fg);" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input id="theme-switch-dark" name="theme" value="dark" type="radio" onclick="">
+        </label>
+    </div>
+</header>
+    <main >
+    <header>
+        <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=library">Bibliothèque</a></li><li><a href="/portfolio/fr/projects.html?tag=ui"><abbr title="Interface utilisateur">UI</span></abbr></a></li></ul>
+        <h1>WPFZard</h1>
+        <img src="/portfolio/img/project/wpfzard/logo.png" alt="Logo WPFZard" title="Logo WPFZard" class="logo" width="128" height="128" loading="lazy">        <p class="abstract">Une simple bibliothèque d'<a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards" data-definition-id="wizard" class="link definition-tooltip-trigger">Assistant</a> pour <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation" data-definition-id="wpf" class="link definition-tooltip-trigger">WPF</a></p>
+        <div class="status-context"><small class="context">Personnel</small>
+<small class="status"><time datetime="2022-07-21">21 juillet 2022</time> &ndash;
+    <time datetime="2022-11-23">23 novembre 2022</time></small>
+</div>
+    </header>
+        <section id="links">
+        <h2>Liens</h2>
+        <ul class="lvl list-link">
+        <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/WPFZard">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>            <span>Dépôt GitHub</span>
+        </a>
+    </li>
+    </ul>
+    </section>
+    <section id="story">
+    <h2>Histoire</h2>
+    <p><strong>WPFZard</strong> est une bibliothèque d'<a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards" data-definition-id="wizard" class="link definition-tooltip-trigger">Assistant</a> pour <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation" data-definition-id="wpf" class="link definition-tooltip-trigger">WPF</a> que j'ai créée pour mon autre projet, <a class="link" href="/fr/projects/winclean.html">WinClean</a>, car j'avais besoin d'une bibliothèque pour fournir un composant UX d'assistant simple et facile à utiliser.</p>
+<h3 id="the-problem">Le problème</h3>
+<p>Pour créer des assistants, j'ai d'abord utilisé le Xceed Extended WPF Toolkit™<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>. Cela a fonctionné, mais j'avais oublié un détail important&nbsp;: mon projet utilise la licence MIT<sup id="cite-ref-2"><a class="link" href="#ref-2">[2]</a></sup>, tandis que le toolkit Xceed utilise une licence personnalisée<sup id="cite-ref-3"><a class="link" href="#ref-3">[3]</a></sup> qui, après inspection, s'avéra incompatible avec la licence MIT. Cela signifie que je m'exposais à un procès de la part de Xceed. Bien qu'il aurait été peu probable que le problème prenne des proportions aussi dramatiques, je m'exposais effectivement à des ennuis juridiques, voire peut-être à une lettre de cessation et d'abstention de la part de Xceed.</p>
+<p>J'ai donc décidé de créer ma propre bibliothèque d'assistants, conformément à la philosophie <q>construisez votre propre montagne</q>.</p>
+<h3 id="result">Résultat</h3>
+<p>Au final, je n'ai pas utilisé <strong>WPFZard</strong> dans WinClean. C'est parce que j'ai découvert que les versions précédentes du toolkit Xceed sont sous licence MIT, je peux donc les utiliser légalement dans WinClean. C'était un projet intéressant, cependant, et il m'a beaucoup appris sur la création de composants WPF réutilisables.</p></section>
+    <section id="references">
+        <h2>Références</h2>
+        <ol class="list">
+        <li id="ref-1"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-1">&uarr;</a></span>
+        <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://github.com/xceedsoftware/wpftoolkit">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>            <span>Xceed Extended WPF Toolkit™ &mdash; Dépôt GitHub (anglais)</span>
+        </a>
+    </li>
+        <li id="ref-2"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-2">&uarr;</a></span>
+        <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/WinClean/blob/master/LICENSE">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>            <span>Licence WinClean &mdash; GitHub (anglais)</span>
+        </a>
+    </li>
+        <li id="ref-3"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-3">&uarr;</a></span>
+        <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://github.com/xceedsoftware/wpftoolkit/blob/master/license.md">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>            <span>Licence Xceed Extended WPF Toolkit™ &mdash; GitHub (anglais)</span>
+        </a>
+    </li>
+    </ol>
+    </section>
+        <section id="technologies">
+        <h2>Technologies</h2>
+        <ul class="lvl list-definition">
+        <li><article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/csharp/bg.png)">
+    <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_Sharp">C#</a></h4>
+    <img src="/portfolio/img/definition/csharp/logo.png" alt="Logo C#" title="Logo C#" class="logo" width="256" height="256" loading="lazy">    <p class="type"><small>Langage de programmation</small></p>
+    <p class="synopsis">Langage de programmation orienté objet, commercialisé par Microsoft depuis <time datetime="2002">2002</time>.</p>
+</article></li>
+        <li><article class="definition" >
+    <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/.NET">Microsoft .NET</a></h4>
+    <img src="/portfolio/img/definition/dotnet/logo.svg" alt="Logo Microsoft .NET" title="Logo Microsoft .NET" class="logo" height="30" loading="lazy">    <p class="type"><small>Bibliothèque</small></p>
+    <p class="synopsis">.NET est une plateforme de développement créée par Microsoft. Elle fournit un ensemble de technologies, de langages de programmation et d'outils pour la création d'applications Windows, web, mobiles et IoT (Internet des objets).</p>
+</article></li>
+        <li><article class="definition" >
+    <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio">Microsoft Visual Studio</a></h4>
+    <img src="/portfolio/img/definition/visual-studio/logo.svg" alt="Logo Microsoft Visual Studio" title="Logo Microsoft Visual Studio" class="logo" height="30" loading="lazy">    <p class="type"><small>Environnement de développement intégré</small></p>
+    <p class="synopsis">Suite de logiciels de développement pour Windows et mac OS conçue par Microsoft.</p>
+</article></li>
+        <li><article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/wpf/bg.png)">
+    <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation">Windows Presentation Foundation</a></h4>
+    <img src="/portfolio/img/definition/wpf/logo.png" alt="Logo Windows Presentation Foundation" title="Logo Windows Presentation Foundation" class="logo" width="200" height="175" loading="lazy">    <p class="type"><small>Bibliothèque</small></p>
+    <p class="synopsis">Système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois en <time datetime="2006">2006</time>.</p>
+</article></li>
+    </ul>
+    </section>
+    </main>
+    <footer class="lvl">
+    <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="Dépôt GitHub de ce site"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+</footer>
+</body>
+
+</html>

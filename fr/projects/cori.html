@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png">
+    <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/portfolio/site.webmanifest">
+    <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5">
+
+        <link rel="stylesheet" type="text/css" href="/portfolio/css/project.css">
+        <meta charset="UTF-8">
+    <meta name="author" content="Raphaël Bardini">
+    <meta name="description" content="Bonjour&nbsp;! Je m'appelle Raphaël Bardini. Ceci est mon portfolio. Faites come chez vous&nbsp;!">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raphaël Bardini</title>
+    <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+    </script>
+    <!-- Flag icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+    <!-- JQuery -->
+    <script async src="/portfolio/js/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <!-- Highlight.JS -->
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script type="module" src="/portfolio/js/base.js"></script>
+    </head>
+
+<body>
+    <template id="template-definition-tooltip">
+    <article class="lvl definition-tooltip" role="tooltip">
+        <h4 class="title"><a target="_blank" rel="noopener noreferrer">
+                <!-- href="wiki"; name -->
+            </a></h4>
+        <!-- logo graphic -->
+        <p class="type"><small>
+                <!-- type -->
+            </small></p>
+        <p class="synopsis">
+            <!-- synopsis -->
+        </p>
+    </article>
+</template>
+<header class="lvl">
+    <nav>
+        <a href="/portfolio/fr/index.html">Raphaël Bardini</a>
+        <ul>
+            <li><a href="/portfolio/fr/projects.html">Projets</a></li>
+            <li><a href="/portfolio/fr/history.html">Parcours</a></li>
+            <li><a href="/portfolio/fr/passions.html">Passions</a></li>
+            <li><a href="/portfolio/fr/perspectives.html">Perspectives</a>
+            <li><a href="/portfolio/fr/but-informatique.html">BUT Informatique</a></li>
+        </ul>
+    </nav>
+    <ul class="list-flags">
+        <li><a class="fi fi-fr" title="fr" href="/portfolio/fr/projects/cori.html"></a></li><li><a class="fi fi-us gray-when-not-hover" title="en / Anglais" href="/portfolio/en/projects/cori.html"></a></li>    </ul>
+    <div class="theme-switches">
+        <label for="theme-switch-light" title="Thème clair">
+            <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.9966 13.3333C12.8804 13.3333 14.4075 11.8409 14.4075 10C14.4075 8.15905 12.8804 6.66666 10.9966 6.66666C9.11284 6.66666 7.58575 8.15905 7.58575 10C7.58575 11.8409 9.11284 13.3333 10.9966 13.3333Z" style="stroke:var(--color-fg);fill:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.9966 1.66666V3.33333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.9966 16.6667V18.3333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4.9679 4.10833L6.17022 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15.8229 14.7167L17.0253 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2.46942 10H4.17485" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.8183 10H19.5237" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.17022 14.7167L4.9679 15.8917" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.0253 4.10833L15.8229 5.28333" style="stroke:var(--color-fg);" stroke-width="1.46667" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input id="theme-switch-light" name="theme" value="auto" type="radio" onclick="">
+        </label>
+        <label for="theme-switch-system" title="Thème système">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15.0014" cy="15.0014" r="9" style="stroke:var(--color-fg);" stroke-width="2" />
+                <mask id="path-2-inside-1_316_18" style="fill:var(--color-bg);">
+                    <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" />
+                </mask>
+                <path d="M22.0732 22.0732C23.9486 20.1978 25.0021 17.6543 25.0021 15.0021C25.0021 12.35 23.9486 9.80643 22.0732 7.93107C20.1978 6.05571 17.6543 5.00214 15.0021 5.00214C12.35 5.00214 9.80643 6.0557 7.93107 7.93107L15.0021 15.0021L22.0732 22.0732Z" style="fill:var(--color-fg);stroke:var(--color-fg);" stroke-width="4" mask="url(#path-2-inside-1_316_18)" />
+            </svg>
+            <input id="theme-switch-system" name="theme" value="light" type="radio" onclick="">
+        </label>
+        <label for="theme-switch-dark" title="Thème sombre">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.99939 1.5C8.00483 2.49456 7.44609 3.84348 7.44609 5.25C7.44609 6.65652 8.00483 8.00544 8.99939 9C9.99395 9.99456 11.3429 10.5533 12.7494 10.5533C14.1559 10.5533 15.5048 9.99456 16.4994 9C16.4994 10.4834 16.0595 11.9334 15.2354 13.1668C14.4113 14.4001 13.24 15.3614 11.8695 15.9291C10.4991 16.4968 8.99107 16.6453 7.53622 16.3559C6.08136 16.0665 4.74499 15.3522 3.69609 14.3033C2.6472 13.2544 1.93289 11.918 1.6435 10.4632C1.35411 9.00832 1.50264 7.50032 2.0703 6.12987C2.63795 4.75943 3.59925 3.58809 4.83262 2.76398C6.06598 1.93987 7.51603 1.5 8.99939 1.5Z" style="stroke:var(--color-fg);" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input id="theme-switch-dark" name="theme" value="dark" type="radio" onclick="">
+        </label>
+    </div>
+</header>
+    <main >
+    <header>
+        <ul class="list-rect">
+    <li><a href="/portfolio/fr/projects.html?tag=low-level">Bas niveau</a></li><li><a href="/portfolio/fr/projects.html?tag=library">Bibliothèque</a></li></ul>
+        <h1><abbr title="Correct Input">Cori</abbr></h1>
+                <p class="abstract">Bibliothèque d'entrée utilisateur correcte et facile à utiliser en C</p>
+        <div class="status-context"><small class="context">Personnel</small>
+<small class="status"><time datetime="2023-10-09">9 octobre 2023</time> &ndash;
+    <time datetime="2024-03-09">9 mars 2024</time></small>
+</div>
+    </header>
+        <section id="links">
+        <h2>Liens</h2>
+        <ul class="lvl list-link">
+        <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/stb_cori">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>            <span>Dépôt GitHub</span>
+        </a>
+    </li>
+    </ul>
+    </section>
+    <section id="story">
+    <h2>Histoire</h2>
+    <p>Cori est une bibliothèque <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> à fichier unique conçue pour simplifier le processus d'entrée utilisateur en C. Elle fournit un ensemble complet de fonctions qui gèrent les scénarios d'entrée courants et les erreurs potentielles, permettant aux programmeurs de se concentrer davantage sur la logique de leur programme plutôt que sur les subtilités de la gestion des entrées. De plus, Cori vise à servir de remplacement plus sûr et plus convivial à la fonction <code>scanf</code>, qui est souvent mal utilisée par les débutants et peut facilement conduire à un comportement indéfini<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>.</p>
+<h3 id="problems-cori-intends-to-solve">Problèmes que Cori résout</h3>
+<ol class="list">
+    <li><p><strong>Simplifier la gestion des entrées utilisateur</strong>&nbsp;: Cori fournit un ensemble de fonctions qui gèrent différents types d'entrées utilisateur, ce qui permet aux programmeurs de collecter et de traiter plus facilement les entrées sans se soucier des complexités sous-jacentes.</p></li>
+    <li><p><strong>Remplacer <code>scanf</code></strong>&nbsp;: la fonction <code>scanf</code> est notoirement difficile à utiliser correctement, en particulier pour les débutants. Cori offre une alternative plus sûre et plus intuitive, réduisant le risque de comportement indéfini et rendant la gestion des entrées plus simple.</p></li>
+</ol>
+<h3 id="core-concepts">Concepts fondamentaux</h3>
+<h4 id="types-of-input">Types d'entrée</h4>
+<p>Cori prend en charge une large gamme de types d'entrée, chacun représenté par un type C spécifique&nbsp;:</p>
+<ul class="list">
+    <li><p><strong>Entiers signés</strong>: <code>intmax</code>, <code>longlong</code>, <code>long</code>, <code>int</code>, <code>short</code></p></li>
+    <li><p><strong>Entiers non signés</strong>: <code>uintmax</code>, <code>ulonglong</code>, <code>ulong</code>, <code>uint</code>, <code>ushort</code></p></li>
+    <li><p><strong>Décimaux en point flottant</strong>: <code>longdouble</code>, <code>double</code>, <code>float</code></p></li>
+    <li><p><strong>Texte</strong>: <code>character</code>, <code>until</code>, <code>line</code>, <code>linel</code></p></li>
+    <li><p><strong>Autre</strong>: <code>boolean</code></p></li>
+</ul>
+<h4 id="error-handling-system">Système de gestion des erreurs</h4>
+<p>Cori inclut un système de gestion des erreurs robuste qui permet aux programmeurs de définir des gestionnaires d'erreurs personnalisés. La bibliothèque définit une énumération <code>InputError</code> qui représente toutes les conditions d'erreur possibles, telles qu'une entrée vide, une fin de fichier (EOF), des caractères booléens non valides, plusieurs caractères, un nombre non valide, un nombre hors limites, une mémoire insuffisante et une base numérique non prise en charge.</p>
+<h4 id="function-families">Familles de fonctions</h4>
+<p>Pour chaque type d'entrée, Cori fournit une famille de fonctions pour gérer différents scénarios&nbsp;:</p>
+<ul class="list">
+    <li><p><code>read_&lt;typename&gt;</code>&nbsp;: lit l'entrée depuis <code>stdin</code> et gère les erreurs à l'aide d'un gestionnaire d'erreurs NO-OP (aucune opération).</p></li>
+    <li><p><code>read_&lt;typename&gt;_or</code>&nbsp;: lit l'entrée depuis <code>stdin</code> et gère les erreurs à l'aide d'un gestionnaire d'erreurs spécifié.</p></li>
+    <li><p><code>read_&lt;typename&gt;_from</code>&nbsp;: lit l'entrée depuis un flux <code>FILE *</code> spécifié et gère les erreurs à l'aide d'un gestionnaire d'erreurs NO-OP.</p></li>
+    <li><p><code>read_&lt;typename&gt;_or_from</code>&nbsp;: lit l'entrée depuis un flux <code>FILE *</code> spécifié et gère les erreurs à l'aide d'un gestionnaire d'erreurs NO-OP.</p></li>
+    <li><p><code>tryRead_&lt;typename&gt;</code>&nbsp;: lit une fois l'entrée de <code>stdin</code> et renvoie un code d'erreur si une erreur se produit.</p></li>
+    <li><p><code>tryRead_&lt;typename&gt;_from</code>&nbsp;: lit une fois l'entrée d'un flux <code>FILE *</code> spécifié et renvoie un code d'erreur si une erreur se produit.</p></li>
+</ul>
+<h3 id="techniques-and-patterns-used">Techniques and patrons utilisés</h3>
+<h4 id="stb-style-libraries">Bibliothèques STB</h4>
+<p>Cori est conçue comme une bibliothèque de style STB<sup id="cite-ref-2"><a class="link" href="#ref-2">[2]</a></sup>, ce qui signifie qu'elle se compose d'un seul fichier d'en-tête qui contient à la fois l'interface et l'implémentation. Cela la rend facile à manipuler, car les utilisateurs n'ont besoin d'inclure que le fichier d'en-tête dans leurs projets. Cependant, cette approche peut conduire à des fichiers d'en-tête volumineux, elle est donc mieux adaptée aux bibliothèques simples et à usage unique comme Cori.</p>
+<h4 id="heavy-usage-of-macros">Utilisation intensive des macros</h4>
+<p>Cori utilise abondamment les macros pour la métaprogrammation, ce qui permet de générer des modèles de code répétitifs. L'un des modèles les plus utilisés est le modèle X-macro<sup id="cite-ref-3"><a class="link" href="#ref-3">[3]</a></sup>, qui permet de définir un ensemble de fonctions et de structures de données liées de manière concise et maintenable. Cette approche réduit la duplication de code et rend la bibliothèque plus flexible et plus facile à étendre.</p>
+<h3 id="example">Example</h3>
+<p>Cori a été conçu dans un souci de simplicité.</p>
+<figure class="figure">
+    <pre><code>#define CORI_IMPLEMENTATION
+#include "stb_cori.h"
+
+int main() {
+    int result;
+    printf("Entrez un entier : ");
+    result = read_int();
+    printf("Reçu %d\n", result);
+}</code></pre>    <figcaption>Exemple de programme utilisant Cori pour lire un entier depuis l'entrée standard.</figcaption>
+</figure>
+<h3 id="conclusion">Conclusion</h3>
+<p>Cori est une bibliothèque puissante et conviviale pour la gestion des entrées de console dans les programmes C. En fournissant un ensemble complet de fonctions et un système de gestion des erreurs robuste, Cori simplifie le processus de gestion des entrées et offre une alternative plus sûre à la fonction <code>scanf</code>. Sa conception en tant que bibliothèque de style STB et l'utilisation de techniques de macro avancées facilitent son intégration et son extension, ce qui en fait un excellent choix pour les programmeurs C débutants et expérimentés, en particulier pour les programmes simples de test.</p>
+<p>Pour plus de détails sur l'utilisation de Cori, veuillez vous référer au fichier <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/stb_cori/blob/main/README.md">README</a>.</p></section>
+    <section id="references">
+        <h2>Références</h2>
+        <ol class="list">
+        <li id="ref-1"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-1">&uarr;</a></span>
+        <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.541 85.671" height="30"><path d="M189.151 271.01c-16.364 25.824-6.131 67.6 24.749 77.074" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M189.151 271.51c32.096 2.852 48.397 40.475 41.012 68.796m-41.365-69.296 33.94 74.245" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path d="M171.12 287.98c16.747 8.853 37.735-2.825 44.548-19.092m-49.144 37.123c24.602 7.892 54.449-4.408 65.053-28.284m-61.871 48.083c27.657 6.83 61.507-5.537 72.478-33.234" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path transform="rotate(-.708 -21565.452 13124.836)" d="M241.534 310.825a39.766 40.836 0 0 1-39.654 40.835 39.766 40.836 0 0 1-39.878-40.604 39.766 40.836 0 0 1 39.429-41.065 39.766 40.836 0 0 1 40.1 40.372" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><path d="M180.666 340.306c24.578 8.652 55.439-4.151 64.7-28.992" style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-163.825 -265.474)"/><path style="fill:none;stroke:var(--color-fg);stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M-248.782 311.287a39.766 40.836 0 0 1-.312-7.699" transform="scale(-1 1)rotate(-.708 -21401.627 -13390.31)"/></svg>            <span>Felix Palmen &mdash; A beginner's guide <em>away</em> from <code>scanf()</code> (anglais)</span>
+        </a>
+    </li>
+        <li id="ref-2"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-2">&uarr;</a></span>
+        <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://github.com/nothings/stb">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>            <span>Sean Barrett &mdash; dépôt des bibliothèques STB du domaine public (anglais)</span>
+        </a>
+    </li>
+        <li id="ref-3"><span class="ref-backlink" aria-label="Revenir plus haut" title="Revenir plus haut"><a class="link" href="#cite-ref-3">&uarr;</a></span>
+        <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/X_macro">
+            <img src="/portfolio/img/social/wikipedia.svg" alt="" height="30" loading="lazy">            <span>Wikipedia &mdash; X macro pattern (anglais)</span>
+        </a>
+    </li>
+    </ol>
+    </section>
+        <section id="technologies">
+        <h2>Technologies</h2>
+        <ul class="lvl list-definition">
+        <li><article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/c/bg.png)">
+    <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)">C</a></h4>
+    <img src="/portfolio/img/definition/c/logo.svg" alt="Logo C" title="Logo C" class="logo" height="30" loading="lazy">    <p class="type"><small>Langage de programmation</small></p>
+    <p class="synopsis">Langage de programmation impératif, généraliste et de bas niveau, inventé en <time datatime="1972">1972</time> par Dennis Ritchie et Ken Thompson.</p>
+</article></li>
+        <li><article class="definition" >
+    <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Make">Make</a></h4>
+    <img src="/portfolio/img/definition/make/logo.svg" alt="Logo Make" title="Logo Make" class="logo" height="30" loading="lazy">    <p class="type"><small>Logiciel</small></p>
+    <p class="synopsis">Logiciel qui construit automatiquement des fichiers, souvent exécutables, ou des bibliothèques à partir d'éléments de base tels que du code source. Il utilise des fichiers appelés makefile qui spécifient comment construire les fichiers cibles.</p>
+</article></li>
+        <li><article class="definition"  style="--bg-img-card: url(/portfolio/img/definition/vs-code/bg.png)">
+    <h4><a class="foil" target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code">Visual Studio Code</a></h4>
+    <img src="/portfolio/img/definition/vs-code/logo.svg" alt="Logo Visual Studio Code" title="Logo Visual Studio Code" class="logo" height="30" loading="lazy">    <p class="type"><small>Environnement de développement intégré</small></p>
+    <p class="synopsis">Éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.</p>
+</article></li>
+    </ul>
+    </section>
+    </main>
+    <footer class="lvl">
+    <small>&copy; <time datetime="2024">2024</time> Raphaël Bardini</small>
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title="Dépôt GitHub de ce site"><svg xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 24 24" style="fill: var(--color-fg)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+</footer>
+</body>
+
+</html>
