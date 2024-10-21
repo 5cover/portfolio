@@ -1,3 +1,5 @@
-<div>
-    <p>todo</p>
-</div>
+<?php
+require_once 'fragment.php';
+$f = new Fragment(__FILE__, 'fr')
+?>
+<p>Une simple application <?= $f->def('python') ?> développée avec <?= $f->def('tkinter') ?> dans le contexte de la spécialité <?= $f->def('nsi') ?> pour retrouver l'extension d'un fichier à partir de sa signature <?= $f->ref() ?>, en utilisant un <?= $f->def('greedy-algorithm') ?>.</p>

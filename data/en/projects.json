@@ -264,7 +264,13 @@
         "href": "https://github.com/5cover/FileSignatureDetector"
       }
     },
-    "references": [],
+    "references": [
+      {
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/File_format#Magic_number",
+        "caption": "File format magic number &mdash; Wikipedia"
+      }
+    ],
     "start-date": "2022-04-07",
     "story": {
       "$include": "project/file-signature-detector/story.phtml"

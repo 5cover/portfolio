@@ -1,3 +1,5 @@
-<div>
-    <p>todo</p>
-</div>
+<?php
+require_once 'fragment.php';
+$f = new Fragment(__FILE__, 'en')
+?>
+<p>A simple <?= $f->def('python') ?> application written with <?= $f->def('tkinter') ?> in the <?= $f->def('nsi') ?> speciality to interact with a database for tracking school grades.</p>

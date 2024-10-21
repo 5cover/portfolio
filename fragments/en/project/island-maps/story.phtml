@@ -1,10 +1,8 @@
 <?php
 require_once 'fragment.php';
 $f = new Fragment(__FILE__, 'en') ?>
-<div>
-    <p><?= $f->def('anno2070') ?> islands are not randomly generated. There's a set of islands defined in the game's files. They are rotated and placed randomly to create an illusion of randomness, but all maps actually have the same islands.</p>
-    <p>So I reproduced them in <?= $f->def('anno-designer') ?>.</p>
-</div>
+<p><?= $f->def('anno2070') ?> islands are not randomly generated. There's a set of islands defined in the game's files. They are rotated and placed randomly to create an illusion of randomness, but all maps actually have the same islands.</p>
+<p>So I reproduced them in <?= $f->def('anno-designer') ?>.</p>
 <article>
     <h3>Possible usages</h3>
     <ul class="list">

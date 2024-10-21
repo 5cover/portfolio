@@ -5,6 +5,7 @@
   "propertyNames": {
     "description": "definition ID",
     "enum": [
+      "greedy-algorithm",
       "spe-math",
       "amc",
       "nsi",
