@@ -12,9 +12,9 @@ function page_definitions_test(): Page
         ?>
         <dt id="<?= $definition->id ?>"><?= $definition->id ?></dt>
         <dd>
-            <?= implode(', ', $definition->data->get('name')->to_array()) ?>
-            <div>
-                <?= $definition->get_tooltip_trigger() ?>
+            <?= implode(', ', $definition->data->get('name')->to_array()) ?> <?= $definition->get_tooltip_trigger() ?>
+            <div class="lvl">
+            <?php $definition->put_card(); ?>
             </div>
         </dd>
         <?php } ?>
