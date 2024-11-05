@@ -91,7 +91,7 @@
         </label>
     </div>
 </header>
-    <main  style="--bg-img: url(/portfolio/img/project/psdc/bg.png)">
+    <main  style="--bg-img: url(/portfolio/img/projects/psdc/bg.png)">
     <header>
         <ul class="list-rect">
     <li><a href="/portfolio/fr/projects.html?tag=software">Logiciel</a></li><li><a href="/portfolio/fr/projects.html?tag=oop"><abbr title="Programmation Orientée Objet">POO</span></abbr></a></li><li><a href="/portfolio/fr/projects.html?tag=compiler">Compilateur</a></li><li><a href="/portfolio/fr/projects.html?tag=but-realiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=but-optimiser"><span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span></a></li><li><a href="/portfolio/fr/projects.html?tag=cli"><abbr title="Interface en ligne de commande">CLI</abbr></a></li></ul>
@@ -127,7 +127,8 @@ int main() {
     printf("Bonjour\n");
     return 0;
 }</code></pre><p>Comment automatiser cette transformation&nbsp;? Et bien, en réalité, ce n'est pas si complexe. Le livre Crafting Interpreters<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup> métaphorise le problème par l'ascension d'une montagne&nbsp;:</p>
-<figure class="figure"><img alt="Métaphore de la montagne" src="/portfolio/img/project/psdc/mountain.png" width="1824" height="833" loading="lazy">
+<figure class="figure">
+    <img alt="Métaphore de la montagne" src="/portfolio/img/projects/psdc/mountain.png" width="1824" height="833" loading="lazy">
     <figcaption><cite>Crafting Interpreters</cite>, Robert Nystrom &mdash; &copy; <time datetime="2015">2015</time> &ndash; <time datetime="2021">2021</time>, license MIT</figcaption>
 </figure>
 <p>Commençons avec le code source original, au pied de la montagne. Au fil des étapes (<em lang="en">scanning</em>, <em lang="en">parsing</em>, <em lang="en">analysis</em>), la représentation du code devient de plus en plus haut niveau, c'est-à-dire qu'elle se focalise plus sur la sémantique exprimée que sur les détails d'implémentation.</p>
