@@ -20,7 +20,8 @@ int main() {
 }
 CODE) ?>
 <p>Comment automatiser cette transformation&nbsp;? Et bien, en réalité, ce n'est pas si complexe. Le livre Crafting Interpreters<?= $f->ref() ?> métaphorise le problème par l'ascension d'une montagne&nbsp;:</p>
-<figure class="figure"><img alt="Métaphore de la montagne" src="/portfolio/img/project/psdc/mountain.png" width="1824" height="833" loading="lazy">
+<figure class="figure">
+    <img alt="Métaphore de la montagne" src="/portfolio/img/projects/psdc/mountain.png" width="1824" height="833" loading="lazy">
     <figcaption><cite>Crafting Interpreters</cite>, Robert Nystrom &mdash; &copy; <?= $f->year(2015) ?> &ndash; <?= $f->year(2021) ?>, license MIT</figcaption>
 </figure>
 <p>Commençons avec le code source original, au pied de la montagne. Au fil des étapes (<?= $f->term('scanning', 'en') ?>, <?= $f->term('parsing', 'en') ?>, <?= $f->term('analysis', 'en') ?>), la représentation du code devient de plus en plus haut niveau, c'est-à-dire qu'elle se focalise plus sur la sémantique exprimée que sur les détails d'implémentation.</p>

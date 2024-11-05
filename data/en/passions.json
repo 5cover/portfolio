@@ -22,7 +22,7 @@
     },
     "references": [],
     "story": {
-      "$include": "passion/mountain/story.phtml"
+      "$include": "passions/mountain/story.phtml"
     },
     "title": "Montagne"
   },
@@ -37,7 +37,7 @@
     },
     "references": [],
     "story": {
-      "$include": "passion/sandbox-videogames/story.phtml"
+      "$include": "passions/sandbox-videogames/story.phtml"
     },
     "title": "Sandbox videogames"
   }

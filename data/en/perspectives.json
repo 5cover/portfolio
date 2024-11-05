@@ -5,10 +5,10 @@
       "url": "/portfolio/img/definition/zig/logo.svg"
     },
     "story": {
-      "$include": "perspective/the-goal-of-a-programming-language/story.phtml"
+      "$include": "perspectives/the-goal-of-a-programming-language/story.phtml"
     },
     "abstract": {
-      "$include": "perspective/the-goal-of-a-programming-language/abstract.phtml"
+      "$include": "perspectives/the-goal-of-a-programming-language/abstract.phtml"
     },
     "title": "The goal of a programming language",
     "gallery": [],
