@@ -1,1 +1,6 @@
-    <p>todo</p>
+<?php
+require_once 'fragment.php';
+$f = new Fragment(__FILE__, 'en') ?>
+<p>The objective of this project was to create a dynamic website in a containerized environment.</p>
+<p>We configured an <? $f->def('apache2') ?> web server.</p>
+<p>We implemented several features, including authentication and interaction with a <? $f->def('mysql') ?> database.</p>
