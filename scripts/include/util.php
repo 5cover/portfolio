@@ -317,7 +317,9 @@ function get_web_url(string $filename): string
 }
 
 /**
- * @return string Absolute path to the website root directory (with trailing slash)
+ * Resolves a path relative to the website root directory.
+ * @param string $rest A path relative to the website root directory.
+ * @return string $rest, as an absolute path in the website root directory (with trailing slash)
  */
 function root_path(string $rest): string
 {

@@ -6,6 +6,10 @@ section {
     @include util.strip-content(1px 0);
 }
 
+section, article {
+    @include util.heading-margins(2,2);
+}
+
 .list-piano-tiles {
     $tile-count: 8;
     display: flex;
@@ -72,7 +76,6 @@ section {
 }
 
 #ongoing-projects {
-    @include util.heading-margins(2, 2);
     display: flex;
     flex-flow: column nowrap;
 

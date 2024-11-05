@@ -5,7 +5,6 @@
 /* Basic styles */
 /* Section titles */
 h2 {
-
     #links &,
     #story & {
         display: none;
@@ -13,6 +12,7 @@ h2 {
 }
 
 #story {
+    @include util.heading-margins;
     @include util.text-strip;
     @include util.text;
 

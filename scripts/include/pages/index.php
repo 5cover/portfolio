@@ -65,21 +65,33 @@ function page_index(): Page
             </address>
         </div>
         <?php
+        $CV_PREVIEW_WIDTH = 212;
+        $CV_PREVIEW_HEIGHT = 300;
         $CV_URL = 'cv-bardini-raphael.pdf';
         $CV_URL_PREVIEW = 'cv-bardini-raphael-preview.jpg';
-        error_log("echo quit | gs -dSAFER -dBATCH -sDEVICE=jpeg -sOutputFile='"
-            . root_path("portfolio/$lang->name/$CV_URL_PREVIEW") . "' '"
-            . root_path("portfolio/$lang->name/$CV_URL") . "'");
+        $COMMAND = "gs -g{$CV_PREVIEW_WIDTH}x$CV_PREVIEW_HEIGHT -dPDFFitPage -dSAFER -dBATCH -dNOPAUSE -sDEVICE=jpeg -sOutputFile='"
+        . root_path("portfolio/$lang->name/$CV_URL_PREVIEW") . "' '"
+        . root_path("portfolio/$lang->name/$CV_URL") . "'";
         $result_code = null;
-        exec("echo quit | gs -dSAFER -dBATCH -sDEVICE=jpeg -sOutputFile='"
-            . root_path("portfolio/$lang->name/$CV_URL_PREVIEW") . "' '"
-            . root_path("portfolio/$lang->name/$CV_URL") . "'", result_code: $result_code);
-        assert($result_code === 0);
+        exec($COMMAND, result_code: $result_code);
+        assert($result_code === 0, $COMMAND);
         ?>
-        <a href="<?= $CV_URL ?>" target="_blank" rel="noopener noreferrer">
-            <img src="<?= $CV_URL_PREVIEW ?>" alt="<?= $lang->get('indexMyResumePreview') ?>" width="300" height="212" loading="lazy">
+        <a
+            href="<?= $CV_URL ?>"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+                src="<?= $CV_URL_PREVIEW ?>"
+                alt="<?= $lang->get('indexMyResumePreview') ?>"
+                width="<?= $CV_PREVIEW_WIDTH ?>"
+                height="<?= $CV_PREVIEW_HEIGHT ?>"
+                loading="lazy">
             <span><?= $lang->get('indexMyResume') ?></span>
         </a>
+    </article>
+    <article class="lvl content-block">
+        <h2><?= $lang->get('indexVideoCv') ?></h2>
+        <iframe src="https://www.youtube-nocookie.com/embed/6VqtL5oogwk?modestbranding=1&rel=0" width="640" height="360" title="Video CV - Raphaël Bardini" frameborder="0" allowfullscreen></iframe>
     </article>
 </main>
 <?php
