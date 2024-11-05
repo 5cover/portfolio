@@ -814,42 +814,6 @@
    * Mixin classes
    *
    */
-  .text h1:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h1:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h2:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h2:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h3:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h3:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h4:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h4:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h5:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h5:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h6:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h6:not(:last-child) {
-    margin-bottom: 1lh;
-  }
   .text p {
     text-align: justify;
     -webkit-hyphens: auto;
@@ -1356,6 +1320,13 @@ section {
   padding: 1em min(2.5%, 2.5lh);
 }
 
+section h2:not(:first-child), article h2:not(:first-child) {
+  margin-top: 1lh;
+}
+section h2:not(:last-child), article h2:not(:last-child) {
+  margin-bottom: 1lh;
+}
+
 .list-piano-tiles {
   display: flex;
   flex-wrap: wrap;
@@ -1423,42 +1394,6 @@ section {
   flex-wrap: wrap;
   gap: 1em;
 }
-#me h1:not(:first-child) {
-  margin-top: 1lh;
-}
-#me h1:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#me h2:not(:first-child) {
-  margin-top: 1lh;
-}
-#me h2:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#me h3:not(:first-child) {
-  margin-top: 1lh;
-}
-#me h3:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#me h4:not(:first-child) {
-  margin-top: 1lh;
-}
-#me h4:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#me h5:not(:first-child) {
-  margin-top: 1lh;
-}
-#me h5:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#me h6:not(:first-child) {
-  margin-top: 1lh;
-}
-#me h6:not(:last-child) {
-  margin-bottom: 1lh;
-}
 #me p {
   text-align: justify;
   -webkit-hyphens: auto;
@@ -1485,12 +1420,6 @@ pre):not(.figure *):not(:last-child) {
   display: flex;
   flex-flow: column nowrap;
 }
-#ongoing-projects h2:not(:first-child) {
-  margin-top: 1lh;
-}
-#ongoing-projects h2:not(:last-child) {
-  margin-bottom: 1lh;
-}
 #ongoing-projects h2 {
   text-align: center;
 }
@@ -1507,42 +1436,6 @@ pre):not(.figure *):not(:last-child) {
   justify-content: space-between;
   -moz-column-gap: 1lh;
        column-gap: 1lh;
-}
-#contact h1:not(:first-child) {
-  margin-top: 1lh;
-}
-#contact h1:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#contact h2:not(:first-child) {
-  margin-top: 1lh;
-}
-#contact h2:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#contact h3:not(:first-child) {
-  margin-top: 1lh;
-}
-#contact h3:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#contact h4:not(:first-child) {
-  margin-top: 1lh;
-}
-#contact h4:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#contact h5:not(:first-child) {
-  margin-top: 1lh;
-}
-#contact h5:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#contact h6:not(:first-child) {
-  margin-top: 1lh;
-}
-#contact h6:not(:last-child) {
-  margin-bottom: 1lh;
 }
 #contact p {
   text-align: justify;

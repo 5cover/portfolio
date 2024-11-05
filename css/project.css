@@ -814,42 +814,6 @@
    * Mixin classes
    *
    */
-  .text h1:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h1:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h2:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h2:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h3:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h3:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h4:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h4:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h5:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h5:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h6:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h6:not(:last-child) {
-    margin-bottom: 1lh;
-  }
   .text p {
     text-align: justify;
     -webkit-hyphens: auto;

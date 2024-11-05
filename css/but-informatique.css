@@ -814,42 +814,6 @@
    * Mixin classes
    *
    */
-  .text h1:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h1:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h2:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h2:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h3:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h3:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h4:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h4:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h5:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h5:not(:last-child) {
-    margin-bottom: 1lh;
-  }
-  .text h6:not(:first-child) {
-    margin-top: 1lh;
-  }
-  .text h6:not(:last-child) {
-    margin-bottom: 1lh;
-  }
   .text p {
     text-align: justify;
     -webkit-hyphens: auto;
@@ -1382,42 +1346,6 @@ h3:not(:last-child) {
 #presentation > * {
   max-width: 60ch;
 }
-#presentation h1:not(:first-child) {
-  margin-top: 1lh;
-}
-#presentation h1:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#presentation h2:not(:first-child) {
-  margin-top: 1lh;
-}
-#presentation h2:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#presentation h3:not(:first-child) {
-  margin-top: 1lh;
-}
-#presentation h3:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#presentation h4:not(:first-child) {
-  margin-top: 1lh;
-}
-#presentation h4:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#presentation h5:not(:first-child) {
-  margin-top: 1lh;
-}
-#presentation h5:not(:last-child) {
-  margin-bottom: 1lh;
-}
-#presentation h6:not(:first-child) {
-  margin-top: 1lh;
-}
-#presentation h6:not(:last-child) {
-  margin-bottom: 1lh;
-}
 #presentation p {
   text-align: justify;
   -webkit-hyphens: auto;
@@ -1432,6 +1360,9 @@ pre):not(.figure *):not(:first-child) {
 .figure,
 pre):not(.figure *):not(:last-child) {
   margin-bottom: 3.125ex;
+}
+#presentation p {
+  margin: 0 auto;
 }
 
 #competences p:not(.list-project *):not(:first-child) {
@@ -1473,42 +1404,6 @@ pre):not(.figure *):not(:last-child) {
   display: flex;
   flex-flow: column nowrap;
   gap: 1.5lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h1:not(:first-child) {
-  margin-top: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h1:not(:last-child) {
-  margin-bottom: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h2:not(:first-child) {
-  margin-top: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h2:not(:last-child) {
-  margin-bottom: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h3:not(:first-child) {
-  margin-top: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h3:not(:last-child) {
-  margin-bottom: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h4:not(:first-child) {
-  margin-top: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h4:not(:last-child) {
-  margin-bottom: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h5:not(:first-child) {
-  margin-top: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h5:not(:last-child) {
-  margin-bottom: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h6:not(:first-child) {
-  margin-top: 1lh;
-}
-:has(> #resultat-pour-moi) #resultat-pour-moi h6:not(:last-child) {
-  margin-bottom: 1lh;
 }
 :has(> #resultat-pour-moi) #resultat-pour-moi p {
   text-align: justify;
