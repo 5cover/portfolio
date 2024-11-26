@@ -8,14 +8,14 @@ final class LinkedData
     private mixed $data;
     private readonly string $lang_dir;
 
-    function __construct(mixed $data, string $lang_dir)
+    private function __construct(mixed $data, string $lang_dir)
     {
         $this->data = $data;
         $this->lang_dir = $lang_dir;
     }
 
     /**
-     * @return array<string, LinkedData>|array<int, LinkedData> All linked key/value pairs of this data.
+     * @return array<string, LinkedData|string|int|float|null|bool>|array<int, LinkedData|string|int|float|null|bool> All linked key/value pairs of this data.
      */
     function to_array(): array
     {
