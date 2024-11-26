@@ -41,7 +41,6 @@ final class LinkedData
             return notfalse(ob_get_clean(), 'ob_get_clean');
         }
         return new LinkedData($data, $this->lang_dir);
-        return $data;
     }
 
     private function link_all(): mixed
@@ -52,7 +51,7 @@ final class LinkedData
         return $this->data;
     }
 
-    /** @var array<string, LinkedData> */
+    /** @var array<string, array<string, LinkedData>> */
     private static array $instance_cache = [];
 
     /**
