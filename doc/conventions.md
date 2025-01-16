@@ -6,9 +6,19 @@ PHP scripts automatically select the `<svg>` element of issued SVG files, discar
 
 ## Naming conventions
 
-JSON HTML CSS: *kebab-case*
+### JSON, HTML, CSS
 
-JS: *camelCase*
+kebab-case
+
+### JS
+
+camelCase
+
+### PHP
+
+snake_case
+
+Underscore prefix : internal declaration : can only be used in the module where it is declared
 
 ## Reference citations
 

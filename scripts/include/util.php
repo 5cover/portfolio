@@ -2,11 +2,6 @@
 require_once 'lang.php';
 require_once 'page.php';
 
-function for_get_prop_not_found(string $name): Exception
-{
-    return new Exception("property $name does not exist");
-}
-
 function wp_is_stream(string $path): bool
 {
     $scheme_separator = strpos($path, '://');
@@ -129,7 +124,7 @@ function element(string $tagName, string $content, array $attributes = []): stri
 {
     $d = new DOMDocument();
     $elem = notfalse($d->createElement($tagName), 'createElement');
-    setInnerHTML($elem, $content);
+    set_inner_html($elem, $content);
     foreach ($attributes as $name => $value) {
         $elem->setAttribute($name, $value);
     }
@@ -331,7 +326,7 @@ function root_path(string $rest): string
  * @param DOMElement $element the element
  * @param string $htm the new inner html
  */
-function setInnerHTML(DOMElement $element, string $html)
+function set_inner_html(DOMElement $element, string $html)
 {
     $fragment = notfalse(notnull($element->ownerDocument, 'element->ownerDocument')
                              ->createDocumentFragment(), 'createDocumentFragment');
