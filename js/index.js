@@ -13,9 +13,9 @@ $(document).ready(() => {
 
     setTimeout(() => {
         for (const t of tiles) t.classList.add('hover');
-    }, (tiles.length - 1) * wait + duration + 1000);
+    }, (tiles.length - 1) * wait + 1000);
 
     setTimeout(() => {
         for (const t of tiles) t.classList.remove('hover');
-    }, (tiles.length - 1) * wait + duration + 1000 + duration);
+    }, (tiles.length - 1) * wait + 1000 + duration);
 });
