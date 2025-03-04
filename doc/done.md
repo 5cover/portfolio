@@ -504,3 +504,7 @@ so instead of project/winclean we have projects/winclean . i know i concatenate 
 ## merge put_doctype_html and put_head, put_head_light?
 
 if there's nothing we insert in between, there's no reason not to.
+
+## show abbr names in def cad
+
+## sql def logo

@@ -18,8 +18,9 @@ final class Definition
         $this->data = $data;
 
         $name = $data->get('name');
-        $this->title = $name->get('full');
-        $this->term = $name->get('abbr') ?? $name->get('short') ?? $name->get('full');
+        $abbr = $name->get('abbr');
+        $this->title = $name->get('full') . ($abbr === null ? '' : " ($abbr)");
+        $this->term = $abbr ?? $name->get('short') ?? $name->get('full');
     }
 
     public function get_tooltip_trigger(?string $name = null): string

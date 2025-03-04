@@ -856,6 +856,10 @@
       "abbr": "SQL",
       "full": "Structured Query Language"
     },
+    "logo": {
+      "isThemedSvg": true,
+      "url": "/portfolio/img/definition/sql/logo.svg"
+    },
     "synopsis": "A domain-specific language used to manage data, especially in relational database management systems.",
     "type": "programming-language",
     "wiki": "https://en.wikipedia.org/wiki/SQL"
@@ -985,7 +989,7 @@
       "url": "/portfolio/img/definition/winforms/logo.png"
     },
     "name": {
-      "abbr": "WinForms",
+      "short": "WinForms",
       "full": "Windows Forms"
     },
     "synopsis": "A free and open-source graphical class library included as a part of Microsoft .NET, .NET Framework or Mono.",

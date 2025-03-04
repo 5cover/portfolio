@@ -856,6 +856,10 @@
       "abbr": "SQL",
       "full": "Structured Query Language"
     },
+    "logo": {
+      "isThemedSvg": true,
+      "url": "/portfolio/img/definition/sql/logo.svg"
+    },
     "synopsis": "Langage informatique créé en <time datetime=\"1974\">1974</time> servant à exploiter des bases de données relationnelles.",
     "type": "programming-language",
     "wiki": "https://fr.wikipedia.org/wiki/Structured_Query_Language"
@@ -985,7 +989,7 @@
       "url": "/portfolio/img/definition/winforms/logo.png"
     },
     "name": {
-      "abbr": "WinForms",
+      "short": "WinForms",
       "full": "Windows Forms"
     },
     "synopsis": "Framework d'interface graphique inclus dans le framework .NET fournissant l'accès via à l'API Windows.",
