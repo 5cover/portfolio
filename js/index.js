@@ -18,4 +18,4 @@ $(document).ready(() => {
     setTimeout(() => {
         for (const t of tiles) t.classList.remove('hover');
     }, (tiles.length - 1) * wait + 1000 + duration);
-});
+}); 
