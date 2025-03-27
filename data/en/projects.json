@@ -360,7 +360,12 @@
     "abstract": "Lannion IUT Pseudocode compiler",
     "background": "/portfolio/img/projects/psdc/bg.png",
     "context": "Personal",
-    "gallery": [],
+    "gallery": [
+      {
+        "caption": "Poster / Infographic",
+        "iframe-src": "/portfolio/img/projects/psdc/poster.pdf"
+      }
+    ],
     "links": {
       "GitHub repository": {
         "anchor": "github",

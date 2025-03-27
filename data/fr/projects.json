@@ -360,7 +360,12 @@
     "abstract": "Compilateur pseudocode de l'IUT de Lannion",
     "background": "/portfolio/img/projects/psdc/bg.png",
     "context": "Personnel",
-    "gallery": [],
+    "gallery": [
+      {
+        "caption": "Poster / Infographie",
+        "iframe-src": "/portfolio/img/projects/psdc/poster.pdf"
+      }
+    ],
     "links": {
       "Dépôt GitHub": {
         "anchor": "github",

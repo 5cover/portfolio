@@ -9,7 +9,7 @@ function get_background_style_attr(string $bg, string $varname = 'bg-img'): stri
 
 function get_iframe(string $src, string $title): string
 {
-    return '<iframe src="' . $src . '" frameborder="0" loading="lazy" width="300" height="300" title="' . $title . '"></iframe>';
+    return "<iframe src=\"$src\" frameborder=\"0\" loading=\"lazy\" width=\"300\" height=\"300\" title=\"$title\"></iframe>";
 }
 
 function nav_href(Lang $lang, string $target_page_name): string

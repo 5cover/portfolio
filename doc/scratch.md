@@ -291,3 +291,11 @@ Happy styling! 🎨💻
 ## Filter project by technology
 
 So that a recruiter can see all projects I've made that use particular technology
+
+## Make gallery better
+
+- Show PDF files better?
+- Caption: link?
+- url: for `<img>`
+- iframe-src: for `<iframe>`
+- content: arbitrary HTML
