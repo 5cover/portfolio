@@ -1,5 +1,13 @@
 # Scratch area
 
+## fix icons in tags misaligned
+
+put them in the damn middle
+
+## fix line spacing in text content
+
+when a line contains inline code it becomes higher and creates an irregular structure
+
 ## show counts for every tag
 
 that way we can get stats
