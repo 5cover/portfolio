@@ -62,8 +62,8 @@ function page_history(): Page
                 put_card($history, 2020, 0, '/portfolio/img/bossuet.jpeg', 'Lycée Saint-Joseph-Bossuet');
                 put_card($history, 2023, 1, '/portfolio/img/cambridge-first.jpg', 'Cambridge First Certificate');
                 put_card($history, 2023, 2, '/portfolio/img/iut-lannion.jpg', "L'IUT de Lannion");
-                put_card($history, 2024, 3, '/portfolio/img/tro-breizh.jpg', 'Le Tro Breizh')
-                put_card($history, 2024, 4, '/portfolio/img/engie-t1.webp', 'La tour T1 d\'Engie')
+                put_card($history, 2024, 3, '/portfolio/img/tro-breizh.jpg', 'Le Tro Breizh');
+                put_card($history, 2024, 4, '/portfolio/img/engie-t1.webp', 'La tour T1 d\'Engie');
                 ?>
             </div>
         </div>

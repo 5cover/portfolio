@@ -89,10 +89,6 @@ function page_index(): Page
             <span><?= $lang->get('indexMyResume') ?></span>
         </a>
     </article>
-    <article class="lvl content-block">
-        <h2><?= $lang->get('indexVideoCv') ?></h2>
-        <iframe src="https://www.youtube-nocookie.com/embed/6VqtL5oogwk?modestbranding=1&rel=0" width="640" height="360" title="Video CV - Raphaël Bardini" frameborder="0" allowfullscreen></iframe>
-    </article>
 </main>
 <?php
     }));
