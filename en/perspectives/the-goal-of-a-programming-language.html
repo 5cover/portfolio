@@ -99,7 +99,7 @@
     <section id="story">
     <h2>Story</h2>
     <div>
-    <p><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> is the first programming language I've learned, all the way back in <time datetime="2017">2017</time>. However I recently started learning <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Zig_(programming_language)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>. Zig is similar to C in may ways. It is a low-level language destined for systems programming and hardware interaction. And I absolutely love it! I've implemented <a class="link" href="/en/projects/ztest.html.html">a clone of the GNU <code>test</code> command</a> to learn it. This language fixes many of the problems and shortcomings of C.</p>
+    <p><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> is the first programming language I've learned, all the way back in <time datetime="2017">2017</time>. However I recently started learning <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Zig_(programming_language)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>. Zig is similar to C in may ways. It is a low-level language destined for systems programming and hardware interaction. And I absolutely love it! I've implemented <a class="link" href="/portfolio/en/projects/ztest.html.html">a clone of the GNU <code>test</code> command</a> to learn it. This language fixes many of the problems and shortcomings of C.</p>
 </div>
 <article id="generics">
     <h3>Generics</h3>
@@ -227,7 +227,7 @@ while (i &lt; 100) {
         <p>No need to prefix internal functions with an underscore anymore! <code>pub</code> is all you'll need.</p>
         <p>Seriously though, encapsulation is non-existent in C. Although the convention of <q>if it starts with an underscore, don't touch it</q> has been around for a while now, it's always safer when the language enforces the invariant of <q>this thing can't be accessed outside this module / structure</q>.</p>
         <p>In C, you have to get creative. In order to avoid any name conflicts with internals from other librairies the user might implemenent, your internal prefix should not only start with an underscore, but also contain an (hopefully) unique string. In addition, the underscore may not be followed by an uppercase letter unless you want to violate the standard and open yourself to name conflics with compiler or standard library internals.</p>
-        <p>For instance, <a class="link" href="/en/projects/cori.html"><abbr title="Correct Input">Cori</abbr></a> uses the prefix <code>_cori_</code> on internal macros, functions, structures, type aliases, and so on.</p>
+        <p>For instance, <a class="link" href="/portfolio/en/projects/cori.html"><abbr title="Correct Input">Cori</abbr></a> uses the prefix <code>_cori_</code> on internal macros, functions, structures, type aliases, and so on.</p>
         <p>In Zig, you don't need any of this madness. Private is the default. Export functions, structures and methods using the <code>pub</code> keyword.</p>
     </div>
 </article>
