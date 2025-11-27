@@ -1,3 +1,0 @@
-# History page
-
-This page

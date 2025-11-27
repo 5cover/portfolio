@@ -1,8 +1,0 @@
-@use 'base';
-@use 'detail';
-@use 'const';
-@use 'util';
-
-main > header {
-    @include detail.header;
-}

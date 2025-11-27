@@ -1,7 +1,0 @@
-<?php
-require_once 'fragment.php';
-$f = new Fragment(__FILE__, 'fr')
-?>
-<p>Bonjour, je m'appelle <strong>Raphaël Bardini</strong>. J'ai 18 ans et suis étudiant en 2<sup>ème</sup> année de <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique, à l'<?= $f->blank('<abbr title="Institut Universitaire Technologique">IUT</abbr> de Lannion', 'https://iut-lannion.univ-rennes.fr/') ?></a>.</p>
-<p>J'ai un baccalauréat général avec spécialités <?= $f->def('amc') ?> et <?= $f->def('nsi') ?>. J'ai un bon niveau en anglais.</p>
-<p>Je suis passionné par le <strong>développement logiciel</strong> et je suis investi dans le milieu <strong>open-source</strong>. Je suis également un grand amateur de <?= $f->blank('jazz', 'https://youtube.com/playlist?list=PL1weKnP9ENMdJbMr338lNOMSF487f8nGm') ?>. Rejoignez-moi dans cette aventure&nbsp;! &#9749;</p>
