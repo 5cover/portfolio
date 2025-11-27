@@ -1,100 +1,62 @@
-# Portfolio
+# Astro Starter Kit: Blog
 
-Idée : car on crée toujours plus de projets, il peut devenir fastidueux de les ajouter à no créer un programme qui génère le site de manière automatique à partir d'une liste de projets et de paramètres de configuration.
+```sh
+pnpm create astro@latest -- --template blog
+```
 
-## Brainstorming
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-- Liste des projets
-- Projets favoris
-- Projets ordonnées chronologiquement
-- Infos contact
-- Aperçu CV (avec possibilité de téléchargement)
-- Partie moi (présentation, version web du cv +-)
-- liens vers but, iut lannion, programme, 6 compétences
-- associer chaque projet à des compétences avec justification
+Features:
 
-Localisation (français, anglais)
+- ✅ Minimal styling (make it your own!)
+- ✅ 100/100 Lighthouse performance
+- ✅ SEO-friendly with canonical URLs and OpenGraph data
+- ✅ Sitemap support
+- ✅ RSS Feed support
+- ✅ Markdown & MDX support
 
-### Projet
+## 🚀 Project Structure
 
-JSON
+Inside of your Astro project, you'll see the following folders and files:
 
-- Nom
-- Description
-- Date de début
-- Logo
-- Contexte (Personnel / Terminale Spé NSI / 1re année BUT Informatique...)
-- Status (en cours / terminé)
-- Compétences liées
-- Tags
-- Outils
-  - Logiciels
-  - Langages de prog.
-- Liens
-  - Git{hub, lab}
-  - Articles
-- Gallerie
+```text
+├── public/
+├── src/
+│   ├── components/
+│   ├── content/
+│   ├── layouts/
+│   └── pages/
+├── astro.config.mjs
+├── README.md
+├── package.json
+└── tsconfig.json
+```
 
-### Page d'acceuil
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Mes projets en cours
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-### autre types de projets
+The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
 
-ce serait bien de présenter aussi
+Any static assets, like images, can be placed in the `public/` directory.
 
-- les routes sur CS
-- trégoria?
-- island maps
-- ...?
+## 🧞 Commands
 
-on sortira un peu de l'optique du développement logiciel, c'est important de se diversifier
+All commands are run from the root of the project, from a terminal:
 
-## étapes
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm build`           | Build your production site to `./dist/`          |
+| `pnpm preview`         | Preview your build locally, before deploying     |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-- json cible
-- arborescence
-- maquette
-- conception
+## 👀 Want to learn more?
 
-## Arborescence
+Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-Chaque projet est sur une "carte" qui est aussi un lien vers sa page de détail.
+## Credit
 
-Pourquoi avoir des pages de détail ? Parce que cela permet de vraiment détailler les projets, d'insister sur leur qualité plutôt que la quantité de projets. On est plus limité par l'espace comme sur le CV. Je dois raconter des choses passionantes, et ajouter beaucoup de contenu pour inciter le visiteur à passer le plus de temps possible sur mon site. Plus il passe de temps, plus il y a de chances qu'il me recrute, non?
-
-Le site a 4 + N pages (N étant le nombre de projets)
-
-- Page d'acceuil
-    1. Qui suis-je (Bonjour, je m'apelle raphaël bardini. Pour moi, le chemin vers un monde meilleur est pavé de logiciels de qualité.)
-    2. Mes projets en cours
-    3. Lien "Tous mes projets"
-    4. Intéressé.e? \[Mon CV\] (PDF overt avec le navigateur)
-    5. Contact en fixed bottom
-
-- Page recherche projet
-    1. barre de recherche en haut
-    2. liste des projets comme sur site de streaming
-
-- Parcours
-
-- Mes passions
-
-- Pages détail projet
-
-<https://www.gloomaps.com/jRov4mvZd4>
-
-## définitions
-
-Pour les termes techniques, les logiciels et les jeux, on peut avoir un encadré en hoover avec une définition courte, des liens...
-
-Définis en JSON,
-
-Puis on search dans le texte de contenu et on remplace les occurences par des liens
-
-champ|contrainte
--|-
-Synopsis|pas plus d'une phrase
-Type|nom de type dans type.json
-
-Les noms sont case-insensitive.
+This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
