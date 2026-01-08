@@ -36,9 +36,15 @@ Timeline view of root history items (history items that are not linked to by any
 
 since histories can be recursive, make it so larger histories contain smaller one, though they are still on the same timeline (no subtimelines)
 
+## (NavBar) Yggdrasil
+
+A graph rendering of all public infonode as clickable cards. Edges are displayed, the view can be panned and zoomed. Statistics are displayed with the total number of infonodes and the number of indonodes of each type.
+
+Optional: filters on infonode type and a search bar that hide non matching infonodes.
+
 ## (NavBar) Search
 
-A global search page that searches for contents in Yggdrasil by text keywords and tags
+A global search page that searches for contents in Yggdrasil by text keywords and tags. displays results as cards. updates incrementally.
 
 ## BUT Informatique
 

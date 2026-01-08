@@ -2,7 +2,7 @@
 
 Some invariants about things should be displayed on the site consistently:
 
-This is already done in the V1 site.
+These is lready done in the V1 site and should be done in this version too:
 
 - Show background images as the background of cards and pages with a reduced opacity
 - anchors (elements that navigate the page when clicked) grow when hovered and gain a background in the accent color (the accent color signals interactivity), unless prefers-reduced-motion is set or the anchor is a basic hypertext link (already underlined on hover, and its text color is the accent color)
@@ -16,8 +16,8 @@ themes that define the colors and styles of the site. themes i already have form
 - light
 - dark
 
-themes i want in the future
+themes i want in the future; no need to make them now but code should be logically decoupled from light/dark only assumptions so that they can be added later.
 
-- chalkboard
+- engie fluid
+- chalkboard (dark but white solid borders)
 - windows classic
-- engie fluid? since i worked with it a lot, might as well

@@ -45,6 +45,8 @@ An Infonode can also have properties that are of infonode types in addition to i
 
 Infonodes are built from data YAML files and rendered at generation-time. Adding an infonode of a known type or amending one should be as simple as modifying the YAML corresponding file and redeploying.
 
+Do not generate infonodes data. You may only generate examples to serve as demonstration value so I can write them later.
+
 ## Textual type
 
 The conceptual data type Textual is used below. It refers to arbitrary content that is primarily meant to be read (text) but is also rich (emphasis, bold, etc) and can contain images, figures and arbitrary representations, as well as **Definition** card displayed as tooltips. Effectively, it is HTML. However, it is only semantic, and should not carry its own styling information, rather it inherits the page's styles.
@@ -177,7 +179,7 @@ Role|`content`
 Visibility|`public`
 Detail rendering available?|Y
 
-Description of a period of my existence. can be nested. Links other infonodes to show not just what I did, but what it meant and what came from it.
+Description of a period of my existence. can be nested (ENGIE history could be a predecessor my internship and my apprenticeship there as two distinct histories). Also links other infonodes to show not just what I did, but what it meant and what came from it.
 
 Property|Description|Required?
 -|-|-
