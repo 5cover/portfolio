@@ -1,4 +1,4 @@
-@use "sass:meta";
+@use 'sass:meta';
 @use 'sass:list';
 @use 'sass:color';
 @use 'const';
@@ -16,61 +16,65 @@
 }
 
 @layer base {
-    @function get-rgb($color) {
-        @return color.channel($color, 'red', $space: rgb), color.channel($color, 'green', $space: rgb), color.channel($color, 'blue', $space: rgb);
-    }
-
     @mixin var-color($color-name, $color) {
-        /* workaround until relative alpha colors get widespread support */
         --color-#{$color-name}: #{$color};
-        --color-#{$color-name}-rgb: #{get-rgb($color)};
     }
 
-    @mixin theme($accent-bg, $accent-fg, $fg, $c0, $c1, $c2, $c3) {
+    @mixin theme($step, $accent-bg, $accent-fg, $fg, $bg0) {
         accent-color: $accent-bg;
+        $bg1: color.scale($bg0, $lightness: $step);
+        $bg2: color.scale($bg1, $lightness: $step);
+        $bg3: color.scale($bg2, $lightness: $step);
+        // accentext: Accent color variant for text foreground
+        $at0: color.scale($accent-bg, $lightness: $step);
+        $at1: color.scale($at0, $lightness: $step);
+        $at2: color.scale($at1, $lightness: $step);
+        $at3: color.scale($at2, $lightness: $step);
         @include var-color('accent', $accent-bg);
         @include var-color('accent-fg', $accent-fg);
         @include var-color('fg', $fg);
-        @include var-color('lvl', $c0);
-        @include var-color('lvl-next', $c1);
+        @include var-color('lvl', $bg0);
+        @include var-color('lvl-next', $bg1);
+        @include var-color('accentext', $at0);
+        @include var-color('accentext-next', $at1);
 
         .lvl {
-            @include var-color('lvl', $c1);
-            @include var-color('lvl-next', $c2);
+            @include var-color('lvl', $bg1);
+            @include var-color('lvl-next', $bg2);
+            @include var-color('accentext', $at1);
+            @include var-color('accentext-next', $at2);
 
             .lvl {
-                @include var-color('lvl', $c2);
-                @include var-color('lvl-next', $c3);
+                @include var-color('lvl', $bg2);
+                @include var-color('lvl-next', $bg3);
+                @include var-color('accentext', $at2);
+                @include var-color('accentext-next', $at3);
 
                 .lvl {
-                    @include var-color('lvl', $c3);
+                    @include var-color('lvl', $bg3);
+                    @include var-color('accentext', $at3);
                 }
             }
         }
     }
 
     $accent: #a66144;
+    $accent-fg: white;
 
     @mixin theme-dark {
         color-scheme: dark;
-        $fg: #d3d3d3;
-        $c0: #111;
         $step: 8%;
-        $c1: color.scale($c0, $lightness: $step);
-        $c2: color.scale($c1, $lightness: $step);
-        $c3: color.scale($c2, $lightness: $step);
-        @include theme($accent, white, $fg, $c0, $c1, $c2, $c3);
+        $fg: #d3d3d3;
+        $bg0: #111;
+        @include theme($step, $accent, $accent-fg, $fg, $bg0);
     }
 
     @mixin theme-light {
         color-scheme: light;
-        $fg: #111;
-        $c0: #fafafa;
         $step: -8%;
-        $c1: color.scale($c0, $lightness: $step);
-        $c2: color.scale($c1, $lightness: $step);
-        $c3: color.scale($c2, $lightness: $step);
-        @include theme($accent, white, $fg, $c0, $c1, $c2, $c3);
+        $fg: #111;
+        $bg0: #fafafa;
+        @include theme($step, $accent, $accent-fg, $fg, $bg0);
     }
 
     :root {
@@ -81,15 +85,15 @@
         font-size: 1.1em;
     }
 
-    :root[data-theme="dark"] {
+    :root[data-theme='dark'] {
         @include theme-dark;
     }
 
-    :root[data-theme="light"] {
+    :root[data-theme='light'] {
         @include theme-light;
     }
 
-    :root[data-theme="system"] {
+    :root[data-theme='system'] {
         @media (prefers-color-scheme: dark) {
             @include theme-dark;
         }
@@ -101,17 +105,8 @@
 
     /* Chromium issue: transitions stack (children wait for parents to finish their transition before doing their own) */
     /* Solution: apply all transitions only to leaf elements. In non-leaf elements, transition only properties that are unrelated to the textual content */
-    $non-leaf-transition-properties: background-color,
-        background-attachment,
-        background-clip,
-        background-image,
-        background-origin,
-        background-position,
-        background-repeat,
-        background-size,
-        transform,
-        opacity,
-        filter;
+    $non-leaf-transition-properties: background-color, background-attachment, background-clip, background-image,
+        background-origin, background-position, background-repeat, background-size, transform, opacity, filter;
 
     * {
         box-sizing: border-box;
@@ -121,12 +116,7 @@
 
     /* Leaf elements */
     :not(:has(*)) {
-        transition-property:
-            $non-leaf-transition-properties,
-            color,
-            text-decoration,
-            fill,
-            stroke;
+        transition-property: $non-leaf-transition-properties, color, text-decoration, fill, stroke;
     }
 
     .fi {
@@ -184,7 +174,7 @@
 
     :not(pre) > :is(code, samp, kbd) {
         background-color: var(--color-lvl-next);
-        @include util.horizontal-box(.4);
+        @include util.horizontal-box(0.4);
     }
 
     pre {
@@ -196,7 +186,7 @@
 
     small {
         font-size: 1em;
-        color: rgba(var(--color-fg-rgb), calc(2/3));
+        color: rgba(var(--color-fg-rgb), calc(2 / 3));
     }
 
     p {
@@ -205,43 +195,43 @@
 
     p,
     figcaption {
-        line-height: calc(1ex / .32);
+        line-height: calc(1ex / 0.32);
     }
 
     h1 {
         font-weight: 500;
         font-size: 2em;
-        line-height: calc(1ex / .4);
+        line-height: calc(1ex / 0.4);
     }
 
     h2 {
         font-weight: 500;
         font-size: 1.75em;
-        line-height: calc(1ex / .42);
+        line-height: calc(1ex / 0.42);
     }
 
     h3 {
         font-weight: 500;
         font-size: 1.5em;
-        line-height: calc(1ex / .38);
+        line-height: calc(1ex / 0.38);
     }
 
     h4 {
         font-weight: 500;
         font-size: 1.25em;
-        line-height: calc(1ex / .37);
+        line-height: calc(1ex / 0.37);
     }
 
     h5 {
         font-weight: 500;
         font-size: 1.125em;
-        line-height: calc(1ex / .4);
+        line-height: calc(1ex / 0.4);
     }
 
     h6 {
         font-weight: 500;
         font-size: 1.0625em;
-        line-height: calc(1ex / .5);
+        line-height: calc(1ex / 0.5);
     }
 
     body {
@@ -265,11 +255,11 @@
     }
 
     /* Reference citation links */
-    sup[id^="cite-"] {
+    sup[id^='cite-'] {
         @extend .link;
         @include util.sup-annotation;
         white-space: nowrap;
-        font-size: .8em;
+        font-size: 0.8em;
     }
 
     /* Opt-in basic style classes
@@ -281,15 +271,17 @@
      * Intended for: <a>
      */
     .link:link {
-        color: #a66144;
+        color: var(--color-accentext);
     }
 
     .link:visited {
-        color: #91553b;
+        // decrease luminance by 8%
+        color: hsl(from var(--color-accentext) h s calc(l - 8));
     }
 
     .link#{const.$hover} {
-        color: #be7c60;
+        // increase luminance by 8%
+        color: hsl(from var(--color-accentext) h s calc(l + 8));
         text-decoration: underline;
     }
 
@@ -297,7 +289,7 @@
         @include util.sup-annotation;
         content: '↗';
         display: inline-block;
-        font-size: .5em;
+        font-size: 0.5em;
         text-decoration: none;
         user-select: none;
     }
@@ -311,7 +303,7 @@
     .list {
         display: flex;
         flex-direction: column;
-        gap: .5lh;
+        gap: 0.5lh;
         padding-left: 2em;
 
         .list {
@@ -379,7 +371,7 @@
                 }
 
                 a#{const.$hover},
-                a[href="#"] {
+                a[href='#'] {
                     text-decoration: underline;
                 }
             }
