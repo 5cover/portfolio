@@ -1,4 +1,6 @@
 ---
+import Graphic from './Graphic.astro';
+
 type Props = {
   githubTitle: string;
 };
@@ -9,6 +11,11 @@ const { githubTitle } = props;
 <footer class="lvl">
   <small>&copy; <time datetime="2024" data-current-year>2024</time> Raphaël Bardini</small>
   <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title={githubTitle}>
-    <img src="/portfolio/img/social/github.svg" alt="GitHub" width="60" height="60" loading="lazy" />
+    <Graphic
+      url="/portfolio/img/social/github.svg"
+      isThemedSvg={true}
+      alt="GitHub"
+      title={githubTitle}
+    />
   </a>
 </footer>

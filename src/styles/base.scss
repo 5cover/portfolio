@@ -338,7 +338,7 @@
 
     /* Page structure */
     body {
-        > header {
+        header {
             @include util.strip-content(0 0 1px 0);
             align-items: center;
             display: flex;
@@ -378,15 +378,16 @@
             }
         }
 
-        > main {
+        main {
             grid-row: 2;
             display: flex;
             flex-direction: column;
             gap: const.$full-width-vertical-margin;
         }
 
-        > footer {
+        footer {
             @include util.strip-content(1px 0 0 0);
+            height: 5em;
             grid-row: 3;
             position: relative;
             display: flex;
@@ -400,8 +401,19 @@
                 }
             }
 
-            a > #{const.$graphic}#{const.$hover} {
+            a #{const.$graphic}#{const.$hover} {
                 @include util.bring-out(1.15);
+            }
+
+            a {
+                display: block;
+                aspect-ratio: 1;
+                width: auto;
+                height: 100%;
+                .graphic {
+                    height: 100%;
+                    width: 100%;
+                }
             }
         }
     }

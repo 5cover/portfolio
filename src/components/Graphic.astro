@@ -12,6 +12,11 @@ type Props = {
 
 const props: Props = Astro.props;
 const { url, isThemedSvg = false, alt = '', title, class: className } = props;
+const baseClass = 'graphic';
+
+function combineClasses(...classes: Array<string | undefined>): string {
+    return classes.filter(Boolean).join(' ');
+}
 
 function resolvePublicPath(src: string): string | null {
     if (!src.startsWith('/')) {
@@ -64,16 +69,15 @@ function decorateSvg(markup: string, cssClass?: string, label?: string): string 
         return markup;
     }
 
+    const combinedClass = combineClasses(baseClass, cssClass);
     let tag = match.tag;
-    if (cssClass) {
-        const classMatch = tag.match(/\bclass\s*=\s*(['"])(.*?)\1/);
-        if (classMatch) {
-            const existing = classMatch[2].trim();
-            const nextClass = existing ? `${existing} ${cssClass}` : cssClass;
-            tag = tag.replace(classMatch[0], `class="${nextClass}"`);
-        } else {
-            tag = tag.replace('<svg', `<svg class="${cssClass}"`);
-        }
+    const classMatch = tag.match(/\bclass\s*=\s*(['"])(.*?)\1/);
+    if (classMatch) {
+        const existing = classMatch[2].trim();
+        const nextClass = existing ? `${existing} ${combinedClass}` : combinedClass;
+        tag = tag.replace(classMatch[0], `class="${nextClass}"`);
+    } else {
+        tag = tag.replace('<svg', `<svg class="${combinedClass}"`);
     }
 
     if (label && !/\baria-label\s*=/.test(tag)) {
@@ -101,6 +105,12 @@ if (isThemedSvg && url.endsWith('.svg')) {
     svgMarkup ? (
         <Fragment set:html={svgMarkup} />
     ) : (
-        <img src={url} alt={alt} title={title} class={className} loading='lazy' />
+        <img
+            src={url}
+            alt={alt}
+            title={title}
+            class={combineClasses(baseClass, className)}
+            loading='lazy'
+        />
     )
 }
