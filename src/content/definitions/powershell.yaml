@@ -1,0 +1,31 @@
+{
+  "id": "powershell",
+  "type": "programming-language",
+  "name": {
+    "full": {
+      "en": "Windows PowerShell",
+      "fr": "Windows PowerShell"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": "PowerShell",
+      "fr": "PowerShell"
+    }
+  },
+  "synopsis": {
+    "en": "A task automation and configuration management program from Microsoft, consisting of a command-line shell and the associated scripting language.",
+    "fr": "Interface de ligne de commande multiplate-forme et langage de script pour l'administration de systèmes informatiques et de réseaux."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/PowerShell",
+    "fr": "https://fr.wikipedia.org/wiki/Windows_PowerShell"
+  },
+  "background": "/portfolio/img/definition/powershell/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/powershell/logo.svg"
+  }
+}

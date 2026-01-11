@@ -1,0 +1,61 @@
+{
+  "id": "portfolio",
+  "title": {
+    "en": "Portfolio",
+    "fr": "Portfolio"
+  },
+  "abstract": {
+    "en": "My portfolio",
+    "fr": "Mon portfolio"
+  },
+  "context": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "startDate": "2024-06-17",
+  "endDate": null,
+  "tags": [
+    "web",
+    "but-realiser",
+    "ux"
+  ],
+  "technologies": [
+    "html",
+    "sass",
+    "php",
+    "vs-code",
+    "bash",
+    "json",
+    "markdown",
+    "python",
+    "javascript",
+    "svg"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/portfolio"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/portfolio"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

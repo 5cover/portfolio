@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 const ROOT = process.cwd();
@@ -64,6 +64,35 @@ function readJson(filePath) {
 function writeYaml(filePath, data) {
   mkdirSync(dirname(filePath), { recursive: true });
   writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n', 'utf8');
+}
+
+function localizedString(en, fr) {
+  if (typeof en !== 'string' || typeof fr !== 'string') {
+    throw new Error(`Expected localized strings, got: ${en} / ${fr}`);
+  }
+  return { en, fr };
+}
+
+function localizedNullableString(en, fr) {
+  const enValue = typeof en === 'string' ? en : null;
+  const frValue = typeof fr === 'string' ? fr : null;
+  return { en: enValue, fr: frValue };
+}
+
+function localizedArray(en, fr) {
+  const enValue = Array.isArray(en) ? en : [];
+  const frValue = Array.isArray(fr) ? fr : [];
+  return { en: enValue, fr: frValue };
+}
+
+function pickShared(en, fr, field) {
+  if (en && en[field] !== undefined) {
+    return en[field];
+  }
+  if (fr && fr[field] !== undefined) {
+    return fr[field];
+  }
+  return null;
 }
 
 function writeTextual(lang, kind, id, body) {
@@ -540,6 +569,137 @@ function writePianoTiles(lang, langData) {
   });
 }
 
+function mergeLocalizedOutputs() {
+  const collections = ['projects', 'literature', 'definitions', 'tags', 'types', 'history', 'piano-tiles'];
+
+  const listIds = (dir) => {
+    try {
+      return new Set(
+        readdirSync(dir)
+          .filter((name) => name.endsWith('.yaml'))
+          .map((name) => name.replace(/\.yaml$/, ''))
+      );
+    } catch {
+      return new Set();
+    }
+  };
+
+  collections.forEach((collection) => {
+    const baseDir = join(OUT, collection);
+    const enDir = join(baseDir, 'en');
+    const frDir = join(baseDir, 'fr');
+    const ids = new Set([...listIds(enDir), ...listIds(frDir)]);
+
+    ids.forEach((id) => {
+      const enPath = join(enDir, `${id}.yaml`);
+      const frPath = join(frDir, `${id}.yaml`);
+      const en = readJson(enPath);
+      const fr = readJson(frPath);
+      let merged = null;
+
+      if (collection === 'projects') {
+        merged = {
+          id: en.id ?? fr.id,
+          title: localizedString(en.title, fr.title),
+          abstract: localizedString(en.abstract, fr.abstract),
+          context: localizedNullableString(en.context, fr.context),
+          startDate: pickShared(en, fr, 'startDate'),
+          endDate: pickShared(en, fr, 'endDate'),
+          tags: pickShared(en, fr, 'tags') ?? [],
+          technologies: pickShared(en, fr, 'technologies') ?? [],
+          team: pickShared(en, fr, 'team') ?? [],
+          links: localizedArray(en.links, fr.links),
+          references: localizedArray(en.references, fr.references),
+          gallery: localizedArray(en.gallery, fr.gallery),
+          logo: pickShared(en, fr, 'logo'),
+          background: pickShared(en, fr, 'background'),
+        };
+      }
+
+      if (collection === 'literature') {
+        merged = {
+          id: en.id ?? fr.id,
+          kind: pickShared(en, fr, 'kind'),
+          title: localizedString(en.title, fr.title),
+          abstract: localizedString(en.abstract, fr.abstract),
+          links: localizedArray(en.links, fr.links),
+          references: localizedArray(en.references, fr.references),
+          gallery: localizedArray(en.gallery, fr.gallery),
+          logo: pickShared(en, fr, 'logo'),
+          background: pickShared(en, fr, 'background'),
+          tags: pickShared(en, fr, 'tags') ?? [],
+        };
+      }
+
+      if (collection === 'definitions') {
+        merged = {
+          id: en.id ?? fr.id,
+          type: pickShared(en, fr, 'type'),
+          name: {
+            full: localizedString(en.name?.full, fr.name?.full),
+            abbr: localizedNullableString(en.name?.abbr, fr.name?.abbr),
+            short: localizedNullableString(en.name?.short, fr.name?.short),
+          },
+          synopsis: localizedString(en.synopsis, fr.synopsis),
+          wiki: localizedString(en.wiki, fr.wiki),
+          background: pickShared(en, fr, 'background'),
+          logo: pickShared(en, fr, 'logo'),
+        };
+      }
+
+      if (collection === 'tags') {
+        merged = {
+          id: en.id ?? fr.id,
+          title: localizedString(en.title, fr.title),
+        };
+      }
+
+      if (collection === 'types') {
+        merged = {
+          id: en.id ?? fr.id,
+          title: localizedString(en.title, fr.title),
+        };
+      }
+
+      if (collection === 'history') {
+        merged = {
+          id: en.id ?? fr.id,
+          title: localizedString(en.title, fr.title),
+          meta: localizedString(en.meta, fr.meta),
+          media: en.media || fr.media
+            ? {
+                year: pickShared(en.media ?? {}, fr.media ?? {}, 'year'),
+                img: pickShared(en.media ?? {}, fr.media ?? {}, 'img'),
+                alt: localizedString(en.media?.alt, fr.media?.alt),
+              }
+            : null,
+          order: pickShared(en, fr, 'order') ?? 0,
+        };
+      }
+
+      if (collection === 'piano-tiles') {
+        merged = {
+          id: en.id ?? fr.id,
+          title: localizedString(en.title, fr.title),
+          summary: localizedString(en.summary, fr.summary),
+          backgroundImage: pickShared(en, fr, 'backgroundImage'),
+          href: pickShared(en, fr, 'href'),
+          order: pickShared(en, fr, 'order') ?? 0,
+        };
+      }
+
+      if (!merged) {
+        return;
+      }
+
+      writeYaml(join(baseDir, `${id}.yaml`), merged);
+    });
+
+    rmSync(enDir, { recursive: true, force: true });
+    rmSync(frDir, { recursive: true, force: true });
+  });
+}
+
 function writeMetaLangs() {
   writeYaml(join(OUT, 'meta', 'langs.yaml'), { langs: LANGS });
 }
@@ -567,6 +727,8 @@ function run() {
     writeHistory(lang, langData.history ?? [], definitions, projects);
     writePianoTiles(lang, langData);
   });
+
+  mergeLocalizedOutputs();
 }
 
 run();

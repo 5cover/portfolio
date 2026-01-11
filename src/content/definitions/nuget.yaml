@@ -1,0 +1,31 @@
+{
+  "id": "nuget",
+  "type": "library",
+  "name": {
+    "full": {
+      "en": "NuGet",
+      "fr": "NuGet"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A package manager for the Microsoft development platform, including .NET.",
+    "fr": "Un gestionnaire de paquets pour la plateforme de développement Microsoft, incluant .NET."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/NuGet",
+    "fr": "https://fr.wikipedia.org/wiki/NuGet"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/nuget/logo.svg"
+  }
+}

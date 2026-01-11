@@ -1,0 +1,31 @@
+{
+  "id": "gitlab",
+  "type": "website",
+  "name": {
+    "full": {
+      "en": "GitLab",
+      "fr": "GitLab"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "GitLab is a DevOps software package that can develop, secure, and operate software. GitLab includes a distributed version control based on Git, including features such as access control, bug tracking, software feature requests, task management, and wikis for every project, as well as snippets.",
+    "fr": "Logiciel libre de Forge basé sur git proposant les fonctionnalités de wiki, un système de suivi des bugs, l’intégration continue et la livraison continue."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/GitLab",
+    "fr": "https://fr.wikipedia.org/wiki/GitLab"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/gitlab/logo.svg"
+  }
+}

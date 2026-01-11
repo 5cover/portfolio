@@ -1,0 +1,36 @@
+{
+  "id": "the-last-teacher",
+  "title": {
+    "en": "The Last Teacher",
+    "fr": "The Last Teacher"
+  },
+  "abstract": {
+    "en": "Post-apocalyptic story",
+    "fr": "Nouvelle post-apocalyptique"
+  },
+  "context": {
+    "en": "Personal",
+    "fr": "Personnel"
+  },
+  "startDate": "2022-11-15",
+  "endDate": "2023-06-27",
+  "tags": [
+    "art"
+  ],
+  "technologies": [],
+  "team": [],
+  "links": {
+    "en": [],
+    "fr": []
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": "/portfolio/img/projects/the-last-teacher/bg.webp"
+}

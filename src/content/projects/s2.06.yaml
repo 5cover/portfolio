@@ -1,0 +1,54 @@
+{
+  "id": "s2.06",
+  "title": {
+    "en": "Knight for a Day",
+    "fr": "Chevalier d'un Jour"
+  },
+  "abstract": {
+    "en": "Planning a <em>team building</em> event and making a promotional film. Organizing teamwork (S2.06)",
+    "fr": "Planification d'un évènement de <em>team building</em> et réalisation d'un film promotionnel. Organisation d'un travail d'équipe (S2.06)"
+  },
+  "context": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "startDate": "2024-04-18",
+  "endDate": "2024-06-06",
+  "tags": [
+    "but-collaborer"
+  ],
+  "technologies": [
+    "github"
+  ],
+  "team": [
+    "chartier--le-goff-marius",
+    "kervadec-matteo",
+    "toe-paolo"
+  ],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub project",
+        "anchor": "github",
+        "href": "https://github.com/users/5cover/projects/9"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Projet GitHub",
+        "anchor": "github",
+        "href": "https://github.com/users/5cover/projects/9"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

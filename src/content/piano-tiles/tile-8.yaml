@@ -1,0 +1,14 @@
+{
+  "id": "tile-8",
+  "title": {
+    "en": "User Experience",
+    "fr": "Expérience utilisateur"
+  },
+  "summary": {
+    "en": "My passion project",
+    "fr": "Mon projet <q>best-seller</q>"
+  },
+  "backgroundImage": "/portfolio/img/piano-tile/8.png",
+  "href": "projects/winclean.html",
+  "order": 7
+}

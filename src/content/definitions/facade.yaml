@@ -1,0 +1,28 @@
+{
+  "id": "facade",
+  "type": "design-pattern",
+  "name": {
+    "full": {
+      "en": "Facade",
+      "fr": "Façade"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A software design pattern that provides a simplified interface to a larger body of code.",
+    "fr": "Un patron de conception logiciel qui fournit une interface simplifiée pour un corps de code plus important."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Facade_pattern",
+    "fr": "https://fr.wikipedia.org/wiki/Fa%C3%A7ade_(patron_de_conception)"
+  },
+  "background": null,
+  "logo": null
+}

@@ -1,0 +1,28 @@
+{
+  "id": "chain-of-responsibility",
+  "type": "design-pattern",
+  "name": {
+    "full": {
+      "en": "Chain of Responsibility",
+      "fr": "Chaîne de responsabilité"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A software design pattern that allows an event to be handled by a chain of objects.",
+    "fr": "Un patron de conception logiciel qui permet à un événement d'être traité par une chaîne d'objets."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern",
+    "fr": "https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_responsabilit%C3%A9"
+  },
+  "background": null,
+  "logo": null
+}

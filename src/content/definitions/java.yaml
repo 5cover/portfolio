@@ -1,0 +1,31 @@
+{
+  "id": "java",
+  "type": "programming-language",
+  "name": {
+    "full": {
+      "en": "Java",
+      "fr": "Java"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
+    "fr": "Langage de programmation de haut niveau orienté objet créé par James Gosling et Patrick Naughton en 1995."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Java_(programming_language)",
+    "fr": "https://fr.wikipedia.org/wiki/Java_(langage)"
+  },
+  "background": "/portfolio/img/definition/java/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/java/logo.svg"
+  }
+}

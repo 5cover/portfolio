@@ -1,0 +1,28 @@
+{
+  "id": "mousepad",
+  "type": "software",
+  "name": {
+    "full": {
+      "en": "Mousepad",
+      "fr": "Mousepad"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "Mousepad is a simple text editor for the Xfce desktop environment. Mousepad aims to be an easy-to-use and fast editor.",
+    "fr": "L'éditeur de texte officiel de l'environnement de bureau XFCE. C'est un éditeur rapide, léger, et facile à prendre en main."
+  },
+  "wiki": {
+    "en": "https://github.com/codebrainz/mousepad",
+    "fr": "https://doc.ubuntu-fr.org/mousepad"
+  },
+  "background": null,
+  "logo": null
+}

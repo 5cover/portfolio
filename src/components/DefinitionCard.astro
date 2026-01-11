@@ -1,8 +1,8 @@
 ---
 import Graphic from './Graphic.astro';
-import type { DefinitionEntry, TypeEntry } from '../lib/content';
+import type { DefinitionLocalizedData, TypeLocalizedData } from '../lib/content';
 
-function buildDefinitionTitle(entry: DefinitionEntry['data']): string {
+function buildDefinitionTitle(entry: DefinitionLocalizedData): string {
   const abbr = entry.name.abbr;
   return abbr ? `${entry.name.full} (${abbr})` : entry.name.full;
 }
@@ -12,8 +12,8 @@ function formatTitle(fmt: string, title: string): string {
 }
 
 type Props = {
-  definition: DefinitionEntry['data'];
-  typesById: Record<string, TypeEntry['data']>;
+  definition: DefinitionLocalizedData;
+  typesById: Record<string, TypeLocalizedData>;
   langLabels: {
     fmtTitle: string;
   };

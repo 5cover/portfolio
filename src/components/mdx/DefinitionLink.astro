@@ -1,18 +1,35 @@
 ---
-import type { DefinitionEntry } from '../../lib/content';
+import { getDefinitions } from '../../lib/content';
+import type { DefinitionLocalizedData } from '../../lib/content';
 
-type DefinitionData = DefinitionEntry['data'];
-type DefinitionIndex = Record<string, DefinitionData>;
+type DefinitionIndex = Record<string, DefinitionLocalizedData>;
+
+const definitionCache = new Map<string, DefinitionIndex>();
+
+async function getDefinitionIndex(lang: string): Promise<DefinitionIndex> {
+  const cached = definitionCache.get(lang);
+  if (cached) {
+    return cached;
+  }
+
+  const entries = await getDefinitions(lang);
+  const index = entries.reduce<DefinitionIndex>((acc, entry) => {
+    acc[entry.data.id] = entry.data;
+    return acc;
+  }, {});
+  definitionCache.set(lang, index);
+  return index;
+}
 
 interface Props {
   id: string;
   href?: string;
   class?: string;
-  definitionsById: DefinitionIndex;
 }
 
-const { id, href, class: className, definitionsById } = Astro.props;
-
+const { id, href, class: className } = Astro.props;
+const langParam = typeof Astro.params?.lang === 'string' ? Astro.params.lang : 'fr';
+const definitionsById = await getDefinitionIndex(langParam);
 const definition = definitionsById[id];
 const resolvedHref = href ?? definition?.wiki;
 

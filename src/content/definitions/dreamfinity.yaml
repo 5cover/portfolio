@@ -1,0 +1,31 @@
+{
+  "id": "dreamfinity",
+  "type": "game-server",
+  "name": {
+    "full": {
+      "en": "Dreamfinity",
+      "fr": "Dreamfinity"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "<q cite=\"https://dreamfinity.org\">We present you the most modern and innovative Minecraft server: the Dreamfinity project! Our unique servers combine all the best modes, fresh features and gameplay features available for playing in Minecraft on the network. For many years, we have been analyzing the needs of a variety of players and can confidently say: you will like it!</q>",
+    "fr": "<q cite=\"https://dreamfinity.org\">Nous vous présentons le serveurs Minecraft les plus moderne et innovant à ce jour &mdash; le projet Dreamfinity&nbsp;! Nos serveurs uniques combinent tous les meilleurs mods, nouvelles fonctionnalités et fonctionnalités de jeu disponibles pour jouer à Minecraft en ligne. Au fil de nombreuses années, nous avons analysé les besoins d’une variété de joueurs et nous pouvons affirmer avec certitude que vous aimerez notre collaboration&nbsp;!</q>"
+  },
+  "wiki": {
+    "en": "https://dreamfinity.org",
+    "fr": "https://dreamfinity.org"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/dreamfinity/logo.svg"
+  }
+}

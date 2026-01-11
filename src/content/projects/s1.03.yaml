@@ -1,0 +1,64 @@
+{
+  "id": "s1.03",
+  "title": {
+    "en": "Documentation generator",
+    "fr": "Générateur de documentation"
+  },
+  "abstract": {
+    "en": "Automation, scripts, containerization, Markdown parser. Setting up a development environment (S1.03)",
+    "fr": "Automatisation, scripts, conteneurisation, parseur Markdown. Installation d'un poste pour le développement (S1.03)"
+  },
+  "context": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "startDate": "2023-10-25",
+  "endDate": "2023-01-21",
+  "tags": [
+    "but-administrer",
+    "but-collaborer",
+    "cli",
+    "sysadmin"
+  ],
+  "technologies": [
+    "bash",
+    "php",
+    "docker",
+    "github",
+    "css",
+    "html",
+    "markdown",
+    "gitlab"
+  ],
+  "team": [
+    "chartier--le-goff-marius",
+    "kervadec-matteo",
+    "toe-paolo"
+  ],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S1.03"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S1.03"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

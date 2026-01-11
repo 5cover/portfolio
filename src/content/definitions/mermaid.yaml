@@ -1,0 +1,31 @@
+{
+  "id": "mermaid",
+  "type": "software",
+  "name": {
+    "full": {
+      "en": "Mermaid JS",
+      "fr": "Mermaid JS"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": "Mermaid",
+      "fr": "Mermaid"
+    }
+  },
+  "synopsis": {
+    "en": "JavaScript-based diagramming and charting tool that renders Markdown-inspired text definitions to create and modify diagrams dynamically.",
+    "fr": "Outil de création de diagrammes et de graphiques basé sur JavaScript utilisant un langage formel intégré à Markdown pour créer et modifier des diagrammes de manière dynamique."
+  },
+  "wiki": {
+    "en": "https://mermaid.js.org/",
+    "fr": "https://mermaid.js.org/"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/mermaid/logo.png"
+  }
+}

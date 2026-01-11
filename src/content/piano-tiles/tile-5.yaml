@@ -1,0 +1,14 @@
+{
+  "id": "tile-5",
+  "title": {
+    "en": "Data science",
+    "fr": "Science des données"
+  },
+  "summary": {
+    "en": "Statistics and data mining",
+    "fr": "Data science"
+  },
+  "backgroundImage": "/portfolio/img/piano-tile/5.png",
+  "href": "projects/ethercrash.html",
+  "order": 4
+}

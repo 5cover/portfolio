@@ -1,0 +1,28 @@
+{
+  "id": "matplotlib",
+  "type": "library",
+  "name": {
+    "full": {
+      "en": "Matplotlib",
+      "fr": "Matplotlib"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "Matplotlib is a plotting library for the Python programming language and its numerical mathematics extension NumPy. It provides an object-oriented API for embedding plots into applications using general-purpose GUI toolkits like Tkinter, wxPython, Qt, or GTK.",
+    "fr": "Bibliothèque du langage de programmation Python destinée à tracer et visualiser des données sous forme de graphiques5. Elle peut être combinée avec les bibliothèques python de calcul scientifique NumPy et SciPy."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Matplotlib",
+    "fr": "https://fr.wikipedia.org/wiki/Matplotlib"
+  },
+  "background": null,
+  "logo": null
+}

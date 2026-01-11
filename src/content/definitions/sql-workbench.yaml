@@ -1,0 +1,31 @@
+{
+  "id": "sql-workbench",
+  "type": "software",
+  "name": {
+    "full": {
+      "en": "SQL Workbench/J",
+      "fr": "SQL Workbench/J"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A database engine written in the C programming language.",
+    "fr": "Outil de requête SQL multiplateforme indépendant du SGBD."
+  },
+  "wiki": {
+    "en": "https://www.sql-workbench.eu/",
+    "fr": "https://www.sql-workbench.eu/"
+  },
+  "background": "/portfolio/img/definition/sql-workbench/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/sql-workbench/logo.jpg"
+  }
+}

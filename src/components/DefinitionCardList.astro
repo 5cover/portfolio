@@ -1,10 +1,10 @@
 ---
 import DefinitionCard from './DefinitionCard.astro';
-import type { DefinitionEntry, TypeEntry } from '../lib/content';
+import type { DefinitionLocalizedData, TypeLocalizedData } from '../lib/content';
 
 type Props = {
-  definitions: DefinitionEntry['data'][];
-  typesById: Record<string, TypeEntry['data']>;
+  definitions: DefinitionLocalizedData[];
+  typesById: Record<string, TypeLocalizedData>;
   langLabels: {
     fmtTitle: string;
   };

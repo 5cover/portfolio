@@ -1,0 +1,28 @@
+{
+  "id": "wizard",
+  "type": "ui",
+  "name": {
+    "full": {
+      "en": "Wizard",
+      "fr": "Assistant"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "Despite that wonderful, whimsical name, wizards are not really a special form of user interface, and they have only a particular range of utility. Wizards are used to perform multi-step tasks.",
+    "fr": "Malgré ce nom merveilleux et fantaisiste, les assistants ne sont pas vraiment une forme spéciale d’interface utilisateur, et ils n’ont qu’une gamme particulière d’utilité. Les Assistants sont utilisés pour effectuer des tâches en plusieurs étapes."
+  },
+  "wiki": {
+    "en": "https://learn.microsoft.com/en/windows/win32/uxguide/win-wizards",
+    "fr": "https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards"
+  },
+  "background": null,
+  "logo": null
+}

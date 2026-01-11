@@ -1,0 +1,28 @@
+{
+  "id": "adapter",
+  "type": "design-pattern",
+  "name": {
+    "full": {
+      "en": "Adapter",
+      "fr": "Adaptateur"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A software design pattern that allows the interface of an existing class to be used as another interface.",
+    "fr": "Un patron de conception logiciel qui permet à l'interface d'une classe existante d'être utilisée comme une autre interface."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Adapter_pattern",
+    "fr": "https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)"
+  },
+  "background": null,
+  "logo": null
+}

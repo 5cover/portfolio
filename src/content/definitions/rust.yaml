@@ -1,0 +1,31 @@
+{
+  "id": "rust",
+  "type": "programming-language",
+  "name": {
+    "full": {
+      "en": "Rust",
+      "fr": "Rust"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "Rust is a general-purpose programming language emphasizing performance, type safety, and concurrency. It enforces memory safety, meaning that all references point to valid memory. It does so without a traditional garbage collector; instead, both memory safety errors and data races are prevented by the \"borrow checker\", which tracks the object lifetime of references at compile time.",
+    "fr": "Langage de programmation système axé sur la sécurité, la prévention des erreurs de segmentation et la concurrence. Il a été développé par Mozilla Research et est conçu pour être un langage de programmation système sûr, concurrent et pratique. Rust vise à fournir une gestion de la mémoire sûre, une concurrence sans course de données, une abstraction de bas niveau et une performance de haut niveau, tout en offrant une syntaxe agréable et des outils de développement modernes."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Rust_(programming_language)",
+    "fr": "https://fr.wikipedia.org/wiki/Rust_(langage)"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/rust/logo.png"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "html",
+  "type": "markup-language",
+  "name": {
+    "full": {
+      "en": "HyperText Markup Language",
+      "fr": "HyperText Markup Language"
+    },
+    "abbr": {
+      "en": "HTML",
+      "fr": "HTML"
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "The standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content.",
+    "fr": "Langage de balisage conçu pour représenter les pages web."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/HTML",
+    "fr": "https://fr.wikipedia.org/wiki/Hypertext_Markup_Language"
+  },
+  "background": "/portfolio/img/definition/html/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/html/logo.svg"
+  }
+}

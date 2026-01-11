@@ -1,0 +1,31 @@
+{
+  "id": "gloomaps",
+  "type": "website",
+  "name": {
+    "full": {
+      "en": "GlooMaps",
+      "fr": "GlooMaps"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A simple online visual sitemap tool.",
+    "fr": "Outil de cartographie de site en ligne simple."
+  },
+  "wiki": {
+    "en": "https://www.gloomaps.com",
+    "fr": "https://www.gloomaps.com"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/gloomaps/logo.png"
+  }
+}

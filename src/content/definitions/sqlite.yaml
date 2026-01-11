@@ -1,0 +1,31 @@
+{
+  "id": "sqlite",
+  "type": "dbms",
+  "name": {
+    "full": {
+      "en": "SQLite",
+      "fr": "SQLite"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A DBMS-independent, cross-platform SQL query tool.",
+    "fr": "Bibliothèque écrite en langage C qui propose un moteur de base de données relationnelle accessible par le langage SQL"
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/SQLite",
+    "fr": "https://fr.wikipedia.org/wiki/SQLite"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/sqlite/logo.svg"
+  }
+}

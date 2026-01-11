@@ -1,0 +1,28 @@
+{
+  "id": "oop",
+  "type": "paradigm",
+  "name": {
+    "full": {
+      "en": "Object-oriented programming",
+      "fr": "Prograammation orientée objet"
+    },
+    "abbr": {
+      "en": "OOP",
+      "fr": "POO"
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A programming paradigm based on the concept of <q>objects</q>, which can contain data and code.",
+    "fr": "Un paradigme de programmation basé sur le concept d'<q>objets</q>, qui peuvent contenir des données et du code."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Object-oriented_programming",
+    "fr": "https://fr.wikipedia.org/wiki/Programmation_orient%C3%A9e_objet"
+  },
+  "background": null,
+  "logo": null
+}

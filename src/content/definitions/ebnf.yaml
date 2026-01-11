@@ -1,0 +1,28 @@
+{
+  "id": "ebnf",
+  "type": "computer-language",
+  "name": {
+    "full": {
+      "en": "Extended Backus-Naur Form",
+      "fr": "Extended Backus-Naur Form"
+    },
+    "abbr": {
+      "en": "EBNF",
+      "fr": "EBNF"
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A <abbr title=\"Backus-Naur Form\">BNF</abbr> extension created by Niklaus Wirth in 1996. This language expresses formal grammars, which are notably used in compiler design.",
+    "fr": "Extension du métalangage <abbr title=\"Backus-Naur Form\">BNF</abbr>, créée par Niklaus Wirth en <time datetime=\"1996\">1996</time>. Ce langage exprime des grammaires formelles afin de notamment concevoir des compilateurs."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form",
+    "fr": "https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form"
+  },
+  "background": null,
+  "logo": null
+}

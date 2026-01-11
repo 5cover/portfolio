@@ -1,0 +1,20 @@
+{
+  "id": "history-2",
+  "title": {
+    "en": "<abbr title=\"Bachelor Universitaire Technologique\">BUT</abbr> Informatique",
+    "fr": "<abbr title=\"Bachelor Universitaire Technologique\">BUT</abbr> Informatique"
+  },
+  "meta": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "media": {
+    "year": 2023,
+    "img": "/portfolio/img/iut-lannion.jpg",
+    "alt": {
+      "en": "L'IUT de Lannion",
+      "fr": "L'IUT de Lannion"
+    }
+  },
+  "order": 2
+}

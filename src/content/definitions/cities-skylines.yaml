@@ -1,0 +1,31 @@
+{
+  "id": "cities-skylines",
+  "type": "game",
+  "name": {
+    "full": {
+      "en": "Cities Skylines",
+      "fr": "Cities: Skylines"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A <time datetime=\"2015\">2015</time> city-building game developed by Colossal Order and published by Paradox Interactive. The game is a single-player open-ended city-building simulation.",
+    "fr": "Jeu de construction de ville développé par Colossal Order et publié par Paradox Interactive en 2015. Le jeu est une simulation de construction de ville ouverte et solo."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Cities:_Skylines",
+    "fr": "https://fr.wikipedia.org/wiki/Cities%3A_Skylines"
+  },
+  "background": "/portfolio/img/definition/cities-skylines/bg.jpg",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/cities-skylines/logo.png"
+  }
+}

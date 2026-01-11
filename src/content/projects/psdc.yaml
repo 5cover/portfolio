@@ -1,0 +1,124 @@
+{
+  "id": "psdc",
+  "title": {
+    "en": "Psdc",
+    "fr": "Psdc"
+  },
+  "abstract": {
+    "en": "Lannion IUT Pseudocode compiler",
+    "fr": "Compilateur pseudocode de l'IUT de Lannion"
+  },
+  "context": {
+    "en": "Personal",
+    "fr": "Personnel"
+  },
+  "startDate": "2023-11-15",
+  "endDate": null,
+  "tags": [
+    "software",
+    "oop",
+    "compiler",
+    "but-realiser",
+    "but-optimiser",
+    "cli"
+  ],
+  "technologies": [
+    "csharp",
+    "ebnf",
+    "vs-code",
+    "markdown"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/psdc"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/psdc"
+      }
+    ]
+  },
+  "references": {
+    "en": [
+      {
+        "caption": "Lexical analysis, Wikipedia",
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Lexical_analysis"
+      },
+      {
+        "caption": "Parsing, Wikipedia",
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Parsing"
+      },
+      {
+        "caption": "Crafting Interpreters, Robert Nystrom",
+        "anchor": "website",
+        "href": "https://craftinginterpreters.com"
+      },
+      {
+        "caption": "Creating a Compiler, Pixeled, YouTube",
+        "anchor": "youtube",
+        "href": "https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs"
+      },
+      {
+        "caption": "Formal grammar, Wikipedia",
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Formal_grammar"
+      }
+    ],
+    "fr": [
+      {
+        "caption": "Analyse lexicale, Wikipédia",
+        "anchor": "wikipedia",
+        "href": "https://fr.wikipedia.org/wiki/Analyse_lexicale"
+      },
+      {
+        "caption": "Analyse syntaxique, Wikipédia",
+        "anchor": "wikipedia",
+        "href": "https://fr.wikipedia.org/wiki/Analyse_syntaxique"
+      },
+      {
+        "caption": "Crafting Interpreters, Robert Nystrom (anglais)",
+        "anchor": "website",
+        "href": "https://craftinginterpreters.com"
+      },
+      {
+        "caption": "Creating a Compiler, Pixeled, sur YouTube (anglais)",
+        "anchor": "youtube",
+        "href": "https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs"
+      },
+      {
+        "caption": "Grammaire formelle, Wikipédia",
+        "anchor": "wikipedia",
+        "href": "https://fr.wikipedia.org/wiki/Grammaire_formelle"
+      }
+    ]
+  },
+  "gallery": {
+    "en": [
+      {
+        "caption": "Poster / Infographic",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/psdc/poster.pdf",
+        "content": null
+      }
+    ],
+    "fr": [
+      {
+        "caption": "Poster / Infographie",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/psdc/poster.pdf",
+        "content": null
+      }
+    ]
+  },
+  "logo": null,
+  "background": "/portfolio/img/projects/psdc/bg.png"
+}

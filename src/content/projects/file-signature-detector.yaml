@@ -1,0 +1,63 @@
+{
+  "id": "file-signature-detector",
+  "title": {
+    "en": "FileSignatureDetector",
+    "fr": "FileSignatureDetector"
+  },
+  "abstract": {
+    "en": "File signature (magic number) detector",
+    "fr": "Détecteur de signature de fichier"
+  },
+  "context": {
+    "en": "NSI High-school",
+    "fr": "NSI Lycée"
+  },
+  "startDate": "2022-04-07",
+  "endDate": "2022-05-08",
+  "tags": [
+    "software"
+  ],
+  "technologies": [
+    "python",
+    "csv"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/FileSignatureDetector"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/FileSignatureDetector"
+      }
+    ]
+  },
+  "references": {
+    "en": [
+      {
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/File_format#Magic_number",
+        "caption": "File format magic number &mdash; Wikipedia"
+      }
+    ],
+    "fr": [
+      {
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/File_format#Magic_number",
+        "caption": "Nombre magique de format de fichier &mdash; Wikipédia (anglais)"
+      }
+    ]
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

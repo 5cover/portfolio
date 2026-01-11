@@ -1,0 +1,28 @@
+{
+  "id": "numpy",
+  "type": "library",
+  "name": {
+    "full": {
+      "en": "NumPy",
+      "fr": "NumPy"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.",
+    "fr": "Bibliothèque pour langage de programmation Python, destinée à manipuler des matrices ou tableaux multidimensionnels ainsi que des fonctions mathématiques opérant sur ces tableaux."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/NumPy",
+    "fr": "https://fr.wikipedia.org/wiki/NumPy"
+  },
+  "background": null,
+  "logo": null
+}

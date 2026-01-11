@@ -1,0 +1,31 @@
+{
+  "id": "dotnet",
+  "type": "library",
+  "name": {
+    "full": {
+      "en": "Microsoft .NET",
+      "fr": "Microsoft .NET"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": ".NET",
+      "fr": ".NET"
+    }
+  },
+  "synopsis": {
+    "en": "A free and open-source, managed computer software framework for Windows, Linux, and macOS operating systems.",
+    "fr": ".NET est une plateforme de développement créée par Microsoft. Elle fournit un ensemble de technologies, de langages de programmation et d'outils pour la création d'applications Windows, web, mobiles et IoT (Internet des objets)."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/.NET",
+    "fr": "https://fr.wikipedia.org/wiki/.NET"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/dotnet/logo.svg"
+  }
+}

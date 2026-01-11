@@ -1,0 +1,65 @@
+{
+  "id": "s2.03",
+  "title": {
+    "en": "Weather website",
+    "fr": "Site de météo"
+  },
+  "abstract": {
+    "en": "Set up a Web server. Setting up network services (S2.03)",
+    "fr": "Mise en place d'un serveur Web. Installation de services réseau (S2.03)"
+  },
+  "context": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "startDate": "2024-05-14",
+  "endDate": "2024-06-05",
+  "tags": [
+    "but-administrer",
+    "but-collaborer",
+    "web",
+    "sysadmin"
+  ],
+  "technologies": [
+    "github",
+    "php",
+    "apache2",
+    "mysql",
+    "bash",
+    "vs-code",
+    "css",
+    "html",
+    "mousepad"
+  ],
+  "team": [
+    "chartier--le-goff-marius",
+    "kervadec-matteo",
+    "toe-paolo"
+  ],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S2.03"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S2.03"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

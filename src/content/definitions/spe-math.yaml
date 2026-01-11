@@ -1,0 +1,28 @@
+{
+  "id": "spe-math",
+  "type": "high-school-specialized-teaching",
+  "name": {
+    "full": {
+      "en": "Mathématiques",
+      "fr": "Mathématiques"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "The specialized teaching of mathematics aims to develop the ability to reason mathematically, to use mathematical language and to use mathematical tools to solve problems.",
+    "fr": "Au lycée général, la spécialité mathématiques consiste en un entraînement à la logique, au raisonnement et à l’esprit critique. Elle repose sur trois axes principaux&nbsp;: algèbre et géométrie, probabilités et statistiques, algorithmes et programmation."
+  },
+  "wiki": {
+    "en": "https://www.letudiant.fr/lycee/specialites-bac-general/article/la-specialite-mathematiques-au-lycee-en-un-clin-d-oeil.html",
+    "fr": "https://www.letudiant.fr/lycee/specialites-bac-general/article/la-specialite-mathematiques-au-lycee-en-un-clin-d-oeil.html"
+  },
+  "background": null,
+  "logo": null
+}

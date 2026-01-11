@@ -1,0 +1,31 @@
+{
+  "id": "uml",
+  "type": "computer-language",
+  "name": {
+    "full": {
+      "en": "Unified Modeling Language",
+      "fr": "Unified Modeling Language"
+    },
+    "abbr": {
+      "en": "UML",
+      "fr": "UML"
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A graphical modeling language used to describe, specify, construct, and document software systems.",
+    "fr": "Langage de modélisation graphique utilisé pour décrire, spécifier, construire et documenter des systèmes logiciels."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Unified_Modeling_Language",
+    "fr": "https://fr.wikipedia.org/wiki/UML_(informatique)"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/uml/logo.svg"
+  }
+}

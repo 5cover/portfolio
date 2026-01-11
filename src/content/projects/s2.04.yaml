@@ -1,0 +1,62 @@
+{
+  "id": "s2.04",
+  "title": {
+    "en": "OSINT and data mining on education",
+    "fr": "Data mining et OSINT sur l'éducation"
+  },
+  "abstract": {
+    "en": "Data mining and OSINT from french middle and high schools. Operating a database (S2.04)",
+    "fr": "Data mining sur l'open-data des collèges et lycées français. Exploitation d'une base de données (S2.04)"
+  },
+  "context": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "startDate": "2024-04-23",
+  "endDate": "2024-06-12",
+  "tags": [
+    "but-gerer",
+    "but-collaborer",
+    "data",
+    "db"
+  ],
+  "technologies": [
+    "replit",
+    "sql",
+    "mysql",
+    "python",
+    "sql-workbench",
+    "pandas",
+    "matplotlib",
+    "numpy"
+  ],
+  "team": [
+    "kervadec-matteo"
+  ],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S2.04"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S2.04"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

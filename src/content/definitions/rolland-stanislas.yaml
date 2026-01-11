@@ -1,0 +1,28 @@
+{
+  "id": "rolland-stanislas",
+  "type": "person",
+  "name": {
+    "full": {
+      "en": "Stanislas Rolland",
+      "fr": "Stanislas Rolland"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "Stanislas Rolland is a BUT computer science student at the IUT of Lannion. Before joining this training, he obtained his baccalaureate with honors with the specialties Mathematics and <abbr title=\"Numérique Sciences Informatiques\">NSI</abbr>.",
+    "fr": "Stanislas Rolland est un étudiant en BUT informatique à l'IUT de Lannion. Avant de rejoindre cette formation, il a obtenu son baccalauréat mention assez bien avec les spécialités Mathématiques et <abbr title=\"Numérique Sciences Informatiques\">NSI</abbr>."
+  },
+  "wiki": {
+    "en": "https://stanislasrolland.github.io/Portfolio/",
+    "fr": "https://stanislasrolland.github.io/Portfolio/"
+  },
+  "background": null,
+  "logo": null
+}

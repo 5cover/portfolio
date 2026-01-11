@@ -1,0 +1,31 @@
+{
+  "id": "mysql",
+  "type": "dbms",
+  "name": {
+    "full": {
+      "en": "MySQL",
+      "fr": "MySQL"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "An open-source relational database management system.",
+    "fr": "Système de gestion de bases de données relationnelles."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/MySQL",
+    "fr": "https://fr.wikipedia.org/wiki/MySQL"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/mysql/logo.svg"
+  }
+}

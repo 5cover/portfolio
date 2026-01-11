@@ -1,0 +1,63 @@
+{
+  "id": "island-maps",
+  "title": {
+    "en": "Island Maps",
+    "fr": "Island Maps"
+  },
+  "abstract": {
+    "en": "Mapping islands from Anno 2070 videogame maps for insight and automation",
+    "fr": "Cartographier les îles du jeu Anno 2070 pour la recherche et l'automatisation"
+  },
+  "context": {
+    "en": "Personal",
+    "fr": "Personnel"
+  },
+  "startDate": "2023-04-27",
+  "endDate": null,
+  "tags": [
+    "idea",
+    "algorithms"
+  ],
+  "technologies": [
+    "anno2070"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "Blog",
+        "anchor": "website",
+        "href": "https://anno2070.fandom.com/wiki/User_blog:Scover32/Anno_2070:_Island_maps"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Blog",
+        "anchor": "website",
+        "href": "https://anno2070.fandom.com/wiki/User_blog:Scover32/Anno_2070:_Island_maps"
+      }
+    ]
+  },
+  "references": {
+    "en": [
+      {
+        "anchor": "wikipedia",
+        "href": "https://en.wikipedia.org/wiki/NP-hardness",
+        "caption": "NP-hardness, Wikipedia"
+      }
+    ],
+    "fr": [
+      {
+        "anchor": "wikipedia",
+        "href": "https://fr.wikipedia.org/wiki/NP-difficile",
+        "caption": "NP-difficile, Wikipédia"
+      }
+    ]
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

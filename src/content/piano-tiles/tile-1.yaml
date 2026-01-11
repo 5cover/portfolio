@@ -1,0 +1,14 @@
+{
+  "id": "tile-1",
+  "title": {
+    "en": "Val d'Isère",
+    "fr": "Val d'Isère"
+  },
+  "summary": {
+    "en": "Ski station in the Alpes",
+    "fr": "Station de ski dans les Alpes"
+  },
+  "backgroundImage": "/portfolio/img/piano-tile/1.jpg",
+  "href": "hobbies.html#mountain",
+  "order": 0
+}

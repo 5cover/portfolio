@@ -1,0 +1,31 @@
+{
+  "id": "lua",
+  "type": "programming-language",
+  "name": {
+    "full": {
+      "en": "Lua",
+      "fr": "Lua"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A lightweight, high-level, multi-paradigm programming language designed primarily for embedded use in applications.",
+    "fr": "Langage de script libre, réflexif et impératif créé en <time datetime=\"1993\">1993</time>."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Lua_(programming_language)",
+    "fr": "https://fr.wikipedia.org/wiki/Lua"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/lua/logo.svg"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "tile-6",
+  "title": {
+    "en": "Formal grammars",
+    "fr": "Grammaires formelles"
+  },
+  "summary": {
+    "en": "Following Noam Chomsky's footsteps…",
+    "fr": "Sur les traces de Noam Chomsky…"
+  },
+  "backgroundImage": "/portfolio/img/piano-tile/6.png",
+  "href": "projects/psdc.html",
+  "order": 5
+}

@@ -1,0 +1,64 @@
+{
+  "id": "s1.02",
+  "title": {
+    "en": "Sudone",
+    "fr": "Sudone"
+  },
+  "abstract": {
+    "en": "Optimized Sudoku grid solver. Comparing algorithmic approaches (S1.02)",
+    "fr": "Solveur de grilles de Sudoku optimisé. Comparaison d'approches algorithmiques (S1.02)"
+  },
+  "context": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "startDate": "2023-11-27",
+  "endDate": "2024-05-20",
+  "tags": [
+    "software",
+    "but-optimiser",
+    "but-collaborer",
+    "algorithms",
+    "cli",
+    "low-level"
+  ],
+  "technologies": [
+    "vs-code",
+    "c",
+    "markdown",
+    "gprof",
+    "gcov",
+    "make",
+    "bash",
+    "python"
+  ],
+  "team": [
+    "kervadec-matteo"
+  ],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/Matteo-K/Sudoku-Solver"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/Matteo-K/Sudoku-Solver"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": "/portfolio/img/projects/s1.02/bg.png"
+}

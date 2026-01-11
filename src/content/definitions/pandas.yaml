@@ -1,0 +1,28 @@
+{
+  "id": "pandas",
+  "type": "library",
+  "name": {
+    "full": {
+      "en": "Pandas",
+      "fr": "Pandas"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "Pandas (styled as pandas) is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series. It is free software released under the three-clause BSD license.",
+    "fr": "Bibliothèque écrite pour le langage de programmation Python permettant la manipulation et l'analyse de données. Elle propose en particulier des structures de données et des opérations de manipulation de tableaux numériques et de séries temporelles."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Pandas_(software)",
+    "fr": "https://fr.wikipedia.org/wiki/Pandas"
+  },
+  "background": null,
+  "logo": null
+}

@@ -1,0 +1,99 @@
+{
+  "id": "winclean",
+  "title": {
+    "en": "WinClean",
+    "fr": "WinClean"
+  },
+  "abstract": {
+    "en": "Windows optimization and debloating utility",
+    "fr": "Application de nettoyage et optimisation Windows"
+  },
+  "context": {
+    "en": "Personal",
+    "fr": "Personnel"
+  },
+  "startDate": "2022-08-15",
+  "endDate": null,
+  "tags": [
+    "full-stack",
+    "oop",
+    "software",
+    "ui",
+    "ux",
+    "but-realiser",
+    "cli"
+  ],
+  "technologies": [
+    "csharp",
+    "github",
+    "inno-setup",
+    "powershell",
+    "visual-studio"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "CommentÇaMarche article (French)",
+        "anchor": "ccm",
+        "href": "https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean"
+      },
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/WinClean"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Article CommentÇaMarche",
+        "anchor": "ccm",
+        "href": "https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean"
+      },
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/WinClean"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [
+      {
+        "caption": "Script execution",
+        "url": "/portfolio/img/projects/winclean/gallery/1.png",
+        "iframeSrc": null,
+        "content": null
+      },
+      {
+        "caption": "Application main window",
+        "url": "/portfolio/img/projects/winclean/gallery/2.png",
+        "iframeSrc": null,
+        "content": null
+      }
+    ],
+    "fr": [
+      {
+        "caption": "Exécution des scripts",
+        "url": "/portfolio/img/projects/winclean/gallery/1.png",
+        "iframeSrc": null,
+        "content": null
+      },
+      {
+        "caption": "Fenêtre principale de l'application",
+        "url": "/portfolio/img/projects/winclean/gallery/2.png",
+        "iframeSrc": null,
+        "content": null
+      }
+    ]
+  },
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/projects/winclean/logo.png"
+  },
+  "background": "/portfolio/img/projects/winclean/bg.png"
+}

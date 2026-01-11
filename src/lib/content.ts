@@ -14,9 +14,189 @@ export type TextualEntry = CollectionEntry<'textual'>;
 export type TypeEntry = CollectionEntry<'types'>;
 
 export type TextualKind = 'history' | 'literature' | 'projects';
+export type Lang = 'en' | 'fr';
+
+export type LocalizedValue<T> = {
+    en: T;
+    fr: T;
+};
+
+export type LocalizedString = LocalizedValue<string>;
+export type LocalizedNullableString = LocalizedValue<string | null>;
+
+export type ProjectData = ProjectEntry['data'];
+export type ProjectLink = ProjectData['links']['en'][number];
+export type ProjectReference = ProjectData['references']['en'][number];
+export type ProjectGalleryItem = ProjectData['gallery']['en'][number];
+
+export type ProjectLocalizedData = Omit<
+    ProjectData,
+    'title' | 'abstract' | 'context' | 'links' | 'references' | 'gallery'
+> & {
+    title: string;
+    abstract: string;
+    context: string | null;
+    links: ProjectLink[];
+    references: ProjectReference[];
+    gallery: ProjectGalleryItem[];
+};
+
+export type LocalizedProjectEntry = Omit<ProjectEntry, 'data'> & {
+    data: ProjectLocalizedData;
+};
+
+export type LiteratureData = LiteratureEntry['data'];
+export type LiteratureLink = LiteratureData['links']['en'][number];
+export type LiteratureReference = LiteratureData['references']['en'][number];
+export type LiteratureGalleryItem = LiteratureData['gallery']['en'][number];
+
+export type LiteratureLocalizedData = Omit<
+    LiteratureData,
+    'title' | 'abstract' | 'links' | 'references' | 'gallery'
+> & {
+    title: string;
+    abstract: string;
+    links: LiteratureLink[];
+    references: LiteratureReference[];
+    gallery: LiteratureGalleryItem[];
+};
+
+export type LocalizedLiteratureEntry = Omit<LiteratureEntry, 'data'> & {
+    data: LiteratureLocalizedData;
+};
+
+export type DefinitionData = DefinitionEntry['data'];
+export type DefinitionLocalizedData = Omit<DefinitionData, 'name' | 'synopsis' | 'wiki'> & {
+    name: {
+        full: string;
+        abbr: string | null;
+        short: string | null;
+    };
+    synopsis: string;
+    wiki: string;
+};
+
+export type LocalizedDefinitionEntry = Omit<DefinitionEntry, 'data'> & {
+    data: DefinitionLocalizedData;
+};
+
+export type TagData = TagEntry['data'];
+export type TagLocalizedData = Omit<TagData, 'title'> & { title: string };
+export type LocalizedTagEntry = Omit<TagEntry, 'data'> & { data: TagLocalizedData };
+
+export type TypeData = TypeEntry['data'];
+export type TypeLocalizedData = Omit<TypeData, 'title'> & { title: string };
+export type LocalizedTypeEntry = Omit<TypeEntry, 'data'> & { data: TypeLocalizedData };
+
+export type HistoryData = HistoryEntry['data'];
+export type HistoryLocalizedData = Omit<HistoryData, 'title' | 'meta' | 'media'> & {
+    title: string;
+    meta: string;
+    media: {
+        year: number;
+        img: string;
+        alt: string;
+    } | null;
+};
+
+export type LocalizedHistoryEntry = Omit<HistoryEntry, 'data'> & {
+    data: HistoryLocalizedData;
+};
+
+export type PianoTileData = PianoTileEntry['data'];
+export type PianoTileLocalizedData = Omit<PianoTileData, 'title' | 'summary'> & {
+    title: string;
+    summary: string;
+};
+
+export type LocalizedPianoTileEntry = Omit<PianoTileEntry, 'data'> & {
+    data: PianoTileLocalizedData;
+};
 
 export function buildTextualId(lang: string, kind: TextualKind, id: string): string {
     return `${lang}/${kind}/${id}`;
+}
+
+function normalizeLang(lang: string): Lang {
+    return lang === 'fr' ? 'fr' : 'en';
+}
+
+function localizeValue<T>(value: LocalizedValue<T>, lang: string): T {
+    const key = normalizeLang(lang);
+    return value[key];
+}
+
+function localizeProjectData(data: ProjectData, lang: string): ProjectLocalizedData {
+    return {
+        ...data,
+        title: localizeValue(data.title, lang),
+        abstract: localizeValue(data.abstract, lang),
+        context: localizeValue(data.context, lang),
+        links: localizeValue(data.links, lang),
+        references: localizeValue(data.references, lang),
+        gallery: localizeValue(data.gallery, lang),
+    };
+}
+
+function localizeLiteratureData(data: LiteratureData, lang: string): LiteratureLocalizedData {
+    return {
+        ...data,
+        title: localizeValue(data.title, lang),
+        abstract: localizeValue(data.abstract, lang),
+        links: localizeValue(data.links, lang),
+        references: localizeValue(data.references, lang),
+        gallery: localizeValue(data.gallery, lang),
+    };
+}
+
+function localizeDefinitionData(data: DefinitionData, lang: string): DefinitionLocalizedData {
+    return {
+        ...data,
+        name: {
+            full: localizeValue(data.name.full, lang),
+            abbr: localizeValue(data.name.abbr, lang),
+            short: localizeValue(data.name.short, lang),
+        },
+        synopsis: localizeValue(data.synopsis, lang),
+        wiki: localizeValue(data.wiki, lang),
+    };
+}
+
+function localizeTagData(data: TagData, lang: string): TagLocalizedData {
+    return {
+        ...data,
+        title: localizeValue(data.title, lang),
+    };
+}
+
+function localizeTypeData(data: TypeData, lang: string): TypeLocalizedData {
+    return {
+        ...data,
+        title: localizeValue(data.title, lang),
+    };
+}
+
+function localizeHistoryData(data: HistoryData, lang: string): HistoryLocalizedData {
+    return {
+        ...data,
+        title: localizeValue(data.title, lang),
+        meta: localizeValue(data.meta, lang),
+        media: data.media
+            ? {
+                  year: data.media.year,
+                  img: data.media.img,
+                  alt: localizeValue(data.media.alt, lang),
+              }
+            : null,
+    };
+}
+
+function localizePianoTileData(data: PianoTileData, lang: string): PianoTileLocalizedData {
+    return {
+        ...data,
+        title: localizeValue(data.title, lang),
+        summary: localizeValue(data.summary, lang),
+    };
 }
 
 export async function getLangs(): Promise<string[]> {
@@ -40,65 +220,93 @@ export async function getContacts(): Promise<ContactEntry[]> {
     return getCollection('contacts');
 }
 
-export async function getProjects(lang: string): Promise<ProjectEntry[]> {
+export async function getProjects(lang: string): Promise<LocalizedProjectEntry[]> {
     const entries = await getCollection('projects');
-    return entries.filter(entry => entry.data.lang === lang);
+    return entries.map((entry) => ({
+        ...entry,
+        data: localizeProjectData(entry.data, lang),
+    }));
 }
 
-export async function getProjectById(lang: string, id: string): Promise<ProjectEntry> {
+export async function getProjectById(lang: string, id: string): Promise<LocalizedProjectEntry> {
     const entries = await getProjects(lang);
-    const match = entries.find(entry => entry.data.id === id);
+    const match = entries.find((entry) => entry.data.id === id);
     if (!match) {
         throw new Error(`Missing project ${id} for ${lang}`);
     }
     return match;
 }
 
-export async function getLiterature(lang: string): Promise<LiteratureEntry[]> {
+export async function getLiterature(lang: string): Promise<LocalizedLiteratureEntry[]> {
     const entries = await getCollection('literature');
-    return entries.filter(entry => entry.data.lang === lang);
+    return entries.map((entry) => ({
+        ...entry,
+        data: localizeLiteratureData(entry.data, lang),
+    }));
 }
 
-export async function getLiteratureById(lang: string, id: string): Promise<LiteratureEntry> {
+export async function getLiteratureById(
+    lang: string,
+    id: string
+): Promise<LocalizedLiteratureEntry> {
     const entries = await getLiterature(lang);
-    const match = entries.find(entry => entry.data.id === id);
+    const match = entries.find((entry) => entry.data.id === id);
     if (!match) {
         throw new Error(`Missing literature ${id} for ${lang}`);
     }
     return match;
 }
 
-export async function getDefinitions(lang: string): Promise<DefinitionEntry[]> {
+export async function getDefinitions(lang: string): Promise<LocalizedDefinitionEntry[]> {
     const entries = await getCollection('definitions');
-    return entries.filter(entry => entry.data.lang === lang);
+    return entries.map((entry) => ({
+        ...entry,
+        data: localizeDefinitionData(entry.data, lang),
+    }));
 }
 
-export async function getDefinition(lang: string, id: string) {
-    const def = await getEntry('definitions', `${lang}/${id}`);
-    if (def === undefined) {
-        throw new Error(`definition of id ${id} does not exist`);
+export async function getDefinition(lang: string, id: string): Promise<DefinitionLocalizedData> {
+    const entry = await getEntry('definitions', id);
+    if (!entry) {
+        throw new Error(`Definition ${id} does not exist`);
     }
-    return def.data;
+    return localizeDefinitionData(entry.data, lang);
 }
 
-export async function getTags(lang: string): Promise<TagEntry[]> {
+export async function getTags(lang: string): Promise<LocalizedTagEntry[]> {
     const entries = await getCollection('tags');
-    return entries.filter(entry => entry.data.lang === lang);
+    return entries.map((entry) => ({
+        ...entry,
+        data: localizeTagData(entry.data, lang),
+    }));
 }
 
-export async function getTypes(lang: string): Promise<TypeEntry[]> {
+export async function getTypes(lang: string): Promise<LocalizedTypeEntry[]> {
     const entries = await getCollection('types');
-    return entries.filter(entry => entry.data.lang === lang);
+    return entries.map((entry) => ({
+        ...entry,
+        data: localizeTypeData(entry.data, lang),
+    }));
 }
 
-export async function getHistory(lang: string): Promise<HistoryEntry[]> {
+export async function getHistory(lang: string): Promise<LocalizedHistoryEntry[]> {
     const entries = await getCollection('history');
-    return entries.filter(entry => entry.data.lang === lang).sort((a, b) => a.data.order - b.data.order);
+    return entries
+        .map((entry) => ({
+            ...entry,
+            data: localizeHistoryData(entry.data, lang),
+        }))
+        .sort((a, b) => a.data.order - b.data.order);
 }
 
-export async function getPianoTiles(lang: string): Promise<PianoTileEntry[]> {
+export async function getPianoTiles(lang: string): Promise<LocalizedPianoTileEntry[]> {
     const entries = await getCollection('piano-tiles');
-    return entries.filter(entry => entry.data.lang === lang).sort((a, b) => a.data.order - b.data.order);
+    return entries
+        .map((entry) => ({
+            ...entry,
+            data: localizePianoTileData(entry.data, lang),
+        }))
+        .sort((a, b) => a.data.order - b.data.order);
 }
 
 export async function getTextualEntry(

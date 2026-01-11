@@ -1,0 +1,64 @@
+{
+  "id": "s1.05",
+  "title": {
+    "en": "Tabas'Kho",
+    "fr": "Tabas'Kho"
+  },
+  "abstract": {
+    "en": "Create a fake streaming website. Collecting needs (S1.05)",
+    "fr": "Créer un site de streaming factice. Recueil des besoins (S1.05)"
+  },
+  "context": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "startDate": "2023-10-09",
+  "endDate": "2024-01-21",
+  "tags": [
+    "but-conduire",
+    "but-collaborer",
+    "communication",
+    "web"
+  ],
+  "technologies": [
+    "gitlab",
+    "html",
+    "css",
+    "javascript",
+    "figma",
+    "gloomaps",
+    "vs-code",
+    "markdown"
+  ],
+  "team": [
+    "chartier--le-goff-marius",
+    "kervadec-matteo",
+    "rolland-stanislas"
+  ],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/Matteo-K/TabasKho"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/Matteo-K/TabasKho"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

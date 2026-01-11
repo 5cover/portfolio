@@ -1,0 +1,28 @@
+{
+  "id": "gcov",
+  "type": "software",
+  "name": {
+    "full": {
+      "en": "Gcov",
+      "fr": "Gcov"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "Gcov is a source code coverage analysis and statement-by-statement profiling tool. Gcov generates exact counts of the number of times each statement in a program is executed and annotates source code to add instrumentation. Gcov comes as a standard utility with the GNU Compiler Collection (GCC) suite.",
+    "fr": "Outil de couverture de code utilisé dans le cadre de la suite de compilation GNU (GCC). Il aide les développeurs à déterminer quelles parties d'un programme ont été exécutées et quelles parties n'ont pas été testées. Cela permet d'évaluer l'efficacité des tests et d'identifier les zones de code qui nécessitent des tests supplémentaires."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Gcov",
+    "fr": "https://en.wikipedia.org/wiki/Gcov"
+  },
+  "background": null,
+  "logo": null
+}

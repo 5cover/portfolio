@@ -1,0 +1,31 @@
+{
+  "id": "pgsql",
+  "type": "dbms",
+  "name": {
+    "full": {
+      "en": "PostgreSQL",
+      "fr": "PostgreSQL"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A free and open-source relational database management system.",
+    "fr": "Système de gestion de base de données relationnelle et objet."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/PostgreSQL",
+    "fr": "https://fr.wikipedia.org/wiki/PostgreSQL"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/pgsql/logo.svg"
+  }
+}

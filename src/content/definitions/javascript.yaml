@@ -1,0 +1,31 @@
+{
+  "id": "javascript",
+  "type": "programming-language",
+  "name": {
+    "full": {
+      "en": "JavaScript",
+      "fr": "JavaScript"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A programming language and core technology of the Web, alongside HTML and CSS.",
+    "fr": "Langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/JavaScript",
+    "fr": "https://fr.wikipedia.org/wiki/JavaScript"
+  },
+  "background": "/portfolio/img/definition/javascript/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/javascript/logo.svg"
+  }
+}

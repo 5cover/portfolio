@@ -1,0 +1,20 @@
+{
+  "id": "history-0",
+  "title": {
+    "en": "High school",
+    "fr": "Lycée"
+  },
+  "meta": {
+    "en": "High school",
+    "fr": "Lycée"
+  },
+  "media": {
+    "year": 2020,
+    "img": "/portfolio/img/bossuet.jpeg",
+    "alt": {
+      "en": "Lycée Saint-Joseph-Bossuet",
+      "fr": "Lycée Saint-Joseph-Bossuet"
+    }
+  },
+  "order": 0
+}

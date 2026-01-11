@@ -1,0 +1,28 @@
+{
+  "id": "tkinter",
+  "type": "library",
+  "name": {
+    "full": {
+      "en": "Tkinter",
+      "fr": "Tkinter"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A Python binding to the Tk GUI toolkit. It is the standard Python interface to the Tk GUI toolkit.",
+    "fr": "La bibliothèque graphique libre d'origine pour le langage Python, permettant la création d'interfaces graphiques."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Tkinter",
+    "fr": "https://fr.wikipedia.org/wiki/Tkinter"
+  },
+  "background": null,
+  "logo": null
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ci-cd",
+  "type": "paradigm",
+  "name": {
+    "full": {
+      "en": "Continuous Integration/Continuous Deployment",
+      "fr": "Intégration continue/Déploiement continu"
+    },
+    "abbr": {
+      "en": "CI/CD",
+      "fr": "CI/CD"
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A software development practice where developers integrate code into a shared repository frequently, and then automatically build and test the software.",
+    "fr": "Une pratique de développement logiciel où les développeurs intègrent du code dans un dépôt partagé fréquemment, puis construisent et testent automatiquement le logiciel."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/CI/CD",
+    "fr": "https://fr.wikipedia.org/wiki/CI/CD"
+  },
+  "background": null,
+  "logo": null
+}

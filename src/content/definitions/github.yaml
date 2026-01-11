@@ -1,0 +1,31 @@
+{
+  "id": "github",
+  "type": "website",
+  "name": {
+    "full": {
+      "en": "GitHub",
+      "fr": "GitHub"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A developer platform that allows developers to create, store, manage and share their code.",
+    "fr": "Service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/GitHub",
+    "fr": "https://fr.wikipedia.org/wiki/GitHub"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/social/github.svg"
+  }
+}

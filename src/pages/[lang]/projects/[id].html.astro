@@ -6,7 +6,7 @@ import Gallery from '../../../components/Gallery.astro';
 import Graphic from '../../../components/Graphic.astro';
 import LinkList from '../../../components/LinkList.astro';
 import ReferenceList from '../../../components/ReferenceList.astro';
-import type { DefinitionEntry } from '../../../lib/content';
+import type { DefinitionLocalizedData } from '../../../lib/content';
 import {
   getAnchors,
   getDefinitions,
@@ -76,7 +76,7 @@ const anchorsById = mapById(anchors);
 const definitionsById = mapById(definitions);
 const typesById = mapById(types);
 
-function isDefinition(value: DefinitionEntry['data'] | undefined): value is DefinitionEntry['data'] {
+function isDefinition(value: DefinitionLocalizedData | undefined): value is DefinitionLocalizedData {
   return Boolean(value);
 }
 

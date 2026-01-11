@@ -1,0 +1,56 @@
+{
+  "id": "s2.05",
+  "title": {
+    "en": "Le Patio box office application project management",
+    "fr": "Gestion du projet d'application Billeterie Le Patio"
+  },
+  "abstract": {
+    "en": "Traditional (Waterfall) management for the Patio box office application. Managing a project (S2.05)",
+    "fr": "Gestion de projet traditionelle (Waterfall) pour l'application de billeterie Le Patio. Gestion d'un projet (S2.05)"
+  },
+  "context": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "startDate": "2024-05-15",
+  "endDate": "2024-06-17",
+  "tags": [
+    "but-conduire",
+    "but-collaborer",
+    "communication"
+  ],
+  "technologies": [
+    "github"
+  ],
+  "team": [
+    "chartier--le-goff-marius",
+    "kervadec-matteo",
+    "toe-paolo"
+  ],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S2.05"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S2.05"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

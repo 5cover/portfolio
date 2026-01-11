@@ -1,0 +1,28 @@
+{
+  "id": "nsi",
+  "type": "high-school-specialized-teaching",
+  "name": {
+    "full": {
+      "en": "Numériques Sciences Informatiques",
+      "fr": "Numériques Sciences Informatiques"
+    },
+    "abbr": {
+      "en": "NSI",
+      "fr": "NSI"
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "This high school specialized teaching is about the basics of programming and algorithms. It explores the fundamental concepts of computer science, such as data structures, networks, and operating systems. It also aims to develop a digital culture and an understanding of the ethical and social issues related to computer science.",
+    "fr": "Cette spécialité au lycée enseigne les bases de la programmation et de l'algorithmique, tout en explorant les concepts fondamentaux de l'informatique, tels que les structures de données, les réseaux et les systèmes d'exploitation. Elle vise également à développer une culture numérique et une compréhension des enjeux éthiques et sociétaux liés à l'informatique."
+  },
+  "wiki": {
+    "en": "https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448",
+    "fr": "https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"
+  },
+  "background": "/portfolio/img/definition/nsi/bg.webp",
+  "logo": null
+}

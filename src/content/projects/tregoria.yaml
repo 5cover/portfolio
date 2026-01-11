@@ -1,0 +1,72 @@
+{
+  "id": "tregoria",
+  "title": {
+    "en": "Trégoria",
+    "fr": "Trégoria"
+  },
+  "abstract": {
+    "en": "A look back at our environment in Cities: Skylines",
+    "fr": "Un recul sur notre environnement dans Cities: Skylines"
+  },
+  "context": {
+    "en": "Personal",
+    "fr": "Personnel"
+  },
+  "startDate": "2022-10-15",
+  "endDate": null,
+  "tags": [
+    "art"
+  ],
+  "technologies": [
+    "cities-skylines"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "Instagram post",
+        "anchor": "instagram",
+        "href": "https://www.instagram.com/p/CjxQUO3LryP"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Publication Instagram",
+        "anchor": "instagram",
+        "href": "https://www.instagram.com/p/CjxQUO3LryP"
+      }
+    ]
+  },
+  "references": {
+    "en": [
+      {
+        "caption": "Cities Skylines: Bordertown, Two Dollars Twenty, YouTube",
+        "anchor": "youtube",
+        "href": "https://youtube.com/playlist?list=PL0vu9rx9cHrUoRedRsFzX367j3DlE_dTk"
+      },
+      {
+        "caption": "Cities Skylines: MARS, Citywokcitywall, YouTube",
+        "anchor": "youtube",
+        "href": "https://youtube.com/playlist?list=PLkBlOw_hzgdfL6Gqw0l9P1TYKn_WIgrd-"
+      }
+    ],
+    "fr": [
+      {
+        "caption": "Cities Skylines: Bordertown, Two Dollars Twenty, sur YouTube (anglais)",
+        "anchor": "youtube",
+        "href": "https://youtube.com/playlist?list=PL0vu9rx9cHrUoRedRsFzX367j3DlE_dTk"
+      },
+      {
+        "caption": "Cities Skylines: MARS, Citywokcitywall, sur YouTube (anglais)",
+        "anchor": "youtube",
+        "href": "https://youtube.com/playlist?list=PLkBlOw_hzgdfL6Gqw0l9P1TYKn_WIgrd-"
+      }
+    ]
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

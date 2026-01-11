@@ -1,0 +1,56 @@
+{
+  "id": "ethercrash",
+  "title": {
+    "en": "Ethercrash",
+    "fr": "Ethercrash"
+  },
+  "abstract": {
+    "en": "Stats and data mining on Ethercrash game logs",
+    "fr": "Statistiques et data mining des parties sur Ethercrash"
+  },
+  "context": {
+    "en": "Personal",
+    "fr": "Personnel"
+  },
+  "startDate": "2023-05-24",
+  "endDate": "2023-06-29",
+  "tags": [
+    "data",
+    "cli"
+  ],
+  "technologies": [
+    "python",
+    "numpy",
+    "c",
+    "csharp",
+    "matplotlib",
+    "csv"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/ethercrash"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/ethercrash"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

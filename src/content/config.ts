@@ -5,6 +5,22 @@ const graphicSchema = z.object({
   isThemedSvg: z.boolean(),
 });
 
+const localizedString = z.object({
+  en: z.string(),
+  fr: z.string(),
+});
+
+const localizedNullableString = z.object({
+  en: z.string().nullable(),
+  fr: z.string().nullable(),
+});
+
+const localizedArray = <T extends z.ZodTypeAny>(schema: T) =>
+  z.object({
+    en: z.array(schema),
+    fr: z.array(schema),
+  });
+
 const linkSchema = z.object({
   label: z.string(),
   anchor: z.string(),
@@ -28,18 +44,17 @@ const projectCollection = defineCollection({
   type: 'data',
   schema: z.object({
     id: z.string(),
-    lang: z.string(),
-    title: z.string(),
-    abstract: z.string(),
-    context: z.string().nullable(),
+    title: localizedString,
+    abstract: localizedString,
+    context: localizedNullableString,
     startDate: z.string().nullable(),
     endDate: z.string().nullable(),
     tags: z.array(z.string()),
     technologies: z.array(z.string()),
     team: z.array(z.string()),
-    links: z.array(linkSchema),
-    references: z.array(referenceSchema),
-    gallery: z.array(galleryItemSchema),
+    links: localizedArray(linkSchema),
+    references: localizedArray(referenceSchema),
+    gallery: localizedArray(galleryItemSchema),
     logo: graphicSchema.nullable(),
     background: z.string().nullable(),
   }),
@@ -49,13 +64,12 @@ const literatureCollection = defineCollection({
   type: 'data',
   schema: z.object({
     id: z.string(),
-    lang: z.string(),
     kind: z.enum(['passion', 'blog', 'story']),
-    title: z.string(),
-    abstract: z.string(),
-    links: z.array(linkSchema),
-    references: z.array(referenceSchema),
-    gallery: z.array(galleryItemSchema),
+    title: localizedString,
+    abstract: localizedString,
+    links: localizedArray(linkSchema),
+    references: localizedArray(referenceSchema),
+    gallery: localizedArray(galleryItemSchema),
     logo: graphicSchema.nullable(),
     background: z.string().nullable(),
     tags: z.array(z.string()),
@@ -66,15 +80,14 @@ const definitionCollection = defineCollection({
   type: 'data',
   schema: z.object({
     id: z.string(),
-    lang: z.string(),
     type: z.string(),
     name: z.object({
-      full: z.string(),
-      abbr: z.string().optional(),
-      short: z.string().optional(),
+      full: localizedString,
+      abbr: localizedNullableString,
+      short: localizedNullableString,
     }),
-    synopsis: z.string(),
-    wiki: z.string(),
+    synopsis: localizedString,
+    wiki: localizedString,
     background: z.string().nullable(),
     logo: graphicSchema.nullable(),
   }),
@@ -84,8 +97,7 @@ const tagCollection = defineCollection({
   type: 'data',
   schema: z.object({
     id: z.string(),
-    lang: z.string(),
-    title: z.string(),
+    title: localizedString,
   }),
 });
 
@@ -93,8 +105,7 @@ const typeCollection = defineCollection({
   type: 'data',
   schema: z.object({
     id: z.string(),
-    lang: z.string(),
-    title: z.string(),
+    title: localizedString,
   }),
 });
 
@@ -111,14 +122,13 @@ const historyCollection = defineCollection({
   type: 'data',
   schema: z.object({
     id: z.string(),
-    lang: z.string(),
-    title: z.string(),
-    meta: z.string(),
+    title: localizedString,
+    meta: localizedString,
     media: z
       .object({
         year: z.number(),
         img: z.string(),
-        alt: z.string(),
+        alt: localizedString,
       })
       .nullable(),
     order: z.number(),
@@ -129,9 +139,8 @@ const pianoTileCollection = defineCollection({
   type: 'data',
   schema: z.object({
     id: z.string(),
-    lang: z.string(),
-    title: z.string(),
-    summary: z.string(),
+    title: localizedString,
+    summary: localizedString,
     backgroundImage: z.string(),
     href: z.string(),
     order: z.number(),

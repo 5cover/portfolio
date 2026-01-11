@@ -1,0 +1,31 @@
+{
+  "id": "visual-studio",
+  "type": "software",
+  "name": {
+    "full": {
+      "en": "Microsoft Visual Studio",
+      "fr": "Microsoft Visual Studio"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": "Visual Studio",
+      "fr": "Visual Studio"
+    }
+  },
+  "synopsis": {
+    "en": "An <abbr title=\"Integrated Development Environment\">IDE</abbr> developed by Microsoft. It is used to develop computer programs.",
+    "fr": "Suite de logiciels de développement pour Windows et mac OS conçue par Microsoft."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Visual_Studio",
+    "fr": "https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/visual-studio/logo.svg"
+  }
+}

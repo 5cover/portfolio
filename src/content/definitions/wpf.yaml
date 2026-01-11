@@ -1,0 +1,31 @@
+{
+  "id": "wpf",
+  "type": "library",
+  "name": {
+    "full": {
+      "en": "Windows Presentation Foundation",
+      "fr": "Windows Presentation Foundation"
+    },
+    "abbr": {
+      "en": "WPF",
+      "fr": "WPF"
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A free and open-source user interface framework for Windows-based desktop applications.",
+    "fr": "Système de création d'interfaces utilisateur graphiques pour les applications Windows. Il fait partie de la plateforme .NET de Microsoft et a été introduit pour la première fois en <time datetime=\"2006\">2006</time>."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Windows_Presentation_Foundation",
+    "fr": "https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation"
+  },
+  "background": "/portfolio/img/definition/wpf/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/wpf/logo.png"
+  }
+}

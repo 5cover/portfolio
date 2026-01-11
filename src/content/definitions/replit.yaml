@@ -1,0 +1,31 @@
+{
+  "id": "replit",
+  "type": "website",
+  "name": {
+    "full": {
+      "en": "Replit",
+      "fr": "Replit"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "An American start-up and an online <abbr title=\"Integrated Development Environment\">IDE</abbr> that allows creating online programming projects called <em>repls</em>.",
+    "fr": "Start-up américaine et un <abbr title=\"Environnement de Développement Intégré\">IDE</abbr> en ligne, qui permet de créer des projets de programmation en ligne appelés <em>repls</em>."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Replit",
+    "fr": "https://en.wikipedia.org/wiki/Replit"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/replit/logo.svg"
+  }
+}

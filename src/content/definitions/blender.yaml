@@ -1,0 +1,31 @@
+{
+  "id": "blender",
+  "type": "software",
+  "name": {
+    "full": {
+      "en": "Blender",
+      "fr": "Blender"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "Blender is a free and open-source 3D computer graphics software tool set.",
+    "fr": "Logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Blender_(software)",
+    "fr": "https://fr.wikipedia.org/wiki/Blender"
+  },
+  "background": "/portfolio/img/definition/blender/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/blender/logo.svg"
+  }
+}

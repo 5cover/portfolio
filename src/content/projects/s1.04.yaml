@@ -1,0 +1,57 @@
+{
+  "id": "s1.04",
+  "title": {
+    "en": "Creating a database",
+    "fr": "Création d'une base de données"
+  },
+  "abstract": {
+    "en": "Design and implement a database. Creating a database (S1.04)",
+    "fr": "Concevoir et implémenter une base de données. Création d'une base de données (S1.04)"
+  },
+  "context": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "startDate": "2023-11-27",
+  "endDate": "2024-01-22",
+  "tags": [
+    "but-gerer",
+    "but-collaborer",
+    "db"
+  ],
+  "technologies": [
+    "sql",
+    "sql-workbench",
+    "pgsql",
+    "markdown"
+  ],
+  "team": [
+    "chartier--le-goff-marius"
+  ],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S1.04"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S1.04"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

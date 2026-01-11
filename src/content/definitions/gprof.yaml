@@ -1,0 +1,28 @@
+{
+  "id": "gprof",
+  "type": "software",
+  "name": {
+    "full": {
+      "en": "Gprof",
+      "fr": "Gprof"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "Gprof is a performance analysis tool for Unix applications. It used a hybrid of instrumentation and sampling and was created as an extended version of the older \"prof\" tool. Unlike prof, gprof is capable of limited call graph collecting and printing.",
+    "fr": "Outil de profilage de code utilisé dans le cadre de la suite de compilation GNU (GCC). Il permet aux développeurs d'analyser les performances d'un programme en mesurant le temps d'exécution de chaque fonction et en identifiant les goulots d'étranglement."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Gprof",
+    "fr": "https://fr.wikipedia.org/wiki/Gprof"
+  },
+  "background": null,
+  "logo": null
+}

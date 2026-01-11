@@ -1,0 +1,31 @@
+{
+  "id": "inno-setup",
+  "type": "software",
+  "name": {
+    "full": {
+      "en": "Inno Setup",
+      "fr": "Inno Setup"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A free software script-driven installation system created in Delphi by Jordan Russell. The first version was released in 1997.",
+    "fr": "Logiciel libre permettant de créer des installateurs pour Windows."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Inno_Setup",
+    "fr": "https://fr.wikipedia.org/wiki/Inno_Setup"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/inno-setup/logo.png"
+  }
+}

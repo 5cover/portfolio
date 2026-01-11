@@ -3,7 +3,11 @@ import Graphic from './Graphic.astro';
 import LinkList from './LinkList.astro';
 import { detailHref, pageHref } from '../lib/routes';
 import { formatDate } from '../lib/date';
-import type { AnchorEntry, ProjectEntry, TagEntry } from '../lib/content';
+import type {
+  AnchorEntry,
+  LocalizedProjectEntry,
+  LocalizedTagEntry,
+} from '../lib/content';
 
 function capitalize(value: string): string {
   return value.length > 0 ? value[0].toUpperCase() + value.slice(1) : value;
@@ -19,8 +23,8 @@ type Props = {
     ongoing: string;
     fmtTitle: string;
   };
-  project: ProjectEntry['data'];
-  tagsById: Record<string, TagEntry['data']>;
+  project: LocalizedProjectEntry['data'];
+  tagsById: Record<string, LocalizedTagEntry['data']>;
   anchorsById: Record<string, AnchorEntry['data']>;
   headingLevel?: number;
 };

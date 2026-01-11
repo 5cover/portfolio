@@ -1,0 +1,31 @@
+{
+  "id": "industrialcraft-2",
+  "type": "game-mod",
+  "name": {
+    "full": {
+      "en": "IndustrialCraft²",
+      "fr": "IndustrialCraft²"
+    },
+    "abbr": {
+      "en": "IC²",
+      "fr": "IC²"
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "Minecraft videogame mod that focuses on adding new industrial and technological features to the game. This mod was created by developer Alblaka.",
+    "fr": "Mod pour le jeu vidéo Minecraft qui se concentre sur l'ajout de nouvelles fonctionnalités industrielles et technologiques au jeu. Ce mod a été créé par le développeur Alblaka."
+  },
+  "wiki": {
+    "en": "https://wiki.industrial-craft.net/index.php?title=Main_Page",
+    "fr": "https://wiki.industrial-craft.net/index.php?title=Main_Page"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/industrialcraft-2/logo.png"
+  }
+}

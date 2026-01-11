@@ -1,0 +1,31 @@
+{
+  "id": "pascal",
+  "type": "programming-language",
+  "name": {
+    "full": {
+      "en": "Pascal",
+      "fr": "Pascal"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "An imperative and procedural programming language, designed by Niklaus Wirth as a small, efficient language intended to encourage good programming practices using structured programming and data structuring.",
+    "fr": "Langage de programmation impératif conçu pour l'enseignement."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/Pascal_(programming_language)",
+    "fr": "https://fr.wikipedia.org/wiki/Pascal_(langage)"
+  },
+  "background": "/portfolio/img/definition/pascal/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/pascal/logo.svg"
+  }
+}

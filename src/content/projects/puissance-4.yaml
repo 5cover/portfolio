@@ -1,0 +1,53 @@
+{
+  "id": "puissance-4",
+  "title": {
+    "en": "Puissance 4",
+    "fr": "Puissance 4"
+  },
+  "abstract": {
+    "en": "Command-line Connect 4 game",
+    "fr": "Jeu de Puissance 4 en ligne de commande"
+  },
+  "context": {
+    "en": "NSI High-school",
+    "fr": "NSI Lycée"
+  },
+  "startDate": "2021-11-15",
+  "endDate": "2021-12-05",
+  "tags": [
+    "game",
+    "high-level",
+    "cli"
+  ],
+  "technologies": [
+    "python",
+    "spyder"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/Puissance-4"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/Puissance-4"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

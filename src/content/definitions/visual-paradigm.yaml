@@ -1,0 +1,31 @@
+{
+  "id": "visual-paradigm",
+  "type": "software",
+  "name": {
+    "full": {
+      "en": "Visual Paradigm",
+      "fr": "Visual Paradigm"
+    },
+    "abbr": {
+      "en": null,
+      "fr": null
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A versatile software development tool that provides a range of features to support different aspects of software development life cycle (SDLC). It's primarily known for its UML (Unified Modeling Language) modeling tools, which help developers, architects, and analysts to visualize, specify, construct, and document software systems.",
+    "fr": "Logiciel de conception et de modélisation de systèmes d'information. Il offre une plateforme de développement logiciel intégrée qui prend en charge les langages de modélisation UML (Unified Modeling Language), BPMN (Business Process Model and Notation), SysML, et bien d'autres."
+  },
+  "wiki": {
+    "en": "https://www.visual-paradigm.com/",
+    "fr": "https://www.visual-paradigm.com/"
+  },
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/visual-paradigm/logo.png"
+  }
+}

@@ -1,6 +1,6 @@
 ---
 import LiteratureCard from './LiteratureCard.astro';
-import type { AnchorEntry, LiteratureEntry } from '../lib/content';
+import type { AnchorEntry, LocalizedLiteratureEntry } from '../lib/content';
 
 type Props = {
   lang: string;
@@ -8,7 +8,7 @@ type Props = {
   langLabels: {
     fmtTitle: string;
   };
-  entries: LiteratureEntry[];
+  entries: LocalizedLiteratureEntry[];
   anchorsById: Record<string, AnchorEntry['data']>;
   headingLevel?: number;
 };

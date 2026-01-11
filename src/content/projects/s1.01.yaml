@@ -1,0 +1,130 @@
+{
+  "id": "s1.01",
+  "title": {
+    "en": "C Sudoku game",
+    "fr": "Jeu de Sudoku en C"
+  },
+  "abstract": {
+    "en": "Command-line Sudoku game. Implementing a client's needs (S1.01)",
+    "fr": "Jeu de Sudoku en ligne de commande. Implémentation d'un besoin client (S1.01)"
+  },
+  "context": {
+    "en": "BUT",
+    "fr": "BUT"
+  },
+  "startDate": "2023-10-16",
+  "endDate": "2023-11-27",
+  "tags": [
+    "software",
+    "but-realiser",
+    "algorithms",
+    "cli",
+    "low-level"
+  ],
+  "technologies": [
+    "vs-code",
+    "c",
+    "doxygen"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S1.01"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/S1.01"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [
+      {
+        "caption": "Pseudocode algorithm",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/s1.01/algorithme-pseudocode.html",
+        "content": null
+      },
+      {
+        "caption": "Test book (extract)",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/s1.01/cahier-de-tests.html",
+        "content": null
+      },
+      {
+        "caption": "Function list (extract)",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/s1.01/liste-de-fonctions.html",
+        "content": null
+      },
+      {
+        "caption": "Model (extract)",
+        "url": "/portfolio/img/projects/s1.01/maquette.png",
+        "iframeSrc": null,
+        "content": null
+      },
+      {
+        "caption": "Final program (extract)",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/s1.01/programme-final.html",
+        "content": null
+      },
+      {
+        "caption": "Tests (extract)",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/s1.01/tests.html",
+        "content": null
+      }
+    ],
+    "fr": [
+      {
+        "caption": "Algorithme en pseudocode",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/s1.01/algorithme-pseudocode.html",
+        "content": null
+      },
+      {
+        "caption": "Cahier de tests (extrait)",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/s1.01/cahier-de-tests.html",
+        "content": null
+      },
+      {
+        "caption": "Liste de fonctions (extrait)",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/s1.01/liste-de-fonctions.html",
+        "content": null
+      },
+      {
+        "caption": "Maquette (extrait)",
+        "url": "/portfolio/img/projects/s1.01/maquette.png",
+        "iframeSrc": null,
+        "content": null
+      },
+      {
+        "caption": "Programme final (extrait)",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/s1.01/programme-final.html",
+        "content": null
+      },
+      {
+        "caption": "Tests (extrait)",
+        "url": null,
+        "iframeSrc": "/portfolio/img/projects/s1.01/tests.html",
+        "content": null
+      }
+    ]
+  },
+  "logo": null,
+  "background": "/portfolio/img/projects/s1.01/bg.png"
+}

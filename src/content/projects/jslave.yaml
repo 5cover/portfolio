@@ -1,0 +1,66 @@
+{
+  "id": "jslave",
+  "title": {
+    "en": "JSlave",
+    "fr": "JSlave"
+  },
+  "abstract": {
+    "en": "\nFormal language for <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/Java_(programming_language)\" data-definition-id=\"java\" class=\"link definition-tooltip-trigger\">Java</a> metaprogramming and boilerplate elimination",
+    "fr": "\nLanguage formel de métaprogrammation <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/Java_(langage)\" data-definition-id=\"java\" class=\"link definition-tooltip-trigger\">Java</a>"
+  },
+  "context": {
+    "en": "Personal",
+    "fr": "Personnel"
+  },
+  "startDate": "2024-05-30",
+  "endDate": null,
+  "tags": [
+    "low-level",
+    "cli",
+    "software"
+  ],
+  "technologies": [
+    "vs-code",
+    "ebnf",
+    "zig"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "GitHub repository",
+        "anchor": "github",
+        "href": "https://github.com/5cover/jslave"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Dépôt GitHub",
+        "anchor": "github",
+        "href": "https://github.com/5cover/jslave"
+      }
+    ]
+  },
+  "references": {
+    "en": [
+      {
+        "anchor": "website",
+        "href": "https://mermaid.js.org/syntax/classDiagram.html",
+        "caption": "Mermaid.js &mdash; Class diagram syntax"
+      }
+    ],
+    "fr": [
+      {
+        "anchor": "website",
+        "href": "https://mermaid.js.org/syntax/classDiagram.html",
+        "caption": "Mermaid.js &mdash; syntaxe des diagrammes de classes (anglais)"
+      }
+    ]
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

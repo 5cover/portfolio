@@ -2,7 +2,7 @@
 import Graphic from './Graphic.astro';
 import LinkList from './LinkList.astro';
 import { detailHref } from '../lib/routes';
-import type { AnchorEntry, LiteratureEntry } from '../lib/content';
+import type { AnchorEntry, LocalizedLiteratureEntry } from '../lib/content';
 
 function formatTitle(fmt: string, title: string): string {
   return fmt.replace('%s', title);
@@ -14,7 +14,7 @@ type Props = {
   langLabels: {
     fmtTitle: string;
   };
-  entry: LiteratureEntry['data'];
+  entry: LocalizedLiteratureEntry['data'];
   anchorsById: Record<string, AnchorEntry['data']>;
   headingLevel?: number;
 };

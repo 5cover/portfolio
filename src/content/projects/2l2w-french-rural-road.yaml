@@ -1,0 +1,52 @@
+{
+  "id": "2l2w-french-rural-road",
+  "title": {
+    "en": "2L2W French Rural Road",
+    "fr": "2L2W French Rural Road"
+  },
+  "abstract": {
+    "en": "Up to code French road asset",
+    "fr": "Assset de route française standardisée"
+  },
+  "context": {
+    "en": "Personal",
+    "fr": "Personnel"
+  },
+  "startDate": "2021-06-15",
+  "endDate": "2022-10-02",
+  "tags": [
+    "3d-modeling",
+    "asset-creation"
+  ],
+  "technologies": [
+    "blender",
+    "cities-skylines"
+  ],
+  "team": [],
+  "links": {
+    "en": [
+      {
+        "label": "Steam Workshop article",
+        "anchor": "steam",
+        "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993"
+      }
+    ],
+    "fr": [
+      {
+        "label": "Article Steam Workshop",
+        "anchor": "steam",
+        "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993"
+      }
+    ]
+  },
+  "references": {
+    "en": [],
+    "fr": []
+  },
+  "gallery": {
+    "en": [],
+    "fr": []
+  },
+  "logo": null,
+  "background": null
+}

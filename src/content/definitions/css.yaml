@@ -1,0 +1,31 @@
+{
+  "id": "css",
+  "type": "computer-language",
+  "name": {
+    "full": {
+      "en": "Cascading Style Sheets",
+      "fr": "Cascading Style Sheets"
+    },
+    "abbr": {
+      "en": "CSS",
+      "fr": "CSS"
+    },
+    "short": {
+      "en": null,
+      "fr": null
+    }
+  },
+  "synopsis": {
+    "en": "A style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML.",
+    "fr": "Les feuilles de style en cascade forment un langage informatique qui décrit la présentation des documents HTML et XML."
+  },
+  "wiki": {
+    "en": "https://en.wikipedia.org/wiki/CSS",
+    "fr": "https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade"
+  },
+  "background": "/portfolio/img/definition/css/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/css/logo.svg"
+  }
+}

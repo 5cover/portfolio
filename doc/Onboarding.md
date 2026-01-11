@@ -82,16 +82,18 @@ Dynamic routes:
 
 Astro content collections live in `src/content` and are defined in
 `src/content/config.ts`. This repo uses `type: 'data'` collections where each
-entry is a JSON object stored in a `.yaml` file.
+entry is a JSON object stored in a `.yaml` file. For most collections, there is
+one file per infonode (no per-language duplication) and localized strings are
+stored as `{ en: "...", fr: "..." }`.
 
 Important collections:
 
-- `projects`: project cards + detail content.
-- `literature`: blog and hobby entries (kind: `blog` or `passion`).
-- `definitions`: glossary terms used in tooltips and tech lists.
-- `tags`: tag metadata for filtering.
-- `types`: definition categories.
-- `history`: timeline entries.
+- `projects`: project cards + detail content (localized fields inline).
+- `literature`: blog and hobby entries (kind: `blog` or `passion`, localized fields inline).
+- `definitions`: glossary terms used in tooltips and tech lists (localized fields inline).
+- `tags`: tag metadata for filtering (localized fields inline).
+- `types`: definition categories (localized fields inline).
+- `history`: timeline entries (localized fields inline, body in MDX).
 - `textual`: MDX bodies for projects, literature, and history.
 - `piano-tiles`: home page tiles.
 - `contacts`, `anchors`, `lang`, `meta` (supporting data).
@@ -214,16 +216,17 @@ Output:
 
 Add a project:
 
-1. Create a new entry in `src/content/projects/<lang>/<id>.yaml`.
-2. Ensure required fields match `src/content/config.ts`.
+1. Create a new entry in `src/content/projects/<id>.yaml`.
+2. Fill localized fields as `{ en: \"...\", fr: \"...\" }`.
 3. Add the body in `src/content/textual/<lang>/projects/<id>.mdx`.
 4. Add images to `public/img/projects/<id>/`.
 
 Add a blog or hobby entry:
 
-1. Add a file in `src/content/literature/<lang>/<id>.yaml`.
+1. Add a file in `src/content/literature/<id>.yaml`.
 2. Set `kind` to `blog` or `passion`.
-3. Add the body in `src/content/textual/<lang>/literature/<id>.mdx`.
+3. Fill localized fields as `{ en: \"...\", fr: \"...\" }`.
+4. Add the body in `src/content/textual/<lang>/literature/<id>.mdx`.
 
 Add a definition:
 
