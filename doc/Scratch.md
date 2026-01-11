@@ -17,3 +17,7 @@
 ## Install linters and stuff
 
 stylelint, eslint etc
+
+## PSC syntax highlighting
+
+Noan Perrot did one
