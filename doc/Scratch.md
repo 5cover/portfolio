@@ -13,3 +13,7 @@
 ## Standardized MDX content. Currently markup is everwyhere. Image components
 
 ## Follow Astro audit recommendations in every page
+
+## Install linters and stuff
+
+stylelint, eslint etc

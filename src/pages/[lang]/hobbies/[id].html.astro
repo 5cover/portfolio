@@ -7,7 +7,6 @@ import LinkList from '../../../components/LinkList.astro';
 import ReferenceList from '../../../components/ReferenceList.astro';
 import {
   getAnchors,
-  getDefinitions,
   getLangData,
   getLangs,
   getLiterature,
@@ -37,12 +36,11 @@ if (!lang || !id) {
   throw new Error('Missing route params');
 }
 
-const [langData, langs, literature, anchors, definitions] = await Promise.all([
+const [langData, langs, literature, anchors] = await Promise.all([
   getLangData(lang),
   getLangs(),
   getLiterature(lang),
   getAnchors(),
-  getDefinitions(lang),
 ]);
 
 const entry = literature.find((item) => item.data.id === id && item.data.kind === 'passion');
@@ -60,7 +58,6 @@ const langMap = Object.fromEntries(
 );
 const languages = buildLanguages(langs, langMap);
 const anchorsById = mapById(anchors);
-const definitionsById = mapById(definitions);
 
 const hobby = entry.data;
 const backgroundStyle = hobby.background
