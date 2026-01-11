@@ -233,13 +233,6 @@ const langCollection = defineCollection({
     team: z.string(),
     technologies: z.string(),
     indexAboutMeContent: z.string(),
-    history: z.array(
-      z.object({
-        title: z.string(),
-        meta: z.string(),
-        body: z.string(),
-      })
-    ),
     names: z.record(z.string()),
   }),
 });

@@ -73,7 +73,7 @@
         color-scheme: light;
         $step: -8%;
         $fg: #111;
-        $bg0: #fafafa;
+        $bg0: #fff;
         @include theme($step, $accent, $accent-fg, $fg, $bg0);
     }
 

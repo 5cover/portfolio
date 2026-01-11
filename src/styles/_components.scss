@@ -278,7 +278,7 @@
 .definition {
     @include util.basic-border(1px);
     @include util.hover-card;
-    @include util.transparent-background-image(--bg-img-card, var(--color-lvl), .15);
+    @include util.transparent-background-image(--bg-img-card, var(--color-lvl), .075);
     $space: .75em;
     background-color: var(--color-lvl);
     border-radius: $space;

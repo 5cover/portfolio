@@ -146,6 +146,35 @@ Example:
 See <Ref id="1" /> for sources.
 ```
 
+## Linking and References in Textual Content
+
+There are three ways to reference external pages from MDX. Use the one that matches intent.
+
+1) **Definitions (`<Def>`)**  
+Use when the term is in the glossary and you want the hover tooltip card.
+
+```mdx
+<Def id="zig">Zig</Def> is a systems language.
+```
+
+2) **External links (`<Link>`)**  
+Use for normal outbound links that should open in a new tab without adding a citation in the references list.
+
+```mdx
+See the <Link href="https://ziglang.org" external>official website</Link>.
+```
+
+3) **References (`<Ref>`)**  
+Use for formal citations that should appear in the references list at the bottom of the page.
+The `[N]` marker is rendered inline and links to the matching item in the references list.
+
+```mdx
+This claim is documented in the spec<Ref id="1" />.
+```
+
+When you use `<Ref id="1" />`, ensure the corresponding item exists in the page references list
+for that infonode (the YAML `references` array). The list item renders the icon, full title, and backlink.
+
 ## Styling
 
 Styles are SCSS and track the V1 styles:

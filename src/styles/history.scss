@@ -87,7 +87,8 @@ img {
 
 .js-ag-active .ag-timeline-card_point {
     color: var(--color-lvl);
-    background-color: var(--color-accentext);
+    background-color: var(--color-accent);
+    font-weight: bold;
 }
 
 .ag-timeline-card_meta-box {

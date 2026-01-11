@@ -91,28 +91,6 @@
   "team": "Team",
   "technologies": "Technologies",
   "indexAboutMeContent": "\n<p>Hello, my name is <strong>Raphaël Bardini</strong>. I'm an 18 y/o computer science student in second year of <abbr title=\"Bachelor of Technology\">BUT</abbr> Informatique, at the <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://iut-lannion.univ-rennes.fr/\"><abbr title=\"University Technological Institute\">IUT</abbr> of Lannion</a></a>.</p>\n<p>In 2023, I passed my baccalaureate with the specialties <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.lyceeschoelcher972.fr/specialite-llcer-amc/\" data-definition-id=\"amc\" class=\"link definition-tooltip-trigger\">AMC</a> et <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448\" data-definition-id=\"nsi\" class=\"link definition-tooltip-trigger\">NSI</a>.</p>\n<p>The main source of fulfilment in my life is <strong>software development</strong>. In addition, I commit <em>(pun intented)</em> to the <strong>open-source</strong> community. And I can't deny that I'm a big lover of <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://youtube.com/playlist?list=PL1weKnP9ENMdJbMr338lNOMSF487f8nGm\">jazz music</a>. Join me in this adventure&nbsp;! &#9749;</p>",
-  "history": [
-    {
-      "title": "High school",
-      "meta": "High school",
-      "body": "\nI attended <a class=\"link\" href=\"/portfolio/en/https://www.saintjosephlannion.fr/\">Lycée Saint-Joseph-Bossuet</a> in Lannion. I followed the general stream. In the first year, I followed the specializations <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.letudiant.fr/lycee/specialites-bac-general/article/la-specialite-mathematiques-au-lycee-en-un-clin-d-oeil.html\" data-definition-id=\"spe-math\" class=\"link definition-tooltip-trigger\">Mathématiques</a>, <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448\" data-definition-id=\"nsi\" class=\"link definition-tooltip-trigger\">NSI</a> and <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.lyceeschoelcher972.fr/specialite-llcer-amc/\" data-definition-id=\"amc\" class=\"link definition-tooltip-trigger\">AMC</a>. In the final year, I decided to abandon mathematics in favor of my two other specializations. In passed my baccalaureate with honors."
-    },
-    {
-      "title": "Cambridge First Certificate",
-      "meta": "Cambridge",
-      "body": "I was able to pass this English certification in the context of my AMC specialty. There was an oral and written test. Passing this test allowed me to certify my level in English (C1)."
-    },
-    {
-      "title": "<abbr title=\"Bachelor Universitaire Technologique\">BUT</abbr> Informatique",
-      "meta": "BUT",
-      "body": "After the Bac, I was accepted into the BUT Computer Science program via Parcoursup. <a class=\"link\" href=\"but-informatique.html\">More details on the <abbr title=\"Bachelor Universitaire Technologique\">BUT</abbr> Computer Science and the <abbr title=\"Institut Universitaire Technologique\">IUT</abbr> of Lannion</a>"
-    },
-    {
-      "title": "Tro Breizh",
-      "meta": "Tro Breizh",
-      "body": "In August 2024, I participated in the <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://tro.bzh/\">Tro Breizh</a>, an organized hike around Brittany, which follows the historical route of the 7 saints. This year, there were about 500 participants. I also helped as a volunteer setting up the lunch tents and serving meals."
-    }
-  ],
   "names": {
     "en": "English",
     "fr": "Anglais"
