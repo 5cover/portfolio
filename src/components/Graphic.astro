@@ -1,0 +1,65 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+type Props = {
+  url: string;
+  isThemedSvg?: boolean;
+  alt?: string;
+  title?: string;
+  class?: string;
+};
+
+const props: Props = Astro.props;
+const { url, isThemedSvg = false, alt = '', title, class: className } = props;
+
+function resolvePublicPath(src: string): string | null {
+  if (!src.startsWith('/')) {
+    return null;
+  }
+  const trimmed = src.startsWith('/portfolio/') ? src.slice('/portfolio/'.length) : src.slice(1);
+  return join(process.cwd(), 'public', trimmed);
+}
+
+function decorateSvg(markup: string, cssClass?: string, label?: string): string {
+  const match = markup.match(/<svg\\b[^>]*>/);
+  if (!match) {
+    return markup;
+  }
+
+  let tag = match[0];
+  if (cssClass) {
+    if (tag.includes('class=')) {
+      tag = tag.replace(/class=\"([^\"]*)\"/, (_full, existing) => {
+        return `class=\"${existing} ${cssClass}\"`;
+      });
+    } else {
+      tag = tag.replace('<svg', `<svg class=\"${cssClass}\"`);
+    }
+  }
+
+  if (label && !tag.includes('aria-label=')) {
+    tag = tag.replace('<svg', `<svg aria-label=\"${label}\" role=\"img\"`);
+  }
+
+  return markup.replace(match[0], tag);
+}
+
+let svgMarkup: string | null = null;
+if (isThemedSvg && url.endsWith('.svg')) {
+  const svgPath = resolvePublicPath(url);
+  if (svgPath) {
+    try {
+      const raw = readFileSync(svgPath, 'utf8');
+      svgMarkup = decorateSvg(raw, className, title ?? alt);
+    } catch {
+      svgMarkup = null;
+    }
+  }
+}
+---
+{svgMarkup ? (
+  <Fragment set:html={svgMarkup} />
+) : (
+  <img src={url} alt={alt} title={title} class={className} loading="lazy" />
+)}

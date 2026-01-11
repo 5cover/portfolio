@@ -1,0 +1,15 @@
+{
+  "id": "sql-workbench",
+  "lang": "fr",
+  "type": "software",
+  "name": {
+    "full": "SQL Workbench/J"
+  },
+  "synopsis": "Outil de requête SQL multiplateforme indépendant du SGBD.",
+  "wiki": "https://www.sql-workbench.eu/",
+  "background": "/portfolio/img/definition/sql-workbench/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/sql-workbench/logo.jpg"
+  }
+}

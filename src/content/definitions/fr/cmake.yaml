@@ -1,0 +1,16 @@
+{
+  "id": "cmake",
+  "lang": "fr",
+  "type": "software",
+  "name": {
+    "abbr": "CMake",
+    "full": "Cross-platform Make"
+  },
+  "synopsis": "Logiciel open-source de génération de fichiers de build pour des projets logiciels. Il a été créé en <time datetime=\"2000\">2000</time> par Kitware et est maintenant développé et maintenu par une communauté active de développeurs.",
+  "wiki": "https://fr.wikipedia.org/wiki/CMake",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/cmake/logo.svg"
+  }
+}

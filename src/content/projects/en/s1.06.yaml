@@ -1,0 +1,33 @@
+{
+  "id": "s1.06",
+  "lang": "en",
+  "title": "Focus Entertainment analysis",
+  "abstract": "Analysis of Focus Entertainment's <abbr title=\"Corporate Social Responsibility\">CSR</abbr> report Economic environment (S1.06)",
+  "story": "<p>This project consists of organizing a mock team building event to promote team cohesion in a company. In groups of 4, we produced a short promotional film for this event.</p>",
+  "context": "BUT",
+  "startDate": "2023-09-08",
+  "endDate": "2023-06-11",
+  "tags": [
+    "but-collaborer"
+  ],
+  "technologies": [
+    "github",
+    "markdown"
+  ],
+  "team": [
+    "chartier--le-goff-marius",
+    "kervadec-matteo",
+    "toe-paolo"
+  ],
+  "links": [
+    {
+      "label": "GitHub project",
+      "anchor": "github",
+      "href": "https://github.com/users/5cover/projects/3"
+    }
+  ],
+  "references": [],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

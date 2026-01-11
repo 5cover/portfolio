@@ -1,0 +1,15 @@
+{
+  "id": "python",
+  "lang": "en",
+  "type": "programming-language",
+  "name": {
+    "full": "Python"
+  },
+  "synopsis": "A high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.",
+  "wiki": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+  "background": "/portfolio/img/definition/python/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/python/logo.svg"
+  }
+}

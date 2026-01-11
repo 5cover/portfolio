@@ -1,0 +1,12 @@
+{
+  "id": "tkinter",
+  "lang": "fr",
+  "type": "library",
+  "name": {
+    "full": "Tkinter"
+  },
+  "synopsis": "La bibliothèque graphique libre d'origine pour le langage Python, permettant la création d'interfaces graphiques.",
+  "wiki": "https://fr.wikipedia.org/wiki/Tkinter",
+  "background": null,
+  "logo": null
+}

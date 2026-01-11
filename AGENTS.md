@@ -34,8 +34,3 @@ Build a clean, performant, accessible, semantic portfolio site in Astro. The sit
 ## When blocked
 
 If requirements are ambiguous, contradictory, or missing: STOP. Explain the issue and propose options. Do not guess.
-
-## Output requirements per sprint
-
-- Implement only the sprint scope.
-- Provide a short summary of changes and a checklist of acceptance criteria status.

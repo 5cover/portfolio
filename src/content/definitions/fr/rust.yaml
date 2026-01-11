@@ -1,0 +1,15 @@
+{
+  "id": "rust",
+  "lang": "fr",
+  "type": "programming-language",
+  "name": {
+    "full": "Rust"
+  },
+  "synopsis": "Langage de programmation système axé sur la sécurité, la prévention des erreurs de segmentation et la concurrence. Il a été développé par Mozilla Research et est conçu pour être un langage de programmation système sûr, concurrent et pratique. Rust vise à fournir une gestion de la mémoire sûre, une concurrence sans course de données, une abstraction de bas niveau et une performance de haut niveau, tout en offrant une syntaxe agréable et des outils de développement modernes.",
+  "wiki": "https://fr.wikipedia.org/wiki/Rust_(langage)",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/rust/logo.png"
+  }
+}

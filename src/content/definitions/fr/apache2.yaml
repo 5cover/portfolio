@@ -1,0 +1,16 @@
+{
+  "id": "apache2",
+  "lang": "fr",
+  "type": "software",
+  "name": {
+    "full": "Apache HTTP Server",
+    "short": "Apache"
+  },
+  "synopsis": "Serveur HTTP créé et maintenu au sein de la fondation Apache.",
+  "wiki": "https://fr.wikipedia.org/wiki/Apache_HTTP_Server",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/apache2/logo.svg"
+  }
+}

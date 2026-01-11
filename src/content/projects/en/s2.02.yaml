@@ -1,0 +1,39 @@
+{
+  "id": "s2.02",
+  "lang": "en",
+  "title": "N-queens problem",
+  "abstract": "Innovative solutions to the <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"/portfolio/img/projects/s2.02/sujet-sae.pdf\">N-queens problem</a>. Algorithmically exploring a problem (S2.02)",
+  "story": "\n<p>The goal of this project is to solve a problem using graph theory. The problem we have chosen is the <var>N</var>-queens problem. We need to place <var>N</var>-queens on a chessboard of <var>N</var> &times; <var>N</var> squares.</p>",
+  "context": "BUT",
+  "startDate": "2024-03-11",
+  "endDate": "2024-03-27",
+  "tags": [
+    "but-optimiser",
+    "but-collaborer",
+    "high-level",
+    "algorithms"
+  ],
+  "technologies": [
+    "python",
+    "github",
+    "json",
+    "markdown",
+    "mermaid"
+  ],
+  "team": [
+    "chartier--le-goff-marius",
+    "kervadec-matteo",
+    "toe-paolo"
+  ],
+  "links": [
+    {
+      "label": "GitHub repository",
+      "anchor": "github",
+      "href": "https://github.com/5cover/N-queens-problem"
+    }
+  ],
+  "references": [],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

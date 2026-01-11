@@ -1,0 +1,19 @@
+@use "sass:selector";
+/* Emulates infinity. */
+$huge-val: calc(infinity * 1px);
+/* Hover state selector  */
+$hover: selector.parse(":is(:hover, :focus-within, :focus)");
+/* Graphic element selector */
+$graphic: selector.parse(":is(img, svg)");
+/* Golden ratio */
+$phi: 1.61803398875;
+/* Horizontal margin of an element whose width spans over the entire viewport */
+$full-width-horizontal-margin: min(2.5%, 2.5lh);
+/* Vertical margin of an element whose width spans over the entire viewport */
+$full-width-vertical-margin: 2.5lh;
+/* Maximum length of a line of text */
+$max-line-length: 60ch;
+/* Paragraph vertical margin */
+$p-margin: calc(1ex / 0.32);
+/* Heading margin */
+$heading-margin: 1lh;

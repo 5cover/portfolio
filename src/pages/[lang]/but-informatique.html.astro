@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCardList from '../../components/ProjectCardList.astro';
+import {
+  getAnchors,
+  getLangData,
+  getLangs,
+  getProjects,
+  getTags,
+  mapById,
+} from '../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
+
+import '../../styles/but-informatique.scss';
+
+const SKILL_TAGS = [
+  'but-realiser',
+  'but-optimiser',
+  'but-administrer',
+  'but-gerer',
+  'but-conduire',
+  'but-collaborer',
+];
+const MAX_PROJECTS_PER_SKILL = 4;
+
+export async function getStaticPaths() {
+  const langs = await getLangs();
+  return langs.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+if (!lang) {
+  throw new Error('Missing lang param');
+}
+
+const [langData, langs, projects, tags, anchors] = await Promise.all([
+  getLangData(lang),
+  getLangs(),
+  getProjects(lang),
+  getTags(lang),
+  getAnchors(),
+]);
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langMap = Object.fromEntries(
+  await Promise.all(langs.map(async (code) => [code, await getLangData(code)]))
+);
+const languages = buildLanguages(langs, langMap);
+const tagsById = mapById(tags);
+const anchorsById = mapById(anchors);
+
+function projectsForSkill(skillTag: string) {
+  return projects
+    .filter((project) => project.data.tags.includes(skillTag))
+    .slice(0, MAX_PROJECTS_PER_SKILL);
+}
+---
+<BaseLayout
+  lang={lang}
+  pageName="but-informatique"
+  navItems={navItems}
+  languages={languages}
+  themeLabels={themeLabels}
+  siteDescription={langData.siteDescription}
+  githubTitle={langData.footerGitHubAnchorTitle}
+>
+  <main class="margined">
+    <div id="titre">
+      <h1 set:html={langData.but.h1}></h1>
+      <img
+        src="/portfolio/img/but.webp"
+        alt={langData.but['but-logo-alt']}
+        width="95"
+        height="96"
+        loading="lazy"
+        title={langData.but['but-logo-alt']}
+      />
+    </div>
+    <article id="presentation" set:html={langData.but.description}></article>
+    <a
+      class="lvl button-link"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf"
+    >
+      {langData.but['link-text-syllabus']}
+    </a>
+    <section id="competences">
+      <h2>{langData.but['h2-skills']}</h2>
+      <p set:html={langData.but['skills-abstract']}></p>
+      <ul class="lvl">
+        {langData.but.skills.map((skill, index) => (
+          <li style={`--bg-img: url(/portfolio/img/skill/${index + 1}.jpg)`}>
+            <h3>
+              {langData.but['fmt-h3-skill'].replace('%d', String(index + 1)).replace('%s', skill.name)}
+            </h3>
+            <p set:html={skill.desc}></p>
+            <ProjectCardList
+              lang={lang}
+              langLabels={{ ongoing: langData.ongoing, fmtTitle: langData.fmtTitle }}
+              projects={projectsForSkill(SKILL_TAGS[index] ?? '')}
+              tagsById={tagsById}
+              anchorsById={anchorsById}
+              headingLevel={4}
+            />
+          </li>
+        ))}
+      </ul>
+    </section>
+    <div class="lvl">
+      <article id="resultat-pour-moi">
+        <h2>{langData.but['h2-result']}</h2>
+        <article>
+          <h3>{langData.but['h3-why']}</h3>
+          <Fragment set:html={langData.but.why}></Fragment>
+        </article>
+        <article>
+          <h3>{langData.but['h3-assessment']}</h3>
+          <Fragment set:html={langData.but.assessment}></Fragment>
+        </article>
+        <p set:html={langData.but.conclusion}></p>
+      </article>
+      <figure class="figure">
+        <img
+          src="/portfolio/img/iut-lannion.jpg"
+          alt={langData.but['iut-alt']}
+          width="1200"
+          height="630"
+          loading="lazy"
+          title={langData.but['iut-alt']}
+        />
+        <figcaption set:html={langData.but['iut-caption']}></figcaption>
+      </figure>
+    </div>
+  </main>
+</BaseLayout>

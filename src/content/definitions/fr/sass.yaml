@@ -1,0 +1,16 @@
+{
+  "id": "sass",
+  "lang": "fr",
+  "type": "computer-language",
+  "name": {
+    "abbr": "SASS",
+    "full": "Syntactically Awesome Style Sheets"
+  },
+  "synopsis": "Langage de script préprocesseur qui est compilé ou interprété en CSS.",
+  "wiki": "https://fr.wikipedia.org/wiki/Sass_(langage)",
+  "background": "/portfolio/img/definition/sass/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/sass/logo.svg"
+  }
+}

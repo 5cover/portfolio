@@ -1,375 +1,169 @@
-# Master Plan: Portfolio v2 (Astro, infonodes, Yggdrasil)
+# MASTER PROMPT — V1 CLEAN REFACTOR (ASTRO + INFONODES)
 
-## 0. Scope and non-goals
+You are refactoring an existing PHP-based static site (V1) into a modern Astro + TypeScript codebase.
 
-### Core goal
+This is **not a redesign**.
+This is **not an exploration project**.
+This is a **faithful refactor** whose primary goal is to replicate V1 behavior and appearance as closely as possible, while introducing a cleaner architecture.
 
-Build a clean, performant, accessible, semantic portfolio site that is “contentful” and narrative-driven, centered on a directed graph of **infonodes** (Yggdrasil).
+The result must feel like “the same site, rebuilt sanely”.
 
-### Non-goals (explicit)
+## Primary objective
 
-- No backend, no database, no runtime server requirements (static deploy friendly).
-- No “design system rebuild” or brand-new look. Preserve V1 look and behavior as closely as practical.  
-- No generating real content data (only generate examples/placeholders so I can author content later).
-- Optional features are optional; do not force them into the architecture unless they are immediately beneficial.
+Reimplement the V1 site using:
 
-## 1. Hard invariants (laws)
+- Astro
+- strict TypeScript
+- content collections
+- a clean “infonode” data model
 
-### 1.1 Infonode graph model
+**All visible features, behaviors, layouts, and interactions from V1 must be preserved unless explicitly stated otherwise.**
 
-- The graph is **directed**. Talk about edges as `A --> B`, with B a successor of A and A a predecessor of B.
-- Every infonode has:
+## Authoritative references (read these first)
 
-  - a string type (e.g. `Project`, `History`, `Page`)
-  - a role: `content` or `layout`
-  - a visibility: `public` or `private`
-  - a `successors` iterable/list (outgoing links), derived from “relationship properties” and/or explicit successor lists.
-- `layout` infonodes **may not be successors** (no edges should target them). They exist as programmed arrangement nodes.
-- `public` infonodes appear in Yggdrasil and global search; `private` infonodes do not.
-- Each infonode can render itself:
+Treat the following as source-of-truth documentation:
 
-  - as a **Card** (always available) and optionally
-  - as a **Detail** `<main>` (may not exist for some types).
+1. `doc/V1.md`
+   Factual audit of the existing PHP site: layout, typography, colors, components, interactions, quirks.
 
-### 1.2 Property-authored relationships
+2. `doc/Content.md`
+   Defines the infonode concept, directed graph semantics, roles, visibility, Card vs Detail rendering.
 
-- Authoring should be intuitive in YAML: special relationships like `mainMedia`, `gallery`, `image`, `backgroundImage` are stored as properties.
-- The infonode’s `successors` iterable must include those referenced infonodes so the Yggdrasil renderer can traverse the complete graph without knowing per-type property names.
+3. `doc/Pages.md`
+   Lists pages and their content/behavior. Implement only pages that were in the V1.
 
-### 1.3 Textual content
+4. `doc/Display.md`
+   UI and interaction invariants (hover behavior, accent usage, reduced motion rules, link behavior).
 
-- “Textual” is semantic rich text that can include emphasis, images/figures, and definition tooltips; effectively HTML, but without styling baked in.
-- Textual is localized (FR/EN initially) and may be implemented with MDX.
+5. The original V1 PHP codebase: `doc/v1/`
+   Use it only to clarify ambiguities. If the code contradicts `V1.md`, signal it to the user and trust the code.
 
-### 1.4 Display invariants
+## Core architectural change (the only one)
 
-These must hold everywhere (unless `prefers-reduced-motion` prevents it):
+The **only intentional architectural change** is **how data is represented and loaded**.
 
-- Cards/pages can have background images rendered with reduced opacity.
-- Clickable “anchor-like UI elements” grow on hover and gain an accent background (accent = interactivity signal), except:
+### Old
 
-  - basic hypertext links (normal underlined hover behavior)
-  - users with reduced motion preferences.
-- Abbreviations use `<abbr>`.
-- `target="_blank"` is reserved to hypertext links (no styled button-links), and show an “arrow glyph” and underline on hover.
-- Preserve V1 style: colors, sizes, fonts, layout.
+- JSON files
+- PHP templates
+- ad-hoc data access
 
-### 1.5 V1 style fidelity targets
+### New
 
-From V1 audit, preserve at minimum:
+- Astro content collections
+- Infonodes (typed, directed, build-time)
+- Strict TypeScript types everywhere
 
-- Font stack: `Ubuntu, system-ui`
-- Base font size: `:root { font-size: 1.1em; }`
-- Accent: `#a66144` (and its fg `#ffffff`)
-- Theme model with `data-theme` and `color-scheme`
-- Level backgrounds with `.lvl` style and progressive shading
-- Breakpoints around 570px / 700px and timeline breakpoints (approximate matching is OK, behavior must be comparable).
-- Core component interaction behaviors (hover states, accent background usage).  
+Everything else should behave the same.
 
-## 2. Site surface: pages and routes
+## Infonode model (mandatory)
 
-Implement the following pages (navbar order matters):
+- Every piece of information is an **infonode**.
+- Infonodes are **typed**, **directed**, and **build-time only**.
+- Each infonode has:
 
-1. Home
-2. Projects
-3. Blog
-4. Hobbies
-5. History
-6. Yggdrasil
-7. Search
-   Plus:
+  - `id`
+  - `type` (string)
+  - `role` (`content` or `layout`)
+  - `visibility` (`public` or `private`)
+  - a `successors` iterable (outgoing links)
+- Relationships may be authored as intuitive properties (e.g. `image`, `gallery`, `backgroundImage`) but **must be projected into `successors`** so the graph is complete.
+- Cards always exist; Detail views exist only where V1 had pages.
 
-- BUT Informatique page (not necessarily in navbar unless you want it there; spec requires it exist).
+Do **not** invent new infonode types beyond those required to replicate V1.
 
-## 3. Architecture strategy (Codex may choose within these boundaries)
+Consider that the Infonode system was designed by an user who doesn't know how Astro work. You may run slight adaptations to adapt it to the Astro content model, but preserve the original invariants.
 
-### 3.1 Astro usage
+## Strict TypeScript requirements (non-negotiable)
 
-- Use Astro + TypeScript.
-- Prefer static generation and build-time content loading.
-- Use “islands” only when interactivity is needed (filters, Yggdrasil pan/zoom, tooltips).
+- Enable `strict: true`.
+- **No `any`.**
+- **No `as` casts** unless absolutely unavoidable and documented.
+- Prefer explicit interfaces and discriminated unions.
+- Content collection schemas must be strongly typed.
+- Fail the build on invalid content.
 
-### 3.2 Content storage
+If a type problem arises:
 
-- Source infonode data from YAML + MDX (and media files), decoupled from generation logic.
-- Localized content is grouped per language (FR/EN).
-- Do not auto-generate real content; only create minimal example infonodes to demonstrate wiring.
+- fix the model
+- do not silence the compiler
 
-### 3.3 Rendering layering
+## Styling and behavior fidelity
 
-- Infonode model layer: types, loading, validation, linking.
-- Rendering layer:
+The site must visually and behaviorally match V1:
 
-  - Card renderer per infonode type (consistent card shell)
-  - Detail renderer per infonode type (consistent detail shell)
-  - Shared layout components (Header, Footer, Page shells)
-- Pages are “views/aggregates” and should reuse CardList rendering from infonodes when possible.
+From `doc/V1.md` and `doc/Display.md`, preserve at minimum:
 
-### 3.4 Interactivity
+- Font stack (`Ubuntu, system-ui`)
+- Base font size (`1.1em`)
+- Accent color `#a66144`
+- Light/dark theme mechanism
+- `.lvl` layered backgrounds
+- Hover scaling behavior for interactive elements
+- Reduced-motion handling
+- Hypertext vs button-like link distinction
+- Background images and opacity behavior
+- Breakpoints and general responsive behavior
 
-- Minimal JS, progressive enhancement.
-- Respect `prefers-reduced-motion` for hover scaling and animations.
+You may modernize CSS structure, but **not visual outcomes**.
 
-## 4. Implementation phases (single plan, phased execution)
+## Pages to implement (no more, no less)
 
-Codex can execute this as one run, but must treat each phase as a checkpoint with its own acceptance tests.
+Implement exactly the pages defined in `doc/Pages.md`, including:
 
-### Phase 1: Skeleton + V1 design tokens
+- Home
+- Projects
+- Blog
+- Hobbies
+- History
+- BUT Informatique
 
-Deliverables:
+Each page must:
 
-- Global layout with header/footer structure consistent with V1.
-- CSS variables and base typography matching V1.
-- Theme switch framework (light/dark) with room for future themes.  
+- replicate V1 layout and behavior
+- be built as an aggregate of infonodes
+- reuse Card rendering where applicable
 
-Acceptance tests:
+## Feature scope limits
 
-- The site renders with `Ubuntu, system-ui` and base size 1.1em.
-- Light and dark themes exist; switching updates `data-theme` and `color-scheme`.
-- Accent color is `#a66144` and is used to signal interactivity.
-- `.lvl` background layering exists and nested `.lvl` scopes visibly step brightness similar to V1.
-- Hover scaling:
+### Explicitly allowed
 
-  - works on clickable “button-like” anchors
-  - is disabled under `prefers-reduced-motion`.  
-- Hypertext links:
+- Cleaning up layout code
+- Clear infonode types and abstractions designed intentionally
+- SOLID principles
+- Improving accessibility where it does not change behavior
+- Simplifying logic while preserving output
+- Replacing PHP helpers with Astro/TS equivalents
 
-  - underline on hover
-  - use accent color
-  - `target="_blank"` links show arrow glyph and remain “hypertexty,” not buttony.  
-- Header contains navbar links (placeholders ok) and theme/language controls (can be minimal at first).
+### Explicitly forbidden
 
-### Phase 2: Infonode core model + loaders
+- New features not present in V1
+- Yggdrasil graph visualization (unless V1 already had it)
+- Global search (unless V1 already had it)
+- Design reinterpretation
+- Rewriting content or inventing data
 
-Deliverables:
+This is a **refactor**, not a platform.
 
-- Typed infonode model with role/visibility/type, `successors`, Card/Detail render hooks.
-- Load infonodes from YAML (and MDX where relevant).
-- Validation: detect missing referenced ids, invalid types, etc.
-- Localization: ability to build/render for FR and EN.
+## Execution strategy
 
-Acceptance tests:
+You may internally plan the work in phases, but you must:
 
-- All infonodes have role+visibility; role is either `content` or `layout`.
-- `layout` nodes cannot appear as a successor target (validator catches this).
-- `public` vs `private` affects whether a node appears in global search/Yggdrasil index.
-- Successor projection:
+- implement incrementally
+- keep changes focused
+- avoid sweeping rewrites that obscure intent
 
-  - for an infonode with relationship properties (e.g. `image`, `backgroundImage`, `mainMedia`, `gallery`), those referenced nodes appear in `successors`.
-- Build fails fast and clearly on:
+After completing the implementation, provide:
 
-  - missing referenced ids
-  - duplicate ids
-  - invalid YAML schema.
+1. A summary of what was reimplemented
+2. A list of V1 features covered
+3. Any V1 behaviors that could not be replicated exactly (with reasons)
 
-### Phase 3: Core content types (v1 minimal but complete)
+If you encounter ambiguity or missing information that affects correctness:
 
-Implement the type set described in `docs/Content.md`, at minimum:
+- STOP.
+- explain the issue
+- propose 2–3 reasonable options
+- wait for direction
 
-- `Project` (public, detail)
-- `Literature` (public, detail; kind: blog/passion/story; chapters)
-- `History` (public, detail; nesting supported conceptually)
-- `Definition` (public, card/tooltip; no detail)
-- `Image` (private, no detail; modal on click in contexts that want it)
-- `Document` (public, card; opens viewer in new tab)
-- `Connector` (private)
-- `Tag` (private)
-- `PianoTile` (private)
-- Layout types: `Page`, `Header`, `Footer` (as programmed layout infonodes).
-
-Acceptance tests:
-
-- Each type has a Card renderer.
-- Types with detail rendering (`Project`, `Literature`, `History`, `Page`) provide a detail `<main>` that is semantically structured (headings, sections).
-- `Definition` cards render synopsis and (optionally) an external “trusted wiki” connector rendered at bottom if present.
-- `Image` usage:
-
-  - `<img>` has `alt`
-  - optional caption appears in `<figcaption>`
-  - click opens modal (where used as a figure).
-- `Document` usage:
-
-  - PDF card opens a viewer in a new tab
-  - video card renders video with controls.
-- `Connector` cards are never treated as “pages,” they’re external links.
-
-### Phase 4: Routing and detail pages
-
-Deliverables:
-
-- Route scheme for detail pages (slug/id based) for infonodes with detail rendering.
-- “See in Yggdrasil” link on every detail page, opening Yggdrasil with the node selected.
-
-Acceptance tests:
-
-- Clicking a Card for a detail-capable infonode navigates to its detail page.
-- Cards for infonodes without detail are not “fake clickable” (no dead links).
-- Every detail page contains a working “See in Yggdrasil” link that:
-
-  - navigates to `/yggdrasil?selected=<id>` (or equivalent)
-  - highlights the node.
-
-### Phase 5: Implement pages per `docs/Pages.md`
-
-Deliverables:
-
-- All required pages exist and match their content requirements.
-
-Acceptance tests per page:
-
-Home (navbar)
-
-- Shows, top to bottom:
-
-  1. Piano tiles
-  2. Definition of yourself (intro + picture)
-  3. List of underway projects
-  4. “All projects” linkbutton
-  5. Contact card
-- Piano tiles match V1 feel: image tiles with caption overlay on hover and hover scaling (respect reduced motion).  
-
-Projects (navbar)
-
-- Renders list of `Project` cards.
-- Filter UI:
-
-  - by project title text
-  - by tags
-  - by technology Definitions.
-- Filtering is incremental and fast (no full page reload required).
-- Filter UI is accessible:
-
-  - keyboard usable
-  - clear focus states.
-
-Blog (navbar)
-
-- Lists `Literature` of kind `blog` (and potentially `story/passion` if you decide, but spec separates hobbies).
-- Filter by title, kind/type, tags.
-- Hobbies are not mixed into Blog results.
-
-Hobbies (navbar)
-
-- Lists hobby articles (implementation choice: either `Literature(kind=passion/story)` tagged as hobby, or a distinct filter; must match your semantics).
-- Content is presentationally similar to Blog but clearly separated by intent.
-
-History (navbar)
-
-- Timeline view of root history items (items not linked to by another history item), newest at top.
-- Nested histories:
-
-  - larger histories contain smaller ones
-  - still appear on the same timeline (no separate sub-timelines).
-
-Yggdrasil (navbar)
-
-- Graph rendering of all `public` infonodes as clickable cards; supports pan and zoom.
-- Edges are displayed.
-- Statistics displayed:
-
-  - total number of infonodes
-  - number by type.
-- Optional but desirable:
-
-  - filter by infonode type
-  - search bar that hides non-matching nodes.
-
-Search (navbar)
-
-- Global search across Yggdrasil (public infonodes only).
-- Supports keyword and tags.
-- Displays results as cards.
-- Updates incrementally as you type (debounced, accessible).
-
-BUT Informatique
-
-- Reproduce the V1 BUT page behavior and structure (accordion + grouping toggle).
-- Projects are tagged per BUT year: `BUT1`, `BUT2`, `BUT3`.
-- Accordion structure supports:
-
-  - Year grouping: year → competence → project cards
-  - Competence grouping: competence → year → project cards
-- A switch button toggles grouping mode.
-- Accordion is keyboard accessible and supports reduced-motion.
-
-### Phase 6: Textual (MDX) embedding features
-
-Deliverables:
-
-- MDX pipeline for Textual.
-- Components to embed:
-
-  - Definition tooltip triggers
-  - Media figures
-  - Maybe connectors/citations, if required by your content.  
-
-Acceptance tests:
-
-- Textual content renders with page typography (no inline styling required).
-- Definition tooltip behavior exists (can be implemented without reproducing every V1 timing quirk, but must be usable and accessible). V1 shows/hides with delays, stacked z-index behavior.
-- Definition tooltip does not break layout on small screens.
-- `<abbr>` appears in HTML output for abbreviations.
-
-### Phase 7: Polishing, parity, and deployment
-
-Deliverables:
-
-- Responsiveness parity with V1 (pragmatic match).
-- Lighthouse-friendly perf/accessibility.
-- CI/CD for static hosting.
-
-Acceptance tests:
-
-- Responsive behavior roughly matches V1 breakpoints and remains readable at mobile widths.
-- `prefers-reduced-motion` disables hover scaling/animations.  
-- No page requires JS to display basic content (filters/graph can enhance, but lists must render server-side/build-time).
-- Build output is static deployable (GitHub Pages compatible).
-
-## 5. Optional features (only if immediately beneficial)
-
-From `docs/Optional.md`:
-
-- Typographical normalization (quotes/apostrophes by language).
-- Cohere/Mistral chat integration fed by infonode export.
-
-Acceptance criteria if implemented:
-
-- Typo normalization:
-
-  - Input remains “plain quotes” in source
-  - Output uses locale-appropriate typography per language
-  - No broken Markdown/MDX semantics.
-- Chat integration:
-
-  - strictly opt-in
-  - does not affect static site core
-  - data export is deterministic and versioned.
-
-## 6. Codex execution rules (so it doesn’t go feral)
-
-These are instructions you put into `AGENTS.md` (or the prompt wrapper) so Codex can make choices safely:
-
-- Implement phases in order.
-- After each phase:
-
-  - summarize what changed
-  - list which acceptance tests are satisfied
-  - list any ambiguity found and stop if it blocks correctness
-- Do not invent new infonode types beyond `docs/Content.md`.
-- Do not generate real infonode data (examples only).
-- If V1 style is unclear, copy the closest behavior from `docs/V1.md` instead of redesigning.
-
-## 7. “What the site should feel like” (design intent, grounded)
-
-- It should read like a blog: sane line length (V1 uses ~60ch), generous vertical rhythm, headings that feel like sections not banners.
-- Interactivity should be obvious and consistent: accent color + hover scale, except when motion is reduced.
-- Background imagery should be present but subtle: “texture,” not “carousel.”
-- The site is a story told through a graph: every detail page points back to the graph view.
-
-## 8. Hosting
-
-Site source hosted on GitHub.
-
-Site will be hosted on github pages. The V1 used to generate to the gh-page branch.
-
-Generation can be local for now (dist folder or whatever astro idiomatically supports)
+Do not guess.

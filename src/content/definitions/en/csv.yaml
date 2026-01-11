@@ -1,0 +1,16 @@
+{
+  "id": "csv",
+  "lang": "en",
+  "type": "data-format",
+  "name": {
+    "abbr": "CSV",
+    "full": "Comma-separated values"
+  },
+  "synopsis": "A text file format that uses commas to separate values, and newlines to separate records.",
+  "wiki": "https://en.wikipedia.org/wiki/Comma-separated_values",
+  "background": "/portfolio/img/definition/csv/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/csv/logo.svg"
+  }
+}

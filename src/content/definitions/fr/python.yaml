@@ -1,0 +1,15 @@
+{
+  "id": "python",
+  "lang": "fr",
+  "type": "programming-language",
+  "name": {
+    "full": "Python"
+  },
+  "synopsis": "Langage de programmation interprété, multiparadigme et multiplateformes.",
+  "wiki": "https://fr.wikipedia.org/wiki/Python_(langage)",
+  "background": "/portfolio/img/definition/python/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/python/logo.svg"
+  }
+}

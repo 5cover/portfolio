@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Graphic from '../../../components/Graphic.astro';
+import LinkList from '../../../components/LinkList.astro';
+import ReferenceList from '../../../components/ReferenceList.astro';
+import {
+  getAnchors,
+  getLangData,
+  getLangs,
+  getLiterature,
+  mapById,
+} from '../../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../../lib/ui';
+
+import '../../../styles/perspective.scss';
+
+export async function getStaticPaths() {
+  const langs = await getLangs();
+  const paths = await Promise.all(
+    langs.map(async (lang) => {
+      const entries = await getLiterature(lang);
+      return entries
+        .filter((entry) => entry.data.kind === 'blog')
+        .map((entry) => ({ params: { lang, id: entry.data.id } }));
+    })
+  );
+
+  return paths.flat();
+}
+
+const { lang, id } = Astro.params;
+if (!lang || !id) {
+  throw new Error('Missing route params');
+}
+
+const [langData, langs, literature, anchors] = await Promise.all([
+  getLangData(lang),
+  getLangs(),
+  getLiterature(lang),
+  getAnchors(),
+]);
+
+const entry = literature.find((item) => item.data.id === id && item.data.kind === 'blog');
+if (!entry) {
+  throw new Error(`Missing blog ${id} for ${lang}`);
+}
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langMap = Object.fromEntries(
+  await Promise.all(langs.map(async (code) => [code, await getLangData(code)]))
+);
+const languages = buildLanguages(langs, langMap);
+const anchorsById = mapById(anchors);
+
+const blog = entry.data;
+const backgroundStyle = blog.background
+  ? `--bg-img: url(${blog.background})`
+  : undefined;
+const logoTitle = langData.fmtTitle.replace('%s', blog.title);
+---
+<BaseLayout
+  lang={lang}
+  pageName={`blog/${id}`}
+  navItems={navItems}
+  languages={languages}
+  themeLabels={themeLabels}
+  siteDescription={langData.siteDescription}
+  githubTitle={langData.footerGitHubAnchorTitle}
+>
+  <main style={backgroundStyle}>
+    <header>
+      <h1 set:html={blog.title}></h1>
+      {blog.logo ? (
+        <Graphic
+          url={blog.logo.url}
+          isThemedSvg={blog.logo.isThemedSvg}
+          alt={logoTitle}
+          title={logoTitle}
+          class="logo"
+        />
+      ) : null}
+      <p class="abstract" set:html={blog.abstract}></p>
+    </header>
+    {blog.links.length > 0 ? (
+      <section id="links">
+        <h2>{langData.links}</h2>
+        <LinkList links={blog.links} anchorsById={anchorsById} variant="page" />
+      </section>
+    ) : null}
+    <section id="story">
+      <h2>{langData.story}</h2>
+      <Fragment set:html={blog.story} />
+    </section>
+    {blog.references.length > 0 ? (
+      <section id="references">
+        <h2>{langData.references}</h2>
+        <ReferenceList
+          references={blog.references}
+          anchorsById={anchorsById}
+          backlinkLabel={langData.refJumpUp}
+        />
+      </section>
+    ) : null}
+    {blog.gallery.length > 0 ? (
+      <section id="gallery">
+        <h2>{langData.gallery}</h2>
+        <Gallery items={blog.gallery} />
+      </section>
+    ) : null}
+  </main>
+</BaseLayout>

@@ -1,0 +1,42 @@
+{
+  "id": "s1.05",
+  "lang": "fr",
+  "title": "Tabas'Kho",
+  "abstract": "Créer un site de streaming factice. Recueil des besoins (S1.05)",
+  "story": "<p>L'objectif de ce projet était de concevoir et réaliser un site Web répondant aux besoins d’un client recueillis lors d’une interview faite au préalable. Le client était une entreprise qui propose des services de streaming en ligne.</p>",
+  "context": "BUT",
+  "startDate": "2023-10-09",
+  "endDate": "2024-01-21",
+  "tags": [
+    "but-conduire",
+    "but-collaborer",
+    "communication",
+    "web"
+  ],
+  "technologies": [
+    "gitlab",
+    "html",
+    "css",
+    "javascript",
+    "figma",
+    "gloomaps",
+    "vs-code",
+    "markdown"
+  ],
+  "team": [
+    "chartier--le-goff-marius",
+    "kervadec-matteo",
+    "rolland-stanislas"
+  ],
+  "links": [
+    {
+      "label": "Dépôt GitHub",
+      "anchor": "github",
+      "href": "https://github.com/Matteo-K/TabasKho"
+    }
+  ],
+  "references": [],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

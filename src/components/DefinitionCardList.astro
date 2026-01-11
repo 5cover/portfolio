@@ -1,0 +1,26 @@
+---
+import DefinitionCard from './DefinitionCard.astro';
+import type { DefinitionEntry, TypeEntry } from '../lib/content';
+
+type Props = {
+  definitions: DefinitionEntry['data'][];
+  typesById: Record<string, TypeEntry['data']>;
+  langLabels: {
+    fmtTitle: string;
+  };
+};
+
+const props: Props = Astro.props;
+const { definitions, typesById, langLabels } = props;
+---
+<ul class="lvl list-definition">
+  {definitions.map((definition) => (
+    <li>
+      <DefinitionCard
+        definition={definition}
+        typesById={typesById}
+        langLabels={langLabels}
+      />
+    </li>
+  ))}
+</ul>

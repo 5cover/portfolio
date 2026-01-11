@@ -1,0 +1,15 @@
+{
+  "id": "nunit",
+  "lang": "fr",
+  "type": "library",
+  "name": {
+    "full": "NUnit"
+  },
+  "synopsis": "Un framework de test unitaire open-source pour .NET, axé sur la simplicité et la facilité d'utilisation.",
+  "wiki": "https://en.wikipedia.org/wiki/NUnit",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/nunit/logo.png"
+  }
+}

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LiteratureCardList from '../../components/LiteratureCardList.astro';
+import { getAnchors, getLangData, getLangs, getLiterature, mapById } from '../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
+
+export async function getStaticPaths() {
+  const langs = await getLangs();
+  return langs.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+if (!lang) {
+  throw new Error('Missing lang param');
+}
+
+const [langData, langs, literature, anchors] = await Promise.all([
+  getLangData(lang),
+  getLangs(),
+  getLiterature(lang),
+  getAnchors(),
+]);
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langMap = Object.fromEntries(
+  await Promise.all(langs.map(async (code) => [code, await getLangData(code)]))
+);
+const languages = buildLanguages(langs, langMap);
+const anchorsById = mapById(anchors);
+
+const hobbies = literature.filter((entry) => entry.data.kind === 'passion');
+---
+<BaseLayout
+  lang={lang}
+  pageName="hobbies"
+  navItems={navItems}
+  languages={languages}
+  themeLabels={themeLabels}
+  siteDescription={langData.siteDescription}
+  githubTitle={langData.footerGitHubAnchorTitle}
+>
+  <main class="margined">
+    <h1>{langData.namePagePassions}</h1>
+    <LiteratureCardList
+      lang={lang}
+      route="hobbies"
+      langLabels={{ fmtTitle: langData.fmtTitle }}
+      entries={hobbies}
+      anchorsById={anchorsById}
+    />
+  </main>
+</BaseLayout>

@@ -1,0 +1,15 @@
+{
+  "id": "javafx",
+  "lang": "fr",
+  "type": "library",
+  "name": {
+    "full": "JavaFX"
+  },
+  "synopsis": "Framework et une bibliothèque d'interface utilisateur issue du projet OpenJFX, qui permet aux développeurs Java de créer une interface graphique pour des applications de bureau, des applications internet riches et des applications smartphones et tablettes tactiles.",
+  "wiki": "https://fr.wikipedia.org/wiki/JavaFX",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/javafx/logo.png"
+  }
+}

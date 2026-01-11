@@ -1,0 +1,15 @@
+{
+  "id": "eclipse",
+  "lang": "fr",
+  "type": "ide",
+  "name": {
+    "full": "Eclipse"
+  },
+  "synopsis": "Projet décliné et organisé en un ensemble de sous-projets de développements logiciels, de la fondation Eclipse visant à développer un environnement de production de logiciels libre qui soit extensible, universel et polyvalent, en s'appuyant principalement sur Java.",
+  "wiki": "https://fr.wikipedia.org/wiki/Eclipse_(projet)",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/eclipse/logo.png"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "pgsql",
+  "lang": "fr",
+  "type": "dbms",
+  "name": {
+    "full": "PostgreSQL"
+  },
+  "synopsis": "Système de gestion de base de données relationnelle et objet.",
+  "wiki": "https://fr.wikipedia.org/wiki/PostgreSQL",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/pgsql/logo.svg"
+  }
+}

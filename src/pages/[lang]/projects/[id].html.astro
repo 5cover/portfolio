@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import DefinitionCardList from '../../../components/DefinitionCardList.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Graphic from '../../../components/Graphic.astro';
+import LinkList from '../../../components/LinkList.astro';
+import ReferenceList from '../../../components/ReferenceList.astro';
+import type { DefinitionEntry } from '../../../lib/content';
+import {
+  getAnchors,
+  getDefinitions,
+  getLangData,
+  getLangs,
+  getProjects,
+  getTags,
+  getTypes,
+  mapById,
+} from '../../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../../lib/ui';
+import { formatDate } from '../../../lib/date';
+import { pageHref } from '../../../lib/routes';
+
+import '../../../styles/project.scss';
+
+export async function getStaticPaths() {
+  const langs = await getLangs();
+  const paths = await Promise.all(
+    langs.map(async (lang) => {
+      const projects = await getProjects(lang);
+      return projects.map((project) => ({
+        params: { lang, id: project.data.id },
+      }));
+    })
+  );
+
+  return paths.flat();
+}
+
+const { lang, id } = Astro.params;
+if (!lang || !id) {
+  throw new Error('Missing route params');
+}
+
+const [langData, langs, projectEntry, tags, anchors, definitions, types] = await Promise.all([
+  getLangData(lang),
+  getLangs(),
+  getProjects(lang).then((entries) => entries.find((entry) => entry.data.id === id)),
+  getTags(lang),
+  getAnchors(),
+  getDefinitions(lang),
+  getTypes(lang),
+]);
+
+if (!projectEntry) {
+  throw new Error(`Missing project ${id} for ${lang}`);
+}
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langMap = Object.fromEntries(
+  await Promise.all(langs.map(async (code) => [code, await getLangData(code)]))
+);
+const languages = buildLanguages(langs, langMap);
+
+const tagsById = mapById(tags);
+const anchorsById = mapById(anchors);
+const definitionsById = mapById(definitions);
+const typesById = mapById(types);
+
+function isDefinition(value: DefinitionEntry['data'] | undefined): value is DefinitionEntry['data'] {
+  return Boolean(value);
+}
+
+const project = projectEntry.data;
+const backgroundStyle = project.background
+  ? `--bg-img: url(${project.background})`
+  : undefined;
+const logoTitle = langData.fmtTitle.replace('%s', project.title);
+const startDate = project.startDate;
+const endDate = project.endDate;
+const startLabel = startDate ? formatDate(startDate, lang) : '';
+const endLabel = endDate ? formatDate(endDate, lang) : '';
+const context = project.context
+  ? project.context.charAt(0).toUpperCase() + project.context.slice(1)
+  : '';
+
+const teamDefs = project.team
+  .map((memberId) => definitionsById[memberId])
+  .filter(isDefinition);
+const techDefs = project.technologies
+  .map((techId) => definitionsById[techId])
+  .filter(isDefinition);
+---
+<BaseLayout
+  lang={lang}
+  pageName={`projects/${id}`}
+  navItems={navItems}
+  languages={languages}
+  themeLabels={themeLabels}
+  siteDescription={langData.siteDescription}
+  githubTitle={langData.footerGitHubAnchorTitle}
+>
+  <main style={backgroundStyle}>
+    <header>
+      <ul class="list-rect">
+        {project.tags.map((tagId) => (
+          <li>
+            <a href={`${pageHref(lang, 'projects')}?tag=${tagId}`} set:html={tagsById[tagId]?.title ?? tagId}></a>
+          </li>
+        ))}
+      </ul>
+      <h1 set:html={project.title}></h1>
+      {project.logo ? (
+        <Graphic
+          url={project.logo.url}
+          isThemedSvg={project.logo.isThemedSvg}
+          alt={logoTitle}
+          title={logoTitle}
+          class="logo"
+        />
+      ) : null}
+      <p class="abstract" set:html={project.abstract}></p>
+      <div class="status-context">
+        {context ? <small class="context">{context}</small> : null}
+        {startDate ? (
+          <small class="status">
+            <time datetime={startDate}>{startLabel}</time> &ndash;{' '}
+            {endDate ? <time datetime={endDate}>{endLabel}</time> : langData.ongoing}
+          </small>
+        ) : null}
+      </div>
+    </header>
+    {project.links.length > 0 ? (
+      <section id="links">
+        <h2>{langData.links}</h2>
+        <LinkList links={project.links} anchorsById={anchorsById} variant="page" />
+      </section>
+    ) : null}
+    {teamDefs.length > 0 ? (
+      <section id="team">
+        <h2>{langData.team}</h2>
+        <DefinitionCardList
+          definitions={teamDefs}
+          typesById={typesById}
+          langLabels={{ fmtTitle: langData.fmtTitle }}
+        />
+      </section>
+    ) : null}
+    <section id="story">
+      <h2>{langData.story}</h2>
+      <Fragment set:html={project.story} />
+    </section>
+    {project.references.length > 0 ? (
+      <section id="references">
+        <h2>{langData.references}</h2>
+        <ReferenceList
+          references={project.references}
+          anchorsById={anchorsById}
+          backlinkLabel={langData.refJumpUp}
+        />
+      </section>
+    ) : null}
+    {techDefs.length > 0 ? (
+      <section id="technologies">
+        <h2>{langData.technologies}</h2>
+        <DefinitionCardList
+          definitions={techDefs}
+          typesById={typesById}
+          langLabels={{ fmtTitle: langData.fmtTitle }}
+        />
+      </section>
+    ) : null}
+    {project.gallery.length > 0 ? (
+      <section id="gallery">
+        <h2>{langData.gallery}</h2>
+        <Gallery items={project.gallery} />
+      </section>
+    ) : null}
+  </main>
+</BaseLayout>

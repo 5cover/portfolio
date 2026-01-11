@@ -1,0 +1,40 @@
+{
+  "id": "demineur-python",
+  "lang": "fr",
+  "title": "Démineur Python",
+  "abstract": "Jeu de démineur en interface graphique",
+  "story": "\n<p>Un jeu simple de démineur programmé en Python, avec Tkinter et des images pour former les cellules de la grille. Implémente de manière incomplète le patron d'architecture <abbr title=\"Modèle Vue Contrôleur\">MVC</abbr><sup id=\"cite-ref-1\"><a class=\"link\" href=\"#ref-1\">[1]</a></sup>.</p>",
+  "context": "NSI Lycée",
+  "startDate": "2022-03-01",
+  "endDate": "2022-04-24",
+  "tags": [
+    "game",
+    "oop"
+  ],
+  "technologies": [
+    "python",
+    "tkinter",
+    "spyder"
+  ],
+  "team": [],
+  "links": [
+    {
+      "label": "Dépôt GitHub",
+      "anchor": "github",
+      "href": "https://github.com/5cover/Demineur-Python"
+    }
+  ],
+  "references": [
+    {
+      "anchor": "wikipedia",
+      "href": "https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur",
+      "caption": "Wikipedia &mdash; Modèle-vue-contrôleur"
+    }
+  ],
+  "gallery": [],
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/projects/demineur-python/logo.png"
+  },
+  "background": null
+}

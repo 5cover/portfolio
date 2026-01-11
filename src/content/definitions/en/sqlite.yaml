@@ -1,0 +1,15 @@
+{
+  "id": "sqlite",
+  "lang": "en",
+  "type": "dbms",
+  "name": {
+    "full": "SQLite"
+  },
+  "synopsis": "A DBMS-independent, cross-platform SQL query tool.",
+  "wiki": "https://en.wikipedia.org/wiki/SQLite",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/sqlite/logo.svg"
+  }
+}

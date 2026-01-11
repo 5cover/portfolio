@@ -1,0 +1,40 @@
+{
+  "id": "demineur-python",
+  "lang": "en",
+  "title": "Python Minesweeper",
+  "abstract": "GUI Minesweeper game",
+  "story": "\n<p>A simple <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/Python_(programming_language)\" data-definition-id=\"python\" class=\"link definition-tooltip-trigger\">Python</a> minesweeper game made using <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/Tkinter\" data-definition-id=\"tkinter\" class=\"link definition-tooltip-trigger\">Tkinter</a> and images for the grid cells. Provides an incomplete implementation of the <abbr title=\"Model View Controller\">MVC</abbr> architecture pattern<sup id=\"cite-ref-1\"><a class=\"link\" href=\"#ref-1\">[1]</a></sup>.</p>",
+  "context": "NSI High-school",
+  "startDate": "2022-03-01",
+  "endDate": "2022-04-24",
+  "tags": [
+    "game",
+    "oop"
+  ],
+  "technologies": [
+    "python",
+    "tkinter",
+    "spyder"
+  ],
+  "team": [],
+  "links": [
+    {
+      "label": "GitHub repository",
+      "anchor": "github",
+      "href": "https://github.com/5cover/Demineur-Python"
+    }
+  ],
+  "references": [
+    {
+      "anchor": "wikipedia",
+      "href": "https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller",
+      "caption": "Wikipedia &mdash; Model–view–controller"
+    }
+  ],
+  "gallery": [],
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/projects/demineur-python/logo.png"
+  },
+  "background": null
+}

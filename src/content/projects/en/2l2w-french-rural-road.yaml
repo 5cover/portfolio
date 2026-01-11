@@ -1,0 +1,30 @@
+{
+  "id": "2l2w-french-rural-road",
+  "lang": "en",
+  "title": "2L2W French Rural Road",
+  "abstract": "Up to code French road asset",
+  "story": "<p>I've always found that in Cities: Skylines the cities have a rather bland and homogeneous international look. Where are the taste, the emotion, the particularity, all these things that make up the charm of a city? So I tried to reproduce European towns and villages, particularly French ones. And this is what created the need for a French road, which respects real standards for road markings and signs. No one had done it yet on the Workshop, so I gave it a try. I thus discovered the basics of texturing and 3D modeling.</p>\n<p>Getting a foot in the world of 3D modeling and game design has been an enriching experience for me, even if I won't make it a passion.</p>",
+  "context": "Personal",
+  "startDate": "2021-06-15",
+  "endDate": "2022-10-02",
+  "tags": [
+    "3d-modeling",
+    "asset-creation"
+  ],
+  "technologies": [
+    "blender",
+    "cities-skylines"
+  ],
+  "team": [],
+  "links": [
+    {
+      "label": "Steam Workshop article",
+      "anchor": "steam",
+      "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2515915993"
+    }
+  ],
+  "references": [],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

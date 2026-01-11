@@ -1,0 +1,15 @@
+{
+  "id": "github",
+  "lang": "en",
+  "type": "website",
+  "name": {
+    "full": "GitHub"
+  },
+  "synopsis": "A developer platform that allows developers to create, store, manage and share their code.",
+  "wiki": "https://en.wikipedia.org/wiki/GitHub",
+  "background": null,
+  "logo": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/social/github.svg"
+  }
+}

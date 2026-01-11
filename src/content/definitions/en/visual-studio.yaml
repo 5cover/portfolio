@@ -1,0 +1,16 @@
+{
+  "id": "visual-studio",
+  "lang": "en",
+  "type": "software",
+  "name": {
+    "full": "Microsoft Visual Studio",
+    "short": "Visual Studio"
+  },
+  "synopsis": "An <abbr title=\"Integrated Development Environment\">IDE</abbr> developed by Microsoft. It is used to develop computer programs.",
+  "wiki": "https://en.wikipedia.org/wiki/Visual_Studio",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/visual-studio/logo.svg"
+  }
+}

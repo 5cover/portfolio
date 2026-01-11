@@ -1,0 +1,15 @@
+{
+  "id": "mysql",
+  "lang": "fr",
+  "type": "dbms",
+  "name": {
+    "full": "MySQL"
+  },
+  "synopsis": "Système de gestion de bases de données relationnelles.",
+  "wiki": "https://fr.wikipedia.org/wiki/MySQL",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/mysql/logo.svg"
+  }
+}

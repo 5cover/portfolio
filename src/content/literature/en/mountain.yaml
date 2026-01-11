@@ -1,0 +1,30 @@
+{
+  "id": "mountain",
+  "lang": "en",
+  "kind": "passion",
+  "title": "Montagne",
+  "abstract": "Ski and hiking",
+  "story": "<div>\n    <p>As a child, my parents introduced me to Val d'Isère, a ski resort located in the Alps. Since then, we go back twice a year, in summer and in winter.</p>\n    <figure class=\"figure\">\n        <p>(summer/winter photo comparison slider (view from apartment))</p>\n        <figcaption>view from our apartment summer/winter</figcaption>\n    </figure>\n</div>\n<article>\n    <h3>Winter</h3>\n    <div>\n        <p>In winter, we mainly ski. The ski area is the largest in Europe, so even after all these years, we haven't been everywhere yet.</p>\n        <figure class=\"figure\">\n            <p>(foggy chairlift ski photo)</p>\n            <figcaption>You can't see anything!</figcaption>\n        </figure>\n        <p>I went through the <abbr title=\"French Ski School\">ESF</abbr>. However, after getting the Gold Star, I decided not to continue competing because it's not really my state of mind. Being on vacation, I come to ski to relax and stay calm. However, that doesn't mean I don't enjoy taking on certain challenges:</p>\n        <p>Every year we try to make the most of it, because due to global warming, the glaciers are retreating and the snowpack is getting thinner every year.</p>\n        <p>Sooner or later, skiing will disappear. Val d'Isère, one of the highest resorts in France, will be the last bastion of this legendary sport. At least until global warming reaches it too.</p>\n        <p>It's not that bad, there will always be summer activities.</p>\n    </div>\n</article>\n<article>\n    <h3>Summer</h3>\n    <div>\n        <p>In the summer, we mainly go hiking. There are a lot of trails accessible to pedestrians in the area. However, the best views are not always found on the most frequented paths:</p>\n        <figure class=\"figure\">\n            <p>(pissaillas glacier)</p>\n            <figcaption>We climbed up to the Pissaillas glacier from the Col de l'Iseran. We were alone and the landscape was simply wonderful.</figcaption>\n        </figure>\n    </div>\n</article>",
+  "links": [],
+  "references": [],
+  "gallery": [
+    {
+      "caption": "The Sache, the longest slope in the Espace Killy. It's a black slope, and as such one of the domain's hardest. However it's worth it. The sight on Tignes is astonishing.",
+      "url": null,
+      "iframeSrc": null,
+      "content": "(photo sache)"
+    },
+    {
+      "caption": "Pays Désert, the half backcountry skiing in the Pissaillas. Magnificient sights and untouched powder snow.",
+      "url": null,
+      "iframeSrc": null,
+      "content": "(photos pays desert)"
+    }
+  ],
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/piano-tile/1.jpg"
+  },
+  "background": null,
+  "tags": []
+}

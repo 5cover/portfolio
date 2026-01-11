@@ -1,0 +1,15 @@
+{
+  "id": "blender",
+  "lang": "fr",
+  "type": "software",
+  "name": {
+    "full": "Blender"
+  },
+  "synopsis": "Logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D.",
+  "wiki": "https://fr.wikipedia.org/wiki/Blender",
+  "background": "/portfolio/img/definition/blender/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/blender/logo.svg"
+  }
+}

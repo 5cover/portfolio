@@ -1,0 +1,43 @@
+{
+  "id": "s2.03",
+  "lang": "en",
+  "title": "Weather website",
+  "abstract": "Set up a Web server. Setting up network services (S2.03)",
+  "story": "\n<p>The objective of this project was to create a dynamic website in a containerized environment.</p>\n<p>We configured an <? $f->def('apache2') ?> web server.</p>\n<p>We implemented several features, including authentication and interaction with a <? $f->def('mysql') ?> database.</p>",
+  "context": "BUT",
+  "startDate": "2024-05-14",
+  "endDate": "2024-06-05",
+  "tags": [
+    "but-administrer",
+    "but-collaborer",
+    "web",
+    "sysadmin"
+  ],
+  "technologies": [
+    "github",
+    "php",
+    "apache2",
+    "mysql",
+    "bash",
+    "vs-code",
+    "css",
+    "html",
+    "mousepad"
+  ],
+  "team": [
+    "chartier--le-goff-marius",
+    "kervadec-matteo",
+    "toe-paolo"
+  ],
+  "links": [
+    {
+      "label": "GitHub repository",
+      "anchor": "github",
+      "href": "https://github.com/5cover/S2.03"
+    }
+  ],
+  "references": [],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

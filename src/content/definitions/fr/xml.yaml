@@ -1,0 +1,16 @@
+{
+  "id": "xml",
+  "lang": "fr",
+  "type": "markup-language",
+  "name": {
+    "abbr": "XML",
+    "full": "Extensible Markup Language"
+  },
+  "synopsis": "Métalangage informatique de balisage utilisé pour représenter des données structurées.",
+  "wiki": "https://fr.wikipedia.org/wiki/Extensible_Markup_Language",
+  "background": "/portfolio/img/definition/xml/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/xml/logo.svg"
+  }
+}

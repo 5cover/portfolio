@@ -1,0 +1,15 @@
+{
+  "id": "minecraft",
+  "lang": "en",
+  "type": "game",
+  "name": {
+    "full": "Minecraft"
+  },
+  "synopsis": "A <time datetime=\"2011\">2011</time> sandbox game developed by Mojang Studios and originally released in <time datetime=\"2009\">2009</time>.",
+  "wiki": "https://en.wikipedia.org/wiki/Minecraft",
+  "background": "/portfolio/img/definition/minecraft/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/minecraft/logo.svg"
+  }
+}

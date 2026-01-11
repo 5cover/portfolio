@@ -1,0 +1,15 @@
+{
+  "id": "minecraft",
+  "lang": "fr",
+  "type": "game",
+  "name": {
+    "full": "Minecraft"
+  },
+  "synopsis": "Jeu vidéo de type aventure « bac à sable » (construction complètement libre) développé par le Suédois Markus Persson, alias Notch, puis par la société Mojang Studios.",
+  "wiki": "https://fr.wikipedia.org/wiki/Minecraft",
+  "background": "/portfolio/img/definition/minecraft/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/minecraft/logo.svg"
+  }
+}

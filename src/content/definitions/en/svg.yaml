@@ -1,0 +1,16 @@
+{
+  "id": "svg",
+  "lang": "en",
+  "type": "data-format",
+  "name": {
+    "abbr": "SVG",
+    "full": "Scalable Vector Graphics"
+  },
+  "synopsis": "An XML-based vector image format for defining two-dimensional graphics, having support for interactivity and animation.",
+  "wiki": "https://en.wikipedia.org/wiki/SVG",
+  "background": "/portfolio/img/definition/svg/bg.png",
+  "logo": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/definition/svg/logo.svg"
+  }
+}

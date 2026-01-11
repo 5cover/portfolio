@@ -1,0 +1,16 @@
+{
+  "id": "powershell",
+  "lang": "fr",
+  "type": "programming-language",
+  "name": {
+    "full": "Windows PowerShell",
+    "short": "PowerShell"
+  },
+  "synopsis": "Interface de ligne de commande multiplate-forme et langage de script pour l'administration de systèmes informatiques et de réseaux.",
+  "wiki": "https://fr.wikipedia.org/wiki/Windows_PowerShell",
+  "background": "/portfolio/img/definition/powershell/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/powershell/logo.svg"
+  }
+}

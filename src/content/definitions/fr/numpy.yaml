@@ -1,0 +1,12 @@
+{
+  "id": "numpy",
+  "lang": "fr",
+  "type": "library",
+  "name": {
+    "full": "NumPy"
+  },
+  "synopsis": "Bibliothèque pour langage de programmation Python, destinée à manipuler des matrices ou tableaux multidimensionnels ainsi que des fonctions mathématiques opérant sur ces tableaux.",
+  "wiki": "https://fr.wikipedia.org/wiki/NumPy",
+  "background": null,
+  "logo": null
+}

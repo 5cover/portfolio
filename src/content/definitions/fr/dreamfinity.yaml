@@ -1,0 +1,15 @@
+{
+  "id": "dreamfinity",
+  "lang": "fr",
+  "type": "game-server",
+  "name": {
+    "full": "Dreamfinity"
+  },
+  "synopsis": "<q cite=\"https://dreamfinity.org\">Nous vous présentons le serveurs Minecraft les plus moderne et innovant à ce jour &mdash; le projet Dreamfinity&nbsp;! Nos serveurs uniques combinent tous les meilleurs mods, nouvelles fonctionnalités et fonctionnalités de jeu disponibles pour jouer à Minecraft en ligne. Au fil de nombreuses années, nous avons analysé les besoins d’une variété de joueurs et nous pouvons affirmer avec certitude que vous aimerez notre collaboration&nbsp;!</q>",
+  "wiki": "https://dreamfinity.org",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/dreamfinity/logo.svg"
+  }
+}

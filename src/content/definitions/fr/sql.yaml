@@ -1,0 +1,16 @@
+{
+  "id": "sql",
+  "lang": "fr",
+  "type": "programming-language",
+  "name": {
+    "abbr": "SQL",
+    "full": "Structured Query Language"
+  },
+  "synopsis": "Langage informatique créé en <time datetime=\"1974\">1974</time> servant à exploiter des bases de données relationnelles.",
+  "wiki": "https://fr.wikipedia.org/wiki/Structured_Query_Language",
+  "background": "/portfolio/img/definition/sql/bg.png",
+  "logo": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/definition/sql/logo.svg"
+  }
+}

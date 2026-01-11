@@ -1,0 +1,10 @@
+{
+  "id": "linkedin",
+  "platform": "LinkedIn",
+  "name": "Raphaël Bardini",
+  "url": "https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/",
+  "icon": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/social/linkedin.svg"
+  }
+}

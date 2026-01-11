@@ -1,0 +1,16 @@
+{
+  "id": "vs-code",
+  "lang": "en",
+  "type": "software",
+  "name": {
+    "abbr": "VS Code",
+    "full": "Visual Studio Code"
+  },
+  "synopsis": "A source-code editor developed by Microsoft for Windows, Linux, macOS and web browsers.",
+  "wiki": "https://en.wikipedia.org/wiki/Visual_Studio_Code",
+  "background": "/portfolio/img/definition/vs-code/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/vs-code/logo.svg"
+  }
+}

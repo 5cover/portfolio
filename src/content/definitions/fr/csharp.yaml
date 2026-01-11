@@ -1,0 +1,15 @@
+{
+  "id": "csharp",
+  "lang": "fr",
+  "type": "programming-language",
+  "name": {
+    "full": "C#"
+  },
+  "synopsis": "Langage de programmation orienté objet, commercialisé par Microsoft depuis <time datetime=\"2002\">2002</time>.",
+  "wiki": "https://fr.wikipedia.org/wiki/C_Sharp",
+  "background": "/portfolio/img/definition/csharp/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/csharp/logo.png"
+  }
+}

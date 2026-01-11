@@ -1,0 +1,16 @@
+{
+  "id": "csv",
+  "lang": "fr",
+  "type": "data-format",
+  "name": {
+    "abbr": "CSV",
+    "full": "Comma-separated values"
+  },
+  "synopsis": "Format texte ouvert représentant des données tabulaires sous forme de valeurs séparées.",
+  "wiki": "https://fr.wikipedia.org/wiki/Comma-separated_values",
+  "background": "/portfolio/img/definition/csv/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/csv/logo.svg"
+  }
+}

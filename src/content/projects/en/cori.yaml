@@ -1,0 +1,47 @@
+{
+  "id": "cori",
+  "lang": "en",
+  "title": "<abbr title=\"Correct Input\">Cori</abbr>",
+  "abstract": "Correct and easy to use C user input library",
+  "story": "\n<p>Cori is a single-file <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/C_(programming_language)\" data-definition-id=\"c\" class=\"link definition-tooltip-trigger\">C</a> library designed to simplify the process of getting user input in C programs. It provides a comprehensive set of functions that handle common input scenarios and potential errors, allowing programmers to focus more on their program's logic rather than the intricacies of input handling. Additionally, Cori aims to serve as a safer and more user-friendly replacement for the <code>scanf</code> function, which is often misused by beginners and can easily lead to undefined behavior<sup id=\"cite-ref-1\"><a class=\"link\" href=\"#ref-1\">[1]</a></sup>.</p>\n<h3 id=\"problems-cori-intends-to-solve\">Problems Cori intends to solve</h3>\n<ol class=\"list\">\n    <li><p>Simplify user input handling: Cori provides a set of functions that handle various types of user input, making it easier for programmers to collect and process input without worrying about the underlying complexities.</p></li>\n    <li><p>Replace <code>scanf</code>: The <code>scanf</code> function is notoriously difficult to use correctly, especially for beginners. Cori offers a safer and more intuitive alternative, reducing the risk of undefined behavior and making input handling more straightforward.</p></li>\n</ol>\n<h3 id=\"core-concepts\">Core concepts</h3>\n<h4 id=\"types-of-input\">Types of input</h4>\n<p>Cori supports a wide range of input types, each represented by a specific C type:</p>\n<ul class=\"list\">\n    <li><p>Signed integers: <code>intmax</code>, <code>longlong</code>, <code>long</code>, <code>int</code>, <code>short</code></p></li>\n    <li><p>Unsigned integers: <code>uintmax</code>, <code>ulonglong</code>, <code>ulong</code>, <code>uint</code>, <code>ushort</code></p></li>\n    <li><p>Floating point numbers: <code>longdouble</code>, <code>double</code>, <code>float</code></p></li>\n    <li><p>Text: <code>character</code>, <code>until</code>, <code>line</code>, <code>linel</code></p></li>\n    <li><p>Other: <code>boolean</code></p></li>\n</ul>\n<h4 id=\"error-handling-system\">Error handling system</h4>\n<p>Cori includes a robust error handling system that allows programmers to define custom error handlers. The library defines an enumeration <code>InputError</code> that represents all possible error conditions, such as empty input, end-of-file (EOF), invalid boolean characters, multiple characters, not a number, number out of bounds, out of memory, and unsupported numeric base.</p>\n<h4 id=\"function-families\">Function families</h4>\n<p>For each type of input, Cori provides a family of functions to handle different scenarios:</p>\n<ul class=\"list\">\n    <li><p><code>read_&lt;typename&gt;</code>: Reads input from <code>stdin</code> and handles errors using a NO-OP (no operation) error handler.</p></li>\n    <li><p><code>read_&lt;typename&gt;_or</code>: Reads input from <code>stdin</code> and handles errors using a specified error handler.</p></li>\n    <li><p><code>read_&lt;typename&gt;_from</code>: Reads input from a specified <code>FILE *</code> stream and handles errors using a NO-OP error handler.</p></li>\n    <li><p><code>read_&lt;typename&gt;_or_from</code>: Reads input from a specified <code>FILE *</code> stream and handles errors using a specified error handler.</p></li>\n    <li><p><code>tryRead_&lt;typename&gt;</code>: Reads input from <code>stdin</code> once and returns an error code if an error occurs.</p></li>\n    <li><p><code>tryRead_&lt;typename&gt;_from</code>: Reads input from a specified <code>FILE *</code> stream once and returns an error code if an error occurs.</p></li>\n</ul>\n<h3 id=\"techniques-and-patterns-used\">Techniques and patterns used</h3>\n<h4 id=\"stb-style-libraries\">STB-Style Libraries</h4>\n<p>Cori is designed as an STB-style library<sup id=\"cite-ref-2\"><a class=\"link\" href=\"#ref-2\">[2]</a></sup>, which means it consists of a single header file that contains both the interface and the implementation. This makes it easy to share and reuse, as users only need to include the header file in their projects. However, this approach can lead to large header files, so it is best suited for simple, single-purpose libraries like Cori.</p>\n<h4 id=\"heavy-usage-of-macros\">Heavy usage of macros</h4>\n<p>Cori makes extensive use of macros for metaprogramming, allowing for the generation of repetitive code patterns. One notable pattern used is the X-macro pattern<sup id=\"cite-ref-3\"><a class=\"link\" href=\"#ref-3\">[3]</a></sup>, which enables the definition of a set of related functions and data structures in a concise and maintainable way. This approach reduces code duplication and makes the library more flexible and easier to extend.</p>\n<h3 id=\"example\">Example</h3>\n<p>Cori is designed with simplicity in mind.</p>\n<figure class=\"figure\">\n    <pre><code>#define CORI_IMPLEMENTATION\n#include &quot;stb_cori.h&quot;\n\nint main() {\n    int result;\n    printf(&quot;Type an integer: &quot;);\n    result = read_int();\n    printf(&quot;Recieved %d\\\\n&quot;, result);\n}</code></pre>\n    <figcaption>Sample program using Cori to read an integer from standard input.</figcaption>\n</figure>\n<h3 id=\"conclusion\">Conclusion</h3>\n<p>Cori is a powerful and user-friendly library for handling console input in C programs. By providing a comprehensive set of functions and a robust error handling system, Cori simplifies the input handling process and offers a safer alternative to the <code>scanf</code> function. Its design as an STB-style library and the use of advanced macro techniques make it easy to integrate and extend, making it an excellent choice for both beginners and experienced C programmers, specifically for simple, quick programs</p>\n<p>For more details on how to use Cori, please refer to the <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/5cover/stb_cori/blob/main/README.md\">README</a> file.</p>",
+  "context": "Personal",
+  "startDate": "2023-10-09",
+  "endDate": "2024-03-09",
+  "tags": [
+    "low-level",
+    "library"
+  ],
+  "technologies": [
+    "vs-code",
+    "c",
+    "make"
+  ],
+  "team": [],
+  "links": [
+    {
+      "label": "GitHub repository",
+      "anchor": "github",
+      "href": "https://github.com/5cover/stb_cori"
+    }
+  ],
+  "references": [
+    {
+      "anchor": "website",
+      "href": "https://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html",
+      "caption": "Felix Palmen &mdash; A beginner's guide <em>away</em> from <code>scanf()</code>"
+    },
+    {
+      "anchor": "github",
+      "href": "https://github.com/nothings/stb",
+      "caption": "Sean Barrett &mdash; STB-style public domain libraries repository"
+    },
+    {
+      "anchor": "wikipedia",
+      "href": "https://en.wikipedia.org/wiki/X_macro",
+      "caption": "Wikipedia &mdash; X macro pattern"
+    }
+  ],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

@@ -1,0 +1,16 @@
+{
+  "id": "html",
+  "lang": "en",
+  "type": "markup-language",
+  "name": {
+    "abbr": "HTML",
+    "full": "HyperText Markup Language"
+  },
+  "synopsis": "The standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content.",
+  "wiki": "https://en.wikipedia.org/wiki/HTML",
+  "background": "/portfolio/img/definition/html/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/html/logo.svg"
+  }
+}

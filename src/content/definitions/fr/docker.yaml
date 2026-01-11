@@ -1,0 +1,15 @@
+{
+  "id": "docker",
+  "lang": "fr",
+  "type": "software",
+  "name": {
+    "full": "Docker"
+  },
+  "synopsis": "Outil qui peut empaqueter une application et ses dépendances dans un conteneur isolé, qui pourra être exécuté sur n'importe quel serveur.",
+  "wiki": "https://fr.wikipedia.org/wiki/Docker_(logiciel)",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/docker/logo.png"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "chain-of-responsibility",
+  "lang": "en",
+  "type": "design-pattern",
+  "name": {
+    "full": "Chain of Responsibility"
+  },
+  "synopsis": "A software design pattern that allows an event to be handled by a chain of objects.",
+  "wiki": "https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern",
+  "background": null,
+  "logo": null
+}

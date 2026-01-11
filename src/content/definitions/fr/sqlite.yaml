@@ -1,0 +1,15 @@
+{
+  "id": "sqlite",
+  "lang": "fr",
+  "type": "dbms",
+  "name": {
+    "full": "SQLite"
+  },
+  "synopsis": "Bibliothèque écrite en langage C qui propose un moteur de base de données relationnelle accessible par le langage SQL",
+  "wiki": "https://fr.wikipedia.org/wiki/SQLite",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/sqlite/logo.svg"
+  }
+}

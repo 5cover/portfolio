@@ -1,0 +1,15 @@
+{
+  "id": "lua",
+  "lang": "en",
+  "type": "programming-language",
+  "name": {
+    "full": "Lua"
+  },
+  "synopsis": "A lightweight, high-level, multi-paradigm programming language designed primarily for embedded use in applications.",
+  "wiki": "https://en.wikipedia.org/wiki/Lua_(programming_language)",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/lua/logo.svg"
+  }
+}

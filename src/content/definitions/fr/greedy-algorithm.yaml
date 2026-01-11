@@ -1,0 +1,12 @@
+{
+  "id": "greedy-algorithm",
+  "lang": "fr",
+  "type": "algorithm",
+  "name": {
+    "full": "Algorithme glouton"
+  },
+  "synopsis": "Un algorithme glouton (<em lang=\"en\">greedy algorithm</em> en anglais, parfois appelé aussi algorithme gourmand, ou goulu) est un algorithme qui suit le principe de réaliser, étape par étape, un choix optimum local, afin d'obtenir un résultat optimum global.",
+  "wiki": "https://fr.wikipedia.org/wiki/Algorithme_glouton",
+  "background": null,
+  "logo": null
+}

@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Gallery from '../../../components/Gallery.astro';
+import Graphic from '../../../components/Graphic.astro';
+import LinkList from '../../../components/LinkList.astro';
+import ReferenceList from '../../../components/ReferenceList.astro';
+import {
+  getAnchors,
+  getLangData,
+  getLangs,
+  getLiterature,
+  mapById,
+} from '../../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../../lib/ui';
+
+import '../../../styles/passion.scss';
+
+export async function getStaticPaths() {
+  const langs = await getLangs();
+  const paths = await Promise.all(
+    langs.map(async (lang) => {
+      const entries = await getLiterature(lang);
+      return entries
+        .filter((entry) => entry.data.kind === 'passion')
+        .map((entry) => ({ params: { lang, id: entry.data.id } }));
+    })
+  );
+
+  return paths.flat();
+}
+
+const { lang, id } = Astro.params;
+if (!lang || !id) {
+  throw new Error('Missing route params');
+}
+
+const [langData, langs, literature, anchors] = await Promise.all([
+  getLangData(lang),
+  getLangs(),
+  getLiterature(lang),
+  getAnchors(),
+]);
+
+const entry = literature.find((item) => item.data.id === id && item.data.kind === 'passion');
+if (!entry) {
+  throw new Error(`Missing hobby ${id} for ${lang}`);
+}
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langMap = Object.fromEntries(
+  await Promise.all(langs.map(async (code) => [code, await getLangData(code)]))
+);
+const languages = buildLanguages(langs, langMap);
+const anchorsById = mapById(anchors);
+
+const hobby = entry.data;
+const backgroundStyle = hobby.background
+  ? `--bg-img: url(${hobby.background})`
+  : undefined;
+const logoTitle = langData.fmtTitle.replace('%s', hobby.title);
+---
+<BaseLayout
+  lang={lang}
+  pageName={`hobbies/${id}`}
+  navItems={navItems}
+  languages={languages}
+  themeLabels={themeLabels}
+  siteDescription={langData.siteDescription}
+  githubTitle={langData.footerGitHubAnchorTitle}
+>
+  <main style={backgroundStyle}>
+    <header>
+      <h1 set:html={hobby.title}></h1>
+      {hobby.logo ? (
+        <Graphic
+          url={hobby.logo.url}
+          isThemedSvg={hobby.logo.isThemedSvg}
+          alt={logoTitle}
+          title={logoTitle}
+          class="logo"
+        />
+      ) : null}
+      <p class="abstract" set:html={hobby.abstract}></p>
+    </header>
+    {hobby.links.length > 0 ? (
+      <section id="links">
+        <h2>{langData.links}</h2>
+        <LinkList links={hobby.links} anchorsById={anchorsById} variant="page" />
+      </section>
+    ) : null}
+    <section id="story">
+      <h2>{langData.story}</h2>
+      <Fragment set:html={hobby.story} />
+    </section>
+    {hobby.references.length > 0 ? (
+      <section id="references">
+        <h2>{langData.references}</h2>
+        <ReferenceList
+          references={hobby.references}
+          anchorsById={anchorsById}
+          backlinkLabel={langData.refJumpUp}
+        />
+      </section>
+    ) : null}
+    {hobby.gallery.length > 0 ? (
+      <section id="gallery">
+        <h2>{langData.gallery}</h2>
+        <Gallery items={hobby.gallery} />
+      </section>
+    ) : null}
+  </main>
+</BaseLayout>

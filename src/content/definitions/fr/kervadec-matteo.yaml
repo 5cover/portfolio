@@ -1,0 +1,15 @@
+{
+  "id": "kervadec-matteo",
+  "lang": "fr",
+  "type": "person",
+  "name": {
+    "full": "Mattéo Kervadec"
+  },
+  "synopsis": "Mattéo Kervadec est un étudiant en <abbr title=\"Bachelor Universitaire Technologique\">BUT</abbr> en filière Informatique à l'IUT de Lannion. Il a un baccalauréat avec les spécialités Mathématiques et <abbr title=\"Numériques Sciences Informatiques\">NSI</abbr> obtenu au lycée <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://sainteanne-saintlouis.fr\">Sainte-Anne</a> à Sainte-Anne-d'Auray. Il est passionné par le tennis et le cinéma autant dans les films que le jeu vidéo. Il porte aussi un intérêt pour le développement de logiciels informatiques.",
+  "wiki": "https://matteo-k.github.io/Matteo-K_Portfolio.github.io/",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/kervadec-matteo/logo.jpg"
+  }
+}

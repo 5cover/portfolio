@@ -1,0 +1,15 @@
+{
+  "id": "inno-setup",
+  "lang": "fr",
+  "type": "software",
+  "name": {
+    "full": "Inno Setup"
+  },
+  "synopsis": "Logiciel libre permettant de créer des installateurs pour Windows.",
+  "wiki": "https://fr.wikipedia.org/wiki/Inno_Setup",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/inno-setup/logo.png"
+  }
+}

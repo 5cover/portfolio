@@ -1,0 +1,16 @@
+{
+  "id": "bash",
+  "lang": "fr",
+  "type": "programming-language",
+  "name": {
+    "abbr": "Bash",
+    "full": "Bourne-Again shell"
+  },
+  "synopsis": "Interpréteur en ligne de commande de type script. C'est le shell Unix du projet GNU.",
+  "wiki": "https://fr.wikipedia.org/wiki/Bourne-Again_shell",
+  "background": "/portfolio/img/definition/bash/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/bash/logo.svg"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "kervadec-matteo",
+  "lang": "en",
+  "type": "person",
+  "name": {
+    "full": "Mattéo Kervadec"
+  },
+  "synopsis": "Mattéo Kervadec is a first-year <abbr title=\"Bachelor Universitaire Technologique\">BUT</abbr> student in the Computer Science stream at the IUT in Lannion. He has a baccalaureate with the specialties Mathematics and <abbr title=\"Numériques Sciences Informatiques\">NSI</abbr> obtained at the high school <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://sainteanne-saintlouis.fr\">Sainte-Anne</a> in Sainte-Anne-d'Auray. He is passionate about tennis and cinema, both in films and video games. He is also interested in computer software development.",
+  "wiki": "https://matteo-k.github.io/Matteo-K_Portfolio.github.io/",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/kervadec-matteo/logo.jpg"
+  }
+}

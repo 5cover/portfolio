@@ -1,0 +1,38 @@
+{
+  "id": "jslave",
+  "lang": "fr",
+  "title": "JSlave",
+  "abstract": "\nLanguage formel de métaprogrammation <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/Java_(langage)\" data-definition-id=\"java\" class=\"link definition-tooltip-trigger\">Java</a>",
+  "story": "\n<p>Un langage pour définir des <q>blueprints</q> déclaratifs pour générer des classes <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/Java_(langage)\" data-definition-id=\"java\" class=\"link definition-tooltip-trigger\">Java</a>.</p>\n<p>Prend en charge la génération automatique et personnalisable de&nbsp;:</p>\n<ul class=\"list\">\n    <li>\n        <p>Arborescences d'héritage (<code>extend</code>, <code>implement</code>, <code>permits</code>)</p>\n    </li>\n    <li>\n        <p>Attributs</p>\n    </li>\n    <li>\n        <p><abbr title=\"Obteneurs\"><em lang=\"en\">Getters</em></abbr>/<abbr title=\"Définisseurs\"><em lang=\"en\">setters</em></abbr></p>\n    </li>\n    <li>\n        <p>méthode <code>hashCode</code></p>\n    </li>\n    <li>\n        <p>méthode <code>equals</code></p>\n    </li>\n    <li>\n        <p>méthode <code>toString</code></p>\n    </li>\n    <li>\n        <p>Stubs de méthode</p>\n    </li>\n</ul>\n<p>Fonctionnalités supplémentaires&nbsp;:</p>\n<ul class=\"list\">\n    <li>\n        <p>Classes imbriquées et statiques</p>\n    </li>\n    <li>\n        <p>Blocs de code Java arbitraires</p>\n    </li>\n</ul>\n<article>\n    <h3 id=\"avantages-sur-les-extraits\">Avantages par rapport aux extraits</h3>\n    <p>Un blueprint Jslave est autonome et peut être automatisé, contrairement aux extraits/raccourcis qui dépendent de l'IDE et nécessitent une saisie manuelle. Cette approche présente les avantages suivants&nbsp;:</p>\n    <ul class=\"list\">\n        <li>\n            <p>Les blueprints peuvent être transmis sous forme de fichiers</p>\n        </li>\n        <li>\n            <p>Les blueprints peuvent être générés vers autre chose que Java</p>\n        </li>\n        <li>\n            <p>La génération est prévisible et déterministe</p>\n        </li>\n        <li>\n            <p>La génération peut être automatisée dans un script</p>\n        </li>\n    </ul>\n    <p>Inconvénients&nbsp;:</p>\n    <ul class=\"list\">\n        <li>\n            <p>Étant donné que nous ne sommes plus dans un contexte Java, nous ne recevrons pas beaucoup d'aide de l'IDE lors de l'écriture de JSlave (coloration syntaxique, auto-complétion&hellip;). Ce problème est atténué par la simplicité du langage et la future extension <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/Visual_Studio_Code\" data-definition-id=\"vs-code\" class=\"link definition-tooltip-trigger\">VS Code</a>.</p>\n        </li>\n    </ul>\n</article>\n<article>\n    <h3 id=\"getting-started\">Premiers pas</h3>\n    <h4 id=\"1-write-your-jslave-file\">1. Écrivez votre fichier JSlave</h4>\n    <p>Votre fichier JSlave (appelé idiomatiquement un <strong>blueprint</strong>) définit la structure de votre code Java et fournit la syntaxe des modèles courants afin d'éviter d'écrire tout ce code Java répétitif.</p>\n    <p>Vous trouverez plus de détails sur la syntaxe dans la <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/5cover/jslave/blob/main/doc/Language%20reference.md\">documentation</a>, mais l'idiome principal est le suivant&nbsp;:</p>\n    <p>Un blueprint est une liste de <strong>définitions</strong> qui génèrent le type Java correspondant (classes, enregistrements, interfaces&hellip;). Chaque définition contient zéro ou plusieurs <strong>membres</strong> qui déterminent le contenu du type.</p>\n    <p>Les membres peuvent être de deux types&nbsp;:</p>\n    <ul class=\"list\">\n        <li>\n            <p><strong>Les attributs</strong> définissent les champs de données du type. Ils génèrent des attributs de classe Java et des méthodes getter/setter.</p>\n        </li>\n        <li>\n            <p><strong>Les méthodes</strong> définissent les comportements du type. Les méthodes qui ont une signification particulière en Java (<code>equals</code>, <code>hashCode</code>, <code>toString</code>) sont appelées <strong>méthodes spéciales</strong>. Elles peuvent être exprimées sous trois formes&nbsp;:</p>\n            <ul class=\"list\">\n                <li>\n                    <p><strong>Stub</strong>&nbsp;: une méthode vide à implémenter soit à partir du code Java généré, soit avec un bloc de code</p>\n                </li>\n                <li>\n                    <p><strong>Implémentation par défaut</strong>&nbsp;: une implémentation par défaut à usage général qui devrait fonctionner dans la plupart des cas</p>\n                </li>\n                <li>\n                    <p><strong>Implémentation personnalisée</strong>&nbsp;: l'implémentation par défaut, personnalisée en passant des arguments à la méthode</p>\n                </li>\n            </ul>\n        </li>\n    </ul>\n    <h4 id=\"2-generate-it\">2. Générez-le</h4>\n    <p>À partir de l'interface graphique de l'extension VSCode ou en utilisant le binaire autonome, générez votre blueprint.</p>\n    <p>Plusieurs cibles sont disponibles</p>\n    <ul class=\"list\">\n        <li>\n            <p>Java (évidemment)&nbsp;: génère du code Java</p>\n        </li>\n        <li>\n            <p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://mermaid.js.org/\" data-definition-id=\"mermaid\" class=\"link definition-tooltip-trigger\">Mermaid</a>&nbsp;: génère un diagramme de classe Mermaid<sup id=\"cite-ref-1\"><a class=\"link\" href=\"#ref-1\">[1]</a></sup> représentant la structure du blueprint</p>\n        </li>\n    </ul>\n</article>",
+  "context": "Personnel",
+  "startDate": "2024-05-30",
+  "endDate": null,
+  "tags": [
+    "low-level",
+    "cli",
+    "software"
+  ],
+  "technologies": [
+    "vs-code",
+    "ebnf",
+    "zig"
+  ],
+  "team": [],
+  "links": [
+    {
+      "label": "Dépôt GitHub",
+      "anchor": "github",
+      "href": "https://github.com/5cover/jslave"
+    }
+  ],
+  "references": [
+    {
+      "anchor": "website",
+      "href": "https://mermaid.js.org/syntax/classDiagram.html",
+      "caption": "Mermaid.js &mdash; syntaxe des diagrammes de classes (anglais)"
+    }
+  ],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

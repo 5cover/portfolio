@@ -1,0 +1,15 @@
+{
+  "id": "doxygen",
+  "lang": "en",
+  "type": "software",
+  "name": {
+    "full": "Doxygen"
+  },
+  "synopsis": "A documentation generator and static analysis tool for software source trees. When used as a documentation generator, Doxygen extracts information from specially-formatted comments within the code. When used for analysis, Doxygen uses its parse tree to generate diagrams and charts of the code structure. Doxygen can cross reference documentation and code, so that the reader of a document can easily refer to the actual code.",
+  "wiki": "https://en.wikipedia.org/wiki/Doxygen",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/doxygen/logo.png"
+  }
+}

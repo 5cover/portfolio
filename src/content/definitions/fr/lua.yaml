@@ -1,0 +1,15 @@
+{
+  "id": "lua",
+  "lang": "fr",
+  "type": "programming-language",
+  "name": {
+    "full": "Lua"
+  },
+  "synopsis": "Langage de script libre, réflexif et impératif créé en <time datetime=\"1993\">1993</time>.",
+  "wiki": "https://fr.wikipedia.org/wiki/Lua",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/lua/logo.svg"
+  }
+}

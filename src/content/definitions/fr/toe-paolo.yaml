@@ -1,0 +1,16 @@
+{
+  "id": "toe-paolo",
+  "lang": "fr",
+  "type": "person",
+  "name": {
+    "full": "Paolo Vito Toé",
+    "short": "Paolo Toé"
+  },
+  "synopsis": "Paolo Vito Toé est un étudiant en BUT Informatique à l'IUT de Lannion. Son parcours le pousse à s'améliorer en permanence, car l'informatique est une de ses grandes passions. Né aux États-Unis et ayant grandi dans plusieurs pays différents, il est suis aussi passionné par les cultures étrangères. Outre ses études, il est passionné par la lecture et la création de jeux.",
+  "wiki": "https://vitovitae.github.io/",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/toe-paolo/logo.jpg"
+  }
+}

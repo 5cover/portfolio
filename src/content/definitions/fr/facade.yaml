@@ -1,0 +1,12 @@
+{
+  "id": "facade",
+  "lang": "fr",
+  "type": "design-pattern",
+  "name": {
+    "full": "Façade"
+  },
+  "synopsis": "Un patron de conception logiciel qui fournit une interface simplifiée pour un corps de code plus important.",
+  "wiki": "https://fr.wikipedia.org/wiki/Fa%C3%A7ade_(patron_de_conception)",
+  "background": null,
+  "logo": null
+}

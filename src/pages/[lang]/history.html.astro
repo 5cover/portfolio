@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getHistory, getLangData, getLangs } from '../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
+import pageScript from '../../scripts/history.ts?url';
+
+import '../../styles/history.scss';
+
+export async function getStaticPaths() {
+  const langs = await getLangs();
+  return langs.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+if (!lang) {
+  throw new Error('Missing lang param');
+}
+
+const [langData, langs, historyItems] = await Promise.all([
+  getLangData(lang),
+  getLangs(),
+  getHistory(lang),
+]);
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langMap = Object.fromEntries(
+  await Promise.all(langs.map(async (code) => [code, await getLangData(code)]))
+);
+const languages = buildLanguages(langs, langMap);
+---
+<BaseLayout
+  lang={lang}
+  pageName="history"
+  navItems={navItems}
+  languages={languages}
+  themeLabels={themeLabels}
+  siteDescription={langData.siteDescription}
+  githubTitle={langData.footerGitHubAnchorTitle}
+  pageScript={pageScript}
+>
+  <main>
+    <div class="ag-format-container">
+      <div class="js-timeline ag-timeline">
+        <div class="js-timeline_line ag-timeline_line">
+          <div class="js-timeline_line-progress ag-timeline_line-progress"></div>
+        </div>
+        <div class="ag-timeline_list">
+          {historyItems.map((entry, index) => {
+            const media = entry.data.media;
+            const isOdd = index % 2 === 1;
+
+            return (
+              <div class="lvl js-timeline_item ag-timeline_item">
+                <div class="ag-timeline-card_box">
+                  {isOdd ? (
+                    <>
+                      <div class="ag-timeline-card_meta-box">
+                        <div class="ag-timeline-card_meta" set:html={entry.data.meta}></div>
+                      </div>
+                      <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                        <div class="ag-timeline-card_point">{media?.year ?? ''}</div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                        <div class="ag-timeline-card_point">{media?.year ?? ''}</div>
+                      </div>
+                      <div class="ag-timeline-card_meta-box">
+                        <div class="ag-timeline-card_meta" set:html={entry.data.meta}></div>
+                      </div>
+                    </>
+                  )}
+                </div>
+                <div class="ag-timeline-card_item">
+                  <div class="ag-timeline-card_inner">
+                    <div class="ag-timeline-card_img-box">
+                      {media ? (
+                        <img src={media.img} alt={media.alt} class="ag-timeline-card_img" />
+                      ) : null}
+                    </div>
+                    <div class="ag-timeline-card_info">
+                      <div class="ag-timeline-card_title" set:html={entry.data.title}></div>
+                      <div class="ag-timeline-card_desc" set:html={entry.data.body}></div>
+                    </div>
+                  </div>
+                  <div class="ag-timeline-card_arrow"></div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

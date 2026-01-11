@@ -1,0 +1,42 @@
+{
+  "id": "s1.02",
+  "lang": "fr",
+  "title": "Sudone",
+  "abstract": "Solveur de grilles de Sudoku optimisé. Comparaison d'approches algorithmiques (S1.02)",
+  "story": "\n<p>L'objectif de ce projet était d'optimiser un algorithme de résolution de grilles de Sudoku afin qu'il puisse résoudre des grilles de différentes difficultés le plus rapidement possible.</p><p>Ce projet, réalisé en binôme, aura été une aventure particulièrement enrichissante. En effet, après le rendu, notre professeur a organisé un concours d'optimisation. Chaque participant soumetta son programme et notre professeur fit plusieurs <em lang=\"en\">benchmarks</em> sur des grilles de Sudoku 3 &times; 3, 4 &times; 4, 5 &times; 5&hellip; afin de déterminer l'équipe qui a le programme le plus optimisé.</p><p>Moi et mon coéquipier Mattéo Kervadec avons remporté le concours haut la main.</p><p>Certes, nous y avons passé quelques nuits tardives, mais cela nous a permis d'apprendre toute sourtes d'astuces relatives à l'optimisation et de devenir de meilleurs prorammeurs en général.</p><p>De plus, ce projet a continué à grandir grâche à l'investissement personnel de Mattéo et moi. Nous l'avons amélioré sur notre temps libre, aboutissant finalement à Sudone.</p>",
+  "context": "BUT",
+  "startDate": "2023-11-27",
+  "endDate": "2024-05-20",
+  "tags": [
+    "software",
+    "but-optimiser",
+    "but-collaborer",
+    "algorithms",
+    "cli",
+    "low-level"
+  ],
+  "technologies": [
+    "vs-code",
+    "c",
+    "markdown",
+    "gprof",
+    "gcov",
+    "make",
+    "bash",
+    "python"
+  ],
+  "team": [
+    "kervadec-matteo"
+  ],
+  "links": [
+    {
+      "label": "Dépôt GitHub",
+      "anchor": "github",
+      "href": "https://github.com/Matteo-K/Sudoku-Solver"
+    }
+  ],
+  "references": [],
+  "gallery": [],
+  "logo": null,
+  "background": "/portfolio/img/projects/s1.02/bg.png"
+}

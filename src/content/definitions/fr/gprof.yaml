@@ -1,0 +1,12 @@
+{
+  "id": "gprof",
+  "lang": "fr",
+  "type": "software",
+  "name": {
+    "full": "Gprof"
+  },
+  "synopsis": "Outil de profilage de code utilisé dans le cadre de la suite de compilation GNU (GCC). Il permet aux développeurs d'analyser les performances d'un programme en mesurant le temps d'exécution de chaque fonction et en identifiant les goulots d'étranglement.",
+  "wiki": "https://fr.wikipedia.org/wiki/Gprof",
+  "background": null,
+  "logo": null
+}

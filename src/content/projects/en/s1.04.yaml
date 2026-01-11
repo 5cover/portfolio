@@ -1,0 +1,35 @@
+{
+  "id": "s1.04",
+  "lang": "en",
+  "title": "Creating a database",
+  "abstract": "Design and implement a database. Creating a database (S1.04)",
+  "story": "\n<p>The goal of this project was to create a class diagram and implement a database in <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/SQL\" data-definition-id=\"sql\" class=\"link definition-tooltip-trigger\">SQL</a>.</p>",
+  "context": "BUT",
+  "startDate": "2023-11-27",
+  "endDate": "2024-01-22",
+  "tags": [
+    "but-gerer",
+    "but-collaborer",
+    "db"
+  ],
+  "technologies": [
+    "sql",
+    "sql-workbench",
+    "pgsql",
+    "markdown"
+  ],
+  "team": [
+    "chartier--le-goff-marius"
+  ],
+  "links": [
+    {
+      "label": "GitHub repository",
+      "anchor": "github",
+      "href": "https://github.com/5cover/S1.04"
+    }
+  ],
+  "references": [],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

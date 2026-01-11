@@ -1,0 +1,15 @@
+{
+  "id": "visual-paradigm",
+  "lang": "fr",
+  "type": "software",
+  "name": {
+    "full": "Visual Paradigm"
+  },
+  "synopsis": "Logiciel de conception et de modélisation de systèmes d'information. Il offre une plateforme de développement logiciel intégrée qui prend en charge les langages de modélisation UML (Unified Modeling Language), BPMN (Business Process Model and Notation), SysML, et bien d'autres.",
+  "wiki": "https://www.visual-paradigm.com/",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/visual-paradigm/logo.png"
+  }
+}

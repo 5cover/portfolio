@@ -1,0 +1,13 @@
+{
+  "id": "nsi",
+  "lang": "en",
+  "type": "high-school-specialized-teaching",
+  "name": {
+    "abbr": "NSI",
+    "full": "Numériques Sciences Informatiques"
+  },
+  "synopsis": "This high school specialized teaching is about the basics of programming and algorithms. It explores the fundamental concepts of computer science, such as data structures, networks, and operating systems. It also aims to develop a digital culture and an understanding of the ethical and social issues related to computer science.",
+  "wiki": "https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448",
+  "background": "/portfolio/img/definition/nsi/bg.webp",
+  "logo": null
+}

@@ -1,0 +1,59 @@
+{
+  "id": "winclean",
+  "lang": "fr",
+  "title": "WinClean",
+  "abstract": "Application de nettoyage et optimisation Windows",
+  "story": "<p>Les ordinateurs n'ont cessé de gagner en puissance et en complexité, même comparé à il y a quelques décennies. De nous jours, un microprocesseur bas de gamme effectue plusieurs milliards de calculs par seconde. C'est assez effarant de se dire que l'appareil que vous utilisez pour lire ceci est si puissant.</p>\n<p>Cela dit, nous sommes devenus dépendants des ordinateurs au fil des des années sans forcément comprendre leur fonctionnement réel. Nous démarrons nos appareils, utilisons des logiciels, jouons à des jeux, surfons sur Internet et nous sommes devenus intolérants à tout échec ou latence. Nous nous plaignons régulièrement de la lenteur des ordinateur sans même penser à la complexité de faire fonctionner tout ce qu'ils offrent.</p>\n<p>Est-ce un problème&nbsp;? Devrions-nous supporter ces expériences agaçantes, sans jamais se plaindre&nbsp;?</p>\n<p>Ce n'est pas mon opinion. Nous devrions faire exactement le contraire. Nous avons le droit d'être furieux quand les chose ne fonctionnent pas correctement. Pourquoi&nbsp;? Des milliards de calculs par seconde. Que ne pouvez-vous faire avec ça&nbsp;?</p>\n<p>Soulevez la question, pourquoi faut-il que ça soit si laborieusement lent&nbsp;?</p>\n<p>Mais quel est le responsable&nbsp;? Un mauvais logiciel&nbsp;? Un mauvais matériel&nbsp;? Quelle importance&nbsp;? Nettoyez-le&nbsp;!</p>",
+  "context": "Personnel",
+  "startDate": "2022-08-15",
+  "endDate": null,
+  "tags": [
+    "full-stack",
+    "oop",
+    "software",
+    "ui",
+    "ux",
+    "but-realiser",
+    "cli"
+  ],
+  "technologies": [
+    "csharp",
+    "github",
+    "inno-setup",
+    "powershell",
+    "visual-studio"
+  ],
+  "team": [],
+  "links": [
+    {
+      "label": "Article CommentÇaMarche",
+      "anchor": "ccm",
+      "href": "https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean"
+    },
+    {
+      "label": "Dépôt GitHub",
+      "anchor": "github",
+      "href": "https://github.com/5cover/WinClean"
+    }
+  ],
+  "references": [],
+  "gallery": [
+    {
+      "caption": "Exécution des scripts",
+      "url": "/portfolio/img/projects/winclean/gallery/1.png",
+      "iframeSrc": null,
+      "content": null
+    },
+    {
+      "caption": "Fenêtre principale de l'application",
+      "url": "/portfolio/img/projects/winclean/gallery/2.png",
+      "iframeSrc": null,
+      "content": null
+    }
+  ],
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/projects/winclean/logo.png"
+  },
+  "background": "/portfolio/img/projects/winclean/bg.png"
+}

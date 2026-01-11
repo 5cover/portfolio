@@ -1,0 +1,16 @@
+{
+  "id": "xml",
+  "lang": "en",
+  "type": "markup-language",
+  "name": {
+    "abbr": "XML",
+    "full": "Extensible Markup Language"
+  },
+  "synopsis": "A markup language and file format for storing, transmitting, and reconstructing arbitrary data.",
+  "wiki": "https://en.wikipedia.org/wiki/XML",
+  "background": "/portfolio/img/definition/xml/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/xml/logo.svg"
+  }
+}

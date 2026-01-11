@@ -1,0 +1,12 @@
+{
+  "id": "wizard",
+  "lang": "fr",
+  "type": "ui",
+  "name": {
+    "full": "Assistant"
+  },
+  "synopsis": "Malgré ce nom merveilleux et fantaisiste, les assistants ne sont pas vraiment une forme spéciale d’interface utilisateur, et ils n’ont qu’une gamme particulière d’utilité. Les Assistants sont utilisés pour effectuer des tâches en plusieurs étapes.",
+  "wiki": "https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards",
+  "background": null,
+  "logo": null
+}

@@ -1,0 +1,15 @@
+{
+  "id": "galacticraft",
+  "lang": "en",
+  "type": "game-mod",
+  "name": {
+    "full": "Galacticraft"
+  },
+  "synopsis": "Minecraft videogame mod that adds a space dimension to the game, allowing players to travel through space, explore new planets and build space colonies. This mod was created by developer Micdoodle8.",
+  "wiki": "https://galacticraft.net/",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/galacticraft/logo.png"
+  }
+}

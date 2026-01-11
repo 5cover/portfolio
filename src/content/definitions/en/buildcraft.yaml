@@ -1,0 +1,15 @@
+{
+  "id": "buildcraft",
+  "lang": "en",
+  "type": "game-mod",
+  "name": {
+    "full": "BuildCraft"
+  },
+  "synopsis": "Minecraft videogame mod that focuses on adding building and automation features to the game. This mod was created by developer SpaceToad.",
+  "wiki": "https://mod-buildcraft.com/",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/buildcraft/logo.png"
+  }
+}

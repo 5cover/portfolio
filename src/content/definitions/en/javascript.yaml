@@ -1,0 +1,15 @@
+{
+  "id": "javascript",
+  "lang": "en",
+  "type": "programming-language",
+  "name": {
+    "full": "JavaScript"
+  },
+  "synopsis": "A programming language and core technology of the Web, alongside HTML and CSS.",
+  "wiki": "https://en.wikipedia.org/wiki/JavaScript",
+  "background": "/portfolio/img/definition/javascript/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/javascript/logo.svg"
+  }
+}

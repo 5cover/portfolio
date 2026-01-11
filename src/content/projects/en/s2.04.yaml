@@ -1,0 +1,40 @@
+{
+  "id": "s2.04",
+  "lang": "en",
+  "title": "OSINT and data mining on education",
+  "abstract": "Data mining and OSINT from french middle and high schools. Operating a database (S2.04)",
+  "story": "",
+  "context": "BUT",
+  "startDate": "2024-04-23",
+  "endDate": "2024-06-12",
+  "tags": [
+    "but-gerer",
+    "but-collaborer",
+    "data",
+    "db"
+  ],
+  "technologies": [
+    "replit",
+    "sql",
+    "mysql",
+    "python",
+    "sql-workbench",
+    "pandas",
+    "matplotlib",
+    "numpy"
+  ],
+  "team": [
+    "kervadec-matteo"
+  ],
+  "links": [
+    {
+      "label": "GitHub repository",
+      "anchor": "github",
+      "href": "https://github.com/5cover/S2.04"
+    }
+  ],
+  "references": [],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

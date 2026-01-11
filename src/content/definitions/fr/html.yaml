@@ -1,0 +1,16 @@
+{
+  "id": "html",
+  "lang": "fr",
+  "type": "markup-language",
+  "name": {
+    "abbr": "HTML",
+    "full": "HyperText Markup Language"
+  },
+  "synopsis": "Langage de balisage conçu pour représenter les pages web.",
+  "wiki": "https://fr.wikipedia.org/wiki/Hypertext_Markup_Language",
+  "background": "/portfolio/img/definition/html/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/html/logo.svg"
+  }
+}

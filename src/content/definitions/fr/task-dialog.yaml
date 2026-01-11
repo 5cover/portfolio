@@ -1,0 +1,12 @@
+{
+  "id": "task-dialog",
+  "lang": "fr",
+  "type": "ui",
+  "name": {
+    "full": "dialogue de tâche"
+  },
+  "synopsis": "Une boîte de dialogue utilisée pour afficher des informations et recevoir une entrée simple de l’utilisateur. Comme une boîte de message, elle est mise en forme par le système d’exploitation en fonction des paramètres que vous définissez. Toutefois, une boîte de dialogue de tâche a beaucoup plus de fonctionnalités qu’une boîte de message.",
+  "wiki": "https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview",
+  "background": null,
+  "logo": null
+}

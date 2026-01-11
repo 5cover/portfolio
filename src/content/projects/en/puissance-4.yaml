@@ -1,0 +1,31 @@
+{
+  "id": "puissance-4",
+  "lang": "en",
+  "title": "Puissance 4",
+  "abstract": "Command-line Connect 4 game",
+  "story": "\n<p>This project is a simple Connect 4 game programmed in <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/Python_(programming_language)\" data-definition-id=\"python\" class=\"link definition-tooltip-trigger\">Python</a>. I made it in the context of the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448\" data-definition-id=\"nsi\" class=\"link definition-tooltip-trigger\">NSI</a> speciality in high school. It allowed me to formalize my Python skills as it was my first <q>real</q> project.</p>",
+  "context": "NSI High-school",
+  "startDate": "2021-11-15",
+  "endDate": "2021-12-05",
+  "tags": [
+    "game",
+    "high-level",
+    "cli"
+  ],
+  "technologies": [
+    "python",
+    "spyder"
+  ],
+  "team": [],
+  "links": [
+    {
+      "label": "GitHub repository",
+      "anchor": "github",
+      "href": "https://github.com/5cover/Puissance-4"
+    }
+  ],
+  "references": [],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

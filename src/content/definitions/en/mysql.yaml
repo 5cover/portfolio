@@ -1,0 +1,15 @@
+{
+  "id": "mysql",
+  "lang": "en",
+  "type": "dbms",
+  "name": {
+    "full": "MySQL"
+  },
+  "synopsis": "An open-source relational database management system.",
+  "wiki": "https://en.wikipedia.org/wiki/MySQL",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/mysql/logo.svg"
+  }
+}

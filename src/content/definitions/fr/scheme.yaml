@@ -1,0 +1,15 @@
+{
+  "id": "scheme",
+  "lang": "fr",
+  "type": "programming-language",
+  "name": {
+    "full": "Scheme"
+  },
+  "synopsis": "Langage de programmation dérivé du langage fonctionnel Lisp, créé dans les années <time datetime=\"1970\">1970</time> au <abbr title=\"Massachusetts Institute of Technology\">MIT</abbr> par Gerald Jay Sussman et Guy L. Steele.",
+  "wiki": "https://fr.wikipedia.org/wiki/Scheme",
+  "background": "/portfolio/img/definition/scheme/bg.png",
+  "logo": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/definition/scheme/logo.svg"
+  }
+}

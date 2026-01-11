@@ -1,0 +1,15 @@
+{
+  "id": "make",
+  "lang": "fr",
+  "type": "software",
+  "name": {
+    "full": "Make"
+  },
+  "synopsis": "Logiciel qui construit automatiquement des fichiers, souvent exécutables, ou des bibliothèques à partir d'éléments de base tels que du code source. Il utilise des fichiers appelés makefile qui spécifient comment construire les fichiers cibles.",
+  "wiki": "https://fr.wikipedia.org/wiki/Make",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/make/logo.svg"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "nsi",
+  "lang": "fr",
+  "type": "high-school-specialized-teaching",
+  "name": {
+    "abbr": "NSI",
+    "full": "Numériques Sciences Informatiques"
+  },
+  "synopsis": "Cette spécialité au lycée enseigne les bases de la programmation et de l'algorithmique, tout en explorant les concepts fondamentaux de l'informatique, tels que les structures de données, les réseaux et les systèmes d'exploitation. Elle vise également à développer une culture numérique et une compréhension des enjeux éthiques et sociétaux liés à l'informatique.",
+  "wiki": "https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448",
+  "background": "/portfolio/img/definition/nsi/bg.webp",
+  "logo": null
+}

@@ -1,0 +1,15 @@
+{
+  "id": "spyder",
+  "lang": "en",
+  "type": "ide",
+  "name": {
+    "full": "Spyder"
+  },
+  "synopsis": "Spyder is an open-source IDE specifically designed for scientific programming in the Python language. It is part of the Anaconda distribution but can also be installed independently.",
+  "wiki": "https://www.spyder-ide.org/",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/spyder/logo.svg"
+  }
+}

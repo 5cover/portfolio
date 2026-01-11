@@ -1,0 +1,40 @@
+{
+  "id": "s2.04",
+  "lang": "fr",
+  "title": "Data mining et OSINT sur l'éducation",
+  "abstract": "Data mining sur l'open-data des collèges et lycées français. Exploitation d'une base de données (S2.04)",
+  "story": "",
+  "context": "BUT",
+  "startDate": "2024-04-23",
+  "endDate": "2024-06-12",
+  "tags": [
+    "but-gerer",
+    "but-collaborer",
+    "data",
+    "db"
+  ],
+  "technologies": [
+    "replit",
+    "sql",
+    "mysql",
+    "python",
+    "sql-workbench",
+    "pandas",
+    "matplotlib",
+    "numpy"
+  ],
+  "team": [
+    "kervadec-matteo"
+  ],
+  "links": [
+    {
+      "label": "Dépôt GitHub",
+      "anchor": "github",
+      "href": "https://github.com/5cover/S2.04"
+    }
+  ],
+  "references": [],
+  "gallery": [],
+  "logo": null,
+  "background": null
+}

@@ -1,0 +1,15 @@
+{
+  "id": "c",
+  "lang": "fr",
+  "type": "programming-language",
+  "name": {
+    "full": "C"
+  },
+  "synopsis": "Langage de programmation impératif, généraliste et de bas niveau, inventé en <time datatime=\"1972\">1972</time> par Dennis Ritchie et Ken Thompson.",
+  "wiki": "https://fr.wikipedia.org/wiki/C_(langage)",
+  "background": "/portfolio/img/definition/c/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/c/logo.svg"
+  }
+}

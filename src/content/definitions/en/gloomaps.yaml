@@ -1,0 +1,15 @@
+{
+  "id": "gloomaps",
+  "lang": "en",
+  "type": "website",
+  "name": {
+    "full": "GlooMaps"
+  },
+  "synopsis": "A simple online visual sitemap tool.",
+  "wiki": "https://www.gloomaps.com",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/gloomaps/logo.png"
+  }
+}

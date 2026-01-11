@@ -1,0 +1,15 @@
+{
+  "id": "figma",
+  "lang": "en",
+  "type": "website",
+  "name": {
+    "full": "Figma"
+  },
+  "synopsis": "A collaborative web application for interface design.",
+  "wiki": "https://en.wikipedia.org/wiki/Figma",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/figma/logo.svg"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "svg",
+  "lang": "fr",
+  "type": "data-format",
+  "name": {
+    "abbr": "SVG",
+    "full": "Scalable Vector Graphics"
+  },
+  "synopsis": "Format de données textuel conçu pour décrire des ensembles de graphiques vectoriels 2D et basé sur XML.",
+  "wiki": "https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics",
+  "background": "/portfolio/img/definition/svg/bg.png",
+  "logo": {
+    "isThemedSvg": true,
+    "url": "/portfolio/img/definition/svg/logo.svg"
+  }
+}

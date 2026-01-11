@@ -1,0 +1,15 @@
+{
+  "id": "survivalworld",
+  "lang": "en",
+  "type": "game-server",
+  "name": {
+    "full": "SurvivalWorld"
+  },
+  "synopsis": "<q cite=\"https://top-serveurs.net/minecraft/survivalworld-65355b32ec669\">SurvivalWorld is the reference for Minecraft Survival servers throughout the French-speaking world! Meet up with your friends, or come and make some more, to survive in the vast plains of our worlds.</q>",
+  "wiki": "https://www.survivalworld.fr/",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/survivalworld/logo.png"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "figma",
+  "lang": "fr",
+  "type": "website",
+  "name": {
+    "full": "Figma"
+  },
+  "synopsis": "Éditeur de graphiques vectoriels et un outil de prototypage en ligne.",
+  "wiki": "https://fr.wikipedia.org/wiki/Figma",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/figma/logo.svg"
+  }
+}

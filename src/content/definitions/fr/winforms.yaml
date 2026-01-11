@@ -1,0 +1,16 @@
+{
+  "id": "winforms",
+  "lang": "fr",
+  "type": "library",
+  "name": {
+    "short": "WinForms",
+    "full": "Windows Forms"
+  },
+  "synopsis": "Framework d'interface graphique inclus dans le framework .NET fournissant l'accès via à l'API Windows.",
+  "wiki": "https://fr.wikipedia.org/wiki/Windows_Forms",
+  "background": null,
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/winforms/logo.png"
+  }
+}

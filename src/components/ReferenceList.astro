@@ -1,0 +1,42 @@
+---
+import Graphic from './Graphic.astro';
+import type { AnchorEntry } from '../lib/content';
+
+type Reference = {
+  caption: string;
+  anchor: string;
+  href: string;
+};
+
+type Props = {
+  references: Reference[];
+  anchorsById: Record<string, AnchorEntry['data']>;
+  backlinkLabel: string;
+};
+
+const props: Props = Astro.props;
+const { references, anchorsById, backlinkLabel } = props;
+---
+<ol class="list">
+  {references.map((ref, index) => {
+    const num = index + 1;
+    const anchor = anchorsById[ref.anchor];
+    return (
+      <li id={`ref-${num}`}>
+        <span class="ref-backlink" aria-label={backlinkLabel} title={backlinkLabel}>
+          <a class="link" href={`#cite-ref-${num}`}>&uarr;</a>
+        </span>
+        <a class="ref-cite link" target="_blank" rel="noopener noreferrer" href={ref.href}>
+          {anchor ? (
+            <Graphic
+              url={anchor.url}
+              isThemedSvg={anchor.isThemedSvg}
+              alt={ref.caption}
+            />
+          ) : null}
+          <span set:html={ref.caption}></span>
+        </a>
+      </li>
+    );
+  })}
+</ol>

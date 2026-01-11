@@ -1,0 +1,30 @@
+---
+import LiteratureCard from './LiteratureCard.astro';
+import type { AnchorEntry, LiteratureEntry } from '../lib/content';
+
+type Props = {
+  lang: string;
+  route: string;
+  langLabels: {
+    fmtTitle: string;
+  };
+  entries: LiteratureEntry[];
+  anchorsById: Record<string, AnchorEntry['data']>;
+  headingLevel?: number;
+};
+
+const props: Props = Astro.props;
+const { lang, route, langLabels, entries, anchorsById, headingLevel = 3 } = props;
+---
+<ul class="lvl list-detail-split-card">
+  {entries.map((entry) => (
+    <LiteratureCard
+      lang={lang}
+      route={route}
+      langLabels={langLabels}
+      entry={entry.data}
+      anchorsById={anchorsById}
+      headingLevel={headingLevel}
+    />
+  ))}
+</ul>

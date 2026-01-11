@@ -1,0 +1,16 @@
+{
+  "id": "powershell",
+  "lang": "en",
+  "type": "programming-language",
+  "name": {
+    "full": "Windows PowerShell",
+    "short": "PowerShell"
+  },
+  "synopsis": "A task automation and configuration management program from Microsoft, consisting of a command-line shell and the associated scripting language.",
+  "wiki": "https://en.wikipedia.org/wiki/PowerShell",
+  "background": "/portfolio/img/definition/powershell/bg.png",
+  "logo": {
+    "isThemedSvg": false,
+    "url": "/portfolio/img/definition/powershell/logo.svg"
+  }
+}
