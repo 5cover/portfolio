@@ -1,3 +1,4 @@
+@use "sass:meta";
 @use 'sass:list';
 @use 'sass:color';
 @use 'const';
@@ -11,12 +12,12 @@
 @layer base, components;
 
 @layer components {
-    @import 'components';
+    @include meta.load-css('components');
 }
 
 @layer base {
     @function get-rgb($color) {
-        @return red($color), green($color), blue($color);
+        @return color.channel($color, 'red', $space: rgb), color.channel($color, 'green', $space: rgb), color.channel($color, 'blue', $space: rgb);
     }
 
     @mixin var-color($color-name, $color) {

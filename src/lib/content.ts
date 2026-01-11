@@ -265,14 +265,6 @@ export async function getDefinitions(lang: string): Promise<LocalizedDefinitionE
     }));
 }
 
-export async function getDefinition(lang: string, id: string): Promise<DefinitionLocalizedData> {
-    const entry = await getEntry('definitions', id);
-    if (!entry) {
-        throw new Error(`Definition ${id} does not exist`);
-    }
-    return localizeDefinitionData(entry.data, lang);
-}
-
 export async function getTags(lang: string): Promise<LocalizedTagEntry[]> {
     const entries = await getCollection('tags');
     return entries.map((entry) => ({

@@ -1,4 +1,6 @@
 /* Comon styles for detail pages */
+@use "sass:math";
+
 @use 'const';
 @use 'util';
 
@@ -57,7 +59,7 @@ main {
 
         @media screen and (min-width: 701px) {
             grid-column: 2;
-            grid-row: 1 / calc($row-count + 1);
+            grid-row: math.div(1, calc($row-count + 1));
         }
 
         @media screen and (max-width: 700px) {
