@@ -31,7 +31,6 @@ const projectCollection = defineCollection({
     lang: z.string(),
     title: z.string(),
     abstract: z.string(),
-    story: z.string(),
     context: z.string().nullable(),
     startDate: z.string().nullable(),
     endDate: z.string().nullable(),
@@ -54,7 +53,6 @@ const literatureCollection = defineCollection({
     kind: z.enum(['passion', 'blog', 'story']),
     title: z.string(),
     abstract: z.string(),
-    story: z.string(),
     links: z.array(linkSchema),
     references: z.array(referenceSchema),
     gallery: z.array(galleryItemSchema),
@@ -116,7 +114,6 @@ const historyCollection = defineCollection({
     lang: z.string(),
     title: z.string(),
     meta: z.string(),
-    body: z.string(),
     media: z
       .object({
         year: z.number(),
@@ -245,6 +242,11 @@ const metaCollection = defineCollection({
   }),
 });
 
+const textualCollection = defineCollection({
+  type: 'content',
+  schema: z.object({}),
+});
+
 export const collections = {
   anchors: anchorCollection,
   contacts: contactCollection,
@@ -256,5 +258,6 @@ export const collections = {
   'piano-tiles': pianoTileCollection,
   projects: projectCollection,
   tags: tagCollection,
+  textual: textualCollection,
   types: typeCollection,
 };

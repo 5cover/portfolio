@@ -3,7 +3,6 @@
   "lang": "fr",
   "title": "Puissance 4",
   "abstract": "Jeu de Puissance 4 en ligne de commande",
-  "story": "\n<p>Ce projet est un simple jeu de Puissance 4 programmé en <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/Python_(langage)\" data-definition-id=\"python\" class=\"link definition-tooltip-trigger\">Python</a>. Je l'ai réalisé dans le contexte de la spécialité <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448\" data-definition-id=\"nsi\" class=\"link definition-tooltip-trigger\">NSI</a> au lycée. Il aura permis de formaliser mes compétences en Python car c'était mon premier <q>vrai</q> projet.</p>",
   "context": "NSI Lycée",
   "startDate": "2021-11-15",
   "endDate": "2021-12-05",

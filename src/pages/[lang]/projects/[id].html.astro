@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TextualContent from '../../../components/TextualContent.astro';
 import DefinitionCardList from '../../../components/DefinitionCardList.astro';
 import Gallery from '../../../components/Gallery.astro';
 import Graphic from '../../../components/Graphic.astro';
@@ -13,6 +14,7 @@ import {
   getLangs,
   getProjects,
   getTags,
+  getTextualEntry,
   getTypes,
   mapById,
 } from '../../../lib/content';
@@ -54,6 +56,13 @@ const [langData, langs, projectEntry, tags, anchors, definitions, types] = await
 if (!projectEntry) {
   throw new Error(`Missing project ${id} for ${lang}`);
 }
+
+const projectBodyEntry = await getTextualEntry(
+  lang,
+  'projects',
+  projectEntry.data.id
+);
+const { Content: ProjectBody } = await projectBodyEntry.render();
 
 const navItems = buildNavItems(langData);
 const themeLabels = buildThemeLabels(langData);
@@ -148,7 +157,7 @@ const techDefs = project.technologies
     ) : null}
     <section id="story">
       <h2>{langData.story}</h2>
-      <Fragment set:html={project.story} />
+      <TextualContent content={ProjectBody} />
     </section>
     {project.references.length > 0 ? (
       <section id="references">

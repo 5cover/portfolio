@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+import DefinitionLink from './mdx/DefinitionLink.astro';
+import ReferenceLink from './mdx/ReferenceLink.astro';
+import TextLink from './mdx/TextLink.astro';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+
+interface Props {
+  content: AstroComponentFactory;
+}
+
+const { content: Content } = Astro.props;
+
+const components = {
+  Def: DefinitionLink,
+  Link: TextLink,
+  Ref: ReferenceLink,
+  Image,
+};
+---
+<Content components={components} />

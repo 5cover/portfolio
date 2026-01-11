@@ -3,7 +3,6 @@
   "lang": "fr",
   "title": "Site de météo",
   "abstract": "Mise en place d'un serveur Web. Installation de services réseau (S2.03)",
-  "story": "\n<p>L'objectif de ce projet était de créer un site Web dynamique dans un environnement conteneurisé.</p>\n<p>Nous avons configuré un serveur web <? $f->def('apache2') ?>.</p>\n<p>Nous avons mis en place plusieurs fonctionnalités, notamment l'authentification et l'interaction avec une base de données <? $f->def('mysql') ?>.</p>",
   "context": "BUT",
   "startDate": "2024-05-14",
   "endDate": "2024-06-05",

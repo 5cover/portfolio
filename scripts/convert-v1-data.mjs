@@ -66,6 +66,13 @@ function writeYaml(filePath, data) {
   writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n', 'utf8');
 }
 
+function writeTextual(lang, kind, id, body) {
+  const filePath = join(OUT, 'textual', lang, kind, `${id}.mdx`);
+  mkdirSync(dirname(filePath), { recursive: true });
+  const content = body.endsWith('\n') || body.length === 0 ? body : `${body}\n`;
+  writeFileSync(filePath, content, 'utf8');
+}
+
 function escapeHtml(value) {
   return value
     .replace(/&/g, '&amp;')
@@ -389,12 +396,13 @@ function writeHistory(lang, historyItems, definitions, projects) {
             projects,
           })
         : entry.body ?? '';
+    const id = `history-${index}`;
+    writeTextual(lang, 'history', id, body);
     writeYaml(join(OUT, 'history', lang, `history-${index}.yaml`), {
-      id: `history-${index}`,
+      id,
       lang,
       title: entry.title,
       meta: entry.meta,
-      body,
       media,
       order: index,
     });
@@ -445,7 +453,7 @@ function writeProjects(lang, projects, definitions) {
         })
       : project.abstract ?? '';
 
-    const story = project.story && project.story['$include']
+    const body = project.story && project.story['$include']
       ? renderFragment({
           lang,
           relativePath: project.story['$include'],
@@ -454,12 +462,12 @@ function writeProjects(lang, projects, definitions) {
         })
       : project.story ?? '';
 
+    writeTextual(lang, 'projects', id, body);
     writeYaml(join(OUT, 'projects', lang, `${id}.yaml`), {
       id,
       lang,
       title: project.title,
       abstract,
-      story,
       context: project.context ?? null,
       startDate: project['start-date'] ?? null,
       endDate: project['end-date'] ?? null,
@@ -491,7 +499,7 @@ function writeLiterature(lang, passions, perspectives, definitions, projects) {
         })
       : value.abstract ?? '';
 
-    const story = value.story && value.story['$include']
+    const body = value.story && value.story['$include']
       ? renderFragment({
           lang,
           relativePath: value.story['$include'],
@@ -500,13 +508,13 @@ function writeLiterature(lang, passions, perspectives, definitions, projects) {
         })
       : value.story ?? '';
 
+    writeTextual(lang, 'literature', id, body);
     writeYaml(join(OUT, 'literature', lang, `${id}.yaml`), {
       id,
       lang,
       kind,
       title: value.title,
       abstract,
-      story,
       links: transformLinks(value.links),
       references: value.references ?? [],
       gallery: transformGallery(value.gallery),

@@ -3,7 +3,6 @@
   "lang": "en",
   "title": "Le Patio box office",
   "abstract": "Development of a performance hall management application. Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr> (S2.01)",
-  "story": "\n<p>The goal of this project is to create a performance hall management application in <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/Java_(programming_language)\" data-definition-id=\"java\" class=\"link definition-tooltip-trigger\">Java</a> with a <abbr title=\"Human Machine Interface\">HMI</abbr> in <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/JavaFX\" data-definition-id=\"javafx\" class=\"link definition-tooltip-trigger\">JavaFX</a> that allows the venue manager to manage shows.</p>",
   "context": "BUT",
   "startDate": "2024-05-28",
   "endDate": "2024-06-17",

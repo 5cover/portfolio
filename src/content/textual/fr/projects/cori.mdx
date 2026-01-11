@@ -1,0 +1,53 @@
+
+<p>Cori est une bibliothèque <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> à fichier unique conçue pour simplifier le processus d'entrée utilisateur en C. Elle fournit un ensemble complet de fonctions qui gèrent les scénarios d'entrée courants et les erreurs potentielles, permettant aux programmeurs de se concentrer davantage sur la logique de leur programme plutôt que sur les subtilités de la gestion des entrées. De plus, Cori vise à servir de remplacement plus sûr et plus convivial à la fonction `scanf`, qui est souvent mal utilisée par les débutants et peut facilement conduire à un comportement indéfini<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>.</p>
+<h3 id="problems-cori-intends-to-solve">Problèmes que Cori résout</h3>
+<ol class="list">
+    <li><p>**Simplifier la gestion des entrées utilisateur**&nbsp;: Cori fournit un ensemble de fonctions qui gèrent différents types d'entrées utilisateur, ce qui permet aux programmeurs de collecter et de traiter plus facilement les entrées sans se soucier des complexités sous-jacentes.</p></li>
+    <li><p>**Remplacer `scanf`**&nbsp;: la fonction `scanf` est notoirement difficile à utiliser correctement, en particulier pour les débutants. Cori offre une alternative plus sûre et plus intuitive, réduisant le risque de comportement indéfini et rendant la gestion des entrées plus simple.</p></li>
+</ol>
+<h3 id="core-concepts">Concepts fondamentaux</h3>
+<h4 id="types-of-input">Types d'entrée</h4>
+<p>Cori prend en charge une large gamme de types d'entrée, chacun représenté par un type C spécifique&nbsp;:</p>
+<ul class="list">
+    <li><p>**Entiers signés**: `intmax`, `longlong`, `long`, `int`, `short`</p></li>
+    <li><p>**Entiers non signés**: `uintmax`, `ulonglong`, `ulong`, `uint`, `ushort`</p></li>
+    <li><p>**Décimaux en point flottant**: `longdouble`, `double`, `float`</p></li>
+    <li><p>**Texte**: `character`, `until`, `line`, `linel`</p></li>
+    <li><p>**Autre**: `boolean`</p></li>
+</ul>
+<h4 id="error-handling-system">Système de gestion des erreurs</h4>
+<p>Cori inclut un système de gestion des erreurs robuste qui permet aux programmeurs de définir des gestionnaires d'erreurs personnalisés. La bibliothèque définit une énumération `InputError` qui représente toutes les conditions d'erreur possibles, telles qu'une entrée vide, une fin de fichier (EOF), des caractères booléens non valides, plusieurs caractères, un nombre non valide, un nombre hors limites, une mémoire insuffisante et une base numérique non prise en charge.</p>
+<h4 id="function-families">Familles de fonctions</h4>
+<p>Pour chaque type d'entrée, Cori fournit une famille de fonctions pour gérer différents scénarios&nbsp;:</p>
+<ul class="list">
+    <li><p>`read_&lt;typename&gt;`&nbsp;: lit l'entrée depuis `stdin` et gère les erreurs à l'aide d'un gestionnaire d'erreurs NO-OP (aucune opération).</p></li>
+    <li><p>`read_&lt;typename&gt;_or`&nbsp;: lit l'entrée depuis `stdin` et gère les erreurs à l'aide d'un gestionnaire d'erreurs spécifié.</p></li>
+    <li><p>`read_&lt;typename&gt;_from`&nbsp;: lit l'entrée depuis un flux `FILE *` spécifié et gère les erreurs à l'aide d'un gestionnaire d'erreurs NO-OP.</p></li>
+    <li><p>`read_&lt;typename&gt;_or_from`&nbsp;: lit l'entrée depuis un flux `FILE *` spécifié et gère les erreurs à l'aide d'un gestionnaire d'erreurs NO-OP.</p></li>
+    <li><p>`tryRead_&lt;typename&gt;`&nbsp;: lit une fois l'entrée de `stdin` et renvoie un code d'erreur si une erreur se produit.</p></li>
+    <li><p>`tryRead_&lt;typename&gt;_from`&nbsp;: lit une fois l'entrée d'un flux `FILE *` spécifié et renvoie un code d'erreur si une erreur se produit.</p></li>
+</ul>
+<h3 id="techniques-and-patterns-used">Techniques and patrons utilisés</h3>
+<h4 id="stb-style-libraries">Bibliothèques STB</h4>
+<p>Cori est conçue comme une bibliothèque de style STB<sup id="cite-ref-2"><a class="link" href="#ref-2">[2]</a></sup>, ce qui signifie qu'elle se compose d'un seul fichier d'en-tête qui contient à la fois l'interface et l'implémentation. Cela la rend facile à manipuler, car les utilisateurs n'ont besoin d'inclure que le fichier d'en-tête dans leurs projets. Cependant, cette approche peut conduire à des fichiers d'en-tête volumineux, elle est donc mieux adaptée aux bibliothèques simples et à usage unique comme Cori.</p>
+<h4 id="heavy-usage-of-macros">Utilisation intensive des macros</h4>
+<p>Cori utilise abondamment les macros pour la métaprogrammation, ce qui permet de générer des modèles de code répétitifs. L'un des modèles les plus utilisés est le modèle X-macro<sup id="cite-ref-3"><a class="link" href="#ref-3">[3]</a></sup>, qui permet de définir un ensemble de fonctions et de structures de données liées de manière concise et maintenable. Cette approche réduit la duplication de code et rend la bibliothèque plus flexible et plus facile à étendre.</p>
+<h3 id="example">Example</h3>
+<p>Cori a été conçu dans un souci de simplicité.</p>
+<figure class="figure">
+```c
+#define CORI_IMPLEMENTATION
+#include "stb_cori.h";
+
+int main() {
+    int result;
+    printf("Entrez un entier : ");
+    result = read_int();
+    printf("Reçu %d\\n", result);
+}
+```
+    <figcaption>Exemple de programme utilisant Cori pour lire un entier depuis l'entrée standard.</figcaption>
+</figure>
+<h3 id="conclusion">Conclusion</h3>
+<p>Cori est une bibliothèque puissante et conviviale pour la gestion des entrées de console dans les programmes C. En fournissant un ensemble complet de fonctions et un système de gestion des erreurs robuste, Cori simplifie le processus de gestion des entrées et offre une alternative plus sûre à la fonction `scanf`. Sa conception en tant que bibliothèque de style STB et l'utilisation de techniques de macro avancées facilitent son intégration et son extension, ce qui en fait un excellent choix pour les programmeurs C débutants et expérimentés, en particulier pour les programmes simples de test.</p>
+<p>Pour plus de détails sur l'utilisation de Cori, veuillez vous référer au fichier <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/stb_cori/blob/main/README.md">README</a>.</p>

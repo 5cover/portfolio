@@ -3,7 +3,6 @@
   "lang": "en",
   "title": "Documentation generator",
   "abstract": "Automation, scripts, containerization, Markdown parser. Setting up a development environment (S1.03)",
-  "story": "\n<p>The goal of this project was to create a <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/PHP\" data-definition-id=\"php\" class=\"link definition-tooltip-trigger\">PHP</a> document generator using Docker containerization and also using PHP, scripting <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/Bash_(Unix_shell)\" data-definition-id=\"bash\" class=\"link definition-tooltip-trigger\">Bash</a> etc. We were in groups of 4. On my side, I took care of writing a Markdown parser in PHP. Our teachers were smart: they modified the Markdown syntax so that we could not simply copy a parser from the Internet.</p>",
   "context": "BUT",
   "startDate": "2023-10-25",
   "endDate": "2023-01-21",

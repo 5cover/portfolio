@@ -3,7 +3,6 @@
   "lang": "fr",
   "title": "Création d'une base de données",
   "abstract": "Concevoir et implémenter une base de données. Création d'une base de données (S1.04)",
-  "story": "\n<p>L'objectif de ce projet était de créer un diagramme de classe et d'implémenter une base de données en <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/Structured_Query_Language\" data-definition-id=\"sql\" class=\"link definition-tooltip-trigger\">SQL</a>.</p>",
   "context": "BUT",
   "startDate": "2023-11-27",
   "endDate": "2024-01-22",

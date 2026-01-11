@@ -3,7 +3,6 @@
   "lang": "en",
   "title": "Weather website",
   "abstract": "Set up a Web server. Setting up network services (S2.03)",
-  "story": "\n<p>The objective of this project was to create a dynamic website in a containerized environment.</p>\n<p>We configured an <? $f->def('apache2') ?> web server.</p>\n<p>We implemented several features, including authentication and interaction with a <? $f->def('mysql') ?> database.</p>",
   "context": "BUT",
   "startDate": "2024-05-14",
   "endDate": "2024-06-05",

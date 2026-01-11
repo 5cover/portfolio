@@ -3,7 +3,6 @@
   "lang": "fr",
   "title": "Démineur Python",
   "abstract": "Jeu de démineur en interface graphique",
-  "story": "\n<p>Un jeu simple de démineur programmé en Python, avec Tkinter et des images pour former les cellules de la grille. Implémente de manière incomplète le patron d'architecture <abbr title=\"Modèle Vue Contrôleur\">MVC</abbr><sup id=\"cite-ref-1\"><a class=\"link\" href=\"#ref-1\">[1]</a></sup>.</p>",
   "context": "NSI Lycée",
   "startDate": "2022-03-01",
   "endDate": "2022-04-24",

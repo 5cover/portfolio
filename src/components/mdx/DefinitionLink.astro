@@ -1,0 +1,34 @@
+---
+import type { DefinitionEntry } from '../../lib/content';
+
+type DefinitionData = DefinitionEntry['data'];
+type DefinitionIndex = Record<string, DefinitionData>;
+
+interface Props {
+  id: string;
+  href?: string;
+  class?: string;
+  definitionsById: DefinitionIndex;
+}
+
+const { id, href, class: className, definitionsById } = Astro.props;
+
+const definition = definitionsById[id];
+const resolvedHref = href ?? definition?.wiki;
+
+if (!resolvedHref) {
+  throw new Error(`Missing definition href for ${id}`);
+}
+
+const label = definition?.name.abbr ?? definition?.name.short ?? definition?.name.full ?? id;
+const classes = ['link', 'definition-tooltip-trigger', className].filter(Boolean).join(' ');
+const isExternal = resolvedHref.startsWith('http://') || resolvedHref.startsWith('https://');
+---
+<a
+  href={resolvedHref}
+  class={classes}
+  data-definition-id={id}
+  {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+>
+  <slot>{label}</slot>
+</a>

@@ -3,7 +3,6 @@
   "lang": "fr",
   "title": "ED++",
   "abstract": "Application graphique de suivi des notes scolaires",
-  "story": "\n<p>Une simple application <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/Python_(langage)\" data-definition-id=\"python\" class=\"link definition-tooltip-trigger\">Python</a> développée avec <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/Tkinter\" data-definition-id=\"tkinter\" class=\"link definition-tooltip-trigger\">Tkinter</a> dans le contexte de la spécialité <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448\" data-definition-id=\"nsi\" class=\"link definition-tooltip-trigger\">NSI</a> pour interagir avec une base de données pour le suivi des notes scolaires.</p>",
   "context": "NSI Lycée",
   "startDate": "2022-10-21",
   "endDate": "2022-11-09",

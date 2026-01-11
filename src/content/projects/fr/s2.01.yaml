@@ -3,7 +3,6 @@
   "lang": "fr",
   "title": "Billeterie Le Patio",
   "abstract": "Développement d'une application de gestion de salle de spectacle. Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr> (S2.01)",
-  "story": "\n<p>L'objectif de ce projet est de créer une application de gestion d'une salle de spectacle en <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/Java_(langage)\" data-definition-id=\"java\" class=\"link definition-tooltip-trigger\">Java</a> avec une <abbr title=\"Interface Homme Machine\">IHM</abbr> en <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/JavaFX\" data-definition-id=\"javafx\" class=\"link definition-tooltip-trigger\">JavaFX</a> qui permet au directeur de la salle de gérer les spectacles.</p>",
   "context": "BUT",
   "startDate": "2024-05-28",
   "endDate": "2024-06-17",

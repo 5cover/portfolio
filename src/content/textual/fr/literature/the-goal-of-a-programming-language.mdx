@@ -1,0 +1,169 @@
+
+<div>
+    <p><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> est le premier langage de programmation que j'ai appris, en <time datetime="2017">2017</time>. Cependant j'ai récemment commencé à apprendre le <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>. Zig est similaire au C dans ses fondements. C'est un langage de bas niveau, destiné à la programmation système et à l'interaction avec le matériel. Et je suis un grand fan&nbsp;! J'ai implémenté <a class="link" href="/portfolio/fr/projects/ztest.html">un clone de la commande ' . $f->code('test') . ' GNU</a> pour me familiariser avec celui-ci. Ce langage résout de nombreux problèmes et limitations du C.</p>
+</div>
+<article id="generics">
+    <h3>Génériques</h3>
+    <div>
+        <p>Les génériques ont toujours été difficiles à faire en C. Il y a plusieurs approches&nbsp;: pointeurs sur vide, macros, passer la taille du type. Mais il y a très peu de garanties d'exactitude et la syntaxe est pénible.</p>
+        <figure class="figure">
+```c
+#include &lt;stddef.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+#define vector_MIN_CAP 32
+
+#define vector_struct(T) \
+  typedef struct T##_vector { \
+    T *buf; \
+    size_t capacity; \
+    size_t size; \
+  } T##_vector;
+
+#define vector_init(T) \
+  void T##_vector_init(T##_vector *vec) { \
+    vec-&gt;capacity = vector_MIN_CAP; \
+    vec-&gt;buf = malloc(sizeof(T) * vec-&gt;capacity); \
+    vec-&gt;size = 0; \
+  }
+
+#define vector_get(T) \
+  void *T##_vector_get(T##_vector *vec, size_t idx) { return vec-&gt;buf + idx; }
+
+#define vector_set(T) \
+  void T##_vector_set(T##_vector *vec, size_t idx, T data) { \
+    vec-&gt;buf[idx] = data; \
+  }
+
+#define vector_push(T) \
+  void T##_vector_push(T##_vector *vec, T data) { \
+    if (vec-&gt;size == vec-&gt;capacity) { \
+      vec-&gt;capacity *= 2; \
+      vec-&gt;buf = realloc(vec-&gt;buf, sizeof(T) * vec-&gt;capacity); \
+    } \
+    T##_vector_set(vec, vec-&gt;size++, data); \
+  }
+
+#define vector(T) \
+  vector_struct(T); \
+  vector_init(T) vector_get(T) vector_set(T) vector_push(T)
+```
+            <figcaption>Impleméntation d'un vecteur générique utilisant les macros en C<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>. Comme vous pouvez le voir, le code est embrouillé et fragile. L'utilisation serait inutilement verbeuse et pénible.</figcaption>
+        </figure>
+        <p>En Zig, les génériques sont simples comme bonjour. Vous pouvez passer des arguments de types aux fonctions comme citoyens de première classe. Vous pouvez aussi stocker des types dans des constantes.</p>
+        <p>Et pour les structures de données génériques&nbsp;? Définissez simplement une fonction générique qui définit la structure localement en utilisant les arguments de type et qui retourne une instance de celle-ci.</p>
+        <figure class="figure">
+```zig
+pub fn Binary(comptime T: type) type {
+    return struct {
+        left: T,
+        right: T,
+    };
+}
+```
+            <figcaption>Exemple de code Zig pour une structure de données générique (une expression binaire pour un analyseur)</figcaption>
+        </figure>
+    </div>
+</article>
+<article id="explicit-and-exhaustive-error-handling">
+    <h3>Gestion des erreurs explicite et exhaustive</h3>
+    <div>
+        <figure class="figure">
+```c
+printf("Hello world");
+```
+            <figcaption>Ce code peut échouer. **L'erreur est ignorée.**</figcaption>
+        </figure>
+        <figure class="figure">
+```zig
+const stdout = std.io.getStdOut().writer();
+try stdout.print("Hello world\\n");
+```
+            <figcaption>Ce code peut aussi échouer. Mais le `try` indique qu'en cas d'erreur, celle-ci est **retournée**. Si nous sommes dans la fonction `main`, cela fera planter le programme.</figcaption>
+        </figure>
+        <p>Selon la <cite>page de manuel de `printf`</cite>, <q>si une erreur de sortie est rencontrée, une valeur négative est retournée</q>. Cela signifie que pour être correct à 100% et gérer tous les cas d'erreur possibles, nous devons entourer tous les appels à `printf` (ou toute fonction de la même famille) dans une instruction `if` et gérer l'erreur de manière appropriée.</p>
+        <p>Mais qui fait cela&nbsp;? La valeur de retour de `printf` est presque toujours ignorée. La raison est que nous ne savons pas quoi faire quand il y a une erreur. Si `printf` a échoué, quelque chose doit sérieusement clocher sur le système, et le programme va probablement bientôt planter. Peut-être que nous sommes à court de mémoire ou qu'une panique de noyau est en train d'avoir lieu. Quitter parait être bon un choix&nbsp;; mais ce n'est pas le comportement exprimé quand vous ignorez implicitement la valeur de retour de `printf`&nbsp;; au lieu de ça, l'erreur est ignorée et le programme continue, comme si rien ne s'était passé.</p>
+        <p>Le modèle de gestion d'erreur explicite de Zig est un indispensable. Il utilise aussi le modèle des <q>erreurs comme valeurs</q> avec les ensembles d'erreurs. Il y a aussi des invariants au moment de la compilation pour que toutes les erreurs soient gérées.</p>
+        <p>L'ignorance n'est plus le comportement par défaut. Ensembles, ascendons et construisons des logiciels plus sûrs.</p>
+    </div>
+</article>
+<article id="explicit-number-sizes">
+    <h3>Tailles de nombre explicites</h3>
+    <div>
+        <p>Zig n'a pas de type entier ou en point flottant dont la taille est déterminée par le compilateur et l'architecture que vous utilisez. Plutôt, toutes les tailles de nombre sont indiquées dans le code&nbsp;: `u32` pour un entier non signé sur 32 bits, par exemple.</p>
+        <p>Je trouvais cela fastidieux au début&nbsp;; mais ça devient logique en y réfléchissant un peu&nbsp;: **vous** donnez à la variable sa valeur, donc **vous** devriez décider de sa taille, car elle détermine l'intervalle des valeurs qu'elle peut contenir.</p>
+        <p>Il est possible que cette approche explicite eut prévenu l'explosion de la fusée Ariane 5 causée par un dépassement d'entier<sup id="cite-ref-2"><a class="link" href="#ref-2">[2]</a></sup>.</p>
+    </div>
+</article>
+<article id="defer-the-best-thing-since-sliced-bread">
+    <h3>`defer`: la meilleure invention depuis le bouton à quatre trous</h3>
+    <div>
+        <p>`defer` est un concept certes simple mais qui résout beaucoup de problèmes. Il regroupe les instructions logiquement ou sémantiquement liées dans le code, sans pour autant altérer leur ordre d'exécution.</p>
+        <p>Son objectif initial est de simplifier les allocations mémoire, mais il peut être utilisé pour d'autres choses. `defer` aide à s'assurer à réduire la différence entre la portée et la durée de vie des objets. Au lieu d'avoir à se rapeller de manuellement désallouer la ressource à a fin du bloc, vous pouvez ajouter une instruction `defer` juste sous l'instruction qui alloue la ressource.</p>
+        <figure class="figure">
+```psc
+var i: u8 = 1;
+while (i &lt; 100) {
+    defer i++;
+
+    // la valeur de i n&#39;a pas changé
+    // Instructions supplémentaires
+    // ...
+}
+```
+            <figcaption>Un autre utilisation de `defer` pour incrémenter un variant de boucle. L'incrémentation est faite au début de la boucle, près de la condition et de la déclaration du variant. Or elle n'est réellement exécutée qu'à la fin du bloc de la boucle.</figcaption>
+        </figure>
+    </div>
+</article>
+<article id="a-richer-standard-library">
+    <h3>Une bibliothèque standard plus riche</h3>
+    <div>
+        <p>La blibliothèque standard du C est plutôt rudimentaire. On a souvent besoin de télécharger une bibliothèque STB<sup id="cite-ref-3"><a class="link" href="#ref-3">[3]</a></sup> quand on a besoin d'un allocateur en arène ou d'une table de hachage.</p>
+        <p>On peut aussi apprendre à implémenter ces structures de données et algorithmes soi-même, ce qui explique pourquoi je pense qu'apprendre le C comme premier langage de programmation m'a aidé à devenir un meilleur programmeur.</p>
+        <p>Zig résout ce problème en ayant une bibliothèque standard plus riche. Cette approche n'est pas unique à Zig. Des langages similaires comme <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Go_(langage)" data-definition-id="go" class="link definition-tooltip-trigger">Go</a> ou <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Rust_(langage)" data-definition-id="rust" class="link definition-tooltip-trigger">Rust</a> ont eux aussi des bibliothèques standard riches.</p>
+    </div>
+</article>
+<article id="a-standard-build-system">
+    <h3>Un système de génération standardisé</h3>
+    <div>
+        <p>C n'a pas de système de génération <q>officiel</q>&nbsp;; à la place, on a des systèmes de génération tiers comme <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Make" data-definition-id="make" class="link definition-tooltip-trigger">Make</a> or <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/CMake" data-definition-id="cmake" class="link definition-tooltip-trigger">CMake</a>.</p>
+        <p>Le système de génération de Zig est distribué avec le compilateur. Celui-ci utilise une approche déclarative. Ce que j'apprécie particulièrement est qu'il n'introduit pas de nouveau langage. À la place, les commandes de génération sont exprimées en Zig.</p>
+    </div>
+</article>
+<article id="namespaces">
+    <h3>Espaces de noms</h3>
+    <div>
+        <p>Ah, la joie de préfixer chaque symbole dans un programme C pour éviter les conflits de nom avec les utilisateurs de votre bibliothèque&nbsp;!</p>
+        <p>Les espaces de noms sont devenus le standard incontournable des langages de programmation modernes. C'est très utile et idiomatique de manipuler une blibliothèque ou un modules comme ce qu'il est&nbsp;: un sac de noms.</p>
+    </div>
+</article>
+<article id="encapsulation">
+    <h3>Encapsulation</h3>
+    <div>
+        <p>Plus de besoin de préfixer les fonctions internes avec un underscore&nbsp;! `pub` est tout ce dont vous avez besoin.</p>
+        <p>Plus sérieusement, l'encapsulation n'existe pas en C. Bien que la convention de <q>si ça commence par un underscore, ne pas y toucher</q> se soit répandue depuis un moment maintenant, c'est toujours plus sûr quand le langage impose l'invariant de <q>on ne peut pas accéder à ceci en dehors de ce module / cette structure</q>.</p>
+        <p>En C, il faut être créatif. Pour éviter tout conflit de nom avec des internes de d'autres bibliothèques que l'utilisateur pourrait implémenter, votre préfixe interne ne devrait pas seulement commencer par un underscore, mais aussi contenir une suite de caractères unique (espérons-le). De plus, l'underscore ne devrait pas être suivi par une lettre majuscule, sauf si vous voulez violer le standard et vous exposer à des conflits de nom avec le compilateur ou des internes de la bibliothèque standard.</p>
+        <p>Par exemple, <a class="link" href="/portfolio/fr/projects/cori.html"><abbr title="Correct Input">Cori</abbr></a> utilise le préfixe `_cori_` pour les fonctions, macros, structures, alias de type, etc. internes.</p>
+        <p>En Zig, vous n'avez pas besoin de toute cette folie. Privé est par défaut. Exportes des fonctions, des structres et des méthodes avec le mot-clé `pub`.</p>
+    </div>
+</article>
+<article id="if-it-compiles-it-works">
+    <h3><q>Si ça compile, ça marche</q></h3>
+    <div>
+        <p>Zig est beaucoup, beaucoup plus près de l'idéal de <q>si ça compile, ça marche</q> que le C.</p>
+        <p>Certes, tout ce qui peut être fait en Zig peut aussi être fait en C, mais les invariants et les restrictions que Zig impose sont des choses dont vous n'aurez pas à vous rappeler, comme quand vous codez en C.</p>
+        <p>Pour moi, c'est l'objectif de tout langage de programmation&nbsp;: fournir une syntaxe expressive de sorte à donner autant de guaranties de conformité et de justesse que possible au moment de la compilation.</p>
+        <p>En somme, je pense que le langage C a suivi son cours. Bien sûr, il sera toujours utilisé, car énormément de programmes sont écrits en C, et il serait ridicule d'attendre que tout soit réécrit en Rust ou Zig. Cependant, je ne m'attendrais pas à le voir utilisé pour tout nouveau projet <em lang="en">greenfield</em>.</p>
+        <p>Néanmoins, je pense que le C est un très bon langage à apprendre. Il vous force à quitter votre zone de confort d'abstractions et à faire face au réel défi d'implementer des choses que nous utilisons tous les jours en tant que programmeurs, comme les vecteurs ou les tables de hachage.</p>
+    </div>
+</article>
+<article id="conclusion">
+    <h3>Conclusion</h3>
+    <div>
+        <p>En conclusion, le paysage de la programmation est en constante évolution et bien que C ait été un langage fondamental pendant des décennies, l'émergence de Zig présente une alternative prometteuse. En tant que programmeur, mon parcours a commencé avec C, un langage qui a non seulement façonné ma compréhension des concepts fondamentaux de la programmation, mais a également joué un rôle déterminant dans l'histoire de la programmation informatique. Sa simplicité, son efficacité et sa portabilité en ont fait un langage de choix pour la programmation système depuis sa création en <time datetime="1972">1972</time>.</p>
+        <p>Cependant, alors que nous nous dirigeons vers un avenir où la sécurité, les performances et la productivité des développeurs sont primordiales, Zig se démarque comme un choix solide. La philosophie de conception de Zig, qui met l'accent sur le maintien de la simplicité et du contrôle de bas niveau de C tout en offrant des fonctionnalités modernes pour assurer la correction à la compilation et appliquer des invariants, en fait un choix attrayant.</p>
+        <p>Bien que C ne soit peut-être pas aussi tendance ou riche en fonctionnalités que les langages plus récents, son influence et son importance ne peuvent être sous-estimées. Cependant, la marée semble tourner avec des langages comme Zig, qui offrent le meilleur des deux mondes &mdash; la puissance de C et la sécurité des langages modernes. Alors que nous continuons à rechercher un code meilleur et plus sûr, je m'attends à ce que Zig remplace progressivement C dans de nombreux domaines, offrant une nouvelle norme pour les langages de programmation système.</p>
+        <p>Au final, le choix entre C et Zig dépendra des besoins spécifiques du projet et de la familiarité du développeur. Cependant, une chose est claire&nbsp;: Zig est un langage à surveiller de près, et je suis impatient de voir comment il façonnera l'avenir de la programmation.</p>
+    </div>
+</article>

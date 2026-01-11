@@ -3,7 +3,6 @@
   "lang": "fr",
   "title": "Problème des N reines",
   "abstract": "Des solutions innovantes au <a class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"/portfolio/img/projects/s2.02/sujet-sae.pdf\">problème des N reines</a>. Exploration algorithmique d'un problème (S2.02)",
-  "story": "\n<p>L'objectif de ce projet est de résoudre un problème en utilisant la théorie des graphes. Le problème que nous avons choisi est celui des <var>N</var> reines. Il faut placer <var>N</var> reines sur un échiquier de <var>N</var> &times; <var>N</var> cases.</p>",
   "context": "BUT",
   "startDate": "2024-03-11",
   "endDate": "2024-03-27",

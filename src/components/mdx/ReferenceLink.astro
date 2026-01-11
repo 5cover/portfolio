@@ -1,0 +1,13 @@
+---
+interface Props {
+  id: string | number;
+}
+
+const { id } = Astro.props;
+const anchor = String(id);
+const refId = `ref-${anchor}`;
+const citeId = `cite-${refId}`;
+---
+<sup id={citeId}>
+  <a class="link" href={`#${refId}`}>[{anchor}]</a>
+</sup>

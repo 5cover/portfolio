@@ -3,7 +3,6 @@
   "lang": "en",
   "title": "FileSignatureDetector",
   "abstract": "File signature (magic number) detector",
-  "story": "\n<p>A simple <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/Python_(programming_language)\" data-definition-id=\"python\" class=\"link definition-tooltip-trigger\">Python</a> application written with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.wikipedia.org/wiki/Tkinter\" data-definition-id=\"tkinter\" class=\"link definition-tooltip-trigger\">Tkinter</a> in the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448\" data-definition-id=\"nsi\" class=\"link definition-tooltip-trigger\">NSI</a> speciality to retrive the extension of a file from its signature <sup id=\"cite-ref-1\"><a class=\"link\" href=\"#ref-1\">[1]</a></sup>, using a <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://fr.wikipedia.org/wiki/Algorithme_glouton\" data-definition-id=\"greedy-algorithm\" class=\"link definition-tooltip-trigger\">Greedy algorithm</a></p>",
   "context": "NSI High-school",
   "startDate": "2022-04-07",
   "endDate": "2022-05-08",

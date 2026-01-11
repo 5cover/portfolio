@@ -28,6 +28,7 @@ Astro features used:
 - File based routing with dynamic routes (`[lang]`, `[id]`).
 - `getStaticPaths()` for prebuilding routes.
 - Content collections (`astro:content`) with strict Zod schemas.
+- MDX content for long-form body text.
 - Layouts and components for shared UI.
 - Static asset bundling for client scripts via `?url` imports.
 - Static JSON endpoints in `src/pages/data` to feed client JS (projects filter,
@@ -91,6 +92,7 @@ Important collections:
 - `tags`: tag metadata for filtering.
 - `types`: definition categories.
 - `history`: timeline entries.
+- `textual`: MDX bodies for projects, literature, and history.
 - `piano-tiles`: home page tiles.
 - `contacts`, `anchors`, `lang`, `meta` (supporting data).
 
@@ -119,6 +121,28 @@ Components:
 - `Header` and `Footer` match V1 markup and behavior.
 - Card components render the reusable V1 cards (projects, literature, definition).
 - Lists render sets of cards consistently.
+- `TextualContent` renders MDX bodies with the shared inline components.
+
+## Textual Content (MDX)
+
+Long-form content lives in `src/content/textual/<lang>/<kind>/<id>.mdx`
+where `kind` is `projects`, `literature`, or `history`.
+These files render inside the `#story` sections and the history timeline.
+
+Shared MDX components are available:
+
+- `Def`: definition tooltip link, uses the definitions collection.
+- `Link`: normal anchor with V1 `.link` styling.
+- `Ref`: inline reference marker (`[1]`) linked to the references list.
+- `Image`: Astro native image component (`astro:assets`). Import the image in the MDX file and pass `src={image}`.
+
+Example:
+
+```mdx
+<Def id="zig">Zig</Def> is a systems language.
+<Link href="https://ziglang.org" external>Official site</Link>.
+See <Ref id="1" /> for sources.
+```
 
 ## Styling
 
@@ -192,12 +216,14 @@ Add a project:
 
 1. Create a new entry in `src/content/projects/<lang>/<id>.yaml`.
 2. Ensure required fields match `src/content/config.ts`.
-3. Add images to `public/img/projects/<id>/`.
+3. Add the body in `src/content/textual/<lang>/projects/<id>.mdx`.
+4. Add images to `public/img/projects/<id>/`.
 
 Add a blog or hobby entry:
 
 1. Add a file in `src/content/literature/<lang>/<id>.yaml`.
 2. Set `kind` to `blog` or `passion`.
+3. Add the body in `src/content/textual/<lang>/literature/<id>.mdx`.
 
 Add a definition:
 
