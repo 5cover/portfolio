@@ -29,7 +29,7 @@ body {
 }
 
 main {
-    @include util.transparent-background-image(--bg-img, var(--color-lvl-rgb), .1);
+    @include util.transparent-background-image(--bg-img, var(--color-lvl), .1);
     padding: const.$full-width-vertical-margin const.$full-width-horizontal-margin;
 }
 

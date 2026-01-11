@@ -158,7 +158,7 @@
             border-top-right-radius: $space;
             border-bottom-right-radius: $space;
             padding: $space $space $space calc($space * const.$phi);
-            @include util.transparent-background-image(--bg-img-card, var(--color-lvl-rgb), .15);
+            @include util.transparent-background-image(--bg-img-card, var(--color-lvl), .15);
 
             .abstract {
                 align-self: center
@@ -170,7 +170,7 @@
         }
 
         &#{const.$hover} > div {
-            @include util.transparent-background-image(--bg-img-card, var(--color-accent-rgb), .15);
+            @include util.transparent-background-image(--bg-img-card, var(--color-accent), .15);
             @include util.color-accent-fg;
         }
     }
@@ -192,7 +192,7 @@
     flex-flow: row wrap;
 
     > li {
-        @include util.transparent-background-image(--bg-img-card, var(--color-lvl-rgb), .15);
+        @include util.transparent-background-image(--bg-img-card, var(--color-lvl), .15);
         $space: .75em;
         border-radius: $space;
         display: grid;
@@ -243,7 +243,7 @@
         }
 
         &#{const.$hover} {
-            @include util.transparent-background-image(--bg-img-card, var(--color-accent-rgb), .15);
+            @include util.transparent-background-image(--bg-img-card, var(--color-accent), .15);
 
             .list-rect > li {
                 background-color: var(--color-lvl);
@@ -278,7 +278,7 @@
 .definition {
     @include util.basic-border(1px);
     @include util.hover-card;
-    @include util.transparent-background-image(--bg-img-card, var(--color-lvl-rgb), .15);
+    @include util.transparent-background-image(--bg-img-card, var(--color-lvl), .15);
     $space: .75em;
     background-color: var(--color-lvl);
     border-radius: $space;
@@ -375,7 +375,7 @@
         display: contents;
 
         article#{const.$hover} {
-            @include util.transparent-background-image(--bg-img-card, var(--color-accent-rgb), .1);
+            @include util.transparent-background-image(--bg-img-card, var(--color-accent), .1);
         }
     }
 }

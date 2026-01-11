@@ -40,7 +40,7 @@
         gap: const.$full-width-vertical-margin;
 
         > li {
-            @include util.transparent-background-image(--bg-img, var(--color-lvl-rgb), .1);
+            @include util.transparent-background-image(--bg-img, var(--color-lvl), .1);
             padding: 1.5em;
             border-radius: 1.5em;
         }

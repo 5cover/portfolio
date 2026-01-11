@@ -76,7 +76,7 @@
 @mixin basic-border($width) {
     border-width: $width;
     border-style: solid;
-    border-color: rgba(var(--color-fg-rgb), .15);
+    border-color: rgb(from var(--color-fg) r g b / .15);
 }
 
 /* Accent color foreground
@@ -86,7 +86,6 @@
 @mixin color-accent-fg {
     color: var(--color-accent-fg);
     --color-fg: var(--color-accent-fg);
-    --color-fg-rgb: var(--color-accent-fg-rgb);
 }
 
 /* Accent color background
@@ -97,7 +96,7 @@
  */
 @mixin color-accent-bg($opacity: 1) {
     @include color-accent-fg;
-    background-color: rgba(var(--color-accent-rgb), $opacity);
+    background-color: rgb(from var(--color-accent) r g b / $opacity);
 }
 
 /* Strip content
@@ -151,7 +150,7 @@
  * Define a transparent background image.
  *
  * $varname-img: <image>                  -> the background image.
- * $color-rgb:   rgb() or rgba() argument -> the backging color (also used as a fallback if $varname-img is not defined)
+ * $color:       color value -> the backging color (also used as a fallback if $varname-img is not defined)
  * $opacity:     real [0..1]              -> the opacity of the image
  * $origin:      <visual-box>             -> origin of the background image layer
  *
@@ -159,12 +158,12 @@
  *
  * Todo: fix background color transition. Currently: instant. Expected: transition-duration
  */
-@mixin transparent-background-image($varname-img, $color-rgb, $opacity, $origin: padding-box) {
-    $color: rgba($color-rgb, calc(1 - $opacity));
+@mixin transparent-background-image($varname-img, $color, $opacity, $origin: padding-box) {
+    $color: rgb(from $color r g b / calc(1 - $opacity));
     $gradient: linear-gradient($color, $color);
     background:
         border-box $gradient,
-        $origin var($varname-img, rgb($color-rgb)) no-repeat;
+        $origin var($varname-img, $color) no-repeat;
     background-size: cover;
 }
 

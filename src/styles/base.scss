@@ -186,7 +186,8 @@
 
     small {
         font-size: 1em;
-        color: rgba(var(--color-fg-rgb), calc(2 / 3));
+        
+        color: rgb(from var(--color-fg) r g b / calc(2 / 3));
     }
 
     p {

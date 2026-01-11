@@ -40,7 +40,7 @@ section, article {
             @include util.absolute-fill;
 
             div {
-                background-color: rgb(from var(--color-lvl-rgb) r g b / calc(2/3));
+                background-color: rgb(from var(--color-lvl) r g b / calc(2/3));
                 height: fit-content;
 
                 > * {
