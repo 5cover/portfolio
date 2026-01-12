@@ -1,10 +1,16 @@
 # Scratch
 
-## Read and implement prof requirements
+## ~~Read and implement prof requirements~~
 
 Les requirements se centrent autour du BUT informatique
 
-## Readd but and internship
+## Clickable history items
+
+Stage & alternance
+
+We make history items clickable, they lead to a long-form textual body (detail render)
+
+Then we can go in depth about the internship and the apprenticeship
 
 ## ~~Fix Markdown definition logo size~~
 

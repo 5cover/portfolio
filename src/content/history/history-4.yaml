@@ -1,0 +1,20 @@
+{
+  "id": "history-4",
+  "title": {
+    "en": "ENGIE",
+    "fr": "ENGIE"
+  },
+  "meta": {
+    "en": "ENGIE",
+    "fr": "ENGIE"
+  },
+  "media": {
+    "year": 2025,
+    "img": "/portfolio/img/engie-t1.webp",
+    "alt": {
+      "en": "Le siège social d'ENGIE",
+      "fr": "Le siège social d'ENGIE"
+    }
+  },
+  "order": 4
+}

@@ -28,11 +28,13 @@
     }
 }
 
-#progression {
-    p:not(.list-project *) {
-        @include util.margin-gap(const.$p-margin);
-    }
+.tabs {
+    border: 2px var(--color-lvl-next) solid;
+    border-radius: .25lh;
+    padding: .5em;
+}
 
+#progression {
     .year-skills {
         list-style: none;
         display: flex;
@@ -40,25 +42,28 @@
         gap: const.$full-width-vertical-margin;
 
         > li {
-            @include util.transparent-background-image(--bg-img, var(--color-lvl), .1);
+            @include util.transparent-background-image(--bg-img, var(--color-lvl), 0.04);
             padding: 1.5em;
             border-radius: 1.5em;
         }
     }
-}
 
-#progression {
-    @include util.text;
-    @include util.gapped(1.5);
-
-    .tabs {
-        @include util.gapped(1);
+    .list-project {
+        margin-top: 1.25em;
     }
+
+    @include util.text;
 
     .tablist {
         display: flex;
         flex-wrap: wrap;
-        gap: .5em;
+        justify-content: stretch;
+        margin-bottom: 2em;
+
+        button {
+            flex: 1;
+            font-size: 1.3em;
+        }
     }
 
     [role='tab'] {
@@ -80,12 +85,8 @@
     }
 
     [role='tab'][aria-selected='true'] {
-        @include util.color-accent-bg(.2);
-        border-color: rgb(from var(--color-accent) r g b / .5);
-    }
-
-    [role='tabpanel'] {
-        @include util.gapped(1.25);
+        @include util.color-accent-bg;
+        border-color: rgb(from var(--color-accent) r g b / 0.5);
     }
 
     .year-bilan {
@@ -93,20 +94,20 @@
     }
 
     .year-skills {
-        @include util.gapped(1.5);
+        @include util.gapped(1.5, row, wrap);
+
     }
 
     .year-skill {
-        @include util.gapped(.75);
         @include util.basic-border(1px);
         border-radius: 1em;
-        padding: 1.25em;
+        flex-basis: 49%;
         background-color: var(--color-lvl-next);
 
         .apprentissages {
             display: flex;
             flex-direction: column;
-            gap: .5lh;
+            gap: 0.5lh;
             padding-left: 2em;
         }
     }
@@ -114,10 +115,9 @@
 
 :has(> #resultat-pour-moi) {
     @include content-and-image;
-    flex-wrap: wrap;
 
     figure {
-        flex: 1 1 20em;
+        flex: 1 1 60em;
         $border-radius: 1em;
         border-radius: $border-radius;
         max-width: max(20em, 40%);
@@ -130,17 +130,7 @@
 
     #resultat-pour-moi {
         @include util.text;
-        @include util.gapped(1.5);
-    }
-
-    ul {
-        display: flex;
-        flex-direction: column;
-        gap: .5lh;
-        padding-left: 2em;
-    }
-
-    li {
         max-width: const.$max-line-length;
     }
+
 }

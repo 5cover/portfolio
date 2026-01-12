@@ -4,31 +4,31 @@
     "description": "<p>Concevoir, réaliser et mettre en œuvre des solutions informatiques qui répondent aux besoins de transformation numérique des entreprises, voilà le quotidien du titulaire du BUT informatique, quel que soit le secteur dans lequel travaille son entreprise.</p><p>En trois ans après le bac, le BUT offre une formation universitaire qui mêle théorie et pratique, avec un accent mis sur une professionnalisation progressive pour une insertion rapide, tout en garantissant un niveau scientifique suffisant pour permettre de continuer des études pour ceux qui le souhaitent.</p><p>Le titulaire du BUT spécialité informatique est compétent sur les plans technique et méthodologique tout en étant sensibilisé aux problématiques actuelles (sécurité des données, <em>cloud computing</em>, intelligence artificielle), sur les questions sociétales, juridiques, éthiques et environnementales liées aux usages du numérique.</p><p>À l’issue d’un tronc commun d’un an, l’étudiant pourra, en fonction de son projet professionnel, choisir l’un des quatre parcours proposés par la spécialité informatique.</p>",
     "but-logo-alt": "Logo BUT Informatique",
     "h2-skills": "Compétences du BUT",
-    "skills-abstract": "Les apprentissages du BUT sont organisés en 6 compétences\u00a0:",
+    "skills-abstract": "Le programme du BUT Informatique ne se limite pas à l’apprentissage de technologies. Il propose une progression implicite de posture, de la pratique individuelle vers la compréhension de systèmes techniques et humains plus larges.",
     "fmt-h3-skill": "Compétence %d\u00a0: %s",
     "skills": [
       {
-        "name": "Réaliser",
+        "name": "Réaliser un développement d'application",
         "desc": "Développer — c’est-à-dire concevoir, coder, tester et intégrer une solution informatique pour un client."
       },
       {
-        "name": "Optimiser",
+        "name": "Optimiser des applications",
         "desc": "Proposer des applications informatiques optimisées en fonction de critères spécifiques\u00a0: temps d’exécution, précision, consommation de ressources."
       },
       {
-        "name": "Administrer",
+        "name": "Administrer des systèmes informatiques communicants",
         "desc": "Installer, configurer, mettre à disposition, maintenir en conditions opérationnelles des infrastructures, des services et des réseaux et optimiser le système informatique d’une organisation."
       },
       {
-        "name": "Gérer",
+        "name": "Gérer des données de l'information",
         "desc": "Concevoir, gérer, administrer et exploiter les données de l’entreprise et mettre à disposition toutes les informations pour un bon pilotage de l’entreprise."
       },
       {
-        "name": "Conduire",
+        "name": "Conduire un projet",
         "desc": "Satisfaire les besoins des utilisateurs au regard de la chaîne de valeur du client, organiser et piloter un projet informatique avec des méthodes classiques ou agiles."
       },
       {
-        "name": "Collaborer",
+        "name": "Collaborer et travailler dans une équipe informatique",
         "desc": "Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une équipe informatique."
       }
     ],
@@ -80,7 +80,7 @@
   "pianoTile7Title": "Optimisation",
   "pianoTile8Desc": "Mon projet <q>best-seller</q>",
   "pianoTile8Title": "Expérience utilisateur",
-  "projectSearchPlaceholder": "Titre de projet&hellip;",
+  "projectSearchPlaceholder": "Titre du projet...",
   "projectSearchSearch": "Rechercher un projet",
   "projectSearchSort": "Trier par titre",
   "projectSearchTags": "Tags",

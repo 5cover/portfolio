@@ -1,52 +1,24 @@
 {
   "id": "sae3",
-  "title": {
-    "en": "Music recommendation system",
-    "fr": "Système de recommendation de musique"
-  },
-  "abstract": {
-    "en": "Planning a <em>team building</em> event and making a promotional film. Organizing teamwork (S2.06)",
-    "fr": "Planification d'un évènement de <em>team building</em> et réalisation d'un film promotionnel. Organisation d'un travail d'équipe (S2.06)"
-  },
-  "context": {
-    "en": "BUT",
-    "fr": "BUT"
-  },
+  "title":
+    {
+      "en": "Music recommendation system",
+      "fr": "Système de recommendation musical",
+    },
+  "abstract":
+    {
+      "en": "A music streaming website with AI-based user recommendations",
+      "fr": "Un site de streaming musical avec des recommendations personnalisées utilisant l'IA",
+    },
+  "context": { "en": "BUT", "fr": "BUT" },
   "startDate": "2025-09-15",
   "endDate": null,
-  "tags": [
-    "but-collaborer",
-    "but-3"
-  ],
-  "technologies": [
-    "github"
-  ],
-  "team": [
-  ],
-  "links": {
-    "en": [
-      {
-        "label": "GitHub project",
-        "anchor": "github",
-        "href": "https://github.com/users/5cover/projects/9"
-      }
-    ],
-    "fr": [
-      {
-        "label": "Projet GitHub",
-        "anchor": "github",
-        "href": "https://github.com/users/5cover/projects/9"
-      }
-    ]
-  },
-  "references": {
-    "en": [],
-    "fr": []
-  },
-  "gallery": {
-    "en": [],
-    "fr": []
-  },
+  "tags": ["but-collaborer", "but-3"],
+  "technologies": ["github"],
+  "team": [],
+  "links": { "en": [], "fr": [] },
+  "references": { "en": [], "fr": [] },
+  "gallery": { "en": [], "fr": [] },
   "logo": null,
-  "background": null
+  "background": null,
 }

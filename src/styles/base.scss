@@ -82,7 +82,6 @@
         color: var(--color-fg);
         font-family: Ubuntu, system-ui;
         scroll-behavior: smooth;
-        font-size: 1.1em;
     }
 
     :root[data-theme='dark'] {
@@ -186,11 +185,11 @@
 
     small {
         font-size: 1em;
-        
+
         color: rgb(from var(--color-fg) r g b / calc(2 / 3));
     }
 
-    p {
+    .textual p {
         max-width: const.$max-line-length;
     }
 
@@ -271,16 +270,16 @@
      *
      * Intended for: <a>
      */
-    .link:link {
+    :is(.link, .textual a):link {
         color: var(--color-accentext);
     }
 
-    .link:visited {
+    :is(.link, .textual a):visited {
         // decrease luminance by 8%
         color: hsl(from var(--color-accentext) h s calc(l - 8));
     }
 
-    .link#{const.$hover} {
+    :is(.link, .textual a)#{const.$hover} {
         // increase luminance by 8%
         color: hsl(from var(--color-accentext) h s calc(l + 8));
         text-decoration: underline;
@@ -301,7 +300,9 @@
      *
      * Intended for: <ul>, <ol>
      */
-    .list {
+    .list,
+    .textual ul,
+    .textual ol {
         display: flex;
         flex-direction: column;
         gap: 0.5lh;
@@ -318,7 +319,8 @@
      *
      * Intended for: <figure>
      */
-    .figure {
+    .figure,
+    .textual figure {
         @include util.basic-border(1px);
         background-color: var(--color-lvl);
         break-inside: avoid;

@@ -16,6 +16,40 @@
     "sharp": "^0.34.3"
   },
   "devDependencies": {
-    "sass": "^1.77.8"
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.7.4",
+    "sass": "^1.77.8",
+    "typescript-eslint": "^8.52.0"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "bracketSameLine": true,
+    "trailingComma": "es5",
+    "overrides": [
+      {
+        "files": "**/*.ts",
+        "options": {
+          "parser": "typescript"
+        }
+      },
+      {
+        "files": [
+          "**/*.ts",
+          "**/*.tsx",
+          "**/*.js",
+          "**/*.jsx",
+          "**/*.astro",
+          "**/*.mjs",
+          "**/*.cjs"
+        ],
+        "options": {
+          "tabWidth": 4
+        }
+      }
+    ]
   }
 }

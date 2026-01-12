@@ -26,6 +26,7 @@ const historyBodies = await Promise.all(
         return Content;
     })
 );
+historyBodies.reverse();
 
 const navItems = buildNavItems(langData);
 const themeLabels = buildThemeLabels(langData);
@@ -51,7 +52,7 @@ const languages = buildLanguages(langs, langMap);
                 </div>
                 <div class='ag-timeline_list'>
                     {
-                        historyItems.map((entry, index) => {
+                        historyItems.reverse().map((entry, index) => {
                             const media = entry.data.media;
                             const isOdd = index % 2 === 1;
                             const HistoryBody = historyBodies[index];
