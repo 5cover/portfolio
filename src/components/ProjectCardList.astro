@@ -3,29 +3,33 @@ import ProjectCard from './ProjectCard.astro';
 import type { AnchorEntry, LocalizedProjectEntry, LocalizedTagEntry } from '../lib/content';
 
 type Props = {
-  lang: string;
-  langLabels: {
-    ongoing: string;
-    fmtTitle: string;
-  };
-  projects: LocalizedProjectEntry[];
-  tagsById: Record<string, LocalizedTagEntry['data']>;
-  anchorsById: Record<string, AnchorEntry['data']>;
-  headingLevel?: number;
+    class: string;
+    lang: string;
+    langLabels: {
+        ongoing: string;
+        fmtTitle: string;
+    };
+    projects: LocalizedProjectEntry[];
+    tagsById: Record<string, LocalizedTagEntry['data']>;
+    anchorsById: Record<string, AnchorEntry['data']>;
+    headingLevel?: number;
 };
 
 const props: Props = Astro.props;
 const { lang, langLabels, projects, tagsById, anchorsById, headingLevel = 3 } = props;
 ---
-<ul class="lvl list-project">
-  {projects.map((project) => (
-    <ProjectCard
-      lang={lang}
-      langLabels={langLabels}
-      project={project.data}
-      tagsById={tagsById}
-      anchorsById={anchorsById}
-      headingLevel={headingLevel}
-    />
-  ))}
+
+<ul class:list={['lvl', 'list-project', props.class]} '>
+    {
+        projects.map(project => (
+            <ProjectCard
+                lang={lang}
+                langLabels={langLabels}
+                project={project.data}
+                tagsById={tagsById}
+                anchorsById={anchorsById}
+                headingLevel={headingLevel}
+            />
+        ))
+    }
 </ul>

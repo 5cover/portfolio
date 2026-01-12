@@ -1,8 +1,8 @@
 {
-  "id": "s2.06",
+  "id": "sae3",
   "title": {
-    "en": "Knight for a Day",
-    "fr": "Chevalier d'un Jour"
+    "en": "Music recommendation system",
+    "fr": "Système de recommendation de musique"
   },
   "abstract": {
     "en": "Planning a <em>team building</em> event and making a promotional film. Organizing teamwork (S2.06)",
@@ -12,19 +12,16 @@
     "en": "BUT",
     "fr": "BUT"
   },
-  "startDate": "2024-04-18",
-  "endDate": "2024-06-06",
+  "startDate": "2025-09-15",
+  "endDate": null,
   "tags": [
     "but-collaborer",
-    "but-2"
+    "but-3"
   ],
   "technologies": [
     "github"
   ],
   "team": [
-    "chartier--le-goff-marius",
-    "kervadec-matteo",
-    "toe-paolo"
   ],
   "links": {
     "en": [

@@ -18,7 +18,8 @@
     "but-administrer",
     "but-collaborer",
     "web",
-    "sysadmin"
+    "sysadmin",
+    "but-2"
   ],
   "technologies": [
     "github",

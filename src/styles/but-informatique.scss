@@ -28,12 +28,12 @@
     }
 }
 
-#competences {
+#progression {
     p:not(.list-project *) {
         @include util.margin-gap(const.$p-margin);
     }
 
-    > ul {
+    .year-skills {
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -43,6 +43,71 @@
             @include util.transparent-background-image(--bg-img, var(--color-lvl), .1);
             padding: 1.5em;
             border-radius: 1.5em;
+        }
+    }
+}
+
+#progression {
+    @include util.text;
+    @include util.gapped(1.5);
+
+    .tabs {
+        @include util.gapped(1);
+    }
+
+    .tablist {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5em;
+    }
+
+    [role='tab'] {
+        @include util.horizontal-box(1.25);
+        @include util.basic-border(1px);
+        background-color: var(--color-lvl-next);
+        color: var(--color-fg);
+        cursor: pointer;
+        font-weight: 500;
+
+        &:hover {
+            background-color: var(--color-lvl);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+    }
+
+    [role='tab'][aria-selected='true'] {
+        @include util.color-accent-bg(.2);
+        border-color: rgb(from var(--color-accent) r g b / .5);
+    }
+
+    [role='tabpanel'] {
+        @include util.gapped(1.25);
+    }
+
+    .year-bilan {
+        font-weight: 500;
+    }
+
+    .year-skills {
+        @include util.gapped(1.5);
+    }
+
+    .year-skill {
+        @include util.gapped(.75);
+        @include util.basic-border(1px);
+        border-radius: 1em;
+        padding: 1.25em;
+        background-color: var(--color-lvl-next);
+
+        .apprentissages {
+            display: flex;
+            flex-direction: column;
+            gap: .5lh;
+            padding-left: 2em;
         }
     }
 }

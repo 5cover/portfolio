@@ -10,6 +10,7 @@ import {
   mapById,
 } from '../../lib/content';
 import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
+import type { Lang } from '../../lib/content';
 
 import '../../styles/but-informatique.scss';
 
@@ -22,6 +23,23 @@ const SKILL_TAGS = [
   'but-collaborer',
 ];
 const MAX_PROJECTS_PER_SKILL = 4;
+const YEAR_TAGS = ['but-1', 'but-2', 'but-3'];
+
+type YearSkill = {
+  ac: string[];
+};
+
+type YearData = {
+  id: (typeof YEAR_TAGS)[number];
+  label: string;
+  description: string;
+  bilan: string;
+  skills: Record<string, YearSkill>;
+};
+
+function normalizeLang(value: string): Lang {
+  return value === 'fr' ? 'fr' : 'en';
+}
 
 export async function getStaticPaths() {
   const langs = await getLangs();
@@ -49,10 +67,224 @@ const langMap = Object.fromEntries(
 const languages = buildLanguages(langs, langMap);
 const tagsById = mapById(tags);
 const anchorsById = mapById(anchors);
+const skillNameByTag: Record<string, string> = {};
+SKILL_TAGS.forEach((tag, index) => {
+  const name = langData.but.skills[index]?.name ?? tag;
+  skillNameByTag[tag] = name;
+});
 
-function projectsForSkill(skillTag: string) {
+const localizedLang = normalizeLang(lang);
+
+const yearDataByLang: Record<Lang, YearData[]> = {
+  fr: [
+    {
+      id: 'but-1',
+      label: 'BUT 1',
+      description:
+        'Description BUT1 : decouverte des fondamentaux, alternance cours/projets, premieres mises en situation.',
+      bilan:
+        'Bilan BUT1 : consolidation des bases techniques et methodologiques, premiers reperes sur les competences.',
+      skills: {
+        'but-realiser': {
+          ac: [
+            'Apprentissage critique 1',
+            'Apprentissage critique 2',
+          ],
+        },
+        'but-optimiser': {
+          ac: ['Apprentissage critique 1'],
+        },
+        'but-collaborer': {
+          ac: [
+            'Apprentissage critique 1',
+            'Apprentissage critique 2',
+          ],
+        },
+      },
+    },
+    {
+      id: 'but-2',
+      label: 'BUT 2',
+      description:
+        "Description BUT2 : montee en complexite, travail d'equipe renforce, projets plus longs.",
+      bilan:
+        "Bilan BUT2 : approfondissement des competences, prise d'autonomie et meilleure gestion du temps.",
+      skills: {
+        'but-realiser': {
+          ac: [
+            'Apprentissage critique 1',
+            'Apprentissage critique 2',
+          ],
+        },
+        'but-administrer': {
+          ac: ['Apprentissage critique 1'],
+        },
+        'but-gerer': {
+          ac: ['Apprentissage critique 1'],
+        },
+        'but-conduire': {
+          ac: [
+            'Apprentissage critique 1',
+            'Apprentissage critique 2',
+          ],
+        },
+      },
+    },
+    {
+      id: 'but-3',
+      label: 'BUT 3',
+      description:
+        "Description BUT3 : synthese des acquis, specialisation progressive, preparation a l'apres-BUT.",
+      bilan:
+        'Bilan BUT3 : vision globale du metier, maturite dans les choix techniques et orientation.',
+      skills: {
+        'but-optimiser': {
+          ac: [
+            'Apprentissage critique 1',
+            'Apprentissage critique 2',
+          ],
+        },
+        'but-administrer': {
+          ac: ['Apprentissage critique 1'],
+        },
+        'but-collaborer': {
+          ac: ['Apprentissage critique 1'],
+        },
+      },
+    },
+  ],
+  en: [
+    {
+      id: 'but-1',
+      label: 'BUT 1',
+      description:
+        'BUT1 description: foundations, alternating courses/projects, first real-world exercises.',
+      bilan:
+        'BUT1 assessment: technical and methodological bases consolidated, first competency milestones.',
+      skills: {
+        'but-realiser': {
+          ac: [
+            'Critical learning 1',
+            'Critical learning 2',
+          ],
+        },
+        'but-optimiser': {
+          ac: ['Critical learning 1'],
+        },
+        'but-collaborer': {
+          ac: [
+            'Critical learning 1',
+            'Critical learning 2',
+          ],
+        },
+      },
+    },
+    {
+      id: 'but-2',
+      label: 'BUT 2',
+      description:
+        'BUT2 description: higher complexity, stronger teamwork, longer projects.',
+      bilan:
+        'BUT2 assessment: deeper competencies, growing autonomy, better time management.',
+      skills: {
+        'but-realiser': {
+          ac: [
+            'Critical learning 1',
+            'Critical learning 2',
+          ],
+        },
+        'but-administrer': {
+          ac: ['Critical learning 1'],
+        },
+        'but-gerer': {
+          ac: ['Critical learning 1'],
+        },
+        'but-conduire': {
+          ac: [
+            'Critical learning 1',
+            'Critical learning 2',
+          ],
+        },
+      },
+    },
+    {
+      id: 'but-3',
+      label: 'BUT 3',
+      description:
+        'BUT3 description: synthesis of skills, gradual specialization, preparing for after BUT.',
+      bilan:
+        'BUT3 assessment: global view of the field, technical choices maturity, clearer orientation.',
+      skills: {
+        'but-optimiser': {
+          ac: [
+            'Critical learning 1',
+            'Critical learning 2',
+          ],
+        },
+        'but-administrer': {
+          ac: ['Critical learning 1'],
+        },
+        'but-collaborer': {
+          ac: ['Critical learning 1'],
+        },
+      },
+    },
+  ],
+};
+
+const yearData = yearDataByLang[localizedLang];
+const yearTabsLabel =
+  localizedLang === 'fr'
+    ? 'Progression par année'
+    : 'Year-by-year progression';
+const synthesisHeading =
+  localizedLang === 'fr' ? 'Synthèse globale' : 'Overall synthesis';
+const synthesisItems =
+  localizedLang === 'fr'
+    ? [
+        {
+          title: 'Impressions génerales sur le BUT...',
+          body: 'Synthese globale : apercu des apports et du rythme de la formation.',
+        },
+        {
+          title: 'Apports de la formation...',
+          body: 'Developpement technique, methodologique et humain structurant.',
+        },
+        {
+          title: "Perspectives d'etudes...",
+          body: "Perspectives d'etudes : poursuite en licence, master, ecole ou specialisations.",
+        },
+        {
+          title: 'Projet professionnel...',
+          body: 'Projet professionnel : orientation visee, secteurs et responsabilites ciblees.',
+        },
+      ]
+    : [
+        {
+          title: 'General impressions about the BUT...',
+          body: 'Overall synthesis: key takeaways and training pace.',
+        },
+        {
+          title: 'What the training developed...',
+          body: 'Technical, methodological, and human growth built over time.',
+        },
+        {
+          title: 'Further studies...',
+          body: 'Further studies: continuation toward a bachelor, master, or specialization.',
+        },
+        {
+          title: 'Professional project...',
+          body: 'Professional project: targeted roles, sectors, and responsibilities.',
+        },
+      ];
+
+function projectsForYearAndSkill(yearTag: string, skillTag: string) {
   return projects
-    .filter((project) => project.data.tags.includes(skillTag))
+    .filter(
+      (project) =>
+        project.data.tags.includes(yearTag) &&
+        project.data.tags.includes(skillTag)
+    )
     .slice(0, MAX_PROJECTS_PER_SKILL);
 }
 ---
@@ -86,40 +318,73 @@ function projectsForSkill(skillTag: string) {
     >
       {langData.but['link-text-syllabus']}
     </a>
-    <section id="competences">
-      <h2>{langData.but['h2-skills']}</h2>
+    <section id="progression">
+      <h2>{yearTabsLabel}</h2>
       <p set:html={langData.but['skills-abstract']}></p>
-      <ul class="lvl">
-        {langData.but.skills.map((skill, index) => (
-          <li style={`--bg-img: url(/portfolio/img/skill/${index + 1}.jpg)`}>
-            <h3>
-              {langData.but['fmt-h3-skill'].replace('%d', String(index + 1)).replace('%s', skill.name)}
-            </h3>
-            <p set:html={skill.desc}></p>
-            <ProjectCardList
-              lang={lang}
-              langLabels={{ ongoing: langData.ongoing, fmtTitle: langData.fmtTitle }}
-              projects={projectsForSkill(SKILL_TAGS[index] ?? '')}
-              tagsById={tagsById}
-              anchorsById={anchorsById}
-              headingLevel={4}
-            />
-          </li>
+      <div class="tabs" data-tabs="but-years">
+        <div class="tablist" role="tablist" aria-label={yearTabsLabel}>
+          {yearData.map((year, index) => (
+            <button
+              type="button"
+              role="tab"
+              id={`tab-${year.id}`}
+              aria-controls={`panel-${year.id}`}
+              aria-selected={index === 0 ? 'true' : 'false'}
+              tabindex={index === 0 ? 0 : -1}
+            >
+              {year.label}
+            </button>
+          ))}
+        </div>
+        {yearData.map((year, index) => (
+          <section
+            id={`panel-${year.id}`}
+            role="tabpanel"
+            aria-labelledby={`tab-${year.id}`}
+            style={index === 0 ? '' : 'display:none'}
+          >
+            <p class="year-description">{year.description}</p>
+            <p class="year-bilan">{year.bilan}</p>
+            <ul class="year-skills lvl">
+              {Object.entries(year.skills).map(([skillId, skillData], i) => {
+                const skillProjects = projectsForYearAndSkill(year.id, skillId);
+                return (
+                  <li style={`--bg-img: url(/portfolio/img/skill/${i + 1}.jpg)`} class="year-skill">
+                    <h3>{langData.but['fmt-h3-skill'].replace('%d', String(i + 1)).replace('%s', skillNameByTag[skillId])}</h3>
+                    <p set:html={langData.but.skills[i].desc}></p>
+                    <ul class="apprentissages">
+                      {skillData.ac.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                    {skillProjects.length > 0 ? (
+                      <ProjectCardList
+                        lang={lang}
+                        langLabels={{ ongoing: langData.ongoing, fmtTitle: langData.fmtTitle }}
+                        projects={skillProjects}
+                        tagsById={tagsById}
+                        anchorsById={anchorsById}
+                        headingLevel={4}
+                        class='project-skills'
+                      />
+                    ) : null}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
         ))}
-      </ul>
+      </div>
     </section>
     <div class="lvl">
       <article id="resultat-pour-moi">
-        <h2>{langData.but['h2-result']}</h2>
-        <article>
-          <h3>{langData.but['h3-why']}</h3>
-          <Fragment set:html={langData.but.why}></Fragment>
-        </article>
-        <article>
-          <h3>{langData.but['h3-assessment']}</h3>
-          <Fragment set:html={langData.but.assessment}></Fragment>
-        </article>
-        <p set:html={langData.but.conclusion}></p>
+        <h2>{synthesisHeading}</h2>
+        {synthesisItems.map((item) => (
+          <article>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
       </article>
       <figure class="figure">
         <img
@@ -134,4 +399,54 @@ function projectsForSkill(skillTag: string) {
       </figure>
     </div>
   </main>
+  <script is:inline>
+    const root = document.querySelector('[data-tabs="but-years"]');
+    if (root) {
+      const tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+      const panels = Array.from(root.querySelectorAll('[role="tabpanel"]'));
+      const activateTab = (tab) => {
+        tabs.forEach((item) => {
+          const isActive = item === tab;
+          item.setAttribute('aria-selected', String(isActive));
+          item.tabIndex = isActive ? 0 : -1;
+        });
+        panels.forEach((panel) => {
+          panel.style.display = panel.getAttribute('aria-labelledby') !== tab.id ? 'none' : '';
+        });
+      };
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => activateTab(tab));
+      });
+      root.addEventListener('keydown', (event) => {
+        if (!(event.target instanceof HTMLElement)) {
+          return;
+        }
+        if (event.target.getAttribute('role') !== 'tab') {
+          return;
+        }
+        const currentIndex = tabs.indexOf(event.target);
+        if (currentIndex < 0) {
+          return;
+        }
+        let nextIndex = currentIndex;
+        if (event.key === 'ArrowRight') {
+          nextIndex = (currentIndex + 1) % tabs.length;
+        } else if (event.key === 'ArrowLeft') {
+          nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        } else if (event.key === 'Home') {
+          nextIndex = 0;
+        } else if (event.key === 'End') {
+          nextIndex = tabs.length - 1;
+        } else {
+          return;
+        }
+        event.preventDefault();
+        const nextTab = tabs[nextIndex];
+        if (nextTab) {
+          nextTab.focus();
+          activateTab(nextTab);
+        }
+      });
+    }
+  </script>
 </BaseLayout>

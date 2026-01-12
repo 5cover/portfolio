@@ -51,7 +51,6 @@
  * Justify and hyphenate. Replaces `text-align: justify`.
  */
 @mixin justify {
-    text-align: justify;
     hyphens: auto;
 }
 

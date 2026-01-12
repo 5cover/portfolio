@@ -2,6 +2,8 @@
 
 ## Read and implement prof requirements
 
+Les requirements se centrent autour du BUT informatique
+
 ## Readd but and internship
 
 ## ~~Fix Markdown definition logo size~~
@@ -22,4 +24,4 @@ stylelint, eslint etc
 
 Noan Perrot did one
 
-## Trégoria: Gallerie
+## Trégoria: Galerie
