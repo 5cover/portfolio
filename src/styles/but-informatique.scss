@@ -4,10 +4,10 @@
 @include util.heading-margins(2, 3);
 
 @mixin content-and-image {
+    justify-content: center;
     align-items: center;
     display: flex;
     gap: 3em;
-    justify-content: space-between;
 }
 
 :is(#presentation, #resultat-pour-moi) h2 {
@@ -117,10 +117,9 @@
     @include content-and-image;
 
     figure {
-        flex: 1 1 60em;
         $border-radius: 1em;
         border-radius: $border-radius;
-        max-width: max(20em, 40%);
+        flex-basis: max(20em, 40%);
 
         img {
             border-top-left-radius: $border-radius;
