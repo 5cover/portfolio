@@ -3,12 +3,12 @@
   "title":
     {
       "en": "Music recommendation system",
-      "fr": "Système de recommendation musical",
+      "fr": "Système de recommandation musical",
     },
   "abstract":
     {
       "en": "A music streaming website with AI-based user recommendations",
-      "fr": "Un site de streaming musical avec des recommendations personnalisées utilisant l'IA",
+      "fr": "Un site de streaming musical avec des recommandations personnalisées utilisant l'IA",
     },
   "context": { "en": "BUT", "fr": "BUT" },
   "startDate": "2025-09-15",
