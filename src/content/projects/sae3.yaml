@@ -13,7 +13,7 @@
   "context": { "en": "BUT", "fr": "BUT" },
   "startDate": "2025-09-15",
   "endDate": null,
-  "tags": ["but-collaborer", "but-3"],
+  "tags": ["but-collaborer", "but-3","but-gerer","but-conduire"],
   "technologies": ["github"],
   "team": [],
   "links": { "en": [], "fr": [] },
