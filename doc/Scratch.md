@@ -1,5 +1,16 @@
 # Scratch
 
+## Samedi
+
+- EN translation
+
+## Vendrdi
+
+- Hosting
+- send URL to prof
+- engie internship and alternance textuals
+- clickable history items
+
 ## ~~Read and implement prof requirements~~
 
 Les requirements se centrent autour du BUT informatique
