@@ -11,6 +11,22 @@
 - engie internship and alternance textuals
 - clickable history items
 
+## Use YAML instead of JSON sytax in yaml file
+
+we can probably automate it.
+
+Use proper dates for start and end instead of strings
+
+## Fallback to english strings when fr not specified but with a lang=en div
+
+avoid duplicating
+
+preserve accessibility
+
+## Formalize context
+
+avoid repetition of translations
+
 ## Remove content from `<Def>` components
 
 There is no need to put the title inside the Def tags every time since the definition knows the title so Def can become a contentless component like img.
