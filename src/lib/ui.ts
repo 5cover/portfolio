@@ -7,7 +7,7 @@ export function buildNavItems(langData: LangEntry['data']): NavItem[] {
     { page: 'history', label: langData.namePageHistory },
     { page: 'hobbies', label: langData.namePagePassions },
     { page: 'blog', label: langData.namePagePerspectives },
-    { page: 'but-informatique', label: langData.namePageButInformatique },
+    { page: 'history/history-but', label: langData.namePageButInformatique },
   ];
 }
 

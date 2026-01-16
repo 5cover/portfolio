@@ -11,6 +11,10 @@
 - engie internship and alternance textuals
 - clickable history items
 
+## Remove content from `<Def>` components
+
+There is no need to put the title inside the Def tags every time since the definition knows the title so Def can become a contentless component like img.
+
 ## ~~Read and implement prof requirements~~
 
 Les requirements se centrent autour du BUT informatique

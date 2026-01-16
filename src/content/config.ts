@@ -122,6 +122,7 @@ const historyCollection = defineCollection({
   type: 'data',
   schema: z.object({
     id: z.string(),
+    body: z.string(),
     title: localizedString,
     meta: localizedString,
     media: z

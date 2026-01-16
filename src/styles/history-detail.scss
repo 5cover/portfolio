@@ -1,0 +1,36 @@
+@use 'detail';
+@use 'util';
+
+main > header {
+    display: grid;
+    gap: 1lh;
+}
+
+.history-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    align-items: baseline;
+    font-weight: bold;
+    color: var(--color-accentext);
+}
+
+.history-meta_year {
+    color: var(--color-fg);
+}
+
+.history-media {
+    width: min(100%, 52rem);
+    height: auto;
+    border-radius: .75em;
+    @include util.basic-border(1px);
+}
+
+#history-body {
+    margin-top: 2lh;
+}
+
+.history-body {
+    display: grid;
+    gap: 1.25lh;
+}

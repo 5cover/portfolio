@@ -1,4 +1,3 @@
-@use 'base';
 @use 'const';
 @use 'util';
 @include util.heading-margins(2, 3);
@@ -8,6 +7,10 @@
     align-items: center;
     display: flex;
     gap: 3em;
+}
+
+:is(.but-body, .but-body.margined) {
+    margin: 0 const.$full-width-horizontal-margin;
 }
 
 :is(#presentation, #resultat-pour-moi) h2 {
@@ -32,6 +35,7 @@
     border: 2px var(--color-lvl-next) solid;
     border-radius: .25lh;
     padding: .5em;
+    margin-bottom: 2em;
 }
 
 #progression {
@@ -101,7 +105,6 @@
     .year-skill {
         @include util.basic-border(1px);
         border-radius: 1em;
-        flex-basis: 49%;
         background-color: var(--color-lvl-next);
 
         .apprentissages {

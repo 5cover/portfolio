@@ -1,0 +1,592 @@
+---
+import { getEntry } from 'astro:content';
+import ProjectCardList from '../ProjectCardList.astro';
+import TextualContent from '../TextualContent.astro';
+import { getAnchors, getLangData, getProjects, getTags, mapById } from '../../lib/content';
+import type { Lang } from '../../lib/content';
+
+import '../../styles/but-informatique.scss';
+
+const SKILL_TAGS = ['but-realiser', 'but-optimiser', 'but-administrer', 'but-gerer', 'but-conduire', 'but-collaborer'];
+const MAX_PROJECTS_PER_SKILL = 4;
+const YEAR_TAGS = ['but-1', 'but-2', 'but-3'];
+
+type YearSkill = {
+    ac: string[];
+};
+
+type YearData = {
+    id: (typeof YEAR_TAGS)[number];
+    title: string;
+    label: string;
+    description: string;
+    bilan: string;
+    skills: Record<string, YearSkill>;
+};
+
+function normalizeLang(value: string): Lang {
+    return value === 'fr' ? 'fr' : 'en';
+}
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const [langData, projects, tags, anchors] = await Promise.all([
+    getLangData(lang),
+    getProjects(lang),
+    getTags(lang),
+    getAnchors(),
+]);
+
+const tagsById = mapById(tags);
+const anchorsById = mapById(anchors);
+const skillNameByTag: Record<string, string> = {};
+SKILL_TAGS.forEach((tag, index) => {
+    const name = langData.but.skills[index]?.name ?? tag;
+    skillNameByTag[tag] = name;
+});
+
+const localizedLang = normalizeLang(lang);
+
+const yearDataByLang: Record<Lang, YearData[]> = {
+    fr: [
+        {
+            id: 'but-1',
+            label: 'BUT 1',
+            title: 'Découverte et pratique',
+            description: 'Objectif principal&nbsp;: comprendre comment les choses fonctionnent, concrètement.',
+            bilan: 'Une année “artisanale”, centrée sur le faire, où la complexité reste maîtrisable et visible.',
+            skills: {
+                'but-realiser': {
+                    ac: [
+                        'Implémentation de fonctionnalités simples à partir d’un besoin exprimé.',
+                        'Traduction d’un problème en algorithmes élémentaires.',
+                        'Production de code lisible, testé, documenté.',
+                        'Premiers projets applicatifs individuels ou en binôme.',
+                    ],
+                },
+                'but-optimiser': {
+                    ac: [
+                        'Analyse de solutions algorithmiques simples.',
+                        'Comparaison de performances et de complexités.',
+                        'Choix raisonné d’algorithmes adaptés à un contexte donné.',
+                        'Premiers réflexes d’optimisation du code.',
+                    ],
+                },
+                'but-administrer': {
+                    ac: [
+                        'Installation et configuration d’un poste de travail.',
+                        'Découverte des systèmes d’exploitation et des services réseau de base.',
+                        'Compréhension des échanges réseau et des rôles client/serveur.',
+                        'Respect des bonnes pratiques de sécurité élémentaires.',
+                    ],
+                },
+                'but-gerer': {
+                    ac: [
+                        'Conception et création d’une base de données relationnelle.',
+                        'Écriture de requêtes SQL simples.',
+                        'Exploitation de données pour répondre à un besoin fonctionnel.',
+                        'Sensibilisation à la qualité et à la cohérence des données.',
+                    ],
+                },
+                'but-conduire': {
+                    ac: [
+                        'Recueil et formalisation de besoins utilisateurs.',
+                        'Organisation du travail en équipe.',
+                        'Planification simple et suivi d’avancement.',
+                        'Communication écrite et orale autour d’un projet.',
+                    ],
+                },
+
+                'but-collaborer': {
+                    ac: [
+                        'Collaboration dans des groupes projets.',
+                        'Utilisation d’outils collaboratifs.',
+                        'Prise en compte des contraintes humaines et organisationnelles.',
+                        'Développement d’une posture professionnelle.',
+                    ],
+                },
+            },
+        },
+        {
+            id: 'but-2',
+            label: 'BUT 2',
+            title: 'Structuration et cadre professionnel',
+            description:
+                'Cette année se spécialise: le BUT offrant quatre parcours. Je choisis le parcours C&nbsp;Administration, gestion et exploitation des données. Objectif principal: rendre la pratique lisible dans un contexte d’entreprise.',
+            bilan: 'Cette année donne un vocabulaire, des méthodes et des cadres à ce qui était jusque-là intuitif.',
+            skills: {
+                'but-realiser': {
+                    ac: [
+                        'Développement d’applications intégrant une base de données.',
+                        'Interaction applicative avec un SGBD.',
+                        'Respect d’une architecture logicielle simple.',
+                        'Tests fonctionnels et validation des résultats.',
+                    ],
+                },
+                'but-optimiser': {
+                    ac: [
+                        'Optimisation de requêtes SQL.',
+                        'Amélioration des performances applicatives liées aux données.',
+                        'Choix de structures de données adaptées.',
+                        'Premières démarches d’analyse de performances.',
+                    ],
+                },
+                'but-administrer': {
+                    ac: [
+                        'Mise en œuvre de services réseau avancés.',
+                        'Sécurisation des échanges et des accès.',
+                        'Compréhension des architectures réseau complexes.',
+                        'Intégration des systèmes dans un environnement existant.',
+                    ],
+                },
+
+                'but-gerer': {
+                    ac: [
+                        'Développement d’applications orientées données.',
+                        'Analyse et visualisation de jeux de données.',
+                        'Utilisation d’outils d’analyse avancée.',
+                        'Prise en compte de la volumétrie et de la qualité des données.',
+                    ],
+                },
+                'but-conduire': {
+                    ac: [
+                        'Gestion de projets techniques plus complexes.',
+                        'Coordination des tâches et des livrables.',
+                        'Interaction avec des parties prenantes.',
+                        'Prise en compte de contraintes de délais et de qualité.',
+                    ],
+                },
+                'but-collaborer': {
+                    ac: [
+                        'Travail en équipe pluridisciplinaire.',
+                        'Communication technique structurée.',
+                        'Intégration dans un contexte professionnel.',
+                        'Développement de l’autonomie.',
+                    ],
+                },
+            },
+        },
+        {
+            id: 'but-3',
+            label: 'BUT 3',
+            title: 'Passage à l’échelle et coordination',
+            description: 'Objectif principal: penser en systèmes plutôt qu’en éléments isolés.',
+            bilan: 'On ne cherche plus seulement à faire fonctionner un programme, mais à rendre un système durable, coordonné et maintenable.',
+            skills: {
+                'but-realiser': {
+                    ac: [
+                        'Développement d’applications décisionnelles.',
+                        'Intégration de données internes et externes.',
+                        'Utilisation de technologies web orientées données.',
+                        'Maintenabilité et évolutivité des solutions.',
+                    ],
+                },
+                'but-optimiser': {
+                    ac: [
+                        'Exploitation de données massives.',
+                        'Mise en œuvre de techniques d’optimisation avancées.',
+                        'Aide à la décision par analyse de données.',
+                        'Évaluation de la pertinence des solutions proposées.',
+                    ],
+                },
+                'but-administrer': {
+                    ac: [
+                        'Organisation, sécurisation et protection des données.',
+                        'Administration avancée de bases de données.',
+                        'Gestion des accès, des droits et de la conformité.',
+                        'Intégration dans des environnements complexes.',
+                    ],
+                },
+                'but-gerer': {
+                    ac: [
+                        'Conception de systèmes décisionnels.',
+                        'Exploitation de techniques d’intelligence artificielle et statistiques.',
+                        'Gouvernance des données.',
+                        'Valorisation stratégique de l’information.',
+                    ],
+                },
+                'but-conduire': {
+                    ac: [
+                        'Pilotage de projets orientés données.',
+                        'Prise de décisions techniques argumentées.',
+                        'Gestion des risques et des contraintes.',
+                        'Production de livrables professionnels.',
+                    ],
+                },
+                'but-collaborer': {
+                    ac: [
+                        'Intégration complète dans une équipe professionnelle.',
+                        'Communication avec des interlocuteurs techniques et non techniques.',
+                        'Posture d’expert junior en données.',
+                        'Autonomie et responsabilité.',
+                    ],
+                },
+            },
+        },
+    ],
+    en: [
+        {
+            id: 'but-1',
+            label: 'BUT 1',
+            title: 'Discovery and practice',
+            description: 'Main goal: understand how things work by building them, fast.',
+            bilan: 'A hands-on year, focused on doing, where complexity stays visible and manageable.',
+            skills: {
+                'but-realiser': {
+                    ac: [
+                        'Implement simple features from an expressed need.',
+                        'Translate a problem into elementary algorithms.',
+                        'Produce readable, tested, documented code.',
+                        'First individual or pair projects.',
+                    ],
+                },
+                'but-optimiser': {
+                    ac: [
+                        'Analyze straightforward algorithmic solutions.',
+                        'Compare performance and complexity.',
+                        'Choose reasonable algorithms for a given context.',
+                        'First optimization reflexes.',
+                    ],
+                },
+                'but-administrer': {
+                    ac: [
+                        'Install and configure a workstation.',
+                        'Discover operating systems and basic network services.',
+                        'Understand client/server roles and network exchanges.',
+                        'Apply elementary security practices.',
+                    ],
+                },
+                'but-gerer': {
+                    ac: [
+                        'Design and create a relational database.',
+                        'Write simple SQL queries.',
+                        'Use data to answer a functional need.',
+                        'Stay aware of data quality and coherence.',
+                    ],
+                },
+                'but-conduire': {
+                    ac: [
+                        'Collect and formalize user needs.',
+                        'Organize teamwork.',
+                        'Plan and track simple projects.',
+                        'Communicate in writing and orally.',
+                    ],
+                },
+
+                'but-collaborer': {
+                    ac: [
+                        'Collaborate inside project groups.',
+                        'Use collaborative tools.',
+                        'Account for human and organizational constraints.',
+                        'Develop a professional posture.',
+                    ],
+                },
+            },
+        },
+        {
+            id: 'but-2',
+            label: 'BUT 2',
+            title: 'Structure and professional framing',
+            description:
+                'Specialization year: I chose track C (data administration and exploitation). The goal shifts to making practice legible in a company context.',
+            bilan: 'This year adds vocabulary, methods, and framing to what used to be intuitive.',
+            skills: {
+                'but-realiser': {
+                    ac: [
+                        'Develop applications backed by a database.',
+                        'Interact with a DBMS from application code.',
+                        'Respect a simple software architecture.',
+                        'Perform functional tests and validate results.',
+                    ],
+                },
+                'but-optimiser': {
+                    ac: [
+                        'Optimize SQL queries.',
+                        'Improve data-related application performance.',
+                        'Choose data structures that fit the need.',
+                        'Start measuring performance.',
+                    ],
+                },
+                'but-administrer': {
+                    ac: [
+                        'Implement advanced network services.',
+                        'Secure exchanges and access.',
+                        'Understand more complex network architectures.',
+                        'Integrate systems into existing environments.',
+                    ],
+                },
+
+                'but-gerer': {
+                    ac: [
+                        'Develop data-oriented applications.',
+                        'Analyze and visualize datasets.',
+                        'Use advanced analysis tools.',
+                        'Factor in volume and data quality.',
+                    ],
+                },
+                'but-conduire': {
+                    ac: [
+                        'Manage more complex technical projects.',
+                        'Coordinate tasks and deliverables.',
+                        'Work with stakeholders.',
+                        'Consider time and quality constraints.',
+                    ],
+                },
+                'but-collaborer': {
+                    ac: [
+                        'Work in multidisciplinary teams.',
+                        'Structure technical communication.',
+                        'Integrate into a professional context.',
+                        'Grow autonomy.',
+                    ],
+                },
+            },
+        },
+        {
+            id: 'but-3',
+            label: 'BUT 3',
+            title: 'Scale and coordination',
+            description: 'Main goal: think in systems rather than isolated elements.',
+            bilan: 'The focus moves from “make it work” to “make it durable, coordinated, and maintainable.”',
+            skills: {
+                'but-realiser': {
+                    ac: [
+                        'Develop decision-support applications.',
+                        'Integrate internal and external data.',
+                        'Use data-oriented web technologies.',
+                        'Keep solutions maintainable and evolutive.',
+                    ],
+                },
+                'but-optimiser': {
+                    ac: [
+                        'Work with large datasets.',
+                        'Apply advanced optimization techniques.',
+                        'Support decisions through data analysis.',
+                        'Evaluate the relevance of proposed solutions.',
+                    ],
+                },
+                'but-administrer': {
+                    ac: [
+                        'Organize, secure, and protect data.',
+                        'Perform advanced database administration.',
+                        'Manage access, permissions, and compliance.',
+                        'Integrate into complex environments.',
+                    ],
+                },
+                'but-gerer': {
+                    ac: [
+                        'Design decision systems.',
+                        'Use AI and statistics techniques.',
+                        'Handle data governance topics.',
+                        'Create strategic value from information.',
+                    ],
+                },
+                'but-conduire': {
+                    ac: [
+                        'Lead data-oriented projects.',
+                        'Make argued technical decisions.',
+                        'Manage risks and constraints.',
+                        'Produce professional deliverables.',
+                    ],
+                },
+                'but-collaborer': {
+                    ac: [
+                        'Fully integrate into a professional team.',
+                        'Communicate with technical and non-technical peers.',
+                        'Adopt a junior expert posture on data topics.',
+                        'Act with autonomy and responsibility.',
+                    ],
+                },
+            },
+        },
+    ],
+};
+
+const yearData = yearDataByLang[localizedLang];
+const yearTabsLabel = localizedLang === 'fr' ? 'Progression par année' : 'Year-by-year progression';
+const synthesisHeading = localizedLang === 'fr' ? 'Synthèse globale' : 'Overall synthesis';
+const yearLabel = localizedLang === 'fr' ? 'Année' : 'Year';
+
+const synthesisBodyEntry = await getEntry('textual', `${localizedLang}/but-informatique`);
+if (!synthesisBodyEntry) {
+    throw new Error('Missing BUT Informatique synthesis body');
+}
+const { Content: synthesisBody } = await synthesisBodyEntry.render();
+
+function projectsForYearAndSkill(yearTag: string, skillTag: string) {
+    return projects
+        .filter(project => project.data.tags.includes(yearTag) && project.data.tags.includes(skillTag))
+        .slice(0, MAX_PROJECTS_PER_SKILL);
+}
+---
+
+<section class='but-body margined'>
+    <div id='titre'>
+        <h1 set:html={langData.but.h1} />
+        <img
+            src='/portfolio/img/but.webp'
+            alt={langData.but['but-logo-alt']}
+            width='95'
+            height='96'
+            loading='lazy'
+            title={langData.but['but-logo-alt']}
+        />
+    </div>
+    <article id='presentation' set:html={langData.but.description} />
+    <a
+        class='lvl button-link'
+        target='_blank'
+        rel='noopener noreferrer'
+        href='https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf'
+    >
+        {langData.but['link-text-syllabus']}
+    </a>
+    <section id='progression'>
+        <h2>{yearTabsLabel}</h2>
+        <p set:html={langData.but['skills-abstract']} />
+        <div class='tabs' data-tabs='but-years'>
+            <div class='tablist' role='tablist' aria-label={yearTabsLabel}>
+                {
+                    yearData.map((year, index) => (
+                        <button
+                            type='button'
+                            role='tab'
+                            id={`tab-${year.id}`}
+                            aria-controls={`panel-${year.id}`}
+                            aria-selected={index === 0 ? 'true' : 'false'}
+                            tabindex={index === 0 ? 0 : -1}
+                        >
+                            {year.label}
+                        </button>
+                    ))
+                }
+            </div>
+            {
+                yearData.map((year, index) => (
+                    <section
+                        id={`panel-${year.id}`}
+                        role='tabpanel'
+                        aria-labelledby={`tab-${year.id}`}
+                        style={index === 0 ? '' : 'display:none'}
+                    >
+                        <h3>
+                            {yearLabel} {index + 1} &mdash; {year.title}
+                        </h3>
+                        <p class='year-description' set:html={year.description} />
+                        <p class='year-bilan'>
+                            <em set:html={year.bilan} />
+                        </p>
+                        <ul class='year-skills lvl'>
+                            {Object.entries(year.skills).map(([skillId, skillData], i) => {
+                                const skillProjects = projectsForYearAndSkill(year.id, skillId);
+                                return (
+                                    <li
+                                        style={`--bg-img: url(/portfolio/img/skill/${i + 1}.jpg)`}
+                                        class='year-skill'
+                                    >
+                                        <h3>
+                                            {langData.but['fmt-h3-skill']
+                                                .replace('%d', String(i + 1))
+                                                .replace('%s', skillNameByTag[skillId])}
+                                        </h3>
+                                        <p set:html={langData.but.skills[i].desc} />
+                                        <ul class='apprentissages'>
+                                            {skillData.ac.map(item => (
+                                                <li>{item}</li>
+                                            ))}
+                                        </ul>
+                                        {skillProjects.length > 0 ? (
+                                            <ProjectCardList
+                                                lang={lang}
+                                                langLabels={{
+                                                    ongoing: langData.ongoing,
+                                                    fmtTitle: langData.fmtTitle,
+                                                }}
+                                                projects={skillProjects}
+                                                tagsById={tagsById}
+                                                anchorsById={anchorsById}
+                                                headingLevel={4}
+                                                class='project-skills'
+                                            />
+                                        ) : null}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </section>
+                ))
+            }
+        </div>
+    </section>
+    <div class='lvl'>
+        <article id='resultat-pour-moi'>
+            <h2>{synthesisHeading}</h2>
+            <TextualContent content={synthesisBody} />
+        </article>
+        <figure class='figure'>
+            <img
+                src='/portfolio/img/iut-lannion.jpg'
+                alt={langData.but['iut-alt']}
+                width='1200'
+                height='630'
+                loading='lazy'
+                title={langData.but['iut-alt']}
+            />
+            <figcaption set:html={langData.but['iut-caption']} />
+        </figure>
+    </div>
+</section>
+<script is:inline>
+    const root = document.querySelector('.but-body [data-tabs="but-years"]');
+    if (root) {
+        const tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+        const panels = Array.from(root.querySelectorAll('[role="tabpanel"]'));
+        const activateTab = tab => {
+            tabs.forEach(item => {
+                const isActive = item === tab;
+                item.setAttribute('aria-selected', String(isActive));
+                item.tabIndex = isActive ? 0 : -1;
+            });
+            panels.forEach(panel => {
+                panel.style.display = panel.getAttribute('aria-labelledby') !== tab.id ? 'none' : '';
+            });
+        };
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => activateTab(tab));
+        });
+        root.addEventListener('keydown', event => {
+            if (!(event.target instanceof HTMLElement)) {
+                return;
+            }
+            if (event.target.getAttribute('role') !== 'tab') {
+                return;
+            }
+            const currentIndex = tabs.indexOf(event.target);
+            if (currentIndex < 0) {
+                return;
+            }
+            let nextIndex = currentIndex;
+            if (event.key === 'ArrowRight') {
+                nextIndex = (currentIndex + 1) % tabs.length;
+            } else if (event.key === 'ArrowLeft') {
+                nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+            } else if (event.key === 'Home') {
+                nextIndex = 0;
+            } else if (event.key === 'End') {
+                nextIndex = tabs.length - 1;
+            } else {
+                return;
+            }
+            event.preventDefault();
+            const nextTab = tabs[nextIndex];
+            if (nextTab) {
+                nextTab.focus();
+                activateTab(nextTab);
+            }
+        });
+    }
+</script>

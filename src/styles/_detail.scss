@@ -33,8 +33,6 @@ main {
     padding: const.$full-width-vertical-margin const.$full-width-horizontal-margin;
 }
 
-@include util.heading-margins(1, 2);
-
 /* Customizables */
 /* Detail header
  *

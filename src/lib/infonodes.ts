@@ -382,7 +382,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
     { id: 'hobbies', successors: hobbyRefs },
     { id: 'blog', successors: blogRefs },
     { id: 'history', successors: historyRefs },
-    { id: 'but-informatique', successors: butProjectRefs },
+    { id: 'history/history-but', successors: butProjectRefs },
   ];
 
   pageNodes.forEach((page) => {
@@ -400,7 +400,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
     makeRef(lang, 'Page', 'history', 'layout', 'public'),
     makeRef(lang, 'Page', 'hobbies', 'layout', 'public'),
     makeRef(lang, 'Page', 'blog', 'layout', 'public'),
-    makeRef(lang, 'Page', 'but-informatique', 'layout', 'public'),
+    makeRef(lang, 'Page', 'history/history-but', 'layout', 'public'),
   ];
 
   addNode({

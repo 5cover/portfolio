@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TextualContent from '../../../components/TextualContent.astro';
+import { getHistory, getLangData, getLangs, getTextualEntry } from '../../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../../lib/ui';
+
+import '../../../styles/history-detail.scss';
+
+export async function getStaticPaths() {
+    const langs = await getLangs();
+    const paths = await Promise.all(
+        langs.map(async lang => {
+            const entries = await getHistory(lang);
+            return entries.map(entry => ({ params: { lang, id: entry.data.id } }));
+        })
+    );
+
+    return paths.flat();
+}
+
+const { lang, id } = Astro.params;
+if (!lang || !id) {
+    throw new Error('Missing route params');
+}
+
+const [langData, langs, historyEntries] = await Promise.all([
+    getLangData(lang),
+    getLangs(),
+    getHistory(lang),
+]);
+const entry = historyEntries.find(item => item.data.id === id);
+if (!entry) {
+    throw new Error(`Missing history ${id} for ${lang}`);
+}
+
+const historySummaryEntry = await getTextualEntry(lang, 'history', entry.data.id);
+const { Content: HistorySummary } = await historySummaryEntry.render();
+const historyBodyEntry = await getTextualEntry(lang, 'history-body', entry.data.body ?? entry.data.id);
+const { Content: HistoryBody } = await historyBodyEntry.render();
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langMap = Object.fromEntries(
+    await Promise.all(langs.map(async code => [code, await getLangData(code)]))
+);
+const languages = buildLanguages(langs, langMap);
+
+const media = entry.data.media;
+const meta = entry.data.meta;
+const year = media?.year ? String(media.year) : '';
+const detailsHeading = lang === 'fr' ? 'Détails' : 'Details';
+---
+
+<BaseLayout
+    lang={lang}
+    pageName={`history/${id}`}
+    navItems={navItems}
+    languages={languages}
+    themeLabels={themeLabels}
+    siteDescription={langData.siteDescription}
+    githubTitle={langData.footerGitHubAnchorTitle}
+>
+    <main>
+        <header>
+            <h1 set:html={entry.data.title} />
+            {(meta || year) ? (
+                <p class="history-meta">
+                    {meta ? <span set:html={meta} /> : null}
+                    {year ? <span class="history-meta_year">{year}</span> : null}
+                </p>
+            ) : null}
+            {media ? (
+                <img
+                    class="history-media"
+                    src={media.img}
+                    alt={media.alt}
+                    loading="lazy"
+                />
+            ) : null}
+        </header>
+        <section id="story">
+            <h2>{langData.story}</h2>
+            <TextualContent content={HistorySummary} />
+        </section>
+        <section id="history-body">
+            <h2>{detailsHeading}</h2>
+            <TextualContent content={HistoryBody} className="history-body textual" />
+        </section>
+    </main>
+</BaseLayout>

@@ -13,7 +13,7 @@ export type TagEntry = CollectionEntry<'tags'>;
 export type TextualEntry = CollectionEntry<'textual'>;
 export type TypeEntry = CollectionEntry<'types'>;
 
-export type TextualKind = 'history' | 'literature' | 'projects';
+export type TextualKind = 'history' | 'history-body' | 'literature' | 'projects';
 export type Lang = 'en' | 'fr';
 
 export type LocalizedValue<T> = {

@@ -189,7 +189,7 @@
         color: rgb(from var(--color-fg) r g b / calc(2 / 3));
     }
 
-    .textual p {
+    p {
         max-width: const.$max-line-length;
     }
 
@@ -270,16 +270,16 @@
      *
      * Intended for: <a>
      */
-    :is(.link, .textual a):link {
+    .link:link {
         color: var(--color-accentext);
     }
 
-    :is(.link, .textual a):visited {
+    .link:visited {
         // decrease luminance by 8%
         color: hsl(from var(--color-accentext) h s calc(l - 8));
     }
 
-    :is(.link, .textual a)#{const.$hover} {
+    .link#{const.$hover} {
         // increase luminance by 8%
         color: hsl(from var(--color-accentext) h s calc(l + 8));
         text-decoration: underline;
@@ -300,9 +300,7 @@
      *
      * Intended for: <ul>, <ol>
      */
-    .list,
-    .textual ul,
-    .textual ol {
+    .list {
         display: flex;
         flex-direction: column;
         gap: 0.5lh;
@@ -319,8 +317,7 @@
      *
      * Intended for: <figure>
      */
-    .figure,
-    .textual figure {
+    .figure {
         @include util.basic-border(1px);
         background-color: var(--color-lvl);
         break-inside: avoid;

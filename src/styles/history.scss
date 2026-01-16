@@ -1,4 +1,3 @@
-@use 'base';
 @use 'const';
 @use 'util';
 
@@ -113,6 +112,8 @@ img {
     position: relative;
     $br: .75em;
     border-radius: $br;
+    color: inherit;
+    text-decoration: none;
 
     img {
         border-top-left-radius: $br;

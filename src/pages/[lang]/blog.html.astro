@@ -4,8 +4,6 @@ import LiteratureCardList from '../../components/LiteratureCardList.astro';
 import { getAnchors, getLangData, getLangs, getLiterature, mapById } from '../../lib/content';
 import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
-import '../../styles/blog.scss';
-
 export async function getStaticPaths() {
   const langs = await getLangs();
   return langs.map((lang) => ({ params: { lang } }));
