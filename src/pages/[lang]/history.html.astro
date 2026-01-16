@@ -82,7 +82,7 @@ const languages = buildLanguages(langs, langMap);
                                             </>
                                         )}
                                     </div>
-                                    <a class='ag-timeline-card_item' href={href} aria-label={entry.data.meta}>
+                                    <div class='ag-timeline-card_item'>
                                         <div class='ag-timeline-card_inner'>
                                             <div class='ag-timeline-card_img-box'>
                                                 {media ? (
@@ -96,8 +96,9 @@ const languages = buildLanguages(langs, langMap);
                                                 </div>
                                             </div>
                                         </div>
+                                        <a class='ag-timeline-card_link' href={href} aria-label={entry.data.meta}></a>
                                         <div class='ag-timeline-card_arrow' />
-                                    </a>
+                                    </div>
                                 </div>
                             );
                         })

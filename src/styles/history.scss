@@ -112,13 +112,19 @@ img {
     position: relative;
     $br: .75em;
     border-radius: $br;
-    color: inherit;
-    text-decoration: none;
 
     img {
         border-top-left-radius: $br;
         border-top-right-radius: $br;
     }
+}
+
+.ag-timeline-card_link {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    text-indent: -9999px;
+    z-index: 2;
 }
 
 .ag-timeline_item:nth-child(2n+1) .ag-timeline-card_item {
