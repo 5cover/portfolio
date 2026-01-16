@@ -1,5 +1,11 @@
 # Scratch
 
+## Section component
+
+Automatically generate heading levels
+
+Markdown parsing altered with a remark plugin
+
 ## Samedi
 
 - EN translation
