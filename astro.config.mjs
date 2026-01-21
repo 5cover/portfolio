@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	base: '/portfolio',
-	integrations: [mdx(), sitemap()],
+    site: 'https://5cover.github.io',
+    base: '/portfolio',
+    integrations: [mdx(), sitemap()],
 });
