@@ -7,74 +7,52 @@ import type { LanguageInfo, NavItem, ThemeLabels } from '../lib/ui-types';
 import '../styles/base.scss';
 
 type Props = {
-  lang: string;
-  pageName: string;
-  navItems: NavItem[];
-  languages: LanguageInfo[];
-  themeLabels: ThemeLabels;
-  siteDescription: string;
-  githubTitle: string;
+    lang: string;
+    pageName: string;
+    navItems: NavItem[];
+    languages: LanguageInfo[];
+    themeLabels: ThemeLabels;
+    siteDescription: string;
+    githubTitle: string;
 };
 
 const props: Props = Astro.props;
-const {
-  lang,
-  pageName,
-  navItems,
-  languages,
-  themeLabels,
-  siteDescription,
-  githubTitle,
-} = props;
+const { lang, pageName, navItems, languages, themeLabels, siteDescription, githubTitle } = props;
 const pageTitle = 'Raphaël Bardini';
 ---
+
 <!doctype html>
 <html lang={lang}>
-  <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon-32x32.png" />
-    <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon" />
-    <link rel="manifest" href="/portfolio/site.webmanifest" />
-    <link rel="mask-icon" href="/portfolio/safari-pinned-tab.svg" color="#5bbad5" />
+    <head>
+        <link rel='apple-touch-icon' sizes='180x180' href='/portfolio/apple-touch-icon.png' />
+        <link rel='icon' type='image/png' sizes='16x16' href='/portfolio/favicon-16x16.png' />
+        <link rel='icon' type='image/png' sizes='32x32' href='/portfolio/favicon-32x32.png' />
+        <link rel='shortcut icon' href='/portfolio/favicon.ico' type='image/x-icon' />
+        <link rel='manifest' href='/portfolio/site.webmanifest' />
+        <link rel='mask-icon' href='/portfolio/safari-pinned-tab.svg' color='#5bbad5' />
 
-    <meta charset="UTF-8" />
-    <meta name="author" content="Raphaël Bardini" />
-    <meta name="description" content={siteDescription} />
-    <meta name="msapplication-TileColor" content="#2d89ef" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{pageTitle}</title>
-    <script is:inline>
-      document.documentElement.setAttribute(
-        'data-theme',
-        localStorage.getItem('theme') || 'system'
-      );
-    </script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css"
-    />
-    <script
-      async
-      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
-    ></script>
-  </head>
-  <body>
-    <Header
-      lang={lang}
-      pageName={pageName}
-      navItems={navItems}
-      languages={languages}
-      themeLabels={themeLabels}
-    />
-    <slot />
-    <Footer githubTitle={githubTitle} />
-    <script type="module" src='../scripts/base.ts'></script>
-  </body>
+        <meta charset='UTF-8' />
+        <meta name='author' content='Raphaël Bardini' />
+        <meta name='description' content={siteDescription} />
+        <meta name='msapplication-TileColor' content='#2d89ef' />
+        <meta name='theme-color' content='#ffffff' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>{pageTitle}</title>
+        <script is:inline>
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
+        </script>
+        <link
+            rel='stylesheet'
+            type='text/css'
+            href='https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css'
+        />
+        <link rel='stylesheet' href='https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css' />
+        <script async src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js'></script>
+    </head>
+    <body>
+        <Header lang={lang} pageName={pageName} navItems={navItems} languages={languages} themeLabels={themeLabels} />
+        <slot />
+        <Footer githubTitle={githubTitle} />
+        <script src='../scripts/base.ts'></script>
+    </body>
 </html>
