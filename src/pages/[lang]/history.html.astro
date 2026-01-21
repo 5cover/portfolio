@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../../components/TextualContent.astro';
 import { getHistory, getLangData, getLangs, getTextualEntry } from '../../lib/content';
 import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
-import pageScript from '../../scripts/history.ts?url';
 import { detailHref } from '../../lib/routes';
 
 import '../../styles/history.scss';
@@ -43,8 +42,7 @@ const languages = buildLanguages(langs, langMap);
     languages={languages}
     themeLabels={themeLabels}
     siteDescription={langData.siteDescription}
-    githubTitle={langData.footerGitHubAnchorTitle}
-    pageScript={pageScript}>
+    githubTitle={langData.footerGitHubAnchorTitle}>
     <main>
         <div class='ag-format-container'>
             <div class='js-timeline ag-timeline'>
@@ -96,7 +94,7 @@ const languages = buildLanguages(langs, langMap);
                                                 </div>
                                             </div>
                                         </div>
-                                        <a class='ag-timeline-card_link' href={href} aria-label={entry.data.meta}></a>
+                                        <a class='ag-timeline-card_link' href={href} aria-label={entry.data.meta} />
                                         <div class='ag-timeline-card_arrow' />
                                     </div>
                                 </div>
@@ -107,4 +105,5 @@ const languages = buildLanguages(langs, langMap);
             </div>
         </div>
     </main>
+    <script src='../../scripts/history.ts'></script>
 </BaseLayout>

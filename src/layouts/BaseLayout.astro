@@ -1,5 +1,4 @@
 ---
-import baseScript from '../scripts/base.ts?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -15,7 +14,6 @@ type Props = {
   themeLabels: ThemeLabels;
   siteDescription: string;
   githubTitle: string;
-  pageScript?: string;
 };
 
 const props: Props = Astro.props;
@@ -27,10 +25,7 @@ const {
   themeLabels,
   siteDescription,
   githubTitle,
-  pageScript,
 } = props;
-
-const resolvedPageScript = pageScript ?? null;
 const pageTitle = 'Raphaël Bardini';
 ---
 <!doctype html>
@@ -80,7 +75,6 @@ const pageTitle = 'Raphaël Bardini';
     />
     <slot />
     <Footer githubTitle={githubTitle} />
-    <script type="module" src={baseScript}></script>
-    {resolvedPageScript && <script type="module" src={resolvedPageScript}></script>}
+    <script type="module" src='../scripts/base.ts'></script>
   </body>
 </html>

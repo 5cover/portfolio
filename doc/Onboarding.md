@@ -30,7 +30,6 @@ Astro features used:
 - Content collections (`astro:content`) with strict Zod schemas.
 - MDX content for long-form body text.
 - Layouts and components for shared UI.
-- Static asset bundling for client scripts via `?url` imports.
 - Static JSON endpoints in `src/pages/data` to feed client JS (projects filter,
   definition tooltips).
 
@@ -188,11 +187,9 @@ The build uses `sass` (dev dependency) to compile SCSS.
 ## Client Side Scripts
 
 Client scripts are regular TypeScript modules in `src/scripts`.
-They are loaded in pages using `?url` imports:
 
 ```astro
-import pageScript from '../../scripts/projects.ts?url';
-<BaseLayout pageScript={pageScript} />
+<BaseLayout pageScript='../../scripts/projects.ts' />
 ```
 
 Scripts:
