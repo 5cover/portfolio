@@ -1,5 +1,21 @@
 # Scratch
 
+## Towrite
+
+- portfolio.mdx
+- s2.05.mdx
+- s2.06.mdx
+- sae3.mdx (complete)
+- history items
+
+## Fixes
+
+- Vertical search bar
+- Remove background/border on logos in project cards
+- cleanup but informatique: proper title margin, place the introductory paragraph below the definition and in normal size, remove useless flexes
+- fix but informatique badge v alignment in tags
+- fix list padding in textual content -> through a list component or maybe a plugin that adds classes so i can keep writing prose but it doesn't have to be unstyled?
+
 ## Section component
 
 Automatically generate heading levels
@@ -14,7 +30,7 @@ Markdown parsing altered with a remark plugin
 
 - Hosting
 - send URL to prof
-- engie internship and alternance textuals
+- engie internship and alternance textualsspecif
 - clickable history items
 
 ## Use YAML instead of JSON sytax in yaml file
@@ -23,11 +39,13 @@ we can probably automate it.
 
 Use proper dates for start and end instead of strings
 
-## Fallback to english strings when fr not specified but with a lang=en div
+## ~~Fallback to english strings when fr not specified but with a lang=en div~~
 
 avoid duplicating
 
 preserve accessibility
+
+solution: simply import the original and wrap it in div lang
 
 ## Formalize context
 

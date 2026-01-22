@@ -3,11 +3,12 @@ title:
   en: "Jerry Has To Pee"
   fr: "Jerry Has To Pee"
 abstract:
-    en: "It’s nearly Christmas at the Smiths’ house. Snow doesn’t fall, Jerry talks too much, arguments don’t stop — which annoys Rick enough to intervene. He gives them a quiet ride through deep space, stripped of meaning, full of stars. A simulated reenactment of Voyager 2. But a parameter is forgotten. A mundane need is dismissed. Rick never admits mistakes. He builds around them. This time, though, he won't be the only one paying the price."
-    fr: "It’s nearly Christmas at the Smiths’ house. Snow doesn’t fall, Jerry talks too much, arguments don’t stop — which annoys Rick enough to intervene. He gives them a quiet ride through deep space, stripped of meaning, full of stars. A simulated reenactment of Voyager 2. But a parameter is forgotten. A mundane need is dismissed. Rick never admits mistakes. He builds around them. This time, though, he won't be the only one paying the price."
+  en: "It's nearly Christmas at the Smiths' house. Snow doesn't fall, Jerry talks too much, arguments don't stop — which annoys Rick enough to intervene.<br>He gives them a quiet ride through deep space, stripped of meaning, full of stars. A simulated reenactment of Voyager 2.<br>But a parameter is forgotten. A mundane need is dismissed. Rick never admits mistakes. He builds around them.<br>This time, though, he won't be the only one paying the price.<br><em>A Rick and Morty fanfiction</em>"
+  fr: |
+    <span lang="en">It's nearly Christmas at the Smiths' house. Snow doesn't fall, Jerry talks too much, arguments don't stop — which annoys Rick enough to intervene.<br>He gives them a quiet ride through deep space, stripped of meaning, full of stars. A simulated reenactment of Voyager 2.<br>But a parameter is forgotten. A mundane need is dismissed. Rick never admits mistakes. He builds around them.<br>This time, though, he won't be the only one paying the price.</span><br><em>Une fanfiction Rick et Morty.</em>
 context:
-    en: "Personal"
-    fr: "Personnel"
+  en: "Personal"
+  fr: "Personnel"
 startDate: "2022-11-15"
 endDate: "2023-06-27"
 tags:
@@ -24,4 +25,4 @@ gallery:
   en: []
   fr: []
 logo: ~
-background: "/portfolio/img/projects/the-last-teacher/bg.webp"
+background: "/portfolio/img/projects/jerry-has-to-pee/bg.png"
