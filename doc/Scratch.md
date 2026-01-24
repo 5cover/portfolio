@@ -55,6 +55,10 @@ avoid repetition of translations
 
 There is no need to put the title inside the Def tags every time since the definition knows the title so Def can become a contentless component like img.
 
+## More projects
+
+more bUT3/but2 projects, personal projects
+
 ## ~~Read and implement prof requirements~~
 
 Les requirements se centrent autour du BUT informatique
