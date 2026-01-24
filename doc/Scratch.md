@@ -1,5 +1,15 @@
 # Scratch
 
+LIFO.
+
+## PSC syntax highlighting
+
+Noan Perrot did one
+
+## Follow Astro audit recommendations in every page
+
+## Trégoria: Galerie
+
 ## Towrite
 
 - portfolio.mdx
@@ -15,12 +25,6 @@
 - cleanup but informatique: proper title margin, place the introductory paragraph below the definition and in normal size, remove useless flexes
 - fix but informatique badge v alignment in tags
 - fix list padding in textual content -> through a list component or maybe a plugin that adds classes so i can keep writing prose but it doesn't have to be unstyled?
-
-## Section component
-
-Automatically generate heading levels
-
-Markdown parsing altered with a remark plugin
 
 ## Samedi
 
@@ -39,17 +43,17 @@ we can probably automate it.
 
 Use proper dates for start and end instead of strings
 
-## ~~Fallback to english strings when fr not specified but with a lang=en div~~
+## A blog about the Scratch & Done method
 
-avoid duplicating
+LIFO task lists
 
-preserve accessibility
+solo working, complements kanban words, serializes technical thought.
 
-solution: simply import the original and wrap it in div lang
+represent's each person "stack trace of though". not only tasks, but maybe ideas and things to explore once the stuff below is taken care of.
 
 ## Formalize context
 
-avoid repetition of translations
+enforce correctness, specify our data model, avoid repetition of translations
 
 ## Remove content from `<Def>` components
 
@@ -71,22 +75,12 @@ We make history items clickable, they lead to a long-form textual body (detail r
 
 Then we can go in depth about the internship and the apprenticeship
 
-## ~~Fix Markdown definition logo size~~
-
-## ~~Fix footer icon theming~~
-
-## ~~Idiomatic localization?~~
-
 ## ~~Standardized MDX content~~. Currently markup is everwyhere. Image components
-
-## Follow Astro audit recommendations in every page
 
 ## Install linters and stuff
 
 stylelint, eslint etc
 
-## PSC syntax highlighting
+## Section component
 
-Noan Perrot did one
-
-## Trégoria: Galerie
+Automatically generate heading levels
