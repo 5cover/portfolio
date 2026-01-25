@@ -3,11 +3,7 @@ import Graphic from './Graphic.astro';
 import LinkList from './LinkList.astro';
 import { detailHref, pageHref } from '../lib/routes';
 import { formatDate } from '../lib/date';
-import type {
-  AnchorEntry,
-  LocalizedProjectEntry,
-  LocalizedTagEntry,
-} from '../lib/content';
+import type { AnchorEntry, LocalizedProjectEntry, LocalizedTagEntry } from '../lib/content';
 
 function capitalize(value: string): string {
   return value.length > 0 ? value[0].toUpperCase() + value.slice(1) : value;
@@ -23,54 +19,54 @@ type Props = {
     ongoing: string;
     fmtTitle: string;
   };
-  projectId: string;
-  project: LocalizedProjectEntry['data'];
+  project: LocalizedProjectEntry;
   tagsById: Record<string, LocalizedTagEntry['data']>;
   anchorsById: Record<string, AnchorEntry['data']>;
   headingLevel?: number;
 };
 
 const props: Props = Astro.props;
-const { lang, langLabels, projectId, project, tagsById, anchorsById, headingLevel = 3 } = props;
-const logoTitle = formatTitle(langLabels.fmtTitle, project.title);
-const startDate = project.startDate;
-const endDate = project.endDate;
+const { lang, langLabels, project, tagsById, anchorsById, headingLevel = 3 } = props;
+const projectData = project.data;
+const logoTitle = formatTitle(langLabels.fmtTitle, projectData.title);
+const startDate = projectData.startDate;
+const endDate = projectData.endDate;
 const startLabel = startDate ? formatDate(startDate, lang) : '';
 const endLabel = endDate ? formatDate(endDate, lang) : '';
-const context = project.context ? capitalize(project.context) : '';
-const backgroundStyle = project.background
-  ? `--bg-img-card: url(${project.background})`
+const context = projectData.context ? capitalize(projectData.context) : '';
+const backgroundStyle = projectData.background
+  ? `--bg-img-card: url(${projectData.background})`
   : undefined;
 ---
 <li style={backgroundStyle}>
   <ul class="list-rect">
-    {project.tags.map((tagId) => (
+    {projectData.tags.map((tagId) => (
       <li>
         <a href={`${pageHref(lang, 'projects')}?tag=${tagId}`} set:html={tagsById[tagId]?.title ?? tagId}></a>
       </li>
     ))}
   </ul>
-  {project.logo ? (
+  {projectData.logo ? (
     <Graphic
-      url={project.logo.url}
-      isThemedSvg={project.logo.isThemedSvg}
+      url={projectData.logo.url}
+      isThemedSvg={projectData.logo.isThemedSvg}
       alt={logoTitle}
       title={logoTitle}
       class="logo"
     />
   ) : null}
   {headingLevel === 1 ? (
-    <h1><a class="foil" href={detailHref(lang, 'projects', projectId)} set:html={project.title}></a></h1>
+    <h1><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h1>
   ) : headingLevel === 2 ? (
-    <h2><a class="foil" href={detailHref(lang, 'projects', projectId)} set:html={project.title}></a></h2>
+    <h2><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h2>
   ) : headingLevel === 4 ? (
-    <h4><a class="foil" href={detailHref(lang, 'projects', projectId)} set:html={project.title}></a></h4>
+    <h4><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h4>
   ) : headingLevel === 5 ? (
-    <h5><a class="foil" href={detailHref(lang, 'projects', projectId)} set:html={project.title}></a></h5>
+    <h5><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h5>
   ) : headingLevel === 6 ? (
-    <h6><a class="foil" href={detailHref(lang, 'projects', projectId)} set:html={project.title}></a></h6>
+    <h6><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h6>
   ) : (
-    <h3><a class="foil" href={detailHref(lang, 'projects', projectId)} set:html={project.title}></a></h3>
+    <h3><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h3>
   )}
   {startDate ? (
     <small class="status">
@@ -79,8 +75,8 @@ const backgroundStyle = project.background
     </small>
   ) : null}
   {context ? <small class="context">{context}</small> : null}
-  <p class="abstract" set:html={project.abstract} />
-  {project.links.length > 0 ? (
-    <LinkList links={project.links} anchorsById={anchorsById} />
+  <p class="abstract" set:html={projectData.abstract} />
+  {projectData.links.length > 0 ? (
+    <LinkList links={projectData.links} anchorsById={anchorsById} />
   ) : null}
 </li>

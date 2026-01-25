@@ -65,17 +65,15 @@ const anchorsById = mapById(anchors);
 const definitionsById = mapById(definitions);
 const typesById = mapById(types);
 
-const project = projectEntry.data;
 ---
 <ProjectDetailPage
   lang={lang}
-  id={id}
   navItems={navItems}
   languages={languages}
   themeLabels={themeLabels}
   siteDescription={langData.siteDescription}
   githubTitle={langData.footerGitHubAnchorTitle}
-  project={project}
+  project={projectEntry}
   tagsById={tagsById}
   anchorsById={anchorsById}
   definitionsById={definitionsById}

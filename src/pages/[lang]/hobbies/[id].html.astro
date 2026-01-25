@@ -54,18 +54,16 @@ const langMap = Object.fromEntries(
 const languages = buildLanguages(langs, langMap);
 const anchorsById = mapById(anchors);
 
-const hobby = entry.data;
 ---
 <LiteratureDetailPage
   lang={lang}
-  id={id}
   pageName={`hobbies/${id}`}
   navItems={navItems}
   languages={languages}
   themeLabels={themeLabels}
   siteDescription={langData.siteDescription}
   githubTitle={langData.footerGitHubAnchorTitle}
-  entry={hobby}
+  entry={entry}
   anchorsById={anchorsById}
   Body={HobbyBody}
   copy={{

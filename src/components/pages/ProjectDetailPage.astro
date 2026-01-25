@@ -35,13 +35,12 @@ type Copy = {
 
 type Props = {
     lang: string;
-    id: string;
     navItems: NavItem[];
     languages: LanguageInfo[];
     themeLabels: ThemeLabels;
     siteDescription: string;
     githubTitle: string;
-    project: LocalizedProjectEntry['data'];
+    project: LocalizedProjectEntry;
     tagsById: Record<string, LocalizedTagEntry['data']>;
     anchorsById: Record<string, AnchorEntry['data']>;
     definitionsById: Record<string, DefinitionLocalizedData>;
@@ -53,7 +52,6 @@ type Props = {
 const props: Props = Astro.props;
 const {
     lang,
-    id,
     navItems,
     languages,
     themeLabels,
@@ -72,21 +70,24 @@ function isDefinition(value: DefinitionLocalizedData | undefined): value is Defi
     return Boolean(value);
 }
 
-const backgroundStyle = project.background ? `--bg-img: url(${project.background})` : undefined;
-const logoTitle = copy.fmtTitle.replace('%s', project.title);
-const startDate = project.startDate;
-const endDate = project.endDate;
+const projectData = project.data;
+const backgroundStyle = projectData.background ? `--bg-img: url(${projectData.background})` : undefined;
+const logoTitle = copy.fmtTitle.replace('%s', projectData.title);
+const startDate = projectData.startDate;
+const endDate = projectData.endDate;
 const startLabel = startDate ? formatDate(startDate, lang) : '';
 const endLabel = endDate ? formatDate(endDate, lang) : '';
-const context = project.context ? project.context.charAt(0).toUpperCase() + project.context.slice(1) : '';
+const context = projectData.context
+    ? projectData.context.charAt(0).toUpperCase() + projectData.context.slice(1)
+    : '';
 
-const teamDefs = project.team.map(memberId => definitionsById[memberId]).filter(isDefinition);
-const techDefs = project.technologies.map(techId => definitionsById[techId]).filter(isDefinition);
+const teamDefs = projectData.team.map(memberId => definitionsById[memberId]).filter(isDefinition);
+const techDefs = projectData.technologies.map(techId => definitionsById[techId]).filter(isDefinition);
 ---
 
 <BaseLayout
     lang={lang}
-    pageName={`projects/${id}`}
+    pageName={`projects/${project.id}`}
     navItems={navItems}
     languages={languages}
     themeLabels={themeLabels}
@@ -95,23 +96,23 @@ const techDefs = project.technologies.map(techId => definitionsById[techId]).fil
     <main style={backgroundStyle}>
         <header>
             <ul class="list-rect">
-                {project.tags.map(tagId => (
+                {projectData.tags.map(tagId => (
                     <li>
                         <a href={`${pageHref(lang, 'projects')}?tag=${tagId}`} set:html={tagsById[tagId]?.title ?? tagId}></a>
                     </li>
                 ))}
             </ul>
-            <h1 set:html={project.title}></h1>
-            {project.logo ? (
+            <h1 set:html={projectData.title}></h1>
+            {projectData.logo ? (
                 <Graphic
-                    url={project.logo.url}
-                    isThemedSvg={project.logo.isThemedSvg}
+                    url={projectData.logo.url}
+                    isThemedSvg={projectData.logo.isThemedSvg}
                     alt={logoTitle}
                     title={logoTitle}
                     class="logo"
                 />
             ) : null}
-            <p class="abstract" set:html={project.abstract}></p>
+            <p class="abstract" set:html={projectData.abstract}></p>
             <div class="status-context">
                 {context ? <small class="context">{context}</small> : null}
                 {startDate ? (
@@ -122,10 +123,10 @@ const techDefs = project.technologies.map(techId => definitionsById[techId]).fil
                 ) : null}
             </div>
         </header>
-        {project.links.length > 0 ? (
+        {projectData.links.length > 0 ? (
             <section id="links">
                 <h2>{copy.links}</h2>
-                <LinkList links={project.links} anchorsById={anchorsById} variant="page" />
+                <LinkList links={projectData.links} anchorsById={anchorsById} variant="page" />
             </section>
         ) : null}
         {teamDefs.length > 0 ? (
@@ -142,11 +143,11 @@ const techDefs = project.technologies.map(techId => definitionsById[techId]).fil
             <h2>{copy.story}</h2>
             <TextualContent content={ProjectBody} />
         </section>
-        {project.references.length > 0 ? (
+        {projectData.references.length > 0 ? (
             <section id="references">
                 <h2>{copy.references}</h2>
                 <ReferenceList
-                    references={project.references}
+                    references={projectData.references}
                     anchorsById={anchorsById}
                     backlinkLabel={copy.refJumpUp}
                 />
@@ -162,10 +163,10 @@ const techDefs = project.technologies.map(techId => definitionsById[techId]).fil
                 />
             </section>
         ) : null}
-        {project.gallery.length > 0 ? (
+        {projectData.gallery.length > 0 ? (
             <section id="gallery">
                 <h2>{copy.gallery}</h2>
-                <Gallery items={project.gallery} />
+                <Gallery items={projectData.gallery} />
             </section>
         ) : null}
     </main>

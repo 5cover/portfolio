@@ -43,7 +43,7 @@ export type Infonode = {
   data?: unknown;
 };
 
-function nodeId(lang: string, type: InfonodeType, id: string): string {
+function nodeid(lang: string, type: InfonodeType, id: string): string {
   return `${lang}:${type}:${id}`;
 }
 
@@ -55,7 +55,7 @@ function makeRef(
   visibility: InfonodeVisibility
 ): InfonodeRef {
   return {
-    id: nodeId(lang, type, id),
+    id: nodeid(lang, type, id),
     type,
     role,
     visibility,
@@ -93,7 +93,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
 
   tags.forEach((tag) => {
     addNode({
-      id: nodeId(lang, 'Tag', tag.id),
+      id: nodeid(lang, 'Tag', tag.id),
       type: 'Tag',
       role: 'content',
       visibility: 'private',
@@ -104,7 +104,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
 
   definitions.forEach((definition) => {
     addNode({
-      id: nodeId(lang, 'Definition', definition.id),
+      id: nodeid(lang, 'Definition', definition.id),
       type: 'Definition',
       role: 'content',
       visibility: 'public',
@@ -115,7 +115,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
 
   contacts.forEach((contact) => {
     addNode({
-      id: nodeId(lang, 'Contact', contact.id),
+      id: nodeid(lang, 'Contact', contact.id),
       type: 'Contact',
       role: 'content',
       visibility: 'private',
@@ -130,7 +130,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
       successors.push(makeRef(lang, 'Image', `${entry.id}:media`, 'content', 'private'));
     }
     addNode({
-      id: nodeId(lang, 'History', entry.id),
+      id: nodeid(lang, 'History', entry.id),
       type: 'History',
       role: 'content',
       visibility: 'public',
@@ -140,7 +140,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
 
     if (entry.data.media) {
       addNode({
-        id: nodeId(lang, 'Image', `${entry.id}:media`),
+        id: nodeid(lang, 'Image', `${entry.id}:media`),
         type: 'Image',
         role: 'content',
         visibility: 'private',
@@ -166,7 +166,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
     }
 
     addNode({
-      id: nodeId(lang, 'PianoTile', tile.id),
+      id: nodeid(lang, 'PianoTile', tile.id),
       type: 'PianoTile',
       role: 'content',
       visibility: 'private',
@@ -195,7 +195,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
       if (icon) {
         successors.push(makeRef(lang, 'Image', `${connectorId}:icon`, 'content', 'private'));
         addNode({
-          id: nodeId(lang, 'Image', `${connectorId}:icon`),
+          id: nodeid(lang, 'Image', `${connectorId}:icon`),
           type: 'Image',
           role: 'content',
           visibility: 'private',
@@ -205,7 +205,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
       }
 
       addNode({
-        id: nodeId(lang, 'Connector', connectorId),
+        id: nodeid(lang, 'Connector', connectorId),
         type: 'Connector',
         role: 'content',
         visibility: 'private',
@@ -223,7 +223,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
         const mediaId = `${parentId}:media:${index}`;
         if (item.url) {
           addNode({
-            id: nodeId(lang, 'Image', mediaId),
+            id: nodeid(lang, 'Image', mediaId),
             type: 'Image',
             role: 'content',
             visibility: 'private',
@@ -234,7 +234,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
         }
         if (item.iframeSrc) {
           addNode({
-            id: nodeId(lang, 'Document', mediaId),
+            id: nodeid(lang, 'Document', mediaId),
             type: 'Document',
             role: 'content',
             visibility: 'public',
@@ -249,7 +249,6 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
   };
 
   projects.forEach((project) => {
-    const projectId = project.id;
     const successors: InfonodeRef[] = [];
 
     successors.push(
@@ -266,36 +265,36 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
       ...project.data.team.map((defId) => makeRef(lang, 'Definition', defId, 'content', 'public'))
     );
 
-    successors.push(...createConnectorNodes(projectId, project.data.links));
+    successors.push(...createConnectorNodes(project.id, project.data.links));
 
     if (project.data.logo) {
       addNode({
-        id: nodeId(lang, 'Image', `${projectId}:logo`),
+        id: nodeid(lang, 'Image', `${project.id}:logo`),
         type: 'Image',
         role: 'content',
         visibility: 'private',
         successors: [],
         data: project.data.logo,
       });
-      successors.push(makeRef(lang, 'Image', `${projectId}:logo`, 'content', 'private'));
+      successors.push(makeRef(lang, 'Image', `${project.id}:logo`, 'content', 'private'));
     }
 
     if (project.data.background) {
       addNode({
-        id: nodeId(lang, 'Image', `${projectId}:background`),
+        id: nodeid(lang, 'Image', `${project.id}:background`),
         type: 'Image',
         role: 'content',
         visibility: 'private',
         successors: [],
         data: { src: project.data.background },
       });
-      successors.push(makeRef(lang, 'Image', `${projectId}:background`, 'content', 'private'));
+      successors.push(makeRef(lang, 'Image', `${project.id}:background`, 'content', 'private'));
     }
 
-    successors.push(...createMediaRefs(projectId, project.data.gallery));
+    successors.push(...createMediaRefs(project.id, project.data.gallery));
 
     addNode({
-      id: nodeId(lang, 'Project', projectId),
+      id: nodeid(lang, 'Project', project.id),
       type: 'Project',
       role: 'content',
       visibility: 'public',
@@ -305,43 +304,42 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
   });
 
   literature.forEach((entry) => {
-    const litId = entry.id;
     const successors: InfonodeRef[] = [];
 
     successors.push(
       ...entry.data.tags.map((tagId) => makeRef(lang, 'Tag', tagId, 'content', 'private'))
     );
 
-    successors.push(...createConnectorNodes(litId, entry.data.links));
+    successors.push(...createConnectorNodes(entry.id, entry.data.links));
 
     if (entry.data.logo) {
       addNode({
-        id: nodeId(lang, 'Image', `${litId}:logo`),
+        id: nodeid(lang, 'Image', `${entry.id}:logo`),
         type: 'Image',
         role: 'content',
         visibility: 'private',
         successors: [],
         data: entry.data.logo,
       });
-      successors.push(makeRef(lang, 'Image', `${litId}:logo`, 'content', 'private'));
+      successors.push(makeRef(lang, 'Image', `${entry.id}:logo`, 'content', 'private'));
     }
 
     if (entry.data.background) {
       addNode({
-        id: nodeId(lang, 'Image', `${litId}:background`),
+        id: nodeid(lang, 'Image', `${entry.id}:background`),
         type: 'Image',
         role: 'content',
         visibility: 'private',
         successors: [],
         data: { src: entry.data.background },
       });
-      successors.push(makeRef(lang, 'Image', `${litId}:background`, 'content', 'private'));
+      successors.push(makeRef(lang, 'Image', `${entry.id}:background`, 'content', 'private'));
     }
 
-    successors.push(...createMediaRefs(litId, entry.data.gallery));
+    successors.push(...createMediaRefs(entry.id, entry.data.gallery));
 
     addNode({
-      id: nodeId(lang, 'Literature', litId),
+      id: nodeid(lang, 'Literature', entry.id),
       type: 'Literature',
       role: 'content',
       visibility: 'public',
@@ -387,7 +385,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
 
   pageNodes.forEach((page) => {
     addNode({
-      id: nodeId(lang, 'Page', page.id),
+      id: nodeid(lang, 'Page', page.id),
       type: 'Page',
       role: 'layout',
       visibility: 'public',
@@ -404,7 +402,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
   ];
 
   addNode({
-    id: nodeId(lang, 'Header', 'header'),
+    id: nodeid(lang, 'Header', 'header'),
     type: 'Header',
     role: 'layout',
     visibility: 'private',
@@ -412,7 +410,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
   });
 
   addNode({
-    id: nodeId(lang, 'Footer', 'footer'),
+    id: nodeid(lang, 'Footer', 'footer'),
     type: 'Footer',
     role: 'layout',
     visibility: 'private',

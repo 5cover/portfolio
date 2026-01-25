@@ -21,14 +21,13 @@ type Copy = {
 
 type Props = {
     lang: string;
-    id: string;
     pageName: string;
     navItems: NavItem[];
     languages: LanguageInfo[];
     themeLabels: ThemeLabels;
     siteDescription: string;
     githubTitle: string;
-    entry: LocalizedLiteratureEntry['data'];
+    entry: LocalizedLiteratureEntry;
     anchorsById: Record<string, AnchorEntry['data']>;
     Body: AstroComponentFactory;
     copy: Copy;
@@ -38,7 +37,6 @@ type Props = {
 const props: Props = Astro.props;
 const {
     lang,
-    id,
     pageName,
     navItems,
     languages,
@@ -52,8 +50,9 @@ const {
     mainClass,
 } = props;
 
-const backgroundStyle = entry.background ? `--bg-img: url(${entry.background})` : undefined;
-const logoTitle = copy.fmtTitle.replace('%s', entry.title);
+const entryData = entry.data;
+const backgroundStyle = entryData.background ? `--bg-img: url(${entryData.background})` : undefined;
+const logoTitle = copy.fmtTitle.replace('%s', entryData.title);
 ---
 
 <BaseLayout
@@ -67,42 +66,42 @@ const logoTitle = copy.fmtTitle.replace('%s', entry.title);
 >
     <main style={backgroundStyle} class={mainClass}>
         <header>
-            <h1 set:html={entry.title}></h1>
-            {entry.logo ? (
+            <h1 set:html={entryData.title}></h1>
+            {entryData.logo ? (
                 <Graphic
-                    url={entry.logo.url}
-                    isThemedSvg={entry.logo.isThemedSvg}
+                    url={entryData.logo.url}
+                    isThemedSvg={entryData.logo.isThemedSvg}
                     alt={logoTitle}
                     title={logoTitle}
                     class="logo"
                 />
             ) : null}
-            <p class="abstract" set:html={entry.abstract}></p>
+            <p class="abstract" set:html={entryData.abstract}></p>
         </header>
-        {entry.links.length > 0 ? (
+        {entryData.links.length > 0 ? (
             <section id="links">
                 <h2>{copy.links}</h2>
-                <LinkList links={entry.links} anchorsById={anchorsById} variant="page" />
+                <LinkList links={entryData.links} anchorsById={anchorsById} variant="page" />
             </section>
         ) : null}
         <section id="story">
             <h2>{copy.story}</h2>
             <TextualContent content={Body} />
         </section>
-        {entry.references.length > 0 ? (
+        {entryData.references.length > 0 ? (
             <section id="references">
                 <h2>{copy.references}</h2>
                 <ReferenceList
-                    references={entry.references}
+                    references={entryData.references}
                     anchorsById={anchorsById}
                     backlinkLabel={copy.refJumpUp}
                 />
             </section>
         ) : null}
-        {entry.gallery.length > 0 ? (
+        {entryData.gallery.length > 0 ? (
             <section id="gallery">
                 <h2>{copy.gallery}</h2>
-                <Gallery items={entry.gallery} />
+                <Gallery items={entryData.gallery} />
             </section>
         ) : null}
     </main>
