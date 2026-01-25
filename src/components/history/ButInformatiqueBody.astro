@@ -6,6 +6,7 @@ import { getAnchors, getLangData, getProjects, getTags, mapById } from '../../li
 import type { Lang } from '../../lib/content';
 
 import '../../styles/but-informatique.scss';
+import { Section } from '../Section';
 
 const SKILL_TAGS = ['but-realiser', 'but-optimiser', 'but-administrer', 'but-gerer', 'but-conduire', 'but-collaborer'];
 const MAX_PROJECTS_PER_SKILL = 4;
@@ -426,7 +427,7 @@ function projectsForYearAndSkill(yearTag: string, skillTag: string) {
 
 <section class='but-body margined'>
     <div id='titre'>
-        <h1 set:html={langData.but.h1} />
+        <Section heading={langData.but.h1} />
         <img
             src='/portfolio/img/but.webp'
             alt={langData.but['but-logo-alt']}

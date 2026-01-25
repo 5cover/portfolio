@@ -51,6 +51,10 @@ solo working, complements kanban words, serializes technical thought.
 
 represent's each person "stack trace of though". not only tasks, but maybe ideas and things to explore once the stuff below is taken care of.
 
+## Formalize the desired tone for AI blog-writing
+
+(recover it from the web chat (section stuff))
+
 ## Formalize context
 
 enforce correctness, specify our data model, avoid repetition of translations
@@ -79,7 +83,7 @@ Then we can go in depth about the internship and the apprenticeship
 
 ## Install linters and stuff
 
-stylelint, eslint etc
+stylelint, eslint etc specific astro linting /formatting tools?
 
 ## Section component
 

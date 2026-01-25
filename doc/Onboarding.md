@@ -130,7 +130,7 @@ Long-form content lives in `src/content/textual/<lang>/<kind>/<id>.mdx`
 where `kind` is `projects`, `literature`, or `history`.
 These files render inside the `#story` sections and the history timeline.
 
-Shared MDX components are available:
+MDX components are available:
 
 - `Def`: definition tooltip link, uses the definitions collection.
 - `Link`: normal anchor with V1 `.link` styling.
