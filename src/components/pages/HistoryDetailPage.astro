@@ -2,12 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
 
-import type { AstroComponentFactory } from 'astro';
 import type { LangEntry, LocalizedHistoryEntry } from '../../lib/content';
 import { getLangData, getLangs } from '../../lib/content';
 import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 import '../../styles/history-detail.scss';
+// one off exception for the heavily styled BUT informatique page: https://github.com/withastro/astro/issues/7761
+// (it shows as resolved but sitll doesn't work for me)
+import '../../styles/but-informatique.scss';
+import type { AstroComponentFactory } from 'astro/runtime/server/render/astro/index.js';
 
 type Copy = {
     story: string;

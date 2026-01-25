@@ -1,138 +1,137 @@
 @use 'const';
 @use 'util';
-@include util.heading-margins(2, 3);
 
-@mixin content-and-image {
+.but-body {
+  @include util.heading-margins(2, 3);
+
+  margin: 0 const.$full-width-horizontal-margin;
+
+  @mixin content-and-image {
     justify-content: center;
     align-items: center;
     display: flex;
     gap: 3em;
-}
+  }
 
-:is(.but-body, .but-body.margined) {
-    margin: 0 const.$full-width-horizontal-margin;
-}
-
-:is(#presentation, #resultat-pour-moi) h2 {
+  :is(#presentation, #resultat-pour-moi) h2 {
     display: none;
-}
+  }
 
-#titre {
+  #titre {
     @include content-and-image;
-}
+  }
 
-#presentation {
+  #presentation {
     @include util.cols;
     @include util.text;
     font-size: 1.2em;
 
     p {
-        margin: 0 auto;
+      margin: 0 auto;
     }
-}
+  }
 
-.tabs {
+  .tabs {
     border: 2px var(--color-lvl-next) solid;
-    border-radius: .25lh;
-    padding: .5em;
+    border-radius: 0.25lh;
+    padding: 0.5em;
     margin-bottom: 2em;
-}
+  }
 
-#progression {
+  #progression {
     .year-skills {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: const.$full-width-vertical-margin;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: const.$full-width-vertical-margin;
 
-        > li {
-            @include util.transparent-background-image(--bg-img, var(--color-lvl), 0.04);
-            padding: 1.5em;
-            border-radius: 1.5em;
-        }
+      > li {
+        @include util.transparent-background-image(--bg-img, var(--color-lvl), 0.04);
+        padding: 1.5em;
+        border-radius: 1.5em;
+      }
     }
 
     .list-project {
-        margin-top: 1.25em;
+      margin-top: 1.25em;
     }
 
     @include util.text;
 
     .tablist {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: stretch;
-        margin-bottom: 2em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: stretch;
+      margin-bottom: 2em;
 
-        button {
-            flex: 1;
-            font-size: 1.3em;
-        }
+      button {
+        flex: 1;
+        font-size: 1.3em;
+      }
     }
 
     [role='tab'] {
-        @include util.horizontal-box(1.25);
-        @include util.basic-border(1px);
-        background-color: var(--color-lvl-next);
-        color: var(--color-fg);
-        cursor: pointer;
-        font-weight: 500;
+      @include util.horizontal-box(1.25);
+      @include util.basic-border(1px);
+      background-color: var(--color-lvl-next);
+      color: var(--color-fg);
+      cursor: pointer;
+      font-weight: 500;
 
-        &:hover {
-            background-color: var(--color-lvl);
-        }
+      &:hover {
+        background-color: var(--color-lvl);
+      }
 
-        &:focus-visible {
-            outline: 2px solid var(--color-accent);
-            outline-offset: 2px;
-        }
+      &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+      }
     }
 
     [role='tab'][aria-selected='true'] {
-        @include util.color-accent-bg;
-        border-color: rgb(from var(--color-accent) r g b / 0.5);
+      @include util.color-accent-bg;
+      border-color: rgb(from var(--color-accent) r g b / 0.5);
     }
 
     .year-bilan {
-        font-weight: 500;
+      font-weight: 500;
     }
 
     .year-skills {
-        @include util.gapped(1.5, row, wrap);
-
+      @include util.gapped(1.5, row, wrap);
     }
 
     .year-skill {
-        @include util.basic-border(1px);
-        border-radius: 1em;
-        background-color: var(--color-lvl-next);
+      @include util.basic-border(1px);
+      border-radius: 1em;
+      background-color: var(--color-lvl-next);
 
-        .apprentissages {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5lh;
-            padding-left: 2em;
-        }
+      .apprentissages {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5lh;
+        padding-left: 2em;
+      }
     }
-}
+  }
 
-:has(> #resultat-pour-moi) {
+  :has(> #resultat-pour-moi) {
     @include content-and-image;
 
     figure {
-        $border-radius: 1em;
-        border-radius: $border-radius;
-        flex-basis: max(20em, 40%);
+      $border-radius: 1em;
+      border-radius: $border-radius;
+      flex-basis: max(20em, 40%);
 
-        img {
-            border-top-left-radius: $border-radius;
-            border-top-right-radius: $border-radius;
-        }
+      img {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+      }
     }
 
     #resultat-pour-moi {
-        @include util.text;
-        max-width: const.$max-line-length;
+      @include util.text;
+      max-width: const.$max-line-length;
     }
-
+  }
 }

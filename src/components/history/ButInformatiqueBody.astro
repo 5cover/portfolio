@@ -4,8 +4,6 @@ import ProjectCardList from '../ProjectCardList.astro';
 import TextualContent from '../TextualContent.astro';
 import { getAnchors, getLangData, getProjects, getTags, mapById } from '../../lib/content';
 import type { Locale } from '../../lib/content';
-
-import '../../styles/but-informatique.scss';
 import { Section } from '../Section';
 
 const SKILL_TAGS = ['but-realiser', 'but-optimiser', 'but-administrer', 'but-gerer', 'but-conduire', 'but-collaborer'];
@@ -442,8 +440,7 @@ function projectsForYearAndSkill(yearTag: string, skillTag: string) {
         class='lvl button-link'
         target='_blank'
         rel='noopener noreferrer'
-        href='https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf'
-    >
+        href='https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf'>
         {langData.but['link-text-syllabus']}
     </a>
     <section id='progression'>
@@ -459,8 +456,7 @@ function projectsForYearAndSkill(yearTag: string, skillTag: string) {
                             id={`tab-${year.id}`}
                             aria-controls={`panel-${year.id}`}
                             aria-selected={index === 0 ? 'true' : 'false'}
-                            tabindex={index === 0 ? 0 : -1}
-                        >
+                            tabindex={index === 0 ? 0 : -1}>
                             {year.label}
                         </button>
                     ))
@@ -472,8 +468,7 @@ function projectsForYearAndSkill(yearTag: string, skillTag: string) {
                         id={`panel-${year.id}`}
                         role='tabpanel'
                         aria-labelledby={`tab-${year.id}`}
-                        style={index === 0 ? '' : 'display:none'}
-                    >
+                        style={index === 0 ? '' : 'display:none'}>
                         <h3>
                             {yearLabel} {index + 1} &mdash; {year.title}
                         </h3>
@@ -485,10 +480,7 @@ function projectsForYearAndSkill(yearTag: string, skillTag: string) {
                             {Object.entries(year.skills).map(([skillId, skillData], i) => {
                                 const skillProjects = projectsForYearAndSkill(year.id, skillId);
                                 return (
-                                    <li
-                                        style={`--bg-img: url(/portfolio/img/skill/${i + 1}.jpg)`}
-                                        class='year-skill'
-                                    >
+                                    <li style={`--bg-img: url(/portfolio/img/skill/${i + 1}.jpg)`} class='year-skill'>
                                         <h3>
                                             {langData.but['fmt-h3-skill']
                                                 .replace('%d', String(i + 1))

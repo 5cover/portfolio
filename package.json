@@ -9,23 +9,23 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.12",
+    "@astrojs/mdx": "^4.3.13",
     "@astrojs/react": "^4.4.2",
-    "@astrojs/rss": "^4.0.14",
-    "@astrojs/sitemap": "^3.6.0",
-    "astro": "^5.16.1",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.16.15",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "sharp": "^0.34.3"
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.7.4",
-    "sass": "^1.77.8",
-    "typescript-eslint": "^8.52.0"
+    "prettier": "^3.8.1",
+    "sass": "^1.97.3",
+    "typescript-eslint": "^8.53.1"
   },
   "prettier": {
     "printWidth": 120,
