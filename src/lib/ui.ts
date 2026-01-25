@@ -1,3 +1,4 @@
+import { getLangData, getLangs } from './content';
 import type { LangEntry } from './content';
 import type { LanguageInfo, NavItem, ThemeLabels } from './ui-types';
 
@@ -32,4 +33,12 @@ export function buildLanguages(
       names: data.names,
     };
   });
+}
+
+export async function getLanguages(): Promise<LanguageInfo[]> {
+  const langs = await getLangs();
+  const langMap = Object.fromEntries(
+    await Promise.all(langs.map(async (code) => [code, await getLangData(code)]))
+  );
+  return buildLanguages(langs, langMap);
 }
