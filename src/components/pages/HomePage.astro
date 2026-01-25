@@ -45,16 +45,9 @@ const [tags, anchors] = await Promise.all([getTags(lang), getAnchors()]);
 const tagsById = mapById(tags);
 const anchorsById = mapById(anchors);
 
-const ongoingProjects = projects.filter(project => !project.data.endDate);
-
 function stripTags(value: string): string {
     return value.replace(/<[^>]*>/g, '');
 }
-
-const resumeUrl = 'cv-bardini-raphael.pdf';
-const resumePreviewUrl = 'cv-bardini-raphael-preview.jpg';
-const resumePreviewWidth = 212;
-const resumePreviewHeight = 300;
 ---
 
 <BaseLayout
@@ -109,7 +102,7 @@ const resumePreviewHeight = 300;
             <ProjectCardList
                 lang={lang}
                 langLabels={{ ongoing: copy.ongoing, fmtTitle: copy.fmtTitle }}
-                projects={ongoingProjects}
+                projects={projects.filter(project => !project.data.endDate)}
                 tagsById={tagsById}
                 anchorsById={anchorsById}
             />
@@ -143,12 +136,12 @@ const resumePreviewHeight = 300;
                     </ul>
                 </address>
             </div>
-            <a href={resumeUrl} target='_blank' rel='noopener noreferrer'>
+            <a href='cv-bardini-raphael.pdf' target='_blank' rel='noopener noreferrer'>
                 <img
-                    src={resumePreviewUrl}
+                    src='cv-bardini-raphael-preview.jpg'
                     alt={copy.indexMyResumePreview}
-                    width={resumePreviewWidth}
-                    height={resumePreviewHeight}
+                    width='212'
+                    height='300'
                     loading='lazy'
                 />
                 <span>{copy.indexMyResume}</span>

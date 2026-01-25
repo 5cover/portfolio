@@ -19,7 +19,6 @@ const themeLabels = buildThemeLabels(langData);
 const languages = await getLanguages();
 const siteDescription = langData.siteDescription;
 const githubTitle = langData.footerGitHubAnchorTitle;
-const pageTitle = 'Raphaël Bardini';
 ---
 
 <!doctype html>
@@ -38,7 +37,7 @@ const pageTitle = 'Raphaël Bardini';
         <meta name='msapplication-TileColor' content='#2d89ef' />
         <meta name='theme-color' content='#ffffff' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <title>{pageTitle}</title>
+        <title>Raphaël Bardini</title>
         <script is:inline>
             document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'system');
         </script>
