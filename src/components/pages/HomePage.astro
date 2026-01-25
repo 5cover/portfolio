@@ -2,15 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Graphic from '../Graphic.astro';
 import ProjectCardList from '../ProjectCardList.astro';
-
-import type {
-    AnchorEntry,
-    ContactEntry,
-    LocalizedPianoTileEntry,
-    LocalizedProjectEntry,
-    LocalizedTagEntry,
-} from '../../lib/content';
-import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+import { getAnchors, getLangData, getLangs, getTags, mapById } from '../../lib/content';
+import type { ContactEntry, LangEntry, LocalizedPianoTileEntry, LocalizedProjectEntry } from '../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 import { pageHref } from '../../lib/routes';
 
 import '../../styles/index.scss';
@@ -31,15 +25,9 @@ type Copy = {
 
 type Props = {
     lang: string;
-    navItems: NavItem[];
-    languages: LanguageInfo[];
-    themeLabels: ThemeLabels;
-    siteDescription: string;
-    githubTitle: string;
+    langData: LangEntry['data'];
     pianoTiles: LocalizedPianoTileEntry[];
     projects: LocalizedProjectEntry[];
-    tagsById: Record<string, LocalizedTagEntry['data']>;
-    anchorsById: Record<string, AnchorEntry['data']>;
     contacts: ContactEntry[];
     copy: Copy;
 };
@@ -47,18 +35,24 @@ type Props = {
 const props: Props = Astro.props;
 const {
     lang,
-    navItems,
-    languages,
-    themeLabels,
-    siteDescription,
-    githubTitle,
+    langData,
     pianoTiles,
     projects,
-    tagsById,
-    anchorsById,
     contacts,
     copy,
 } = props;
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langs = await getLangs();
+const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
+const languages = buildLanguages(langs, langMap);
+const siteDescription = langData.siteDescription;
+const githubTitle = langData.footerGitHubAnchorTitle;
+
+const [tags, anchors] = await Promise.all([getTags(lang), getAnchors()]);
+const tagsById = mapById(tags);
+const anchorsById = mapById(anchors);
 
 const ongoingProjects = projects.filter(project => !project.data.endDate);
 

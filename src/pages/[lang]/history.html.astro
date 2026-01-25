@@ -1,7 +1,6 @@
 ---
 import HistoryIndexPage from '../../components/pages/HistoryIndexPage.astro';
 import { getHistory, getLangData, getLangs, getTextualEntry } from '../../lib/content';
-import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 export async function getStaticPaths() {
     const langs = await getLangs();
@@ -13,7 +12,7 @@ if (!lang) {
     throw new Error('Missing lang param');
 }
 
-const [langData, langs, historyItems] = await Promise.all([getLangData(lang), getLangs(), getHistory(lang)]);
+const [langData, historyItems] = await Promise.all([getLangData(lang), getHistory(lang)]);
 
 const orderedHistory = [...historyItems].reverse();
 
@@ -25,19 +24,11 @@ const historyBodies = await Promise.all(
     })
 );
 
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
-const languages = buildLanguages(langs, langMap);
 ---
 
 <HistoryIndexPage
     lang={lang}
-    navItems={navItems}
-    languages={languages}
-    themeLabels={themeLabels}
-    siteDescription={langData.siteDescription}
-    githubTitle={langData.footerGitHubAnchorTitle}
+    langData={langData}
     orderedHistory={orderedHistory}
     historyBodies={historyBodies}
 />

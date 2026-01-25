@@ -1,47 +1,45 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LiteratureCardList from '../LiteratureCardList.astro';
-
-import type { AnchorEntry, LocalizedLiteratureEntry } from '../../lib/content';
-import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+import { getAnchors, getLangData, getLangs, mapById } from '../../lib/content';
+import type { LangEntry, LocalizedLiteratureEntry } from '../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 type Props = {
     lang: string;
-    pageName: string;
-    navItems: NavItem[];
-    languages: LanguageInfo[];
-    themeLabels: ThemeLabels;
-    siteDescription: string;
-    githubTitle: string;
+    langData: LangEntry['data'];
     title: string;
     route: string;
     langLabels: { fmtTitle: string };
     entries: LocalizedLiteratureEntry[];
-    anchorsById: Record<string, AnchorEntry['data']>;
     mainClass?: string;
 };
 
 const props: Props = Astro.props;
 const {
     lang,
-    pageName,
-    navItems,
-    languages,
-    themeLabels,
-    siteDescription,
-    githubTitle,
+    langData,
     title,
     route,
     langLabels,
     entries,
-    anchorsById,
     mainClass,
 } = props;
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langs = await getLangs();
+const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
+const languages = buildLanguages(langs, langMap);
+const siteDescription = langData.siteDescription;
+const githubTitle = langData.footerGitHubAnchorTitle;
+
+const anchorsById = mapById(await getAnchors());
 ---
 
 <BaseLayout
     lang={lang}
-    pageName={pageName}
+    pageName={route}
     navItems={navItems}
     languages={languages}
     themeLabels={themeLabels}

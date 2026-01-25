@@ -1,17 +1,6 @@
 ---
 import ProjectDetailPage from '../../../components/pages/ProjectDetailPage.astro';
-import {
-  getAnchors,
-  getDefinitions,
-  getLangData,
-  getLangs,
-  getProjects,
-  getTags,
-  getTextualEntry,
-  getTypes,
-  mapById,
-} from '../../../lib/content';
-import { buildLanguages, buildNavItems, buildThemeLabels } from '../../../lib/ui';
+import { getLangData, getLangs, getProjects, getTextualEntry } from '../../../lib/content';
 
 export async function getStaticPaths() {
   const langs = await getLangs();
@@ -32,14 +21,9 @@ if (!lang || !id) {
   throw new Error('Missing route params');
 }
 
-const [langData, langs, projectEntry, tags, anchors, definitions, types] = await Promise.all([
+const [langData, projectEntry] = await Promise.all([
   getLangData(lang),
-  getLangs(),
   getProjects(lang).then((entries) => entries.find((entry) => entry.id === id)),
-  getTags(lang),
-  getAnchors(),
-  getDefinitions(lang),
-  getTypes(lang),
 ]);
 
 if (!projectEntry) {
@@ -53,31 +37,11 @@ const projectBodyEntry = await getTextualEntry(
 );
 const { Content: ProjectBody } = await projectBodyEntry.render();
 
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const langMap = Object.fromEntries(
-  await Promise.all(langs.map(async (code) => [code, await getLangData(code)]))
-);
-const languages = buildLanguages(langs, langMap);
-
-const tagsById = mapById(tags);
-const anchorsById = mapById(anchors);
-const definitionsById = mapById(definitions);
-const typesById = mapById(types);
-
 ---
 <ProjectDetailPage
   lang={lang}
-  navItems={navItems}
-  languages={languages}
-  themeLabels={themeLabels}
-  siteDescription={langData.siteDescription}
-  githubTitle={langData.footerGitHubAnchorTitle}
+  langData={langData}
   project={projectEntry}
-  tagsById={tagsById}
-  anchorsById={anchorsById}
-  definitionsById={definitionsById}
-  typesById={typesById}
   ProjectBody={ProjectBody}
   copy={{
     links: langData.links,

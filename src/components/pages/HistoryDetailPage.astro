@@ -3,8 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
 
 import type { AstroComponentFactory } from 'astro';
-import type { LocalizedHistoryEntry } from '../../lib/content';
-import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+import type { LangEntry, LocalizedHistoryEntry } from '../../lib/content';
+import { getLangData, getLangs } from '../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 import '../../styles/history-detail.scss';
 
@@ -15,11 +16,7 @@ type Copy = {
 
 type Props = {
     lang: string;
-    navItems: NavItem[];
-    languages: LanguageInfo[];
-    themeLabels: ThemeLabels;
-    siteDescription: string;
-    githubTitle: string;
+    langData: LangEntry['data'];
     entry: LocalizedHistoryEntry;
     HistorySummary: AstroComponentFactory;
     HistoryBody: AstroComponentFactory;
@@ -29,16 +26,20 @@ type Props = {
 const props: Props = Astro.props;
 const {
     lang,
-    navItems,
-    languages,
-    themeLabels,
-    siteDescription,
-    githubTitle,
+    langData,
     entry,
     HistorySummary,
     HistoryBody,
     copy,
 } = props;
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langs = await getLangs();
+const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
+const languages = buildLanguages(langs, langMap);
+const siteDescription = langData.siteDescription;
+const githubTitle = langData.footerGitHubAnchorTitle;
 
 const media = entry.data.media;
 const meta = entry.data.meta;

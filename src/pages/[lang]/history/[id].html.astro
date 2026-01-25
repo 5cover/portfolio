@@ -1,7 +1,6 @@
 ---
 import HistoryDetailPage from '../../../components/pages/HistoryDetailPage.astro';
 import { getHistory, getLangData, getLangs, getTextualEntry } from '../../../lib/content';
-import { buildLanguages, buildNavItems, buildThemeLabels } from '../../../lib/ui';
 
 
 export async function getStaticPaths() {
@@ -21,11 +20,7 @@ if (!lang || !id) {
     throw new Error('Missing route params');
 }
 
-const [langData, langs, historyEntries] = await Promise.all([
-    getLangData(lang),
-    getLangs(),
-    getHistory(lang),
-]);
+const [langData, historyEntries] = await Promise.all([getLangData(lang), getHistory(lang)]);
 const entry = historyEntries.find(item => item.id === id);
 if (!entry) {
     throw new Error(`Missing history ${id} for ${lang}`);
@@ -36,23 +31,12 @@ const { Content: HistorySummary } = await historySummaryEntry.render();
 const historyBodyEntry = await getTextualEntry(lang, 'history-body', entry.data.body ?? entry.id);
 const { Content: HistoryBody } = await historyBodyEntry.render();
 
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const langMap = Object.fromEntries(
-    await Promise.all(langs.map(async code => [code, await getLangData(code)]))
-);
-const languages = buildLanguages(langs, langMap);
-
 const detailsHeading = lang === 'fr' ? 'Détails' : 'Details';
 ---
 
 <HistoryDetailPage
     lang={lang}
-    navItems={navItems}
-    languages={languages}
-    themeLabels={themeLabels}
-    siteDescription={langData.siteDescription}
-    githubTitle={langData.footerGitHubAnchorTitle}
+    langData={langData}
     entry={entry}
     HistorySummary={HistorySummary}
     HistoryBody={HistoryBody}

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+import { getLangData, getLangs } from '../../lib/content';
+import type { LangEntry } from '../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 import '../../styles/projects.scss';
 
@@ -13,16 +15,20 @@ type Copy = {
 
 type Props = {
     lang: string;
-    navItems: NavItem[];
-    languages: LanguageInfo[];
-    themeLabels: ThemeLabels;
-    siteDescription: string;
-    githubTitle: string;
+    langData: LangEntry['data'];
     copy: Copy;
 };
 
 const props: Props = Astro.props;
-const { lang, navItems, languages, themeLabels, siteDescription, githubTitle, copy } = props;
+const { lang, langData, copy } = props;
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langs = await getLangs();
+const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
+const languages = buildLanguages(langs, langMap);
+const siteDescription = langData.siteDescription;
+const githubTitle = langData.footerGitHubAnchorTitle;
 ---
 
 <BaseLayout

@@ -8,14 +8,9 @@ import LinkList from '../LinkList.astro';
 import ReferenceList from '../ReferenceList.astro';
 
 import type { AstroComponentFactory } from 'astro';
-import type {
-    AnchorEntry,
-    DefinitionLocalizedData,
-    LocalizedProjectEntry,
-    LocalizedTagEntry,
-    TypeLocalizedData,
-} from '../../lib/content';
-import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+import { getAnchors, getDefinitions, getLangData, getLangs, getTags, getTypes, mapById } from '../../lib/content';
+import type { DefinitionLocalizedData, LangEntry, LocalizedProjectEntry } from '../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 import { formatDate } from '../../lib/date';
 import { pageHref } from '../../lib/routes';
 
@@ -35,16 +30,8 @@ type Copy = {
 
 type Props = {
     lang: string;
-    navItems: NavItem[];
-    languages: LanguageInfo[];
-    themeLabels: ThemeLabels;
-    siteDescription: string;
-    githubTitle: string;
+    langData: LangEntry['data'];
     project: LocalizedProjectEntry;
-    tagsById: Record<string, LocalizedTagEntry['data']>;
-    anchorsById: Record<string, AnchorEntry['data']>;
-    definitionsById: Record<string, DefinitionLocalizedData>;
-    typesById: Record<string, TypeLocalizedData>;
     ProjectBody: AstroComponentFactory;
     copy: Copy;
 };
@@ -52,16 +39,8 @@ type Props = {
 const props: Props = Astro.props;
 const {
     lang,
-    navItems,
-    languages,
-    themeLabels,
-    siteDescription,
-    githubTitle,
+    langData,
     project,
-    tagsById,
-    anchorsById,
-    definitionsById,
-    typesById,
     ProjectBody,
     copy,
 } = props;
@@ -69,6 +48,25 @@ const {
 function isDefinition(value: DefinitionLocalizedData | undefined): value is DefinitionLocalizedData {
     return Boolean(value);
 }
+
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langs = await getLangs();
+const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
+const languages = buildLanguages(langs, langMap);
+const siteDescription = langData.siteDescription;
+const githubTitle = langData.footerGitHubAnchorTitle;
+
+const [tags, anchors, definitions, types] = await Promise.all([
+    getTags(lang),
+    getAnchors(),
+    getDefinitions(lang),
+    getTypes(lang),
+]);
+const tagsById = mapById(tags);
+const anchorsById = mapById(anchors);
+const definitionsById = mapById(definitions);
+const typesById = mapById(types);
 
 const projectData = project.data;
 const backgroundStyle = projectData.background ? `--bg-img: url(${projectData.background})` : undefined;

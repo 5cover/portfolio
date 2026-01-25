@@ -2,16 +2,12 @@
 import HomePage from '../../components/pages/HomePage.astro';
 
 import {
-    getAnchors,
     getContacts,
     getLangData,
     getLangs,
     getPianoTiles,
     getProjects,
-    getTags,
-    mapById,
 } from '../../lib/content';
-import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 export async function getStaticPaths() {
     const langs = await getLangs();
@@ -23,35 +19,20 @@ if (!lang) {
     throw new Error('Missing lang param');
 }
 
-const [langData, langs, projects, tags, anchors, contacts, pianoTiles] = await Promise.all([
+const [langData, projects, contacts, pianoTiles] = await Promise.all([
     getLangData(lang),
-    getLangs(),
     getProjects(lang),
-    getTags(lang),
-    getAnchors(),
     getContacts(),
     getPianoTiles(lang),
 ]);
 
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
-const languages = buildLanguages(langs, langMap);
-const tagsById = mapById(tags);
-const anchorsById = mapById(anchors);
 ---
 
 <HomePage
     lang={lang}
-    navItems={navItems}
-    languages={languages}
-    themeLabels={themeLabels}
-    siteDescription={langData.siteDescription}
-    githubTitle={langData.footerGitHubAnchorTitle}
+    langData={langData}
     pianoTiles={pianoTiles}
     projects={projects}
-    tagsById={tagsById}
-    anchorsById={anchorsById}
     contacts={contacts}
     copy={{
         indexMe: langData.indexMe,

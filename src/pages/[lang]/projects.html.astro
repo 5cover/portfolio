@@ -1,7 +1,6 @@
 ---
 import ProjectsIndexPage from '../../components/pages/ProjectsIndexPage.astro';
 import { getLangData, getLangs } from '../../lib/content';
-import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 
 export async function getStaticPaths() {
@@ -14,20 +13,12 @@ if (!lang) {
     throw new Error('Missing lang param');
 }
 
-const [langData, langs] = await Promise.all([getLangData(lang), getLangs()]);
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
-const languages = buildLanguages(langs, langMap);
+const langData = await getLangData(lang);
 ---
 
 <ProjectsIndexPage
     lang={lang}
-    navItems={navItems}
-    languages={languages}
-    themeLabels={themeLabels}
-    siteDescription={langData.siteDescription}
-    githubTitle={langData.footerGitHubAnchorTitle}
+    langData={langData}
     copy={{
         projectSearchSearch: langData.projectSearchSearch,
         projectSearchPlaceholder: langData.projectSearchPlaceholder,

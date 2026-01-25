@@ -7,8 +7,10 @@ import LinkList from '../LinkList.astro';
 import ReferenceList from '../ReferenceList.astro';
 
 import type { AstroComponentFactory } from 'astro';
-import type { AnchorEntry, LocalizedLiteratureEntry } from '../../lib/content';
-import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+import { getAnchors, getLangData, getLangs, mapById } from '../../lib/content';
+import type { LocalizedLiteratureEntry } from '../../lib/content';
+import type { LangEntry } from '../../lib/content';
+import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 type Copy = {
     links: string;
@@ -21,14 +23,9 @@ type Copy = {
 
 type Props = {
     lang: string;
-    pageName: string;
-    navItems: NavItem[];
-    languages: LanguageInfo[];
-    themeLabels: ThemeLabels;
-    siteDescription: string;
-    githubTitle: string;
+    langData: LangEntry['data'];
+    route: string;
     entry: LocalizedLiteratureEntry;
-    anchorsById: Record<string, AnchorEntry['data']>;
     Body: AstroComponentFactory;
     copy: Copy;
     mainClass?: string;
@@ -37,27 +34,31 @@ type Props = {
 const props: Props = Astro.props;
 const {
     lang,
-    pageName,
-    navItems,
-    languages,
-    themeLabels,
-    siteDescription,
-    githubTitle,
+    langData,
+    route,
     entry,
-    anchorsById,
     Body,
     copy,
     mainClass,
 } = props;
 
+const navItems = buildNavItems(langData);
+const themeLabels = buildThemeLabels(langData);
+const langs = await getLangs();
+const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
+const languages = buildLanguages(langs, langMap);
+const siteDescription = langData.siteDescription;
+const githubTitle = langData.footerGitHubAnchorTitle;
+
 const entryData = entry.data;
+const anchorsById = mapById(await getAnchors());
 const backgroundStyle = entryData.background ? `--bg-img: url(${entryData.background})` : undefined;
 const logoTitle = copy.fmtTitle.replace('%s', entryData.title);
 ---
 
 <BaseLayout
     lang={lang}
-    pageName={pageName}
+    pageName={`${route}/${entry.id}`}
     navItems={navItems}
     languages={languages}
     themeLabels={themeLabels}
