@@ -23,10 +23,6 @@ type YearData = {
     skills: Record<string, YearSkill>;
 };
 
-function normalizeLang(value: string): Locale {
-    return value === 'fr' ? 'fr' : 'en';
-}
-
 interface Props {
     lang: Locale;
 }
@@ -47,8 +43,6 @@ SKILL_TAGS.forEach((tag, index) => {
     const name = langData.but.skills[index]?.name ?? tag;
     skillNameByTag[tag] = name;
 });
-
-const localizedLang = normalizeLang(lang);
 
 const yearDataByLang: Record<Locale, YearData[]> = {
     fr: [
@@ -405,12 +399,12 @@ const yearDataByLang: Record<Locale, YearData[]> = {
     ],
 };
 
-const yearData = yearDataByLang[localizedLang];
-const yearTabsLabel = localizedLang === 'fr' ? 'Progression par année' : 'Year-by-year progression';
-const synthesisHeading = localizedLang === 'fr' ? 'Synthèse globale' : 'Overall synthesis';
-const yearLabel = localizedLang === 'fr' ? 'Année' : 'Year';
+const yearData = yearDataByLang[lang];
+const yearTabsLabel = lang === 'fr' ? 'Progression par année' : 'Year-by-year progression';
+const synthesisHeading = lang === 'fr' ? 'Synthèse globale' : 'Overall synthesis';
+const yearLabel = lang === 'fr' ? 'Année' : 'Year';
 
-const synthesisBodyEntry = await getEntry('textual', `${localizedLang}/but-informatique`);
+const synthesisBodyEntry = await getEntry('textual', `${lang}/but-informatique`);
 if (!synthesisBodyEntry) {
     throw new Error('Missing BUT Informatique synthesis body');
 }
