@@ -85,6 +85,8 @@ Then we can go in depth about the internship and the apprenticeship
 
 stylelint, eslint etc specific astro linting /formatting tools?
 
+## Image optimization
+
 ## Cleanup types
 
 ## Section component
