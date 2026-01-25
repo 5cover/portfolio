@@ -30,6 +30,8 @@ Build a clean, performant, accessible, semantic portfolio site in Astro. The sit
 - Do not introduce a dependency unless necessary; justify each new dependency in the change description.
 - Keep components small and semantic.
 - Strict typescript, strict types, avoid type assertions unless strictly necessary.
+- Minimize the amount of code you write. Avoid useless parameter passing. Apply "less is more" and KISS.
+- Used idiomatic, recommended structures. Expressive types. Interfaces and inheritance over type composition.
 
 ## When blocked
 
