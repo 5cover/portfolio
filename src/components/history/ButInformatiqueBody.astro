@@ -3,7 +3,7 @@ import { getEntry } from 'astro:content';
 import ProjectCardList from '../ProjectCardList.astro';
 import TextualContent from '../TextualContent.astro';
 import { getAnchors, getLangData, getProjects, getTags, mapById } from '../../lib/content';
-import type { Lang } from '../../lib/content';
+import type { Locale } from '../../lib/content';
 
 import '../../styles/but-informatique.scss';
 import { Section } from '../Section';
@@ -25,12 +25,12 @@ type YearData = {
     skills: Record<string, YearSkill>;
 };
 
-function normalizeLang(value: string): Lang {
+function normalizeLang(value: string): Locale {
     return value === 'fr' ? 'fr' : 'en';
 }
 
 interface Props {
-    lang: Lang;
+    lang: Locale;
 }
 
 const { lang } = Astro.props;
@@ -52,7 +52,7 @@ SKILL_TAGS.forEach((tag, index) => {
 
 const localizedLang = normalizeLang(lang);
 
-const yearDataByLang: Record<Lang, YearData[]> = {
+const yearDataByLang: Record<Locale, YearData[]> = {
     fr: [
         {
             id: 'but-1',

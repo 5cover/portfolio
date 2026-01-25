@@ -14,7 +14,7 @@ async function getDefinitionIndex(lang: string): Promise<DefinitionIndex> {
 
   const entries = await getDefinitions(lang);
   const index = entries.reduce<DefinitionIndex>((acc, entry) => {
-    acc[entry.data.id] = entry.data;
+    acc[entry.id] = entry.data;
     return acc;
   }, {});
   definitionCache.set(lang, index);

@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Graphic from '../Graphic.astro';
+import ProjectCardList from '../ProjectCardList.astro';
+
+import type {
+    AnchorEntry,
+    ContactEntry,
+    LocalizedPianoTileEntry,
+    LocalizedProjectEntry,
+    LocalizedTagEntry,
+} from '../../lib/content';
+import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+import { pageHref } from '../../lib/routes';
+
+import '../../styles/index.scss';
+
+type Copy = {
+    indexMe: string;
+    indexAboutMeContent: string;
+    indexMyPhoto: string;
+    indexOngoingProjects: string;
+    indexAllMyProjects: string;
+    indexContact: string;
+    indexMyResumePreview: string;
+    indexMyResume: string;
+    indexVideoCv: string;
+    ongoing: string;
+    fmtTitle: string;
+};
+
+type Props = {
+    lang: string;
+    navItems: NavItem[];
+    languages: LanguageInfo[];
+    themeLabels: ThemeLabels;
+    siteDescription: string;
+    githubTitle: string;
+    pianoTiles: LocalizedPianoTileEntry[];
+    projects: LocalizedProjectEntry[];
+    tagsById: Record<string, LocalizedTagEntry['data']>;
+    anchorsById: Record<string, AnchorEntry['data']>;
+    contacts: ContactEntry[];
+    copy: Copy;
+};
+
+const props: Props = Astro.props;
+const {
+    lang,
+    navItems,
+    languages,
+    themeLabels,
+    siteDescription,
+    githubTitle,
+    pianoTiles,
+    projects,
+    tagsById,
+    anchorsById,
+    contacts,
+    copy,
+} = props;
+
+const ongoingProjects = projects.filter(project => !project.data.endDate);
+
+function stripTags(value: string): string {
+    return value.replace(/<[^>]*>/g, '');
+}
+
+const resumeUrl = 'cv-bardini-raphael.pdf';
+const resumePreviewUrl = 'cv-bardini-raphael-preview.jpg';
+const resumePreviewWidth = 212;
+const resumePreviewHeight = 300;
+---
+
+<BaseLayout
+    lang={lang}
+    pageName='index'
+    navItems={navItems}
+    languages={languages}
+    themeLabels={themeLabels}
+    siteDescription={siteDescription}
+    githubTitle={githubTitle}>
+    <main>
+        <ul class='lvl list-piano-tiles'>
+            {
+                pianoTiles.map(tile => (
+                    <li>
+                        <figure>
+                            <img
+                                src={tile.data.backgroundImage}
+                                alt={tile.data.title}
+                                width='240'
+                                height='480'
+                                loading='lazy'
+                                title={stripTags(tile.data.summary)}
+                            />
+                            <figcaption>
+                                <div>
+                                    <h2>
+                                        <a class='foil' href={tile.data.href}>
+                                            {tile.data.title}
+                                        </a>
+                                    </h2>
+                                    <p set:html={tile.data.summary} />
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </li>
+                ))
+            }
+        </ul>
+        <article id='me' class='lvl content-block'>
+            <div>
+                <h2>{copy.indexMe}</h2>
+                <Fragment set:html={copy.indexAboutMeContent} />
+            </div>
+            <img
+                src='/portfolio/img/me.jpg'
+                alt={copy.indexMyPhoto}
+                width='1600'
+                height='1600'
+                loading='lazy'
+                title={copy.indexMyPhoto}
+            />
+        </article>
+        <section id='ongoing-projects' class='lvl'>
+            <h2>{copy.indexOngoingProjects}</h2>
+            <ProjectCardList
+                lang={lang}
+                langLabels={{ ongoing: copy.ongoing, fmtTitle: copy.fmtTitle }}
+                projects={ongoingProjects}
+                tagsById={tagsById}
+                anchorsById={anchorsById}
+            />
+            <a href={pageHref(lang, 'projects')} class='lvl button-link'>
+                {copy.indexAllMyProjects}
+            </a>
+        </section>
+        <article id='contact' class='lvl content-block'>
+            <div>
+                <h2>{copy.indexContact}</h2>
+                <address>
+                    <ul>
+                        {
+                            contacts.map(contact => (
+                                <li title={contact.data.platform}>
+                                    <a
+                                        class='link iconed-text'
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        href={contact.data.url}>
+                                        <Graphic
+                                            url={contact.data.icon.url}
+                                            isThemedSvg={contact.data.icon.isThemedSvg}
+                                            alt={contact.data.platform}
+                                        />
+                                        <span>{contact.data.name}</span>
+                                    </a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </address>
+            </div>
+            <a href={resumeUrl} target='_blank' rel='noopener noreferrer'>
+                <img
+                    src={resumePreviewUrl}
+                    alt={copy.indexMyResumePreview}
+                    width={resumePreviewWidth}
+                    height={resumePreviewHeight}
+                    loading='lazy'
+                />
+                <span>{copy.indexMyResume}</span>
+            </a>
+        </article>
+        <article class='lvl content-block'>
+            <h2>{copy.indexVideoCv}</h2>
+            <iframe
+                src='https://www.youtube-nocookie.com/embed/6VqtL5oogwk?modestbranding=1&rel=0'
+                width='640'
+                height='360'
+                title='Video CV - Raphaël Bardini'
+                frameborder='0'
+                allowfullscreen></iframe>
+        </article>
+    </main>
+    <script src='../../scripts/index.ts'></script>
+</BaseLayout>

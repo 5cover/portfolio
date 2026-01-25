@@ -10,7 +10,7 @@ export async function GET({ params }: { params: { lang: string } }) {
   const { lang } = params;
   const entries = await getTags(lang);
   const data = entries.reduce<Record<string, unknown>>((acc, entry) => {
-    acc[entry.data.id] = entry.data;
+    acc[entry.id] = entry.data;
     return acc;
   }, {});
 

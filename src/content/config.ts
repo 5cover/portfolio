@@ -43,7 +43,6 @@ const galleryItemSchema = z.object({
 const projectCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    id: z.string(),
     title: localizedString,
     abstract: localizedString,
     context: localizedNullableString,
@@ -63,7 +62,6 @@ const projectCollection = defineCollection({
 const literatureCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    id: z.string(),
     kind: z.enum(['passion', 'blog', 'story']),
     title: localizedString,
     abstract: localizedString,
@@ -79,7 +77,6 @@ const literatureCollection = defineCollection({
 const definitionCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    id: z.string(),
     type: z.string(),
     name: z.object({
       full: localizedString,
@@ -96,7 +93,6 @@ const definitionCollection = defineCollection({
 const tagCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    id: z.string(),
     title: localizedString,
   }),
 });
@@ -104,7 +100,6 @@ const tagCollection = defineCollection({
 const typeCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    id: z.string(),
     title: localizedString,
   }),
 });
@@ -112,7 +107,6 @@ const typeCollection = defineCollection({
 const anchorCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    id: z.string(),
     url: z.string(),
     isThemedSvg: z.boolean(),
   }),
@@ -121,7 +115,6 @@ const anchorCollection = defineCollection({
 const historyCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    id: z.string(),
     body: z.string(),
     title: localizedString,
     meta: localizedString,
@@ -139,7 +132,6 @@ const historyCollection = defineCollection({
 const pianoTileCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    id: z.string(),
     title: localizedString,
     summary: localizedString,
     backgroundImage: z.string(),
@@ -151,7 +143,6 @@ const pianoTileCollection = defineCollection({
 const contactCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    id: z.string(),
     platform: z.string(),
     name: z.string(),
     url: z.string(),

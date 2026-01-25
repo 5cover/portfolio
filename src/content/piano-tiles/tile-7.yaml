@@ -1,5 +1,4 @@
 {
-  "id": "tile-7",
   "title": {
     "en": "Optimization",
     "fr": "Optimisation"
@@ -9,6 +8,6 @@
     "fr": "L'optimisation ne se termine jamais"
   },
   "backgroundImage": "/portfolio/img/piano-tile/7.png",
-  "href": "projects/s1.02.html",
+  "href": "projects/s1-02.html",
   "order": 6
 }

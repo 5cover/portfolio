@@ -93,7 +93,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
 
   tags.forEach((tag) => {
     addNode({
-      id: nodeId(lang, 'Tag', tag.data.id),
+      id: nodeId(lang, 'Tag', tag.id),
       type: 'Tag',
       role: 'content',
       visibility: 'private',
@@ -104,7 +104,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
 
   definitions.forEach((definition) => {
     addNode({
-      id: nodeId(lang, 'Definition', definition.data.id),
+      id: nodeId(lang, 'Definition', definition.id),
       type: 'Definition',
       role: 'content',
       visibility: 'public',
@@ -115,7 +115,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
 
   contacts.forEach((contact) => {
     addNode({
-      id: nodeId(lang, 'Contact', contact.data.id),
+      id: nodeId(lang, 'Contact', contact.id),
       type: 'Contact',
       role: 'content',
       visibility: 'private',
@@ -127,10 +127,10 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
   history.forEach((entry) => {
     const successors: InfonodeRef[] = [];
     if (entry.data.media) {
-      successors.push(makeRef(lang, 'Image', `${entry.data.id}:media`, 'content', 'private'));
+      successors.push(makeRef(lang, 'Image', `${entry.id}:media`, 'content', 'private'));
     }
     addNode({
-      id: nodeId(lang, 'History', entry.data.id),
+      id: nodeId(lang, 'History', entry.id),
       type: 'History',
       role: 'content',
       visibility: 'public',
@@ -140,7 +140,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
 
     if (entry.data.media) {
       addNode({
-        id: nodeId(lang, 'Image', `${entry.data.id}:media`),
+        id: nodeId(lang, 'Image', `${entry.id}:media`),
         type: 'Image',
         role: 'content',
         visibility: 'private',
@@ -166,7 +166,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
     }
 
     addNode({
-      id: nodeId(lang, 'PianoTile', tile.data.id),
+      id: nodeId(lang, 'PianoTile', tile.id),
       type: 'PianoTile',
       role: 'content',
       visibility: 'private',
@@ -177,7 +177,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
 
   const anchorMap = anchors.reduce<Record<string, { url: string; isThemedSvg: boolean }>>(
     (acc, anchor) => {
-      acc[anchor.data.id] = anchor.data;
+      acc[anchor.id] = anchor.data;
       return acc;
     },
     {}
@@ -249,7 +249,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
   };
 
   projects.forEach((project) => {
-    const projectId = project.data.id;
+    const projectId = project.id;
     const successors: InfonodeRef[] = [];
 
     successors.push(
@@ -305,7 +305,7 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
   });
 
   literature.forEach((entry) => {
-    const litId = entry.data.id;
+    const litId = entry.id;
     const successors: InfonodeRef[] = [];
 
     successors.push(
@@ -351,30 +351,30 @@ export async function buildInfonodeGraph(lang: string): Promise<Infonode[]> {
   });
 
   const projectRefs = projects.map((project) =>
-    makeRef(lang, 'Project', project.data.id, 'content', 'public')
+    makeRef(lang, 'Project', project.id, 'content', 'public')
   );
   const hobbyRefs = literature
     .filter((entry) => entry.data.kind === 'passion')
-    .map((entry) => makeRef(lang, 'Literature', entry.data.id, 'content', 'public'));
+    .map((entry) => makeRef(lang, 'Literature', entry.id, 'content', 'public'));
   const blogRefs = literature
     .filter((entry) => entry.data.kind === 'blog')
-    .map((entry) => makeRef(lang, 'Literature', entry.data.id, 'content', 'public'));
+    .map((entry) => makeRef(lang, 'Literature', entry.id, 'content', 'public'));
   const historyRefs = history.map((entry) =>
-    makeRef(lang, 'History', entry.data.id, 'content', 'public')
+    makeRef(lang, 'History', entry.id, 'content', 'public')
   );
   const pianoRefs = pianoTiles.map((tile) =>
-    makeRef(lang, 'PianoTile', tile.data.id, 'content', 'private')
+    makeRef(lang, 'PianoTile', tile.id, 'content', 'private')
   );
   const contactRefs = contacts.map((contact) =>
-    makeRef(lang, 'Contact', contact.data.id, 'content', 'private')
+    makeRef(lang, 'Contact', contact.id, 'content', 'private')
   );
 
   const ongoingProjectRefs = projects
     .filter((project) => !project.data.endDate)
-    .map((project) => makeRef(lang, 'Project', project.data.id, 'content', 'public'));
+    .map((project) => makeRef(lang, 'Project', project.id, 'content', 'public'));
   const butProjectRefs = projects
     .filter((project) => project.data.tags.some((tag) => tag.startsWith('but-')))
-    .map((project) => makeRef(lang, 'Project', project.data.id, 'content', 'public'));
+    .map((project) => makeRef(lang, 'Project', project.id, 'content', 'public'));
 
   const pageNodes: Array<{ id: string; successors: InfonodeRef[] }> = [
     { id: 'index', successors: [...pianoRefs, ...ongoingProjectRefs, ...contactRefs] },

@@ -1,6 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import LiteratureCardList from '../../components/LiteratureCardList.astro';
+import LiteratureIndexPage from '../../components/pages/LiteratureIndexPage.astro';
 import { getAnchors, getLangData, getLangs, getLiterature, mapById } from '../../lib/content';
 import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
@@ -31,7 +30,7 @@ const anchorsById = mapById(anchors);
 
 const hobbies = literature.filter((entry) => entry.data.kind === 'passion');
 ---
-<BaseLayout
+<LiteratureIndexPage
   lang={lang}
   pageName="hobbies"
   navItems={navItems}
@@ -39,15 +38,10 @@ const hobbies = literature.filter((entry) => entry.data.kind === 'passion');
   themeLabels={themeLabels}
   siteDescription={langData.siteDescription}
   githubTitle={langData.footerGitHubAnchorTitle}
->
-  <main class="margined">
-    <h1>{langData.namePagePassions}</h1>
-    <LiteratureCardList
-      lang={lang}
-      route="hobbies"
-      langLabels={{ fmtTitle: langData.fmtTitle }}
-      entries={hobbies}
-      anchorsById={anchorsById}
-    />
-  </main>
-</BaseLayout>
+  title={langData.namePagePassions}
+  route="hobbies"
+  langLabels={{ fmtTitle: langData.fmtTitle }}
+  entries={hobbies}
+  anchorsById={anchorsById}
+  mainClass="margined"
+/>

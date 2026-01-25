@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TextualContent from '../TextualContent.astro';
+import DefinitionCardList from '../DefinitionCardList.astro';
+import Gallery from '../Gallery.astro';
+import Graphic from '../Graphic.astro';
+import LinkList from '../LinkList.astro';
+import ReferenceList from '../ReferenceList.astro';
+
+import type { AstroComponentFactory } from 'astro';
+import type {
+    AnchorEntry,
+    DefinitionLocalizedData,
+    LocalizedProjectEntry,
+    LocalizedTagEntry,
+    TypeLocalizedData,
+} from '../../lib/content';
+import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+import { formatDate } from '../../lib/date';
+import { pageHref } from '../../lib/routes';
+
+import '../../styles/project.scss';
+
+type Copy = {
+    links: string;
+    team: string;
+    story: string;
+    references: string;
+    technologies: string;
+    gallery: string;
+    ongoing: string;
+    fmtTitle: string;
+    refJumpUp: string;
+};
+
+type Props = {
+    lang: string;
+    id: string;
+    navItems: NavItem[];
+    languages: LanguageInfo[];
+    themeLabels: ThemeLabels;
+    siteDescription: string;
+    githubTitle: string;
+    project: LocalizedProjectEntry['data'];
+    tagsById: Record<string, LocalizedTagEntry['data']>;
+    anchorsById: Record<string, AnchorEntry['data']>;
+    definitionsById: Record<string, DefinitionLocalizedData>;
+    typesById: Record<string, TypeLocalizedData>;
+    ProjectBody: AstroComponentFactory;
+    copy: Copy;
+};
+
+const props: Props = Astro.props;
+const {
+    lang,
+    id,
+    navItems,
+    languages,
+    themeLabels,
+    siteDescription,
+    githubTitle,
+    project,
+    tagsById,
+    anchorsById,
+    definitionsById,
+    typesById,
+    ProjectBody,
+    copy,
+} = props;
+
+function isDefinition(value: DefinitionLocalizedData | undefined): value is DefinitionLocalizedData {
+    return Boolean(value);
+}
+
+const backgroundStyle = project.background ? `--bg-img: url(${project.background})` : undefined;
+const logoTitle = copy.fmtTitle.replace('%s', project.title);
+const startDate = project.startDate;
+const endDate = project.endDate;
+const startLabel = startDate ? formatDate(startDate, lang) : '';
+const endLabel = endDate ? formatDate(endDate, lang) : '';
+const context = project.context ? project.context.charAt(0).toUpperCase() + project.context.slice(1) : '';
+
+const teamDefs = project.team.map(memberId => definitionsById[memberId]).filter(isDefinition);
+const techDefs = project.technologies.map(techId => definitionsById[techId]).filter(isDefinition);
+---
+
+<BaseLayout
+    lang={lang}
+    pageName={`projects/${id}`}
+    navItems={navItems}
+    languages={languages}
+    themeLabels={themeLabels}
+    siteDescription={siteDescription}
+    githubTitle={githubTitle}>
+    <main style={backgroundStyle}>
+        <header>
+            <ul class="list-rect">
+                {project.tags.map(tagId => (
+                    <li>
+                        <a href={`${pageHref(lang, 'projects')}?tag=${tagId}`} set:html={tagsById[tagId]?.title ?? tagId}></a>
+                    </li>
+                ))}
+            </ul>
+            <h1 set:html={project.title}></h1>
+            {project.logo ? (
+                <Graphic
+                    url={project.logo.url}
+                    isThemedSvg={project.logo.isThemedSvg}
+                    alt={logoTitle}
+                    title={logoTitle}
+                    class="logo"
+                />
+            ) : null}
+            <p class="abstract" set:html={project.abstract}></p>
+            <div class="status-context">
+                {context ? <small class="context">{context}</small> : null}
+                {startDate ? (
+                    <small class="status">
+                        <time datetime={startDate}>{startLabel}</time> &ndash;{' '}
+                        {endDate ? <time datetime={endDate}>{endLabel}</time> : copy.ongoing}
+                    </small>
+                ) : null}
+            </div>
+        </header>
+        {project.links.length > 0 ? (
+            <section id="links">
+                <h2>{copy.links}</h2>
+                <LinkList links={project.links} anchorsById={anchorsById} variant="page" />
+            </section>
+        ) : null}
+        {teamDefs.length > 0 ? (
+            <section id="team">
+                <h2>{copy.team}</h2>
+                <DefinitionCardList
+                    definitions={teamDefs}
+                    typesById={typesById}
+                    langLabels={{ fmtTitle: copy.fmtTitle }}
+                />
+            </section>
+        ) : null}
+        <section id="story">
+            <h2>{copy.story}</h2>
+            <TextualContent content={ProjectBody} />
+        </section>
+        {project.references.length > 0 ? (
+            <section id="references">
+                <h2>{copy.references}</h2>
+                <ReferenceList
+                    references={project.references}
+                    anchorsById={anchorsById}
+                    backlinkLabel={copy.refJumpUp}
+                />
+            </section>
+        ) : null}
+        {techDefs.length > 0 ? (
+            <section id="technologies">
+                <h2>{copy.technologies}</h2>
+                <DefinitionCardList
+                    definitions={techDefs}
+                    typesById={typesById}
+                    langLabels={{ fmtTitle: copy.fmtTitle }}
+                />
+            </section>
+        ) : null}
+        {project.gallery.length > 0 ? (
+            <section id="gallery">
+                <h2>{copy.gallery}</h2>
+                <Gallery items={project.gallery} />
+            </section>
+        ) : null}
+    </main>
+</BaseLayout>

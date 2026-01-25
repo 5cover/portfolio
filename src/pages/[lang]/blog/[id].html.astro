@@ -1,10 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import TextualContent from '../../../components/TextualContent.astro';
-import Gallery from '../../../components/Gallery.astro';
-import Graphic from '../../../components/Graphic.astro';
-import LinkList from '../../../components/LinkList.astro';
-import ReferenceList from '../../../components/ReferenceList.astro';
+import LiteratureDetailPage from '../../../components/pages/LiteratureDetailPage.astro';
 import {
   getAnchors,
   getLangData,
@@ -24,7 +19,7 @@ export async function getStaticPaths() {
       const entries = await getLiterature(lang);
       return entries
         .filter((entry) => entry.data.kind === 'blog')
-        .map((entry) => ({ params: { lang, id: entry.data.id } }));
+        .map((entry) => ({ params: { lang, id: entry.id } }));
     })
   );
 
@@ -43,12 +38,12 @@ const [langData, langs, literature, anchors] = await Promise.all([
   getAnchors(),
 ]);
 
-const entry = literature.find((item) => item.data.id === id && item.data.kind === 'blog');
+const entry = literature.find((item) => item.id === id && item.data.kind === 'blog');
 if (!entry) {
   throw new Error(`Missing blog ${id} for ${lang}`);
 }
 
-const blogBodyEntry = await getTextualEntry(lang, 'literature', entry.data.id);
+const blogBodyEntry = await getTextualEntry(lang, 'literature', entry.id);
 const { Content: BlogBody } = await blogBodyEntry.render();
 
 const navItems = buildNavItems(langData);
@@ -60,59 +55,25 @@ const languages = buildLanguages(langs, langMap);
 const anchorsById = mapById(anchors);
 
 const blog = entry.data;
-const backgroundStyle = blog.background
-  ? `--bg-img: url(${blog.background})`
-  : undefined;
-const logoTitle = langData.fmtTitle.replace('%s', blog.title);
 ---
-<BaseLayout
+<LiteratureDetailPage
   lang={lang}
+  id={id}
   pageName={`blog/${id}`}
   navItems={navItems}
   languages={languages}
   themeLabels={themeLabels}
   siteDescription={langData.siteDescription}
   githubTitle={langData.footerGitHubAnchorTitle}
->
-  <main style={backgroundStyle}>
-    <header>
-      <h1 set:html={blog.title}></h1>
-      {blog.logo ? (
-        <Graphic
-          url={blog.logo.url}
-          isThemedSvg={blog.logo.isThemedSvg}
-          alt={logoTitle}
-          title={logoTitle}
-          class="logo"
-        />
-      ) : null}
-      <p class="abstract" set:html={blog.abstract}></p>
-    </header>
-    {blog.links.length > 0 ? (
-      <section id="links">
-        <h2>{langData.links}</h2>
-        <LinkList links={blog.links} anchorsById={anchorsById} variant="page" />
-      </section>
-    ) : null}
-    <section id="story">
-      <h2>{langData.story}</h2>
-      <TextualContent content={BlogBody}  />
-    </section>
-    {blog.references.length > 0 ? (
-      <section id="references">
-        <h2>{langData.references}</h2>
-        <ReferenceList
-          references={blog.references}
-          anchorsById={anchorsById}
-          backlinkLabel={langData.refJumpUp}
-        />
-      </section>
-    ) : null}
-    {blog.gallery.length > 0 ? (
-      <section id="gallery">
-        <h2>{langData.gallery}</h2>
-        <Gallery items={blog.gallery} />
-      </section>
-    ) : null}
-  </main>
-</BaseLayout>
+  entry={blog}
+  anchorsById={anchorsById}
+  Body={BlogBody}
+  copy={{
+    links: langData.links,
+    story: langData.story,
+    references: langData.references,
+    gallery: langData.gallery,
+    fmtTitle: langData.fmtTitle,
+    refJumpUp: langData.refJumpUp,
+  }}
+/>

@@ -1,9 +1,8 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectsIndexPage from '../../components/pages/ProjectsIndexPage.astro';
 import { getLangData, getLangs } from '../../lib/content';
 import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
-import '../../styles/projects.scss';
 
 export async function getStaticPaths() {
     const langs = await getLangs();
@@ -22,53 +21,17 @@ const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [co
 const languages = buildLanguages(langs, langMap);
 ---
 
-<BaseLayout
+<ProjectsIndexPage
     lang={lang}
-    pageName='projects'
     navItems={navItems}
     languages={languages}
     themeLabels={themeLabels}
     siteDescription={langData.siteDescription}
-    githubTitle={langData.footerGitHubAnchorTitle}>
-    <main>
-        <datalist id='project-titles'>
-            <!-- Fill this up dynamically -->
-        </datalist>
-        <section class='lvl' id='search-bar'>
-            <h1>{langData.projectSearchSearch}</h1>
-            <input
-                incremental
-                type='search'
-                id='search-input'
-                placeholder={langData.projectSearchPlaceholder}
-                autocomplete='on'
-                list='project-titles'
-            />
-            <section>
-                <h3>{langData.projectSearchTags}</h3>
-                <ul class='lvl list-rect' id='list-tag'>
-                    <!-- Tags will be added here -->
-                </ul>
-            </section>
-            <section>
-                <h3>{langData.projectSearchSort}</h3>
-                <ul class='lvl list-rect' id='list-sorting'>
-                    <li>
-                        <label for='sort-asc'
-                            >A-Z<input type='radio' name='sorting' id='sort-asc' value='asc' checked /></label
-                        >
-                    </li>
-                    <li>
-                        <label for='sort-desc'
-                            >Z-A<input type='radio' name='sorting' id='sort-desc' value='desc' /></label
-                        >
-                    </li>
-                </ul>
-            </section>
-        </section>
-        <ul class='lvl list-project' id='project-list'>
-            <!-- Project list will be updated here -->
-        </ul>
-    </main>
-    <script src='../../scripts/projects.ts'></script>
-</BaseLayout>
+    githubTitle={langData.footerGitHubAnchorTitle}
+    copy={{
+        projectSearchSearch: langData.projectSearchSearch,
+        projectSearchPlaceholder: langData.projectSearchPlaceholder,
+        projectSearchTags: langData.projectSearchTags,
+        projectSearchSort: langData.projectSearchSort,
+    }}
+/>

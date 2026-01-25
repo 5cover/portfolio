@@ -1,7 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Graphic from '../../components/Graphic.astro';
-import ProjectCardList from '../../components/ProjectCardList.astro';
+import HomePage from '../../components/pages/HomePage.astro';
 
 import {
     getAnchors,
@@ -14,9 +12,6 @@ import {
     mapById,
 } from '../../lib/content';
 import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
-import { pageHref } from '../../lib/routes';
-
-import '../../styles/index.scss';
 
 export async function getStaticPaths() {
     const langs = await getLangs();
@@ -44,130 +39,31 @@ const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [co
 const languages = buildLanguages(langs, langMap);
 const tagsById = mapById(tags);
 const anchorsById = mapById(anchors);
-
-const ongoingProjects = projects.filter(project => !project.data.endDate);
-
-function stripTags(value: string): string {
-    return value.replace(/<[^>]*>/g, '');
-}
-
-const resumeUrl = 'cv-bardini-raphael.pdf';
-const resumePreviewUrl = 'cv-bardini-raphael-preview.jpg';
-const resumePreviewWidth = 212;
-const resumePreviewHeight = 300;
 ---
 
-<BaseLayout
+<HomePage
     lang={lang}
-    pageName='index'
     navItems={navItems}
     languages={languages}
     themeLabels={themeLabels}
     siteDescription={langData.siteDescription}
-    githubTitle={langData.footerGitHubAnchorTitle}>
-    <main>
-        <ul class='lvl list-piano-tiles'>
-            {
-                pianoTiles.map(tile => (
-                    <li>
-                        <figure>
-                            <img
-                                src={tile.data.backgroundImage}
-                                alt={tile.data.title}
-                                width='240'
-                                height='480'
-                                loading='lazy'
-                                title={stripTags(tile.data.summary)}
-                            />
-                            <figcaption>
-                                <div>
-                                    <h2>
-                                        <a class='foil' href={tile.data.href}>
-                                            {tile.data.title}
-                                        </a>
-                                    </h2>
-                                    <p set:html={tile.data.summary} />
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </li>
-                ))
-            }
-        </ul>
-        <article id='me' class='lvl content-block'>
-            <div>
-                <h2>{langData.indexMe}</h2>
-                <Fragment set:html={langData.indexAboutMeContent} />
-            </div>
-            <img
-                src='/portfolio/img/me.jpg'
-                alt={langData.indexMyPhoto}
-                width='1600'
-                height='1600'
-                loading='lazy'
-                title={langData.indexMyPhoto}
-            />
-        </article>
-        <section id='ongoing-projects' class='lvl'>
-            <h2>{langData.indexOngoingProjects}</h2>
-            <ProjectCardList
-                lang={lang}
-                langLabels={{ ongoing: langData.ongoing, fmtTitle: langData.fmtTitle }}
-                projects={ongoingProjects}
-                tagsById={tagsById}
-                anchorsById={anchorsById}
-            />
-            <a href={pageHref(lang, 'projects')} class='lvl button-link'>
-                {langData.indexAllMyProjects}
-            </a>
-        </section>
-        <article id='contact' class='lvl content-block'>
-            <div>
-                <h2>{langData.indexContact}</h2>
-                <address>
-                    <ul>
-                        {
-                            contacts.map(contact => (
-                                <li title={contact.data.platform}>
-                                    <a
-                                        class='link iconed-text'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        href={contact.data.url}>
-                                        <Graphic
-                                            url={contact.data.icon.url}
-                                            isThemedSvg={contact.data.icon.isThemedSvg}
-                                            alt={contact.data.platform}
-                                        />
-                                        <span>{contact.data.name}</span>
-                                    </a>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </address>
-            </div>
-            <a href={resumeUrl} target='_blank' rel='noopener noreferrer'>
-                <img
-                    src={resumePreviewUrl}
-                    alt={langData.indexMyResumePreview}
-                    width={resumePreviewWidth}
-                    height={resumePreviewHeight}
-                    loading='lazy'
-                />
-                <span>{langData.indexMyResume}</span>
-            </a>
-        </article>
-        <article class='lvl content-block'>
-            <h2>{langData.indexVideoCv}</h2>
-            <iframe
-                src='https://www.youtube-nocookie.com/embed/6VqtL5oogwk?modestbranding=1&rel=0'
-                width='640'
-                height='360'
-                title='Video CV - Raphaël Bardini'
-                frameborder='0'
-                allowfullscreen></iframe>
-        </article>
-    </main>
-    <script src='../../scripts/index.ts'></script>
-</BaseLayout>
+    githubTitle={langData.footerGitHubAnchorTitle}
+    pianoTiles={pianoTiles}
+    projects={projects}
+    tagsById={tagsById}
+    anchorsById={anchorsById}
+    contacts={contacts}
+    copy={{
+        indexMe: langData.indexMe,
+        indexAboutMeContent: langData.indexAboutMeContent,
+        indexMyPhoto: langData.indexMyPhoto,
+        indexOngoingProjects: langData.indexOngoingProjects,
+        indexAllMyProjects: langData.indexAllMyProjects,
+        indexContact: langData.indexContact,
+        indexMyResumePreview: langData.indexMyResumePreview,
+        indexMyResume: langData.indexMyResume,
+        indexVideoCv: langData.indexVideoCv,
+        ongoing: langData.ongoing,
+        fmtTitle: langData.fmtTitle,
+    }}
+/>

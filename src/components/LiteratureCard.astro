@@ -14,19 +14,20 @@ type Props = {
   langLabels: {
     fmtTitle: string;
   };
+  entryId: string;
   entry: LocalizedLiteratureEntry['data'];
   anchorsById: Record<string, AnchorEntry['data']>;
   headingLevel?: number;
 };
 
 const props: Props = Astro.props;
-const { lang, route, langLabels, entry, anchorsById, headingLevel = 3 } = props;
+const { lang, route, langLabels, entryId, entry, anchorsById, headingLevel = 3 } = props;
 const logoTitle = formatTitle(langLabels.fmtTitle, entry.title);
 const backgroundStyle = entry.background
   ? `--bg-img-card: url(${entry.background})`
   : undefined;
 ---
-<li id={entry.id} style={backgroundStyle}>
+<li id={entryId} style={backgroundStyle}>
   {entry.logo ? (
     <Graphic
       url={entry.logo.url}
@@ -38,11 +39,11 @@ const backgroundStyle = entry.background
   ) : null}
   <div>
     {headingLevel === 1 ? (
-      <h1><a class="foil" href={detailHref(lang, route, entry.id)} set:html={entry.title}></a></h1>
+      <h1><a class="foil" href={detailHref(lang, route, entryId)} set:html={entry.title}></a></h1>
     ) : headingLevel === 2 ? (
-      <h2><a class="foil" href={detailHref(lang, route, entry.id)} set:html={entry.title}></a></h2>
+      <h2><a class="foil" href={detailHref(lang, route, entryId)} set:html={entry.title}></a></h2>
     ) : (
-      <h3><a class="foil" href={detailHref(lang, route, entry.id)} set:html={entry.title}></a></h3>
+      <h3><a class="foil" href={detailHref(lang, route, entryId)} set:html={entry.title}></a></h3>
     )}
     <p class="abstract" set:html={entry.abstract}></p>
     {entry.links.length > 0 ? (

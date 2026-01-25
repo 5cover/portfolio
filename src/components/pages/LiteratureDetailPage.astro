@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TextualContent from '../TextualContent.astro';
+import Gallery from '../Gallery.astro';
+import Graphic from '../Graphic.astro';
+import LinkList from '../LinkList.astro';
+import ReferenceList from '../ReferenceList.astro';
+
+import type { AstroComponentFactory } from 'astro';
+import type { AnchorEntry, LocalizedLiteratureEntry } from '../../lib/content';
+import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+
+type Copy = {
+    links: string;
+    story: string;
+    references: string;
+    gallery: string;
+    fmtTitle: string;
+    refJumpUp: string;
+};
+
+type Props = {
+    lang: string;
+    id: string;
+    pageName: string;
+    navItems: NavItem[];
+    languages: LanguageInfo[];
+    themeLabels: ThemeLabels;
+    siteDescription: string;
+    githubTitle: string;
+    entry: LocalizedLiteratureEntry['data'];
+    anchorsById: Record<string, AnchorEntry['data']>;
+    Body: AstroComponentFactory;
+    copy: Copy;
+    mainClass?: string;
+};
+
+const props: Props = Astro.props;
+const {
+    lang,
+    id,
+    pageName,
+    navItems,
+    languages,
+    themeLabels,
+    siteDescription,
+    githubTitle,
+    entry,
+    anchorsById,
+    Body,
+    copy,
+    mainClass,
+} = props;
+
+const backgroundStyle = entry.background ? `--bg-img: url(${entry.background})` : undefined;
+const logoTitle = copy.fmtTitle.replace('%s', entry.title);
+---
+
+<BaseLayout
+    lang={lang}
+    pageName={pageName}
+    navItems={navItems}
+    languages={languages}
+    themeLabels={themeLabels}
+    siteDescription={siteDescription}
+    githubTitle={githubTitle}
+>
+    <main style={backgroundStyle} class={mainClass}>
+        <header>
+            <h1 set:html={entry.title}></h1>
+            {entry.logo ? (
+                <Graphic
+                    url={entry.logo.url}
+                    isThemedSvg={entry.logo.isThemedSvg}
+                    alt={logoTitle}
+                    title={logoTitle}
+                    class="logo"
+                />
+            ) : null}
+            <p class="abstract" set:html={entry.abstract}></p>
+        </header>
+        {entry.links.length > 0 ? (
+            <section id="links">
+                <h2>{copy.links}</h2>
+                <LinkList links={entry.links} anchorsById={anchorsById} variant="page" />
+            </section>
+        ) : null}
+        <section id="story">
+            <h2>{copy.story}</h2>
+            <TextualContent content={Body} />
+        </section>
+        {entry.references.length > 0 ? (
+            <section id="references">
+                <h2>{copy.references}</h2>
+                <ReferenceList
+                    references={entry.references}
+                    anchorsById={anchorsById}
+                    backlinkLabel={copy.refJumpUp}
+                />
+            </section>
+        ) : null}
+        {entry.gallery.length > 0 ? (
+            <section id="gallery">
+                <h2>{copy.gallery}</h2>
+                <Gallery items={entry.gallery} />
+            </section>
+        ) : null}
+    </main>
+</BaseLayout>

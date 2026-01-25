@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TextualContent from '../TextualContent.astro';
+
+import type { AstroComponentFactory } from 'astro';
+import type { LocalizedHistoryEntry } from '../../lib/content';
+import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+
+import '../../styles/history-detail.scss';
+
+type Copy = {
+    story: string;
+    detailsHeading: string;
+};
+
+type Props = {
+    lang: string;
+    id: string;
+    navItems: NavItem[];
+    languages: LanguageInfo[];
+    themeLabels: ThemeLabels;
+    siteDescription: string;
+    githubTitle: string;
+    entry: LocalizedHistoryEntry;
+    HistorySummary: AstroComponentFactory;
+    HistoryBody: AstroComponentFactory;
+    copy: Copy;
+};
+
+const props: Props = Astro.props;
+const {
+    lang,
+    id,
+    navItems,
+    languages,
+    themeLabels,
+    siteDescription,
+    githubTitle,
+    entry,
+    HistorySummary,
+    HistoryBody,
+    copy,
+} = props;
+
+const media = entry.data.media;
+const meta = entry.data.meta;
+const year = media?.year ? String(media.year) : '';
+---
+
+<BaseLayout
+    lang={lang}
+    pageName={`history/${id}`}
+    navItems={navItems}
+    languages={languages}
+    themeLabels={themeLabels}
+    siteDescription={siteDescription}
+    githubTitle={githubTitle}
+>
+    <main>
+        <header>
+            <h1 set:html={entry.data.title} />
+            {(meta || year) ? (
+                <p class="history-meta">
+                    {meta ? <span set:html={meta} /> : null}
+                    {year ? <span class="history-meta_year">{year}</span> : null}
+                </p>
+            ) : null}
+            {media ? (
+                <img
+                    class="history-media"
+                    src={media.img}
+                    alt={media.alt}
+                    loading="lazy"
+                />
+            ) : null}
+        </header>
+        <section id="story">
+            <h2>{copy.story}</h2>
+            <TextualContent content={HistorySummary} />
+        </section>
+        <section id="history-body">
+            <h2>{copy.detailsHeading}</h2>
+            <TextualContent content={HistoryBody} className="history-body textual" />
+        </section>
+    </main>
+</BaseLayout>

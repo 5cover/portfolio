@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LiteratureCardList from '../LiteratureCardList.astro';
+
+import type { AnchorEntry, LocalizedLiteratureEntry } from '../../lib/content';
+import type { LanguageInfo, NavItem, ThemeLabels } from '../../lib/ui-types';
+
+type Props = {
+    lang: string;
+    pageName: string;
+    navItems: NavItem[];
+    languages: LanguageInfo[];
+    themeLabels: ThemeLabels;
+    siteDescription: string;
+    githubTitle: string;
+    title: string;
+    route: string;
+    langLabels: { fmtTitle: string };
+    entries: LocalizedLiteratureEntry[];
+    anchorsById: Record<string, AnchorEntry['data']>;
+    mainClass?: string;
+};
+
+const props: Props = Astro.props;
+const {
+    lang,
+    pageName,
+    navItems,
+    languages,
+    themeLabels,
+    siteDescription,
+    githubTitle,
+    title,
+    route,
+    langLabels,
+    entries,
+    anchorsById,
+    mainClass,
+} = props;
+---
+
+<BaseLayout
+    lang={lang}
+    pageName={pageName}
+    navItems={navItems}
+    languages={languages}
+    themeLabels={themeLabels}
+    siteDescription={siteDescription}
+    githubTitle={githubTitle}
+>
+    <main class={mainClass}>
+        <h1>{title}</h1>
+        <LiteratureCardList
+            lang={lang}
+            route={route}
+            langLabels={langLabels}
+            entries={entries}
+            anchorsById={anchorsById}
+        />
+    </main>
+</BaseLayout>

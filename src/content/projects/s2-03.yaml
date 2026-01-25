@@ -1,35 +1,35 @@
 {
-  "id": "s1.03",
   "title": {
-    "en": "Documentation generator",
-    "fr": "Générateur de documentation"
+    "en": "Weather website",
+    "fr": "Site de météo"
   },
   "abstract": {
-    "en": "Automation, scripts, containerization, Markdown parser. Setting up a development environment (S1.03)",
-    "fr": "Automatisation, scripts, conteneurisation, parseur Markdown. Installation d'un poste pour le développement (S1.03)"
+    "en": "Set up a Web server. Setting up network services (S2.03)",
+    "fr": "Mise en place d'un serveur Web. Installation de services réseau (S2.03)"
   },
   "context": {
     "en": "BUT",
     "fr": "BUT"
   },
-  "startDate": "2023-10-25",
-  "endDate": "2023-01-21",
+  "startDate": "2024-05-14",
+  "endDate": "2024-06-05",
   "tags": [
     "but-administrer",
     "but-collaborer",
-    "cli",
-    "but-1",
-    "sysadmin"
+    "web",
+    "sysadmin",
+    "but-2"
   ],
   "technologies": [
-    "bash",
-    "php",
-    "docker",
     "github",
+    "php",
+    "apache2",
+    "mysql",
+    "bash",
+    "vs-code",
     "css",
     "html",
-    "markdown",
-    "gitlab"
+    "mousepad"
   ],
   "team": [
     "chartier--le-goff-marius",
@@ -41,14 +41,14 @@
       {
         "label": "GitHub repository",
         "anchor": "github",
-        "href": "https://github.com/5cover/S1.03"
+        "href": "https://github.com/5cover/S2.03"
       }
     ],
     "fr": [
       {
         "label": "Dépôt GitHub",
         "anchor": "github",
-        "href": "https://github.com/5cover/S1.03"
+        "href": "https://github.com/5cover/S2.03"
       }
     ]
   },

@@ -13,8 +13,8 @@ Noan Perrot did one
 ## Towrite
 
 - portfolio.mdx
-- s2.05.mdx
-- s2.06.mdx
+- s2-05.mdx
+- s2-06.mdx
 - sae3.mdx (complete)
 - history items
 
@@ -84,6 +84,8 @@ Then we can go in depth about the internship and the apprenticeship
 ## Install linters and stuff
 
 stylelint, eslint etc specific astro linting /formatting tools?
+
+## Cleanup types
 
 ## Section component
 

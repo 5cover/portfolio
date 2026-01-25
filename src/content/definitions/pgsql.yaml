@@ -1,5 +1,4 @@
 {
-  "id": "pgsql",
   "type": "dbms",
   "name": {
     "full": {

@@ -14,15 +14,8 @@ export type TextualEntry = CollectionEntry<'textual'>;
 export type TypeEntry = CollectionEntry<'types'>;
 
 export type TextualKind = 'history' | 'history-body' | 'literature' | 'projects';
-export type Lang = 'en' | 'fr';
-
-export type LocalizedValue<T> = {
-    en: T;
-    fr: T;
-};
-
-export type LocalizedString = LocalizedValue<string>;
-export type LocalizedNullableString = LocalizedValue<string | null>;
+export type Locale = 'en' | 'fr';
+export type Localized<T> = Record<Locale, T>;
 
 export type ProjectData = ProjectEntry['data'];
 export type ProjectLink = ProjectData['links']['en'][number];
@@ -117,11 +110,11 @@ export function buildTextualId(lang: string, kind: TextualKind, id: string): str
     return `${lang}/${kind}/${id}`;
 }
 
-function normalizeLang(lang: string): Lang {
+function normalizeLang(lang: string): Locale {
     return lang === 'fr' ? 'fr' : 'en';
 }
 
-function localizeValue<T>(value: LocalizedValue<T>, lang: string): T {
+function localizeValue<T>(value: Localized<T>, lang: string): T {
     const key = normalizeLang(lang);
     return value[key];
 }
@@ -222,7 +215,7 @@ export async function getContacts(): Promise<ContactEntry[]> {
 
 export async function getProjects(lang: string): Promise<LocalizedProjectEntry[]> {
     const entries = await getCollection('projects');
-    return entries.map((entry) => ({
+    return entries.map(entry => ({
         ...entry,
         data: localizeProjectData(entry.data, lang),
     }));
@@ -230,7 +223,7 @@ export async function getProjects(lang: string): Promise<LocalizedProjectEntry[]
 
 export async function getProjectById(lang: string, id: string): Promise<LocalizedProjectEntry> {
     const entries = await getProjects(lang);
-    const match = entries.find((entry) => entry.data.id === id);
+    const match = entries.find(entry => entry.id === id);
     if (!match) {
         throw new Error(`Missing project ${id} for ${lang}`);
     }
@@ -239,18 +232,15 @@ export async function getProjectById(lang: string, id: string): Promise<Localize
 
 export async function getLiterature(lang: string): Promise<LocalizedLiteratureEntry[]> {
     const entries = await getCollection('literature');
-    return entries.map((entry) => ({
+    return entries.map(entry => ({
         ...entry,
         data: localizeLiteratureData(entry.data, lang),
     }));
 }
 
-export async function getLiteratureById(
-    lang: string,
-    id: string
-): Promise<LocalizedLiteratureEntry> {
+export async function getLiteratureById(lang: string, id: string): Promise<LocalizedLiteratureEntry> {
     const entries = await getLiterature(lang);
-    const match = entries.find((entry) => entry.data.id === id);
+    const match = entries.find(entry => entry.id === id);
     if (!match) {
         throw new Error(`Missing literature ${id} for ${lang}`);
     }
@@ -259,7 +249,7 @@ export async function getLiteratureById(
 
 export async function getDefinitions(lang: string): Promise<LocalizedDefinitionEntry[]> {
     const entries = await getCollection('definitions');
-    return entries.map((entry) => ({
+    return entries.map(entry => ({
         ...entry,
         data: localizeDefinitionData(entry.data, lang),
     }));
@@ -267,7 +257,7 @@ export async function getDefinitions(lang: string): Promise<LocalizedDefinitionE
 
 export async function getTags(lang: string): Promise<LocalizedTagEntry[]> {
     const entries = await getCollection('tags');
-    return entries.map((entry) => ({
+    return entries.map(entry => ({
         ...entry,
         data: localizeTagData(entry.data, lang),
     }));
@@ -275,7 +265,7 @@ export async function getTags(lang: string): Promise<LocalizedTagEntry[]> {
 
 export async function getTypes(lang: string): Promise<LocalizedTypeEntry[]> {
     const entries = await getCollection('types');
-    return entries.map((entry) => ({
+    return entries.map(entry => ({
         ...entry,
         data: localizeTypeData(entry.data, lang),
     }));
@@ -284,7 +274,7 @@ export async function getTypes(lang: string): Promise<LocalizedTypeEntry[]> {
 export async function getHistory(lang: string): Promise<LocalizedHistoryEntry[]> {
     const entries = await getCollection('history');
     return entries
-        .map((entry) => ({
+        .map(entry => ({
             ...entry,
             data: localizeHistoryData(entry.data, lang),
         }))
@@ -294,55 +284,27 @@ export async function getHistory(lang: string): Promise<LocalizedHistoryEntry[]>
 export async function getPianoTiles(lang: string): Promise<LocalizedPianoTileEntry[]> {
     const entries = await getCollection('piano-tiles');
     return entries
-        .map((entry) => ({
+        .map(entry => ({
             ...entry,
             data: localizePianoTileData(entry.data, lang),
         }))
         .sort((a, b) => a.data.order - b.data.order);
 }
 
-export async function getTextualEntry(
-    lang: string,
-    kind: TextualKind,
-    id: string
-): Promise<TextualEntry> {
+export async function getTextualEntry(lang: string, kind: TextualKind, id: string): Promise<TextualEntry> {
     const entryId = buildTextualId(lang, kind, id);
-    const direct = await getEntry('textual', entryId);
-    if (direct) {
-        return direct;
+    const entry = await getEntry('textual', entryId);
+    if (!entry) {
+        throw new Error(`Missing textual body ${entryId}`);
     }
-
-    const entries = await getCollection('textual');
-    const matchById = entries.find((entry) => entry.id === entryId);
-    if (matchById) {
-        return matchById;
-    }
-
-    const slugMatch = entries.find((entry) => entry.slug === entryId);
-    if (slugMatch) {
-        return slugMatch;
-    }
-
-    const normalizedId = entryId.replace(/\\/g, '/');
-    const fileMatch = entries.find((entry) =>
-        entry.filePath ? entry.filePath.replace(/\\/g, '/').endsWith(`${normalizedId}.mdx`) : false
-    );
-    if (fileMatch) {
-        return fileMatch;
-    }
-
-    const dashedId = entryId.replace(/\./g, '-');
-    const dashedMatch = entries.find((entry) => entry.id === dashedId || entry.slug === dashedId);
-    if (dashedMatch) {
-        return dashedMatch;
-    }
-
-    throw new Error(`Missing textual body ${entryId}`);
+    return entry;
 }
 
-export function mapById<T extends { data: { id: string } }>(entries: T[]): Record<string, T['data']> {
-    return entries.reduce<Record<string, T['data']>>((acc, entry) => {
-        acc[entry.data.id] = entry.data;
+export function mapById<T extends { id: string; data: U }, U = T['data']>(
+    entries: T[]
+): Record<string, U> {
+    return entries.reduce<Record<string, U>>((acc, entry) => {
+        acc[entry.id] = entry.data;
         return acc;
     }, {});
 }
