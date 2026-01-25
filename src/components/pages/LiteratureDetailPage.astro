@@ -7,10 +7,9 @@ import LinkList from '../LinkList.astro';
 import ReferenceList from '../ReferenceList.astro';
 
 import type { AstroComponentFactory } from 'astro';
-import { getAnchors, getLangData, getLangs, mapById } from '../../lib/content';
+import { getAnchors, mapById } from '../../lib/content';
 import type { LocalizedLiteratureEntry } from '../../lib/content';
 import type { LangEntry } from '../../lib/content';
-import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 type Copy = {
     links: string;
@@ -42,14 +41,6 @@ const {
     mainClass,
 } = props;
 
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const langs = await getLangs();
-const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
-const languages = buildLanguages(langs, langMap);
-const siteDescription = langData.siteDescription;
-const githubTitle = langData.footerGitHubAnchorTitle;
-
 const entryData = entry.data;
 const anchorsById = mapById(await getAnchors());
 const backgroundStyle = entryData.background ? `--bg-img: url(${entryData.background})` : undefined;
@@ -59,11 +50,7 @@ const logoTitle = copy.fmtTitle.replace('%s', entryData.title);
 <BaseLayout
     lang={lang}
     pageName={`${route}/${entry.id}`}
-    navItems={navItems}
-    languages={languages}
-    themeLabels={themeLabels}
-    siteDescription={siteDescription}
-    githubTitle={githubTitle}
+    langData={langData}
 >
     <main style={backgroundStyle} class={mainClass}>
         <header>

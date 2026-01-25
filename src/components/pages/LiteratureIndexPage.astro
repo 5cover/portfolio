@@ -1,9 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LiteratureCardList from '../LiteratureCardList.astro';
-import { getAnchors, getLangData, getLangs, mapById } from '../../lib/content';
+import { getAnchors, mapById } from '../../lib/content';
 import type { LangEntry, LocalizedLiteratureEntry } from '../../lib/content';
-import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 type Props = {
     lang: string;
@@ -26,25 +25,13 @@ const {
     mainClass,
 } = props;
 
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const langs = await getLangs();
-const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
-const languages = buildLanguages(langs, langMap);
-const siteDescription = langData.siteDescription;
-const githubTitle = langData.footerGitHubAnchorTitle;
-
 const anchorsById = mapById(await getAnchors());
 ---
 
 <BaseLayout
     lang={lang}
     pageName={route}
-    navItems={navItems}
-    languages={languages}
-    themeLabels={themeLabels}
-    siteDescription={siteDescription}
-    githubTitle={githubTitle}
+    langData={langData}
 >
     <main class={mainClass}>
         <h1>{title}</h1>

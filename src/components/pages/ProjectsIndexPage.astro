@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getLangData, getLangs } from '../../lib/content';
 import type { LangEntry } from '../../lib/content';
-import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 
 import '../../styles/projects.scss';
 
@@ -22,23 +20,12 @@ type Props = {
 const props: Props = Astro.props;
 const { lang, langData, copy } = props;
 
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const langs = await getLangs();
-const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
-const languages = buildLanguages(langs, langMap);
-const siteDescription = langData.siteDescription;
-const githubTitle = langData.footerGitHubAnchorTitle;
 ---
 
 <BaseLayout
     lang={lang}
     pageName='projects'
-    navItems={navItems}
-    languages={languages}
-    themeLabels={themeLabels}
-    siteDescription={siteDescription}
-    githubTitle={githubTitle}>
+    langData={langData}>
     <main>
         <datalist id='project-titles'>
             <!-- Fill this up dynamically -->

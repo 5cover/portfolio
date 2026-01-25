@@ -8,9 +8,8 @@ import LinkList from '../LinkList.astro';
 import ReferenceList from '../ReferenceList.astro';
 
 import type { AstroComponentFactory } from 'astro';
-import { getAnchors, getDefinitions, getLangData, getLangs, getTags, getTypes, mapById } from '../../lib/content';
+import { getAnchors, getDefinitions, getTags, getTypes, mapById } from '../../lib/content';
 import type { DefinitionLocalizedData, LangEntry, LocalizedProjectEntry } from '../../lib/content';
-import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 import { formatDate } from '../../lib/date';
 import { pageHref } from '../../lib/routes';
 
@@ -49,14 +48,6 @@ function isDefinition(value: DefinitionLocalizedData | undefined): value is Defi
     return Boolean(value);
 }
 
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const langs = await getLangs();
-const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
-const languages = buildLanguages(langs, langMap);
-const siteDescription = langData.siteDescription;
-const githubTitle = langData.footerGitHubAnchorTitle;
-
 const [tags, anchors, definitions, types] = await Promise.all([
     getTags(lang),
     getAnchors(),
@@ -86,11 +77,7 @@ const techDefs = projectData.technologies.map(techId => definitionsById[techId])
 <BaseLayout
     lang={lang}
     pageName={`projects/${project.id}`}
-    navItems={navItems}
-    languages={languages}
-    themeLabels={themeLabels}
-    siteDescription={siteDescription}
-    githubTitle={githubTitle}>
+    langData={langData}>
     <main style={backgroundStyle}>
         <header>
             <ul class="list-rect">

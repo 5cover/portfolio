@@ -4,8 +4,6 @@ import TextualContent from '../TextualContent.astro';
 
 import type { AstroComponentFactory } from 'astro';
 import type { LangEntry, LocalizedHistoryEntry } from '../../lib/content';
-import { getLangData, getLangs } from '../../lib/content';
-import { buildLanguages, buildNavItems, buildThemeLabels } from '../../lib/ui';
 import { detailHref } from '../../lib/routes';
 
 import '../../styles/history.scss';
@@ -25,23 +23,13 @@ const {
     historyBodies,
 } = props;
 
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const langs = await getLangs();
-const langMap = Object.fromEntries(await Promise.all(langs.map(async code => [code, await getLangData(code)])));
-const languages = buildLanguages(langs, langMap);
-const siteDescription = langData.siteDescription;
-const githubTitle = langData.footerGitHubAnchorTitle;
+ 
 ---
 
 <BaseLayout
     lang={lang}
     pageName='history'
-    navItems={navItems}
-    languages={languages}
-    themeLabels={themeLabels}
-    siteDescription={siteDescription}
-    githubTitle={githubTitle}>
+    langData={langData}>
     <main>
         <div class='ag-format-container'>
             <div class='js-timeline ag-timeline'>
