@@ -20,5 +20,8 @@
     // Report an error for unused labels instead of just a warning.
     "allowUnusedLabels": false,
     "strict": true,
-  }
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  
 }

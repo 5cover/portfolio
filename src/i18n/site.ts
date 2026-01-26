@@ -7,7 +7,7 @@ export function normalizeLocale(locale: string | undefined): Locale {
     return locale === 'en' ? 'en' : 'fr';
 }
 
-type LocaleLabels = {
+export interface LocaleLabels {
     flagClass: string;
     names: Record<Locale, string>;
     siteDescription: string;

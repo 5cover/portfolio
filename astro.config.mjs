@@ -4,6 +4,8 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
+import preact from '@astrojs/preact';
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://5cover.github.io',
@@ -15,5 +17,5 @@ export default defineConfig({
             prefixDefaultLocale: false,
         },
     },
-    integrations: [mdx(), sitemap()],
+    integrations: [mdx(), sitemap(), preact()],
 });

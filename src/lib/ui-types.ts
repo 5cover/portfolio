@@ -1,3 +1,5 @@
+import type { ComponentChildren } from "preact";
+
 export type NavItem = {
   page: string;
   label: string;
@@ -16,4 +18,4 @@ export type ThemeLabels = {
   dark: string;
 };
 
-export type Copy = string | HTMLElement;
+export type Copy = string | ComponentChildren;
