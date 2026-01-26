@@ -2,14 +2,14 @@
 title: Internationalization (i18n) Routing
 sidebar:
   label: Internationalization (i18n)
-description: Learn how to use Astro’s i18n routing features to localize your site’s pages.
+description: Learn how to use Astro's i18n routing features to localize your site's pages.
 i18nReady: true
 ---
 
 import { FileTree } from '@astrojs/starlight/components';
 import Since from '~/components/Since.astro'
 
-Astro’s internationalization (i18n) features allow you to adapt your project for an international audience. This routing API helps you generate, use, and verify the URLs that your multi-language site produces.
+Astro's internationalization (i18n) features allow you to adapt your project for an international audience. This routing API helps you generate, use, and verify the URLs that your multi-language site produces.
 
 Astro's i18n routing allows you to bring your multilingual content with support for configuring a default language, computing relative page URLs, and accepting preferred languages provided by your visitor's browser. You can also specify fallback languages on a per-language basis so that your visitors can always be directed to existing content on your site.
 
@@ -358,7 +358,7 @@ Make sure that your server proxy/hosting platform is able to provide this inform
 
 ## Browser language detection
 
-Astro’s i18n routing allows you to access two properties for browser language detection in pages rendered on demand: `Astro.preferredLocale` and `Astro.preferredLocaleList`. All pages, including static prerendered pages, have access to `Astro.currentLocale`.
+Astro's i18n routing allows you to access two properties for browser language detection in pages rendered on demand: `Astro.preferredLocale` and `Astro.preferredLocaleList`. All pages, including static prerendered pages, have access to `Astro.currentLocale`.
 
 These combine the browser's `Accept-Language` header, and your `locales` (strings or `codes`) to automatically respect your visitor's preferred languages.
 

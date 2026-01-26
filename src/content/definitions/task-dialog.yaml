@@ -16,7 +16,7 @@
   },
   "synopsis": {
     "en": "A dialog box that can be used to display information and receive simple input from the user. Like a message box, it is formatted by the operating system according to parameters you set. However, a task dialog has many more features than a message box.",
-    "fr": "Une boîte de dialogue utilisée pour afficher des informations et recevoir une entrée simple de l’utilisateur. Comme une boîte de message, elle est mise en forme par le système d’exploitation en fonction des paramètres que vous définissez. Toutefois, une boîte de dialogue de tâche a beaucoup plus de fonctionnalités qu’une boîte de message."
+    "fr": "Une boîte de dialogue utilisée pour afficher des informations et recevoir une entrée simple de l'utilisateur. Comme une boîte de message, elle est mise en forme par le système d'exploitation en fonction des paramètres que vous définissez. Toutefois, une boîte de dialogue de tâche a beaucoup plus de fonctionnalités qu'une boîte de message."
   },
   "wiki": {
     "en": "https://learn.microsoft.com/en/windows/win32/controls/task-dialogs-overview",
