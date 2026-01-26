@@ -1,46 +1,10 @@
 ---
 import LiteratureDetailPage from '../../components/pages/LiteratureDetailPage.astro';
 import { getCollection } from 'astro:content';
-import { getLiterature, getTextualEntry } from '../../lib/content';
-import { getLabels, normalizeLocale } from '../../i18n/site';
-
-import '../../styles/perspective.scss';
-
+import '../../styles/passion.scss';
 export async function getStaticPaths() {
-  const entries = await getCollection('literature');
-  return entries
-    .filter((entry) => entry.data.kind === 'blog')
-    .map((entry) => ({ params: { id: entry.id } }));
+    const entries = await getCollection('literature');
+    return entries.filter(entry => entry.data.kind === 'blog').map(entry => ({ params: { id: entry.id } }));
 }
-
-const { id } = Astro.params;
-if (!id) {
-  throw new Error('Missing route params');
-}
-
-const locale = normalizeLocale(Astro.currentLocale);
-const labels = getLabels(locale);
-const literature = await getLiterature(locale);
-
-const entry = literature.find((item) => item.id === id && item.data.kind === 'blog');
-if (!entry) {
-  throw new Error(`Missing blog ${id} for ${locale}`);
-}
-
-const blogBodyEntry = await getTextualEntry(locale, 'literature', entry.id);
-const { Content: BlogBody } = await blogBodyEntry.render();
-
 ---
-<LiteratureDetailPage
-  route="blog"
-  entry={entry}
-  Body={BlogBody}
-  copy={{
-    links: labels.labels.links,
-    story: labels.labels.story,
-    references: labels.labels.references,
-    gallery: labels.labels.gallery,
-    fmtTitle: labels.labels.fmtTitle,
-    refJumpUp: labels.labels.refJumpUp,
-  }}
-/>
+<LiteratureDetailPage route='blog' id={Astro.params.id} />

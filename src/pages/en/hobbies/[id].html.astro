@@ -1,4 +1,11 @@
 ---
-import Hobbies from '../hobbies/[id].html.astro';
+import LiteratureDetailPage from '../../../components/pages/LiteratureDetailPage.astro';
+import { getCollection } from 'astro:content';
+import '../../../styles/passion.scss';
+export async function getStaticPaths() {
+    const entries = await getCollection('literature');
+    return entries.filter(entry => entry.data.kind === 'passion').map(entry => ({ params: { id: entry.id } }));
+}
 ---
-<Hobbies></Hobbies>
+
+<LiteratureDetailPage route='hobbies' id={Astro.params.id} />

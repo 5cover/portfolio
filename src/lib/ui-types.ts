@@ -15,3 +15,5 @@ export type ThemeLabels = {
   system: string;
   dark: string;
 };
+
+export type Copy = string | HTMLElement;

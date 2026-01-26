@@ -1,0 +1,31 @@
+---
+import type { Copy } from '../lib/ui-types';
+
+interface Props {
+    heading: Copy;
+    level?: number;
+}
+
+const { heading, level: parentLevel = 1 } = Astro.props;
+const H = `h${parentLevel}`;
+
+const section = ({ heading, level }: Props) => Astro.self({ heading, level: level ?? parentLevel + 1 });
+// Name the parameter "Section" at usages
+const html = Astro.slots.has('default') ? await Astro.slots.render('default', [section]) : null;
+export type TSection = typeof Astro.self;
+---
+
+<section>
+    <slot name='header'>
+        {
+            parentLevel > 6 ? (
+                <div role='heading' aria-level={parentLevel}>
+                    {heading}
+                </div>
+            ) : (
+                <H>{heading}</H>
+            )
+        }
+    </slot>
+    {html}
+</section>

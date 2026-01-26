@@ -1,8 +1,6 @@
-import { getCollection, getEntry } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
 import type { Locale } from '../i18n/site';
 import { normalizeLocale } from '../i18n/site';
-
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 export type AnchorEntry = CollectionEntry<'anchors'>;
 export type ContactEntry = CollectionEntry<'contacts'>;
 export type DefinitionEntry = CollectionEntry<'definitions'>;
@@ -284,9 +282,7 @@ export async function getTextualEntry(lang: string, kind: TextualKind, id: strin
     return entry;
 }
 
-export function mapById<T extends { id: string; data: U }, U = T['data']>(
-    entries: T[]
-): Record<string, U> {
+export function mapById<T extends { id: string; data: U }, U = T['data']>(entries: T[]): Record<string, U> {
     return entries.reduce<Record<string, U>>((acc, entry) => {
         acc[entry.id] = entry.data;
         return acc;
