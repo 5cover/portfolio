@@ -4,7 +4,6 @@ import type { AnchorEntry, LocalizedProjectEntry, LocalizedTagEntry } from '../l
 
 type Props = {
     class?: string;
-    lang: string;
     langLabels: {
         ongoing: string;
         fmtTitle: string;
@@ -16,14 +15,13 @@ type Props = {
 };
 
 const props: Props = Astro.props;
-const { lang, langLabels, projects, tagsById, anchorsById, headingLevel = 3 } = props;
+const { langLabels, projects, tagsById, anchorsById, headingLevel = 3 } = props;
 ---
 
 <ul class:list={['lvl', 'list-project', props.class]} '>
     {
         projects.map(project => (
             <ProjectCard
-                lang={lang}
                 langLabels={langLabels}
                 project={project}
                 tagsById={tagsById}

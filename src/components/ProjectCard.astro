@@ -1,9 +1,10 @@
 ---
 import Graphic from './Graphic.astro';
 import LinkList from './LinkList.astro';
-import { detailHref, pageHref } from '../lib/routes';
+import { detailHref, pageHref } from '../lib/links';
 import { formatDate } from '../lib/date';
 import type { AnchorEntry, LocalizedProjectEntry, LocalizedTagEntry } from '../lib/content';
+import { normalizeLocale } from '../i18n/site';
 
 function capitalize(value: string): string {
   return value.length > 0 ? value[0].toUpperCase() + value.slice(1) : value;
@@ -14,7 +15,6 @@ function formatTitle(fmt: string, title: string): string {
 }
 
 type Props = {
-  lang: string;
   langLabels: {
     ongoing: string;
     fmtTitle: string;
@@ -26,13 +26,14 @@ type Props = {
 };
 
 const props: Props = Astro.props;
-const { lang, langLabels, project, tagsById, anchorsById, headingLevel = 3 } = props;
+const { langLabels, project, tagsById, anchorsById, headingLevel = 3 } = props;
+const locale = normalizeLocale(Astro.currentLocale);
 const projectData = project.data;
 const logoTitle = formatTitle(langLabels.fmtTitle, projectData.title);
 const startDate = projectData.startDate;
 const endDate = projectData.endDate;
-const startLabel = startDate ? formatDate(startDate, lang) : '';
-const endLabel = endDate ? formatDate(endDate, lang) : '';
+const startLabel = startDate ? formatDate(startDate, locale) : '';
+const endLabel = endDate ? formatDate(endDate, locale) : '';
 const context = projectData.context ? capitalize(projectData.context) : '';
 const backgroundStyle = projectData.background
   ? `--bg-img-card: url(${projectData.background})`
@@ -42,7 +43,7 @@ const backgroundStyle = projectData.background
   <ul class="list-rect">
     {projectData.tags.map((tagId) => (
       <li>
-        <a href={`${pageHref(lang, 'projects')}?tag=${tagId}`} set:html={tagsById[tagId]?.title ?? tagId}></a>
+        <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`} set:html={tagsById[tagId]?.title ?? tagId}></a>
       </li>
     ))}
   </ul>
@@ -56,17 +57,17 @@ const backgroundStyle = projectData.background
     />
   ) : null}
   {headingLevel === 1 ? (
-    <h1><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h1>
+    <h1><a class="foil" href={detailHref(locale, 'projects', project.id)} set:html={projectData.title}></a></h1>
   ) : headingLevel === 2 ? (
-    <h2><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h2>
+    <h2><a class="foil" href={detailHref(locale, 'projects', project.id)} set:html={projectData.title}></a></h2>
   ) : headingLevel === 4 ? (
-    <h4><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h4>
+    <h4><a class="foil" href={detailHref(locale, 'projects', project.id)} set:html={projectData.title}></a></h4>
   ) : headingLevel === 5 ? (
-    <h5><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h5>
+    <h5><a class="foil" href={detailHref(locale, 'projects', project.id)} set:html={projectData.title}></a></h5>
   ) : headingLevel === 6 ? (
-    <h6><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h6>
+    <h6><a class="foil" href={detailHref(locale, 'projects', project.id)} set:html={projectData.title}></a></h6>
   ) : (
-    <h3><a class="foil" href={detailHref(lang, 'projects', project.id)} set:html={projectData.title}></a></h3>
+    <h3><a class="foil" href={detailHref(locale, 'projects', project.id)} set:html={projectData.title}></a></h3>
   )}
   {startDate ? (
     <small class="status">

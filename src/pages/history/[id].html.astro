@@ -1,0 +1,42 @@
+---
+import HistoryDetailPage from '../../components/pages/HistoryDetailPage.astro';
+import { getCollection } from 'astro:content';
+import { getHistory, getTextualEntry } from '../../lib/content';
+import { getLabels, normalizeLocale } from '../../i18n/site';
+
+
+export async function getStaticPaths() {
+    const entries = await getCollection('history');
+    return entries.map(entry => ({ params: { id: entry.id } }));
+}
+
+const { id } = Astro.params;
+if (!id) {
+    throw new Error('Missing route params');
+}
+
+const locale = normalizeLocale(Astro.currentLocale);
+const labels = getLabels(locale);
+const historyEntries = await getHistory(locale);
+const entry = historyEntries.find(item => item.id === id);
+if (!entry) {
+    throw new Error(`Missing history ${id} for ${locale}`);
+}
+
+const historySummaryEntry = await getTextualEntry(locale, 'history', entry.id);
+const { Content: HistorySummary } = await historySummaryEntry.render();
+const historyBodyEntry = await getTextualEntry(locale, 'history-body', entry.data.body ?? entry.id);
+const { Content: HistoryBody } = await historyBodyEntry.render();
+
+const detailsHeading = locale === 'fr' ? 'Détails' : 'Details';
+---
+
+<HistoryDetailPage
+    entry={entry}
+    HistorySummary={HistorySummary}
+    HistoryBody={HistoryBody}
+    copy={{
+        story: labels.labels.story,
+        detailsHeading,
+    }}
+/>

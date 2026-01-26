@@ -3,7 +3,6 @@ import LiteratureCard from './LiteratureCard.astro';
 import type { AnchorEntry, LocalizedLiteratureEntry } from '../lib/content';
 
 type Props = {
-  lang: string;
   route: string;
   langLabels: {
     fmtTitle: string;
@@ -14,12 +13,11 @@ type Props = {
 };
 
 const props: Props = Astro.props;
-const { lang, route, langLabels, entries, anchorsById, headingLevel = 3 } = props;
+const { route, langLabels, entries, anchorsById, headingLevel = 3 } = props;
 ---
 <ul class="lvl list-detail-split-card">
   {entries.map((entry) => (
     <LiteratureCard
-      lang={lang}
       route={route}
       langLabels={langLabels}
       entry={entry}

@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
 
-import type { LangEntry, LocalizedHistoryEntry } from '../../lib/content';
+import type { LocalizedHistoryEntry } from '../../lib/content';
 
 import '../../styles/history-detail.scss';
 // one off exception for the heavily styled BUT informatique page: https://github.com/withastro/astro/issues/7761
@@ -16,8 +16,6 @@ type Copy = {
 };
 
 type Props = {
-    lang: string;
-    langData: LangEntry['data'];
     entry: LocalizedHistoryEntry;
     HistorySummary: AstroComponentFactory;
     HistoryBody: AstroComponentFactory;
@@ -26,8 +24,6 @@ type Props = {
 
 const props: Props = Astro.props;
 const {
-    lang,
-    langData,
     entry,
     HistorySummary,
     HistoryBody,
@@ -40,9 +36,7 @@ const year = media?.year ? String(media.year) : '';
 ---
 
 <BaseLayout
-    lang={lang}
     pageName={`history/${entry.id}`}
-    langData={langData}
 >
     <main>
         <header>

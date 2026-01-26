@@ -32,8 +32,8 @@ const tooltipHideTransitionMs = 1000 / 3;
 const pendingTooltipRoots: ParentNode[] = [];
 let definitionData: { definitions: DefinitionIndex; types: TypeIndex } | null = null;
 
-function getLang(): string {
-    return document.documentElement.lang || 'fr';
+function getDataBase(): string {
+    return (document.documentElement.dataset.dataBase || '/data').replace(/\/$/, '');
 }
 
 function getDefinitionTitle(definition: DefinitionEntry): string {
@@ -168,13 +168,13 @@ function parseTypeIndex(raw: unknown): TypeIndex {
     return result;
 }
 
-async function loadDefinitionData(lang: string): Promise<{
+async function loadDefinitionData(dataBase: string): Promise<{
     definitions: DefinitionIndex;
     types: TypeIndex;
 }> {
     const [definitionsRaw, typesRaw] = await Promise.all([
-        fetchJson(`/portfolio/data/${lang}/definitions.json`),
-        fetchJson(`/portfolio/data/${lang}/types.json`),
+        fetchJson(`${dataBase}/definitions.json`),
+        fetchJson(`${dataBase}/types.json`),
     ]);
 
     return {
@@ -362,9 +362,9 @@ function refreshDefinitionTooltips(root: ParentNode = document): void {
 }
 
 async function initDefinitionTooltips(): Promise<void> {
-    const lang = getLang();
+    const dataBase = getDataBase();
     try {
-        const { definitions, types } = await loadDefinitionData(lang);
+        const { definitions, types } = await loadDefinitionData(dataBase);
         definitionData = { definitions, types };
         pendingTooltipRoots.forEach(root => setupDefinitionTooltips(definitions, types, root));
         pendingTooltipRoots.length = 0;

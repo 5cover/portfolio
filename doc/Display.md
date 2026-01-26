@@ -11,6 +11,11 @@ These is already done in the V1 site and should be done in this version too:
 
 Preserve the style, colors, sizes, fonts and general layout of the V1 site as accurately as possible.
 
+## Locale Links
+
+- Build internal links and language switcher URLs with Astro i18n helpers.
+- Do not hardcode locale prefixes or language-specific base paths.
+
 ## Theming
 
 themes that define the colors and styles of the site. themes i already have formalized:

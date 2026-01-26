@@ -2,11 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LiteratureCardList from '../LiteratureCardList.astro';
 import { getAnchors, mapById } from '../../lib/content';
-import type { LangEntry, LocalizedLiteratureEntry } from '../../lib/content';
+import type { LocalizedLiteratureEntry } from '../../lib/content';
 
 type Props = {
-    lang: string;
-    langData: LangEntry['data'];
     title: string;
     route: string;
     langLabels: { fmtTitle: string };
@@ -16,8 +14,6 @@ type Props = {
 
 const props: Props = Astro.props;
 const {
-    lang,
-    langData,
     title,
     route,
     langLabels,
@@ -29,14 +25,11 @@ const anchorsById = mapById(await getAnchors());
 ---
 
 <BaseLayout
-    lang={lang}
     pageName={route}
-    langData={langData}
 >
     <main class={mainClass}>
         <h1>{title}</h1>
         <LiteratureCardList
-            lang={lang}
             route={route}
             langLabels={langLabels}
             entries={entries}

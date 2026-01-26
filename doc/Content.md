@@ -55,6 +55,12 @@ The site must be available in multiple languages (fr and en to start), so Text a
 
 Textual can be implemented with MDX.
 
+Localization notes:
+
+- Locale-specific pages live under `src/pages/` (default locale) and `src/pages/<locale>/` for others.
+- Localized UI copy is authored directly in those pages or shared via small locale helpers (no lang content collection).
+- Long-form copy lives in `src/content/textual/<locale>/<kind>/<id>.mdx`.
+
 ## **Project**
 
 Common property|Value

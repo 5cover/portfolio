@@ -1,5 +1,6 @@
 ---
-import { BASE_PATH, pageHref } from '../lib/routes';
+import { normalizeLocale } from '../i18n/site';
+import { pageHref } from '../lib/links';
 
 type NavItem = {
   page: string;
@@ -20,7 +21,6 @@ type ThemeLabels = {
 };
 
 type Props = {
-  lang: string;
   pageName: string;
   navItems: NavItem[];
   languages: LanguageInfo[];
@@ -28,7 +28,8 @@ type Props = {
 };
 
 const props: Props = Astro.props;
-const { lang, pageName, navItems, languages, themeLabels } = props;
+const { pageName, navItems, languages, themeLabels } = props;
+const locale = normalizeLocale(Astro.currentLocale);
 ---
 <template id="template-definition-tooltip">
   <article class="lvl definition-tooltip" role="tooltip">
@@ -50,22 +51,22 @@ const { lang, pageName, navItems, languages, themeLabels } = props;
 </template>
 <header class="lvl">
   <nav>
-    <a href={pageHref(lang, 'index')}>Raphaël Bardini</a>
+    <a href={pageHref(locale, 'index')}>Raphaël Bardini</a>
     <ul>
       {navItems.map((item) => (
         <li>
-          <a href={pageHref(lang, item.page)}>{item.label}</a>
+          <a href={pageHref(locale, item.page)}>{item.label}</a>
         </li>
       ))}
     </ul>
   </nav>
   <ul class="list-flags">
     {languages.map((other) => {
-      const isSame = other.code === lang;
+      const isSame = other.code === locale;
       const className = `fi ${other.flagClass}${isSame ? '' : ' gray-when-not-hover'}`;
-      const titleSuffix = isSame ? '' : ` / ${other.names[lang] ?? other.name}`;
+      const titleSuffix = isSame ? '' : ` / ${other.names[locale] ?? other.name}`;
       const title = `${other.name}${titleSuffix}`;
-      const href = `${BASE_PATH}/${other.code}/${pageName}.html`;
+      const href = pageHref(other.code, pageName);
 
       return (
         <li>

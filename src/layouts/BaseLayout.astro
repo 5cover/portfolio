@@ -1,28 +1,33 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import type { LangEntry } from '../lib/content';
-import { buildNavItems, buildThemeLabels, getLanguages } from '../lib/ui';
+import { getLabels, getLanguages, getNavItems, getThemeLabels, normalizeLocale } from '../i18n/site';
 
 import '../styles/base.scss';
 
 type Props = {
-    lang: string;
     pageName: string;
-    langData: LangEntry['data'];
 };
 
 const props: Props = Astro.props;
-const { lang, pageName, langData } = props;
-const navItems = buildNavItems(langData);
-const themeLabels = buildThemeLabels(langData);
-const languages = await getLanguages();
-const siteDescription = langData.siteDescription;
-const githubTitle = langData.footerGitHubAnchorTitle;
+const { pageName } = props;
+const locale = normalizeLocale(Astro.currentLocale);
+const navItems = getNavItems(locale);
+const themeLabels = getThemeLabels(locale);
+const languages = getLanguages();
+const labels = getLabels(locale);
+const siteDescription = labels.siteDescription;
+const githubTitle = labels.footerGitHubAnchorTitle;
+const dataBase = getRelativeLocaleUrl(locale, 'data');
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html
+    lang={locale}
+    data-locale={locale}
+    data-data-base={dataBase}
+    data-ongoing-label={labels.labels.ongoing}>
     <head>
         <link rel='apple-touch-icon' sizes='180x180' href='/portfolio/apple-touch-icon.png' />
         <link rel='icon' type='image/png' sizes='16x16' href='/portfolio/favicon-16x16.png' />
@@ -50,7 +55,7 @@ const githubTitle = langData.footerGitHubAnchorTitle;
         <script async src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js'></script>
     </head>
     <body>
-        <Header lang={lang} pageName={pageName} navItems={navItems} languages={languages} themeLabels={themeLabels} />
+        <Header pageName={pageName} navItems={navItems} languages={languages} themeLabels={themeLabels} />
         <slot />
         <Footer githubTitle={githubTitle} />
         <script src='../scripts/base.ts'></script>

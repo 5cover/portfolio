@@ -1,15 +1,15 @@
 ---
 import Graphic from './Graphic.astro';
 import LinkList from './LinkList.astro';
-import { detailHref } from '../lib/routes';
+import { detailHref } from '../lib/links';
 import type { AnchorEntry, LocalizedLiteratureEntry } from '../lib/content';
+import { normalizeLocale } from '../i18n/site';
 
 function formatTitle(fmt: string, title: string): string {
   return fmt.replace('%s', title);
 }
 
 type Props = {
-  lang: string;
   route: string;
   langLabels: {
     fmtTitle: string;
@@ -20,7 +20,8 @@ type Props = {
 };
 
 const props: Props = Astro.props;
-const { lang, route, langLabels, entry, anchorsById, headingLevel = 3 } = props;
+const { route, langLabels, entry, anchorsById, headingLevel = 3 } = props;
+const locale = normalizeLocale(Astro.currentLocale);
 const entryData = entry.data;
 const logoTitle = formatTitle(langLabels.fmtTitle, entryData.title);
 const backgroundStyle = entryData.background
@@ -39,11 +40,11 @@ const backgroundStyle = entryData.background
   ) : null}
   <div>
     {headingLevel === 1 ? (
-      <h1><a class="foil" href={detailHref(lang, route, entry.id)} set:html={entryData.title}></a></h1>
+      <h1><a class="foil" href={detailHref(locale, route, entry.id)} set:html={entryData.title}></a></h1>
     ) : headingLevel === 2 ? (
-      <h2><a class="foil" href={detailHref(lang, route, entry.id)} set:html={entryData.title}></a></h2>
+      <h2><a class="foil" href={detailHref(locale, route, entry.id)} set:html={entryData.title}></a></h2>
     ) : (
-      <h3><a class="foil" href={detailHref(lang, route, entry.id)} set:html={entryData.title}></a></h3>
+      <h3><a class="foil" href={detailHref(locale, route, entry.id)} set:html={entryData.title}></a></h3>
     )}
     <p class="abstract" set:html={entryData.abstract}></p>
     {entryData.links.length > 0 ? (

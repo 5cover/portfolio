@@ -9,5 +9,12 @@ import react from '@astrojs/react'
 export default defineConfig({
     site: 'https://5cover.github.io',
     base: '/portfolio',
+    i18n: {
+        locales: ['fr', 'en'],
+        defaultLocale: 'fr',
+        routing: {
+            prefixDefaultLocale: false,
+        },
+    },
     integrations: [mdx(), sitemap(), react()],
 });

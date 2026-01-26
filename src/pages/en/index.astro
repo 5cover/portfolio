@@ -1,0 +1,81 @@
+---
+import HomePage from '../../components/pages/HomePage.astro';
+import { getContacts, getPianoTiles, getProjects } from '../../lib/content';
+import { getLabels, normalizeLocale } from '../../i18n/site';
+
+const locale = normalizeLocale(Astro.currentLocale);
+const labels = getLabels(locale);
+const [projects, contacts, pianoTiles] = await Promise.all([
+    getProjects(locale),
+    getContacts(),
+    getPianoTiles(locale),
+]);
+
+---
+
+<HomePage
+    pianoTiles={pianoTiles}
+    projects={projects}
+    contacts={contacts}
+    copy={{
+        indexMe: 'About me',
+        indexMyPhoto: 'My photo',
+        indexOngoingProjects: 'My ongoing projects',
+        indexAllMyProjects: 'All my projects',
+        indexContact: 'Contact',
+        indexMyResumePreview: 'Preview my resume',
+        indexMyResume: 'My resume',
+        indexVideoCv: 'Video CV',
+        ongoing: labels.labels.ongoing,
+        fmtTitle: labels.labels.fmtTitle,
+    }}
+>
+    <Fragment slot='about-content'>
+        <p>
+            Hello, my name is <strong>Raphaël Bardini</strong>. I'm an 18 y/o computer science student in
+            second year of <abbr title='Bachelor of Technology'>BUT</abbr> Informatique, at the{' '}
+            <a
+                class='link'
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://iut-lannion.univ-rennes.fr/'>
+                <abbr title='University Technological Institute'>IUT</abbr> of Lannion
+            </a>
+            .
+        </p>
+        <p>
+            In 2023, I passed my baccalaureate with the specialties{' '}
+            <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.lyceeschoelcher972.fr/specialite-llcer-amc/'
+                data-definition-id='amc'
+                class='link definition-tooltip-trigger'>
+                AMC
+            </a>{' '}
+            et{' '}
+            <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448'
+                data-definition-id='nsi'
+                class='link definition-tooltip-trigger'>
+                NSI
+            </a>
+            .
+        </p>
+        <p>
+            The main source of fulfilment in my life is <strong>software development</strong>. In addition, I
+            commit <em>(pun intented)</em> to the <strong>open-source</strong> community. And I can't deny that
+            I'm a big lover of{' '}
+            <a
+                class='link'
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://youtube.com/playlist?list=PL1weKnP9ENMdJbMr338lNOMSF487f8nGm'>
+                jazz music
+            </a>
+            . Join me in this adventure&nbsp;! &#9749;
+        </p>
+    </Fragment>
+</HomePage>

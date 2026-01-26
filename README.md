@@ -1,5 +1,10 @@
 # Astro Starter Kit: Blog
 
+## Project Notes
+
+- i18n routing is configured in `astro.config.mjs` (`fr` default, `en` secondary).
+- Default locale lives in `src/pages/*`, other locales in `src/pages/<locale>/*`.
+
 ```sh
 pnpm create astro@latest -- --template blog
 ```

@@ -177,8 +177,10 @@ async function renderProjectCard(
     project: Project,
     tags: TagIndex,
     anchors: AnchorIndex,
-    lang: string,
-    ongoingLabel: string
+    locale: string,
+    ongoingLabel: string,
+    listPath: string,
+    localeBase: string
 ): Promise<HTMLLIElement> {
     const li = document.createElement('li');
     if (project.background) {
@@ -188,7 +190,7 @@ async function renderProjectCard(
     const tagItems = project.tags
         .map(tagId => {
             const tagTitle = tags[tagId]?.title ?? tagId;
-            return `<li><a href="/portfolio/${lang}/projects.html?tag=${tagId}">${tagTitle}</a></li>`;
+            return `<li><a href="${listPath}?tag=${tagId}">${tagTitle}</a></li>`;
         })
         .join('');
 
@@ -197,7 +199,7 @@ async function renderProjectCard(
         : '';
 
     const status = project.startDate
-        ? `${formatDate(project.startDate, lang)} &ndash; ${project.endDate ? formatDate(project.endDate, lang) : ongoingLabel}`
+        ? `${formatDate(project.startDate, locale)} &ndash; ${project.endDate ? formatDate(project.endDate, locale) : ongoingLabel}`
         : '';
 
     const context = project.context ? project.context.charAt(0).toUpperCase() + project.context.slice(1) : '';
@@ -219,7 +221,7 @@ async function renderProjectCard(
     li.innerHTML = `
     <ul class="list-rect">${tagItems}</ul>
     ${logoHtml}
-    <h3><a class="foil" href="/portfolio/${lang}/projects/${project.id}.html">${project.title}</a></h3>
+    <h3><a class="foil" href="${localeBase}/projects/${project.id}.html">${project.title}</a></h3>
     ${context ? `<small class="context">${context}</small>` : ''}
     ${status ? `<small class="status">${status}</small>` : ''}
     <p class="abstract">${project.abstract}</p>
@@ -233,13 +235,15 @@ async function updateList(
     projects: Project[],
     tags: TagIndex,
     anchors: AnchorIndex,
-    lang: string,
+    locale: string,
     ongoingLabel: string,
+    listPath: string,
+    localeBase: string,
     listEl: HTMLElement
 ): Promise<void> {
     listEl.innerHTML = '';
     const items = await Promise.all(
-        projects.map(project => renderProjectCard(project, tags, anchors, lang, ongoingLabel))
+        projects.map(project => renderProjectCard(project, tags, anchors, locale, ongoingLabel, listPath, localeBase))
     );
     items.forEach(item => listEl.appendChild(item));
     window.refreshDefinitionTooltips?.(listEl);
@@ -260,8 +264,18 @@ function matchesTags(project: Project, selectedTags: Set<string>): boolean {
     return Array.from(selectedTags).every(tag => project.tags.includes(tag));
 }
 
+function getDataBase(): string {
+    return (document.documentElement.dataset.dataBase || '/data').replace(/\/$/, '');
+}
+
+function getLocaleBase(dataBase: string): string {
+    return dataBase.endsWith('/data') ? dataBase.slice(0, -'/data'.length) : dataBase;
+}
+
 async function init(): Promise<void> {
-    const lang = document.documentElement.lang || 'fr';
+    const locale = document.documentElement.lang || 'fr';
+    const dataBase = getDataBase();
+    const localeBase = getLocaleBase(dataBase);
     const searchInputEl = document.getElementById('search-input');
     const listEl = document.getElementById('project-list');
     const datalistEl = document.getElementById('project-titles');
@@ -273,18 +287,17 @@ async function init(): Promise<void> {
     }
     const searchInput = searchInputEl;
 
-    const [projectsRaw, tagsRaw, anchorsRaw, langRaw] = await Promise.all([
-        fetchJson(`/portfolio/data/${lang}/projects.json`),
-        fetchJson(`/portfolio/data/${lang}/tags.json`),
-        fetchJson(`/portfolio/data/anchors.json`),
-        fetchJson(`/portfolio/data/${lang}/lang.json`),
+    const [projectsRaw, tagsRaw, anchorsRaw] = await Promise.all([
+        fetchJson(`${dataBase}/projects.json`),
+        fetchJson(`${dataBase}/tags.json`),
+        fetchJson(`${dataBase}/anchors.json`),
     ]);
 
     const projectsIndex = parseProjects(projectsRaw);
     const tagsIndex = parseTags(tagsRaw);
     const anchorsIndex = parseAnchors(anchorsRaw);
-    const langData = isRecord(langRaw) ? langRaw : {};
-    const ongoingLabel = typeof langData.ongoing === 'string' ? langData.ongoing : 'ongoing';
+    const ongoingLabel = document.documentElement.dataset.ongoingLabel || 'ongoing';
+    const listPath = window.location.pathname;
 
     const projects = Object.values(projectsIndex);
 
@@ -350,7 +363,7 @@ async function init(): Promise<void> {
             return sorting === 'desc' ? titleB.localeCompare(titleA) : titleA.localeCompare(titleB);
         });
 
-        await updateList(sorted, tagsIndex, anchorsIndex, lang, ongoingLabel, listEl);
+        await updateList(sorted, tagsIndex, anchorsIndex, locale, ongoingLabel, listPath, localeBase, listEl);
     };
 
     searchInput.addEventListener('input', () => {

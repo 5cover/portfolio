@@ -1,0 +1,51 @@
+---
+import ProjectDetailPage from '../../../components/pages/ProjectDetailPage.astro';
+import { getCollection } from 'astro:content';
+import { getProjects, getTextualEntry } from '../../../lib/content';
+import { getLabels, normalizeLocale } from '../../../i18n/site';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { id: project.id },
+  }));
+}
+
+const { id } = Astro.params;
+if (!id) {
+  throw new Error('Missing route params');
+}
+
+const locale = normalizeLocale(Astro.currentLocale);
+const labels = getLabels(locale);
+const projectEntry = await getProjects(locale).then((entries) =>
+  entries.find((entry) => entry.id === id)
+);
+
+if (!projectEntry) {
+  throw new Error(`Missing project ${id} for ${locale}`);
+}
+
+const projectBodyEntry = await getTextualEntry(
+  locale,
+  'projects',
+  projectEntry.id
+);
+const { Content: ProjectBody } = await projectBodyEntry.render();
+
+---
+<ProjectDetailPage
+  project={projectEntry}
+  ProjectBody={ProjectBody}
+  copy={{
+    links: labels.labels.links,
+    team: labels.labels.team,
+    story: labels.labels.story,
+    references: labels.labels.references,
+    technologies: labels.labels.technologies,
+    gallery: labels.labels.gallery,
+    ongoing: labels.labels.ongoing,
+    fmtTitle: labels.labels.fmtTitle,
+    refJumpUp: labels.labels.refJumpUp,
+  }}
+/>

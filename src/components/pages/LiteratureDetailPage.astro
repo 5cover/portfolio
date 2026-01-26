@@ -5,92 +5,81 @@ import Gallery from '../Gallery.astro';
 import Graphic from '../Graphic.astro';
 import LinkList from '../LinkList.astro';
 import ReferenceList from '../ReferenceList.astro';
-
-import type { AstroComponentFactory } from 'astro';
-import { getAnchors, mapById } from '../../lib/content';
-import type { LocalizedLiteratureEntry } from '../../lib/content';
-import type { LangEntry } from '../../lib/content';
-
-type Copy = {
-    links: string;
-    story: string;
-    references: string;
-    gallery: string;
-    fmtTitle: string;
-    refJumpUp: string;
-};
+import { getAnchors, getLiterature, getTextualEntry, mapById } from '../../lib/content';
+import { getLabels, normalizeLocale } from '../../i18n/site';
 
 type Props = {
-    lang: string;
-    langData: LangEntry['data'];
     route: string;
-    entry: LocalizedLiteratureEntry;
-    Body: AstroComponentFactory;
-    copy: Copy;
+    id: string;
     mainClass?: string;
 };
+const { route, id, mainClass } = Astro.props;
 
-const props: Props = Astro.props;
-const {
-    lang,
-    langData,
-    route,
-    entry,
-    Body,
-    copy,
-    mainClass,
-} = props;
+const locale = normalizeLocale(Astro.currentLocale);
+const copy = getLabels(locale).labels;
 
-const entryData = entry.data;
+const literatures = await getLiterature(locale);
+const entry = literatures.find(item => item.id === id);
+if (!entry) {
+    throw new Error(`Missing literature ${id} for ${locale}`);
+}
+
+const body = await getTextualEntry(locale, 'literature', entry.id);
+const { Content: Body } = await body.render();
+
 const anchorsById = mapById(await getAnchors());
-const backgroundStyle = entryData.background ? `--bg-img: url(${entryData.background})` : undefined;
-const logoTitle = copy.fmtTitle.replace('%s', entryData.title);
+const backgroundStyle = entry.data.background ? `--bg-img: url(${entry.data.background})` : undefined;
+const logoTitle = copy.fmtTitle.replace('%s', entry.data.title);
 ---
 
-<BaseLayout
-    lang={lang}
-    pageName={`${route}/${entry.id}`}
-    langData={langData}
->
+<BaseLayout pageName={`${route}/${entry.id}`}>
     <main style={backgroundStyle} class={mainClass}>
         <header>
-            <h1 set:html={entryData.title}></h1>
-            {entryData.logo ? (
-                <Graphic
-                    url={entryData.logo.url}
-                    isThemedSvg={entryData.logo.isThemedSvg}
-                    alt={logoTitle}
-                    title={logoTitle}
-                    class="logo"
-                />
-            ) : null}
-            <p class="abstract" set:html={entryData.abstract}></p>
+            <h1 set:html={entry.data.title} />
+            {
+                entry.data.logo ? (
+                    <Graphic
+                        url={entry.data.logo.url}
+                        isThemedSvg={entry.data.logo.isThemedSvg}
+                        alt={logoTitle}
+                        title={logoTitle}
+                        class='logo'
+                    />
+                ) : null
+            }
+            <p class='abstract' set:html={entry.data.abstract} />
         </header>
-        {entryData.links.length > 0 ? (
-            <section id="links">
-                <h2>{copy.links}</h2>
-                <LinkList links={entryData.links} anchorsById={anchorsById} variant="page" />
-            </section>
-        ) : null}
-        <section id="story">
+        {
+            entry.data.links.length > 0 ? (
+                <section id='links'>
+                    <h2>{copy.links}</h2>
+                    <LinkList links={entry.data.links} anchorsById={anchorsById} variant='page' />
+                </section>
+            ) : null
+        }
+        <section id='story'>
             <h2>{copy.story}</h2>
             <TextualContent content={Body} />
         </section>
-        {entryData.references.length > 0 ? (
-            <section id="references">
-                <h2>{copy.references}</h2>
-                <ReferenceList
-                    references={entryData.references}
-                    anchorsById={anchorsById}
-                    backlinkLabel={copy.refJumpUp}
-                />
-            </section>
-        ) : null}
-        {entryData.gallery.length > 0 ? (
-            <section id="gallery">
-                <h2>{copy.gallery}</h2>
-                <Gallery items={entryData.gallery} />
-            </section>
-        ) : null}
+        {
+            entry.data.references.length > 0 ? (
+                <section id='references'>
+                    <h2>{copy.references}</h2>
+                    <ReferenceList
+                        references={entry.data.references}
+                        anchorsById={anchorsById}
+                        backlinkLabel={copy.refJumpUp}
+                    />
+                </section>
+            ) : null
+        }
+        {
+            entry.data.gallery.length > 0 ? (
+                <section id='gallery'>
+                    <h2>{copy.gallery}</h2>
+                    <Gallery items={entry.data.gallery} />
+                </section>
+            ) : null
+        }
     </main>
 </BaseLayout>

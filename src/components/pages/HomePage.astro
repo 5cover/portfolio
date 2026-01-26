@@ -3,14 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Graphic from '../Graphic.astro';
 import ProjectCardList from '../ProjectCardList.astro';
 import { getAnchors, getTags, mapById } from '../../lib/content';
-import type { ContactEntry, LangEntry, LocalizedPianoTileEntry, LocalizedProjectEntry } from '../../lib/content';
-import { pageHref } from '../../lib/routes';
+import type { ContactEntry, LocalizedPianoTileEntry, LocalizedProjectEntry } from '../../lib/content';
+import { pageHref } from '../../lib/links';
+import { normalizeLocale } from '../../i18n/site';
 
 import '../../styles/index.scss';
 
 type Copy = {
     indexMe: string;
-    indexAboutMeContent: string;
     indexMyPhoto: string;
     indexOngoingProjects: string;
     indexAllMyProjects: string;
@@ -23,8 +23,6 @@ type Copy = {
 };
 
 type Props = {
-    lang: string;
-    langData: LangEntry['data'];
     pianoTiles: LocalizedPianoTileEntry[];
     projects: LocalizedProjectEntry[];
     contacts: ContactEntry[];
@@ -33,15 +31,14 @@ type Props = {
 
 const props: Props = Astro.props;
 const {
-    lang,
-    langData,
     pianoTiles,
     projects,
     contacts,
     copy,
 } = props;
 
-const [tags, anchors] = await Promise.all([getTags(lang), getAnchors()]);
+const locale = normalizeLocale(Astro.currentLocale);
+const [tags, anchors] = await Promise.all([getTags(locale), getAnchors()]);
 const tagsById = mapById(tags);
 const anchorsById = mapById(anchors);
 
@@ -51,9 +48,7 @@ function stripTags(value: string): string {
 ---
 
 <BaseLayout
-    lang={lang}
-    pageName='index'
-    langData={langData}>
+    pageName='index'>
     <main>
         <ul class='lvl list-piano-tiles'>
             {
@@ -86,7 +81,7 @@ function stripTags(value: string): string {
         <article id='me' class='lvl content-block'>
             <div>
                 <h2>{copy.indexMe}</h2>
-                <Fragment set:html={copy.indexAboutMeContent} />
+                <slot name='about-content' />
             </div>
             <img
                 src='/portfolio/img/me.jpg'
@@ -100,13 +95,12 @@ function stripTags(value: string): string {
         <section id='ongoing-projects' class='lvl'>
             <h2>{copy.indexOngoingProjects}</h2>
             <ProjectCardList
-                lang={lang}
                 langLabels={{ ongoing: copy.ongoing, fmtTitle: copy.fmtTitle }}
                 projects={projects.filter(project => !project.data.endDate)}
                 tagsById={tagsById}
                 anchorsById={anchorsById}
             />
-            <a href={pageHref(lang, 'projects')} class='lvl button-link'>
+            <a href={pageHref(locale, 'projects')} class='lvl button-link'>
                 {copy.indexAllMyProjects}
             </a>
         </section>

@@ -1,11 +1,12 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n/site';
+import { normalizeLocale } from '../i18n/site';
 
 export type AnchorEntry = CollectionEntry<'anchors'>;
 export type ContactEntry = CollectionEntry<'contacts'>;
 export type DefinitionEntry = CollectionEntry<'definitions'>;
 export type HistoryEntry = CollectionEntry<'history'>;
-export type LangEntry = CollectionEntry<'lang'>;
 export type LiteratureEntry = CollectionEntry<'literature'>;
 export type PianoTileEntry = CollectionEntry<'piano-tiles'>;
 export type ProjectEntry = CollectionEntry<'projects'>;
@@ -14,7 +15,7 @@ export type TextualEntry = CollectionEntry<'textual'>;
 export type TypeEntry = CollectionEntry<'types'>;
 
 export type TextualKind = 'history' | 'history-body' | 'literature' | 'projects';
-export type Locale = 'en' | 'fr';
+export type { Locale };
 export type Localized<T> = Record<Locale, T>;
 
 export type ProjectData = ProjectEntry['data'];
@@ -110,12 +111,8 @@ export function buildTextualId(lang: string, kind: TextualKind, id: string): str
     return `${lang}/${kind}/${id}`;
 }
 
-function normalizeLang(lang: string): Locale {
-    return lang === 'fr' ? 'fr' : 'en';
-}
-
 function localizeValue<T>(value: Localized<T>, lang: string): T {
-    const key = normalizeLang(lang);
+    const key = normalizeLocale(lang);
     return value[key];
 }
 
@@ -190,19 +187,6 @@ function localizePianoTileData(data: PianoTileData, lang: string): PianoTileLoca
         title: localizeValue(data.title, lang),
         summary: localizeValue(data.summary, lang),
     };
-}
-
-export async function getLangs(): Promise<string[]> {
-    const meta = await getEntry('meta', 'langs');
-    return meta?.data.langs ?? [];
-}
-
-export async function getLangData(lang: string): Promise<LangEntry['data']> {
-    const entry = await getEntry('lang', lang);
-    if (!entry) {
-        throw new Error(`Missing lang data for ${lang}`);
-    }
-    return entry.data;
 }
 
 export async function getAnchors(): Promise<AnchorEntry[]> {

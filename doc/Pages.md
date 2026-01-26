@@ -2,6 +2,12 @@
 
 (NavBar) indicates the pages are to be included in the navbar, in this orderMore detail on each page in [Pages.md](./Pages.md).
 
+## Locale routing
+
+- Default locale is served from `src/pages/*` (no locale prefix in URLs).
+- Other locales live under `src/pages/<locale>/*` (e.g. `src/pages/en`).
+- Use Astro i18n helpers to build links; do not hardcode locale prefixes.
+
 ## (NavBar) Home
 
 from top to bottom

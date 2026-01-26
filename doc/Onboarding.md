@@ -25,7 +25,7 @@ collections at build time and rendered into static HTML.
 
 Astro features used:
 
-- File based routing with dynamic routes (`[lang]`, `[id]`).
+- File based routing with i18n locale folders and dynamic routes (`[id]`).
 - `getStaticPaths()` for prebuilding routes.
 - Content collections (`astro:content`) with strict Zod schemas.
 - MDX content for long-form body text.
@@ -54,28 +54,35 @@ Top level folders:
 
 ## Routing and URLs
 
-Astro uses file based routing:
+Astro uses file based routing (with `routing.prefixDefaultLocale: false`):
 
-- `src/pages/index.astro` -> `/index.html` (root redirect script).
-- `src/pages/[lang]/index.astro` -> `/<lang>/index.html`.
-- `src/pages/[lang]/projects.html.astro` -> `/<lang>/projects.html`.
-- `src/pages/[lang]/projects/[id].html.astro` -> `/<lang>/projects/<id>.html`.
-- `src/pages/[lang]/blog.html.astro` -> `/<lang>/blog.html`.
-- `src/pages/[lang]/blog/[id].html.astro` -> `/<lang>/blog/<id>.html`.
-- `src/pages/[lang]/hobbies.html.astro` -> `/<lang>/hobbies.html`.
-- `src/pages/[lang]/hobbies/[id].html.astro` -> `/<lang>/hobbies/<id>.html`.
-- `src/pages/[lang]/history.html.astro` -> `/<lang>/history.html`.
-- `src/pages/[lang]/but-informatique.html.astro` -> `/<lang>/but-informatique.html`.
+- `src/pages/index.astro` -> `/` (default locale).
+- `src/pages/en/index.astro` -> `/en/`.
+- `src/pages/projects.html.astro` -> `/projects.html`.
+- `src/pages/en/projects.html.astro` -> `/en/projects.html`.
+- `src/pages/projects/[id].html.astro` -> `/projects/<id>.html`.
+- `src/pages/en/projects/[id].html.astro` -> `/en/projects/<id>.html`.
+- `src/pages/[section].html.astro` -> `/blog.html` and `/hobbies.html`.
+- `src/pages/en/[section].html.astro` -> `/en/blog.html` and `/en/hobbies.html`.
+- `src/pages/blog/[id].html.astro` -> `/blog/<id>.html`.
+- `src/pages/en/blog/[id].html.astro` -> `/en/blog/<id>.html`.
+- `src/pages/hobbies/[id].html.astro` -> `/hobbies/<id>.html`.
+- `src/pages/en/hobbies/[id].html.astro` -> `/en/hobbies/<id>.html`.
+- `src/pages/history.html.astro` -> `/history.html`.
+- `src/pages/en/history.html.astro` -> `/en/history.html`.
+- `src/pages/history/[id].html.astro` -> `/history/<id>.html`.
+- `src/pages/en/history/[id].html.astro` -> `/en/history/<id>.html`.
+- `src/pages/but-informatique.html.astro` -> `/but-informatique.html` (redirects to history).
+- `src/pages/en/but-informatique.html.astro` -> `/en/but-informatique.html`.
 
 Base path:
 
-- The site is served under `/portfolio` (see `astro.config.mjs` and
-  `src/lib/routes.ts`).
+- The site is served under `/portfolio` (see `astro.config.mjs`).
 
 Dynamic routes:
 
-- Pages with `[lang]` and `[id]` use `getStaticPaths()` to prebuild all
-  language and content variants.
+- Pages with `[id]` use `getStaticPaths()` to prebuild all content variants.
+- Locale variants are handled by Astro i18n routing, not by `[lang]` params.
 
 ## Content Collections (Build Time Data)
 
@@ -95,7 +102,7 @@ Important collections:
 - `history`: timeline entries (localized fields inline, body in MDX).
 - `textual`: MDX bodies for projects, literature, and history.
 - `piano-tiles`: home page tiles.
-- `contacts`, `anchors`, `lang`, `meta` (supporting data).
+- `contacts`, `anchors` (supporting data).
 
 All content is validated by Zod at build time. If the schema does not match,
 build fails.
@@ -208,14 +215,25 @@ The V1 site used JSON fetched from `/portfolio/data/*.json`.
 Astro recreates this using build time endpoints in `src/pages/data`:
 
 - `src/pages/data/anchors.json.ts`
-- `src/pages/data/langs.json.ts`
-- `src/pages/data/[lang]/projects.json.ts`
-- `src/pages/data/[lang]/tags.json.ts`
-- `src/pages/data/[lang]/definitions.json.ts`
-- `src/pages/data/[lang]/types.json.ts`
-- `src/pages/data/[lang]/lang.json.ts`
+- `src/pages/data/projects.json.ts`
+- `src/pages/data/tags.json.ts`
+- `src/pages/data/definitions.json.ts`
+- `src/pages/data/types.json.ts`
+- `src/pages/en/data/anchors.json.ts`
+- `src/pages/en/data/projects.json.ts`
+- `src/pages/en/data/tags.json.ts`
+- `src/pages/en/data/definitions.json.ts`
+- `src/pages/en/data/types.json.ts`
 
 These endpoints output JSON at build time and are fetched by client scripts.
+
+## Adding a Locale
+
+1. Add the locale code to `i18n.locales` in `astro.config.mjs` and decide on `defaultLocale`.
+2. Create `src/pages/<locale>/` and duplicate locale-specific pages.
+3. Add MDX bodies in `src/content/textual/<locale>/<kind>/<id>.mdx`.
+4. Add locale data endpoints under `src/pages/<locale>/data/`.
+5. Update locale labels in `src/i18n/site.ts`.
 
 ## Assets
 

@@ -2,8 +2,9 @@
 import { getEntry } from 'astro:content';
 import ProjectCardList from '../ProjectCardList.astro';
 import TextualContent from '../TextualContent.astro';
-import { getAnchors, getLangData, getProjects, getTags, mapById } from '../../lib/content';
-import type { Locale } from '../../lib/content';
+import { getAnchors, getProjects, getTags, mapById } from '../../lib/content';
+import type { Locale } from '../../i18n/site';
+import { getLabels, normalizeLocale } from '../../i18n/site';
 import { Section } from '../Section';
 
 const SKILL_TAGS = ['but-realiser', 'but-optimiser', 'but-administrer', 'but-gerer', 'but-conduire', 'but-collaborer'];
@@ -23,24 +24,99 @@ type YearData = {
     skills: Record<string, YearSkill>;
 };
 
-interface Props {
-    lang: Locale;
-}
-
-const { lang } = Astro.props;
-
-const [langData, projects, tags, anchors] = await Promise.all([
-    getLangData(lang),
-    getProjects(lang),
-    getTags(lang),
+const locale = normalizeLocale(Astro.currentLocale);
+const labels = getLabels(locale);
+const [projects, tags, anchors] = await Promise.all([
+    getProjects(locale),
+    getTags(locale),
     getAnchors(),
 ]);
 
 const tagsById = mapById(tags);
 const anchorsById = mapById(anchors);
+type ButCopy = {
+    logoAlt: string;
+    linkTextSyllabus: string;
+    skillsAbstract: string;
+    fmtSkill: string;
+    skills: { name: string; desc: string }[];
+    iutAlt: string;
+};
+
+const butCopyByLocale: Record<Locale, ButCopy> = {
+    fr: {
+        logoAlt: 'Logo BUT Informatique',
+        linkTextSyllabus: 'Programme officiel du BUT Informatique',
+        skillsAbstract:
+            'Le programme du BUT Informatique ne se limite pas à l’apprentissage de technologies. Il propose une progression implicite de posture, de la pratique individuelle vers la compréhension de systèmes techniques et humains plus larges.',
+        fmtSkill: 'Compétence %d\u00a0: %s',
+        skills: [
+            {
+                name: 'Réaliser un développement d\'application',
+                desc: 'Développer — c’est-à-dire concevoir, coder, tester et intégrer une solution informatique pour un client.',
+            },
+            {
+                name: 'Optimiser des applications',
+                desc: 'Proposer des applications informatiques optimisées en fonction de critères spécifiques\u00a0: temps d’exécution, précision, consommation de ressources.',
+            },
+            {
+                name: 'Administrer des systèmes informatiques communicants',
+                desc: 'Installer, configurer, mettre à disposition, maintenir en conditions opérationnelles des infrastructures, des services et des réseaux et optimiser le système informatique d’une organisation.',
+            },
+            {
+                name: 'Gérer des données de l\'information',
+                desc: 'Concevoir, gérer, administrer et exploiter les données de l’entreprise et mettre à disposition toutes les informations pour un bon pilotage de l’entreprise.',
+            },
+            {
+                name: 'Conduire un projet',
+                desc: 'Satisfaire les besoins des utilisateurs au regard de la chaîne de valeur du client, organiser et piloter un projet informatique avec des méthodes classiques ou agiles.',
+            },
+            {
+                name: 'Collaborer et travailler dans une équipe informatique',
+                desc: 'Acquérir, développer et exploiter les aptitudes nécessaires pour travailler efficacement dans une équipe informatique.',
+            },
+        ],
+        iutAlt: "Entrée de l'IUT de Lannion",
+    },
+    en: {
+        logoAlt: 'BUT Computer Science logo',
+        linkTextSyllabus: 'Officiel BUT Computer Science syllabus',
+        skillsAbstract: 'The BUT is organized into 6 skills:',
+        fmtSkill: 'Skill %d: %s',
+        skills: [
+            {
+                name: 'Create',
+                desc: 'Develop — that is, design, code, test and integrate an IT solution for a client.',
+            },
+            {
+                name: 'Optimize',
+                desc: 'Offer computer applications optimized according to specific criteria: execution time, precision, resource consumption.',
+            },
+            {
+                name: 'Administer',
+                desc: 'Install, configure, make available, maintain operational infrastructures, services and networks and optimize an organization\'s IT system.',
+            },
+            {
+                name: 'Manage',
+                desc: 'Design, manage, administer and exploit company data and make available all the information for good management of the company.',
+            },
+            {
+                name: 'Lead',
+                desc: 'Satisfy user needs with regard to the customer value chain, organize and manage an IT project using traditional or agile methods.',
+            },
+            {
+                name: 'Collaborate',
+                desc: 'Acquire, develop and exploit the skills necessary to work effectively in an IT team.',
+            },
+        ],
+        iutAlt: 'IUT of Lannion entrance',
+    },
+};
+
+const butCopy = butCopyByLocale[locale];
 const skillNameByTag: Record<string, string> = {};
 SKILL_TAGS.forEach((tag, index) => {
-    const name = langData.but.skills[index]?.name ?? tag;
+    const name = butCopy.skills[index]?.name ?? tag;
     skillNameByTag[tag] = name;
 });
 
@@ -50,7 +126,7 @@ const yearDataByLang: Record<Locale, YearData[]> = {
             id: 'but-1',
             label: 'BUT 1',
             title: 'Découverte et pratique',
-            description: 'Objectif principal&nbsp;: comprendre comment les choses fonctionnent, concrètement.',
+            description: 'Objectif principal : comprendre comment les choses fonctionnent, concrètement.',
             bilan: 'Une année “artisanale”, centrée sur le faire, où la complexité reste maîtrisable et visible.',
             skills: {
                 'but-realiser': {
@@ -109,7 +185,7 @@ const yearDataByLang: Record<Locale, YearData[]> = {
             label: 'BUT 2',
             title: 'Structuration et cadre professionnel',
             description:
-                'Cette année se spécialise: le BUT offrant quatre parcours. Je choisis le parcours C&nbsp;Administration, gestion et exploitation des données. Objectif principal: rendre la pratique lisible dans un contexte d’entreprise.',
+                'Cette année se spécialise : le BUT offrant quatre parcours. Je choisis le parcours C Administration, gestion et exploitation des données. Objectif principal : rendre la pratique lisible dans un contexte d’entreprise.',
             bilan: 'Cette année donne un vocabulaire, des méthodes et des cadres à ce qui était jusque-là intuitif.',
             skills: {
                 'but-realiser': {
@@ -399,12 +475,12 @@ const yearDataByLang: Record<Locale, YearData[]> = {
     ],
 };
 
-const yearData = yearDataByLang[lang];
-const yearTabsLabel = lang === 'fr' ? 'Progression par année' : 'Year-by-year progression';
-const synthesisHeading = lang === 'fr' ? 'Synthèse globale' : 'Overall synthesis';
-const yearLabel = lang === 'fr' ? 'Année' : 'Year';
+const yearData = yearDataByLang[locale];
+const yearTabsLabel = locale === 'fr' ? 'Progression par année' : 'Year-by-year progression';
+const synthesisHeading = locale === 'fr' ? 'Synthèse globale' : 'Overall synthesis';
+const yearLabel = locale === 'fr' ? 'Année' : 'Year';
 
-const synthesisBodyEntry = await getEntry('textual', `${lang}/but-informatique`);
+const synthesisBodyEntry = await getEntry('textual', `${locale}/but-informatique`);
 if (!synthesisBodyEntry) {
     throw new Error('Missing BUT Informatique synthesis body');
 }
@@ -419,27 +495,89 @@ function projectsForYearAndSkill(yearTag: string, skillTag: string) {
 
 <section class='but-body margined'>
     <div id='titre'>
-        <Section heading={langData.but.h1} />
+        <Section
+            heading={
+                locale === 'fr' ? (
+                    <>
+                        <abbr title='Bachelor Universitaire Technologique'>BUT</abbr> Informatique
+                    </>
+                ) : (
+                    <>
+                        <abbr title='Bachelor Universitaire Technologique'>BUT</abbr> Computer Science
+                    </>
+                )
+            }
+        />
         <img
             src='/portfolio/img/but.webp'
-            alt={langData.but['but-logo-alt']}
+            alt={butCopy.logoAlt}
             width='95'
             height='96'
             loading='lazy'
-            title={langData.but['but-logo-alt']}
+            title={butCopy.logoAlt}
         />
     </div>
-    <article id='presentation' set:html={langData.but.description} />
+    <article id='presentation'>
+        {locale === 'fr' ? (
+            <>
+                <p>
+                    Concevoir, réaliser et mettre en œuvre des solutions informatiques qui répondent aux
+                    besoins de transformation numérique des entreprises, voilà le quotidien du titulaire du
+                    BUT informatique, quel que soit le secteur dans lequel travaille son entreprise.
+                </p>
+                <p>
+                    En trois ans après le bac, le BUT offre une formation universitaire qui mêle théorie et
+                    pratique, avec un accent mis sur une professionnalisation progressive pour une insertion
+                    rapide, tout en garantissant un niveau scientifique suffisant pour permettre de continuer
+                    des études pour ceux qui le souhaitent.
+                </p>
+                <p>
+                    Le titulaire du BUT spécialité informatique est compétent sur les plans technique et
+                    méthodologique tout en étant sensibilisé aux problématiques actuelles (sécurité des données,
+                    <em>cloud computing</em>, intelligence artificielle), sur les questions sociétales,
+                    juridiques, éthiques et environnementales liées aux usages du numérique.
+                </p>
+                <p>
+                    À l’issue d’un tronc commun d’un an, l’étudiant pourra, en fonction de son projet
+                    professionnel, choisir l’un des quatre parcours proposés par la spécialité informatique.
+                </p>
+            </>
+        ) : (
+            <>
+                <p>
+                    Designing, creating and implementing IT solutions that meet the digital transformation
+                    needs of companies is the daily life of the holder of the BUT in IT, regardless of the
+                    sector in which their company works.
+                </p>
+                <p>
+                    In three years after the baccalaureate, the BUT offers university training that combines
+                    theory and practice, with an emphasis on progressive professionalization for rapid
+                    integration, while guaranteeing a sufficient scientific level to allow those who wish to
+                    continue their studies.
+                </p>
+                <p>
+                    The holder of the BUT specializing in IT is competent on technical and methodological levels
+                    while being aware of current issues (data security, <em>cloud computing</em>, artificial
+                    intelligence), on societal, legal, ethical and environmental issues related to the uses of
+                    digital technology.
+                </p>
+                <p>
+                    At the end of a one-year common core, the student will be able, depending on their
+                    professional project, to choose one of the four paths offered by the IT specialization.
+                </p>
+            </>
+        )}
+    </article>
     <a
         class='lvl button-link'
         target='_blank'
         rel='noopener noreferrer'
         href='https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf'>
-        {langData.but['link-text-syllabus']}
+        {butCopy.linkTextSyllabus}
     </a>
     <section id='progression'>
         <h2>{yearTabsLabel}</h2>
-        <p set:html={langData.but['skills-abstract']} />
+        <p>{butCopy.skillsAbstract}</p>
         <div class='tabs' data-tabs='but-years'>
             <div class='tablist' role='tablist' aria-label={yearTabsLabel}>
                 {
@@ -466,9 +604,9 @@ function projectsForYearAndSkill(yearTag: string, skillTag: string) {
                         <h3>
                             {yearLabel} {index + 1} &mdash; {year.title}
                         </h3>
-                        <p class='year-description' set:html={year.description} />
+                        <p class='year-description'>{year.description}</p>
                         <p class='year-bilan'>
-                            <em set:html={year.bilan} />
+                            <em>{year.bilan}</em>
                         </p>
                         <ul class='year-skills lvl'>
                             {Object.entries(year.skills).map(([skillId, skillData], i) => {
@@ -476,11 +614,11 @@ function projectsForYearAndSkill(yearTag: string, skillTag: string) {
                                 return (
                                     <li style={`--bg-img: url(/portfolio/img/skill/${i + 1}.jpg)`} class='year-skill'>
                                         <h3>
-                                            {langData.but['fmt-h3-skill']
+                                            {butCopy.fmtSkill
                                                 .replace('%d', String(i + 1))
                                                 .replace('%s', skillNameByTag[skillId])}
                                         </h3>
-                                        <p set:html={langData.but.skills[i].desc} />
+                                        <p>{butCopy.skills[i].desc}</p>
                                         <ul class='apprentissages'>
                                             {skillData.ac.map(item => (
                                                 <li>{item}</li>
@@ -488,10 +626,9 @@ function projectsForYearAndSkill(yearTag: string, skillTag: string) {
                                         </ul>
                                         {skillProjects.length > 0 ? (
                                             <ProjectCardList
-                                                lang={lang}
                                                 langLabels={{
-                                                    ongoing: langData.ongoing,
-                                                    fmtTitle: langData.fmtTitle,
+                                                    ongoing: labels.labels.ongoing,
+                                                    fmtTitle: labels.labels.fmtTitle,
                                                 }}
                                                 projects={skillProjects}
                                                 tagsById={tagsById}
@@ -517,13 +654,22 @@ function projectsForYearAndSkill(yearTag: string, skillTag: string) {
         <figure class='figure'>
             <img
                 src='/portfolio/img/iut-lannion.jpg'
-                alt={langData.but['iut-alt']}
+                alt={butCopy.iutAlt}
                 width='1200'
                 height='630'
                 loading='lazy'
-                title={langData.but['iut-alt']}
+                title={butCopy.iutAlt}
             />
-            <figcaption set:html={langData.but['iut-caption']} />
+            <figcaption>
+                {locale === 'fr' ? (
+                    <>L'IUT de Lannion (Côtes d'Armor). C'est ici que je fais mon BUT Informatique.</>
+                ) : (
+                    <>
+                        The IUT of Lannion (<em>Côtes d'Armor</em>, France). This is where I am doing my BUT in
+                        Computer Science.
+                    </>
+                )}
+            </figcaption>
         </figure>
     </div>
 </section>

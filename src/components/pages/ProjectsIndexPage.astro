@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import type { LangEntry } from '../../lib/content';
 
 import '../../styles/projects.scss';
 
@@ -12,20 +11,16 @@ type Copy = {
 };
 
 type Props = {
-    lang: string;
-    langData: LangEntry['data'];
     copy: Copy;
 };
 
 const props: Props = Astro.props;
-const { lang, langData, copy } = props;
+const { copy } = props;
 
 ---
 
 <BaseLayout
-    lang={lang}
-    pageName='projects'
-    langData={langData}>
+    pageName='projects'>
     <main>
         <datalist id='project-titles'>
             <!-- Fill this up dynamically -->

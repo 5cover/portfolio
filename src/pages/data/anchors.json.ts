@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content';
+import { jsonResponse } from '../../lib/data';
 
 export async function GET() {
   const anchors = await getCollection('anchors');
@@ -10,9 +11,5 @@ export async function GET() {
     return acc;
   }, {});
 
-  return new Response(JSON.stringify(data), {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  return jsonResponse(data);
 }
