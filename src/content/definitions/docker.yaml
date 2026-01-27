@@ -6,12 +6,12 @@
       "fr": "Docker"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Docker_(software)",
     "fr": "https://fr.wikipedia.org/wiki/Docker_(logiciel)"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/docker/logo.png"
+    
+    "src": "/portfolio/img/definition/docker/logo.png"
   }
 }

@@ -2,8 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
 import Gallery from '../Gallery.astro';
-import Graphic from '../Graphic.astro';
-import LinkList from '../LinkList.astro';
+import Graphic from '../Graphic';
+import LinkList from '../LinkList';
 import ReferenceList from '../ReferenceList.astro';
 import { getAnchors, getLiterature, getTextualEntry, mapById } from '../../lib/content';
 import { getLabels, normalizeLocale } from '../../i18n/site';
@@ -39,8 +39,7 @@ const logoTitle = copy.fmtTitle.replace('%s', entry.data.title);
             {
                 entry.data.logo ? (
                     <Graphic
-                        url={entry.data.logo.url}
-                        isThemedSvg={entry.data.logo.isThemedSvg}
+                        of={entry.data.logo}
                         alt={logoTitle}
                         title={logoTitle}
                         class='logo'

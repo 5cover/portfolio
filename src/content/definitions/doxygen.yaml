@@ -6,12 +6,12 @@
       "fr": "Doxygen"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Doxygen",
     "fr": "https://fr.wikipedia.org/wiki/Doxygen"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/doxygen/logo.png"
+    
+    "src": "/portfolio/img/definition/doxygen/logo.png"
   }
 }

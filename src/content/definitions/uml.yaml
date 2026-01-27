@@ -10,8 +10,8 @@
       "fr": "UML"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Unified_Modeling_Language",
     "fr": "https://fr.wikipedia.org/wiki/UML_(informatique)"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/uml/logo.svg"
+    
+    "src": "/portfolio/img/definition/uml/logo.svg"
   }
 }

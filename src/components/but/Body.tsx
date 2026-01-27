@@ -1,4 +1,4 @@
-import ProjectCardList from '../ProjectCardList.astro';
+import ProjectCardList from '../ProjectCardList';
 import {
     getAnchors,
     getProjects,

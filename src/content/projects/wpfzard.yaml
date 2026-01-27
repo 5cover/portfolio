@@ -82,8 +82,8 @@
     "fr": []
   },
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/projects/wpfzard/logo.png"
+    
+    "src": "/portfolio/img/projects/wpfzard/logo.png"
   },
-  "background": null
+  
 }

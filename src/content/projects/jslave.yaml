@@ -12,7 +12,7 @@
     "fr": "Personnel"
   },
   "startDate": "2024-05-30",
-  "endDate": null,
+  
   "tags": [
     "low-level",
     "cli",
@@ -60,6 +60,6 @@
     "en": [],
     "fr": []
   },
-  "logo": null,
-  "background": null
+  
+  
 }

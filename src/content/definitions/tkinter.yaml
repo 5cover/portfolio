@@ -6,12 +6,12 @@
       "fr": "Tkinter"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,6 +22,6 @@
     "en": "https://en.wikipedia.org/wiki/Tkinter",
     "fr": "https://fr.wikipedia.org/wiki/Tkinter"
   },
-  "background": null,
-  "logo": null
+  
+  
 }

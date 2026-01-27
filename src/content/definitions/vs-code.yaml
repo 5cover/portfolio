@@ -10,8 +10,8 @@
       "fr": "VS Code"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/vs-code/bg.png",
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/vs-code/logo.svg"
+    
+    "src": "/portfolio/img/definition/vs-code/logo.svg"
   }
 }

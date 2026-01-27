@@ -10,8 +10,8 @@
       "fr": "XML"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/xml/bg.png",
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/xml/logo.svg"
+    
+    "src": "/portfolio/img/definition/xml/logo.svg"
   }
 }

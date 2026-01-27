@@ -1,6 +1,6 @@
 ---
-import Graphic from './Graphic.astro';
-import LinkList from './LinkList.astro';
+import Graphic from './Graphic';
+import LinkList from './LinkList';
 import { detailHref } from '../lib/links';
 import type { AnchorEntry, LocalizedLiteratureEntry } from '../lib/content';
 import { normalizeLocale } from '../i18n/site';
@@ -31,8 +31,7 @@ const backgroundStyle = entryData.background
 <li id={entry.id} style={backgroundStyle}>
   {entryData.logo ? (
     <Graphic
-      url={entryData.logo.url}
-      isThemedSvg={entryData.logo.isThemedSvg}
+      of={entryData.logo}
       alt={logoTitle}
       title={logoTitle}
       class="logo"

@@ -6,12 +6,12 @@
       "fr": "GitLab"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/GitLab",
     "fr": "https://fr.wikipedia.org/wiki/GitLab"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/gitlab/logo.svg"
+    
+    "src": "/portfolio/img/definition/gitlab/logo.svg"
   }
 }

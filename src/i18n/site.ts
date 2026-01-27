@@ -1,5 +1,6 @@
-import type { LanguageInfo, NavItem, ThemeLabels } from '../lib/ui-types';
+import type { LanguageInfo, NavItem, ThemeLabels } from '../lib/types';
 
+export type Localized<T> = Record<Locale, T>;
 export type Locale = 'fr' | 'en';
 export const locales = ['fr', 'en'] as const;
 

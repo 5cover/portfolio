@@ -6,12 +6,12 @@
       "fr": "Spyder"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://www.spyder-ide.org/",
     "fr": "https://www.spyder-ide.org/"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/spyder/logo.svg"
+    
+    "src": "/portfolio/img/definition/spyder/logo.svg"
   }
 }

@@ -6,12 +6,12 @@
       "fr": "Markdown"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/markdown/bg.png",
   "logo": {
-    "isThemedSvg": true,
-    "url": "/portfolio/img/definition/markdown/logo.svg"
+    "kind": "svg",
+    "src": "/portfolio/img/definition/markdown/logo.svg"
   }
 }

@@ -6,12 +6,12 @@
       "fr": "Assistant"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,6 +22,6 @@
     "en": "https://learn.microsoft.com/en/windows/win32/uxguide/win-wizards",
     "fr": "https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards"
   },
-  "background": null,
-  "logo": null
+  
+  
 }

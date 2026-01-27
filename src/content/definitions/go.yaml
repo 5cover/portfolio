@@ -6,8 +6,8 @@
       "fr": "Golang"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
       "en": "Go",
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Go_(programming_language)",
     "fr": "https://fr.wikipedia.org/wiki/Go_(langage)"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/go/logo.svg"
+    
+    "src": "/portfolio/img/definition/go/logo.svg"
   }
 }

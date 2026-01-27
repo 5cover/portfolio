@@ -6,12 +6,12 @@
       "fr": "MySQL"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/MySQL",
     "fr": "https://fr.wikipedia.org/wiki/MySQL"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/mysql/logo.svg"
+    
+    "src": "/portfolio/img/definition/mysql/logo.svg"
   }
 }

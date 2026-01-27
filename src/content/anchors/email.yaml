@@ -1,4 +1,4 @@
 {
-  "url": "/portfolio/img/social/email.svg",
-  "isThemedSvg": true
+  "src": "/portfolio/img/social/email.svg",
+  "kind": "svg"
 }

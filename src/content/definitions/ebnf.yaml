@@ -10,8 +10,8 @@
       "fr": "EBNF"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,6 +22,6 @@
     "en": "https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form",
     "fr": "https://fr.wikipedia.org/wiki/Extended_Backus-Naur_Form"
   },
-  "background": null,
-  "logo": null
+  
+  
 }

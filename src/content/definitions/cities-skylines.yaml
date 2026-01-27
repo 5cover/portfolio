@@ -6,12 +6,12 @@
       "fr": "Cities: Skylines"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/cities-skylines/bg.jpg",
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/cities-skylines/logo.png"
+    
+    "src": "/portfolio/img/definition/cities-skylines/logo.png"
   }
 }

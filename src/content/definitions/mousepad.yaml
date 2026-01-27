@@ -6,12 +6,12 @@
       "fr": "Mousepad"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,6 +22,6 @@
     "en": "https://github.com/codebrainz/mousepad",
     "fr": "https://doc.ubuntu-fr.org/mousepad"
   },
-  "background": null,
-  "logo": null
+  
+  
 }

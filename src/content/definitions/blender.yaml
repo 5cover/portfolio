@@ -6,12 +6,12 @@
       "fr": "Blender"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/blender/bg.png",
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/blender/logo.svg"
+    
+    "src": "/portfolio/img/definition/blender/logo.svg"
   }
 }

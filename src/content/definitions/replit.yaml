@@ -6,12 +6,12 @@
       "fr": "Replit"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Replit",
     "fr": "https://en.wikipedia.org/wiki/Replit"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/replit/logo.svg"
+    
+    "src": "/portfolio/img/definition/replit/logo.svg"
   }
 }

@@ -10,8 +10,8 @@
       "fr": "HTML"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/html/bg.png",
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/html/logo.svg"
+    
+    "src": "/portfolio/img/definition/html/logo.svg"
   }
 }

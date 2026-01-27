@@ -1,21 +1,16 @@
 ---
-import Graphic from './Graphic.astro';
+import Graphic from './Graphic';
 
 type Props = {
-  githubTitle: string;
+    githubTitle: string;
 };
 
 const props: Props = Astro.props;
 const { githubTitle } = props;
 ---
-<footer class="lvl">
-  <small>&copy; <time datetime="2024" data-current-year>2024</time> Raphaël Bardini</small>
-  <a target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/portfolio" title={githubTitle}>
-    <Graphic
-      url="/portfolio/img/social/github.svg"
-      isThemedSvg={true}
-      alt="GitHub"
-      title={githubTitle}
-    />
-  </a>
+<footer class='lvl'>
+    <small>&copy; <time datetime='2024' data-current-year>2024</time> Raphaël Bardini</small>
+    <a target='_blank' rel='noopener noreferrer' href='https://github.com/5cover/portfolio' title={githubTitle}>
+        <Graphic src='/portfolio/img/social/github.svg' kind='svg' alt='GitHub' title={githubTitle} />
+    </a>
 </footer>

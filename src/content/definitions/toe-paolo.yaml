@@ -6,8 +6,8 @@
       "fr": "Paolo Vito Toé"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
       "en": "Paolo Toé",
@@ -22,9 +22,9 @@
     "en": "https://vitovitae.github.io/",
     "fr": "https://vitovitae.github.io/"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/toe-paolo/logo.jpg"
+    
+    "src": "/portfolio/img/definition/toe-paolo/logo.jpg"
   }
 }

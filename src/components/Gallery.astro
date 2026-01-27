@@ -1,38 +1,36 @@
 ---
-type GalleryItem = {
-  caption: string;
-  url: string | null;
-  iframeSrc: string | null;
-  content: string | null;
-};
+import type { GalleryItem } from '../content/collections';
 
-type Props = {
-  items: GalleryItem[];
+interface Props {
+    items: GalleryItem[];
 };
 
 const props: Props = Astro.props;
 const { items } = props;
 ---
-<ul class="lvl gallery">
-  {items.map((item, index) => (
-    <li>
-      <figure id={`gallery-${index + 1}`} class="figure">
-        {item.url ? (
-          <img src={item.url} alt={item.caption} title={item.caption} loading="lazy" />
-        ) : item.iframeSrc ? (
-          <iframe
-            src={item.iframeSrc}
-            frameborder="0"
-            loading="lazy"
-            width="300"
-            height="300"
-            title={item.caption}
-          ></iframe>
-        ) : item.content ? (
-          <Fragment set:html={item.content} />
-        ) : null}
-        <figcaption set:html={item.caption}></figcaption>
-      </figure>
-    </li>
-  ))}
+
+<ul class='lvl gallery'>
+    {
+        items.map((item, index) => (
+            <li>
+                <figure id={`gallery-${index + 1}`} class='figure'>
+                    {item.src ? (
+                        <img src={item.src} alt={item.caption} title={item.caption} loading='lazy' />
+                    ) : item.iframeSrc ? (
+                        <iframe
+                            src={item.iframeSrc}
+                            frameborder='0'
+                            loading='lazy'
+                            width='300'
+                            height='300'
+                            title={item.caption}
+                        />
+                    ) : item.content ? (
+                        <Fragment set:html={item.content} />
+                    ) : null}
+                    <figcaption set:html={item.caption} />
+                </figure>
+            </li>
+        ))
+    }
 </ul>

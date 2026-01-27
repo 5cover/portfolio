@@ -6,12 +6,12 @@
       "fr": "GlooMaps"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://www.gloomaps.com",
     "fr": "https://www.gloomaps.com"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/gloomaps/logo.png"
+    
+    "src": "/portfolio/img/definition/gloomaps/logo.png"
   }
 }

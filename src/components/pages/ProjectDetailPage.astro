@@ -3,8 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
 import DefinitionCardList from '../DefinitionCardList.astro';
 import Gallery from '../Gallery.astro';
-import Graphic from '../Graphic.astro';
-import LinkList from '../LinkList.astro';
+import Graphic from '../Graphic';
+import LinkList from '../LinkList';
 import ReferenceList from '../ReferenceList.astro';
 
 import type { AstroComponentFactory } from 'astro';
@@ -35,11 +35,7 @@ type Props = {
 };
 
 const props: Props = Astro.props;
-const {
-    project,
-    ProjectBody,
-    copy,
-} = props;
+const { project, ProjectBody, copy } = props;
 
 function isDefinition(value: DefinitionLocalizedData | undefined): value is DefinitionLocalizedData {
     return Boolean(value);
@@ -64,91 +60,97 @@ const startDate = projectData.startDate;
 const endDate = projectData.endDate;
 const startLabel = startDate ? formatDate(startDate, locale) : '';
 const endLabel = endDate ? formatDate(endDate, locale) : '';
-const context = projectData.context
-    ? projectData.context.charAt(0).toUpperCase() + projectData.context.slice(1)
-    : '';
+const context = projectData.context ? projectData.context.charAt(0).toUpperCase() + projectData.context.slice(1) : '';
 
 const teamDefs = projectData.team.map(memberId => definitionsById[memberId]).filter(isDefinition);
 const techDefs = projectData.technologies.map(techId => definitionsById[techId]).filter(isDefinition);
 ---
 
-<BaseLayout
-    pageName={`projects/${project.id}`}>
+<BaseLayout pageName={`projects/${project.id}`}>
     <main style={backgroundStyle}>
         <header>
-            <ul class="list-rect">
-                {projectData.tags.map(tagId => (
-                    <li>
-                        <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`} set:html={tagsById[tagId]?.title ?? tagId}></a>
-                    </li>
-                ))}
+            <ul class='list-rect'>
+                {
+                    projectData.tags.map(tagId => (
+                        <li>
+                            <a
+                                href={`${pageHref(locale, 'projects')}?tag=${tagId}`}
+                                set:html={tagsById[tagId]?.title ?? tagId}
+                            />
+                        </li>
+                    ))
+                }
             </ul>
-            <h1 set:html={projectData.title}></h1>
-            {projectData.logo ? (
-                <Graphic
-                    url={projectData.logo.url}
-                    isThemedSvg={projectData.logo.isThemedSvg}
-                    alt={logoTitle}
-                    title={logoTitle}
-                    class="logo"
-                />
-            ) : null}
-            <p class="abstract" set:html={projectData.abstract}></p>
-            <div class="status-context">
-                {context ? <small class="context">{context}</small> : null}
-                {startDate ? (
-                    <small class="status">
-                        <time datetime={startDate}>{startLabel}</time> &ndash;{' '}
-                        {endDate ? <time datetime={endDate}>{endLabel}</time> : copy.ongoing}
-                    </small>
-                ) : null}
+            <h1 set:html={projectData.title} />
+            {projectData.logo ? <Graphic of={projectData.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
+            <p class='abstract' set:html={projectData.abstract} />
+            <div class='status-context'>
+                {context ? <small class='context'>{context}</small> : null}
+                {
+                    startDate ? (
+                        <small class='status'>
+                            <time datetime={startDate}>{startLabel}</time> &ndash;{' '}
+                            {endDate ? <time datetime={endDate}>{endLabel}</time> : copy.ongoing}
+                        </small>
+                    ) : null
+                }
             </div>
         </header>
-        {projectData.links.length > 0 ? (
-            <section id="links">
-                <h2>{copy.links}</h2>
-                <LinkList links={projectData.links} anchorsById={anchorsById} variant="page" />
-            </section>
-        ) : null}
-        {teamDefs.length > 0 ? (
-            <section id="team">
-                <h2>{copy.team}</h2>
-                <DefinitionCardList
-                    definitions={teamDefs}
-                    typesById={typesById}
-                    langLabels={{ fmtTitle: copy.fmtTitle }}
-                />
-            </section>
-        ) : null}
-        <section id="story">
+        {
+            projectData.links.length > 0 ? (
+                <section id='links'>
+                    <h2>{copy.links}</h2>
+                    <LinkList links={projectData.links} anchorsById={anchorsById} variant='page' />
+                </section>
+            ) : null
+        }
+        {
+            teamDefs.length > 0 ? (
+                <section id='team'>
+                    <h2>{copy.team}</h2>
+                    <DefinitionCardList
+                        definitions={teamDefs}
+                        typesById={typesById}
+                        langLabels={{ fmtTitle: copy.fmtTitle }}
+                    />
+                </section>
+            ) : null
+        }
+        <section id='story'>
             <h2>{copy.story}</h2>
             <TextualContent content={ProjectBody} />
         </section>
-        {projectData.references.length > 0 ? (
-            <section id="references">
-                <h2>{copy.references}</h2>
-                <ReferenceList
-                    references={projectData.references}
-                    anchorsById={anchorsById}
-                    backlinkLabel={copy.refJumpUp}
-                />
-            </section>
-        ) : null}
-        {techDefs.length > 0 ? (
-            <section id="technologies">
-                <h2>{copy.technologies}</h2>
-                <DefinitionCardList
-                    definitions={techDefs}
-                    typesById={typesById}
-                    langLabels={{ fmtTitle: copy.fmtTitle }}
-                />
-            </section>
-        ) : null}
-        {projectData.gallery.length > 0 ? (
-            <section id="gallery">
-                <h2>{copy.gallery}</h2>
-                <Gallery items={projectData.gallery} />
-            </section>
-        ) : null}
+        {
+            projectData.references.length > 0 ? (
+                <section id='references'>
+                    <h2>{copy.references}</h2>
+                    <ReferenceList
+                        references={projectData.references}
+                        anchorsById={anchorsById}
+                        backlinkLabel={copy.refJumpUp}
+                    />
+                </section>
+            ) : null
+        }
+        {
+            techDefs.length > 0 ? (
+                <section id='technologies'>
+                    <h2>{copy.technologies}</h2>
+                    <DefinitionCardList
+                        definitions={techDefs}
+                        typesById={typesById}
+                        langLabels={{ fmtTitle: copy.fmtTitle }}
+                    />
+                </section>
+            ) : null
+        }
+        {
+            projectData.gallery.length > 0 ? (
+                <section id='gallery'>
+                    <h2>{copy.gallery}</h2>
+                    <Gallery items={projectData.gallery} />
+                </section>
+            ) : null
+        }
     </main>
 </BaseLayout>

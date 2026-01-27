@@ -19,3 +19,12 @@ export type ThemeLabels = {
 };
 
 export type Copy = string | ComponentChildren;
+
+export type Patch<Parent, Child> = Omit<Parent, keyof Child> & Child;
+
+export type ImplicitUndefined<T> = Patch<
+    T,
+    { [P in keyof T as undefined extends T[P] ? P : never]?: T[P] }
+>;
+
+export type ExplicitUndefined<T> = { [P in keyof T & {}]: T[P] };

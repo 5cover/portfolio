@@ -6,12 +6,12 @@
       "fr": "Mattéo Kervadec"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://matteo-k.github.io/Matteo-K_Portfolio.github.io/",
     "fr": "https://matteo-k.github.io/Matteo-K_Portfolio.github.io/"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/kervadec-matteo/logo.jpg"
+    
+    "src": "/portfolio/img/definition/kervadec-matteo/logo.jpg"
   }
 }

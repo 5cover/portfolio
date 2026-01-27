@@ -1,4 +1,4 @@
-import type { Locale } from '../i18n/site';
+import type { Locale, Localized } from '../i18n/site';
 import { normalizeLocale } from '../i18n/site';
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 export type AnchorEntry = CollectionEntry<'anchors'>;
@@ -14,8 +14,6 @@ export type TypeEntry = CollectionEntry<'types'>;
 
 export type TextualKind = 'history' | 'history-body' | 'literature' | 'projects';
 export type { Locale };
-export type Localized<T> = Record<Locale, T>;
-
 export type ProjectData = ProjectEntry['data'];
 export type ProjectLink = ProjectData['links']['en'][number];
 export type ProjectReference = ProjectData['references']['en'][number];
@@ -27,7 +25,7 @@ export type ProjectLocalizedData = Omit<
 > & {
     title: string;
     abstract: string;
-    context: string | null;
+    context?: string;
     links: ProjectLink[];
     references: ProjectReference[];
     gallery: ProjectGalleryItem[];
@@ -61,8 +59,8 @@ export type DefinitionData = DefinitionEntry['data'];
 export type DefinitionLocalizedData = Omit<DefinitionData, 'name' | 'synopsis' | 'wiki'> & {
     name: {
         full: string;
-        abbr: string | null;
-        short: string | null;
+        abbr?: string;
+        short?: string;
     };
     synopsis: string;
     wiki: string;
@@ -84,11 +82,11 @@ export type HistoryData = HistoryEntry['data'];
 export type HistoryLocalizedData = Omit<HistoryData, 'title' | 'meta' | 'media'> & {
     title: string;
     meta: string;
-    media: {
+    media?: {
         year: number;
         img: string;
         alt: string;
-    } | null;
+    };
 };
 
 export type LocalizedHistoryEntry = Omit<HistoryEntry, 'data'> & {
@@ -109,7 +107,9 @@ export function buildTextualId(lang: string, kind: TextualKind, id: string): str
     return `${lang}/${kind}/${id}`;
 }
 
-function localizeValue<T>(value: Localized<T>, lang: string): T {
+function localizeValue<T>(value: Localized<T>, lang: string): T;
+function localizeValue<T>(value: Partial<Localized<T | undefined>>, lang: string): T | undefined;
+function localizeValue<T>(value: Partial<Localized<T | undefined>>, lang: string): T | undefined {
     const key = normalizeLocale(lang);
     return value[key];
 }
@@ -175,7 +175,7 @@ function localizeHistoryData(data: HistoryData, lang: string): HistoryLocalizedD
                   img: data.media.img,
                   alt: localizeValue(data.media.alt, lang),
               }
-            : null,
+            : undefined,
     };
 }
 

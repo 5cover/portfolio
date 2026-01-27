@@ -10,8 +10,8 @@
       "fr": "NASM"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Netwide_Assembler",
     "fr": "https://fr.wikipedia.org/wiki/Netwide_Assembler"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/nasm/logo.svg"
+    
+    "src": "/portfolio/img/definition/nasm/logo.svg"
   }
 }

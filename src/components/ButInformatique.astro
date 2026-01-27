@@ -1,7 +1,6 @@
 ---
 import { normalizeLocale } from '../i18n/site';
 import ButInformatiqueBody, { data } from './but/Body';
-
 const locale = normalizeLocale(Astro.currentLocale);
 const { default: copy } = await import(`./but/${locale}.tsx`);
 ---
@@ -9,4 +8,4 @@ const { default: copy } = await import(`./but/${locale}.tsx`);
 <ButInformatiqueBody data={await data(locale)} copy={copy}>
     <slot />
 </ButInformatiqueBody>
-<script src='../../scripts/but'></script>
+<script src='../../src/scripts/but.ts'></script>

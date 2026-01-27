@@ -6,12 +6,12 @@
       "fr": "Chaîne de responsabilité"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,6 +22,6 @@
     "en": "https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern",
     "fr": "https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_responsabilit%C3%A9"
   },
-  "background": null,
-  "logo": null
+  
+  
 }

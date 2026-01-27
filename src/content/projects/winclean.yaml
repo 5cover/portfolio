@@ -12,7 +12,7 @@
     "fr": "Personnel"
   },
   "startDate": "2022-08-15",
-  "endDate": null,
+  
   "tags": [
     "full-stack",
     "oop",
@@ -64,35 +64,35 @@
     "en": [
       {
         "caption": "Script execution",
-        "url": "/portfolio/img/projects/winclean/gallery/1.png",
-        "iframeSrc": null,
-        "content": null
+        "src": "/portfolio/img/projects/winclean/gallery/1.png",
+        
+        
       },
       {
         "caption": "Application main window",
-        "url": "/portfolio/img/projects/winclean/gallery/2.png",
-        "iframeSrc": null,
-        "content": null
+        "src": "/portfolio/img/projects/winclean/gallery/2.png",
+        
+        
       }
     ],
     "fr": [
       {
         "caption": "Exécution des scripts",
-        "url": "/portfolio/img/projects/winclean/gallery/1.png",
-        "iframeSrc": null,
-        "content": null
+        "src": "/portfolio/img/projects/winclean/gallery/1.png",
+        
+        
       },
       {
         "caption": "Fenêtre principale de l'application",
-        "url": "/portfolio/img/projects/winclean/gallery/2.png",
-        "iframeSrc": null,
-        "content": null
+        "src": "/portfolio/img/projects/winclean/gallery/2.png",
+        
+        
       }
     ]
   },
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/projects/winclean/logo.png"
+    
+    "src": "/portfolio/img/projects/winclean/logo.png"
   },
   "background": "/portfolio/img/projects/winclean/bg.png"
 }

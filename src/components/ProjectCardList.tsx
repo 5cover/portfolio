@@ -1,8 +1,7 @@
----
-import ProjectCard from './ProjectCard.astro';
+import ProjectCard from './ProjectCard';
 import type { AnchorEntry, LocalizedProjectEntry, LocalizedTagEntry } from '../lib/content';
 
-type Props = {
+interface Props {
     class?: string;
     langLabels: {
         ongoing: string;
@@ -14,11 +13,7 @@ type Props = {
     headingLevel?: number;
 };
 
-const props: Props = Astro.props;
-const { langLabels, projects, tagsById, anchorsById, headingLevel = 3 } = props;
----
-
-<ul class:list={['lvl', 'list-project', props.class]} '>
+export default ({ langLabels, projects, tagsById, anchorsById, headingLevel = 3, class: className = '' }: Props) => (<ul class={`lvl list-project ${className}`}>
     {
         projects.map(project => (
             <ProjectCard
@@ -30,4 +25,4 @@ const { langLabels, projects, tagsById, anchorsById, headingLevel = 3 } = props;
             />
         ))
     }
-</ul>
+</ul>)

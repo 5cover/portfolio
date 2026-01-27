@@ -6,12 +6,12 @@
       "fr": "Anno 2070"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Anno_2070",
     "fr": "https://fr.wikipedia.org/wiki/Anno_2070"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/anno2070/logo.png"
+    
+    "src": "/portfolio/img/definition/anno2070/logo.png"
   }
 }

@@ -6,12 +6,12 @@
       "fr": "SQL Workbench/J"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/sql-workbench/bg.png",
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/sql-workbench/logo.jpg"
+    
+    "src": "/portfolio/img/definition/sql-workbench/logo.jpg"
   }
 }

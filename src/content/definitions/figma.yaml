@@ -6,12 +6,12 @@
       "fr": "Figma"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Figma",
     "fr": "https://fr.wikipedia.org/wiki/Figma"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/figma/logo.svg"
+    
+    "src": "/portfolio/img/definition/figma/logo.svg"
   }
 }

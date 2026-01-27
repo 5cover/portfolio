@@ -10,8 +10,8 @@
       "fr": "CMake"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/CMake",
     "fr": "https://fr.wikipedia.org/wiki/CMake"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/cmake/logo.svg"
+    
+    "src": "/portfolio/img/definition/cmake/logo.svg"
   }
 }

@@ -6,8 +6,8 @@
       "fr": "Mermaid JS"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
       "en": "Mermaid",
@@ -22,9 +22,9 @@
     "en": "https://mermaid.js.org/",
     "fr": "https://mermaid.js.org/"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/mermaid/logo.png"
+    
+    "src": "/portfolio/img/definition/mermaid/logo.png"
   }
 }

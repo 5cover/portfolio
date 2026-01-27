@@ -6,8 +6,8 @@
       "fr": "Windows PowerShell"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
       "en": "PowerShell",
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/powershell/bg.png",
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/powershell/logo.svg"
+    
+    "src": "/portfolio/img/definition/powershell/logo.svg"
   }
 }

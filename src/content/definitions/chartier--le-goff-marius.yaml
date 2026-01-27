@@ -6,12 +6,12 @@
       "fr": "Marius Chartier--Le Goff"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://icelos6.wixsite.com/portfolio-marius-cha",
     "fr": "https://icelos6.wixsite.com/portfolio-marius-cha"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/chartier--le-goff-marius/logo.webp"
+    
+    "src": "/portfolio/img/definition/chartier--le-goff-marius/logo.webp"
   }
 }

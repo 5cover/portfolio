@@ -1,9 +1,9 @@
 {
   "platform": "E-mail",
   "name": "bardini.raphael@gmail.com",
-  "url": "mailto:bardini.raphael@gmail.com",
+  "src": "mailto:bardini.raphael@gmail.com",
   "icon": {
-    "isThemedSvg": true,
-    "url": "/portfolio/img/social/email.svg"
+    "kind": "svg",
+    "src": "/portfolio/img/social/email.svg"
   }
 }

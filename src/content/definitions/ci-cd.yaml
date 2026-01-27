@@ -10,8 +10,8 @@
       "fr": "CI/CD"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,6 +22,6 @@
     "en": "https://en.wikipedia.org/wiki/CI/CD",
     "fr": "https://fr.wikipedia.org/wiki/CI/CD"
   },
-  "background": null,
-  "logo": null
+  
+  
 }

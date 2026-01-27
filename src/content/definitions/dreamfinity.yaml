@@ -6,12 +6,12 @@
       "fr": "Dreamfinity"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://dreamfinity.org",
     "fr": "https://dreamfinity.org"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/dreamfinity/logo.svg"
+    
+    "src": "/portfolio/img/definition/dreamfinity/logo.svg"
   }
 }

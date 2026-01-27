@@ -10,8 +10,8 @@
       "fr": "SVG"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/svg/bg.png",
   "logo": {
-    "isThemedSvg": true,
-    "url": "/portfolio/img/definition/svg/logo.svg"
+    "kind": "svg",
+    "src": "/portfolio/img/definition/svg/logo.svg"
   }
 }

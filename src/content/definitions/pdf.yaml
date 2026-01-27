@@ -10,8 +10,8 @@
       "fr": "PDF"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/PDF",
     "fr": "https://fr.wikipedia.org/wiki/Portable_Document_Format"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/pdf/logo.svg"
+    
+    "src": "/portfolio/img/definition/pdf/logo.svg"
   }
 }

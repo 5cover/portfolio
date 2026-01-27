@@ -6,12 +6,12 @@
       "fr": "BuildCraft"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://mod-buildcraft.com/",
     "fr": "https://mod-buildcraft.com/"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/buildcraft/logo.png"
+    
+    "src": "/portfolio/img/definition/buildcraft/logo.png"
   }
 }

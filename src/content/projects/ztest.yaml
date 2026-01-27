@@ -12,7 +12,7 @@
     "fr": "Personnel"
   },
   "startDate": "2024-06-01",
-  "endDate": null,
+  
   "tags": [
     "software",
     "cli",
@@ -59,6 +59,6 @@
     "en": [],
     "fr": []
   },
-  "logo": null,
-  "background": null
+  
+  
 }

@@ -6,12 +6,12 @@
       "fr": "Visual Paradigm"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://www.visual-paradigm.com/",
     "fr": "https://www.visual-paradigm.com/"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/visual-paradigm/logo.png"
+    
+    "src": "/portfolio/img/definition/visual-paradigm/logo.png"
   }
 }

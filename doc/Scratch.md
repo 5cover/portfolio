@@ -101,3 +101,6 @@ deduplicate logic from pages
 
 experiment with MDX as translated JSX store using exports along with the main content.
 
+## remove useless types
+
+## fix clientside scripts and reuse cards

@@ -6,12 +6,12 @@
       "fr": "Inno Setup"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Inno_Setup",
     "fr": "https://fr.wikipedia.org/wiki/Inno_Setup"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/inno-setup/logo.png"
+    
+    "src": "/portfolio/img/definition/inno-setup/logo.png"
   }
 }

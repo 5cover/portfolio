@@ -49,8 +49,8 @@
     "fr": []
   },
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/projects/edplusplus/logo.png"
+    
+    "src": "/portfolio/img/projects/edplusplus/logo.png"
   },
-  "background": null
+  
 }

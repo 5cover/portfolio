@@ -86,12 +86,7 @@ Dynamic routes:
 
 ## Content Collections (Build Time Data)
 
-Astro content collections live in `src/content` and are defined in
-`src/content/config.ts`. This repo uses `type: 'data'` collections where each
-entry is a JSON object stored in a `.yaml` file. For most collections, there is
-one file per infonode (no per-language duplication) and localized strings are
-stored as `{ en: "...", fr: "..." }`.
-
+Astro content collections live in `src/content` and are defined in `src/content/collections.ts`. This repo uses `type: 'data'` collections where each entry is a JSON object stored in a `.yaml` file. For most collections, there is one file per infonode (no per-language duplication) and localized strings are stored as `{ en: "...", fr: "..." }`.
 Important collections:
 
 - `projects`: project cards + detail content (localized fields inline).

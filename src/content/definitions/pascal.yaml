@@ -6,12 +6,12 @@
       "fr": "Pascal"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/pascal/bg.png",
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/pascal/logo.svg"
+    
+    "src": "/portfolio/img/definition/pascal/logo.svg"
   }
 }

@@ -6,8 +6,8 @@
       "fr": "Microsoft .NET"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
       "en": ".NET",
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/.NET",
     "fr": "https://fr.wikipedia.org/wiki/.NET"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/dotnet/logo.svg"
+    
+    "src": "/portfolio/img/definition/dotnet/logo.svg"
   }
 }

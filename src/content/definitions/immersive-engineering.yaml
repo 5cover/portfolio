@@ -6,12 +6,12 @@
       "fr": "Immersive Engineering"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering",
     "fr": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/immersive-engineering/logo.png"
+    
+    "src": "/portfolio/img/definition/immersive-engineering/logo.png"
   }
 }

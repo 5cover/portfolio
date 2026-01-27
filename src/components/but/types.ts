@@ -1,4 +1,4 @@
-import type { Copy } from '../../lib/ui-types';
+import type { Copy } from '../../lib/types';
 
 export const SkillNames = ['realiser', 'optimiser', 'administrer', 'gerer', 'conduire', 'collaborer'] as const;
 export type SkillName = (typeof SkillNames)[number];

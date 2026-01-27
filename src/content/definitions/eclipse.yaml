@@ -6,12 +6,12 @@
       "fr": "Eclipse"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Eclipse_(software)",
     "fr": "https://fr.wikipedia.org/wiki/Eclipse_(projet)"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/eclipse/logo.png"
+    
+    "src": "/portfolio/img/definition/eclipse/logo.png"
   }
 }

@@ -1,48 +1,39 @@
 ---
-import Graphic from './Graphic.astro';
+import Graphic from './Graphic';
 import type { DefinitionLocalizedData, TypeLocalizedData } from '../lib/content';
 
 function buildDefinitionTitle(entry: DefinitionLocalizedData): string {
-  const abbr = entry.name.abbr;
-  return abbr ? `${entry.name.full} (${abbr})` : entry.name.full;
+    const abbr = entry.name.abbr;
+    return abbr ? `${entry.name.full} (${abbr})` : entry.name.full;
 }
 
 function formatTitle(fmt: string, title: string): string {
-  return fmt.replace('%s', title);
+    return fmt.replace('%s', title);
 }
 
 type Props = {
-  definition: DefinitionLocalizedData;
-  typesById: Record<string, TypeLocalizedData>;
-  langLabels: {
-    fmtTitle: string;
-  };
+    definition: DefinitionLocalizedData;
+    typesById: Record<string, TypeLocalizedData>;
+    langLabels: {
+        fmtTitle: string;
+    };
 };
 
 const props: Props = Astro.props;
 const { definition, typesById, langLabels } = props;
 const definitionTitle = buildDefinitionTitle(definition);
 const logoTitle = formatTitle(langLabels.fmtTitle, definitionTitle);
-const backgroundStyle = definition.background
-  ? `--bg-img-card: url(${definition.background})`
-  : undefined;
+const backgroundStyle = definition.background ? `--bg-img-card: url(${definition.background})` : undefined;
 const typeName = typesById[definition.type]?.title ?? definition.type;
 ---
-<article class="definition" style={backgroundStyle}>
-  <h4>
-    <a class="foil" target="_blank" rel="noopener noreferrer" href={definition.wiki}>
-      {definitionTitle}
-    </a>
-  </h4>
-  {definition.logo ? (
-    <Graphic
-      url={definition.logo.url}
-      isThemedSvg={definition.logo.isThemedSvg}
-      alt={logoTitle}
-      title={logoTitle}
-      class="logo"
-    />
-  ) : null}
-  <p class="type"><small>{typeName.charAt(0).toUpperCase() + typeName.slice(1)}</small></p>
-  <p class="synopsis" set:html={definition.synopsis}></p>
+
+<article class='definition' style={backgroundStyle}>
+    <h4>
+        <a class='foil' target='_blank' rel='noopener noreferrer' href={definition.wiki}>
+            {definitionTitle}
+        </a>
+    </h4>
+    {definition.logo ? <Graphic of={definition.logo} title={logoTitle} class='logo' /> : null}
+    <p class='type'><small>{typeName.charAt(0).toUpperCase() + typeName.slice(1)}</small></p>
+    <p class='synopsis' set:html={definition.synopsis} />
 </article>

@@ -53,9 +53,9 @@
     "fr": []
   },
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/zig/logo.svg"
+    
+    "src": "/portfolio/img/definition/zig/logo.svg"
   },
-  "background": null,
+  
   "tags": []
 }

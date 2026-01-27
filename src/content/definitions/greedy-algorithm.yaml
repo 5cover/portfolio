@@ -6,12 +6,12 @@
       "fr": "Algorithme glouton"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,6 +22,6 @@
     "en": "https://fr.wikipedia.org/wiki/Algorithme_glouton",
     "fr": "https://fr.wikipedia.org/wiki/Algorithme_glouton"
   },
-  "background": null,
-  "logo": null
+  
+  
 }

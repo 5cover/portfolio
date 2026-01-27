@@ -6,12 +6,12 @@
       "fr": "Rust"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Rust_(programming_language)",
     "fr": "https://fr.wikipedia.org/wiki/Rust_(langage)"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/rust/logo.png"
+    
+    "src": "/portfolio/img/definition/rust/logo.png"
   }
 }

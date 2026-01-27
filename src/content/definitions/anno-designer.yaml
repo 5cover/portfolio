@@ -6,12 +6,12 @@
       "fr": "Anno Designer"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://github.com/AnnoDesigner/anno-designer",
     "fr": "https://github.com/AnnoDesigner/anno-designer"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/anno-designer/logo.png"
+    
+    "src": "/portfolio/img/definition/anno-designer/logo.png"
   }
 }

@@ -51,80 +51,80 @@
     "en": [
       {
         "caption": "Pseudocode algorithm",
-        "url": null,
+        
         "iframeSrc": "/portfolio/img/projects/s1.01/algorithme-pseudocode.html",
-        "content": null
+        
       },
       {
         "caption": "Test book (extract)",
-        "url": null,
+        
         "iframeSrc": "/portfolio/img/projects/s1.01/cahier-de-tests.html",
-        "content": null
+        
       },
       {
         "caption": "Function list (extract)",
-        "url": null,
+        
         "iframeSrc": "/portfolio/img/projects/s1.01/liste-de-fonctions.html",
-        "content": null
+        
       },
       {
         "caption": "Model (extract)",
-        "url": "/portfolio/img/projects/s1.01/maquette.png",
-        "iframeSrc": null,
-        "content": null
+        "src": "/portfolio/img/projects/s1.01/maquette.png",
+        
+        
       },
       {
         "caption": "Final program (extract)",
-        "url": null,
+        
         "iframeSrc": "/portfolio/img/projects/s1.01/programme-final.html",
-        "content": null
+        
       },
       {
         "caption": "Tests (extract)",
-        "url": null,
+        
         "iframeSrc": "/portfolio/img/projects/s1.01/tests.html",
-        "content": null
+        
       }
     ],
     "fr": [
       {
         "caption": "Algorithme en pseudocode",
-        "url": null,
+        
         "iframeSrc": "/portfolio/img/projects/s1.01/algorithme-pseudocode.html",
-        "content": null
+        
       },
       {
         "caption": "Cahier de tests (extrait)",
-        "url": null,
+        
         "iframeSrc": "/portfolio/img/projects/s1.01/cahier-de-tests.html",
-        "content": null
+        
       },
       {
         "caption": "Liste de fonctions (extrait)",
-        "url": null,
+        
         "iframeSrc": "/portfolio/img/projects/s1.01/liste-de-fonctions.html",
-        "content": null
+        
       },
       {
         "caption": "Maquette (extrait)",
-        "url": "/portfolio/img/projects/s1.01/maquette.png",
-        "iframeSrc": null,
-        "content": null
+        "src": "/portfolio/img/projects/s1.01/maquette.png",
+        
+        
       },
       {
         "caption": "Programme final (extrait)",
-        "url": null,
+        
         "iframeSrc": "/portfolio/img/projects/s1.01/programme-final.html",
-        "content": null
+        
       },
       {
         "caption": "Tests (extrait)",
-        "url": null,
+        
         "iframeSrc": "/portfolio/img/projects/s1.01/tests.html",
-        "content": null
+        
       }
     ]
   },
-  "logo": null,
+  
   "background": "/portfolio/img/projects/s1.01/bg.png"
 }

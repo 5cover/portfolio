@@ -6,8 +6,8 @@
       "fr": "Microsoft Visual Studio"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
       "en": "Visual Studio",
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Visual_Studio",
     "fr": "https://fr.wikipedia.org/wiki/Microsoft_Visual_Studio"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/visual-studio/logo.svg"
+    
+    "src": "/portfolio/img/definition/visual-studio/logo.svg"
   }
 }

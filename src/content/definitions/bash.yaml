@@ -10,8 +10,8 @@
       "fr": "Bash"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/bash/bg.png",
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/bash/logo.svg"
+    
+    "src": "/portfolio/img/definition/bash/logo.svg"
   }
 }

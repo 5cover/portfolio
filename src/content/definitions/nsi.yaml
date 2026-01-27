@@ -10,8 +10,8 @@
       "fr": "NSI"
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -23,5 +23,5 @@
     "fr": "https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448"
   },
   "background": "/portfolio/img/definition/nsi/bg.webp",
-  "logo": null
+  
 }

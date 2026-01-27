@@ -6,12 +6,12 @@
       "fr": "NUnit"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/NUnit",
     "fr": "https://en.wikipedia.org/wiki/NUnit"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/nunit/logo.png"
+    
+    "src": "/portfolio/img/definition/nunit/logo.png"
   }
 }

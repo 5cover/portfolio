@@ -1,10 +1,10 @@
 // @ts-check
 
+import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import { defineConfig } from 'astro/config';
-
 import preact from '@astrojs/preact';
+import svgr from 'vite-plugin-svgr';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,4 +18,7 @@ export default defineConfig({
         },
     },
     integrations: [mdx(), sitemap(), preact()],
+    vite: {
+        plugins: [svgr()],
+    },
 });

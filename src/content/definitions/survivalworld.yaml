@@ -6,12 +6,12 @@
       "fr": "SurvivalWorld"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://www.survivalworld.fr/",
     "fr": "https://www.survivalworld.fr/"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/survivalworld/logo.png"
+    
+    "src": "/portfolio/img/definition/survivalworld/logo.png"
   }
 }

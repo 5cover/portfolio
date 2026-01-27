@@ -81,8 +81,8 @@
     "fr": []
   },
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/projects/dialogs/logo.png"
+    
+    "src": "/portfolio/img/projects/dialogs/logo.png"
   },
-  "background": null
+  
 }

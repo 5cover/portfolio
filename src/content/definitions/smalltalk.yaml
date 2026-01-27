@@ -6,12 +6,12 @@
       "fr": "Smalltalk"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Smalltalk",
     "fr": "https://fr.wikipedia.org/wiki/Smalltalk"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/smalltalk/logo.svg"
+    
+    "src": "/portfolio/img/definition/smalltalk/logo.svg"
   }
 }

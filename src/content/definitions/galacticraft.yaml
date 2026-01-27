@@ -6,12 +6,12 @@
       "fr": "Galacticraft"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://galacticraft.net/",
     "fr": "https://galacticraft.net/"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/galacticraft/logo.png"
+    
+    "src": "/portfolio/img/definition/galacticraft/logo.png"
   }
 }

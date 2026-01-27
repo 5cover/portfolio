@@ -1,9 +1,9 @@
 {
   "platform": "Instagram",
   "name": "bardiniraphael",
-  "url": "https://www.instagram.com/bardiniraphael/",
+  "src": "https://www.instagram.com/bardiniraphael/",
   "icon": {
-    "isThemedSvg": true,
-    "url": "/portfolio/img/social/instagram.svg"
+    "kind": "svg",
+    "src": "/portfolio/img/social/instagram.svg"
   }
 }

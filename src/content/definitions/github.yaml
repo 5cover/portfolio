@@ -6,12 +6,12 @@
       "fr": "GitHub"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/GitHub",
     "fr": "https://fr.wikipedia.org/wiki/GitHub"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": true,
-    "url": "/portfolio/img/social/github.svg"
+    "kind": "svg",
+    "src": "/portfolio/img/social/github.svg"
   }
 }

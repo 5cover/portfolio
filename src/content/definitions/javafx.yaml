@@ -6,12 +6,12 @@
       "fr": "JavaFX"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/JavaFX",
     "fr": "https://fr.wikipedia.org/wiki/JavaFX"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/javafx/logo.png"
+    
+    "src": "/portfolio/img/definition/javafx/logo.png"
   }
 }

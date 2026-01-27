@@ -11,13 +11,13 @@
     },
   "context": { "en": "BUT", "fr": "BUT" },
   "startDate": "2025-09-15",
-  "endDate": null,
+  
   "tags": ["but-collaborer", "but-3","but-gerer","but-conduire"],
   "technologies": ["github"],
   "team": [],
   "links": { "en": [], "fr": [] },
   "references": { "en": [], "fr": [] },
   "gallery": { "en": [], "fr": [] },
-  "logo": null,
-  "background": null,
+  
+  
 }

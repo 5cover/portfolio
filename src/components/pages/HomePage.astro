@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Graphic from '../Graphic.astro';
-import ProjectCardList from '../ProjectCardList.astro';
+import Graphic from '../Graphic';
+import ProjectCardList from '../ProjectCardList';
 import { getAnchors, getTags, mapById } from '../../lib/content';
 import type { ContactEntry, LocalizedPianoTileEntry, LocalizedProjectEntry } from '../../lib/content';
 import { pageHref } from '../../lib/links';
@@ -116,10 +116,9 @@ function stripTags(value: string): string {
                                         class='link iconed-text'
                                         target='_blank'
                                         rel='noopener noreferrer'
-                                        href={contact.data.url}>
+                                        href={contact.data.src}>
                                         <Graphic
-                                            url={contact.data.icon.url}
-                                            isThemedSvg={contact.data.icon.isThemedSvg}
+                                            of={contact.data.icon}
                                             alt={contact.data.platform}
                                         />
                                         <span>{contact.data.name}</span>

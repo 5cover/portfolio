@@ -1,31 +1,12 @@
-type ProjectLink = {
-    label: string;
-    anchor: string;
-    href: string;
-};
+import type { Item, LocalizedItem } from "../content/collections";
+import type { Localized } from "../i18n/site";
+import type { ExplicitUndefined } from "../lib/types";
 
-type Project = {
-    id: string;
-    title: string;
-    abstract: string;
-    context: string | null;
-    startDate: string | null;
-    endDate: string | null;
-    tags: string[];
-    links: ProjectLink[];
-    logo: { url: string; isThemedSvg: boolean } | null;
-    background: string | null;
-};
+type ProjectIndex = Record<string, LocalizedItem<'projects'>>;
 
-type Tag = { id: string; title: string };
+type TagIndex = Record<string, Item<'tags'>>;
 
-type Anchor = { id: string; url: string; isThemedSvg: boolean };
-
-type ProjectIndex = Record<string, Project>;
-
-type TagIndex = Record<string, Tag>;
-
-type AnchorIndex = Record<string, Anchor>;
+type AnchorIndex = Record<string, Item<'anchors'>>;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
     return typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -71,25 +52,25 @@ function parseProjects(raw: unknown): ProjectIndex {
                           anchor: link.anchor,
                       };
                   })
-                  .filter((link): link is ProjectLink => Boolean(link))
+                  .filter(l => l !== null)
             : [];
 
         const logo =
-            isRecord(entry.logo) && typeof entry.logo.url === 'string' && typeof entry.logo.isThemedSvg === 'boolean'
-                ? { url: entry.logo.url, isThemedSvg: entry.logo.isThemedSvg }
-                : null;
+            isRecord(entry.logo) && typeof entry.logo.url === 'string' && typeof entry.logo.kind === 'svg'
+                ? entry.logo
+                : undefined;
 
         result[id] = {
             id,
             title: entry.title,
             abstract: entry.abstract,
-            context: typeof entry.context === 'string' ? entry.context : null,
-            startDate: typeof entry.startDate === 'string' ? entry.startDate : null,
-            endDate: typeof entry.endDate === 'string' ? entry.endDate : null,
+            context: typeof entry.context === 'string' ? entry.context : undefined,
+            startDate: typeof entry.startDate === 'string' ? entry.startDate : undefined,
+            endDate: typeof entry.endDate === 'string' ? entry.endDate : undefined,
             tags: Array.isArray(entry.tags) ? entry.tags.filter(tag => typeof tag === 'string') : [],
             links,
             logo,
-            background: typeof entry.background === 'string' ? entry.background : null,
+            background: typeof entry.background === 'string' ? entry.background : undefined,
         };
     });
     return result;

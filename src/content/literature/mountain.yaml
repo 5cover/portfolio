@@ -20,36 +20,36 @@
     "en": [
       {
         "caption": "The Sache, the longest slope in the Espace Killy. It's a black slope, and as such one of the domain's hardest. However it's worth it. The sight on Tignes is astonishing.",
-        "url": null,
-        "iframeSrc": null,
+        
+        
         "content": "(photo sache)"
       },
       {
         "caption": "Pays Désert, the half backcountry skiing in the Pissaillas. Magnificient sights and untouched powder snow.",
-        "url": null,
-        "iframeSrc": null,
+        
+        
         "content": "(photos pays desert)"
       }
     ],
     "fr": [
       {
         "caption": "La Sache, la plus longue piste de l'Espace Killy. C'est une piste noire, et en effet c'est aussi une des plus difficiles du domaine. Cependant le détour en vaut la peine, car la vue sur Tignes est incroyable.",
-        "url": null,
-        "iframeSrc": null,
+        
+        
         "content": "(photo sache)"
       },
       {
         "caption": "Pays Désert, le semi hors-piste au Pissaillas. Une vue merveilleuse et une neige poudreuse immaculée.",
-        "url": null,
-        "iframeSrc": null,
+        
+        
         "content": "(photos pays desert)"
       }
     ]
   },
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/piano-tile/1.jpg"
+    
+    "src": "/portfolio/img/piano-tile/1.jpg"
   },
-  "background": null,
+  
   "tags": []
 }

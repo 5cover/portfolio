@@ -6,8 +6,8 @@
       "fr": "Windows Forms"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
       "en": "WinForms",
@@ -22,9 +22,9 @@
     "en": "https://en.wikipedia.org/wiki/Windows_Forms",
     "fr": "https://fr.wikipedia.org/wiki/Windows_Forms"
   },
-  "background": null,
+  
   "logo": {
-    "isThemedSvg": false,
-    "url": "/portfolio/img/definition/winforms/logo.png"
+    
+    "src": "/portfolio/img/definition/winforms/logo.png"
   }
 }

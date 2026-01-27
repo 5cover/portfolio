@@ -6,12 +6,12 @@
       "fr": "Scheme"
     },
     "abbr": {
-      "en": null,
-      "fr": null
+      
+      
     },
     "short": {
-      "en": null,
-      "fr": null
+      
+      
     }
   },
   "synopsis": {
@@ -24,7 +24,7 @@
   },
   "background": "/portfolio/img/definition/scheme/bg.png",
   "logo": {
-    "isThemedSvg": true,
-    "url": "/portfolio/img/definition/scheme/logo.svg"
+    "kind": "svg",
+    "src": "/portfolio/img/definition/scheme/logo.svg"
   }
 }

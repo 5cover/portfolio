@@ -1,26 +1,3 @@
-type DefinitionName = {
-    full: string;
-    abbr?: string;
-    short?: string;
-};
-
-type DefinitionEntry = {
-    id: string;
-    name: DefinitionName;
-    synopsis: string;
-    wiki: string;
-    type: string;
-    background?: string | null;
-    logo?: {
-        url: string;
-        isThemedSvg: boolean;
-    } | null;
-};
-
-type TypeEntry = {
-    id: string;
-    title: string;
-};
 
 type DefinitionIndex = Record<string, DefinitionEntry>;
 
@@ -135,8 +112,8 @@ function parseDefinitionIndex(raw: unknown): DefinitionIndex {
         }
 
         const logo =
-            isRecord(entry.logo) && typeof entry.logo.url === 'string' && typeof entry.logo.isThemedSvg === 'boolean'
-                ? { url: entry.logo.url, isThemedSvg: entry.logo.isThemedSvg }
+            isRecord(entry.logo) && typeof entry.logo.url === 'string' && entry.logo.kind === 'svg'
+                ? entry.logo
                 : null;
         const background = typeof entry.background === 'string' ? entry.background : null;
 
@@ -224,7 +201,7 @@ async function createTooltip(
         const logoTitle = getDefinitionTitle(definition);
         let logoElement: Element;
 
-        if (definition.logo.isThemedSvg && definition.logo.url.endsWith('.svg')) {
+        if (definition.logo.kind === 'svg' && definition.logo.url.endsWith('.svg')) {
             const response = await fetch(definition.logo.url);
             if (!response.ok) {
                 throw new Error(`Failed to load ${definition.logo.url}`);
