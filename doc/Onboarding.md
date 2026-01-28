@@ -204,30 +204,9 @@ Scripts:
 Note: tooltips are attached to dynamic content via
 `window.refreshDefinitionTooltips`.
 
-## JSON Endpoints for JS
-
-The V1 site used JSON fetched from `/portfolio/data/*.json`.
-Astro recreates this using build time endpoints in `src/pages/data`:
-
-- `src/pages/data/anchors.json.ts`
-- `src/pages/data/projects.json.ts`
-- `src/pages/data/tags.json.ts`
-- `src/pages/data/definitions.json.ts`
-- `src/pages/data/types.json.ts`
-- `src/pages/en/data/anchors.json.ts`
-- `src/pages/en/data/projects.json.ts`
-- `src/pages/en/data/tags.json.ts`
-- `src/pages/en/data/definitions.json.ts`
-- `src/pages/en/data/types.json.ts`
-
-These endpoints output JSON at build time and are fetched by client scripts.
-
-## Adding a Locale
-
 1. Add the locale code to `i18n.locales` in `astro.config.mjs` and decide on `defaultLocale`.
 2. Create `src/pages/<locale>/` and duplicate locale-specific pages.
 3. Add MDX bodies in `src/content/textual/<locale>/<kind>/<id>.mdx`.
-4. Add locale data endpoints under `src/pages/<locale>/data/`.
 5. Update locale labels in `src/i18n/site.ts`.
 
 ## Assets
@@ -281,7 +260,6 @@ Add a tag:
 ## Debugging Tips
 
 - Build errors are usually schema mismatches in content.
-- If client JS breaks, check the JSON endpoints in `src/pages/data`.
 - If assets 404, confirm they exist under `public/` with the `/portfolio` path.
 
 ## Astro Syntax Basics (Quick Examples)
