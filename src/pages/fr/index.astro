@@ -1,0 +1,81 @@
+---
+import HomePage from '../../components/pages/HomePage.astro';
+import { getContacts, getPianoTiles, getProjects } from '../../lib/content';
+import { getLabels, normalizeLocale } from '../../i18n/site';
+
+const locale = normalizeLocale(Astro.currentLocale);
+const labels = getLabels(locale);
+const [projects, contacts, pianoTiles] = await Promise.all([
+    getProjects(locale),
+    getContacts(),
+    getPianoTiles(locale),
+]);
+
+---
+
+<HomePage
+    pianoTiles={pianoTiles}
+    projects={projects}
+    contacts={contacts}
+    copy={{
+        indexMe: 'À propos de moi',
+        indexMyPhoto: 'Ma photo',
+        indexOngoingProjects: 'Mes projets en cours',
+        indexAllMyProjects: 'Tous mes projets',
+        indexContact: 'Contact',
+        indexMyResumePreview: 'Aperçu de mon CV',
+        indexMyResume: 'Mon CV',
+        indexVideoCv: 'CV Vidéo (anglais)',
+        ongoing: labels.labels.ongoing,
+        fmtTitle: labels.labels.fmtTitle,
+    }}
+>
+    <Fragment slot='about-content'>
+        <p>
+            Bonjour, je m'appelle <strong>Raphaël Bardini</strong>. J'ai 18 ans et suis étudiant en 2
+            <sup>ème</sup> année de <abbr title='Bachelor Universitaire Technologique'>BUT</abbr>{' '}
+            Informatique, à l'
+            <a
+                class='link'
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://iut-lannion.univ-rennes.fr/'>
+                <abbr title='Institut Universitaire Technologique'>IUT</abbr> de Lannion
+            </a>
+            .
+        </p>
+        <p>
+            J'ai un baccalauréat général avec spécialités{' '}
+            <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.lyceeschoelcher972.fr/specialite-llcer-amc/'
+                data-definition-id='amc'
+                class='link definition-tooltip-trigger'>
+                AMC
+            </a>{' '}
+            et{' '}
+            <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448'
+                data-definition-id='nsi'
+                class='link definition-tooltip-trigger'>
+                NSI
+            </a>
+            . J'ai un bon niveau en anglais.
+        </p>
+        <p>
+            Je suis passionné par le <strong>développement logiciel</strong> et je suis investi dans le
+            milieu <strong>open-source</strong>. Je suis également un grand amateur de{' '}
+            <a
+                class='link'
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://youtube.com/playlist?list=PL1weKnP9ENMdJbMr338lNOMSF487f8nGm'>
+                jazz
+            </a>
+            . Rejoignez-moi dans cette aventure&nbsp;! &#9749;
+        </p>
+    </Fragment>
+</HomePage>

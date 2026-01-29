@@ -1,5 +1,5 @@
 import type { ComponentChildren } from 'preact';
-import type { Graphic } from '../content/collections';
+import type { Graphic } from '../content/config';
 
 const svgModules = import.meta.glob('../../public/**/*.svg', {
     import: 'default',
@@ -22,7 +22,7 @@ export default (props: Props) => {
     const { kind, src } = 'of' in props ? props.of : props;
 
     if (kind === 'svg') {
-        const Svg = svgModules[src];
+        const Svg = svgModules[src.replace('/portfolio', '../../public')];
         if (!Svg) {
             throw new Error(`SVG not found or not imported: ${src}`);
         }

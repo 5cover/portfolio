@@ -1,4 +1,4 @@
-import type { GalleryItem, Item } from '../content/collections';
+import type { GalleryItem, Item } from '../content/config';
 import {
     getAnchors,
     getContacts,

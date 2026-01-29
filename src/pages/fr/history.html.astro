@@ -1,7 +1,7 @@
 ---
-import HistoryIndexPage from '../components/pages/HistoryIndexPage.astro';
-import { getHistory, getTextualEntry } from '../lib/content';
-import { normalizeLocale } from '../i18n/site';
+import HistoryIndexPage from '../../components/pages/HistoryIndexPage.astro';
+import { getHistory, getTextualEntry } from '../../lib/content';
+import { normalizeLocale } from '../../i18n/site';
 
 const locale = normalizeLocale(Astro.currentLocale);
 const historyItems = await getHistory(locale);

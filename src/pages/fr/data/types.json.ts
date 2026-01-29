@@ -1,3 +1,3 @@
 import { types } from "../../../lib/data";
 
-export const GET = () => types('en')
+export const GET = () => types('fr')

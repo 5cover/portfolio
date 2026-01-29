@@ -1,8 +1,8 @@
 ---
-import ProjectDetailPage from '../../components/pages/ProjectDetailPage.astro';
+import ProjectDetailPage from '../../../components/pages/ProjectDetailPage.astro';
 import { getCollection } from 'astro:content';
-import { getProjects, getTextualEntry } from '../../lib/content';
-import { getLabels, normalizeLocale } from '../../i18n/site';
+import { getProjects, getTextualEntry } from '../../../lib/content';
+import { getLabels, normalizeLocale } from '../../../i18n/site';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');

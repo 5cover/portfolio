@@ -1,8 +1,8 @@
 ---
-import HistoryDetailPage from '../../components/pages/HistoryDetailPage.astro';
+import HistoryDetailPage from '../../../components/pages/HistoryDetailPage.astro';
 import { getCollection } from 'astro:content';
-import { getHistory, getTextualEntry } from '../../lib/content';
-import { getLabels, normalizeLocale } from '../../i18n/site';
+import { getHistory, getTextualEntry } from '../../../lib/content';
+import { getLabels, normalizeLocale } from '../../../i18n/site';
 
 
 export async function getStaticPaths() {

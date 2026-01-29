@@ -93,9 +93,9 @@ stylelint, eslint etc specific astro linting /formatting tools?
 
 Automatically generate heading levels
 
-## i18n
+## ~i18n~
 
-switch default language to en
+~~switch default language to en~~
 
 deduplicate logic from pages
 
@@ -103,4 +103,4 @@ experiment with MDX as translated JSX store using exports along with the main co
 
 ## remove useless types
 
-## fix clientside scripts and reuse cards
+## ~~fix clientside scripts~~ and reuse cards

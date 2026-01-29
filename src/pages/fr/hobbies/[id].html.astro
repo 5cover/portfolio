@@ -1,7 +1,7 @@
 ---
-import LiteratureDetailPage from '../../components/pages/LiteratureDetailPage.astro';
+import LiteratureDetailPage from '../../../components/pages/LiteratureDetailPage.astro';
 import { getCollection } from 'astro:content';
-import '../../styles/passion.scss';
+import '../../../styles/passion.scss';
 export async function getStaticPaths() {
     const entries = await getCollection('literature');
     return entries.filter(entry => entry.data.kind === 'passion').map(entry => ({ params: { id: entry.id } }));

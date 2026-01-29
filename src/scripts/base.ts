@@ -1,7 +1,7 @@
+import type { Item } from "../content/config";
 
-type DefinitionIndex = Record<string, DefinitionEntry>;
-
-type TypeIndex = Record<string, TypeEntry>;
+type DefinitionIndex = Record<string, Item<'definitions'>>;
+type TypeIndex = Record<string, Item<'types'>>;
 
 const tooltipLeftOffset = 20 * 0.75;
 const tooltipTriggerMarginTop = 20 * 0.25;
@@ -13,7 +13,7 @@ function getDataBase(): string {
     return (document.documentElement.dataset.dataBase || '/data').replace(/\/$/, '');
 }
 
-function getDefinitionTitle(definition: DefinitionEntry): string {
+function getDefinitionTitle(definition: Item<'definitions'>): string {
     return definition.name.full;
 }
 
@@ -103,7 +103,7 @@ function parseDefinitionIndex(raw: unknown): DefinitionIndex {
             return;
         }
 
-        const name: DefinitionName = { full: nameFull };
+        const name: Item<'definitions'>['name'] = { full: nameFull };
         if (typeof entry.name.abbr === 'string') {
             name.abbr = entry.name.abbr;
         }
@@ -162,7 +162,7 @@ async function loadDefinitionData(dataBase: string): Promise<{
 
 async function createTooltip(
     template: HTMLTemplateElement,
-    definition: DefinitionEntry,
+    definition: Item<'definitions'>,
     types: TypeIndex
 ): Promise<HTMLElement> {
     const fragmentNode = template.content.cloneNode(true);
