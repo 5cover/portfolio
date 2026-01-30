@@ -3,8 +3,8 @@ import Graphic from './Graphic';
 import LinkList from './LinkList';
 import { detailHref } from '../lib/links';
 import { normalizeLocale } from '../i18n/site';
-import type { LiteratureKind, LocalizedItem } from '../content/config';
-import type { Entry } from '../lib/content';
+import type { LocalizedItem } from '../content.config';
+import * as content from '../lib/content';
 
 function formatTitle(fmt: string, title: string): string {
     return fmt.replace('%s', title);
@@ -14,7 +14,7 @@ interface Props {
     langLabels: {
         fmtTitle: string;
     };
-    entry: Entry<LocalizedItem<'literature'>>;
+    entry: content.Entry<LocalizedItem<'literature'>>;
     headingLevel?: number;
 }
 

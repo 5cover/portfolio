@@ -6,12 +6,11 @@ import { getLabels, getLanguages, getNavItems, getThemeLabels, normalizeLocale }
 
 import '../styles/base.scss';
 
-type Props = {
+interface Props {
     pageName: string;
-};
+}
 
-const props: Props = Astro.props;
-const { pageName } = props;
+const { pageName } = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
 const navItems = getNavItems(locale);
 const themeLabels = getThemeLabels(locale);
@@ -48,7 +47,8 @@ const dataBase = getRelativeLocaleUrl(locale, 'data');
             href='https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css'
         />
         <link rel='stylesheet' href='https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css' />
-        <script async src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js'></script>
+        <script is:inline async src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js'
+        ></script>
     </head>
     <body>
         <Header pageName={pageName} navItems={navItems} languages={languages} themeLabels={themeLabels} />

@@ -10,10 +10,10 @@
  * List of flags.
  */
 .list-flags {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5em;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
 }
 
 /* Theme switch control
@@ -21,49 +21,49 @@
  * Set of theme switches.
  */
 .theme-switches {
+  display: flex;
+  border-radius: 0.25em;
+  @include util.basic-border(1px);
+
+  input {
+    @include util.absolute-fill();
+    opacity: 0;
+  }
+
+  label {
+    position: relative;
+    padding: 0.25em;
+    width: 2em;
     display: flex;
-    border-radius: .25em;
-    @include util.basic-border(1px);
+    align-items: center;
+    justify-content: center;
+
+    &:last-of-type {
+      border-top-right-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+
+    &:first-of-type {
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+    }
+
+    &:has(input#{const.$hover}) {
+      @include util.color-accent-bg(0.5);
+    }
+
+    &:has(input:checked) {
+      @include util.color-accent-bg;
+    }
+
+    + label {
+      @include util.basic-border(0 0 0 1px);
+    }
 
     input {
-        @include util.absolute-fill();
-        opacity: 0;
+      cursor: pointer;
     }
-
-    label {
-        position: relative;
-        padding: .25em;
-        width: 2em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:last-of-type {
-            border-top-right-radius: inherit;
-            border-bottom-right-radius: inherit;
-        }
-
-        &:first-of-type {
-            border-top-left-radius: inherit;
-            border-bottom-left-radius: inherit;
-        }
-
-        &:has(input#{const.$hover}) {
-            @include util.color-accent-bg(.5);
-        }
-
-        &:has(input:checked) {
-            @include util.color-accent-bg;
-        }
-
-        + label {
-            @include util.basic-border(0 0 0 1px);
-        }
-
-        input {
-            cursor: pointer;
-        }
-    }
+  }
 }
 
 /* Button link
@@ -71,10 +71,10 @@
  * Default button link
  */
 .button-link {
-    @include util.button-link(2);
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
+  @include util.button-link(2);
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
 }
 
 /* Iconed text
@@ -82,7 +82,7 @@
  * Default iconed text
  */
 .iconed-text {
-    @include util.iconed-text;
+  @include util.iconed-text;
 }
 
 /* Rectangle list
@@ -90,21 +90,21 @@
  * A list of small, horizontal rectangles whose list items contain only one element
  */
 .list-rect {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5em;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
 
-    > li {
-        font-size: .9em;
-        @include util.horizontal-box-border-radius(1.4);
+  > li {
+    font-size: 0.9em;
+    @include util.horizontal-box-border-radius(1.4);
 
-        > :only-child {
-            border-radius: inherit;
-            display: list-item;
-            @include util.horizontal-box-padding(.7);
-        }
+    > :only-child {
+      border-radius: inherit;
+      display: list-item;
+      @include util.horizontal-box-padding(0.7);
     }
+  }
 }
 
 /* Link list
@@ -112,8 +112,8 @@
  * List of links
  */
 .list-link {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 /* Split card detail list
@@ -125,55 +125,55 @@
  * - abstract: abstract text
  */
 .list-detail-split-card {
-    @include util.list-detail;
+  @include util.list-detail;
+  display: grid;
+  grid-auto-flow: row;
+  min-width: fit-content;
+  width: 50%;
+  place-self: center;
+
+  > li {
+    $space: 1em;
+    border-radius: $space;
     display: grid;
-    grid-auto-flow: row;
+    grid-template-columns: max(7.5em, 7.5%) 1fr;
     min-width: fit-content;
-    width: 50%;
-    place-self: center;
 
-    > li {
-        $space: 1em;
-        border-radius: $space;
-        display: grid;
-        grid-template-columns: max(7.5em, 7.5%) 1fr;
-        min-width: fit-content;
-
-        .logo {
-            display: block;
-            background-color: var(--color-lvl-next);
-            padding: calc($space / 2);
-            border-top-left-radius: $space;
-            border-bottom-left-radius: $space;
-            object-fit: contain;
-            height: 100%;
-            width: 100%;
-            aspect-ratio: 1;
-        }
-
-        > div {
-            display: grid;
-            gap: 1em;
-            grid-auto-flow: row;
-            border-top-right-radius: $space;
-            border-bottom-right-radius: $space;
-            padding: $space $space $space calc($space * const.$phi);
-            @include util.transparent-background-image(--bg-img-card, var(--color-lvl), .15);
-
-            .abstract {
-                align-self: center
-            }
-
-            .list-link {
-                @include util.link-list-card;
-            }
-        }
-
-        &#{const.$hover} > div {
-            @include util.transparent-background-image(--bg-img-card, var(--color-accent), .15);
-            @include util.color-accent-fg;
-        }
+    .logo {
+      display: block;
+      background-color: var(--color-lvl-next);
+      padding: calc($space / 2);
+      border-top-left-radius: $space;
+      border-bottom-left-radius: $space;
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+      aspect-ratio: 1;
     }
+
+    > div {
+      display: grid;
+      gap: 1em;
+      grid-auto-flow: row;
+      border-top-right-radius: $space;
+      border-bottom-right-radius: $space;
+      padding: $space $space $space calc($space * const.$phi);
+      @include util.transparent-background-image(--bg-img-card, var(--color-lvl), 0.15);
+
+      .abstract {
+        align-self: center;
+      }
+
+      .list-link {
+        @include util.link-list-card;
+      }
+    }
+
+    &#{const.$hover} > div {
+      @include util.transparent-background-image(--bg-img-card, var(--color-accent), 0.15);
+      @include util.color-accent-fg;
+    }
+  }
 }
 
 /* Project card list
@@ -187,163 +187,163 @@
  * - status: status text
  */
 .list-project {
-    @include util.list-detail;
-    display: flex;
-    flex-flow: row wrap;
+  @include util.list-detail;
+  display: flex;
+  flex-flow: row wrap;
 
-    > li {
-        @include util.transparent-background-image(--bg-img-card, var(--color-lvl), .15);
-        $space: .75em;
-        border-radius: $space;
-        display: grid;
-        flex-basis: 20em;
-        grid-template: min-content repeat(3, auto) 1fr min-content / 1fr auto;
-        padding: $space;
-        row-gap: $space;
+  > li {
+    @include util.transparent-background-image(--bg-img-card, var(--color-lvl), 0.15);
+    $space: 0.75em;
+    border-radius: $space;
+    display: grid;
+    flex-basis: 20em;
+    grid-template: min-content repeat(3, auto) 1fr min-content / 1fr auto;
+    padding: $space;
+    row-gap: $space;
 
-        /* Tag list */
-        .list-rect {
-            grid-column: 1 / 3;
+    /* Tag list */
+    .list-rect {
+      grid-column: 1 / 3;
 
-            > li#{const.$hover} {
-                @include util.bring-out(1.15);
-            }
-        }
-
-        .logo {
-            @include util.size-graphic(3lh, auto);
-            align-self: center;
-            grid-row: 2/4;
-            grid-column: 2;
-        }
-
-        h3 {
-            grid-row: 2;
-        }
-
-        .context {
-            grid-row: 3;
-        }
-
-        .status {
-            grid-column: 1/3;
-            grid-row: 4;
-        }
-
-        .abstract {
-            grid-column: 1/3;
-            grid-row: 5;
-            align-self: center;
-        }
-
-        .list-link {
-            @include util.link-list-card;
-            grid-row: 6;
-            grid-column: 1 / 3;
-        }
-
-        &#{const.$hover} {
-            @include util.transparent-background-image(--bg-img-card, var(--color-accent), .15);
-
-            .list-rect > li {
-                background-color: var(--color-lvl);
-            }
-
-            /* Adapt foreground to accent color (except tag list). */
-            :not(.list-rect, .list-rect *) {
-                @include util.color-accent-fg;
-            }
-        }
-
-        &:not(#{const.$hover}) {
-            .list-rect > li {
-                @include util.color-accent-bg;
-            }
-        }
+      > li#{const.$hover} {
+        @include util.bring-out(1.15);
+      }
     }
+
+    .logo {
+      @include util.size-graphic(3lh, auto);
+      align-self: center;
+      grid-row: 2/4;
+      grid-column: 2;
+    }
+
+    h3 {
+      grid-row: 2;
+    }
+
+    .context {
+      grid-row: 3;
+    }
+
+    .status {
+      grid-column: 1/3;
+      grid-row: 4;
+    }
+
+    .abstract {
+      grid-column: 1/3;
+      grid-row: 5;
+      align-self: center;
+    }
+
+    .list-link {
+      @include util.link-list-card;
+      grid-row: 6;
+      grid-column: 1 / 3;
+    }
+
+    &#{const.$hover} {
+      @include util.transparent-background-image(--bg-img-card, var(--color-accent), 0.15);
+
+      .list-rect > li {
+        background-color: var(--color-lvl);
+      }
+
+      /* Adapt foreground to accent color (except tag list). */
+      :not(.list-rect, .list-rect *) {
+        @include util.color-accent-fg;
+      }
+    }
+
+    &:not(#{const.$hover}) {
+      .list-rect > li {
+        @include util.color-accent-bg;
+      }
+    }
+  }
 }
 
-/* Definition
+/* Def
  *
  * Defines a term. Can be shown as a tooltip.
 
  * Domain classes:
- * - definition-tooltip: tooltip form of the definition
- * - definition-tooltip-trigger: trigger of the definition tooltip form
+ * - def-tooltip: tooltip form of the def
+ * - def-tooltip-trigger: trigger of the def tooltip form
  *
- * - logo: definition logo
- * - type: definition types
- * - synopsis: definition synopsis
+ * - logo: def logo
+ * - type: def types
+ * - synopsis: def synopsis
  */
-.definition {
-    @include util.basic-border(1px);
-    @include util.hover-card;
-    @include util.transparent-background-image(--bg-img-card, var(--color-lvl), .075);
-    $space: .75em;
-    background-color: var(--color-lvl);
-    border-radius: $space;
-    display: grid;
-    font-size: .8em;
-    grid-template: min-content min-content 1fr / 1fr auto;
-    padding: $space;
-    row-gap: $space;
+.def {
+  @include util.basic-border(1px);
+  @include util.hover-card;
+  @include util.transparent-background-image(--bg-img-card, var(--color-lvl), 0.075);
+  $space: 0.75em;
+  background-color: var(--color-lvl);
+  border-radius: $space;
+  display: grid;
+  font-size: 0.8em;
+  grid-template: min-content min-content 1fr / 1fr auto;
+  padding: $space;
+  row-gap: $space;
 
-    .link,
-    abbr {
-        z-index: 1;
-        /* Creates a stacking context */
-        position: relative;
+  .link,
+  abbr {
+    z-index: 1;
+    /* Creates a stacking context */
+    position: relative;
+  }
+
+  .logo {
+    @include util.size-graphic(2.5lh, auto);
+    grid-row: 1 / 3;
+    grid-column: 2;
+  }
+
+  .type {
+    grid-row: 2;
+    grid-column: 1 / 3;
+  }
+
+  .synopsis {
+    grid-row: 3;
+    grid-column: 1 / 3;
+    align-content: center;
+  }
+
+  &-tooltip {
+    @extend .def;
+    position: absolute;
+
+    &-trigger {
+      cursor: pointer;
+      font-weight: 600;
     }
 
-    .logo {
-        @include util.size-graphic(2.5lh, auto);
-        grid-row: 1 / 3;
-        grid-column: 2;
+    &:not(.show) {
+      opacity: 0;
     }
 
-    .type {
-        grid-row: 2;
-        grid-column: 1 / 3;
+    &.hide {
+      display: none;
     }
 
-    .synopsis {
-        grid-row: 3;
-        grid-column: 1 / 3;
-        align-content: center;
-    }
-
-    &-tooltip {
-        @extend .definition;
-        position: absolute;
-
-        &-trigger {
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        &:not(.show) {
-            opacity: 0;
-        }
-
-        &.hide {
-            display: none;
-        }
-
-        /*&#{const.$hover}, i am hovered
+    /*&#{const.$hover}, i am hovered
         &-trigger#{const.$hover} ~ & my trigger is hover
         {
             opacity: 1;
             z-index: 2;
             transition-delay: 500ms;
         }*/
-        /*&-trigger:not(#{const.$hover}) ~ &:not(#{const.$hover}) my trigger is not hover and i am not hover
+    /*&-trigger:not(#{const.$hover}) ~ &:not(#{const.$hover}) my trigger is not hover and i am not hover
         {
             transition-delay: 250ms;
             pointer-events: none;
             user-select: none;
             opacity: 0;
         }*/
-    }
+  }
 }
 
 /* Content block
@@ -351,33 +351,33 @@
  * A block containing a limited amount of content, defined by a singular purpose.
  */
 .content-block {
-    border-radius: 1.5em;
-    background-color: var(--color-lvl);
-    padding: 1.5em;
-    align-self: center;
-    max-width: 100%;
+  border-radius: 1.5em;
+  background-color: var(--color-lvl);
+  padding: 1.5em;
+  align-self: center;
+  max-width: 100%;
 }
 
-/* Definition list
+/* Def list
  *
- * A list of definition cards.
+ * A list of def cards.
  */
-.list-definition {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
+.list-def {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
 
-    > li {
-        @include util.hover-card;
-        flex-shrink: 1;
-        min-width: min-content;
-        display: contents;
+  > li {
+    @include util.hover-card;
+    flex-shrink: 1;
+    min-width: min-content;
+    display: contents;
 
-        article#{const.$hover} {
-            @include util.transparent-background-image(--bg-img-card, var(--color-accent), .1);
-        }
+    article#{const.$hover} {
+      @include util.transparent-background-image(--bg-img-card, var(--color-accent), 0.1);
     }
+  }
 }
 
 /* Margined main
@@ -385,7 +385,7 @@
  * A main with an horizontal margin
  */
 main.margined {
-    margin: 0 const.$full-width-horizontal-margin;
+  margin: 0 const.$full-width-horizontal-margin;
 }
 
 /*
@@ -393,7 +393,7 @@ main.margined {
  *
  */
 .text {
-    @include util.text;
+  @include util.text;
 }
 
 /* Hover card foil
@@ -401,10 +401,10 @@ main.margined {
  * The anchor element of an hover card. Designs the element that deploys over the whole hover card, rendering it interactive.
  */
 .foil {
-    text-decoration: none;
+  text-decoration: none;
 
-    &:after {
-        content: "";
-        @include util.absolute-fill;
-    }
+  &:after {
+    content: '';
+    @include util.absolute-fill;
+  }
 }

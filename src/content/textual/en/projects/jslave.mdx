@@ -1,97 +1,161 @@
-
-<p>A language to define declarative <q>blueprints</q> to generate <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Java_(programming_language)" data-definition-id="java" class="link definition-tooltip-trigger">Java</a> classes.</p>
+<p>
+  A language to define declarative <q>blueprints</q> to generate{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/Java_(programming_language)"
+    data-def-id="java"
+    class="link def-tooltip-trigger">
+    Java
+  </a>{' '}
+  classes.
+</p>
 <p>Supports automatic and customizable generation of:</p>
 <ul class="list">
-    <li>
-        <p>Inheritance trees (`extend`, `implement`, `permits`)</p>
-    </li>
-    <li>
-        <p>Attributes</p>
-    </li>
-    <li>
-        <p>Getters/setters</p>
-    </li>
-    <li>
-        <p>`hashCode` method</p>
-    </li>
-    <li>
-        <p>`equals` method</p>
-    </li>
-    <li>
-        <p>`toString` method</p>
-    </li>
-    <li>
-        <p>Method stubs</p>
-    </li>
+  <li>
+    <p>Inheritance trees (`extend`, `implement`, `permits`)</p>
+  </li>
+  <li>
+    <p>Attributes</p>
+  </li>
+  <li>
+    <p>Getters/setters</p>
+  </li>
+  <li>
+    <p>`hashCode` method</p>
+  </li>
+  <li>
+    <p>`equals` method</p>
+  </li>
+  <li>
+    <p>`toString` method</p>
+  </li>
+  <li>
+    <p>Method stubs</p>
+  </li>
 </ul>
 <p>Addtional features include:</p>
 <ul class="list">
-    <li>
-        <p>Nested and static classes</p>
-    </li>
-    <li>
-        <p>Arbitrary Java code blocks</p>
-    </li>
+  <li>
+    <p>Nested and static classes</p>
+  </li>
+  <li>
+    <p>Arbitrary Java code blocks</p>
+  </li>
 </ul>
 <article>
-    <h3 id="advantages-over-snippets">Advantages over snippets</h3>
-    <p>A Jslave blueprint is self-contained and can be automated, unlike snippets/shortcuts which are IDE-dependent and require manual input. This approach has the following advantages:</p>
-    <ul class="list">
-        <li>
-            <p>Blueprints can be passed around as files</p>
-        </li>
-        <li>
-            <p>Blueprints can generate to something else than Java</p>
-        </li>
-        <li>
-            <p>Generation is predictable and deterministic</p>
-        </li>
-        <li>
-            <p>Generation can be automated in a script</p>
-        </li>
-    </ul>
-    <p>Cons:</p>
-    <ul class="list">
-        <li>
-            <p>Since we're no longer in a Java context, we won't recieve help much from the IDE while writing JSlave (syntax highlighting, auto-completion&hellip;). This issue is mitigated by the simplicity of the language, and the future <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Visual_Studio_Code" data-definition-id="vs-code" class="link definition-tooltip-trigger">VS Code</a> extension.</p>
-        </li>
-    </ul>
+  <h3 id="advantages-over-snippets">Advantages over snippets</h3>
+  <p>
+    A Jslave blueprint is self-contained and can be automated, unlike snippets/shortcuts which are IDE-dependent and
+    require manual input. This approach has the following advantages:
+  </p>
+  <ul class="list">
+    <li>
+      <p>Blueprints can be passed around as files</p>
+    </li>
+    <li>
+      <p>Blueprints can generate to something else than Java</p>
+    </li>
+    <li>
+      <p>Generation is predictable and deterministic</p>
+    </li>
+    <li>
+      <p>Generation can be automated in a script</p>
+    </li>
+  </ul>
+  <p>Cons:</p>
+  <ul class="list">
+    <li>
+      <p>
+        Since we're no longer in a Java context, we won't recieve help much from the IDE while writing JSlave (syntax
+        highlighting, auto-completion&hellip;). This issue is mitigated by the simplicity of the language, and the
+        future{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://en.wikipedia.org/wiki/Visual_Studio_Code"
+          data-def-id="vs-code"
+          class="link def-tooltip-trigger">
+          VS Code
+        </a>{' '}
+        extension.
+      </p>
+    </li>
+  </ul>
 </article>
 <article>
-    <h3 id="getting-started">Getting started</h3>
-    <h4 id="1-write-your-jslave-file">1. Write your JSlave file</h4>
-    <p>Your JSlave file (idomatically called a **blueprint**) defines the structure of your Java code, and provides syntax for common patterns in order to avoid writing all that pesky Java boilerplate.</p>
-    <p>More details about the syntax can be found in the <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/jslave/blob/main/doc/Language%20reference.md">documentation</a>, but the main idom is as follows:</p>
-    <p>A blueprint is a list of **definitions** that generate to the corresponding Java type (classes, records, interfaces&hellip;). Each definition contains zero or more **members** that determine the contents of the type.</p>
-    <p>Members can be of two kinds:</p>
-    <ul class="list">
+  <h3 id="getting-started">Getting started</h3>
+  <h4 id="1-write-your-jslave-file">1. Write your JSlave file</h4>
+  <p>
+    Your JSlave file (idomatically called a **blueprint**) defines the structure of your Java code, and provides syntax
+    for common patterns in order to avoid writing all that pesky Java boilerplate.
+  </p>
+  <p>
+    More details about the syntax can be found in the{' '}
+    <a
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://github.com/5cover/jslave/blob/main/doc/Language%20reference.md">
+      documentation
+    </a>
+    , but the main idom is as follows:
+  </p>
+  <p>
+    A blueprint is a list of **definitions** that generate to the corresponding Java type (classes, records,
+    interfaces&hellip;). Each definition contains zero or more **members** that determine the contents of the type.
+  </p>
+  <p>Members can be of two kinds:</p>
+  <ul class="list">
+    <li>
+      <p>
+        **Attributes** define the data fields of the type. They generate to Java class attributes, and getter/setter
+        methods.
+      </p>
+    </li>
+    <li>
+      <p>
+        **Methods** define the behaviors of the type. Methods that have a special meaning in Java (`equals`, `hashCode`,
+        `toString`) are called **special methods**. They can be expressed in three forms:
+      </p>
+      <ul class="list">
         <li>
-            <p>**Attributes** define the data fields of the type. They generate to Java class attributes, and getter/setter methods.</p>
+          <p>**Stub**: an empty method to implement either from the generated Java or with a code block</p>
         </li>
         <li>
-            <p>**Methods** define the behaviors of the type. Methods that have a special meaning in Java (`equals`, `hashCode`, `toString`) are called **special methods**. They can be expressed in three forms:</p>
-            <ul class="list">
-                <li>
-                    <p>**Stub**: an empty method to implement either from the generated Java or with a code block</p>
-                </li>
-                <li>
-                    <p>**Default implementation**: a default, general-purpose implementation that should work for most cases</p>
-                </li>
-                <li>
-                    <p>**Custom implementation**: the default implementation, customized by passing arguments to the method</p>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <h4 id="2-generate-it">2. Generate it</h4>
-    <p>From the VSCode extension GUI or using the standalone binary, generate your blueprint.</p>
-    <p>Multiple targets are available</p>
-    <ul class="list">
-        <li>
-            <p>Java (obviously): generates Java code</p>
+          <p>**Default implementation**: a default, general-purpose implementation that should work for most cases</p>
         </li>
         <li>
-            <p><a target="_blank" rel="noopener noreferrer" href="https://mermaid.js.org/" data-definition-id="mermaid" class="link definition-tooltip-trigger">Mermaid</a>: generates a Mermaid class diagram<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup> that represents the structure of the blueprint</p>
+          <p>**Custom implementation**: the default implementation, customized by passing arguments to the method</p>
         </li>
-    </ul>
+      </ul>
+    </li>
+  </ul>
+  <h4 id="2-generate-it">2. Generate it</h4>
+  <p>From the VSCode extension GUI or using the standalone binary, generate your blueprint.</p>
+  <p>Multiple targets are available</p>
+  <ul class="list">
+    <li>
+      <p>Java (obviously): generates Java code</p>
+    </li>
+    <li>
+      <p>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://mermaid.js.org/"
+          data-def-id="mermaid"
+          class="link def-tooltip-trigger">
+          Mermaid
+        </a>
+        : generates a Mermaid class diagram
+        <sup id="cite-ref-1">
+          <a class="link" href="#ref-1">
+            [1]
+          </a>
+        </sup>{' '}
+        that represents the structure of the blueprint
+      </p>
+    </li>
+  </ul>
 </article>

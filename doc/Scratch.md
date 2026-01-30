@@ -22,7 +22,7 @@ Noan Perrot did one
 
 - Vertical search bar
 - Remove background/border on logos in project cards
-- cleanup but informatique: proper title margin, place the introductory paragraph below the definition and in normal size, remove useless flexes
+- cleanup but informatique: proper title margin, place the introductory paragraph below the def and in normal size, remove useless flexes
 - fix but informatique badge v alignment in tags
 - fix list padding in textual content -> through a list component or maybe a plugin that adds classes so i can keep writing prose but it doesn't have to be unstyled?
 
@@ -61,7 +61,7 @@ enforce correctness, specify our data model, avoid repetition of translations
 
 ## Remove content from `<Def>` components
 
-There is no need to put the title inside the Def tags every time since the definition knows the title so Def can become a contentless component like img.
+There is no need to put the title inside the Def tags every time since the def knows the title so Def can become a contentless component like img.
 
 ## More projects
 
@@ -114,3 +114,13 @@ experiment with MDX as translated JSX store using exports along with the main co
 use yaml native dates?
 
 ## rename collections to singular
+
+## remove formatting copy
+
+fmtX
+
+with C style
+
+it's outdated
+
+what's the modern idiomatic way?

@@ -1,141 +1,114 @@
-import type { GalleryItem, Item, Link, LocalizedItem, Reference } from '../content/config';
-import type { Locale, Localized } from '../i18n/site';
-import { normalizeLocale } from '../i18n/site';
-import { getCollection, getEntry, type CollectionEntry, type CollectionKey } from 'astro:content';
+import type { Item, LocalizedItem } from '../content.config';
+import { normalizeLocale, type Locale } from '../i18n/site';
+import { getCollection, getEntry, render, type CollectionKey } from 'astro:content';
 
 export type TextualKind = 'history' | 'history-body' | 'literature' | 'projects';
+export type Entry<T> = readonly [id: string, d: T];
 
-export function buildTextualId(loc: string, kind: TextualKind, id: string): string {
-    return `${loc}/${kind}/${id}`;
-}
+export const anchor = await getter('anchor');
+export const contact = await getter('contact');
+export const project = await getterLocalized('project', (d, l) => ({
+    ...d,
+    title: d.title[l],
+    abstract: d.abstract[l],
+    context: d.context[l],
+    links: d.links[l],
+    references: d.references[l],
+    gallery: d.gallery[l],
+}));
+export const literature = await getterLocalized('literature', (d, l) => ({
+    ...d,
+    title: d.title[l],
+    abstract: d.abstract[l],
+    links: d.links[l],
+    references: d.references[l],
+    gallery: d.gallery[l],
+}));
+export const def = await getterLocalized('def', (d, l) => ({
+    ...d,
+    name: {
+        full: d.name.full[l],
+        abbr: d.name.abbr[l],
+        short: d.name.short[l],
+    },
+    synopsis: d.synopsis[l],
+    wiki: d.wiki[l],
+}));
+export const tag = await getterLocalized('tag', (d, l) => ({
+    ...d,
+    title: d.title[l],
+}));
+export const defType = await getterLocalized('def-type', (d, l) => ({
+    ...d,
+    title: d.title[l],
+}));
+export const history = await getterLocalized('history', (d, l) => ({
+    ...d,
+    title: d.title[l],
+    meta: d.meta[l],
+    year: d.year,
+    media: d.media
+        ? {
+              img: d.media.img,
+              alt: d.media.alt[l],
+          }
+        : undefined,
+}));
+export const pianoTile = await getterLocalized('piano-tile', (d, l) => ({
+    ...d,
+    title: d.title[l],
+    summary: d.summary[l],
+}));
 
-function localizeProjectData(data: Item<'projects'>, loc: Locale): LocalizedItem<'projects'> {
-    return {
-        ...data,
-        title: data.title[loc],
-        abstract: data.abstract[loc],
-        context: data.context[loc],
-        links: data.links[loc],
-        references: data.references[loc],
-        gallery: data.gallery[loc],
-    };
-}
-
-function localizeLiteratureData(data: Item<'literature'>, loc: Locale): LocalizedItem<'literature'> {
-    return {
-        ...data,
-        title: data.title[loc],
-        abstract: data.abstract[loc],
-        links: data.links[loc],
-        references: data.references[loc],
-        gallery: data.gallery[loc],
-    };
-}
-
-function localizeDefinitionData(data: Item<'definitions'>, loc: Locale): LocalizedItem<'definitions'> {
-    return {
-        ...data,
-        name: {
-            full: data.name.full[loc],
-            abbr: data.name.abbr[loc],
-            short: data.name.short[loc],
-        },
-        synopsis: data.synopsis[loc],
-        wiki: data.wiki[loc],
-    };
-}
-
-function localizeTagData(data: Item<'tags'>, loc: Locale): LocalizedItem<'tags'> {
-    return {
-        ...data,
-        title: data.title[loc],
-    };
-}
-
-function localizeTypeData(data: Item<'types'>, loc: Locale): LocalizedItem<'types'> {
-    return {
-        ...data,
-        title: data.title[loc],
-    };
-}
-
-function localizeHistoryData(data: Item<'history'>, loc: Locale): LocalizedItem<'history'> {
-    return {
-        ...data,
-        title: data.title[loc],
-        meta: data.meta[loc],
-        year: data.year,
-        media: data.media
-            ? {
-                  img: data.media.img,
-                  alt: data.media.alt[loc],
-              }
-            : undefined,
-    };
-}
-
-function localizePianoTileData(data: Item<'piano-tiles'>, loc: Locale): LocalizedItem<'piano-tiles'> {
-    return {
-        ...data,
-        title: data.title[loc],
-        summary: data.summary[loc],
-    };
-}
-
-export type Entry<T> = readonly [id: string, data: T];
-
-export async function getAnchors() {
-    return (await getCollection('anchors')).map(e => [e.id, e.data] as const);
-}
-
-export async function getContacts() {
-    return (await getCollection('contacts')).map(e => [e.id, e.data] as const);
-}
-
-export async function getProjects(loc: Locale) {
-    return (await getCollection('projects')).map(e => [e.id, localizeProjectData(e.data, loc)] as const);
-}
-
-export async function getLiterature(loc: Locale) {
-    return (await getCollection('literature')).map(e => [e.id, localizeLiteratureData(e.data, loc)] as const);
-}
-
-export async function getDefinitions(loc: Locale) {
-    return (await getCollection('definitions')).map(e => [e.id, localizeDefinitionData(e.data, loc)] as const);
-}
-
-export async function getTags(loc: Locale) {
-    return (await getCollection('tags')).map(e => [e.id, localizeTagData(e.data, loc)] as const);
-}
-
-export async function getTypes(loc: Locale) {
-    return (await getCollection('types')).map(e => [e.id, localizeTypeData(e.data, loc)] as const);
-}
-
-export async function getHistory(loc: Locale) {
-    return (await getCollection('history')).map(e => [e.id, localizeHistoryData(e.data, loc)] as const);
-}
-
-export async function getPianoTiles(loc: Locale) {
-    return (await getCollection('piano-tiles')).map(e => [e.id, localizePianoTileData(e.data, loc)] as const);
-}
-
-export async function getTextualEntry(loc: string, kind: TextualKind, id: string) {
-    const entryId = buildTextualId(loc, kind, id);
+export async function textual(locale: string, kind: TextualKind, id: string) {
+    const entryId = buildTextualId(locale, kind, id);
     const entry = await getEntry('textual', entryId);
     if (!entry) {
         throw new Error(`Missing textual body ${entryId}`);
     }
-    return entry;
+    return (await render(entry)).Content;
 }
 
-export function at<T>(entries: readonly Entry<T>[], id: string) {
-    return entries.find(([eid]) => eid === id)?.[1];
+function buildTextualId(locale: string, kind: TextualKind, id: string): string {
+    return `${normalizeLocale(locale)}/${kind}/${id}`;
 }
 
-export function mapById<T>(entries: readonly Entry<T>[]): Record<string, T> {
-    return entries.reduce<Record<string, T>>((acc, [id, data]) => {
-        acc[id] = data;
-        return acc;
-    }, {});
+async function getterLocalized<K extends CollectionKey>(
+    k: K,
+    localize: (data: Item<K>, locale: Locale) => LocalizedItem<K>
+) {
+    const raw = await getCollection(k);
+    type I = Readonly<LocalizedItem<K>>;
+    function get(locale: string | undefined, id: string): I;
+    function get(locale: string | undefined): readonly Entry<I>[];
+    function get(locale: string | undefined, id?: string): I | readonly Entry<I>[] {
+        const l = normalizeLocale(locale);
+        if (id === undefined) {
+            return raw.map(e => [e.id, localize(e.data, l)] as const);
+        }
+        const item = raw.find(e => e.id === id);
+        if (item === undefined) {
+            throw new Error(`${k} of id '${id}' does not exist`);
+        }
+        return localize(item.data, l);
+    }
+    return get;
+}
+
+async function getter<K extends CollectionKey>(k: K) {
+    const all = (await getCollection(k)).map(e => [e.id, e.data] as const as Entry<I>);
+    type I = Readonly<Item<K>>;
+    function get(id: string): I;
+    function get(): readonly Entry<I>[];
+    function get(id?: string): I | readonly Entry<I>[] {
+        if (id === undefined) {
+            return all;
+        }
+        const item = all.find(([eid]) => eid === id);
+        if (item === undefined) {
+            throw new Error(`${k} of id '${id}' does not exist`);
+        }
+        return item[1];
+    }
+    return get;
 }

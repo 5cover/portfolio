@@ -1,97 +1,181 @@
-
-<p>Un langage pour définir des <q>blueprints</q> déclaratifs pour générer des classes <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Java_(langage)" data-definition-id="java" class="link definition-tooltip-trigger">Java</a>.</p>
+<p>
+  Un langage pour définir des <q>blueprints</q> déclaratifs pour générer des classes{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://fr.wikipedia.org/wiki/Java_(langage)"
+    data-def-id="java"
+    class="link def-tooltip-trigger">
+    Java
+  </a>
+  .
+</p>
 <p>Prend en charge la génération automatique et personnalisable de&nbsp;:</p>
 <ul class="list">
-    <li>
-        <p>Arborescences d'héritage (`extend`, `implement`, `permits`)</p>
-    </li>
-    <li>
-        <p>Attributs</p>
-    </li>
-    <li>
-        <p><abbr title="Obteneurs"><em lang="en">Getters</em></abbr>/<abbr title="Définisseurs"><em lang="en">setters</em></abbr></p>
-    </li>
-    <li>
-        <p>méthode `hashCode`</p>
-    </li>
-    <li>
-        <p>méthode `equals`</p>
-    </li>
-    <li>
-        <p>méthode `toString`</p>
-    </li>
-    <li>
-        <p>Stubs de méthode</p>
-    </li>
+  <li>
+    <p>Arborescences d'héritage (`extend`, `implement`, `permits`)</p>
+  </li>
+  <li>
+    <p>Attributs</p>
+  </li>
+  <li>
+    <p>
+      <abbr title="Obteneurs">
+        <em lang="en">Getters</em>
+      </abbr>
+      /
+      <abbr title="Définisseurs">
+        <em lang="en">setters</em>
+      </abbr>
+    </p>
+  </li>
+  <li>
+    <p>méthode `hashCode`</p>
+  </li>
+  <li>
+    <p>méthode `equals`</p>
+  </li>
+  <li>
+    <p>méthode `toString`</p>
+  </li>
+  <li>
+    <p>Stubs de méthode</p>
+  </li>
 </ul>
 <p>Fonctionnalités supplémentaires&nbsp;:</p>
 <ul class="list">
-    <li>
-        <p>Classes imbriquées et statiques</p>
-    </li>
-    <li>
-        <p>Blocs de code Java arbitraires</p>
-    </li>
+  <li>
+    <p>Classes imbriquées et statiques</p>
+  </li>
+  <li>
+    <p>Blocs de code Java arbitraires</p>
+  </li>
 </ul>
 <article>
-    <h3 id="avantages-sur-les-extraits">Avantages par rapport aux extraits</h3>
-    <p>Un blueprint Jslave est autonome et peut être automatisé, contrairement aux extraits/raccourcis qui dépendent de l'IDE et nécessitent une saisie manuelle. Cette approche présente les avantages suivants&nbsp;:</p>
-    <ul class="list">
-        <li>
-            <p>Les blueprints peuvent être transmis sous forme de fichiers</p>
-        </li>
-        <li>
-            <p>Les blueprints peuvent être générés vers autre chose que Java</p>
-        </li>
-        <li>
-            <p>La génération est prévisible et déterministe</p>
-        </li>
-        <li>
-            <p>La génération peut être automatisée dans un script</p>
-        </li>
-    </ul>
-    <p>Inconvénients&nbsp;:</p>
-    <ul class="list">
-        <li>
-            <p>Étant donné que nous ne sommes plus dans un contexte Java, nous ne recevrons pas beaucoup d'aide de l'IDE lors de l'écriture de JSlave (coloration syntaxique, auto-complétion&hellip;). Ce problème est atténué par la simplicité du langage et la future extension <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Visual_Studio_Code" data-definition-id="vs-code" class="link definition-tooltip-trigger">VS Code</a>.</p>
-        </li>
-    </ul>
+  <h3 id="avantages-sur-les-extraits">Avantages par rapport aux extraits</h3>
+  <p>
+    Un blueprint Jslave est autonome et peut être automatisé, contrairement aux extraits/raccourcis qui dépendent de
+    l'IDE et nécessitent une saisie manuelle. Cette approche présente les avantages suivants&nbsp;:
+  </p>
+  <ul class="list">
+    <li>
+      <p>Les blueprints peuvent être transmis sous forme de fichiers</p>
+    </li>
+    <li>
+      <p>Les blueprints peuvent être générés vers autre chose que Java</p>
+    </li>
+    <li>
+      <p>La génération est prévisible et déterministe</p>
+    </li>
+    <li>
+      <p>La génération peut être automatisée dans un script</p>
+    </li>
+  </ul>
+  <p>Inconvénients&nbsp;:</p>
+  <ul class="list">
+    <li>
+      <p>
+        Étant donné que nous ne sommes plus dans un contexte Java, nous ne recevrons pas beaucoup d'aide de l'IDE lors
+        de l'écriture de JSlave (coloration syntaxique, auto-complétion&hellip;). Ce problème est atténué par la
+        simplicité du langage et la future extension{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://fr.wikipedia.org/wiki/Visual_Studio_Code"
+          data-def-id="vs-code"
+          class="link def-tooltip-trigger">
+          VS Code
+        </a>
+        .
+      </p>
+    </li>
+  </ul>
 </article>
 <article>
-    <h3 id="getting-started">Premiers pas</h3>
-    <h4 id="1-write-your-jslave-file">1. Écrivez votre fichier JSlave</h4>
-    <p>Votre fichier JSlave (appelé idiomatiquement un **blueprint**) définit la structure de votre code Java et fournit la syntaxe des modèles courants afin d'éviter d'écrire tout ce code Java répétitif.</p>
-    <p>Vous trouverez plus de détails sur la syntaxe dans la <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/jslave/blob/main/doc/Language%20reference.md">documentation</a>, mais l'idiome principal est le suivant&nbsp;:</p>
-    <p>Un blueprint est une liste de **définitions** qui génèrent le type Java correspondant (classes, enregistrements, interfaces&hellip;). Chaque définition contient zéro ou plusieurs **membres** qui déterminent le contenu du type.</p>
-    <p>Les membres peuvent être de deux types&nbsp;:</p>
-    <ul class="list">
+  <h3 id="getting-started">Premiers pas</h3>
+  <h4 id="1-write-your-jslave-file">1. Écrivez votre fichier JSlave</h4>
+  <p>
+    Votre fichier JSlave (appelé idiomatiquement un **blueprint**) définit la structure de votre code Java et fournit la
+    syntaxe des modèles courants afin d'éviter d'écrire tout ce code Java répétitif.
+  </p>
+  <p>
+    Vous trouverez plus de détails sur la syntaxe dans la{' '}
+    <a
+      class="link"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://github.com/5cover/jslave/blob/main/doc/Language%20reference.md">
+      documentation
+    </a>
+    , mais l'idiome principal est le suivant&nbsp;:
+  </p>
+  <p>
+    Un blueprint est une liste de **définitions** qui génèrent le type Java correspondant (classes, enregistrements,
+    interfaces&hellip;). Chaque définition contient zéro ou plusieurs **membres** qui déterminent le contenu du type.
+  </p>
+  <p>Les membres peuvent être de deux types&nbsp;:</p>
+  <ul class="list">
+    <li>
+      <p>
+        **Les attributs** définissent les champs de données du type. Ils génèrent des attributs de classe Java et des
+        méthodes getter/setter.
+      </p>
+    </li>
+    <li>
+      <p>
+        **Les méthodes** définissent les comportements du type. Les méthodes qui ont une signification particulière en
+        Java (`equals`, `hashCode`, `toString`) sont appelées **méthodes spéciales**. Elles peuvent être exprimées sous
+        trois formes&nbsp;:
+      </p>
+      <ul class="list">
         <li>
-            <p>**Les attributs** définissent les champs de données du type. Ils génèrent des attributs de classe Java et des méthodes getter/setter.</p>
+          <p>
+            **Stub**&nbsp;: une méthode vide à implémenter soit à partir du code Java généré, soit avec un bloc de code
+          </p>
         </li>
         <li>
-            <p>**Les méthodes** définissent les comportements du type. Les méthodes qui ont une signification particulière en Java (`equals`, `hashCode`, `toString`) sont appelées **méthodes spéciales**. Elles peuvent être exprimées sous trois formes&nbsp;:</p>
-            <ul class="list">
-                <li>
-                    <p>**Stub**&nbsp;: une méthode vide à implémenter soit à partir du code Java généré, soit avec un bloc de code</p>
-                </li>
-                <li>
-                    <p>**Implémentation par défaut**&nbsp;: une implémentation par défaut à usage général qui devrait fonctionner dans la plupart des cas</p>
-                </li>
-                <li>
-                    <p>**Implémentation personnalisée**&nbsp;: l'implémentation par défaut, personnalisée en passant des arguments à la méthode</p>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <h4 id="2-generate-it">2. Générez-le</h4>
-    <p>À partir de l'interface graphique de l'extension VSCode ou en utilisant le binaire autonome, générez votre blueprint.</p>
-    <p>Plusieurs cibles sont disponibles</p>
-    <ul class="list">
-        <li>
-            <p>Java (évidemment)&nbsp;: génère du code Java</p>
+          <p>
+            **Implémentation par défaut**&nbsp;: une implémentation par défaut à usage général qui devrait fonctionner
+            dans la plupart des cas
+          </p>
         </li>
         <li>
-            <p><a target="_blank" rel="noopener noreferrer" href="https://mermaid.js.org/" data-definition-id="mermaid" class="link definition-tooltip-trigger">Mermaid</a>&nbsp;: génère un diagramme de classe Mermaid<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup> représentant la structure du blueprint</p>
+          <p>
+            **Implémentation personnalisée**&nbsp;: l'implémentation par défaut, personnalisée en passant des arguments
+            à la méthode
+          </p>
         </li>
-    </ul>
+      </ul>
+    </li>
+  </ul>
+  <h4 id="2-generate-it">2. Générez-le</h4>
+  <p>
+    À partir de l'interface graphique de l'extension VSCode ou en utilisant le binaire autonome, générez votre
+    blueprint.
+  </p>
+  <p>Plusieurs cibles sont disponibles</p>
+  <ul class="list">
+    <li>
+      <p>Java (évidemment)&nbsp;: génère du code Java</p>
+    </li>
+    <li>
+      <p>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://mermaid.js.org/"
+          data-def-id="mermaid"
+          class="link def-tooltip-trigger">
+          Mermaid
+        </a>
+        &nbsp;: génère un diagramme de classe Mermaid
+        <sup id="cite-ref-1">
+          <a class="link" href="#ref-1">
+            [1]
+          </a>
+        </sup>{' '}
+        représentant la structure du blueprint
+      </p>
+    </li>
+  </ul>
 </article>

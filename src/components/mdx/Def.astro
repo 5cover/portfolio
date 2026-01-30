@@ -1,18 +1,5 @@
 ---
-import { getDefinitions } from '../../lib/content';
-import { normalizeLocale, type Locale } from '../../i18n/site';
-import { mapById } from '../../lib/content';
-import type { LocalizedItem } from '../../content/config';
-
-const definitionCache = new Map<Locale, Record<string, LocalizedItem<'definitions'>>>();
-
-async function getDefinitionIndex(lang: Locale) {
-    const cached = definitionCache.get(lang);
-    if (cached) return cached;
-    const index = mapById(await getDefinitions(lang));
-    definitionCache.set(lang, index);
-    return index;
-}
+import * as content from '../../lib/content';
 
 interface Props {
     id: string;
@@ -21,24 +8,22 @@ interface Props {
 }
 
 const { id, href, class: className } = Astro.props;
-const locale = normalizeLocale(Astro.currentLocale);
-const definitionsById = await getDefinitionIndex(locale);
-const definition = definitionsById[id];
-const resolvedHref = href ?? definition?.wiki;
+const def = content.def(Astro.currentLocale, id);
+const resolvedHref = href ?? def?.wiki;
 
 if (!resolvedHref) {
-    throw new Error(`Missing definition href for ${id}`);
+    throw new Error(`Missing def href for ${id}`);
 }
 
-const label = definition?.name.abbr ?? definition?.name.short ?? definition?.name.full ?? id;
-const classes = ['link', 'definition-tooltip-trigger', className].filter(Boolean).join(' ');
+const label = def?.name.abbr ?? def?.name.short ?? def?.name.full ?? id;
+const classes = ['link', 'def-tooltip-trigger', className].filter(Boolean).join(' ');
 const isExternal = resolvedHref.startsWith('http://') || resolvedHref.startsWith('https://');
 ---
 
 <a
     href={resolvedHref}
     class={classes}
-    data-definition-id={id}
+    data-def-id={id}
     {...isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}}>
     <slot>{label}</slot>
 </a>

@@ -1,0 +1,21 @@
+{
+  "type": "programming-language",
+  "name":
+    {
+      "full": { "en": "Bourne-Again shell", "fr": "Bourne-Again shell" },
+      "abbr": { "en": "Bash", "fr": "Bash" },
+      "short": {}
+    },
+  "synopsis":
+    {
+      "en": 'A shell program and command language supported by the <abbr title="Free Software Foundation">FSF</abbr> and first developed for the <abbr title="GNU is Not Unix">GNU</abbr> Project by Brian Fox.',
+      "fr": "Interpréteur en ligne de commande de type script. C'est le shell Unix du projet GNU."
+    },
+  "wiki":
+    {
+      "en": "https://en.wikipedia.org/wiki/Bash_(Unix_shell)",
+      "fr": "https://fr.wikipedia.org/wiki/Bourne-Again_shell"
+    },
+  "background": "/portfolio/img/def/bash/bg.png",
+  "logo": { "src": "/portfolio/img/def/bash/logo.svg" }
+}

@@ -1,17 +1,8 @@
 ---
 import HomePage from '../../components/pages/HomePage.astro';
-import { getContacts, getPianoTiles, getProjects } from '../../lib/content';
-import { getLabels, normalizeLocale } from '../../i18n/site';
-
-const locale = normalizeLocale(Astro.currentLocale);
-const labels = getLabels(locale);
-const [projects, contacts, pianoTiles] = await Promise.all([getProjects(locale), getContacts(), getPianoTiles(locale)]);
 ---
 
 <HomePage
-    pianoTiles={pianoTiles}
-    projects={projects}
-    contacts={contacts}
     copy={{
         indexMe: 'About me',
         indexMyPhoto: 'My photo',
@@ -21,8 +12,6 @@ const [projects, contacts, pianoTiles] = await Promise.all([getProjects(locale),
         indexMyResumePreview: 'Preview my resume',
         indexMyResume: 'My resume',
         indexVideoCv: 'Video CV',
-        ongoing: labels.copy.ongoing,
-        fmtTitle: labels.copy.fmtTitle,
     }}>
     <Fragment slot='about-content'>
         <p>
@@ -40,8 +29,8 @@ const [projects, contacts, pianoTiles] = await Promise.all([getProjects(locale),
                 target='_blank'
                 rel='noopener noreferrer'
                 href='https://www.lyceeschoelcher972.fr/specialite-llcer-amc/'
-                data-definition-id='amc'
-                class='link definition-tooltip-trigger'>
+                data-def-id='amc'
+                class='link def-tooltip-trigger'>
                 AMC
             </a>{' '}
             et{' '}
@@ -49,8 +38,8 @@ const [projects, contacts, pianoTiles] = await Promise.all([getProjects(locale),
                 target='_blank'
                 rel='noopener noreferrer'
                 href='https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448'
-                data-definition-id='nsi'
-                class='link definition-tooltip-trigger'>
+                data-def-id='nsi'
+                class='link def-tooltip-trigger'>
                 NSI
             </a>
             .

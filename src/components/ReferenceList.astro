@@ -1,6 +1,6 @@
 ---
-import type { Reference } from '../content/config';
-import { at, getAnchors } from '../lib/content';
+import type { Reference } from '../content.config';
+import * as content from '../lib/content';
 import Graphic from './Graphic';
 
 interface Props {
@@ -8,17 +8,14 @@ interface Props {
     backlinkLabel: string;
 }
 
-const props: Props = Astro.props;
-const { references, backlinkLabel } = props;
-
-const anchors = await getAnchors();
+const { references, backlinkLabel } = Astro.props;
 ---
 
 <ol class='list'>
     {
         references.map((ref, index) => {
             const num = index + 1;
-            const anchor = at(anchors, ref.anchor);
+            const anchor = content.anchor(ref.anchor);
             return (
                 <li id={`ref-${num}`}>
                     <span class='ref-backlink' aria-label={backlinkLabel} title={backlinkLabel}>

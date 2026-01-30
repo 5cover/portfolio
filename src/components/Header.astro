@@ -2,38 +2,37 @@
 import { normalizeLocale } from '../i18n/site';
 import { pageHref } from '../lib/links';
 
-type NavItem = {
+interface NavItem {
     page: string;
     label: string;
-};
+}
 
-type LanguageInfo = {
+interface LanguageInfo {
     code: string;
     name: string;
     flagClass: string;
     names: Record<string, string>;
-};
+}
 
-type ThemeLabels = {
+interface ThemeLabels {
     light: string;
     system: string;
     dark: string;
-};
+}
 
-type Props = {
+interface Props {
     pageName: string;
     navItems: NavItem[];
     languages: LanguageInfo[];
     themeLabels: ThemeLabels;
-};
+}
 
-const props: Props = Astro.props;
-const { pageName, navItems, languages, themeLabels } = props;
+const { pageName, navItems, languages, themeLabels } = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
 ---
 
-<template id='template-definition-tooltip'>
-    <article class='lvl definition-tooltip' role='tooltip'>
+<template id='template-def-tooltip'>
+    <article class='lvl def-tooltip' role='tooltip'>
         <h4 class='title'>
             <a target='_blank' rel='noopener noreferrer'>
                 <!-- href="wiki"; name -->

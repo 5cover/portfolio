@@ -6,20 +6,14 @@ import { detailHref } from '../../lib/links';
 import { normalizeLocale } from '../../i18n/site';
 
 import '../../styles/history.scss';
-import { getHistory, getTextualEntry } from '../../lib/content';
+import * as content from '../../lib/content';
 
 const locale = normalizeLocale(Astro.currentLocale);
-const historyItems = await getHistory(locale);
+const historyItems = content.history(locale);
 
 // todo: order history here.
 
-const historyBodies = await Promise.all(
-    historyItems.map(async ([id]) => {
-        const bodyEntry = await getTextualEntry(locale, 'history', id);
-        const { Content } = await bodyEntry.render();
-        return Content;
-    })
-);
+const historyBodies = await Promise.all(historyItems.map(([id]) => content.textual(locale, 'history', id)));
 ---
 
 <BaseLayout pageName='history'>

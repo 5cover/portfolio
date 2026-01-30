@@ -1,0 +1,21 @@
+{
+  "type": "programming-language",
+  "name":
+    {
+      "full": { "en": "Smalltalk", "fr": "Smalltalk" },
+      "abbr": {},
+      "short": {}
+    },
+  "synopsis":
+    {
+      "en": 'A purely object oriented programming language (OOP) that was originally created in <time datetime="1972">1972</time> for educational use.',
+      "fr": 'Langage de programmation orienté objet, réflexif et dynamiquement typé créé en <time datetime="1972">1972</time>.'
+    },
+  "wiki":
+    {
+      "en": "https://en.wikipedia.org/wiki/Smalltalk",
+      "fr": "https://fr.wikipedia.org/wiki/Smalltalk"
+    },
+
+  "logo": { "src": "/portfolio/img/def/smalltalk/logo.svg" }
+}

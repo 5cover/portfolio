@@ -1,6 +1,5 @@
-
 <div>
-    <p><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> est le premier langage de programmation que j'ai appris, en <time datetime="2017">2017</time>. Cependant j'ai récemment commencé à apprendre le <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>. Zig est similaire au C dans ses fondements. C'est un langage de bas niveau, destiné à la programmation système et à l'interaction avec le matériel. Et je suis un grand fan&nbsp;! J'ai implémenté <a class="link" href="/portfolio/fr/projects/ztest.html">un clone de la commande ' . $f->code('test') . ' GNU</a> pour me familiariser avec celui-ci. Ce langage résout de nombreux problèmes et limitations du C.</p>
+    <p><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-def-id="c" class="link def-tooltip-trigger">C</a> est le premier langage de programmation que j'ai appris, en <time datetime="2017">2017</time>. Cependant j'ai récemment commencé à apprendre le <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-def-id="zig" class="link def-tooltip-trigger">Zig</a>. Zig est similaire au C dans ses fondements. C'est un langage de bas niveau, destiné à la programmation système et à l'interaction avec le matériel. Et je suis un grand fan&nbsp;! J'ai implémenté <a class="link" href="/portfolio/fr/projects/ztest.html">un clone de la commande ' . $f->code('test') . ' GNU</a> pour me familiariser avec celui-ci. Ce langage résout de nombreux problèmes et limitations du C.</p>
 </div>
 <article id="generics">
     <h3>Génériques</h3>
@@ -15,40 +14,41 @@
 #define vector_MIN_CAP 32
 
 #define vector_struct(T) \
-  typedef struct T##_vector { \
-    T *buf; \
-    size_t capacity; \
-    size_t size; \
-  } T##_vector;
+ typedef struct T##\_vector { \
+ T \*buf; \
+ size_t capacity; \
+ size_t size; \
+ } T##\_vector;
 
-#define vector_init(T) \
-  void T##_vector_init(T##_vector *vec) { \
-    vec-&gt;capacity = vector_MIN_CAP; \
-    vec-&gt;buf = malloc(sizeof(T) * vec-&gt;capacity); \
-    vec-&gt;size = 0; \
-  }
+#define vector*init(T) \
+ void T##\_vector_init(T##\_vector \_vec) { \
+ vec-&gt;capacity = vector_MIN_CAP; \
+ vec-&gt;buf = malloc(sizeof(T) * vec-&gt;capacity); \
+ vec-&gt;size = 0; \
+ }
 
 #define vector_get(T) \
-  void *T##_vector_get(T##_vector *vec, size_t idx) { return vec-&gt;buf + idx; }
+ void *T##\_vector_get(T##\_vector *vec, size_t idx) { return vec-&gt;buf + idx; }
 
 #define vector_set(T) \
-  void T##_vector_set(T##_vector *vec, size_t idx, T data) { \
-    vec-&gt;buf[idx] = data; \
-  }
+ void T##\_vector_set(T##\_vector \*vec, size_t idx, T data) { \
+ vec-&gt;buf[idx] = data; \
+ }
 
-#define vector_push(T) \
-  void T##_vector_push(T##_vector *vec, T data) { \
-    if (vec-&gt;size == vec-&gt;capacity) { \
-      vec-&gt;capacity *= 2; \
-      vec-&gt;buf = realloc(vec-&gt;buf, sizeof(T) * vec-&gt;capacity); \
-    } \
-    T##_vector_set(vec, vec-&gt;size++, data); \
-  }
+#define vector*push(T) \
+ void T##\_vector_push(T##\_vector \_vec, T data) { \
+ if (vec-&gt;size == vec-&gt;capacity) { \
+ vec-&gt;capacity *= 2; \
+ vec-&gt;buf = realloc(vec-&gt;buf, sizeof(T) \* vec-&gt;capacity); \
+ } \
+ T##\_vector_set(vec, vec-&gt;size++, data); \
+ }
 
 #define vector(T) \
-  vector_struct(T); \
-  vector_init(T) vector_get(T) vector_set(T) vector_push(T)
-```
+ vector_struct(T); \
+ vector_init(T) vector_get(T) vector_set(T) vector_push(T)
+
+````
             <figcaption>Impleméntation d'un vecteur générique utilisant les macros en C<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>. Comme vous pouvez le voir, le code est embrouillé et fragile. L'utilisation serait inutilement verbeuse et pénible.</figcaption>
         </figure>
         <p>En Zig, les génériques sont simples comme bonjour. Vous pouvez passer des arguments de types aux fonctions comme citoyens de première classe. Vous pouvez aussi stocker des types dans des constantes.</p>
@@ -61,10 +61,12 @@ pub fn Binary(comptime T: type) type {
         right: T,
     };
 }
-```
+````
+
             <figcaption>Exemple de code Zig pour une structure de données générique (une expression binaire pour un analyseur)</figcaption>
         </figure>
     </div>
+
 </article>
 <article id="explicit-and-exhaustive-error-handling">
     <h3>Gestion des erreurs explicite et exhaustive</h3>
@@ -110,7 +112,9 @@ while (i &lt; 100) {
     // la valeur de i n&#39;a pas changé
     // Instructions supplémentaires
     // ...
+
 }
+
 ```
             <figcaption>Un autre utilisation de `defer` pour incrémenter un variant de boucle. L'incrémentation est faite au début de la boucle, près de la condition et de la déclaration du variant. Or elle n'est réellement exécutée qu'à la fin du bloc de la boucle.</figcaption>
         </figure>
@@ -121,13 +125,13 @@ while (i &lt; 100) {
     <div>
         <p>La blibliothèque standard du C est plutôt rudimentaire. On a souvent besoin de télécharger une bibliothèque STB<sup id="cite-ref-3"><a class="link" href="#ref-3">[3]</a></sup> quand on a besoin d'un allocateur en arène ou d'une table de hachage.</p>
         <p>On peut aussi apprendre à implémenter ces structures de données et algorithmes soi-même, ce qui explique pourquoi je pense qu'apprendre le C comme premier langage de programmation m'a aidé à devenir un meilleur programmeur.</p>
-        <p>Zig résout ce problème en ayant une bibliothèque standard plus riche. Cette approche n'est pas unique à Zig. Des langages similaires comme <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Go_(langage)" data-definition-id="go" class="link definition-tooltip-trigger">Go</a> ou <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Rust_(langage)" data-definition-id="rust" class="link definition-tooltip-trigger">Rust</a> ont eux aussi des bibliothèques standard riches.</p>
+        <p>Zig résout ce problème en ayant une bibliothèque standard plus riche. Cette approche n'est pas unique à Zig. Des langages similaires comme <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Go_(langage)" data-def-id="go" class="link def-tooltip-trigger">Go</a> ou <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Rust_(langage)" data-def-id="rust" class="link def-tooltip-trigger">Rust</a> ont eux aussi des bibliothèques standard riches.</p>
     </div>
 </article>
 <article id="a-standard-build-system">
     <h3>Un système de génération standardisé</h3>
     <div>
-        <p>C n'a pas de système de génération <q>officiel</q>&nbsp;; à la place, on a des systèmes de génération tiers comme <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Make" data-definition-id="make" class="link definition-tooltip-trigger">Make</a> or <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/CMake" data-definition-id="cmake" class="link definition-tooltip-trigger">CMake</a>.</p>
+        <p>C n'a pas de système de génération <q>officiel</q>&nbsp;; à la place, on a des systèmes de génération tiers comme <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Make" data-def-id="make" class="link def-tooltip-trigger">Make</a> or <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/CMake" data-def-id="cmake" class="link def-tooltip-trigger">CMake</a>.</p>
         <p>Le système de génération de Zig est distribué avec le compilateur. Celui-ci utilise une approche déclarative. Ce que j'apprécie particulièrement est qu'il n'introduit pas de nouveau langage. À la place, les commandes de génération sont exprimées en Zig.</p>
     </div>
 </article>
@@ -167,3 +171,4 @@ while (i &lt; 100) {
         <p>Au final, le choix entre C et Zig dépendra des besoins spécifiques du projet et de la familiarité du développeur. Cependant, une chose est claire&nbsp;: Zig est un langage à surveiller de près, et je suis impatient de voir comment il façonnera l'avenir de la programmation.</p>
     </div>
 </article>
+```

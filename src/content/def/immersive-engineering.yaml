@@ -1,0 +1,21 @@
+{
+  "type": "game-mod",
+  "name":
+    {
+      "full": { "en": "Immersive Engineering", "fr": "Immersive Engineering" },
+      "abbr": {},
+      "short": {}
+    },
+  "synopsis":
+    {
+      "en": "Minecraft videogame mod that aims to add a more realistic and immersive gaming experience by focusing on engineering, construction and automation. This mod was created by developer BluSunrize.",
+      "fr": "Mod pour le jeu vidéo Minecraft qui vise à ajouter une expérience de jeu plus réaliste et immersive en se concentrant sur l'ingénierie, la construction et l'automatisation. Ce mod a été créé par le développeur BluSunrize."
+    },
+  "wiki":
+    {
+      "en": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering",
+      "fr": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering"
+    },
+
+  "logo": { "src": "/portfolio/img/def/immersive-engineering/logo.png" }
+}

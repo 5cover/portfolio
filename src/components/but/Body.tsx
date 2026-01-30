@@ -1,36 +1,23 @@
 import ProjectCardList from '../ProjectCardList';
-import { getAnchors, getProjects, getTags, mapById, type Entry } from '../../lib/content';
-import { getLabels, type Locale, type LocaleLabels } from '../../i18n/site';
+import * as content from '../../lib/content';
+import { type Locale } from '../../i18n/site';
 import Section from '../Section';
 import Heading from '../Heading';
 import type { PageCopy } from './types';
-import type { LocalizedItem } from '../../content/config';
 
 const MaxProjectsPerSkill = 4;
 
-interface Data {
-    projects: Entry<LocalizedItem<'projects'>>[];
-    labels: LocaleLabels;
-    locale: Locale;
-}
-
 export interface Props {
     copy: PageCopy;
-    data: Data;
+    locale: Locale;
 }
 
 function simpleEntries<K extends PropertyKey, V>(o: Partial<Record<K, V>>) {
     return Object.entries(o) as [K, V][];
 }
 
-export const data = async (locale: Locale): Promise<Data> => ({
-    projects: await getProjects(locale),
-    labels: getLabels(locale),
-    locale,
-});
-
-export default ({ copy, data }: Props) => {
-    const { projects, labels, locale } = data;
+export default ({ copy, locale }: Props) => {
+    const projects = content.project(locale);
     return (
         <>
             <Section class="but-body margined">
@@ -106,12 +93,7 @@ export default ({ copy, data }: Props) => {
                                                 </ul>
                                                 {skillProjects.length > 0 ? (
                                                     <ProjectCardList
-                                                        langLabels={{
-                                                            ongoing: labels.copy.ongoing,
-                                                            fmtTitle: labels.copy.fmtTitle,
-                                                        }}
-                                                        entry={skillProjects}
-                                                        headingLevel={4}
+                                                        entries={skillProjects}
                                                         class="project-skills"
                                                         locale={locale}
                                                     />

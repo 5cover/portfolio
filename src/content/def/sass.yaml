@@ -1,0 +1,25 @@
+{
+  "type": "computer-language",
+  "name":
+    {
+      "full":
+        {
+          "en": "Syntactically Awesome Style Sheets",
+          "fr": "Syntactically Awesome Style Sheets"
+        },
+      "abbr": { "en": "SASS", "fr": "SASS" },
+      "short": {}
+    },
+  "synopsis":
+    {
+      "en": "A preprocessor scripting language that is interpreted or compiled into CSS.",
+      "fr": "Langage de script préprocesseur qui est compilé ou interprété en CSS."
+    },
+  "wiki":
+    {
+      "en": "https://en.wikipedia.org/wiki/Sass_(style_sheet_language)",
+      "fr": "https://fr.wikipedia.org/wiki/Sass_(langage)"
+    },
+  "background": "/portfolio/img/def/sass/bg.png",
+  "logo": { "src": "/portfolio/img/def/sass/logo.svg" }
+}

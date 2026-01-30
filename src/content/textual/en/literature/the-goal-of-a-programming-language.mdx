@@ -1,6 +1,5 @@
-
 <div>
-    <p><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> is the first programming language I've learned, all the way back in <time datetime="2017">2017</time>. However I recently started learning <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Zig_(programming_language)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>. Zig is similar to C in may ways. It is a low-level language destined for systems programming and hardware interaction. And I absolutely love it! I've implemented <a class="link" href="/portfolio/en/projects/ztest.html.html">a clone of the GNU ' . $f->code('test') . ' command</a> to learn it. This language fixes many of the problems and shortcomings of C.</p>
+    <p><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_(programming_language)" data-def-id="c" class="link def-tooltip-trigger">C</a> is the first programming language I've learned, all the way back in <time datetime="2017">2017</time>. However I recently started learning <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Zig_(programming_language)" data-def-id="zig" class="link def-tooltip-trigger">Zig</a>. Zig is similar to C in may ways. It is a low-level language destined for systems programming and hardware interaction. And I absolutely love it! I've implemented <a class="link" href="/portfolio/en/projects/ztest.html.html">a clone of the GNU ' . $f->code('test') . ' command</a> to learn it. This language fixes many of the problems and shortcomings of C.</p>
 </div>
 <article id="generics">
     <h3>Generics</h3>
@@ -15,40 +14,41 @@
 #define vector_MIN_CAP 32
 
 #define vector_struct(T) \
-    typedef struct T##_vector { \
-T *buf; \
+ typedef struct T##\_vector { \
+T \*buf; \
 size_t capacity; \
 size_t size; \
-    } T##_vector;
+ } T##\_vector;
 
-#define vector_init(T) \
-    void T##_vector_init(T##_vector *vec) { \
+#define vector*init(T) \
+ void T##\_vector_init(T##\_vector \_vec) { \
 vec-&gt;capacity = vector_MIN_CAP; \
 vec-&gt;buf = malloc(sizeof(T) * vec-&gt;capacity); \
 vec-&gt;size = 0; \
-    }
+ }
 
 #define vector_get(T) \
-    void *T##_vector_get(T##_vector *vec, size_t idx) { return vec-&gt;buf + idx; }
+ void *T##\_vector_get(T##\_vector *vec, size_t idx) { return vec-&gt;buf + idx; }
 
 #define vector_set(T) \
-    void T##_vector_set(T##_vector *vec, size_t idx, T data) { \
+ void T##\_vector_set(T##\_vector \*vec, size_t idx, T data) { \
 vec-&gt;buf[idx] = data; \
-    }
+ }
 
-#define vector_push(T) \
-    void T##_vector_push(T##_vector *vec, T data) { \
+#define vector*push(T) \
+ void T##\_vector_push(T##\_vector \_vec, T data) { \
 if (vec-&gt;size == vec-&gt;capacity) { \
-    vec-&gt;capacity *= 2; \
-    vec-&gt;buf = realloc(vec-&gt;buf, sizeof(T) * vec-&gt;capacity); \
+ vec-&gt;capacity *= 2; \
+ vec-&gt;buf = realloc(vec-&gt;buf, sizeof(T) \* vec-&gt;capacity); \
 } \
-T##_vector_set(vec, vec-&gt;size++, data); \
-    }
+T##\_vector_set(vec, vec-&gt;size++, data); \
+ }
 
 #define vector(T) \
-    vector_struct(T); \
-    vector_init(T) vector_get(T) vector_set(T) vector_push(T)
-```
+ vector_struct(T); \
+ vector_init(T) vector_get(T) vector_set(T) vector_push(T)
+
+````
             <figcaption>Implementation of a generic vector using macros in C<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>. As you can see, the code is obfuscated and fragile. Usage would be unnecessarily verbose and tedious.</figcaption>
         </figure>
         <p>In Zig, generics are easy as pie. You can pass type arguments to functions as first-class citizens. You can even store types in constants.</p>
@@ -61,10 +61,12 @@ pub fn Binary(comptime T: type) type {
         right: T,
     };
 }
-```
+````
+
             <figcaption>Sample Zig code for a generic data structure (a binary expression for a parser)</figcaption>
         </figure>
     </div>
+
 </article>
 <article id="explicit-and-exhaustive-error-handling">
     <h3>Explicit and exhaustive error handling</h3>
@@ -120,13 +122,13 @@ while (i &lt; 100) {
     <div>
         <p>C's standard library is quite rudimentary. You often need to download an STB library<sup id="cite-ref-3"><a class="link" href="#ref-3">[3]</a></sup> when you want an arena allocator or an hash table.</p>
         <p>You can also learn to implement these data structures and algorithms yourself, which is why I think learning C as my first language has really helped me become a better programmer.</p>
-        <p>Zig solves this problem by having a richer standard library. This isn't unique to Zig, though. Similar languages like <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Go_(programming_language)" data-definition-id="go" class="link definition-tooltip-trigger">Go</a> or <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Rust_(programming_language)" data-definition-id="rust" class="link definition-tooltip-trigger">Rust</a> also have rich standard libraries.</p>
+        <p>Zig solves this problem by having a richer standard library. This isn't unique to Zig, though. Similar languages like <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Go_(programming_language)" data-def-id="go" class="link def-tooltip-trigger">Go</a> or <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Rust_(programming_language)" data-def-id="rust" class="link def-tooltip-trigger">Rust</a> also have rich standard libraries.</p>
     </div>
 </article>
 <article id="a-standard-build-system">
     <h3>A standard build system</h3>
     <div>
-        <p>C doesn't have an <q>official</q> build system; third-party build systems like <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Make_(software)" data-definition-id="make" class="link definition-tooltip-trigger">Make</a> or <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/CMake" data-definition-id="cmake" class="link definition-tooltip-trigger">CMake</a> are used instead.</p>
+        <p>C doesn't have an <q>official</q> build system; third-party build systems like <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Make_(software)" data-def-id="make" class="link def-tooltip-trigger">Make</a> or <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/CMake" data-def-id="cmake" class="link def-tooltip-trigger">CMake</a> are used instead.</p>
         <p>The Zig build system is shipped with the compiler. It uses a declarative approach. What I especially like about it that it does not introduce a new language. Instead, build commands are expressed in Zig.</p>
     </div>
 </article>

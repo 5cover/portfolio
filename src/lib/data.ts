@@ -1,13 +1,12 @@
-import { getCollection } from 'astro:content';
-import { getAnchors, getDefinitions, getProjects, getTags, getTypes, mapById } from './content';
-import type { Item } from '../content/config';
+import * as content from './content';
 import type { Locale } from '../i18n/site';
+import { mapById } from './util';
 
-export const definitions = async (locale: Locale) => jsonResponse(mapById(await getDefinitions(locale)));
-export const projects = async (locale: Locale) => jsonResponse(mapById(await getProjects(locale)));
-export const tags = async (locale: Locale) => jsonResponse(mapById(await getTags(locale)));
-export const types = async (locale: Locale) => jsonResponse(mapById(await getTypes(locale)));
-export const anchors = async () => jsonResponse(mapById(await getAnchors()));
+export const def = async (locale: Locale) => jsonResponse(mapById(content.def(locale)));
+export const project = async (locale: Locale) => jsonResponse(mapById(content.project(locale)));
+export const tag = async (locale: Locale) => jsonResponse(mapById(content.tag(locale)));
+export const defType = async (locale: Locale) => jsonResponse(mapById(content.defType(locale)));
+export const anchor = async () => jsonResponse(mapById(content.anchor()));
 
 function jsonResponse(data: unknown): Response {
     return new Response(JSON.stringify(data), {

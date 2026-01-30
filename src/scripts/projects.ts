@@ -1,12 +1,12 @@
-import type { Graphic, Item, LocalizedItem } from '../content/config';
+import type { Graphic, LocalizedItem } from '../content.config';
 import { stripTags } from '../lib/util';
 import { requireElementById } from './util';
 
-type Project = LocalizedItem<'projects'>;
+type Project = LocalizedItem<'project'>;
 type ProjectEntry = [id: string, project: Project];
 type ProjectIndex = Record<string, Project>;
-type TagIndex = Record<string, LocalizedItem<'tags'>>;
-type AnchorIndex = Record<string, LocalizedItem<'anchors'>>;
+type TagIndex = Record<string, LocalizedItem<'tag'>>;
+type AnchorIndex = Record<string, LocalizedItem<'anchor'>>;
 
 async function init(): Promise<void> {
     const locale = document.documentElement.lang || 'fr';
@@ -19,9 +19,9 @@ async function init(): Promise<void> {
     const sortingInputs = document.querySelectorAll<HTMLInputElement>('input[name="sorting"]');
 
     const [projectsRaw, tagsRaw, anchorsRaw] = await Promise.all([
-        fetchJson(`${dataBase}/projects.json`),
-        fetchJson(`${dataBase}/tags.json`),
-        fetchJson(`${dataBase}/anchors.json`),
+        fetchJson(`${dataBase}/project.json`),
+        fetchJson(`${dataBase}/tag.json`),
+        fetchJson(`${dataBase}/anchor.json`),
     ]);
 
     const projectsIndex = projectsRaw as ProjectIndex;
@@ -123,7 +123,7 @@ async function updateList(
         )
     );
     items.forEach(item => listEl.appendChild(item));
-    window.refreshDefinitionTooltips?.(listEl);
+    window.refreshDefTooltips?.(listEl);
 }
 
 function matchesSearch(project: Project, query: string): boolean {

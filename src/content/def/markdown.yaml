@@ -1,0 +1,17 @@
+{
+  "type": "markup-language",
+  "name":
+    { "full": { "en": "Markdown", "fr": "Markdown" }, "abbr": {}, "short": {} },
+  "synopsis":
+    {
+      "en": "A lightweight markup language for creating formatted text using a plain-text editor.",
+      "fr": 'Langage de balisage léger créé en <time datetime="2004">2004</time> par John Gruber, avec l''aide d''Aaron Swartz.'
+    },
+  "wiki":
+    {
+      "en": "https://en.wikipedia.org/wiki/Markdown",
+      "fr": "https://fr.wikipedia.org/wiki/Markdown"
+    },
+  "background": "/portfolio/img/def/markdown/bg.png",
+  "logo": { "kind": "svg", "src": "/portfolio/img/def/markdown/logo.svg" }
+}

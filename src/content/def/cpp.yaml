@@ -1,0 +1,16 @@
+{
+  "type": "programming-language",
+  "name": { "full": { "en": "C++", "fr": "C++" }, "abbr": {}, "short": {} },
+  "synopsis":
+    {
+      "en": "A high-level, general-purpose programming language created by Danish computer scientist Bjarne Stroustrup.",
+      "fr": "Langage de programmation compilé permettant la programmation sous de multiples paradigmes, dont la programmation procédurale, la programmation orientée objet et la programmation générique."
+    },
+  "wiki":
+    {
+      "en": "https://en.wikipedia.org/wiki/C%2B%2B",
+      "fr": "https://fr.wikipedia.org/wiki/C%2B%2B"
+    },
+  "background": "/portfolio/img/def/cpp/bg.png",
+  "logo": { "src": "/portfolio/img/def/cpp/logo.svg" }
+}

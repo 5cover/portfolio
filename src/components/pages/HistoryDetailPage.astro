@@ -7,8 +7,7 @@ import '../../styles/history-detail.scss';
 // one off exception for the heavily styled BUT informatique page: https://github.com/withastro/astro/issues/7761
 // (it shows as resolved but sitll doesn't work for me)
 import '../../styles/but-informatique.scss';
-import { at, getHistory, getTextualEntry } from '../../lib/content';
-import { throwf } from '../../lib/util';
+import * as content from '../../lib/content';
 import { normalizeLocale, getLabels } from '../../i18n/site';
 
 interface Props {
@@ -18,14 +17,12 @@ interface Props {
 const { id } = Astro.props;
 
 const locale = normalizeLocale(Astro.currentLocale);
-const data = at(await getHistory(locale), id) ?? throwf(`history of id ${id} not found`);
+debugger;
+const data = content.history(locale, id);
 const labels = getLabels(locale);
 
-const historySummaryEntry = await getTextualEntry(locale, 'history', id);
-const { Content: HistorySummary } = await historySummaryEntry.render();
-
-const historyBodyEntry = await getTextualEntry(locale, 'history-body', data.body ?? id);
-const { Content: HistoryBody } = await historyBodyEntry.render();
+const historySummary = await content.textual(locale, 'history', id);
+const historyBody = await content.textual(locale, 'history-body', data.body);
 ---
 
 <BaseLayout pageName={`history/${id}`}>
@@ -44,11 +41,11 @@ const { Content: HistoryBody } = await historyBodyEntry.render();
         </header>
         <section id='story'>
             <h2>{labels.copy.story}</h2>
-            <TextualContent content={HistorySummary} />
+            <TextualContent content={historySummary} />
         </section>
         <section id='history-body'>
             <h2>{labels.copy.details}</h2>
-            <TextualContent content={HistoryBody} className='history-body textual' />
+            <TextualContent content={historyBody} className='history-body textual' />
         </section>
     </main>
 </BaseLayout>

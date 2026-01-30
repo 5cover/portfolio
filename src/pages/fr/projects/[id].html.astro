@@ -3,7 +3,7 @@ import ProjectDetailPage from '../../../components/pages/ProjectDetailPage.astro
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-    return (await getCollection('projects')).map(({ id }) => ({ params: { id } }));
+    return (await getCollection('project')).map(({ id }) => ({ params: { id } }));
 }
 
 const { id } = Astro.params;

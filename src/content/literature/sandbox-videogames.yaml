@@ -1,29 +1,12 @@
 {
   "kind": "passion",
-  "title": {
-    "en": "Sandbox videogames",
-    "fr": "Jeux-vidéos bac à sable"
-  },
-  "abstract": {
-    "en": "Infinite possibilities",
-    "fr": "Une infinité de possibilités"
-  },
-  "links": {
-    "en": [],
-    "fr": []
-  },
-  "references": {
-    "en": [],
-    "fr": []
-  },
-  "gallery": {
-    "en": [],
-    "fr": []
-  },
-  "logo": {
-    
-    "src": "/portfolio/img/definition/dreamfinity/logo.svg"
-  },
-  "background": "/portfolio/img/definition/minecraft/bg.png",
+  "title": { "en": "Sandbox videogames", "fr": "Jeux-vidéos bac à sable" },
+  "abstract":
+    { "en": "Infinite possibilities", "fr": "Une infinité de possibilités" },
+  "links": { "en": [], "fr": [] },
+  "references": { "en": [], "fr": [] },
+  "gallery": { "en": [], "fr": [] },
+  "logo": { "src": "/portfolio/img/def/dreamfinity/logo.svg" },
+  "background": "/portfolio/img/def/minecraft/bg.png",
   "tags": []
 }

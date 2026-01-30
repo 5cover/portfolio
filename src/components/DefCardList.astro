@@ -1,0 +1,22 @@
+---
+import type { LocalizedItem } from '../content.config';
+import DefCard from './DefCard.astro';
+
+interface Props {
+    defs: LocalizedItem<'def'>[];
+    langLabels: {
+        fmtTitle: string;
+    };
+}
+const { defs, langLabels } = Astro.props;
+---
+
+<ul class='lvl list-def'>
+    {
+        defs.map(def => (
+            <li>
+                <DefCard def={def} langLabels={langLabels} />
+            </li>
+        ))
+    }
+</ul>

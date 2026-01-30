@@ -1,5 +1,5 @@
 import type { ComponentChildren } from 'preact';
-import type { Graphic } from '../content/config';
+import type { Graphic } from '../content.config';
 
 const svgModules = import.meta.glob('../../public/**/*.svg', {
     import: 'default',

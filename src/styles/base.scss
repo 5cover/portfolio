@@ -5,415 +5,416 @@
 @use 'util';
 
 @property --bg-img {
-    syntax: '*';
-    inherits: false;
+  syntax: '*';
+  inherits: false;
 }
 
 @layer base, components;
 
 @layer components {
-    @include meta.load-css('components');
+  @include meta.load-css('components');
 }
 
 @layer base {
-    @mixin var-color($color-name, $color) {
-        --color-#{$color-name}: #{$color};
-    }
+  @mixin var-color($color-name, $color) {
+    --color-#{$color-name}: #{$color};
+  }
 
-    @mixin theme($step, $accent-bg, $accent-fg, $fg, $bg0) {
-        accent-color: $accent-bg;
-        $bg1: color.scale($bg0, $lightness: $step);
-        $bg2: color.scale($bg1, $lightness: $step);
-        $bg3: color.scale($bg2, $lightness: $step);
-        // accentext: Accent color variant for text foreground
-        $at0: color.scale($accent-bg, $lightness: $step);
-        $at1: color.scale($at0, $lightness: $step);
-        $at2: color.scale($at1, $lightness: $step);
-        $at3: color.scale($at2, $lightness: $step);
-        @include var-color('accent', $accent-bg);
-        @include var-color('accent-fg', $accent-fg);
-        @include var-color('fg', $fg);
-        @include var-color('lvl', $bg0);
-        @include var-color('lvl-next', $bg1);
-        @include var-color('accentext', $at0);
-        @include var-color('accentext-next', $at1);
+  @mixin theme($step, $accent-bg, $accent-fg, $fg, $bg0) {
+    accent-color: $accent-bg;
+    $bg1: color.scale($bg0, $lightness: $step);
+    $bg2: color.scale($bg1, $lightness: $step);
+    $bg3: color.scale($bg2, $lightness: $step);
+    // accentext: Accent color variant for text foreground
+    $at0: color.scale($accent-bg, $lightness: $step);
+    $at1: color.scale($at0, $lightness: $step);
+    $at2: color.scale($at1, $lightness: $step);
+    $at3: color.scale($at2, $lightness: $step);
+    @include var-color('accent', $accent-bg);
+    @include var-color('accent-fg', $accent-fg);
+    @include var-color('fg', $fg);
+    @include var-color('lvl', $bg0);
+    @include var-color('lvl-next', $bg1);
+    @include var-color('accentext', $at0);
+    @include var-color('accentext-next', $at1);
+
+    .lvl {
+      @include var-color('lvl', $bg1);
+      @include var-color('lvl-next', $bg2);
+      @include var-color('accentext', $at1);
+      @include var-color('accentext-next', $at2);
+
+      .lvl {
+        @include var-color('lvl', $bg2);
+        @include var-color('lvl-next', $bg3);
+        @include var-color('accentext', $at2);
+        @include var-color('accentext-next', $at3);
 
         .lvl {
-            @include var-color('lvl', $bg1);
-            @include var-color('lvl-next', $bg2);
-            @include var-color('accentext', $at1);
-            @include var-color('accentext-next', $at2);
-
-            .lvl {
-                @include var-color('lvl', $bg2);
-                @include var-color('lvl-next', $bg3);
-                @include var-color('accentext', $at2);
-                @include var-color('accentext-next', $at3);
-
-                .lvl {
-                    @include var-color('lvl', $bg3);
-                    @include var-color('accentext', $at3);
-                }
-            }
+          @include var-color('lvl', $bg3);
+          @include var-color('accentext', $at3);
         }
+      }
+    }
+  }
+
+  $accent: #a66144;
+  $accent-fg: white;
+
+  @mixin theme-dark {
+    color-scheme: dark;
+    $step: 8%;
+    $fg: #d3d3d3;
+    $bg0: #111;
+    @include theme($step, $accent, $accent-fg, $fg, $bg0);
+  }
+
+  @mixin theme-light {
+    color-scheme: light;
+    $step: -8%;
+    $fg: #111;
+    $bg0: #fff;
+    @include theme($step, $accent, $accent-fg, $fg, $bg0);
+  }
+
+  :root {
+    background-color: var(--color-lvl);
+    color: var(--color-fg);
+    font-family: Ubuntu, system-ui;
+    scroll-behavior: smooth;
+  }
+
+  :root[data-theme='dark'] {
+    @include theme-dark;
+  }
+
+  :root[data-theme='light'] {
+    @include theme-light;
+  }
+
+  :root[data-theme='system'] {
+    @media (prefers-color-scheme: dark) {
+      @include theme-dark;
     }
 
-    $accent: #a66144;
-    $accent-fg: white;
-
-    @mixin theme-dark {
-        color-scheme: dark;
-        $step: 8%;
-        $fg: #d3d3d3;
-        $bg0: #111;
-        @include theme($step, $accent, $accent-fg, $fg, $bg0);
+    @media (prefers-color-scheme: light) {
+      @include theme-light;
     }
+  }
 
-    @mixin theme-light {
-        color-scheme: light;
-        $step: -8%;
-        $fg: #111;
-        $bg0: #fff;
-        @include theme($step, $accent, $accent-fg, $fg, $bg0);
+  /* Chromium issue: transitions stack (children wait for parents to finish their transition before doing their own) */
+  /* Solution: apply all transitions only to leaf elements. In non-leaf elements, transition only properties that are unrelated to the textual content */
+  $non-leaf-transition-properties:
+    background-color, background-attachment, background-clip, background-image, background-origin, background-position,
+    background-repeat, background-size, transform, opacity, filter;
+
+  * {
+    box-sizing: border-box;
+    transition-duration: calc(1s / 3);
+    transition-property: $non-leaf-transition-properties;
+  }
+
+  /* Leaf elements */
+  :not(:has(*)) {
+    transition-property: $non-leaf-transition-properties, color, text-decoration, fill, stroke;
+  }
+
+  .fi {
+    color: transparent;
+  }
+
+  /* Resets */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  p,
+  figure,
+  input,
+  samp,
+  code,
+  kbd,
+  pre,
+  blockquote {
+    margin: 0;
+    padding: 0;
+  }
+
+  input {
+    border: none;
+    font: inherit;
+  }
+
+  /* Basic styles */
+  abbr {
+    text-decoration: underline dotted;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  blockquote {
+    $border-width: calc(1ch / const.$phi);
+    $margin-padding-ratio: 1;
+    padding-left: calc(1em - $border-width / 2);
+    margin-left: max(0, calc(min(2.5%, 1em) - $border-width / 2));
+    width: fit-content;
+    border-left: $border-width solid var(--color-lvl-next);
+
+    footer {
+      text-align: right;
     }
+  }
 
-    :root {
-        background-color: var(--color-lvl);
-        color: var(--color-fg);
-        font-family: Ubuntu, system-ui;
-        scroll-behavior: smooth;
+  :not(pre) > :is(code, samp, kbd) {
+    background-color: var(--color-lvl-next);
+    @include util.horizontal-box(0.4);
+  }
+
+  pre {
+    background-color: var(--color-lvl-next);
+    white-space: pre-wrap;
+    text-align: initial;
+    @include util.horizontal-box(2, 1);
+  }
+
+  small {
+    font-size: 1em;
+
+    color: rgb(from var(--color-fg) r g b / calc(2 / 3));
+  }
+
+  p {
+    max-width: const.$max-line-length;
+  }
+
+  p,
+  figcaption {
+    line-height: calc(1ex / 0.32);
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 2em;
+    line-height: calc(1ex / 0.4);
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 1.75em;
+    line-height: calc(1ex / 0.42);
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: calc(1ex / 0.38);
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 1.25em;
+    line-height: calc(1ex / 0.37);
+  }
+
+  h5 {
+    font-weight: 500;
+    font-size: 1.125em;
+    line-height: calc(1ex / 0.4);
+  }
+
+  h6 {
+    font-weight: 500;
+    font-size: 1.0625em;
+    line-height: calc(1ex / 0.5);
+  }
+
+  body {
+    max-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    gap: const.$full-width-vertical-margin;
+    grid-template-rows: auto 1fr auto;
+
+    > * {
+      max-width: inherit;
     }
+  }
 
-    :root[data-theme='dark'] {
-        @include theme-dark;
-    }
+  a {
+    text-decoration: none;
+  }
 
-    :root[data-theme='light'] {
-        @include theme-light;
-    }
+  a:not(.link, .fi) {
+    color: inherit;
+  }
 
-    :root[data-theme='system'] {
-        @media (prefers-color-scheme: dark) {
-            @include theme-dark;
-        }
+  /* Reference citation links */
+  sup[id^='cite-'] {
+    @extend .link;
+    @include util.sup-annotation;
+    white-space: nowrap;
+    font-size: 0.8em;
+  }
 
-        @media (prefers-color-scheme: light) {
-            @include theme-light;
-        }
-    }
-
-    /* Chromium issue: transitions stack (children wait for parents to finish their transition before doing their own) */
-    /* Solution: apply all transitions only to leaf elements. In non-leaf elements, transition only properties that are unrelated to the textual content */
-    $non-leaf-transition-properties: background-color, background-attachment, background-clip, background-image,
-        background-origin, background-position, background-repeat, background-size, transform, opacity, filter;
-
-    * {
-        box-sizing: border-box;
-        transition-duration: calc(1s / 3);
-        transition-property: $non-leaf-transition-properties;
-    }
-
-    /* Leaf elements */
-    :not(:has(*)) {
-        transition-property: $non-leaf-transition-properties, color, text-decoration, fill, stroke;
-    }
-
-    .fi {
-        color: transparent;
-    }
-
-    /* Resets */
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    ul,
-    ol,
-    p,
-    figure,
-    input,
-    samp,
-    code,
-    kbd,
-    pre,
-    blockquote {
-        margin: 0;
-        padding: 0;
-    }
-
-    input {
-        border: none;
-        font: inherit;
-    }
-
-    /* Basic styles */
-    abbr {
-        text-decoration: underline dotted;
-    }
-
-    address {
-        font-style: normal;
-    }
-
-    blockquote {
-        $border-width: calc(1ch / const.$phi);
-        $margin-padding-ratio: 1;
-        padding-left: calc(1em - $border-width / 2);
-        margin-left: max(0, calc(min(2.5%, 1em) - $border-width / 2));
-        width: fit-content;
-        border-left: $border-width solid var(--color-lvl-next);
-
-        footer {
-            text-align: right;
-        }
-    }
-
-    :not(pre) > :is(code, samp, kbd) {
-        background-color: var(--color-lvl-next);
-        @include util.horizontal-box(0.4);
-    }
-
-    pre {
-        background-color: var(--color-lvl-next);
-        white-space: pre-wrap;
-        text-align: initial;
-        @include util.horizontal-box(2, 1);
-    }
-
-    small {
-        font-size: 1em;
-
-        color: rgb(from var(--color-fg) r g b / calc(2 / 3));
-    }
-
-    p {
-        max-width: const.$max-line-length;
-    }
-
-    p,
-    figcaption {
-        line-height: calc(1ex / 0.32);
-    }
-
-    h1 {
-        font-weight: 500;
-        font-size: 2em;
-        line-height: calc(1ex / 0.4);
-    }
-
-    h2 {
-        font-weight: 500;
-        font-size: 1.75em;
-        line-height: calc(1ex / 0.42);
-    }
-
-    h3 {
-        font-weight: 500;
-        font-size: 1.5em;
-        line-height: calc(1ex / 0.38);
-    }
-
-    h4 {
-        font-weight: 500;
-        font-size: 1.25em;
-        line-height: calc(1ex / 0.37);
-    }
-
-    h5 {
-        font-weight: 500;
-        font-size: 1.125em;
-        line-height: calc(1ex / 0.4);
-    }
-
-    h6 {
-        font-weight: 500;
-        font-size: 1.0625em;
-        line-height: calc(1ex / 0.5);
-    }
-
-    body {
-        max-width: 100%;
-        min-height: 100vh;
-        display: grid;
-        gap: const.$full-width-vertical-margin;
-        grid-template-rows: auto 1fr auto;
-
-        > * {
-            max-width: inherit;
-        }
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    a:not(.link, .fi) {
-        color: inherit;
-    }
-
-    /* Reference citation links */
-    sup[id^='cite-'] {
-        @extend .link;
-        @include util.sup-annotation;
-        white-space: nowrap;
-        font-size: 0.8em;
-    }
-
-    /* Opt-in basic style classes
+  /* Opt-in basic style classes
      *
      * Define basic styles for common elements with explicit opt-in
      */
-    /* Link
+  /* Link
      *
      * Intended for: <a>
      */
-    .link:link {
-        color: var(--color-accentext);
-    }
+  .link:link {
+    color: var(--color-accentext);
+  }
 
-    .link:visited {
-        // decrease luminance by 8%
-        color: hsl(from var(--color-accentext) h s calc(l - 8));
-    }
+  .link:visited {
+    // decrease luminance by 8%
+    color: hsl(from var(--color-accentext) h s calc(l - 8));
+  }
 
-    .link#{const.$hover} {
-        // increase luminance by 8%
-        color: hsl(from var(--color-accentext) h s calc(l + 8));
-        text-decoration: underline;
-    }
+  .link#{const.$hover} {
+    // increase luminance by 8%
+    color: hsl(from var(--color-accentext) h s calc(l + 8));
+    text-decoration: underline;
+  }
 
-    .link[target='_blank']:not(.definition-tooltip-trigger)::after {
-        @include util.sup-annotation;
-        content: '↗';
-        display: inline-block;
-        font-size: 0.5em;
-        text-decoration: none;
-        user-select: none;
-    }
+  .link[target='_blank']:not(.def-tooltip-trigger)::after {
+    @include util.sup-annotation;
+    content: '↗';
+    display: inline-block;
+    font-size: 0.5em;
+    text-decoration: none;
+    user-select: none;
+  }
 
-    /* List
+  /* List
      *
      * Text-based list
      *
      * Intended for: <ul>, <ol>
      */
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5lh;
+    padding-left: 2em;
+
     .list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5lh;
-        padding-left: 2em;
-
-        .list {
-            padding-left: 4em;
-        }
+      padding-left: 4em;
     }
+  }
 
-    /* Figure
+  /* Figure
      *
      * Regular figure
      *
      * Intended for: <figure>
      */
-    .figure {
-        @include util.basic-border(1px);
-        background-color: var(--color-lvl);
-        break-inside: avoid;
-        max-width: 100%;
+  .figure {
+    @include util.basic-border(1px);
+    background-color: var(--color-lvl);
+    break-inside: avoid;
+    max-width: 100%;
 
-        > :first-child {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        > figcaption {
-            @include util.horizontal-box(2.5, 1.25);
-            text-align: center;
-        }
+    > :first-child {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
     }
 
-    /* Page structure */
-    body {
-        header {
-            @include util.strip-content(0 0 1px 0);
-            align-items: center;
-            display: flex;
-            flex-wrap: wrap;
-            column-gap: 2em;
-            row-gap: 1em;
-            justify-content: space-between;
-            height: fit-content;
-
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: baseline;
-                column-gap: 3em;
-                row-gap: 1.5em;
-
-                > a {
-                    @include util.nav-home-link;
-                }
-
-                > ul {
-                    display: flex;
-                    list-style: none;
-                    column-gap: 2em;
-                    row-gap: 1em;
-                    flex-wrap: wrap;
-
-                    a {
-                        font-size: 1.25em;
-                    }
-                }
-
-                a#{const.$hover},
-                a[href='#'] {
-                    text-decoration: underline;
-                }
-            }
-        }
-
-        main {
-            grid-row: 2;
-            display: flex;
-            flex-direction: column;
-            gap: const.$full-width-vertical-margin;
-        }
-
-        footer {
-            @include util.strip-content(1px 0 0 0);
-            height: 5em;
-            grid-row: 3;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            small {
-                @media screen and (min-width: 570px) {
-                    margin-left: 50%;
-                    transform: translateX(-50%);
-                }
-            }
-
-            a #{const.$graphic}#{const.$hover} {
-                @include util.bring-out(1.15);
-            }
-
-            a {
-                display: block;
-                aspect-ratio: 1;
-                width: auto;
-                height: 100%;
-                .graphic {
-                    height: 100%;
-                    width: 100%;
-                }
-            }
-        }
+    > figcaption {
+      @include util.horizontal-box(2.5, 1.25);
+      text-align: center;
     }
+  }
+
+  /* Page structure */
+  body {
+    header {
+      @include util.strip-content(0 0 1px 0);
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 2em;
+      row-gap: 1em;
+      justify-content: space-between;
+      height: fit-content;
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        column-gap: 3em;
+        row-gap: 1.5em;
+
+        > a {
+          @include util.nav-home-link;
+        }
+
+        > ul {
+          display: flex;
+          list-style: none;
+          column-gap: 2em;
+          row-gap: 1em;
+          flex-wrap: wrap;
+
+          a {
+            font-size: 1.25em;
+          }
+        }
+
+        a#{const.$hover},
+        a[href='#'] {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    main {
+      grid-row: 2;
+      display: flex;
+      flex-direction: column;
+      gap: const.$full-width-vertical-margin;
+    }
+
+    footer {
+      @include util.strip-content(1px 0 0 0);
+      height: 5em;
+      grid-row: 3;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      small {
+        @media screen and (min-width: 570px) {
+          margin-left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      a #{const.$graphic}#{const.$hover} {
+        @include util.bring-out(1.15);
+      }
+
+      a {
+        display: block;
+        aspect-ratio: 1;
+        width: auto;
+        height: 100%;
+        .graphic {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
 }

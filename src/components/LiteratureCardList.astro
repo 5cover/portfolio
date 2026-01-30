@@ -1,12 +1,12 @@
 ---
-import type { Item, LocalizedItem } from '../content/config';
-import type { Entry } from '../lib/content';
+import type { LocalizedItem } from '../content.config';
+import * as content from '../lib/content';
 import LiteratureCard from './LiteratureCard.astro';
 interface Props {
     langLabels: {
         fmtTitle: string;
     };
-    entries: readonly Entry<LocalizedItem<'literature'>>[];
+    entries: readonly content.Entry<LocalizedItem<'literature'>>[];
     headingLevel?: number;
 }
 

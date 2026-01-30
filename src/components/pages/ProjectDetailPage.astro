@@ -1,18 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
-import DefinitionCardList from '../DefinitionCardList.astro';
+import DefCardList from '../DefCardList.astro';
 import Gallery from '../Gallery.astro';
 import Graphic from '../Graphic';
 import LinkList from '../LinkList';
 import ReferenceList from '../ReferenceList.astro';
 
-import { at, getDefinitions, getProjects, getTags, getTextualEntry, mapById } from '../../lib/content';
+import * as content from '../../lib/content';
 import { formatDate } from '../../lib/date';
 import { pageHref } from '../../lib/links';
 import { getLabels, normalizeLocale } from '../../i18n/site';
 
 import '../../styles/project.scss';
+import { capitalize } from '../../lib/util';
 
 interface Props {
     id: string;
@@ -22,18 +23,10 @@ const { id } = Astro.props;
 
 const locale = normalizeLocale(Astro.currentLocale);
 
-const [tags, definitions] = await Promise.all([getTags(locale), getDefinitions(locale)]);
-const tagsById = mapById(tags);
-const definitionsById = mapById(definitions);
 const labels = getLabels(locale);
 
-const p = at(await getProjects(locale), id);
-if (!p) {
-    throw new Error(`Missing project ${id} for ${locale}`);
-}
-
-const projectBodyEntry = await getTextualEntry(locale, 'projects', id);
-const { Content: ProjectBody } = await projectBodyEntry.render();
+const p = content.project(locale, id);
+const projectBody = await content.textual(locale, 'projects', id);
 
 const backgroundStyle = p.background ? `--bg-img: url(${p.background})` : undefined;
 const logoTitle = labels.copy.fmtTitle.replace('%s', p.title);
@@ -41,9 +34,9 @@ const startDate = p.startDate;
 const endDate = p.endDate;
 const startLabel = startDate ? formatDate(startDate, locale) : '';
 const endLabel = endDate ? formatDate(endDate, locale) : '';
-const context = p.context ? p.context.charAt(0).toUpperCase() + p.context.slice(1) : '';
-const teamDefs = p.team.map(memberId => definitionsById[memberId]);
-const techDefs = p.technologies.map(techId => definitionsById[techId]);
+const context = p.context ? capitalize(p.context) : '';
+const teamDefs = p.team.map(memberId => content.def(locale, memberId));
+const techDefs = p.technologies.map(techId => content.def(locale, techId));
 ---
 
 <BaseLayout pageName={`projects/${id}`}>
@@ -55,7 +48,7 @@ const techDefs = p.technologies.map(techId => definitionsById[techId]);
                         <li>
                             <a
                                 href={`${pageHref(locale, 'projects')}?tag=${tagId}`}
-                                set:html={tagsById[tagId]?.title ?? tagId}
+                                set:html={content.tag(locale, tagId)}
                             />
                         </li>
                     ))
@@ -88,13 +81,13 @@ const techDefs = p.technologies.map(techId => definitionsById[techId]);
             teamDefs.length > 0 ? (
                 <section id='team'>
                     <h2>{labels.copy.team}</h2>
-                    <DefinitionCardList definitions={teamDefs} langLabels={{ fmtTitle: labels.copy.fmtTitle }} />
+                    <DefCardList defs={teamDefs} langLabels={{ fmtTitle: labels.copy.fmtTitle }} />
                 </section>
             ) : null
         }
         <section id='story'>
             <h2>{labels.copy.story}</h2>
-            <TextualContent content={ProjectBody} />
+            <TextualContent content={projectBody} />
         </section>
         {
             p.references.length > 0 ? (
@@ -108,7 +101,7 @@ const techDefs = p.technologies.map(techId => definitionsById[techId]);
             techDefs.length > 0 ? (
                 <section id='technologies'>
                     <h2>{labels.copy.technologies}</h2>
-                    <DefinitionCardList definitions={techDefs} langLabels={{ fmtTitle: labels.copy.fmtTitle }} />
+                    <DefCardList defs={techDefs} langLabels={{ fmtTitle: labels.copy.fmtTitle }} />
                 </section>
             ) : null
         }

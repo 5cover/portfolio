@@ -31,7 +31,7 @@ Astro features used:
 - MDX content for long-form body text.
 - Layouts and components for shared UI.
 - Static JSON endpoints in `src/pages/data` to feed client JS (projects filter,
-  definition tooltips).
+  def tooltips).
 
 Astro features not used:
 
@@ -68,9 +68,9 @@ Important collections:
 
 - `projects`: project cards + detail content (localized fields inline).
 - `literature`: blog and hobby entries (kind: `blog` or `passion`, localized fields inline).
-- `definitions`: glossary terms used in tooltips and tech lists (localized fields inline).
+- `defs`: glossary terms used in tooltips and tech lists (localized fields inline).
 - `tags`: tag metadata for filtering (localized fields inline).
-- `types`: definition categories (localized fields inline).
+- `types`: def categories (localized fields inline).
 - `history`: timeline entries (localized fields inline, body in MDX).
 - `textual`: MDX bodies for projects, literature, and history.
 - `piano-tiles`: home page tiles.
@@ -99,7 +99,7 @@ Layout:
 Components:
 
 - `Header` and `Footer` match V1 markup and behavior.
-- Card components render the reusable V1 cards (projects, literature, definition).
+- Card components render the reusable V1 cards (projects, literature, def).
 - Lists render sets of cards consistently.
 - `TextualContent` renders MDX bodies with the shared inline components.
 
@@ -111,7 +111,7 @@ These files render inside the `#story` sections and the history timeline.
 
 MDX components are available:
 
-- `Def`: definition tooltip link, uses the definitions collection.
+- `Def`: def tooltip link, uses the defs collection.
 - `Link`: normal anchor with V1 `.link` styling.
 - `Ref`: inline reference marker (`[1]`) linked to the references list.
 - `Image`: Astro native image component (`astro:assets`). Import the image in the MDX file and pass `src={image}`.
@@ -128,7 +128,7 @@ See <Ref id="1" /> for sources.
 
 There are three ways to reference external pages from MDX. Use the one that matches intent.
 
-1) **Definitions (`<Def>`)**  
+1) **Defs (`<Def>`)**  
 Use when the term is in the glossary and you want the hover tooltip card.
 
 ```mdx
@@ -179,23 +179,23 @@ Scripts:
 - `history.ts`: timeline scroll animation.
 
 Note: tooltips are attached to dynamic content via
-`window.refreshDefinitionTooltips`.
+`window.refreshDefTooltips`.
 
 ## JSON Endpoints for JS
 
 The V1 site used JSON fetched from `/portfolio/data/*.json`.
 Astro recreates this using build time endpoints in `src/pages/data`:
 
-- `src/pages/data/anchors.json.ts`
-- `src/pages/data/projects.json.ts`
-- `src/pages/data/tags.json.ts`
-- `src/pages/data/definitions.json.ts`
-- `src/pages/data/types.json.ts`
-- `src/pages/en/data/anchors.json.ts`
-- `src/pages/en/data/projects.json.ts`
-- `src/pages/en/data/tags.json.ts`
-- `src/pages/en/data/definitions.json.ts`
-- `src/pages/en/data/types.json.ts`
+- `src/pages/data/anchor.json.ts`
+- `src/pages/data/project.json.ts`
+- `src/pages/data/tag.json.ts`
+- `src/pages/data/def.json.ts`
+- `src/pages/data/def-type.json.ts`
+- `src/pages/en/data/anchor.json.ts`
+- `src/pages/en/data/project.json.ts`
+- `src/pages/en/data/tag.json.ts`
+- `src/pages/en/data/def.json.ts`
+- `src/pages/en/data/def-type.json.ts`
 
 These endpoints output JSON at build time and are fetched by client scripts.
 
@@ -244,11 +244,11 @@ Add a blog or hobby entry:
 3. Fill localized fields as `{ en: \"...\", fr: \"...\" }`.
 4. Add the body in `src/content/textual/<lang>/literature/<id>.mdx`.
 
-Add a definition:
+Add a def:
 
-1. Add a file in `src/content/definitions/<lang>/<id>.yaml`.
+1. Add a file in `src/content/defs/<lang>/<id>.yaml`.
 2. Add a type in `src/content/types/<lang>/<id>.yaml` if needed.
-3. Add logo/background assets in `public/img/definition/<id>/`.
+3. Add logo/background assets in `public/img/def/<id>/`.
 
 Add a tag:
 

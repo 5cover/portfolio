@@ -1,0 +1,21 @@
+{
+  "type": "software",
+  "name":
+    {
+      "full": { "en": "Apache HTTP Server", "fr": "Apache HTTP Server" },
+      "abbr": {},
+      "short": { "en": "Apache", "fr": "Apache" }
+    },
+  "synopsis":
+    {
+      "en": "A free and open-source cross-platform web server software.",
+      "fr": "Serveur HTTP créé et maintenu au sein de la fondation Apache."
+    },
+  "wiki":
+    {
+      "en": "https://en.wikipedia.org/wiki/Apache_HTTP_Server",
+      "fr": "https://fr.wikipedia.org/wiki/Apache_HTTP_Server"
+    },
+
+  "logo": { "src": "/portfolio/img/def/apache2/logo.svg" }
+}

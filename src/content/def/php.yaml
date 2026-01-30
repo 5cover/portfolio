@@ -1,0 +1,25 @@
+{
+  "type": "programming-language",
+  "name":
+    {
+      "full":
+        {
+          "en": "PHP: Hypertext Preprocessor",
+          "fr": "PHP: Hypertext Preprocessor"
+        },
+      "abbr": { "en": "PHP", "fr": "PHP" },
+      "short": {}
+    },
+  "synopsis":
+    {
+      "en": "A general-purpose scripting language geared towards web development, created in 1993.",
+      "fr": 'Langage de programmation créé en <time datetime="1993">1993</time>, principalement utilisé pour produire des pages Web dynamiques via un serveur web'
+    },
+  "wiki":
+    {
+      "en": "https://en.wikipedia.org/wiki/PHP",
+      "fr": "https://en.wikipedia.org/wiki/PHP"
+    },
+  "background": "/portfolio/img/def/php/bg.png",
+  "logo": { "src": "/portfolio/img/def/php/logo.svg" }
+}

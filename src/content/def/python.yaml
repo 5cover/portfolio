@@ -1,0 +1,17 @@
+{
+  "type": "programming-language",
+  "name":
+    { "full": { "en": "Python", "fr": "Python" }, "abbr": {}, "short": {} },
+  "synopsis":
+    {
+      "en": "A high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.",
+      "fr": "Langage de programmation interprété, multiparadigme et multiplateformes."
+    },
+  "wiki":
+    {
+      "en": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+      "fr": "https://fr.wikipedia.org/wiki/Python_(langage)"
+    },
+  "background": "/portfolio/img/def/python/bg.png",
+  "logo": { "src": "/portfolio/img/def/python/logo.svg" }
+}

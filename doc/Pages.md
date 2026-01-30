@@ -13,14 +13,14 @@
 from top to bottom
 
 - Piano tiles
-- Definition: of myself (intro + picture)
+- Def: of myself (intro + picture)
 - List of underway projects
 - All my projects linkbutton
 - Contact card
 
 ## (NavBar) Projects
 
-Filter on project title and tags and technology Definitions
+Filter on project title and tags and technology Defs
 
 ## (NavBar) Blog
 

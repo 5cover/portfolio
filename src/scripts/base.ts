@@ -1,20 +1,16 @@
-import type { Item } from "../content/config";
+import type { LocalizedItem } from '../content.config';
 
-type DefinitionIndex = Record<string, Item<'definitions'>>;
-type TypeIndex = Record<string, Item<'types'>>;
+type DefIndex = Record<string, LocalizedItem<'def'>>;
+type DefTypeIndex = Record<string, LocalizedItem<'def-type'>>;
 
 const tooltipLeftOffset = 20 * 0.75;
 const tooltipTriggerMarginTop = 20 * 0.25;
 const tooltipHideTransitionMs = 1000 / 3;
 const pendingTooltipRoots: ParentNode[] = [];
-let definitionData: { definitions: DefinitionIndex; types: TypeIndex } | null = null;
+let defData: { defs: DefIndex; types: DefTypeIndex } | null = null;
 
 function getDataBase(): string {
     return (document.documentElement.dataset.dataBase || '/data').replace(/\/$/, '');
-}
-
-function getDefinitionTitle(definition: Item<'definitions'>): string {
-    return definition.name.full;
 }
 
 function applyTheme(theme: string): void {
@@ -75,95 +71,22 @@ async function fetchJson(url: string): Promise<unknown> {
     return data;
 }
 
-function isRecord(value: unknown): value is Record<string, unknown> {
-    return typeof value === 'object' && value !== null && !Array.isArray(value);
-}
-
-function parseDefinitionIndex(raw: unknown): DefinitionIndex {
-    if (!isRecord(raw)) {
-        return {};
-    }
-
-    const result: DefinitionIndex = {};
-    Object.entries(raw).forEach(([id, entry]) => {
-        if (!isRecord(entry) || !isRecord(entry.name)) {
-            return;
-        }
-        const nameFull = entry.name.full;
-        const synopsis = entry.synopsis;
-        const wiki = entry.wiki;
-        const type = entry.type;
-
-        if (
-            typeof nameFull !== 'string' ||
-            typeof synopsis !== 'string' ||
-            typeof wiki !== 'string' ||
-            typeof type !== 'string'
-        ) {
-            return;
-        }
-
-        const name: Item<'definitions'>['name'] = { full: nameFull };
-        if (typeof entry.name.abbr === 'string') {
-            name.abbr = entry.name.abbr;
-        }
-        if (typeof entry.name.short === 'string') {
-            name.short = entry.name.short;
-        }
-
-        const logo =
-            isRecord(entry.logo) && typeof entry.logo.url === 'string' && entry.logo.kind === 'svg'
-                ? entry.logo
-                : null;
-        const background = typeof entry.background === 'string' ? entry.background : null;
-
-        result[id] = {
-            id,
-            name,
-            synopsis,
-            wiki,
-            type,
-            background,
-            logo,
-        };
-    });
-
-    return result;
-}
-
-function parseTypeIndex(raw: unknown): TypeIndex {
-    if (!isRecord(raw)) {
-        return {};
-    }
-    const result: TypeIndex = {};
-    Object.entries(raw).forEach(([id, entry]) => {
-        if (!isRecord(entry) || typeof entry.title !== 'string') {
-            return;
-        }
-        result[id] = { id, title: entry.title };
-    });
-    return result;
-}
-
-async function loadDefinitionData(dataBase: string): Promise<{
-    definitions: DefinitionIndex;
-    types: TypeIndex;
-}> {
-    const [definitionsRaw, typesRaw] = await Promise.all([
-        fetchJson(`${dataBase}/definitions.json`),
-        fetchJson(`${dataBase}/types.json`),
+async function loadDefData(dataBase: string) {
+    const [rawDefs, rawTypes] = await Promise.all([
+        fetchJson(`${dataBase}/def.json`),
+        fetchJson(`${dataBase}/def-type.json`),
     ]);
 
     return {
-        definitions: parseDefinitionIndex(definitionsRaw),
-        types: parseTypeIndex(typesRaw),
+        defs: rawDefs as DefIndex,
+        types: rawTypes as DefTypeIndex,
     };
 }
 
 async function createTooltip(
     template: HTMLTemplateElement,
-    definition: Item<'definitions'>,
-    types: TypeIndex
+    def: LocalizedItem<'def'>,
+    types: DefTypeIndex
 ): Promise<HTMLElement> {
     const fragmentNode = template.content.cloneNode(true);
     if (!(fragmentNode instanceof DocumentFragment)) {
@@ -180,45 +103,45 @@ async function createTooltip(
     const synopsisEl = tooltip.querySelector<HTMLElement>('.synopsis');
 
     if (titleLink) {
-        titleLink.textContent = getDefinitionTitle(definition);
-        titleLink.href = definition.wiki;
+        titleLink.textContent = def.name.full;
+        titleLink.href = def.wiki;
     }
 
     if (typeEl) {
-        const typeName = types[definition.type]?.title ?? definition.type;
+        const typeName = types[def.type]?.title ?? def.type;
         typeEl.textContent = typeName.charAt(0).toUpperCase() + typeName.slice(1);
     }
 
     if (synopsisEl) {
-        synopsisEl.innerHTML = definition.synopsis;
+        synopsisEl.innerHTML = def.synopsis;
     }
 
-    if (definition.background) {
-        tooltip.style.setProperty('--bg-img-card', `url(${definition.background})`);
+    if (def.background) {
+        tooltip.style.setProperty('--bg-img-card', `url(${def.background})`);
     }
 
-    if (definition.logo) {
-        const logoTitle = getDefinitionTitle(definition);
+    if (def.logo) {
+        const logoTitle = def.name.full;
         let logoElement: Element;
 
-        if (definition.logo.kind === 'svg' && definition.logo.url.endsWith('.svg')) {
-            const response = await fetch(definition.logo.url);
+        if (def.logo.kind === 'svg') {
+            const response = await fetch(def.logo.src);
             if (!response.ok) {
-                throw new Error(`Failed to load ${definition.logo.url}`);
+                throw new Error(`Failed to load ${def.logo.src}`);
             }
             const svgMarkup = await response.text();
             const templateEl = document.createElement('template');
             templateEl.innerHTML = svgMarkup.trim();
             const svg = templateEl.content.firstElementChild;
             if (!(svg instanceof SVGElement)) {
-                throw new Error(`Unexpected SVG content for ${definition.logo.url}`);
+                throw new Error(`Unexpected SVG content for ${def.logo.src}`);
             }
             svg.setAttribute('title', logoTitle);
             svg.classList.add('logo');
             logoElement = svg;
         } else {
             const logo = document.createElement('img');
-            logo.src = definition.logo.url;
+            logo.src = def.logo.src;
             logo.alt = logoTitle;
             logo.className = 'logo';
             logo.loading = 'lazy';
@@ -237,22 +160,22 @@ async function createTooltip(
     return tooltip;
 }
 
-function setupDefinitionTooltips(definitions: DefinitionIndex, types: TypeIndex, root: ParentNode = document): void {
-    const template = document.querySelector<HTMLTemplateElement>('#template-definition-tooltip');
+function setupDefTooltips(defs: DefIndex, types: DefTypeIndex, root: ParentNode = document): void {
+    const template = document.querySelector<HTMLTemplateElement>('#template-def-tooltip');
     if (!template) {
         return;
     }
 
     let zIndex = 10;
 
-    root.querySelectorAll<HTMLElement>('.definition-tooltip-trigger').forEach(trigger => {
+    root.querySelectorAll<HTMLElement>('.def-tooltip-trigger').forEach(trigger => {
         if (trigger.dataset.tooltipReady === 'true') {
             return;
         }
         trigger.dataset.tooltipReady = 'true';
 
-        const definitionId = trigger.dataset.definitionId;
-        if (!definitionId || !definitions[definitionId]) {
+        const defId = trigger.dataset.defId;
+        if (!defId || !defs[defId]) {
             return;
         }
 
@@ -264,7 +187,7 @@ function setupDefinitionTooltips(definitions: DefinitionIndex, types: TypeIndex,
         const showTooltip = async (event: Event) => {
             if (!tooltip) {
                 try {
-                    tooltip = await createTooltip(template, definitions[definitionId], types);
+                    tooltip = await createTooltip(template, defs[defId], types);
                     document.body.appendChild(tooltip);
                 } catch {
                     return;
@@ -328,9 +251,9 @@ function setupDefinitionTooltips(definitions: DefinitionIndex, types: TypeIndex,
     });
 }
 
-function refreshDefinitionTooltips(root: ParentNode = document): void {
-    if (definitionData) {
-        setupDefinitionTooltips(definitionData.definitions, definitionData.types, root);
+function refreshDefTooltips(root: ParentNode = document): void {
+    if (defData) {
+        setupDefTooltips(defData.defs, defData.types, root);
         return;
     }
     if (!pendingTooltipRoots.includes(root)) {
@@ -338,12 +261,12 @@ function refreshDefinitionTooltips(root: ParentNode = document): void {
     }
 }
 
-async function initDefinitionTooltips(): Promise<void> {
+async function initDefTooltips(): Promise<void> {
     const dataBase = getDataBase();
     try {
-        const { definitions, types } = await loadDefinitionData(dataBase);
-        definitionData = { definitions, types };
-        pendingTooltipRoots.forEach(root => setupDefinitionTooltips(definitions, types, root));
+        const { defs, types } = await loadDefData(dataBase);
+        defData = { defs, types };
+        pendingTooltipRoots.forEach(root => setupDefTooltips(defs, types, root));
         pendingTooltipRoots.length = 0;
     } catch {
         // Ignore tooltip setup failures.
@@ -352,6 +275,6 @@ async function initDefinitionTooltips(): Promise<void> {
 
 setupThemeSwitches();
 updateCurrentYear();
-window.refreshDefinitionTooltips = refreshDefinitionTooltips;
-refreshDefinitionTooltips(document);
-void initDefinitionTooltips();
+window.refreshDefTooltips = refreshDefTooltips;
+refreshDefTooltips(document);
+void initDefTooltips();

@@ -5,7 +5,7 @@ import Gallery from '../Gallery.astro';
 import Graphic from '../Graphic';
 import LinkList from '../LinkList';
 import ReferenceList from '../ReferenceList.astro';
-import { at, getAnchors, getLiterature, getTextualEntry, mapById } from '../../lib/content';
+import * as content from '../../lib/content';
 import { getLabels, normalizeLocale } from '../../i18n/site';
 
 interface Props {
@@ -16,16 +16,8 @@ const { id, mainClass } = Astro.props;
 
 const locale = normalizeLocale(Astro.currentLocale);
 const copy = getLabels(locale).copy;
-
-const literatures = await getLiterature(locale);
-const data = at(literatures, id);
-if (!data) {
-    throw new Error(`Missing literature ${id} for ${locale}`);
-}
-
-const body = await getTextualEntry(locale, 'literature', id);
-const { Content: Body } = await body.render();
-
+const data = content.literature(locale, id);
+const body = await content.textual(locale, 'literature', id);
 const backgroundStyle = data.background ? `--bg-img: url(${data.background})` : undefined;
 const logoTitle = copy.fmtTitle.replace('%s', data.title);
 ---
@@ -47,7 +39,7 @@ const logoTitle = copy.fmtTitle.replace('%s', data.title);
         }
         <section id='story'>
             <h2>{copy.story}</h2>
-            <TextualContent content={Body} />
+            <TextualContent content={body} />
         </section>
         {
             data.references.length > 0 ? (

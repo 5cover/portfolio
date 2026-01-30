@@ -1,8 +1,8 @@
 ---
-import type { LiteratureKind } from '../../content/config';
+import type { LiteratureKind } from '../../content.config';
 import { normalizeLocale, getLabels } from '../../i18n/site';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getLiterature } from '../../lib/content';
+import * as content from '../../lib/content';
 import LiteratureCardList from '../LiteratureCardList.astro';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 const { kind, mainClass } = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
 const labels = getLabels(locale);
-const literature = await getLiterature(locale);
+const literature = content.literature(locale);
 const entries = literature.filter(([, lit]) => lit.kind === kind);
 ---
 

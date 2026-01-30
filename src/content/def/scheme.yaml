@@ -1,0 +1,17 @@
+{
+  "type": "programming-language",
+  "name":
+    { "full": { "en": "Scheme", "fr": "Scheme" }, "abbr": {}, "short": {} },
+  "synopsis":
+    {
+      "en": 'A dialect of the Lisp family of programming languages. Scheme was created during the 1970s at the <abbr title="MIT Computer Science and Artificial Intelligence Laboratory">MIT AI</abbr> Lab).',
+      "fr": 'Langage de programmation dérivé du langage fonctionnel Lisp, créé dans les années <time datetime="1970">1970</time> au <abbr title="Massachusetts Institute of Technology">MIT</abbr> par Gerald Jay Sussman et Guy L. Steele.'
+    },
+  "wiki":
+    {
+      "en": "https://en.wikipedia.org/wiki/Scheme_(programming_language)",
+      "fr": "https://fr.wikipedia.org/wiki/Scheme"
+    },
+  "background": "/portfolio/img/def/scheme/bg.png",
+  "logo": { "kind": "svg", "src": "/portfolio/img/def/scheme/logo.svg" }
+}

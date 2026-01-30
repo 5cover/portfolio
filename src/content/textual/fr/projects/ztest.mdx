@@ -1,15 +1,97 @@
-
-<p>Pendant longtemps, j'ai été intrigué par <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-definition-id="zig" class="link definition-tooltip-trigger">Zig</a>, un langage de programmation qui promettait de remédier à certaines des lacunes du <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> tout en offrant de nouvelles perspectives sur la programmation de bas niveau. J'ai décidé de me lancer et de créer un projet qui m'aiderait non seulement à apprendre Zig, mais fournirait également une application pratique du langage. Ainsi, **ztest** est né &mdash; une implémentation Zig de la commande Unix `test`.</p>
+<p>
+  Pendant longtemps, j'ai été intrigué par{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://fr.wikipedia.org/wiki/Zig_(langage)"
+    data-def-id="zig"
+    class="link def-tooltip-trigger">
+    Zig
+  </a>
+  , un langage de programmation qui promettait de remédier à certaines des lacunes du{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://fr.wikipedia.org/wiki/C_(langage)"
+    data-def-id="c"
+    class="link def-tooltip-trigger">
+    C
+  </a>{' '}
+  tout en offrant de nouvelles perspectives sur la programmation de bas niveau. J'ai décidé de me lancer et de créer un
+  projet qui m'aiderait non seulement à apprendre Zig, mais fournirait également une application pratique du langage.
+  Ainsi, **ztest** est né &mdash; une implémentation Zig de la commande Unix `test`.
+</p>
 <h3 id="the-challenge">Le défi</h3>
-<p>L'une des tâches les plus ardues de ce projet était l'analyse des arguments. Contrairement à l'analyse d'une seule chaîne, je devais gérer une liste d'arguments passés au programme, chacun étant une chaîne. Concevoir un analyseur robuste avec une gestion efficace des erreurs était un obstacle important.</p>
+<p>
+  L'une des tâches les plus ardues de ce projet était l'analyse des arguments. Contrairement à l'analyse d'une seule
+  chaîne, je devais gérer une liste d'arguments passés au programme, chacun étant une chaîne. Concevoir un analyseur
+  robuste avec une gestion efficace des erreurs était un obstacle important.
+</p>
 <h3 id="reverse-engineering-the-original">Rétro-ingénierie de l'original</h3>
-<p>Pour comprendre les subtilités de l'analyse des arguments, je me suis plongé dans l'implémentation officielle de `test`, qui est écrite en C. Le code source<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup> a fourni des informations précieuses qui manquaient à la page de manuel. La rétro-ingénierie de l'implémentation originale m'a aidé à saisir les nuances de la façon dont les arguments sont traités.</p>
+<p>
+  Pour comprendre les subtilités de l'analyse des arguments, je me suis plongé dans l'implémentation officielle de
+  `test`, qui est écrite en C. Le code source
+  <sup id="cite-ref-1">
+    <a class="link" href="#ref-1">
+      [1]
+    </a>
+  </sup>{' '}
+  a fourni des informations précieuses qui manquaient à la page de manuel. La rétro-ingénierie de l'implémentation
+  originale m'a aidé à saisir les nuances de la façon dont les arguments sont traités.
+</p>
 <h3 id="writing-unit-tests">Rédaction de tests unitaires</h3>
-<p>Pour garantir la fiabilité de mon implémentation, j'ai écrit environ 50 tests unitaires en utilisant la syntaxe `test` intégrée de Zig. Ces tests étaient basés sur la suite de tests officielle, qui est écrite en Perl, un langage que je ne connais pas. Malgré cela, j'ai réussi à traduire efficacement les cas de test, en m'assurant que mon implémentation était robuste et précise.</p>
+<p>
+  Pour garantir la fiabilité de mon implémentation, j'ai écrit environ 50 tests unitaires en utilisant la syntaxe `test`
+  intégrée de Zig. Ces tests étaient basés sur la suite de tests officielle, qui est écrite en Perl, un langage que je
+  ne connais pas. Malgré cela, j'ai réussi à traduire efficacement les cas de test, en m'assurant que mon implémentation
+  était robuste et précise.
+</p>
 <h3 id="impressions-of-zig">Impressions de Zig</h3>
-<p>Dans l'ensemble, j'ai été très impressionné par Zig. Sa syntaxe est intuitive et cohérente, ce qui la rend facile à comprendre. Les concepts sont simples, sans être trop dogmatiques ou coercitifs (contrairement au <em lang="en">borrow checker</em> de <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Rust_(langage)" data-definition-id="rust" class="link definition-tooltip-trigger">Rust</a> ou à la règle des 5 de <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C%2B%2B" data-definition-id="cpp" class="link definition-tooltip-trigger">C++</a>). La simplicité et la flexibilité de Zig en font un ajout précieux à ma boîte à outils pour de futurs projets plus <q>réels</q>.</p>
+<p>
+  Dans l'ensemble, j'ai été très impressionné par Zig. Sa syntaxe est intuitive et cohérente, ce qui la rend facile à
+  comprendre. Les concepts sont simples, sans être trop dogmatiques ou coercitifs (contrairement au{' '}
+  <em lang="en">borrow checker</em> de{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://fr.wikipedia.org/wiki/Rust_(langage)"
+    data-def-id="rust"
+    class="link def-tooltip-trigger">
+    Rust
+  </a>{' '}
+  ou à la règle des 5 de{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://fr.wikipedia.org/wiki/C%2B%2B"
+    data-def-id="cpp"
+    class="link def-tooltip-trigger">
+    C++
+  </a>
+  ). La simplicité et la flexibilité de Zig en font un ajout précieux à ma boîte à outils pour de futurs projets plus{' '}
+  <q>réels</q>.
+</p>
 <h3 id="the-build-system">Le système de build</h3>
-<p>L'une des fonctionnalités les plus remarquables de Zig est son système de build. Fini le temps des <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Make" data-definition-id="make" class="link definition-tooltip-trigger">Makefile headaches</a>. Le système de build de Zig est convivial, ce qui rend le processus de développement plus fluide et plus agréable.</p>
+<p>
+  L'une des fonctionnalités les plus remarquables de Zig est son système de build. Fini le temps des{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://fr.wikipedia.org/wiki/Make"
+    data-def-id="make"
+    class="link def-tooltip-trigger">
+    Makefile headaches
+  </a>
+  . Le système de build de Zig est convivial, ce qui rend le processus de développement plus fluide et plus agréable.
+</p>
 <h3 id="lessons-learned">Leçons apprises</h3>
-<p>Ce projet a été une expérience d'apprentissage fantastique. Il a non seulement approfondi ma compréhension de Zig, mais a également perfectionné mes compétences en analyse d'arguments, en rétro-ingénierie et en écriture de tests unitaires. Les défis auxquels j'ai été confronté et les solutions que j'ai conçues m'ont fourni des connaissances précieuses que je peux appliquer à de futurs projets.</p>
-<p>**ztest** est plus qu'un simple projet&nbsp;; c'est un témoignage du pouvoir de la curiosité et de la joie d'apprendre. J'ai hâte de voir où mon voyage avec Zig me mènera ensuite.</p>
+<p>
+  Ce projet a été une expérience d'apprentissage fantastique. Il a non seulement approfondi ma compréhension de Zig,
+  mais a également perfectionné mes compétences en analyse d'arguments, en rétro-ingénierie et en écriture de tests
+  unitaires. Les défis auxquels j'ai été confronté et les solutions que j'ai conçues m'ont fourni des connaissances
+  précieuses que je peux appliquer à de futurs projets.
+</p>
+<p>
+  **ztest** est plus qu'un simple projet&nbsp;; c'est un témoignage du pouvoir de la curiosité et de la joie
+  d'apprendre. J'ai hâte de voir où mon voyage avec Zig me mènera ensuite.
+</p>

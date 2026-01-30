@@ -49,7 +49,7 @@ Do not generate infonodes data. You may only generate examples to serve as demon
 
 ## Textual type
 
-The conceptual data type Textual is used below. It refers to arbitrary content that is primarily meant to be read (text) but is also rich (emphasis, bold, etc) and can contain images, figures and arbitrary representations, as well as **Definition** card displayed as tooltips. Effectively, it is HTML. However, it is only semantic, and should not carry its own styling information, rather it inherits the page's styles.
+The conceptual data type Textual is used below. It refers to arbitrary content that is primarily meant to be read (text) but is also rich (emphasis, bold, etc) and can contain images, figures and arbitrary representations, as well as **Def** card displayed as tooltips. Effectively, it is HTML. However, it is only semantic, and should not carry its own styling information, rather it inherits the page's styles.
 
 The site must be available in multiple languages (fr and en to start), so Text and textual content are localized.
 
@@ -75,7 +75,7 @@ Property|Description|Required?
 -|-|-
 *title*|Line of text|Y
 *summary*|Line of text|N
-*technologies*|List of definitions|N
+*technologies*|List of defs|N
 *links*|List of links. steam (for my workshop stuff), github, random websites...|N
 *context*|link to an history element, optional for personal stuff|N
 *dates*|Start and end, maybe milestones? able to provide properties *start* and *end* for the whole project, in addition to milestones|N
@@ -89,7 +89,7 @@ Successor type|Description|Order significant?
 -|-|-
 **Tag**|Tags that describe this infonode|N
 **Connector**|Connectors related to this infonode|N
-**Definition**|Linked definitions. People definitions correspond to the project's team members. Other definitions correspond to the project's technologies.|Y
+**Def**|Linked defs. People defs correspond to the project's team members. Other defs correspond to the project's technologies.|Y
 
 ## **Image**
 
@@ -203,7 +203,7 @@ Successor type|Description|Order significant?
 **Tag**|Tags that describe this infonode|N
 **Connector**|Connectors related to this infonode|N
 
-## **Definition**
+## **Def**
 
 Common property|Value
 -|-
@@ -211,15 +211,15 @@ Role|`content`
 Visibility|`public`
 Detail rendering available?|N
 
-A definition of a term or a concept not part of common language.
+A def of a term or a concept not part of common language.
 
-Cards appear in other contents via definition tooltips.
+Cards appear in other contents via def tooltips.
 
 Property|Description|Required?
 -|-|-
 *id*|ID kebab-case slug, unique|Y
 *title*|Text, Name of the object defined|Y
-*synopsis*|Text (paragraph), synopsis of the definition|Y
+*synopsis*|Text (paragraph), synopsis of the def|Y
 *backgroundImage*|background image|N
 *image*|**Image**, Main logo/icon
 

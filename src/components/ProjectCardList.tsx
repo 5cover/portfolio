@@ -1,23 +1,18 @@
-import type { LocalizedItem } from '../content/config';
+import type { LocalizedItem } from '../content.config';
 import type { Locale } from '../i18n/site';
-import type { Entry } from '../lib/content';
+import type * as content from '../lib/content';
 import ProjectCard from './ProjectCard';
 
 interface Props {
     class?: string;
-    langLabels: {
-        ongoing: string;
-        fmtTitle: string;
-    };
-    entry: Entry<LocalizedItem<'projects'>>[];
-    headingLevel?: number;
+    entries: content.Entry<LocalizedItem<'project'>>[];
     locale: Locale;
 }
 
-export default ({ langLabels, entry, headingLevel = 3, locale, class: className = '' }: Props) => (
+export default ({ entries, locale, class: className = '' }: Props) => (
     <ul class={`lvl list-project ${className}`}>
-        {entry.map(project => (
-            <ProjectCard langLabels={langLabels} entry={project} locale={locale} />
+        {entries.map(project => (
+            <ProjectCard entry={project} locale={locale} />
         ))}
     </ul>
 );

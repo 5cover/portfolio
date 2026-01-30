@@ -1,32 +1,192 @@
-
 <h3 id="the-spark-of-an-idea">Dialogs &mdash; The spark of an idea</h3>
-<p>The journey of **Dialogs** began with a simple need. I was working on another project of mine, an open-source <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/.NET" data-definition-id="dotnet" class="link definition-tooltip-trigger">.NET</a> application called <a class="link" href="/portfolio/en/projects/winclean.html">WinClean</a>. As part of this project, I needed to implement modal dialogs &mdash; those pop-up windows that require user interaction before the application can proceed. A <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en/windows/win32/controls/task-dialogs-overview" data-definition-id="task-dialog" class="link definition-tooltip-trigger">task dialog</a> seemed like the perfect fit for a modern and user-friendly interface. However, the existing solutions were far from satisfactory.</p>
+<p>
+  The journey of **Dialogs** began with a simple need. I was working on another project of mine, an open-source{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/.NET"
+    data-def-id="dotnet"
+    class="link def-tooltip-trigger">
+    .NET
+  </a>{' '}
+  application called{' '}
+  <a class="link" href="/portfolio/en/projects/winclean.html">
+    WinClean
+  </a>
+  . As part of this project, I needed to implement modal dialogs &mdash; those pop-up windows that require user
+  interaction before the application can proceed. A{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://learn.microsoft.com/en/windows/win32/controls/task-dialogs-overview"
+    data-def-id="task-dialog"
+    class="link def-tooltip-trigger">
+    task dialog
+  </a>{' '}
+  seemed like the perfect fit for a modern and user-friendly interface. However, the existing solutions were far from
+  satisfactory.
+</p>
 <h3 id="the-problem-with-existing-solutions">The problem with existing solutions</h3>
-<p>The official managed TaskDialog API shipped with <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Windows_Forms" data-definition-id="winforms" class="link definition-tooltip-trigger">WinForms</a> was, to put it mildly, lackluster. It lacked the features and flexibility I needed. Third-party packages were available, but none of them offered the full range of features I was looking for, especially simple navigation and hyperlinks. This frustration led me to a decision: if the perfect tool doesn't exist, why not build it myself?</p>
-<h3 id="the-build-your-own-mountain-philosophy">The <q>Build Your Own Mountain</q> philosophy</h3>
-<p>I believe in the philosophy of <q>build your own mountain</q><sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>. If you can't find the perfect tool for the job, create it. This approach not only solves your immediate problem but also contributes to the community, potentially helping others who face the same challenges.</p>
+<p>
+  The official managed TaskDialog API shipped with{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/Windows_Forms"
+    data-def-id="winforms"
+    class="link def-tooltip-trigger">
+    WinForms
+  </a>{' '}
+  was, to put it mildly, lackluster. It lacked the features and flexibility I needed. Third-party packages were
+  available, but none of them offered the full range of features I was looking for, especially simple navigation and
+  hyperlinks. This frustration led me to a decision: if the perfect tool doesn't exist, why not build it myself?
+</p>
+<h3 id="the-build-your-own-mountain-philosophy">
+  The <q>Build Your Own Mountain</q> philosophy
+</h3>
+<p>
+  I believe in the philosophy of <q>build your own mountain</q>
+  <sup id="cite-ref-1">
+    <a class="link" href="#ref-1">
+      [1]
+    </a>
+  </sup>
+  . If you can't find the perfect tool for the job, create it. This approach not only solves your immediate problem but
+  also contributes to the community, potentially helping others who face the same challenges.
+</p>
 <h3 id="planning-and-design">Planning and design</h3>
-<p>Before diving into code, I took a step back to plan. I created a backlog of all the features I needed and studied the intricacies of Windows task dialogs. Thanks to the extensive documentation available online<sup id="cite-ref-2"><a class="link" href="#ref-2">[2]</a></sup>, this was a straightforward process. I then grabbed a marker and taped up an A3 sheet of paper on my wall. I sketched out an <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Unified_Modeling_Language" data-definition-id="uml" class="link definition-tooltip-trigger">UML</a> class diagram that would encompass my objectives: an easy-to-use library with simple access to all native task dialog features, without the arbitrary limitations of third-party wrappers.</p>
+<p>
+  Before diving into code, I took a step back to plan. I created a backlog of all the features I needed and studied the
+  intricacies of Windows task dialogs. Thanks to the extensive documentation available online
+  <sup id="cite-ref-2">
+    <a class="link" href="#ref-2">
+      [2]
+    </a>
+  </sup>
+  , this was a straightforward process. I then grabbed a marker and taped up an A3 sheet of paper on my wall. I sketched
+  out an{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/Unified_Modeling_Language"
+    data-def-id="uml"
+    class="link def-tooltip-trigger">
+    UML
+  </a>{' '}
+  class diagram that would encompass my objectives: an easy-to-use library with simple access to all native task dialog
+  features, without the arbitrary limitations of third-party wrappers.
+</p>
 <h3 id="implementation-and-learning">Implementation and learning</h3>
-<p>With a clear plan in mind, I started implementing the library in <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" data-definition-id="csharp" class="link definition-tooltip-trigger">C#</a>. I wrote unit tests using the <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/NUnit" data-definition-id="nunit" class="link definition-tooltip-trigger">NUnit</a> testing framework to ensure everything worked as expected. This project took around six months to complete, but it was a deeply rewarding experience. I put my knowledge of <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Object-oriented_programming" data-definition-id="oop" class="link definition-tooltip-trigger">OOP</a> to the test and learned new techniques and patterns, such as the <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Adapter_pattern" data-definition-id="adapter" class="link definition-tooltip-trigger">Adapter</a>, <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Facade_pattern" data-definition-id="facade" class="link definition-tooltip-trigger">Facade</a>, and <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern" data-definition-id="chain-of-responsibility" class="link definition-tooltip-trigger">Chain of Responsibility</a>. I also familiarized myself with C# events and native interop, with a sprinkle of functional programming and immutability.</p>
+<p>
+  With a clear plan in mind, I started implementing the library in{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+    data-def-id="csharp"
+    class="link def-tooltip-trigger">
+    C#
+  </a>
+  . I wrote unit tests using the{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/NUnit"
+    data-def-id="nunit"
+    class="link def-tooltip-trigger">
+    NUnit
+  </a>{' '}
+  testing framework to ensure everything worked as expected. This project took around six months to complete, but it was
+  a deeply rewarding experience. I put my knowledge of{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/Object-oriented_programming"
+    data-def-id="oop"
+    class="link def-tooltip-trigger">
+    OOP
+  </a>{' '}
+  to the test and learned new techniques and patterns, such as the{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/Adapter_pattern"
+    data-def-id="adapter"
+    class="link def-tooltip-trigger">
+    Adapter
+  </a>
+  ,{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/Facade_pattern"
+    data-def-id="facade"
+    class="link def-tooltip-trigger">
+    Facade
+  </a>
+  , and{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern"
+    data-def-id="chain-of-responsibility"
+    class="link def-tooltip-trigger">
+    Chain of Responsibility
+  </a>
+  . I also familiarized myself with C# events and native interop, with a sprinkle of functional programming and
+  immutability.
+</p>
 <h3 id="continuous-integration-and-deployment">Continuous integration and deployment</h3>
-<p>One of the most exciting parts of this project was learning about <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/CI/CD" data-definition-id="ci-cd" class="link definition-tooltip-trigger">CI/CD</a> pipelines. I set up automated <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/NuGet" data-definition-id="nuget" class="link definition-tooltip-trigger">NuGet</a> deployment using a <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/GitHub" data-definition-id="github" class="link definition-tooltip-trigger">GitHub</a> workflow, which streamlined the process of publishing updates to the library.</p>
+<p>
+  One of the most exciting parts of this project was learning about{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/CI/CD"
+    data-def-id="ci-cd"
+    class="link def-tooltip-trigger">
+    CI/CD
+  </a>{' '}
+  pipelines. I set up automated{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/NuGet"
+    data-def-id="nuget"
+    class="link def-tooltip-trigger">
+    NuGet
+  </a>{' '}
+  deployment using a{' '}
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/GitHub"
+    data-def-id="github"
+    class="link def-tooltip-trigger">
+    GitHub
+  </a>{' '}
+  workflow, which streamlined the process of publishing updates to the library.
+</p>
 <h3 id="the-result">The result</h3>
-<p>In the end, I had created a qualitative and comprehensive .NET task dialog wrapper library that has since been downloaded thousands of times. It's gratifying to know that other developers find it useful and that it fills a gap in the .NET ecosystem.</p>
+<p>
+  In the end, I had created a qualitative and comprehensive .NET task dialog wrapper library that has since been
+  downloaded thousands of times. It's gratifying to know that other developers find it useful and that it fills a gap in
+  the .NET ecosystem.
+</p>
 <h3 id="usage-examples">Usage examples</h3>
 <p>Here are a couple of examples to give you an idea of how easy it is to use **Dialogs**:</p>
 <h4 id="simple-task-dialog">Simple Task Dialog</h4>
-```cs
-using Scover.Dialogs;
+```cs using Scover.Dialogs;
 
 using Page page = new()
 {
-    Content = &quot;Sample text&quot;,
-    Buttons = { Button.Yes, Button.No, Button.Cancel }
+Content = &quot;Sample text&quot;,
+Buttons = { Button.Yes, Button.No, Button.Cancel }
 };
 
 var clickedButton = new Dialog(page).Show();
-```
+
+````
 <h4 id="multi-page-task-dialog">Multi-Page Task Dialog</h4>
 ```cs
 using Scover.Dialogs;
@@ -43,13 +203,18 @@ using Page page1 = new()
 using Page page2 = new()
 {
     MainInstruction = &quot;Page #2&quot;,
-    Expander = new(&quot;Expanded information&quot;) 
+    Expander = new(&quot;Expanded information&quot;)
 };
 
 var clickedButton = new MultiPageDialog(page1, new Dictionary&lt;Page, NextPageSelector&gt;
 {
     [page1] = request =&gt; request.Kind is NavigationRequestKind.Cancel ? null : page2,
 }).Show();
-```
+````
+
 <h3 id="conclusion">Conclusion</h3>
-<p>**Dialogs** is more than just a library; it's a testament to the power of taking matters into your own hands. It started with dissatisfaction and ended with a tool that not only met my needs but also benefited the broader developer community. This project was a journey of learning, growth, and contribution, and I'm proud of what it has become.</p>
+<p>
+  **Dialogs** is more than just a library; it's a testament to the power of taking matters into your own hands. It
+  started with dissatisfaction and ended with a tool that not only met my needs but also benefited the broader developer
+  community. This project was a journey of learning, growth, and contribution, and I'm proud of what it has become.
+</p>

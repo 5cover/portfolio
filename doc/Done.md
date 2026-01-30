@@ -1,6 +1,6 @@
 # Done
 
-## Fix Markdown definition logo size
+## Fix Markdown def logo size
 
 ## Fix footer icon theming
 

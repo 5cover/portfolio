@@ -1,0 +1,39 @@
+---
+import type { LocalizedItem } from '../content.config';
+import * as content from '../lib/content';
+import { capitalize } from '../lib/util';
+import Graphic from './Graphic';
+
+function buildDefTitle(entry: LocalizedItem<'def'>): string {
+    const abbr = entry.name.abbr;
+    return abbr ? `${entry.name.full} (${abbr})` : entry.name.full;
+}
+
+function formatTitle(fmt: string, title: string): string {
+    return fmt.replace('%s', title);
+}
+interface Props {
+    def: LocalizedItem<'def'>;
+    langLabels: {
+        fmtTitle: string;
+    };
+}
+const { def, langLabels } = Astro.props;
+const defTitle = buildDefTitle(def);
+const logoTitle = formatTitle(langLabels.fmtTitle, defTitle);
+const backgroundStyle = def.background ? `--bg-img-card: url(${def.background})` : undefined;
+
+const defType = content.defType(Astro.currentLocale, def.type);
+const typeName = defType.title ?? def.type;
+---
+
+<article class='def' style={backgroundStyle}>
+    <h4>
+        <a class='foil' target='_blank' rel='noopener noreferrer' href={def.wiki}>
+            {defTitle}
+        </a>
+    </h4>
+    {def.logo ? <Graphic of={def.logo} title={logoTitle} class='logo' /> : null}
+    <p class='type'><small>{capitalize(typeName)}</small></p>
+    <p class='synopsis' set:html={def.synopsis} />
+</article>

@@ -1,5 +1,4 @@
-
-<p>Cori est une bibliothèque <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-definition-id="c" class="link definition-tooltip-trigger">C</a> à fichier unique conçue pour simplifier le processus d'entrée utilisateur en C. Elle fournit un ensemble complet de fonctions qui gèrent les scénarios d'entrée courants et les erreurs potentielles, permettant aux programmeurs de se concentrer davantage sur la logique de leur programme plutôt que sur les subtilités de la gestion des entrées. De plus, Cori vise à servir de remplacement plus sûr et plus convivial à la fonction `scanf`, qui est souvent mal utilisée par les débutants et peut facilement conduire à un comportement indéfini<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>.</p>
+<p>Cori est une bibliothèque <a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/C_(langage)" data-def-id="c" class="link def-tooltip-trigger">C</a> à fichier unique conçue pour simplifier le processus d'entrée utilisateur en C. Elle fournit un ensemble complet de fonctions qui gèrent les scénarios d'entrée courants et les erreurs potentielles, permettant aux programmeurs de se concentrer davantage sur la logique de leur programme plutôt que sur les subtilités de la gestion des entrées. De plus, Cori vise à servir de remplacement plus sûr et plus convivial à la fonction `scanf`, qui est souvent mal utilisée par les débutants et peut facilement conduire à un comportement indéfini<sup id="cite-ref-1"><a class="link" href="#ref-1">[1]</a></sup>.</p>
 <h3 id="problems-cori-intends-to-solve">Problèmes que Cori résout</h3>
 <ol class="list">
     <li><p>**Simplifier la gestion des entrées utilisateur**&nbsp;: Cori fournit un ensemble de fonctions qui gèrent différents types d'entrées utilisateur, ce qui permet aux programmeurs de collecter et de traiter plus facilement les entrées sans se soucier des complexités sous-jacentes.</p></li>
@@ -40,14 +39,16 @@
 #include "stb_cori.h";
 
 int main() {
-    int result;
-    printf("Entrez un entier : ");
-    result = read_int();
-    printf("Reçu %d\\n", result);
+int result;
+printf("Entrez un entier : ");
+result = read_int();
+printf("Reçu %d\\n", result);
 }
+
 ```
     <figcaption>Exemple de programme utilisant Cori pour lire un entier depuis l'entrée standard.</figcaption>
 </figure>
 <h3 id="conclusion">Conclusion</h3>
 <p>Cori est une bibliothèque puissante et conviviale pour la gestion des entrées de console dans les programmes C. En fournissant un ensemble complet de fonctions et un système de gestion des erreurs robuste, Cori simplifie le processus de gestion des entrées et offre une alternative plus sûre à la fonction `scanf`. Sa conception en tant que bibliothèque de style STB et l'utilisation de techniques de macro avancées facilitent son intégration et son extension, ce qui en fait un excellent choix pour les programmeurs C débutants et expérimentés, en particulier pour les programmes simples de test.</p>
 <p>Pour plus de détails sur l'utilisation de Cori, veuillez vous référer au fichier <a class="link" target="_blank" rel="noopener noreferrer" href="https://github.com/5cover/stb_cori/blob/main/README.md">README</a>.</p>
+```

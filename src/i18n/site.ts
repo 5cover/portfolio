@@ -1,4 +1,4 @@
-import { LiteratureKinds, type LiteratureKind } from '../content/config';
+import { LiteratureKinds, type LiteratureKind } from '../content.config';
 import type { LanguageInfo, NavItem, ThemeLabels } from '../lib/types';
 
 export type Localized<T> = Record<Locale, T>;
