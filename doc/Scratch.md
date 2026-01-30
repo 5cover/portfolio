@@ -87,7 +87,11 @@ stylelint, eslint etc specific astro linting /formatting tools?
 
 ## Image optimization
 
-## Cleanup types
+move them away from content
+
+can we do optimization once?
+
+see astro docs
 
 ## Section component
 
@@ -101,7 +105,7 @@ classes
 
 ~~switch default language to en~~
 
-deduplicate logic from pages
+~~deduplicate logic from pages~~
 
 experiment with MDX as translated JSX store using exports along with the main content.
 

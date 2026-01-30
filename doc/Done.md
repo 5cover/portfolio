@@ -21,3 +21,5 @@ Les requirements se centrent autour du BUT informatique
 ## remove useless types
 
 ## rename collections to singular
+
+## Cleanup types
