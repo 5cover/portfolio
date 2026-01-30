@@ -19,3 +19,5 @@ solution: simply import the original and wrap it in div lang
 Les requirements se centrent autour du BUT informatique
 
 ## remove useless types
+
+## rename collections to singular

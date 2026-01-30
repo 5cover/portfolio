@@ -113,8 +113,6 @@ experiment with MDX as translated JSX store using exports along with the main co
 
 use yaml native dates?
 
-## rename collections to singular
-
 ## remove formatting copy
 
 fmtX
