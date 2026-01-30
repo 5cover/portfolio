@@ -1,21 +1,5 @@
 ---
 import HistoryIndexPage from '../../components/pages/HistoryIndexPage.astro';
-import { getHistory, getTextualEntry } from '../../lib/content';
-import { normalizeLocale } from '../../i18n/site';
-
-const locale = normalizeLocale(Astro.currentLocale);
-const historyItems = await getHistory(locale);
-
-const orderedHistory = [...historyItems].reverse();
-
-const historyBodies = await Promise.all(
-    orderedHistory.map(async entry => {
-        const bodyEntry = await getTextualEntry(locale, 'history', entry.id);
-        const { Content } = await bodyEntry.render();
-        return Content;
-    })
-);
-
 ---
 
-<HistoryIndexPage orderedHistory={orderedHistory} historyBodies={historyBodies} />
+<HistoryIndexPage />

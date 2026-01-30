@@ -3,24 +3,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import '../../styles/projects.scss';
 
-type Copy = {
+interface Copy {
     projectSearchSearch: string;
     projectSearchPlaceholder: string;
     projectSearchTags: string;
     projectSearchSort: string;
-};
+}
 
-type Props = {
+interface Props {
     copy: Copy;
-};
+}
 
-const props: Props = Astro.props;
-const { copy } = props;
-
+const { copy } = Astro.props;
 ---
 
-<BaseLayout
-    pageName='projects'>
+<BaseLayout pageName='projects'>
     <main>
         <datalist id='project-titles'>
             <!-- Fill this up dynamically -->

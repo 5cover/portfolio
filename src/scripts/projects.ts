@@ -1,4 +1,5 @@
 import type { Graphic, Item, LocalizedItem } from '../content/config';
+import { stripTags } from '../lib/util';
 import { requireElementById } from './util';
 
 type Project = LocalizedItem<'projects'>;
@@ -223,10 +224,6 @@ async function getGraphicMarkup(g: Graphic, title: string, className?: string): 
         img.className = className;
     }
     return img.outerHTML;
-}
-
-function stripTags(value: string): string {
-    return value.replace(/<[^>]*>/g, '');
 }
 
 function formatDate(dateString: string, locale: string): string {

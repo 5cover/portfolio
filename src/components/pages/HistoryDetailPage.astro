@@ -2,67 +2,53 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
 
-import type { LocalizedHistoryEntry } from '../../lib/content';
-
 import '../../styles/history-detail.scss';
+
 // one off exception for the heavily styled BUT informatique page: https://github.com/withastro/astro/issues/7761
 // (it shows as resolved but sitll doesn't work for me)
 import '../../styles/but-informatique.scss';
-import type { AstroComponentFactory } from 'astro/runtime/server/render/astro/index.js';
+import { at, getHistory, getTextualEntry } from '../../lib/content';
+import { throwf } from '../../lib/util';
+import { normalizeLocale, getLabels } from '../../i18n/site';
 
-type Copy = {
-    story: string;
-    detailsHeading: string;
-};
+interface Props {
+    id: string;
+}
 
-type Props = {
-    entry: LocalizedHistoryEntry;
-    HistorySummary: AstroComponentFactory;
-    HistoryBody: AstroComponentFactory;
-    copy: Copy;
-};
+const { id } = Astro.props;
 
-const props: Props = Astro.props;
-const {
-    entry,
-    HistorySummary,
-    HistoryBody,
-    copy,
-} = props;
+const locale = normalizeLocale(Astro.currentLocale);
+const data = at(await getHistory(locale), id) ?? throwf(`history of id ${id} not found`);
+const labels = getLabels(locale);
 
-const media = entry.data.media;
-const meta = entry.data.meta;
-const year = media?.year ? String(media.year) : '';
+const historySummaryEntry = await getTextualEntry(locale, 'history', id);
+const { Content: HistorySummary } = await historySummaryEntry.render();
+
+const historyBodyEntry = await getTextualEntry(locale, 'history-body', data.body ?? id);
+const { Content: HistoryBody } = await historyBodyEntry.render();
 ---
 
-<BaseLayout
-    pageName={`history/${entry.id}`}
->
+<BaseLayout pageName={`history/${id}`}>
     <main>
         <header>
-            <h1 set:html={entry.data.title} />
-            {(meta || year) ? (
-                <p class="history-meta">
-                    {meta ? <span set:html={meta} /> : null}
-                    {year ? <span class="history-meta_year">{year}</span> : null}
-                </p>
-            ) : null}
-            {media ? (
-                <img
-                    class="history-media"
-                    src={media.img}
-                    alt={media.alt}
-                    loading="lazy"
-                />
-            ) : null}
+            <h1 set:html={data.title} />
+            {
+                data.meta || data.year ? (
+                    <p class='history-meta'>
+                        {data.meta ? <span set:html={data.meta} /> : null}
+                        {data.year ? <span class='history-meta_year'>{data.year}</span> : null}
+                    </p>
+                ) : null
+            }
+            {data.media ? <img class='history-media' src={data.media.img} alt={data.media.alt} loading='lazy' /> : null}
         </header>
-        <section id="story">
-            <h2>{copy.story}</h2>
+        <section id='story'>
+            <h2>{labels.copy.story}</h2>
             <TextualContent content={HistorySummary} />
         </section>
-        <section id="history-body">
-            <h2>{copy.detailsHeading}</h2>
-            <TextualContent content={HistoryBody} className="history-body textual" />
+        <section id='history-body'>
+            <h2>{labels.copy.details}</h2>
+            <TextualContent content={HistoryBody} className='history-body textual' />
         </section>
     </main>
 </BaseLayout>

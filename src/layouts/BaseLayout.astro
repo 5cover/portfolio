@@ -23,11 +23,7 @@ const dataBase = getRelativeLocaleUrl(locale, 'data');
 ---
 
 <!doctype html>
-<html
-    lang={locale}
-    data-locale={locale}
-    data-data-base={dataBase}
-    data-ongoing-label={labels.labels.ongoing}>
+<html lang={locale} data-locale={locale} data-data-base={dataBase} data-ongoing-label={labels.copy.ongoing}>
     <head>
         <link rel='apple-touch-icon' sizes='180x180' href='/portfolio/apple-touch-icon.png' />
         <link rel='icon' type='image/png' sizes='16x16' href='/portfolio/favicon-16x16.png' />
@@ -35,7 +31,7 @@ const dataBase = getRelativeLocaleUrl(locale, 'data');
         <link rel='shortcut icon' href='/portfolio/favicon.ico' type='image/x-icon' />
         <link rel='manifest' href='/portfolio/site.webmanifest' />
         <link rel='mask-icon' href='/portfolio/safari-pinned-tab.svg' color='#5bbad5' />
-        <link rel="sitemap" href="/sitemap-index.xml" />
+        <link rel='sitemap' href='/sitemap-index.xml' />
         <meta charset='UTF-8' />
         <meta name='author' content='Raphaël Bardini' />
         <meta name='description' content={siteDescription} />

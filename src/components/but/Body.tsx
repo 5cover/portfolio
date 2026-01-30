@@ -1,45 +1,36 @@
 import ProjectCardList from '../ProjectCardList';
-import {
-    getAnchors,
-    getProjects,
-    getTags,
-    mapById,
-    type AnchorEntry,
-    type LocalizedProjectEntry,
-    type LocalizedTagEntry,
-} from '../../lib/content';
-import { getLabels, type LocaleLabels } from '../../i18n/site';
-import Section from '../preact/Section';
-import Heading from '../preact/Heading';
+import { getAnchors, getProjects, getTags, mapById, type Entry } from '../../lib/content';
+import { getLabels, type Locale, type LocaleLabels } from '../../i18n/site';
+import Section from '../Section';
+import Heading from '../Heading';
 import type { PageCopy } from './types';
+import type { LocalizedItem } from '../../content/config';
 
 const MaxProjectsPerSkill = 4;
 
+interface Data {
+    projects: Entry<LocalizedItem<'projects'>>[];
+    labels: LocaleLabels;
+    locale: Locale;
+}
+
 export interface Props {
     copy: PageCopy;
-    data: {
-        projects: LocalizedProjectEntry[];
-        tags: LocalizedTagEntry[];
-        anchors: AnchorEntry[];
-        labels: LocaleLabels;
-    };
+    data: Data;
 }
 
 function simpleEntries<K extends PropertyKey, V>(o: Partial<Record<K, V>>) {
     return Object.entries(o) as [K, V][];
 }
 
-export const data = async (locale: string) => {
-    const labels = getLabels(locale);
-    const [projects, tags, anchors] = await Promise.all([getProjects(locale), getTags(locale), getAnchors()]);
-    return { projects, tags, anchors, labels };
-};
+export const data = async (locale: Locale): Promise<Data> => ({
+    projects: await getProjects(locale),
+    labels: getLabels(locale),
+    locale,
+});
 
 export default ({ copy, data }: Props) => {
-    const { projects, tags, anchors, labels } = data;
-    const tagsById = mapById(tags);
-    const anchorsById = mapById(anchors);
-    debugger;
+    const { projects, labels, locale } = data;
     return (
         <>
             <Section class="but-body margined">
@@ -98,9 +89,8 @@ export default ({ copy, data }: Props) => {
                                         const skillTag = `but-${skillName}`;
                                         const skillProjects = projects
                                             .filter(
-                                                project =>
-                                                    project.data.tags.includes(yearName) &&
-                                                    project.data.tags.includes(skillTag)
+                                                ([, project]) =>
+                                                    project.tags.includes(yearName) && project.tags.includes(skillTag)
                                             )
                                             .slice(0, MaxProjectsPerSkill);
                                         return (
@@ -117,14 +107,13 @@ export default ({ copy, data }: Props) => {
                                                 {skillProjects.length > 0 ? (
                                                     <ProjectCardList
                                                         langLabels={{
-                                                            ongoing: labels.labels.ongoing,
-                                                            fmtTitle: labels.labels.fmtTitle,
+                                                            ongoing: labels.copy.ongoing,
+                                                            fmtTitle: labels.copy.fmtTitle,
                                                         }}
-                                                        projects={skillProjects}
-                                                        tagsById={tagsById}
-                                                        anchorsById={anchorsById}
+                                                        entry={skillProjects}
                                                         headingLevel={4}
                                                         class="project-skills"
+                                                        locale={locale}
                                                     />
                                                 ) : null}
                                             </li>

@@ -1,12 +1,12 @@
 import { defineCollection, z, type CollectionEntry, type CollectionKey } from 'astro:content';
-import type { ExplicitUndefined, Patch } from '../lib/types';
-import type { Locale, Localized } from '../i18n/site';
+import type { ExplicitUndefined } from '../lib/types';
+import type { Localized } from '../i18n/site';
 
 export type Item<C extends CollectionKey> = CollectionEntry<C>['data'];
 
-export type LocalizedItem<C extends CollectionKey> = {
-    [P in keyof Item<C>]: ExplicitUndefined<Item<C>[P]> extends Localized<infer T> ? T : Item<C>[P];
-};
+type Delocalize<T> = { [P in keyof T]: ExplicitUndefined<T[P]> extends Localized<infer U> ? U : Delocalize<T[P]> };
+
+export type LocalizedItem<C extends CollectionKey> = Delocalize<Item<C>>;
 
 const graphicSchema = z.object({
     src: z.string(),
@@ -42,6 +42,7 @@ const referenceSchema = z.object({
     anchor: z.string(),
     href: z.string(),
 });
+export type Reference = z.infer<typeof referenceSchema>;
 
 const galleryItemSchema = z.object({
     caption: z.string(),
@@ -71,10 +72,13 @@ const projectCollection = defineCollection({
     }),
 });
 
+export const LiteratureKinds = ['passion', 'blog', 'story'] as const;
+export type LiteratureKind = (typeof LiteratureKinds)[number];
+
 const literatureCollection = defineCollection({
     type: 'data',
     schema: z.object({
-        kind: z.enum(['passion', 'blog', 'story']),
+        kind: z.enum(LiteratureKinds),
         title: localizedString,
         abstract: localizedString,
         links: localizedArray(linkSchema),
@@ -127,14 +131,13 @@ const historyCollection = defineCollection({
         body: z.string(),
         title: localizedString,
         meta: localizedString,
+        year: z.number(),
         media: z
             .object({
-                year: z.number(),
                 img: z.string(),
                 alt: localizedString,
             })
             .optional(),
-        order: z.number(),
     }),
 });
 

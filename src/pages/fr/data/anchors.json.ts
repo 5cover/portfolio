@@ -1,2 +1,4 @@
-import { getAnchors } from '../../../lib/content';
-export const GET = getAnchors;
+import { anchors } from '../../../lib/data';
+export function GET() {
+    return anchors();
+}

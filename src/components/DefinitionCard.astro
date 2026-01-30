@@ -1,8 +1,11 @@
 ---
+import type { LocalizedItem } from '../content/config';
+import { normalizeLocale } from '../i18n/site';
+import { getTypes, at } from '../lib/content';
+import { throwf } from '../lib/util';
 import Graphic from './Graphic';
-import type { DefinitionLocalizedData, TypeLocalizedData } from '../lib/content';
 
-function buildDefinitionTitle(entry: DefinitionLocalizedData): string {
+function buildDefinitionTitle(entry: LocalizedItem<'definitions'>): string {
     const abbr = entry.name.abbr;
     return abbr ? `${entry.name.full} (${abbr})` : entry.name.full;
 }
@@ -10,21 +13,21 @@ function buildDefinitionTitle(entry: DefinitionLocalizedData): string {
 function formatTitle(fmt: string, title: string): string {
     return fmt.replace('%s', title);
 }
-
-type Props = {
-    definition: DefinitionLocalizedData;
-    typesById: Record<string, TypeLocalizedData>;
+interface Props {
+    definition: LocalizedItem<'definitions'>;
     langLabels: {
         fmtTitle: string;
     };
-};
-
-const props: Props = Astro.props;
-const { definition, typesById, langLabels } = props;
+}
+const { definition, langLabels } = Astro.props;
 const definitionTitle = buildDefinitionTitle(definition);
 const logoTitle = formatTitle(langLabels.fmtTitle, definitionTitle);
 const backgroundStyle = definition.background ? `--bg-img-card: url(${definition.background})` : undefined;
-const typeName = typesById[definition.type]?.title ?? definition.type;
+
+const defType =
+    at(await getTypes(normalizeLocale(Astro.currentLocale)), definition.type) ??
+    throwf(`type of id ${definition.type} not found`);
+const typeName = defType.title ?? definition.type;
 ---
 
 <article class='definition' style={backgroundStyle}>

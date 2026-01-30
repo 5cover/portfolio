@@ -1,39 +1,25 @@
 ---
+import type { LiteratureKind } from '../../content/config';
+import { normalizeLocale, getLabels } from '../../i18n/site';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getLiterature } from '../../lib/content';
 import LiteratureCardList from '../LiteratureCardList.astro';
-import { getAnchors, mapById } from '../../lib/content';
-import type { LocalizedLiteratureEntry } from '../../lib/content';
 
-type Props = {
-    title: string;
-    route: string;
-    langLabels: { fmtTitle: string };
-    entries: LocalizedLiteratureEntry[];
+interface Props {
+    kind: LiteratureKind;
     mainClass?: string;
-};
+}
 
-const props: Props = Astro.props;
-const {
-    title,
-    route,
-    langLabels,
-    entries,
-    mainClass,
-} = props;
-
-const anchorsById = mapById(await getAnchors());
+const { kind, mainClass } = Astro.props;
+const locale = normalizeLocale(Astro.currentLocale);
+const labels = getLabels(locale);
+const literature = await getLiterature(locale);
+const entries = literature.filter(([, lit]) => lit.kind === kind);
 ---
 
-<BaseLayout
-    pageName={route}
->
+<BaseLayout pageName={kind}>
     <main class={mainClass}>
-        <h1>{title}</h1>
-        <LiteratureCardList
-            route={route}
-            langLabels={langLabels}
-            entries={entries}
-            anchorsById={anchorsById}
-        />
+        <h1>{labels.nav.literature[kind]}</h1>
+        <LiteratureCardList langLabels={labels.copy} entries={entries} />
     </main>
 </BaseLayout>

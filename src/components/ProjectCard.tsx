@@ -2,8 +2,9 @@ import Graphic from './Graphic';
 import LinkList from './LinkList';
 import { detailHref, pageHref } from '../lib/links';
 import { formatDate } from '../lib/date';
-import type { AnchorEntry, LocalizedProjectEntry, LocalizedTagEntry } from '../lib/content';
-import { normalizeLocale } from '../i18n/site';
+import { normalizeLocale, type Locale } from '../i18n/site';
+import type { LocalizedItem } from '../content/config';
+import { at, getTags, type Entry } from '../lib/content';
 
 function capitalize(value: string): string {
     return value[0] === undefined ? value : value[0].toUpperCase() + value.slice(1);
@@ -18,86 +19,75 @@ interface Props {
         ongoing: string;
         fmtTitle: string;
     };
-    project: LocalizedProjectEntry;
-    tagsById: Record<string, LocalizedTagEntry['data']>;
-    anchorsById: Record<string, AnchorEntry['data']>;
+    entry: Entry<LocalizedItem<'projects'>>;
     headingLevel?: number;
-    locale?: string;
+    locale: Locale;
 }
 
-export default ({ locale, langLabels, project, tagsById, anchorsById, headingLevel = 3 }: Props) => {
-    locale = normalizeLocale(locale);
-    const projectData = project.data;
-    const logoTitle = formatTitle(langLabels.fmtTitle, projectData.title);
-    const startDate = projectData.startDate;
-    const endDate = projectData.endDate;
-    const startLabel = startDate ? formatDate(startDate, locale) : '';
-    const endLabel = endDate ? formatDate(endDate, locale) : '';
-    const context = projectData.context ? capitalize(projectData.context) : '';
-    const backgroundStyle = projectData.background ? `--bg-img-card: url(${projectData.background})` : undefined;
+export default async ({ locale, langLabels, entry, headingLevel = 3 }: Props) => {
+    const tags = await getTags(locale);
+    const [id, project] = entry;
+    const logoTitle = formatTitle(langLabels.fmtTitle, project.title);
+    const startLabel = project.startDate ? formatDate(project.startDate, locale) : '';
+    const endLabel = project.endDate ? formatDate(project.endDate, locale) : '';
+    const context = project.context ? capitalize(project.context) : '';
+    const backgroundStyle = project.background ? `--bg-img-card: url(${project.background})` : undefined;
     return (
         <li style={backgroundStyle}>
             <ul class="list-rect">
-                {projectData.tags.map(tagId => (
+                {project.tags.map(tagId => (
                     <li>
-                        <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`}>{tagsById[tagId]?.title ?? tagId}</a>
+                        <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`}>{at(tags, tagId)?.title ?? tagId}</a>
                     </li>
                 ))}
             </ul>
-            {projectData.logo ? (
-                <Graphic
-                    of={projectData.logo}
-                    alt={logoTitle}
-                    title={logoTitle}
-                    class="logo"
-                />
-            ) : null}
+            {project.logo ? <Graphic of={project.logo} alt={logoTitle} title={logoTitle} class="logo" /> : null}
             {headingLevel === 1 ? (
                 <h1>
-                    <a class="foil" href={detailHref(locale, 'projects', project.id)}>
-                        {projectData.title}
+                    <a class="foil" href={detailHref(locale, 'projects', id)}>
+                        {project.title}
                     </a>
                 </h1>
             ) : headingLevel === 2 ? (
                 <h2>
-                    <a class="foil" href={detailHref(locale, 'projects', project.id)}>
-                        {projectData.title}
+                    <a class="foil" href={detailHref(locale, 'projects', id)}>
+                        {project.title}
                     </a>
                 </h2>
             ) : headingLevel === 4 ? (
                 <h4>
-                    <a class="foil" href={detailHref(locale, 'projects', project.id)}>
-                        {projectData.title}
+                    <a class="foil" href={detailHref(locale, 'projects', id)}>
+                        {project.title}
                     </a>
                 </h4>
             ) : headingLevel === 5 ? (
                 <h5>
-                    <a class="foil" href={detailHref(locale, 'projects', project.id)}>
-                        {projectData.title}
+                    <a class="foil" href={detailHref(locale, 'projects', id)}>
+                        {project.title}
                     </a>
                 </h5>
             ) : headingLevel === 6 ? (
                 <h6>
-                    <a class="foil" href={detailHref(locale, 'projects', project.id)}>
-                        {projectData.title}
+                    <a class="foil" href={detailHref(locale, 'projects', id)}>
+                        {project.title}
                     </a>
                 </h6>
             ) : (
                 <h3>
-                    <a class="foil" href={detailHref(locale, 'projects', project.id)}>
-                        {projectData.title}
+                    <a class="foil" href={detailHref(locale, 'projects', id)}>
+                        {project.title}
                     </a>
                 </h3>
             )}
-            {startDate ? (
+            {project.startDate ? (
                 <small class="status">
-                    <time datetime={startDate}>{startLabel}</time> &ndash;{' '}
-                    {endDate ? <time datetime={endDate}>{endLabel}</time> : langLabels.ongoing}
+                    <time datetime={project.startDate}>{startLabel}</time> &ndash;{' '}
+                    {project.endDate ? <time datetime={project.endDate}>{endLabel}</time> : langLabels.ongoing}
                 </small>
             ) : null}
             {context ? <small class="context">{context}</small> : null}
-            <p class="abstract">{projectData.abstract}</p>
-            {projectData.links.length > 0 ? <LinkList links={projectData.links} anchorsById={anchorsById} /> : null}
+            <p class="abstract">{project.abstract}</p>
+            {project.links.length > 0 ? <LinkList links={project.links} /> : null}
         </li>
     );
 };

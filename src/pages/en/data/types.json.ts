@@ -1,3 +1,5 @@
-import { types } from "../../../lib/data";
+import { types } from '../../../lib/data';
 
-export const GET = () => types('en')
+export function GET() {
+    return types('en');
+}

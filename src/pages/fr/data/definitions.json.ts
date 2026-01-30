@@ -1,2 +1,4 @@
 import { definitions } from '../../../lib/data';
-export const GET = () => definitions('fr')
+export function GET() {
+    return definitions('fr');
+}

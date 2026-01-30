@@ -17,3 +17,5 @@ solution: simply import the original and wrap it in div lang
 ## Read and implement prof requirements
 
 Les requirements se centrent autour du BUT informatique
+
+## remove useless types

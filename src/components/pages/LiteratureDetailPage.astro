@@ -5,54 +5,43 @@ import Gallery from '../Gallery.astro';
 import Graphic from '../Graphic';
 import LinkList from '../LinkList';
 import ReferenceList from '../ReferenceList.astro';
-import { getAnchors, getLiterature, getTextualEntry, mapById } from '../../lib/content';
+import { at, getAnchors, getLiterature, getTextualEntry, mapById } from '../../lib/content';
 import { getLabels, normalizeLocale } from '../../i18n/site';
 
-type Props = {
-    route: string;
+interface Props {
     id: string;
     mainClass?: string;
-};
-const { route, id, mainClass } = Astro.props;
+}
+const { id, mainClass } = Astro.props;
 
 const locale = normalizeLocale(Astro.currentLocale);
-const copy = getLabels(locale).labels;
+const copy = getLabels(locale).copy;
 
 const literatures = await getLiterature(locale);
-const entry = literatures.find(item => item.id === id);
-if (!entry) {
+const data = at(literatures, id);
+if (!data) {
     throw new Error(`Missing literature ${id} for ${locale}`);
 }
 
-const body = await getTextualEntry(locale, 'literature', entry.id);
+const body = await getTextualEntry(locale, 'literature', id);
 const { Content: Body } = await body.render();
 
-const anchorsById = mapById(await getAnchors());
-const backgroundStyle = entry.data.background ? `--bg-img: url(${entry.data.background})` : undefined;
-const logoTitle = copy.fmtTitle.replace('%s', entry.data.title);
+const backgroundStyle = data.background ? `--bg-img: url(${data.background})` : undefined;
+const logoTitle = copy.fmtTitle.replace('%s', data.title);
 ---
 
-<BaseLayout pageName={`${route}/${entry.id}`}>
+<BaseLayout pageName={`literature/${id}`}>
     <main style={backgroundStyle} class={mainClass}>
         <header>
-            <h1 set:html={entry.data.title} />
-            {
-                entry.data.logo ? (
-                    <Graphic
-                        of={entry.data.logo}
-                        alt={logoTitle}
-                        title={logoTitle}
-                        class='logo'
-                    />
-                ) : null
-            }
-            <p class='abstract' set:html={entry.data.abstract} />
+            <h1 set:html={data.title} />
+            {data.logo ? <Graphic of={data.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
+            <p class='abstract' set:html={data.abstract} />
         </header>
         {
-            entry.data.links.length > 0 ? (
+            data.links.length > 0 ? (
                 <section id='links'>
                     <h2>{copy.links}</h2>
-                    <LinkList links={entry.data.links} anchorsById={anchorsById} variant='page' />
+                    <LinkList links={data.links} variant='page' />
                 </section>
             ) : null
         }
@@ -61,22 +50,18 @@ const logoTitle = copy.fmtTitle.replace('%s', entry.data.title);
             <TextualContent content={Body} />
         </section>
         {
-            entry.data.references.length > 0 ? (
+            data.references.length > 0 ? (
                 <section id='references'>
                     <h2>{copy.references}</h2>
-                    <ReferenceList
-                        references={entry.data.references}
-                        anchorsById={anchorsById}
-                        backlinkLabel={copy.refJumpUp}
-                    />
+                    <ReferenceList references={data.references} backlinkLabel={copy.refJumpUp} />
                 </section>
             ) : null
         }
         {
-            entry.data.gallery.length > 0 ? (
+            data.gallery.length > 0 ? (
                 <section id='gallery'>
                     <h2>{copy.gallery}</h2>
-                    <Gallery items={entry.data.gallery} />
+                    <Gallery items={data.gallery} />
                 </section>
             ) : null
         }

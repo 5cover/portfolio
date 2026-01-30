@@ -1,2 +1,4 @@
 import { projects } from '../../../lib/data';
-export const GET = () => projects('fr')
+export function GET() {
+    return projects('fr');
+}

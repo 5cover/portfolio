@@ -1,3 +1,5 @@
 import { tags } from '../../../lib/data';
 
-export const GET = () => tags('en');
+export function GET() {
+    return tags('en');
+}

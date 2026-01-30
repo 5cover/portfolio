@@ -2,15 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Graphic from '../Graphic';
 import ProjectCardList from '../ProjectCardList';
-import { getAnchors, getTags, mapById } from '../../lib/content';
-import type { ContactEntry, LocalizedPianoTileEntry, LocalizedProjectEntry } from '../../lib/content';
+import { type Entry } from '../../lib/content';
 import { pageHref } from '../../lib/links';
 import { normalizeLocale } from '../../i18n/site';
 
 import '../../styles/index.scss';
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { LocalizedItem } from '../../content/config';
 
-type Copy = {
+interface Copy {
     indexMe: string;
     indexMyPhoto: string;
     indexOngoingProjects: string;
@@ -21,57 +21,44 @@ type Copy = {
     indexVideoCv: string;
     ongoing: string;
     fmtTitle: string;
-};
+}
 
-type Props = {
-    pianoTiles: LocalizedPianoTileEntry[];
-    projects: LocalizedProjectEntry[];
-    contacts: ContactEntry[];
+interface Props {
+    pianoTiles: Entry<LocalizedItem<'piano-tiles'>>[];
+    projects: Entry<LocalizedItem<'projects'>>[];
+    contacts: Entry<LocalizedItem<'contacts'>>[];
     copy: Copy;
-};
+}
 
 const props: Props = Astro.props;
-const {
-    pianoTiles,
-    projects,
-    contacts,
-    copy,
-} = props;
+const { pianoTiles, projects, contacts, copy } = props;
 
 const locale = normalizeLocale(Astro.currentLocale);
-const [tags, anchors] = await Promise.all([getTags(locale), getAnchors()]);
-const tagsById = mapById(tags);
-const anchorsById = mapById(anchors);
-
-function stripTags(value: string): string {
-    return value.replace(/<[^>]*>/g, '');
-}
 ---
 
-<BaseLayout
-    pageName='index'>
+<BaseLayout pageName='index'>
     <main>
         <ul class='lvl list-piano-tiles'>
             {
-                pianoTiles.map(tile => (
+                pianoTiles.map(([, tile]) => (
                     <li>
                         <figure>
                             <img
-                                src={tile.data.backgroundImage}
-                                alt={tile.data.title}
+                                src={tile.backgroundImage}
+                                alt={tile.title}
                                 width='240'
                                 height='480'
                                 loading='lazy'
-                                title={stripTags(tile.data.summary)}
+                                title={tile.summary}
                             />
                             <figcaption>
                                 <div>
                                     <h2>
-                                        <a class='foil' href={tile.data.href}>
-                                            {tile.data.title}
+                                        <a class='foil' href={tile.href}>
+                                            {tile.title}
                                         </a>
                                     </h2>
-                                    <p set:html={tile.data.summary} />
+                                    <p set:html={tile.summary} />
                                 </div>
                             </figcaption>
                         </figure>
@@ -97,9 +84,8 @@ function stripTags(value: string): string {
             <h2>{copy.indexOngoingProjects}</h2>
             <ProjectCardList
                 langLabels={{ ongoing: copy.ongoing, fmtTitle: copy.fmtTitle }}
-                projects={projects.filter(project => !project.data.endDate)}
-                tagsById={tagsById}
-                anchorsById={anchorsById}
+                entry={projects.filter(([, project]) => !project.endDate)}
+                locale={locale}
             />
             <a href={pageHref(locale, 'projects')} class='lvl button-link'>
                 {copy.indexAllMyProjects}
@@ -111,18 +97,15 @@ function stripTags(value: string): string {
                 <address>
                     <ul>
                         {
-                            contacts.map(contact => (
-                                <li title={contact.data.platform}>
+                            contacts.map(([, contact]) => (
+                                <li title={contact.platform}>
                                     <a
                                         class='link iconed-text'
                                         target='_blank'
                                         rel='noopener noreferrer'
-                                        href={contact.data.src}>
-                                        <Graphic
-                                            of={contact.data.icon}
-                                            alt={contact.data.platform}
-                                        />
-                                        <span>{contact.data.name}</span>
+                                        href={contact.src}>
+                                        <Graphic of={contact.icon} alt={contact.platform} />
+                                        <span>{contact.name}</span>
                                     </a>
                                 </li>
                             ))
@@ -130,7 +113,10 @@ function stripTags(value: string): string {
                     </ul>
                 </address>
             </div>
-            <a href={getRelativeLocaleUrl(normalizeLocale(Astro.currentLocale), 'cv-bardini-raphael.pdf')} target='_blank' rel='noopener noreferrer'>
+            <a
+                href={getRelativeLocaleUrl(normalizeLocale(Astro.currentLocale), 'cv-bardini-raphael.pdf')}
+                target='_blank'
+                rel='noopener noreferrer'>
                 <img
                     src={getRelativeLocaleUrl(normalizeLocale(Astro.currentLocale), 'cv-bardini-raphael-preview.jpg')}
                     alt={copy.indexMyResumePreview}

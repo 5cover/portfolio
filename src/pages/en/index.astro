@@ -5,12 +5,7 @@ import { getLabels, normalizeLocale } from '../../i18n/site';
 
 const locale = normalizeLocale(Astro.currentLocale);
 const labels = getLabels(locale);
-const [projects, contacts, pianoTiles] = await Promise.all([
-    getProjects(locale),
-    getContacts(),
-    getPianoTiles(locale),
-]);
-
+const [projects, contacts, pianoTiles] = await Promise.all([getProjects(locale), getContacts(), getPianoTiles(locale)]);
 ---
 
 <HomePage
@@ -26,19 +21,15 @@ const [projects, contacts, pianoTiles] = await Promise.all([
         indexMyResumePreview: 'Preview my resume',
         indexMyResume: 'My resume',
         indexVideoCv: 'Video CV',
-        ongoing: labels.labels.ongoing,
-        fmtTitle: labels.labels.fmtTitle,
-    }}
->
+        ongoing: labels.copy.ongoing,
+        fmtTitle: labels.copy.fmtTitle,
+    }}>
     <Fragment slot='about-content'>
         <p>
-            Hello, my name is <strong>Raphaël Bardini</strong>. I'm an 18 y/o computer science student in
-            second year of <abbr title='Bachelor of Technology'>BUT</abbr> Informatique, at the{' '}
-            <a
-                class='link'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://iut-lannion.univ-rennes.fr/'>
+            Hello, my name is <strong>Raphaël Bardini</strong>. I'm an 18 y/o computer science student in second year of <abbr
+                title='Bachelor of Technology'>BUT</abbr
+            > Informatique, at the{' '}
+            <a class='link' target='_blank' rel='noopener noreferrer' href='https://iut-lannion.univ-rennes.fr/'>
                 <abbr title='University Technological Institute'>IUT</abbr> of Lannion
             </a>
             .
@@ -65,9 +56,9 @@ const [projects, contacts, pianoTiles] = await Promise.all([
             .
         </p>
         <p>
-            The main source of fulfilment in my life is <strong>software development</strong>. In addition, I
-            commit <em>(pun intented)</em> to the <strong>open-source</strong> community. And I can't deny that
-            I'm a big lover of{' '}
+            The main source of fulfilment in my life is <strong>software development</strong>. In addition, I commit <em
+                >(pun intented)</em
+            > to the <strong>open-source</strong> community. And I can't deny that I'm a big lover of{' '}
             <a
                 class='link'
                 target='_blank'

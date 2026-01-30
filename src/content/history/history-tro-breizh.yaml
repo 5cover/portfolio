@@ -1,20 +1,11 @@
 {
   "body": "history-tro-breizh",
-  "title": {
-    "en": "Tro Breizh",
-    "fr": "Tro Breizh"
-  },
-  "meta": {
-    "en": "Tro Breizh",
-    "fr": "Tro Breizh"
-  },
-  "media": {
-    "year": 2024,
-    "img": "/portfolio/img/tro-breizh.jpg",
-    "alt": {
-      "en": "Le Tro Breizh",
-      "fr": "Le Tro Breizh"
+  "title": { "en": "Tro Breizh", "fr": "Tro Breizh" },
+  "meta": { "en": "Tro Breizh", "fr": "Tro Breizh" },
+  "year": 2024,
+  "media":
+    {
+      "img": "/portfolio/img/tro-breizh.jpg",
+      "alt": { "en": "Le Tro Breizh", "fr": "Le Tro Breizh" }
     }
-  },
-  "order": 3
 }

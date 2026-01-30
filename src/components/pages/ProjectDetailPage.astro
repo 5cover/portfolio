@@ -7,71 +7,51 @@ import Graphic from '../Graphic';
 import LinkList from '../LinkList';
 import ReferenceList from '../ReferenceList.astro';
 
-import type { AstroComponentFactory } from 'astro';
-import { getAnchors, getDefinitions, getTags, getTypes, mapById } from '../../lib/content';
-import type { DefinitionLocalizedData, LocalizedProjectEntry } from '../../lib/content';
+import { at, getDefinitions, getProjects, getTags, getTextualEntry, mapById } from '../../lib/content';
 import { formatDate } from '../../lib/date';
 import { pageHref } from '../../lib/links';
-import { normalizeLocale } from '../../i18n/site';
+import { getLabels, normalizeLocale } from '../../i18n/site';
 
 import '../../styles/project.scss';
 
-type Copy = {
-    links: string;
-    team: string;
-    story: string;
-    references: string;
-    technologies: string;
-    gallery: string;
-    ongoing: string;
-    fmtTitle: string;
-    refJumpUp: string;
-};
-
-type Props = {
-    project: LocalizedProjectEntry;
-    ProjectBody: AstroComponentFactory;
-    copy: Copy;
-};
-
-const props: Props = Astro.props;
-const { project, ProjectBody, copy } = props;
-
-function isDefinition(value: DefinitionLocalizedData | undefined): value is DefinitionLocalizedData {
-    return Boolean(value);
+interface Props {
+    id: string;
 }
 
-const locale = normalizeLocale(Astro.currentLocale);
-const [tags, anchors, definitions, types] = await Promise.all([
-    getTags(locale),
-    getAnchors(),
-    getDefinitions(locale),
-    getTypes(locale),
-]);
-const tagsById = mapById(tags);
-const anchorsById = mapById(anchors);
-const definitionsById = mapById(definitions);
-const typesById = mapById(types);
+const { id } = Astro.props;
 
-const projectData = project.data;
-const backgroundStyle = projectData.background ? `--bg-img: url(${projectData.background})` : undefined;
-const logoTitle = copy.fmtTitle.replace('%s', projectData.title);
-const startDate = projectData.startDate;
-const endDate = projectData.endDate;
+const locale = normalizeLocale(Astro.currentLocale);
+
+const [tags, definitions] = await Promise.all([getTags(locale), getDefinitions(locale)]);
+const tagsById = mapById(tags);
+const definitionsById = mapById(definitions);
+const labels = getLabels(locale);
+
+const p = at(await getProjects(locale), id);
+if (!p) {
+    throw new Error(`Missing project ${id} for ${locale}`);
+}
+
+const projectBodyEntry = await getTextualEntry(locale, 'projects', id);
+const { Content: ProjectBody } = await projectBodyEntry.render();
+
+const backgroundStyle = p.background ? `--bg-img: url(${p.background})` : undefined;
+const logoTitle = labels.copy.fmtTitle.replace('%s', p.title);
+const startDate = p.startDate;
+const endDate = p.endDate;
 const startLabel = startDate ? formatDate(startDate, locale) : '';
 const endLabel = endDate ? formatDate(endDate, locale) : '';
-const context = projectData.context ? projectData.context.charAt(0).toUpperCase() + projectData.context.slice(1) : '';
-
-const teamDefs = projectData.team.map(memberId => definitionsById[memberId]).filter(isDefinition);
-const techDefs = projectData.technologies.map(techId => definitionsById[techId]).filter(isDefinition);
+const context = p.context ? p.context.charAt(0).toUpperCase() + p.context.slice(1) : '';
+const teamDefs = p.team.map(memberId => definitionsById[memberId]);
+const techDefs = p.technologies.map(techId => definitionsById[techId]);
 ---
 
-<BaseLayout pageName={`projects/${project.id}`}>
+<BaseLayout pageName={`projects/${id}`}>
     <main style={backgroundStyle}>
         <header>
             <ul class='list-rect'>
                 {
-                    projectData.tags.map(tagId => (
+                    p.tags.map(tagId => (
                         <li>
                             <a
                                 href={`${pageHref(locale, 'projects')}?tag=${tagId}`}
@@ -81,74 +61,62 @@ const techDefs = projectData.technologies.map(techId => definitionsById[techId])
                     ))
                 }
             </ul>
-            <h1 set:html={projectData.title} />
-            {projectData.logo ? <Graphic of={projectData.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
-            <p class='abstract' set:html={projectData.abstract} />
+            <h1 set:html={p.title} />
+            {p.logo ? <Graphic of={p.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
+            <p class='abstract' set:html={p.abstract} />
             <div class='status-context'>
                 {context ? <small class='context'>{context}</small> : null}
                 {
                     startDate ? (
                         <small class='status'>
                             <time datetime={startDate}>{startLabel}</time> &ndash;{' '}
-                            {endDate ? <time datetime={endDate}>{endLabel}</time> : copy.ongoing}
+                            {endDate ? <time datetime={endDate}>{endLabel}</time> : labels.copy.ongoing}
                         </small>
                     ) : null
                 }
             </div>
         </header>
         {
-            projectData.links.length > 0 ? (
+            p.links.length > 0 ? (
                 <section id='links'>
-                    <h2>{copy.links}</h2>
-                    <LinkList links={projectData.links} anchorsById={anchorsById} variant='page' />
+                    <h2>{labels.copy.links}</h2>
+                    <LinkList links={p.links} variant='page' />
                 </section>
             ) : null
         }
         {
             teamDefs.length > 0 ? (
                 <section id='team'>
-                    <h2>{copy.team}</h2>
-                    <DefinitionCardList
-                        definitions={teamDefs}
-                        typesById={typesById}
-                        langLabels={{ fmtTitle: copy.fmtTitle }}
-                    />
+                    <h2>{labels.copy.team}</h2>
+                    <DefinitionCardList definitions={teamDefs} langLabels={{ fmtTitle: labels.copy.fmtTitle }} />
                 </section>
             ) : null
         }
         <section id='story'>
-            <h2>{copy.story}</h2>
+            <h2>{labels.copy.story}</h2>
             <TextualContent content={ProjectBody} />
         </section>
         {
-            projectData.references.length > 0 ? (
+            p.references.length > 0 ? (
                 <section id='references'>
-                    <h2>{copy.references}</h2>
-                    <ReferenceList
-                        references={projectData.references}
-                        anchorsById={anchorsById}
-                        backlinkLabel={copy.refJumpUp}
-                    />
+                    <h2>{labels.copy.references}</h2>
+                    <ReferenceList references={p.references} backlinkLabel={labels.copy.refJumpUp} />
                 </section>
             ) : null
         }
         {
             techDefs.length > 0 ? (
                 <section id='technologies'>
-                    <h2>{copy.technologies}</h2>
-                    <DefinitionCardList
-                        definitions={techDefs}
-                        typesById={typesById}
-                        langLabels={{ fmtTitle: copy.fmtTitle }}
-                    />
+                    <h2>{labels.copy.technologies}</h2>
+                    <DefinitionCardList definitions={techDefs} langLabels={{ fmtTitle: labels.copy.fmtTitle }} />
                 </section>
             ) : null
         }
         {
-            projectData.gallery.length > 0 ? (
+            p.gallery.length > 0 ? (
                 <section id='gallery'>
-                    <h2>{copy.gallery}</h2>
-                    <Gallery items={projectData.gallery} />
+                    <h2>{labels.copy.gallery}</h2>
+                    <Gallery items={p.gallery} />
                 </section>
             ) : null
         }

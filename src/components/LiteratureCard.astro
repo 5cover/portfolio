@@ -2,52 +2,48 @@
 import Graphic from './Graphic';
 import LinkList from './LinkList';
 import { detailHref } from '../lib/links';
-import type { AnchorEntry, LocalizedLiteratureEntry } from '../lib/content';
 import { normalizeLocale } from '../i18n/site';
+import type { LiteratureKind, LocalizedItem } from '../content/config';
+import type { Entry } from '../lib/content';
 
 function formatTitle(fmt: string, title: string): string {
-  return fmt.replace('%s', title);
+    return fmt.replace('%s', title);
 }
 
-type Props = {
-  route: string;
-  langLabels: {
-    fmtTitle: string;
-  };
-  entry: LocalizedLiteratureEntry;
-  anchorsById: Record<string, AnchorEntry['data']>;
-  headingLevel?: number;
-};
+interface Props {
+    langLabels: {
+        fmtTitle: string;
+    };
+    entry: Entry<LocalizedItem<'literature'>>;
+    headingLevel?: number;
+}
 
-const props: Props = Astro.props;
-const { route, langLabels, entry, anchorsById, headingLevel = 3 } = props;
+const { langLabels, entry, headingLevel = 3 } = Astro.props;
+const [id, lit] = entry;
 const locale = normalizeLocale(Astro.currentLocale);
-const entryData = entry.data;
-const logoTitle = formatTitle(langLabels.fmtTitle, entryData.title);
-const backgroundStyle = entryData.background
-  ? `--bg-img-card: url(${entryData.background})`
-  : undefined;
+const logoTitle = formatTitle(langLabels.fmtTitle, lit.title);
+const backgroundStyle = lit.background ? `--bg-img-card: url(${lit.background})` : undefined;
 ---
-<li id={entry.id} style={backgroundStyle}>
-  {entryData.logo ? (
-    <Graphic
-      of={entryData.logo}
-      alt={logoTitle}
-      title={logoTitle}
-      class="logo"
-    />
-  ) : null}
-  <div>
-    {headingLevel === 1 ? (
-      <h1><a class="foil" href={detailHref(locale, route, entry.id)} set:html={entryData.title}></a></h1>
-    ) : headingLevel === 2 ? (
-      <h2><a class="foil" href={detailHref(locale, route, entry.id)} set:html={entryData.title}></a></h2>
-    ) : (
-      <h3><a class="foil" href={detailHref(locale, route, entry.id)} set:html={entryData.title}></a></h3>
-    )}
-    <p class="abstract" set:html={entryData.abstract}></p>
-    {entryData.links.length > 0 ? (
-      <LinkList links={entryData.links} anchorsById={anchorsById} />
-    ) : null}
-  </div>
+
+<li id={id} style={backgroundStyle}>
+    {lit.logo ? <Graphic of={lit.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
+    <div>
+        {
+            headingLevel === 1 ? (
+                <h1>
+                    <a class='foil' href={detailHref(locale, 'literature', id)} set:html={lit.title} />
+                </h1>
+            ) : headingLevel === 2 ? (
+                <h2>
+                    <a class='foil' href={detailHref(locale, 'literature', id)} set:html={lit.title} />
+                </h2>
+            ) : (
+                <h3>
+                    <a class='foil' href={detailHref(locale, 'literature', id)} set:html={lit.title} />
+                </h3>
+            )
+        }
+        <p class='abstract' set:html={lit.abstract} />
+        {lit.links.length > 0 ? <LinkList links={lit.links} /> : null}
+    </div>
 </li>

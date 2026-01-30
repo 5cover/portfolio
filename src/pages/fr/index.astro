@@ -5,12 +5,7 @@ import { getLabels, normalizeLocale } from '../../i18n/site';
 
 const locale = normalizeLocale(Astro.currentLocale);
 const labels = getLabels(locale);
-const [projects, contacts, pianoTiles] = await Promise.all([
-    getProjects(locale),
-    getContacts(),
-    getPianoTiles(locale),
-]);
-
+const [projects, contacts, pianoTiles] = await Promise.all([getProjects(locale), getContacts(), getPianoTiles(locale)]);
 ---
 
 <HomePage
@@ -26,20 +21,15 @@ const [projects, contacts, pianoTiles] = await Promise.all([
         indexMyResumePreview: 'Aperçu de mon CV',
         indexMyResume: 'Mon CV',
         indexVideoCv: 'CV Vidéo (anglais)',
-        ongoing: labels.labels.ongoing,
-        fmtTitle: labels.labels.fmtTitle,
-    }}
->
+        ongoing: labels.copy.ongoing,
+        fmtTitle: labels.copy.fmtTitle,
+    }}>
     <Fragment slot='about-content'>
         <p>
             Bonjour, je m'appelle <strong>Raphaël Bardini</strong>. J'ai 18 ans et suis étudiant en 2
             <sup>ème</sup> année de <abbr title='Bachelor Universitaire Technologique'>BUT</abbr>{' '}
             Informatique, à l'
-            <a
-                class='link'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://iut-lannion.univ-rennes.fr/'>
+            <a class='link' target='_blank' rel='noopener noreferrer' href='https://iut-lannion.univ-rennes.fr/'>
                 <abbr title='Institut Universitaire Technologique'>IUT</abbr> de Lannion
             </a>
             .
@@ -66,8 +56,9 @@ const [projects, contacts, pianoTiles] = await Promise.all([
             . J'ai un bon niveau en anglais.
         </p>
         <p>
-            Je suis passionné par le <strong>développement logiciel</strong> et je suis investi dans le
-            milieu <strong>open-source</strong>. Je suis également un grand amateur de{' '}
+            Je suis passionné par le <strong>développement logiciel</strong> et je suis investi dans le milieu <strong
+                >open-source</strong
+            >. Je suis également un grand amateur de{' '}
             <a
                 class='link'
                 target='_blank'

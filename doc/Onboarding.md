@@ -52,29 +52,6 @@ Top level folders:
 - `public`: static assets (images, icons, CV files).
 - `doc`: documentation, V1 audits, and this onboarding guide.
 
-## Routing and URLs
-
-Astro uses file based routing (with `routing.prefixDefaultLocale: false`):
-
-- `src/pages/index.astro` -> `/` (default locale).
-- `src/pages/en/index.astro` -> `/en/`.
-- `src/pages/projects.html.astro` -> `/projects.html`.
-- `src/pages/en/projects.html.astro` -> `/en/projects.html`.
-- `src/pages/projects/[id].html.astro` -> `/projects/<id>.html`.
-- `src/pages/en/projects/[id].html.astro` -> `/en/projects/<id>.html`.
-- `src/pages/[section].html.astro` -> `/blog.html` and `/hobbies.html`.
-- `src/pages/en/[section].html.astro` -> `/en/blog.html` and `/en/hobbies.html`.
-- `src/pages/blog/[id].html.astro` -> `/blog/<id>.html`.
-- `src/pages/en/blog/[id].html.astro` -> `/en/blog/<id>.html`.
-- `src/pages/hobbies/[id].html.astro` -> `/hobbies/<id>.html`.
-- `src/pages/en/hobbies/[id].html.astro` -> `/en/hobbies/<id>.html`.
-- `src/pages/history.html.astro` -> `/history.html`.
-- `src/pages/en/history.html.astro` -> `/en/history.html`.
-- `src/pages/history/[id].html.astro` -> `/history/<id>.html`.
-- `src/pages/en/history/[id].html.astro` -> `/en/history/<id>.html`.
-- `src/pages/but-informatique.html.astro` -> `/but-informatique.html` (redirects to history).
-- `src/pages/en/but-informatique.html.astro` -> `/en/but-informatique.html`.
-
 Base path:
 
 - The site is served under `/portfolio` (see `astro.config.mjs`).

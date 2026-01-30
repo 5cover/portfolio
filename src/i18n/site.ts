@@ -1,3 +1,4 @@
+import { LiteratureKinds, type LiteratureKind } from '../content/config';
 import type { LanguageInfo, NavItem, ThemeLabels } from '../lib/types';
 
 export type Localized<T> = Record<Locale, T>;
@@ -16,12 +17,12 @@ export interface LocaleLabels {
     nav: {
         projects: string;
         history: string;
-        hobbies: string;
-        blog: string;
         but: string;
+        literature: Record<LiteratureKind, string>;
     };
     theme: ThemeLabels;
-    labels: {
+    copy: {
+        details: string;
         fmtTitle: string;
         ongoing: string;
         links: string;
@@ -32,7 +33,7 @@ export interface LocaleLabels {
         gallery: string;
         refJumpUp: string;
     };
-};
+}
 
 const labelsByLocale: Record<Locale, LocaleLabels> = {
     fr: {
@@ -47,16 +48,20 @@ const labelsByLocale: Record<Locale, LocaleLabels> = {
         nav: {
             projects: 'Projets',
             history: 'Parcours',
-            hobbies: 'Hobbies',
-            blog: 'Blog',
             but: 'BUT Informatique',
+            literature: {
+                blog: 'Blog',
+                passion: 'Hobbies',
+                story: 'Histoires',
+            },
         },
         theme: {
             light: 'Thème clair',
             system: 'Thème système',
             dark: 'Thème sombre',
         },
-        labels: {
+        copy: {
+            details: 'Détails',
             fmtTitle: 'Logo %s',
             ongoing: 'en cours',
             links: 'Liens',
@@ -79,16 +84,20 @@ const labelsByLocale: Record<Locale, LocaleLabels> = {
         nav: {
             projects: 'Projects',
             history: 'History',
-            hobbies: 'Hobbies',
-            blog: 'Blog',
             but: 'BUT Computer Science',
+            literature: {
+                blog: 'Blog',
+                passion: 'Hobbies',
+                story: 'Histoire',
+            },
         },
         theme: {
             light: 'Light theme',
             system: 'System theme',
             dark: 'Dark theme',
         },
-        labels: {
+        copy: {
+            details: 'Details',
             fmtTitle: '%s logo',
             ongoing: 'ongoing',
             links: 'Links',
@@ -111,8 +120,7 @@ export function getNavItems(locale: string | undefined): NavItem[] {
     return [
         { page: 'projects', label: labels.nav.projects },
         { page: 'history', label: labels.nav.history },
-        { page: 'hobbies', label: labels.nav.hobbies },
-        { page: 'blog', label: labels.nav.blog },
+        ...LiteratureKinds.map(k => ({ page: k, label: labels.nav.literature[k] }) as const),
         { page: 'history/history-but', label: labels.nav.but },
     ];
 }

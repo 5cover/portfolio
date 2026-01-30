@@ -93,6 +93,10 @@ stylelint, eslint etc specific astro linting /formatting tools?
 
 Automatically generate heading levels
 
+## typed css
+
+classes
+
 ## ~i18n~
 
 ~~switch default language to en~~
@@ -101,6 +105,12 @@ deduplicate logic from pages
 
 experiment with MDX as translated JSX store using exports along with the main content.
 
-## remove useless types
-
 ## ~~fix clientside scripts~~ and reuse cards
+
+## convert all yaml to json
+
+## compute history year and sort by date span
+
+use yaml native dates?
+
+## rename collections to singular

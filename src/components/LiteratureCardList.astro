@@ -1,28 +1,18 @@
 ---
+import type { Item, LocalizedItem } from '../content/config';
+import type { Entry } from '../lib/content';
 import LiteratureCard from './LiteratureCard.astro';
-import type { AnchorEntry, LocalizedLiteratureEntry } from '../lib/content';
+interface Props {
+    langLabels: {
+        fmtTitle: string;
+    };
+    entries: readonly Entry<LocalizedItem<'literature'>>[];
+    headingLevel?: number;
+}
 
-type Props = {
-  route: string;
-  langLabels: {
-    fmtTitle: string;
-  };
-  entries: LocalizedLiteratureEntry[];
-  anchorsById: Record<string, AnchorEntry['data']>;
-  headingLevel?: number;
-};
-
-const props: Props = Astro.props;
-const { route, langLabels, entries, anchorsById, headingLevel = 3 } = props;
+const { langLabels, entries, headingLevel = 3 } = Astro.props;
 ---
-<ul class="lvl list-detail-split-card">
-  {entries.map((entry) => (
-    <LiteratureCard
-      route={route}
-      langLabels={langLabels}
-      entry={entry}
-      anchorsById={anchorsById}
-      headingLevel={headingLevel}
-    />
-  ))}
+
+<ul class='lvl list-detail-split-card'>
+    {entries.map(entry => <LiteratureCard langLabels={langLabels} entry={entry} headingLevel={headingLevel} />)}
 </ul>

@@ -1,26 +1,22 @@
 ---
+import type { LocalizedItem } from '../content/config';
 import DefinitionCard from './DefinitionCard.astro';
-import type { DefinitionLocalizedData, TypeLocalizedData } from '../lib/content';
 
-type Props = {
-  definitions: DefinitionLocalizedData[];
-  typesById: Record<string, TypeLocalizedData>;
-  langLabels: {
-    fmtTitle: string;
-  };
-};
-
-const props: Props = Astro.props;
-const { definitions, typesById, langLabels } = props;
+interface Props {
+    definitions: LocalizedItem<'definitions'>[];
+    langLabels: {
+        fmtTitle: string;
+    };
+}
+const { definitions, langLabels } = Astro.props;
 ---
-<ul class="lvl list-definition">
-  {definitions.map((definition) => (
-    <li>
-      <DefinitionCard
-        definition={definition}
-        typesById={typesById}
-        langLabels={langLabels}
-      />
-    </li>
-  ))}
+
+<ul class='lvl list-definition'>
+    {
+        definitions.map(definition => (
+            <li>
+                <DefinitionCard definition={definition} langLabels={langLabels} />
+            </li>
+        ))
+    }
 </ul>

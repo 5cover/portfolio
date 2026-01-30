@@ -1,10 +1,11 @@
 ---
 import LiteratureDetailPage from '../../../components/pages/LiteratureDetailPage.astro';
 import { getCollection } from 'astro:content';
-import '../../../styles/passion.scss';
+import '../../../styles/literature.scss';
 export async function getStaticPaths() {
     const entries = await getCollection('literature');
-    return entries.filter(entry => entry.data.kind === 'blog').map(entry => ({ params: { id: entry.id } }));
+    return entries.map(({ id }) => ({ params: { id } }));
 }
 ---
-<LiteratureDetailPage route='blog' id={Astro.params.id} />
+
+<LiteratureDetailPage id={Astro.params.id} />

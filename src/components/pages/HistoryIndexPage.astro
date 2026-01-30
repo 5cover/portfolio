@@ -2,30 +2,27 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
 
-import type { AstroComponentFactory } from 'astro';
-import type { LocalizedHistoryEntry } from '../../lib/content';
 import { detailHref } from '../../lib/links';
 import { normalizeLocale } from '../../i18n/site';
 
 import '../../styles/history.scss';
-
-type Props = {
-    orderedHistory: LocalizedHistoryEntry[];
-    historyBodies: AstroComponentFactory[];
-};
-
-const props: Props = Astro.props;
-const {
-    orderedHistory,
-    historyBodies,
-} = props;
+import { getHistory, getTextualEntry } from '../../lib/content';
 
 const locale = normalizeLocale(Astro.currentLocale);
- 
+const historyItems = await getHistory(locale);
+
+// todo: order history here.
+
+const historyBodies = await Promise.all(
+    historyItems.map(async ([id]) => {
+        const bodyEntry = await getTextualEntry(locale, 'history', id);
+        const { Content } = await bodyEntry.render();
+        return Content;
+    })
+);
 ---
 
-<BaseLayout
-    pageName='history'>
+<BaseLayout pageName='history'>
     <main>
         <div class='ag-format-container'>
             <div class='js-timeline ag-timeline'>
@@ -34,11 +31,10 @@ const locale = normalizeLocale(Astro.currentLocale);
                 </div>
                 <div class='ag-timeline_list'>
                     {
-                        orderedHistory.map((entry, index) => {
-                            const media = entry.data.media;
-                            const isOdd = index % 2 === 1;
-                            const HistoryBody = historyBodies[index];
-                            const href = detailHref(locale, 'history', entry.id);
+                        historyItems.map(([id, h], i) => {
+                            const isOdd = i % 2 === 1;
+                            const HistoryBody = historyBodies[i];
+                            const href = detailHref(locale, 'history', id);
 
                             return (
                                 <div class='lvl js-timeline_item ag-timeline_item'>
@@ -46,19 +42,19 @@ const locale = normalizeLocale(Astro.currentLocale);
                                         {isOdd ? (
                                             <>
                                                 <div class='ag-timeline-card_meta-box'>
-                                                    <div class='ag-timeline-card_meta' set:html={entry.data.meta} />
+                                                    <div class='ag-timeline-card_meta' set:html={h.meta} />
                                                 </div>
                                                 <div class='js-timeline-card_point-box ag-timeline-card_point-box'>
-                                                    <div class='ag-timeline-card_point'>{media?.year ?? ''}</div>
+                                                    <div class='ag-timeline-card_point'>{h.year ?? ''}</div>
                                                 </div>
                                             </>
                                         ) : (
                                             <>
                                                 <div class='js-timeline-card_point-box ag-timeline-card_point-box'>
-                                                    <div class='ag-timeline-card_point'>{media?.year ?? ''}</div>
+                                                    <div class='ag-timeline-card_point'>{h.year ?? ''}</div>
                                                 </div>
                                                 <div class='ag-timeline-card_meta-box'>
-                                                    <div class='ag-timeline-card_meta' set:html={entry.data.meta} />
+                                                    <div class='ag-timeline-card_meta' set:html={h.meta} />
                                                 </div>
                                             </>
                                         )}
@@ -66,18 +62,22 @@ const locale = normalizeLocale(Astro.currentLocale);
                                     <div class='ag-timeline-card_item'>
                                         <div class='ag-timeline-card_inner'>
                                             <div class='ag-timeline-card_img-box'>
-                                                {media ? (
-                                                    <img src={media.img} alt={media.alt} class='ag-timeline-card_img' />
+                                                {h.media ? (
+                                                    <img
+                                                        src={h.media.img}
+                                                        alt={h.media.alt}
+                                                        class='ag-timeline-card_img'
+                                                    />
                                                 ) : null}
                                             </div>
                                             <div class='ag-timeline-card_info'>
-                                                <div class='ag-timeline-card_title' set:html={entry.data.title} />
+                                                <div class='ag-timeline-card_title' set:html={h.title} />
                                                 <div class='ag-timeline-card_desc'>
                                                     <TextualContent content={HistoryBody} />
                                                 </div>
                                             </div>
                                         </div>
-                                        <a class='ag-timeline-card_link' href={href} aria-label={entry.data.meta} />
+                                        <a class='ag-timeline-card_link' href={href} aria-label={h.meta} />
                                         <div class='ag-timeline-card_arrow' />
                                     </div>
                                 </div>
