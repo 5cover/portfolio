@@ -1,5 +1,5 @@
 import type { LocalizedItem } from '../content.config';
-import type { Locale } from '../i18n/site';
+import type { Locale } from '../i18n';
 import type * as content from '../lib/content';
 import ProjectCard from './ProjectCard';
 

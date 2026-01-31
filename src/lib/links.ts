@@ -1,5 +1,5 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import { normalizeLocale } from '../i18n/site';
+import { normalizeLocale } from '../i18n';
 
 export function pageHref(locale: string | undefined, pageName: string): string {
     const path = pageName === 'index' ? '' : ensureHtml(pageName);

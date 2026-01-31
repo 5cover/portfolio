@@ -2,7 +2,7 @@ import Graphic from './Graphic';
 import LinkList from './LinkList';
 import { detailHref, pageHref } from '../lib/links';
 import { formatDate } from '../lib/date';
-import { getLabels, type Locale } from '../i18n/site';
+import { getLabels, type Locale } from '../i18n';
 import type { LocalizedItem } from '../content.config';
 import * as content from '../lib/content';
 import { capitalize } from '../lib/util';

@@ -1,6 +1,6 @@
 import ProjectCardList from '../ProjectCardList';
 import * as content from '../../lib/content';
-import { type Locale } from '../../i18n/site';
+import { type Locale } from '../../i18n';
 import Section from '../Section';
 import Heading from '../Heading';
 import type { PageCopy } from './types';

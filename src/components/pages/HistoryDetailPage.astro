@@ -8,7 +8,7 @@ import '../../styles/history-detail.scss';
 // (it shows as resolved but sitll doesn't work for me)
 import '../../styles/but-informatique.scss';
 import * as content from '../../lib/content';
-import { normalizeLocale, getLabels } from '../../i18n/site';
+import { normalizeLocale, getLabels } from '../../i18n';
 
 interface Props {
     id: string;
@@ -17,7 +17,6 @@ interface Props {
 const { id } = Astro.props;
 
 const locale = normalizeLocale(Astro.currentLocale);
-debugger;
 const data = content.history(locale, id);
 const labels = getLabels(locale);
 

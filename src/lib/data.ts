@@ -1,5 +1,5 @@
 import * as content from './content';
-import type { Locale } from '../i18n/site';
+import type { Locale } from '../i18n';
 import { mapById } from './util';
 
 export const def = async (locale: Locale) => jsonResponse(mapById(content.def(locale)));

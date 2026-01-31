@@ -1,5 +1,5 @@
 import type { Item, LocalizedItem } from '../content.config';
-import { normalizeLocale, type Locale } from '../i18n/site';
+import { normalizeLocale, type Locale } from '../i18n';
 import { getCollection, getEntry, render, type CollectionKey } from 'astro:content';
 
 export type TextualKind = 'history' | 'history-body' | 'literature' | 'projects';

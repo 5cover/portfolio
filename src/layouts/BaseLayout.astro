@@ -2,7 +2,7 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { getLabels, getLanguages, getNavItems, getThemeLabels, normalizeLocale } from '../i18n/site';
+import { getLabels, normalizeLocale } from '../i18n';
 
 import '../styles/base.scss';
 
@@ -12,9 +12,6 @@ interface Props {
 
 const { pageName } = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
-const navItems = getNavItems(locale);
-const themeLabels = getThemeLabels(locale);
-const languages = getLanguages();
 const labels = getLabels(locale);
 const siteDescription = labels.siteDescription;
 const githubTitle = labels.footerGitHubAnchorTitle;
@@ -51,7 +48,7 @@ const dataBase = getRelativeLocaleUrl(locale, 'data');
         ></script>
     </head>
     <body>
-        <Header pageName={pageName} navItems={navItems} languages={languages} themeLabels={themeLabels} />
+        <Header pageName={pageName} />
         <slot />
         <Footer githubTitle={githubTitle} />
         <script src='../scripts/base.ts'></script>

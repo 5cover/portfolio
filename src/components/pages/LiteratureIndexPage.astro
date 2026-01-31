@@ -1,6 +1,6 @@
 ---
 import type { LiteratureKind } from '../../content.config';
-import { normalizeLocale, getLabels } from '../../i18n/site';
+import { normalizeLocale, getLabels } from '../../i18n';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import * as content from '../../lib/content';
 import LiteratureCardList from '../LiteratureCardList.astro';
@@ -19,7 +19,7 @@ const entries = literature.filter(([, lit]) => lit.kind === kind);
 
 <BaseLayout pageName={kind}>
     <main class={mainClass}>
-        <h1>{labels.nav.literature[kind]}</h1>
+        <h1>{labels.nav[kind]}</h1>
         <LiteratureCardList langLabels={labels.copy} entries={entries} />
     </main>
 </BaseLayout>

@@ -205,7 +205,7 @@ These endpoints output JSON at build time and are fetched by client scripts.
 2. Create `src/pages/<locale>/` and duplicate locale-specific pages.
 3. Add MDX bodies in `src/content/textual/<locale>/<kind>/<id>.mdx`.
 4. Add locale data endpoints under `src/pages/<locale>/data/`.
-5. Update locale labels in `src/i18n/site.ts`.
+5. Update locale labels in `src/i18n.ts`.
 
 ## Assets
 

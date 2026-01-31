@@ -1,6 +1,6 @@
 import type { GalleryItem, Link } from '../content.config';
 import * as content from './content';
-import type { Locale } from '../i18n/site';
+import type { Locale } from '../i18n';
 
 export type InfonodeRole = 'content' | 'layout';
 export type InfonodeVisibility = 'public' | 'private';

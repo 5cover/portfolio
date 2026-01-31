@@ -1,6 +1,6 @@
 import { defineCollection, z, type BaseSchema, type CollectionEntry, type CollectionKey } from 'astro:content';
 import type { ExplicitUndefined } from './lib/types';
-import type { Localized } from './i18n/site';
+import type { Localized } from './i18n';
 import { glob } from 'astro/loaders';
 import type { CollectionConfig } from 'astro/content/config';
 import { typedObjectFromEntries } from './lib/util';

@@ -12,7 +12,7 @@ export default defineConfig({
     base: '/portfolio',
     i18n: {
         locales: ['fr', 'en'],
-        defaultLocale: 'fr',
+        defaultLocale: 'en',
         routing: {
             prefixDefaultLocale: true,
         },
