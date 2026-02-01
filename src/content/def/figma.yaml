@@ -1,8 +1,6 @@
 type: website
 name:
-  full:
-    en: Figma
-    fr: Figma
+  full: Figma
 synopsis:
   en: A collaborative web application for interface design.
   fr: Éditeur de graphiques vectoriels et un outil de prototypage en ligne.

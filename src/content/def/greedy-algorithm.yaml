@@ -13,6 +13,4 @@ synopsis:
     parfois appelé aussi algorithme gourmand, ou goulu) est un algorithme qui
     suit le principe de réaliser, étape par étape, un choix optimum local, afin
     d'obtenir un résultat optimum global.
-wiki:
-  en: https://fr.wikipedia.org/wiki/Algorithme_glouton
-  fr: https://fr.wikipedia.org/wiki/Algorithme_glouton
+wiki: https://fr.wikipedia.org/wiki/Algorithme_glouton

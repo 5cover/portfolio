@@ -1,11 +1,7 @@
 type: library
 name:
-  full:
-    en: Microsoft .NET
-    fr: Microsoft .NET
-  short:
-    en: .NET
-    fr: .NET
+  full: Microsoft .NET
+  short: .NET
 synopsis:
   en: A free and open-source, managed computer software framework for Windows,
     Linux, and macOS operating systems.

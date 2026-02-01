@@ -1,12 +1,8 @@
-title:
-  en: Tabas'Kho
-  fr: Tabas'Kho
+title: Tabas'Kho
 abstract:
   en: Create a fake streaming website. Collecting needs (S1.05)
   fr: Créer un site de streaming factice. Recueil des besoins (S1.05)
-context:
-  en: BUT
-  fr: BUT
+context: BUT
 startDate: 2023-10-09
 endDate: 2024-01-21
 tags:
@@ -29,11 +25,8 @@ team:
   - kervadec-matteo
   - rolland-stanislas
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/Matteo-K/TabasKho
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/Matteo-K/TabasKho
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/Matteo-K/TabasKho

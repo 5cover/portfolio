@@ -1,8 +1,6 @@
 type: software
 name:
-  full:
-    en: Blender
-    fr: Blender
+  full: Blender
 synopsis:
   en: Blender is a free and open-source 3D computer graphics software tool set.
   fr: Logiciel libre de modélisation, d'animation par ordinateur et de rendu en 3D.

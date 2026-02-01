@@ -1,11 +1,7 @@
 type: high-school-specialized-teaching
 name:
-  full:
-    en: Anglais Monde Contemporain
-    fr: Anglais Monde Contemporain
-  abbr:
-    en: AMC
-    fr: AMC
+  full: Anglais Monde Contemporain
+  abbr: AMC
 synopsis:
   en: The LLCE-Anglais Monde Contemporain (AMC) specialized teaching aims to
     analyze some major social, economic, political, geopolitical, cultural,
@@ -15,6 +11,4 @@ synopsis:
     pour objectif d'analyser quelques grands enjeux sociaux, économiques,
     politiques, géopolitiques, culturels, scientifiques et techniques du monde
     anglophone contemporain.
-wiki:
-  en: https://www.lyceeschoelcher972.fr/specialite-llcer-amc/
-  fr: https://www.lyceeschoelcher972.fr/specialite-llcer-amc/
+wiki: https://www.lyceeschoelcher972.fr/specialite-llcer-amc/

@@ -1,11 +1,7 @@
 type: computer-language
 name:
-  full:
-    en: Syntactically Awesome Style Sheets
-    fr: Syntactically Awesome Style Sheets
-  abbr:
-    en: SASS
-    fr: SASS
+  full: Syntactically Awesome Style Sheets
+  abbr: SASS
 synopsis:
   en: A preprocessor scripting language that is interpreted or compiled into CSS.
   fr: Langage de script préprocesseur qui est compilé ou interprété en CSS.

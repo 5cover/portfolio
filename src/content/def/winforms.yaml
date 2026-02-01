@@ -1,11 +1,7 @@
 type: library
 name:
-  full:
-    en: Windows Forms
-    fr: Windows Forms
-  short:
-    en: WinForms
-    fr: WinForms
+  full: Windows Forms
+  short: WinForms
 synopsis:
   en: A free and open-source graphical class library included as a part of
     Microsoft .NET, .NET Framework or Mono.

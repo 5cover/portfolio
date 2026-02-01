@@ -1,11 +1,7 @@
 type: computer-language
 name:
-  full:
-    en: Extended Backus-Naur Form
-    fr: Extended Backus-Naur Form
-  abbr:
-    en: EBNF
-    fr: EBNF
+  full: Extended Backus-Naur Form
+  abbr: EBNF
 synopsis:
   en: A <abbr title="Backus-Naur Form">BNF</abbr> extension created by Niklaus
     Wirth in 1996. This language expresses formal grammars, which are notably

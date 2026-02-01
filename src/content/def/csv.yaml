@@ -1,11 +1,7 @@
 type: data-format
 name:
-  full:
-    en: Comma-separated values
-    fr: Comma-separated values
-  abbr:
-    en: CSV
-    fr: CSV
+  full: Comma-separated values
+  abbr: CSV
 synopsis:
   en: A text file format that uses commas to separate values, and newlines to
     separate records.

@@ -1,6 +1,4 @@
-title:
-  en: WinClean
-  fr: WinClean
+title: WinClean
 abstract:
   en: Windows optimization and debloating utility
   fr: Application de nettoyage et optimisation Windows
@@ -23,31 +21,25 @@ technologies:
   - powershell
   - visual-studio
 links:
-  en:
-    - label: CommentÇaMarche article (French)
-      anchor: ccm
-      href: https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/WinClean
-  fr:
-    - label: Article CommentÇaMarche
-      anchor: ccm
-      href: https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/WinClean
+  - label:
+      en: CommentÇaMarche article (French)
+      fr: Article CommentÇaMarche
+    anchor: ccm
+    href: https://www.commentcamarche.net/telecharger/utilitaires/26935-winclean
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/WinClean
 gallery:
-  en:
-    - caption: Script execution
-      src: /portfolio/img/project/winclean/gallery/1.png
-    - caption: Application main window
-      src: /portfolio/img/project/winclean/gallery/2.png
-  fr:
-    - caption: Exécution des scripts
-      src: /portfolio/img/project/winclean/gallery/1.png
-    - caption: Fenêtre principale de l'application
-      src: /portfolio/img/project/winclean/gallery/2.png
+  - caption:
+      en: Script execution
+      fr: Exécution des scripts
+    src: /portfolio/img/project/winclean/gallery/1.png
+  - caption:
+      en: Application main window
+      fr: Fenêtre principale de l'application
+    src: /portfolio/img/project/winclean/gallery/2.png
 logo:
   src: /portfolio/img/project/winclean/logo.png
 background: /portfolio/img/project/winclean/bg.png

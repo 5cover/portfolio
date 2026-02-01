@@ -1,32 +1,30 @@
 kind: passion
-title:
-  en: Montagne
-  fr: Montagne
+title: Montagne
 abstract:
   en: Ski and hiking
   fr: Ski et randonnée
 gallery:
   - caption:
-      en: The Sache, the longest slope in the Espace Killy. It's a black slope, and as
+      en:
+        The Sache, the longest slope in the Espace Killy. It's a black slope, and as
         such one of the domain's hardest. However it's worth it. The sight on
         Tignes is astonishing.
-      fr: La Sache, la plus longue piste de l'Espace Killy. C'est une piste noire, et
+      fr:
+        La Sache, la plus longue piste de l'Espace Killy. C'est une piste noire, et
         en effet c'est aussi une des plus difficiles du domaine. Cependant le
         détour en vaut la peine, car la vue sur Tignes est incroyable.
     content: (photo sache)
   - caption:
-      en: Pays Désert, the half backcountry skiing in the Pissaillas. Magnificient
+      en:
+        Pays Désert, the half backcountry skiing in the Pissaillas. Magnificient
         sights and untouched powder snow.
-      fr: Pays Désert, le semi hors-piste au Pissaillas. Une vue merveilleuse et une
+      fr:
+        Pays Désert, le semi hors-piste au Pissaillas. Une vue merveilleuse et une
         neige poudreuse immaculée.
     content: (photos pays desert)
-  - caption:
-      en: TODO
-      fr: TODO
+  - caption: TODO
     content: (photo sache)
-  - caption:
-      en: TODO
-      fr: TODO
+  - caption: TODO
     content: (photos pays desert)
 logo:
   src: /portfolio/img/piano-tile/1.jpg

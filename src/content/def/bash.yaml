@@ -1,11 +1,7 @@
 type: programming-language
 name:
-  full:
-    en: Bourne-Again shell
-    fr: Bourne-Again shell
-  abbr:
-    en: Bash
-    fr: Bash
+  full: Bourne-Again shell
+  abbr: Bash
 synopsis:
   en: A shell program and command language supported by the <abbr title="Free
     Software Foundation">FSF</abbr> and first developed for the <abbr title="GNU

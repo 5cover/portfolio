@@ -1,11 +1,7 @@
 type: software
 name:
-  full:
-    en: Cross-platform Make
-    fr: Cross-platform Make
-  abbr:
-    en: CMake
-    fr: CMake
+  full: Cross-platform Make
+  abbr: CMake
 synopsis:
   en: In software development, CMake is cross-platform free and open-source
     software for build automation, testing, packaging and installation of

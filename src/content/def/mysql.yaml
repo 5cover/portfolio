@@ -1,8 +1,6 @@
 type: dbms
 name:
-  full:
-    en: MySQL
-    fr: MySQL
+  full: MySQL
 synopsis:
   en: An open-source relational database management system.
   fr: Système de gestion de bases de données relationnelles.

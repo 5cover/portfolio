@@ -1,8 +1,6 @@
 type: programming-language
 name:
-  full:
-    en: C#
-    fr: C#
+  full: C#
 synopsis:
   en: A general-purpose high-level programming language supporting multiple
     paradigms.

@@ -1,8 +1,6 @@
 type: game-server
 name:
-  full:
-    en: SurvivalWorld
-    fr: SurvivalWorld
+  full: SurvivalWorld
 synopsis:
   en: <q
     cite="https://top-serveurs.net/minecraft/survivalworld-65355b32ec669">SurvivalWorld
@@ -14,8 +12,6 @@ synopsis:
     est la référence des serveurs Minecraft Survie dans toute la francophonie !
     Retrouvez-vous avec vos amis, ou venez encore vous en faire, pour survivre
     dans les vastes plaines de nos mondes.</q>
-wiki:
-  en: https://www.survivalworld.fr/
-  fr: https://www.survivalworld.fr/
+wiki: https://www.survivalworld.fr/
 logo:
   src: /portfolio/img/def/survivalworld/logo.png

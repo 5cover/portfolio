@@ -1,11 +1,7 @@
 type: data-format
 name:
-  full:
-    en: Scalable Vector Graphics
-    fr: Scalable Vector Graphics
-  abbr:
-    en: SVG
-    fr: SVG
+  full: Scalable Vector Graphics
+  abbr: SVG
 synopsis:
   en: An XML-based vector image format for defining two-dimensional graphics,
     having support for interactivity and animation.

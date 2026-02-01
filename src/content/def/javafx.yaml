@@ -1,8 +1,6 @@
 type: library
 name:
-  full:
-    en: JavaFX
-    fr: JavaFX
+  full: JavaFX
 synopsis:
   en: A software platform for creating and delivering desktop applications, as
     well as rich web applications that can run across a wide variety of devices.

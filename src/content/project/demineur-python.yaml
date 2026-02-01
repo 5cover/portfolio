@@ -18,8 +18,8 @@ technologies:
   - spyder
 links:
   - label:
-      fr: Dépôt GitHub
       en: GitHub repository
+      fr: Dépôt GitHub
     anchor: github
     href: https://github.com/5cover/Demineur-Python
 references:

@@ -4,7 +4,8 @@ name:
     en: Cities Skylines
     fr: "Cities: Skylines"
 synopsis:
-  en: A <time datetime="2015">2015</time> city-building game developed by Colossal
+  en:
+    A <time datetime="2015">2015</time> city-building game developed by Colossal
     Order and published by Paradox Interactive. The game is a single-player
     open-ended city-building simulation.
   fr: Jeu de construction de ville développé par Colossal Order et publié par

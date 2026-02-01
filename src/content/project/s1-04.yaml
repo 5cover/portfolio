@@ -3,11 +3,10 @@ title:
   fr: Création d'une base de données
 abstract:
   en: Design and implement a database. Creating a database (S1.04)
-  fr: Concevoir et implémenter une base de données. Création d'une base de données
+  fr:
+    Concevoir et implémenter une base de données. Création d'une base de données
     (S1.04)
-context:
-  en: BUT
-  fr: BUT
+context: BUT
 startDate: 2023-11-27
 endDate: 2024-01-22
 tags:
@@ -23,11 +22,8 @@ technologies:
 team:
   - chartier--le-goff-marius
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/S1.04
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/S1.04
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/S1.04

@@ -1,8 +1,6 @@
 type: library
 name:
-  full:
-    en: NuGet
-    fr: NuGet
+  full: NuGet
 synopsis:
   en: A package manager for the Microsoft development platform, including .NET.
   fr: Un gestionnaire de paquets pour la plateforme de développement Microsoft,

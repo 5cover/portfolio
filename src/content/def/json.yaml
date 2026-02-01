@@ -1,11 +1,7 @@
 type: data-format
 name:
-  full:
-    en: JavaScript Object Notation
-    fr: JavaScript Object Notation
-  abbr:
-    en: JSON
-    fr: JSON
+  full: JavaScript Object Notation
+  abbr: JSON
 synopsis:
   en: An open standard file format and data interchange format that uses
     human-readable text to store and transmit data objects consisting of

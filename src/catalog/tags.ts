@@ -32,7 +32,7 @@ export const TagKeys = [
     'ui',
     'ux',
     'web',
-];
+] as const;
 
 export type TagKey = (typeof TagKeys)[number];
 

@@ -1,11 +1,7 @@
 type: programming-language
 name:
-  full:
-    en: Windows PowerShell
-    fr: Windows PowerShell
-  short:
-    en: PowerShell
-    fr: PowerShell
+  full: Windows PowerShell
+  short: PowerShell
 synopsis:
   en: A task automation and configuration management program from Microsoft,
     consisting of a command-line shell and the associated scripting language.

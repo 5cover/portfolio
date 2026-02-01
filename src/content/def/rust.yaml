@@ -1,10 +1,9 @@
 type: programming-language
 name:
-  full:
-    en: Rust
-    fr: Rust
+  full: Rust
 synopsis:
-  en: Rust is a general-purpose programming language emphasizing performance, type
+  en:
+    Rust is a general-purpose programming language emphasizing performance, type
     safety, and concurrency. It enforces memory safety, meaning that all
     references point to valid memory. It does so without a traditional garbage
     collector; instead, both memory safety errors and data races are prevented

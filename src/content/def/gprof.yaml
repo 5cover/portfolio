@@ -1,14 +1,14 @@
 type: software
 name:
-  full:
-    en: Gprof
-    fr: Gprof
+  full: Gprof
 synopsis:
-  en: Gprof is a performance analysis tool for Unix applications. It used a hybrid
+  en:
+    Gprof is a performance analysis tool for Unix applications. It used a hybrid
     of instrumentation and sampling and was created as an extended version of
     the older "prof" tool. Unlike prof, gprof is capable of limited call graph
     collecting and printing.
-  fr: Outil de profilage de code utilisé dans le cadre de la suite de compilation
+  fr:
+    Outil de profilage de code utilisé dans le cadre de la suite de compilation
     GNU (GCC). Il permet aux développeurs d'analyser les performances d'un
     programme en mesurant le temps d'exécution de chaque fonction et en
     identifiant les goulots d'étranglement.

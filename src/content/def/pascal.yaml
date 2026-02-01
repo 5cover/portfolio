@@ -1,10 +1,9 @@
 type: programming-language
 name:
-  full:
-    en: Pascal
-    fr: Pascal
+  full: Pascal
 synopsis:
-  en: An imperative and procedural programming language, designed by Niklaus Wirth
+  en:
+    An imperative and procedural programming language, designed by Niklaus Wirth
     as a small, efficient language intended to encourage good programming
     practices using structured programming and data structuring.
   fr: Langage de programmation impératif conçu pour l'enseignement.

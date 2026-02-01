@@ -1,8 +1,6 @@
 type: person
 name:
-  full:
-    en: Mattéo Kervadec
-    fr: Mattéo Kervadec
+  full: Mattéo Kervadec
 synopsis:
   en: Mattéo Kervadec is a first-year <abbr title="Bachelor Universitaire
     Technologique">BUT</abbr> student in the Computer Science stream at the IUT
@@ -21,8 +19,6 @@ synopsis:
     Sainte-Anne-d'Auray. Il est passionné par le tennis et le cinéma autant dans
     les films que le jeu vidéo. Il porte aussi un intérêt pour le développement
     de logiciels informatiques.
-wiki:
-  en: https://matteo-k.github.io/Matteo-K_Portfolio.github.io/
-  fr: https://matteo-k.github.io/Matteo-K_Portfolio.github.io/
+wiki: https://matteo-k.github.io/Matteo-K_Portfolio.github.io/
 logo:
   src: /portfolio/img/def/kervadec-matteo/logo.jpg

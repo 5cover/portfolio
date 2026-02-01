@@ -1,11 +1,7 @@
 type: programming-language
 name:
-  full:
-    en: Structured Query Language
-    fr: Structured Query Language
-  abbr:
-    en: SQL
-    fr: SQL
+  full: Structured Query Language
+  abbr: SQL
 synopsis:
   en: A domain-specific language used to manage data, especially in relational
     database management systems.

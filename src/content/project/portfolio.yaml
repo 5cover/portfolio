@@ -2,9 +2,7 @@ title: Portfolio
 abstract:
   en: My portfolio
   fr: Mon portfolio
-context:
-  en: BUT
-  fr: BUT
+context: BUT
 startDate: 2024-06-17
 tags:
   - web

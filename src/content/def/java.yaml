@@ -4,7 +4,8 @@ name:
 synopsis:
   en: A high-level, class-based, object-oriented programming language that is
     designed to have as few implementation dependencies as possible.
-  fr: Langage de programmation de haut niveau orienté objet créé par James Gosling
+  fr:
+    Langage de programmation de haut niveau orienté objet créé par James Gosling
     et Patrick Naughton en 1995.
 wiki:
   en: https://en.wikipedia.org/wiki/Java_(programming_language)

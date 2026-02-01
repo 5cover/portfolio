@@ -1,12 +1,6 @@
-title:
-  en: <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique
-  fr: <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique
-meta:
-  en: BUT
-  fr: BUT
+title: <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique
+meta: BUT
 year: 2023
 media:
   img: /portfolio/img/iut-lannion.jpg
-  alt:
-    en: L'IUT de Lannion
-    fr: L'IUT de Lannion
+  alt: L'IUT de Lannion

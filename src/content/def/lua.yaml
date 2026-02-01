@@ -1,8 +1,6 @@
 type: programming-language
 name:
-  full:
-    en: Lua
-    fr: Lua
+  full: Lua
 synopsis:
   en: A lightweight, high-level, multi-paradigm programming language designed
     primarily for embedded use in applications.

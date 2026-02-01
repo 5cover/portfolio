@@ -4,9 +4,7 @@ title:
 abstract:
   en: Set up a Web server. Setting up network services (S2.03)
   fr: Mise en place d'un serveur Web. Installation de services réseau (S2.03)
-context:
-  en: BUT
-  fr: BUT
+context: BUT
 startDate: 2024-05-14
 endDate: 2024-06-05
 tags:
@@ -30,11 +28,8 @@ team:
   - kervadec-matteo
   - toe-paolo
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/S2.03
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/S2.03
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/S2.03

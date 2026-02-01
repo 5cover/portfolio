@@ -1,6 +1,4 @@
-title:
-  en: Psdc
-  fr: Psdc
+title: Psdc
 abstract:
   en: Lannion IUT Pseudocode compiler
   fr: Compilateur pseudocode de l'IUT de Lannion
@@ -21,52 +19,46 @@ technologies:
   - vs-code
   - markdown
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/psdc
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/psdc
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/psdc
 references:
-  en:
-    - caption: Lexical analysis, Wikipedia
-      anchor: wikipedia
-      href: https://en.wikipedia.org/wiki/Lexical_analysis
-    - caption: Parsing, Wikipedia
-      anchor: wikipedia
-      href: https://en.wikipedia.org/wiki/Parsing
-    - caption: Crafting Interpreters, Robert Nystrom
-      anchor: website
-      href: https://craftinginterpreters.com
-    - caption: Creating a Compiler, Pixeled, YouTube
-      anchor: youtube
-      href: https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs
-    - caption: Formal grammar, Wikipedia
-      anchor: wikipedia
-      href: https://en.wikipedia.org/wiki/Formal_grammar
-  fr:
-    - caption: Analyse lexicale, Wikipédia
-      anchor: wikipedia
-      href: https://fr.wikipedia.org/wiki/Analyse_lexicale
-    - caption: Analyse syntaxique, Wikipédia
-      anchor: wikipedia
-      href: https://fr.wikipedia.org/wiki/Analyse_syntaxique
-    - caption: Crafting Interpreters, Robert Nystrom (anglais)
-      anchor: website
-      href: https://craftinginterpreters.com
-    - caption: Creating a Compiler, Pixeled, sur YouTube (anglais)
-      anchor: youtube
-      href: https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs
-    - caption: Grammaire formelle, Wikipédia
-      anchor: wikipedia
-      href: https://fr.wikipedia.org/wiki/Grammaire_formelle
+  - caption:
+      en: Lexical analysis, Wikipedia
+      fr: Analyse lexicale, Wikipédia
+    anchor: wikipedia
+    href:
+      en: https://en.wikipedia.org/wiki/Lexical_analysis
+      fr: https://fr.wikipedia.org/wiki/Analyse_lexicale
+  - caption:
+      en: Parsing, Wikipedia
+      fr: Analyse syntaxique, Wikipédia
+    anchor: wikipedia
+    href:
+      en: https://en.wikipedia.org/wiki/Parsing
+      fr: https://fr.wikipedia.org/wiki/Analyse_syntaxique
+  - caption:
+      en: Crafting Interpreters, Robert Nystrom
+      fr: Crafting Interpreters, Robert Nystrom (anglais)
+    anchor: website
+    href: https://craftinginterpreters.com
+  - caption:
+      en: Creating a Compiler, Pixeled, YouTube
+      fr: Creating a Compiler, Pixeled, sur YouTube (anglais)
+    anchor: youtube
+    href: https://www.youtube.com/playlist?list=PLUDlas_Zy_qC7c5tCgTMYq2idyyT241qs
+  - caption:
+      en: Formal grammar, Wikipedia
+      fr: Grammaire formelle, Wikipédia
+    anchor: wikipedia
+    href:
+      en: https://en.wikipedia.org/wiki/Formal_grammar
+      fr: https://fr.wikipedia.org/wiki/Grammaire_formelle
 gallery:
-  en:
-    - caption: Poster / Infographic
-      iframeSrc: /portfolio/img/project/psdc/poster.pdf
-  fr:
-    - caption: Poster / Infographie
-      iframeSrc: /portfolio/img/project/psdc/poster.pdf
+  - caption:
+      en: Poster / Infographic
+      fr: Poster / Infographie
+    iframeSrc: /portfolio/img/project/psdc/poster.pdf
 background: /portfolio/img/project/psdc/bg.png

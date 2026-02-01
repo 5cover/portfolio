@@ -1,8 +1,6 @@
 type: website
 name:
-  full:
-    en: GitHub
-    fr: GitHub
+  full: GitHub
 synopsis:
   en: A developer platform that allows developers to create, store, manage and
     share their code.

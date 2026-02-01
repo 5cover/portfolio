@@ -1,13 +1,10 @@
 type: markup-language
 name:
-  full:
-    en: HyperText Markup Language
-    fr: HyperText Markup Language
-  abbr:
-    en: HTML
-    fr: HTML
+  full: HyperText Markup Language
+  abbr: HTML
 synopsis:
-  en: The standard markup language for documents designed to be displayed in a web
+  en:
+    The standard markup language for documents designed to be displayed in a web
     browser. It defines the content and structure of web content.
   fr: Langage de balisage conçu pour représenter les pages web.
 wiki:

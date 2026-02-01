@@ -1,8 +1,6 @@
 type: software
 name:
-  full:
-    en: Doxygen
-    fr: Doxygen
+  full: Doxygen
 synopsis:
   en: A documentation generator and static analysis tool for software source
     trees. When used as a documentation generator, Doxygen extracts information

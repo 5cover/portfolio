@@ -1,11 +1,7 @@
 type: markup-language
 name:
-  full:
-    en: Extensible Markup Language
-    fr: Extensible Markup Language
-  abbr:
-    en: XML
-    fr: XML
+  full: Extensible Markup Language
+  abbr: XML
 synopsis:
   en: A markup language and file format for storing, transmitting, and
     reconstructing arbitrary data.

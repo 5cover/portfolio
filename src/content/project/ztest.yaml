@@ -1,15 +1,13 @@
-title:
-  en: ztest
-  fr: ztest
+title: ztest
 abstract:
   en: >-
-    
+
     The <code>test</code> Unix command implemented in <a target="_blank"
     rel="noopener noreferrer"
     href="https://en.wikipedia.org/wiki/Zig_(programming_language)"
     data-def-id="zig" class="link def-tooltip-trigger">Zig</a>
   fr: >-
-    
+
     La commande Unix <code>test</code> implémentée en <a target="_blank"
     rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)"
     data-def-id="zig" class="link def-tooltip-trigger">Zig</a>
@@ -25,20 +23,14 @@ technologies:
   - zig
   - vs-code
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/ztest
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/ztest
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/ztest
 references:
-  en:
-    - anchor: github
-      caption: test.c &mdash; GNU coreutils GitHub repository
-      href: https://github.com/coreutils/coreutils/blob/master/src/test.c
-  fr:
-    - anchor: github
-      caption: test.c &mdash; dépôt GitHub GNU coreutils
-      href: https://github.com/coreutils/coreutils/blob/master/src/test.c
+  - anchor: github
+    caption:
+      en: test.c &mdash; GNU coreutils GitHub repository
+      fr: test.c &mdash; dépôt GitHub GNU coreutils
+    href: https://github.com/coreutils/coreutils/blob/master/src/test.c

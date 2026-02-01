@@ -1,8 +1,6 @@
 type: dbms
 name:
-  full:
-    en: SQLite
-    fr: SQLite
+  full: SQLite
 synopsis:
   en: A DBMS-independent, cross-platform SQL query tool.
   fr: Bibliothèque écrite en langage C qui propose un moteur de base de données

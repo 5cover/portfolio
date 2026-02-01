@@ -1,11 +1,7 @@
 type: library
 name:
-  full:
-    en: Windows Presentation Foundation
-    fr: Windows Presentation Foundation
-  abbr:
-    en: WPF
-    fr: WPF
+  full: Windows Presentation Foundation
+  abbr: WPF
 synopsis:
   en: A free and open-source user interface framework for Windows-based desktop
     applications.

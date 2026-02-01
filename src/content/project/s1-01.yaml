@@ -4,9 +4,7 @@ title:
 abstract:
   en: Command-line Sudoku game. Implementing a client's needs (S1.01)
   fr: Jeu de Sudoku en ligne de commande. Implémentation d'un besoin client (S1.01)
-context:
-  en: BUT
-  fr: BUT
+context: BUT
 startDate: 2023-10-16
 endDate: 2023-11-27
 tags:
@@ -21,39 +19,34 @@ technologies:
   - c
   - doxygen
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/S1.01
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/S1.01
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/S1.01
 gallery:
-  en:
-    - caption: Pseudocode algorithm
-      iframeSrc: /portfolio/img/project/s1.01/algorithme-pseudocode.html
-    - caption: Test book (extract)
-      iframeSrc: /portfolio/img/project/s1.01/cahier-de-tests.html
-    - caption: Function list (extract)
-      iframeSrc: /portfolio/img/project/s1.01/liste-de-fonctions.html
-    - caption: Model (extract)
-      src: /portfolio/img/project/s1.01/maquette.png
-    - caption: Final program (extract)
-      iframeSrc: /portfolio/img/project/s1.01/programme-final.html
-    - caption: Tests (extract)
-      iframeSrc: /portfolio/img/project/s1.01/tests.html
-  fr:
-    - caption: Algorithme en pseudocode
-      iframeSrc: /portfolio/img/project/s1.01/algorithme-pseudocode.html
-    - caption: Cahier de tests (extrait)
-      iframeSrc: /portfolio/img/project/s1.01/cahier-de-tests.html
-    - caption: Liste de fonctions (extrait)
-      iframeSrc: /portfolio/img/project/s1.01/liste-de-fonctions.html
-    - caption: Maquette (extrait)
-      src: /portfolio/img/project/s1.01/maquette.png
-    - caption: Programme final (extrait)
-      iframeSrc: /portfolio/img/project/s1.01/programme-final.html
-    - caption: Tests (extrait)
-      iframeSrc: /portfolio/img/project/s1.01/tests.html
+  - caption:
+      en: Pseudocode algorithm
+      fr: Algorithme en pseudocode
+    iframeSrc: /portfolio/img/project/s1.01/algorithme-pseudocode.html
+  - caption:
+      en: Test book (extract)
+      fr: Cahier de tests (extrait)
+    iframeSrc: /portfolio/img/project/s1.01/cahier-de-tests.html
+  - caption:
+      en: Function list (extract)
+      fr: Liste de fonctions (extrait)
+    iframeSrc: /portfolio/img/project/s1.01/liste-de-fonctions.html
+  - caption:
+      en: Model (extract)
+      fr: Maquette (extrait)
+    src: /portfolio/img/project/s1.01/maquette.png
+  - caption:
+      en: Final program (extract)
+      fr: Programme final (extrait)
+    iframeSrc: /portfolio/img/project/s1.01/programme-final.html
+  - caption:
+      en: Tests (extract)
+      fr: Tests (extrait)
+    iframeSrc: /portfolio/img/project/s1.01/tests.html
 background: /portfolio/img/project/s1.01/bg.png

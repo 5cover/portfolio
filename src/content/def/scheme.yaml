@@ -1,8 +1,6 @@
 type: programming-language
 name:
-  full:
-    en: Scheme
-    fr: Scheme
+  full: Scheme
 synopsis:
   en: A dialect of the Lisp family of programming languages. Scheme was created
     during the 1970s at the <abbr title="MIT Computer Science and Artificial

@@ -6,9 +6,7 @@ abstract:
     Organizing teamwork (S2.06)
   fr: Planification d'un évènement de <em>team building</em> et réalisation d'un
     film promotionnel. Organisation d'un travail d'équipe (S2.06)
-context:
-  en: BUT
-  fr: BUT
+context: BUT
 startDate: 2024-04-18
 endDate: 2024-06-06
 tags:
@@ -21,11 +19,8 @@ team:
   - kervadec-matteo
   - toe-paolo
 links:
-  en:
-    - label: GitHub project
-      anchor: github
-      href: https://github.com/users/5cover/project/9
-  fr:
-    - label: Projet GitHub
-      anchor: github
-      href: https://github.com/users/5cover/project/9
+  - label:
+      en: GitHub project
+      fr: Projet GitHub
+    anchor: github
+    href: https://github.com/users/5cover/project/9

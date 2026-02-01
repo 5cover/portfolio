@@ -1,8 +1,6 @@
 type: programming-language
 name:
-  full:
-    en: C++
-    fr: C++
+  full: C++
 synopsis:
   en: A high-level, general-purpose programming language created by Danish
     computer scientist Bjarne Stroustrup.

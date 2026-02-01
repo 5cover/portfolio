@@ -1,8 +1,6 @@
 type: programming-language
 name:
-  full:
-    en: JavaScript
-    fr: JavaScript
+  full: JavaScript
 synopsis:
   en: A programming language and core technology of the Web, alongside HTML and
     CSS.

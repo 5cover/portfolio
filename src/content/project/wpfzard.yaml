@@ -1,9 +1,7 @@
-title:
-  en: WPFZard
-  fr: WPFZard
+title: WPFZard
 abstract:
   en: >-
-    
+
     A simple <a target="_blank" rel="noopener noreferrer"
     href="https://en.wikipedia.org/wiki/Windows_Presentation_Foundation"
     data-def-id="wpf" class="link def-tooltip-trigger">WPF</a> <a
@@ -11,7 +9,7 @@ abstract:
     href="https://learn.microsoft.com/en/windows/win32/uxguide/win-wizards"
     data-def-id="wizard" class="link def-tooltip-trigger">Wizard</a> library.
   fr: >-
-    
+
     Une simple bibliothèque d'<a target="_blank" rel="noopener noreferrer"
     href="https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards"
     data-def-id="wizard" class="link def-tooltip-trigger">Assistant</a> pour <a
@@ -33,34 +31,26 @@ technologies:
   - dotnet
   - wpf
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/WPFZard
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/WPFZard
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/WPFZard
 references:
-  en:
-    - anchor: github
-      href: https://github.com/xceedsoftware/wpftoolkit
-      caption: Xceed Extended WPF Toolkit™ GitHub repository
-    - anchor: github
-      href: https://github.com/5cover/WinClean/blob/master/LICENSE
-      caption: WinClean license &mdash; GitHub
-    - anchor: github
-      href: https://github.com/xceedsoftware/wpftoolkit/blob/master/license.md
-      caption: Xceed Extended WPF Toolkit™ license &mdash; GitHub
-  fr:
-    - anchor: github
-      href: https://github.com/xceedsoftware/wpftoolkit
-      caption: Xceed Extended WPF Toolkit™ &mdash; Dépôt GitHub (anglais)
-    - anchor: github
-      href: https://github.com/5cover/WinClean/blob/master/LICENSE
-      caption: Licence WinClean &mdash; GitHub (anglais)
-    - anchor: github
-      href: https://github.com/xceedsoftware/wpftoolkit/blob/master/license.md
-      caption: Licence Xceed Extended WPF Toolkit™ &mdash; GitHub (anglais)
+  - anchor: github
+    href: https://github.com/xceedsoftware/wpftoolkit
+    caption:
+      en: Xceed Extended WPF Toolkit™ GitHub repository
+      fr: Xceed Extended WPF Toolkit™ &mdash; Dépôt GitHub (anglais)
+  - anchor: github
+    href: https://github.com/5cover/WinClean/blob/master/LICENSE
+    caption:
+      en: WinClean license &mdash; GitHub
+      fr: Licence WinClean &mdash; GitHub (anglais)
+  - anchor: github
+    href: https://github.com/xceedsoftware/wpftoolkit/blob/master/license.md
+    caption:
+      en: Xceed Extended WPF Toolkit™ license &mdash; GitHub
+      fr: Licence Xceed Extended WPF Toolkit™ &mdash; GitHub (anglais)
 logo:
   src: /portfolio/img/project/wpfzard/logo.png

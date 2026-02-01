@@ -1,11 +1,7 @@
 type: software
 name:
-  full:
-    en: Apache HTTP Server
-    fr: Apache HTTP Server
-  short:
-    en: Apache
-    fr: Apache
+  full: Apache HTTP Server
+  short: Apache
 synopsis:
   en: A free and open-source cross-platform web server software.
   fr: Serveur HTTP créé et maintenu au sein de la fondation Apache.

@@ -1,11 +1,7 @@
 type: computer-language
 name:
-  full:
-    en: Unified Modeling Language
-    fr: Unified Modeling Language
-  abbr:
-    en: UML
-    fr: UML
+  full: Unified Modeling Language
+  abbr: UML
 synopsis:
   en: A graphical modeling language used to describe, specify, construct, and
     document software systems.

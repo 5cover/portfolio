@@ -1,8 +1,6 @@
 type: software
 name:
-  full:
-    en: Visual Paradigm
-    fr: Visual Paradigm
+  full: Visual Paradigm
 synopsis:
   en: A versatile software development tool that provides a range of features to
     support different aspects of software development life cycle (SDLC). It's
@@ -13,8 +11,6 @@ synopsis:
     offre une plateforme de développement logiciel intégrée qui prend en charge
     les langages de modélisation UML (Unified Modeling Language), BPMN (Business
     Process Model and Notation), SysML, et bien d'autres.
-wiki:
-  en: https://www.visual-paradigm.com/
-  fr: https://www.visual-paradigm.com/
+wiki: https://www.visual-paradigm.com/
 logo:
   src: /portfolio/img/def/visual-paradigm/logo.png

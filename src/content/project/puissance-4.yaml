@@ -1,6 +1,4 @@
-title:
-  en: Puissance 4
-  fr: Puissance 4
+title: Puissance 4
 abstract:
   en: Command-line Connect 4 game
   fr: Jeu de Puissance 4 en ligne de commande
@@ -17,11 +15,8 @@ technologies:
   - python
   - spyder
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/Puissance-4
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/Puissance-4
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/Puissance-4

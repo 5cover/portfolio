@@ -6,9 +6,7 @@ abstract:
     development environment (S1.03)
   fr: Automatisation, scripts, conteneurisation, parseur Markdown. Installation
     d'un poste pour le développement (S1.03)
-context:
-  en: BUT
-  fr: BUT
+context: BUT
 startDate: 2023-10-25
 endDate: 2023-01-21
 tags:
@@ -31,11 +29,8 @@ team:
   - kervadec-matteo
   - toe-paolo
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/S1.03
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/S1.03
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/S1.03

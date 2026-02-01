@@ -8,9 +8,7 @@ abstract:
   fr: Des solutions innovantes au <a class="link" target="_blank" rel="noopener
     noreferrer" href="/portfolio/img/project/s2.02/sujet-sae.pdf">problème des N
     reines</a>. Exploration algorithmique d'un problème (S2.02)
-context:
-  en: BUT
-  fr: BUT
+context: BUT
 startDate: 2024-03-11
 endDate: 2024-03-27
 tags:
@@ -30,11 +28,8 @@ team:
   - kervadec-matteo
   - toe-paolo
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/N-queens-problem
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/N-queens-problem
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/N-queens-problem
