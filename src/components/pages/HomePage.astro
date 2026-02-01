@@ -27,10 +27,16 @@ const { copy } = Astro.props,
     projects = content.project(locale),
     contacts = content.contact(),
     pianoTiles = content.pianoTile(locale);
+
+import Copy from '../Copy.astro';
+
+const x = ['My ', { title: 'Computer Science', abbr: 'CS' }, ' degree'];
+const y = ['This is my ', x];
 ---
 
 <BaseLayout pageName='index'>
     <main>
+        <Copy c={y} />
         <ul class='lvl list-piano-tiles'>
             {
                 pianoTiles.map(([, tile]) => (

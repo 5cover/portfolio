@@ -232,10 +232,10 @@ Output:
 
 Add a project:
 
-1. Create a new entry in `src/content/projects/<id>.yaml`.
+1. Create a new entry in `src/content/project/<id>.yaml`.
 2. Fill localized fields as `{ en: \"...\", fr: \"...\" }`.
-3. Add the body in `src/content/textual/<lang>/projects/<id>.mdx`.
-4. Add images to `public/img/projects/<id>/`.
+3. Add the body in `src/content/textual/<lang>/project/<id>.mdx`.
+4. Add images to `public/img/project/<id>/`.
 
 Add a blog or hobby entry:
 

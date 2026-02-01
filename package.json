@@ -15,7 +15,6 @@
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "astro": "^5.16.15",
-    "htm": "^3.1.1",
     "preact": "^10.28.2",
     "sharp": "^0.34.5",
     "typescript": "^5.9.3"
@@ -27,20 +26,6 @@
     "sass": "^1.97.3",
     "typescript-eslint": "^8.53.1",
     "vite-plugin-svgr": "^4.5.0"
-  },
-  "babel": {
-    "plugins": [
-      [
-        "htm",
-        {
-          "pragma": "jsx",
-          "import": {
-            "module": "astro/jsx-runtime",
-            "export": "jsx"
-          }
-        }
-      ]
-    ]
   },
   "prettier": {
     "printWidth": 120,

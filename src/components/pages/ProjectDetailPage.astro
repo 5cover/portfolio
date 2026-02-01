@@ -26,7 +26,7 @@ const locale = normalizeLocale(Astro.currentLocale);
 const labels = getLabels(locale);
 
 const p = content.project(locale, id);
-const projectBody = await content.textual(locale, 'projects', id);
+const projectBody = await content.textual(locale, 'project', id);
 
 const backgroundStyle = p.background ? `--bg-img: url(${p.background})` : undefined;
 const logoTitle = labels.copy.fmtTitle.replace('%s', p.title);
@@ -39,7 +39,7 @@ const teamDefs = p.team.map(memberId => content.def(locale, memberId));
 const techDefs = p.technologies.map(techId => content.def(locale, techId));
 ---
 
-<BaseLayout pageName={`projects/${id}`}>
+<BaseLayout pageName={`project/${id}`}>
     <main style={backgroundStyle}>
         <header>
             <ul class='list-rect'>

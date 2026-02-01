@@ -1,13 +1,8 @@
 {
-  "title": {
-    "en": "A virtual world",
-    "fr": "Un monde virtuel"
-  },
-  "summary": {
-    "en": "Infinite possibilities",
-    "fr": "Une infinité de possibilités"
-  },
+  "title": { "en": "A virtual world", "fr": "Un monde virtuel" },
+  "summary":
+    { "en": "Infinite possibilities", "fr": "Une infinité de possibilités" },
   "backgroundImage": "/portfolio/img/piano-tile/3.png",
-  "href": "projects/tregoria.html",
+  "href": "project/tregoria.html",
   "order": 2
 }

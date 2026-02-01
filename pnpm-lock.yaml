@@ -26,9 +26,6 @@ importers:
       astro:
         specifier: ^5.16.15
         version: 5.16.15(@types/node@24.10.1)(rollup@4.56.0)(sass@1.97.3)(typescript@5.9.3)(yaml@2.8.2)
-      htm:
-        specifier: ^3.1.1
-        version: 3.1.1
       preact:
         specifier: ^10.28.2
         version: 10.28.2
@@ -1673,9 +1670,6 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
-
-  htm@3.1.1:
-    resolution: {integrity: sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==}
 
   html-escaper@3.0.3:
     resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
@@ -4659,8 +4653,6 @@ snapshots:
       space-separated-tokens: 2.0.2
 
   he@1.2.0: {}
-
-  htm@3.1.1: {}
 
   html-escaper@3.0.3: {}
 

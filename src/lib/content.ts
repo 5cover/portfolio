@@ -2,7 +2,7 @@ import type { Item, LocalizedItem } from '../content.config';
 import { normalizeLocale, type Locale } from '../i18n';
 import { getCollection, getEntry, render, type CollectionKey } from 'astro:content';
 
-export type TextualKind = 'history' | 'history-body' | 'literature' | 'projects';
+export type TextualKind = 'history' | 'history-body' | 'literature' | 'project';
 export type Entry<T> = readonly [id: string, d: T];
 
 export const anchor = await getter('anchor');

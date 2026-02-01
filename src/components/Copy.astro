@@ -1,0 +1,9 @@
+---
+import { type Copy, astro as copy } from '../lib/copy';
+interface Props {
+    c: Copy;
+}
+const C = copy(Astro.props.c);
+---
+
+<C />

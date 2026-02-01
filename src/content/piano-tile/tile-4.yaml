@@ -1,13 +1,11 @@
 {
-  "title": {
-    "en": "Blender",
-    "fr": "Blender"
-  },
-  "summary": {
-    "en": "3D modeling and video editing",
-    "fr": "Modélisation 3D et montage vidéo"
-  },
+  "title": { "en": "Blender", "fr": "Blender" },
+  "summary":
+    {
+      "en": "3D modeling and video editing",
+      "fr": "Modélisation 3D et montage vidéo"
+    },
   "backgroundImage": "/portfolio/img/piano-tile/4.png",
-  "href": "projects/2l2w-french-rural-road.html",
+  "href": "project/2l2w-french-rural-road.html",
   "order": 3
 }
