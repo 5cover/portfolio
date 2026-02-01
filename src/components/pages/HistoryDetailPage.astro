@@ -21,7 +21,7 @@ const data = content.history(locale, id);
 const labels = getLabels(locale);
 
 const historySummary = await content.textual(locale, 'history', id);
-const historyBody = await content.textual(locale, 'history-body', data.body);
+const historyBody = await content.textual(locale, 'history/body', id);
 ---
 
 <BaseLayout pageName={`history/${id}`}>

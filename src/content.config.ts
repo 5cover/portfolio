@@ -1,20 +1,27 @@
-import { defineCollection, z, type BaseSchema, type CollectionEntry, type CollectionKey } from 'astro:content';
+import {
+    defineCollection,
+    reference,
+    z,
+    type BaseSchema,
+    type CollectionEntry,
+    type CollectionKey,
+} from 'astro:content';
 import type { ExplicitUndefined } from './lib/types';
 import { Locales, type Locale, type Localized } from './i18n';
 import { glob } from 'astro/loaders';
 import type { CollectionConfig } from 'astro/content/config';
 import { typedObjectFromEntries } from './lib/util';
-import { zCopy } from './lib/copy';
 import { AnchorKeys } from './catalog/anchor';
-import path from 'path';
-import astroConfig from '../astro.config.mjs';
+import { DefTypesKeys } from './catalog/def-type';
+import { zCopy } from './lib/copy';
+import { TagKeys } from './catalog/tags';
 
 export const LiteratureKinds = ['passion', 'blog', 'story'] as const;
 export type LiteratureKind = (typeof LiteratureKinds)[number];
 
 const zLocales: z.ZodType<Locale> = z.enum(Locales);
-const zText = zDefault(z.string(), '');
-const zUrl = z.string().url();
+const zText = zDefault(zCopy, '');
+const zUrl = z.string(); // .url() does not support relatve
 const zSrc = z.string().refine(src => src); // todo (check exists?)
 
 export type Item<C extends CollectionKey> = CollectionEntry<C>['data'];
@@ -22,7 +29,7 @@ type Delocalize<T> = { [P in keyof T]: ExplicitUndefined<T[P]> extends Localized
 export type LocalizedItem<C extends CollectionKey> = Delocalize<Item<C>>;
 
 const zGraphic = z.object({
-    src: zUrl,
+    src: zSrc,
     kind: z.enum(['img', 'svg']).nullish(),
 });
 export type Graphic = z.infer<typeof zGraphic>;
@@ -30,21 +37,22 @@ export type Graphic = z.infer<typeof zGraphic>;
 const zLink = z.object({
     label: zLocalized(zText),
     anchor: zDefault(z.enum(AnchorKeys), 'website'),
-    href: zLocalizedMaybe(z.string().url()),
+    href: zLocalized(z.string().url()),
 });
 export type Link = z.infer<typeof zLink>;
 
 const zReference = z.object({
     caption: zLocalized(zText),
     anchor: zText,
-    href: zLocalizedMaybe(zText),
+    href: zLocalized(zText),
 });
 export type Reference = z.infer<typeof zReference>;
 
+// todo: redo this cleanly and typedly
 const zGalleryItem = z.object({
     caption: zLocalized(zText),
-    src: zText.optional(),
-    iframeSrc: zText.optional(),
+    src: zSrc.optional(),
+    iframeSrc: zSrc.optional(),
     content: zText.optional(),
 });
 
@@ -58,7 +66,7 @@ export const collections = defCollections({
         icon: zGraphic,
     }),
     def: z.object({
-        type: z.string(),
+        type: z.enum(DefTypesKeys),
         name: z.object({
             full: zLocalized(zText),
             abbr: zLocalized(zText).optional(),
@@ -66,11 +74,10 @@ export const collections = defCollections({
         }),
         synopsis: zLocalized(zText),
         wiki: zLocalized(zText),
-        background: zText.optional(),
+        background: zSrc.optional(),
         logo: zGraphic.optional(),
     }),
     history: z.object({
-        body: zText,
         title: zLocalized(zText),
         meta: zLocalized(zText),
         year: z.number(),
@@ -96,8 +103,7 @@ export const collections = defCollections({
         title: zLocalized(zText),
         summary: zLocalized(zText),
         backgroundImage: zText,
-        href: zText,
-        order: z.number(),
+        href: zUrl,
     }),
     project: z.object({
         title: zLocalized(zText),
@@ -105,22 +111,16 @@ export const collections = defCollections({
         context: zLocalized(zText).optional(),
         startDate: zText.optional(),
         endDate: zText.optional(),
-        tags: zArray(zText),
-        technologies: zArray(zText),
-        team: zArray(zText),
+        tags: zArray(TagKeys),
+        technologies: zArray(reference('def')),
+        team: zArray(reference('def')),
         links: zArray(zLink),
         references: zArray(zReference),
         gallery: zArray(zGalleryItem),
         logo: zGraphic.optional(),
         background: zText.optional(),
     }),
-    tag: z.object({
-        title: zLocalized(zCopy),
-    }),
     textual: z.object({}),
-    'def-type': z.object({
-        title: zLocalized(zText),
-    }),
 });
 
 function defCollections<T extends Record<CollectionKey, BaseSchema>>(x: T) {
@@ -143,10 +143,7 @@ function zArray<T>(schema: z.ZodType<T>) {
 }
 
 function zLocalized<T>(schema: z.ZodType<T>) {
-    return z.record(zLocales, schema);
-}
-function zLocalizedMaybe<T>(schema: z.ZodType<T>) {
-    return schema.or(zLocalized(schema));
+    return schema.or(z.record(zLocales, schema));
 }
 
 function zDefault<T>(schema: z.ZodType<T>, def: T) {

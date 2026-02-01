@@ -7,8 +7,8 @@ abstract:
 context:
   en: NSI High-school
   fr: NSI Lycée
-startDate: '2022-03-01'
-endDate: '2022-04-24'
+startDate: "2022-03-01"
+endDate: "2022-04-24"
 tags:
   - game
   - oop
@@ -16,27 +16,20 @@ technologies:
   - python
   - tkinter
   - spyder
-team: []
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/Demineur-Python
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/Demineur-Python
+  - label:
+      fr: Dépôt GitHub
+      en: GitHub repository
+    anchor: github
+    href: https://github.com/5cover/Demineur-Python
 references:
-  en:
-    - anchor: wikipedia
-      href: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
-      caption: Wikipedia &mdash; Model–view–controller
-  fr:
-    - anchor: wikipedia
-      href: https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur
-      caption: Wikipedia &mdash; Modèle-vue-contrôleur
-gallery:
-  en: []
-  fr: []
+  - anchor: wikipedia
+    href:
+      en: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
+      fr: https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur
+    caption:
+      en: Wikipedia &mdash; Model–view–controller
+      fr: Wikipedia &mdash; Modèle-vue-contrôleur
+
 logo:
   src: /portfolio/img/project/demineur-python/logo.png

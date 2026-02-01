@@ -15,7 +15,7 @@ abstract:
 context:
   en: Personal
   fr: Personnel
-startDate: '2024-05-30'
+startDate: "2024-05-30"
 tags:
   - low-level
   - cli
@@ -24,25 +24,15 @@ technologies:
   - vs-code
   - ebnf
   - zig
-team: []
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/jslave
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/jslave
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/jslave
 references:
-  en:
-    - anchor: website
-      href: https://mermaid.js.org/syntax/classDiagram.html
-      caption: Mermaid.js &mdash; Class diagram syntax
-  fr:
-    - anchor: website
-      href: https://mermaid.js.org/syntax/classDiagram.html
-      caption: Mermaid.js &mdash; syntaxe des diagrammes de classes (anglais)
-gallery:
-  en: []
-  fr: []
+  - anchor: website
+    href: https://mermaid.js.org/syntax/classDiagram.html
+    caption:
+      en: Mermaid.js &mdash; Class diagram syntax
+      fr: Mermaid.js &mdash; syntaxe des diagrammes de classes (anglais)

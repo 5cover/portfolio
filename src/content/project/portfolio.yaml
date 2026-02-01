@@ -1,13 +1,11 @@
-title:
-  en: Portfolio
-  fr: Portfolio
+title: Portfolio
 abstract:
   en: My portfolio
   fr: Mon portfolio
 context:
   en: BUT
   fr: BUT
-startDate: '2024-06-17'
+startDate: "2024-06-17"
 tags:
   - web
   - but-realiser

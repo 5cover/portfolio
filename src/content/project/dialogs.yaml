@@ -1,6 +1,4 @@
-title:
-  en: Dialogs
-  fr: Dialogs
+title: Dialogs
 abstract:
   en: '
 
@@ -15,8 +13,8 @@ abstract:
 context:
   en: Personal
   fr: Personnel
-startDate: '2022-11-23'
-endDate: '2023-06-25'
+startDate: "2022-11-23"
+endDate: "2023-06-25"
 tags:
   - oop
   - library
@@ -25,39 +23,29 @@ technologies:
   - visual-studio
   - csharp
   - dotnet
-team: []
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/Dialogs
-    - label: NuGet package
-      anchor: nuget
-      href: https://www.nuget.org/packages/Scover.Dialogs
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/Dialogs
-    - label: Paquet NuGet
-      anchor: nuget
-      href: https://www.nuget.org/packages/Scover.Dialogs
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/Dialogs
+  - label:
+      en: NuGet package
+      fr: Paquet NuGet
+    anchor: nuget
+    href: https://www.nuget.org/packages/Scover.Dialogs
 references:
-  en:
-    - anchor: website
-      href: https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview
-      caption: Microsoft &mdash; About Task Dialogs
-    - anchor: youtube
-      href: https://youtu.be/443UNeGrFoM?t=6949
-      caption: Eskil Steenberg &mdash; How I program C (at 1h55m49s)
-  fr:
-    - anchor: website
-      href: https://learn.microsoft.com/fr-fr/windows/win32/controls/task-dialogs-overview
-      caption: Microsoft - À propos des boîtes de dialogue de tâche
-    - anchor: youtube
-      href: https://youtu.be/443UNeGrFoM?t=6949
-      caption: Eskil Steenberg &mdash; How I program C (à 1h55m49s, anglais)
-gallery:
-  en: []
-  fr: []
+  - anchor: website
+    href:
+      en: https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview
+      fr: https://learn.microsoft.com/fr-fr/windows/win32/controls/task-dialogs-overview
+    caption:
+      en: Microsoft &mdash; About Task Dialogs
+      fr: Microsoft &mdash; À propos des boîtes de dialogue de tâche
+  - anchor: youtube
+    href: https://youtu.be/443UNeGrFoM?t=6949
+    caption:
+      en: Eskil Steenberg &mdash; How I program C (at 1h55m49s)
+      fr: Eskil Steenberg &mdash; How I program C (à 1h55m49s, anglais)
 logo:
   src: /portfolio/img/project/dialogs/logo.png

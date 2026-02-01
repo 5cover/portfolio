@@ -15,24 +15,23 @@ abstract:
     data-def-id="c" class="link def-tooltip-trigger">C</a>'
 links: []
 references:
-  en:
-    - anchor: website
-      href: https://constantsmatter.com/posts/generic-ds-c/
-      caption:
-        en: Implementing a generic vector data structure in C
-        fr: Implémentation d'un vecteur générique en C (anglais)
-    - anchor: wikipedia
-      href:
-        en: https://en.wikipedia.org/wiki/Ariane_flight_V88
-        fr: https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5
-      caption:
-        en: Ariane flight V88
-        fr: Vol 501 d'Ariane 5
-    - anchor: github
-      href: https://github.com/nothings/stb
-      caption:
-        en: Public domain STB-style C libraries repository
-        fr: Dépôt des bibliothèques C STB appartenant au domaine public (anglais)
+  - anchor: website
+    href: https://constantsmatter.com/posts/generic-ds-c/
+    caption:
+      en: Implementing a generic vector data structure in C
+      fr: Implémentation d'un vecteur générique en C (anglais)
+  - anchor: wikipedia
+    href:
+      en: https://en.wikipedia.org/wiki/Ariane_flight_V88
+      fr: https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5
+    caption:
+      en: Ariane flight V88
+      fr: Vol 501 d'Ariane 5
+  - anchor: github
+    href: https://github.com/nothings/stb
+    caption:
+      en: Public domain STB-style C libraries repository
+      fr: Dépôt des bibliothèques C STB appartenant au domaine public (anglais)
 gallery: []
 logo:
   src: /portfolio/img/def/zig/logo.svg

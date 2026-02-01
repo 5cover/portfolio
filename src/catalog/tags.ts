@@ -67,56 +67,56 @@ export default {
     },
     'but-1': {
         title: {
-            en: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>BUT 1</span>',
-            fr: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>BUT 1</span>',
+            en: { key: 'but-informatique', badge: 'BUT 1' },
+            fr: { key: 'but-informatique', badge: 'BUT 1' },
         },
     },
     'but-2': {
         title: {
-            en: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>BUT 2</span>',
-            fr: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>BUT 2</span>',
+            en: { key: 'but-informatique', badge: 'BUT 2' },
+            fr: { key: 'but-informatique', badge: 'BUT 2' },
         },
     },
     'but-3': {
         title: {
-            en: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>BUT 3</span>',
-            fr: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>BUT 3</span>',
+            en: { key: 'but-informatique', badge: 'BUT 3' },
+            fr: { key: 'but-informatique', badge: 'BUT 3' },
         },
     },
     'but-administrer': {
         title: {
-            en: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Administer</span>',
-            fr: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Administrer</span>',
+            en: { key: 'but-informatique', badge: 'Administer' },
+            fr: { key: 'but-informatique', badge: 'Administrer' },
         },
     },
     'but-collaborer': {
         title: {
-            en: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborate</span>',
-            fr: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Collaborer</span>',
+            en: { key: 'but-informatique', badge: 'Collaborate' },
+            fr: { key: 'but-informatique', badge: 'Collaborer' },
         },
     },
     'but-conduire': {
         title: {
-            en: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Conduct</span>',
-            fr: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Conduire</span>',
+            en: { key: 'but-informatique', badge: 'Conduct' },
+            fr: { key: 'but-informatique', badge: 'Conduire' },
         },
     },
     'but-gerer': {
         title: {
-            en: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Manage</span>',
-            fr: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique">Gérer</span>',
+            en: { key: 'but-informatique', badge: 'Manage' },
+            fr: { key: 'but-informatique', badge: 'Gérer' },
         },
     },
     'but-optimiser': {
         title: {
-            en: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimize</span>',
-            fr: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Optimiser</span>',
+            en: { key: 'but-informatique', badge: 'Optimize' },
+            fr: { key: 'but-informatique', badge: 'Optimiser' },
         },
     },
     'but-realiser': {
         title: {
-            en: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Create</span>',
-            fr: '<span class="iconed-text"><img src="/portfolio/img/but.webp" alt="BUT Informatique" width="95" height="96" title="BUT Informatique"><span>Réaliser</span>',
+            en: { key: 'but-informatique', badge: 'Create' },
+            fr: { key: 'but-informatique', badge: 'Réaliser' },
         },
     },
     cli: {
@@ -146,7 +146,7 @@ export default {
     db: {
         title: {
             en: 'Databases',
-            fr: '<abbr title="Base de données">BdD</abbr>',
+            fr: { title: 'Base de données', abbr: 'BdD' },
         },
     },
     'full-stack': {
@@ -169,8 +169,14 @@ export default {
     },
     idea: {
         title: {
-            en: '<abbr title="Something that hasn\'t yet led to a concrete realization but has a lot of potential">Idea</abbr>',
-            fr: '<abbr title="Quelquechose n\'ayant pas encore mené à de réalisation concrète mais a beaucoup de potentiel">Idée</abbr>',
+            en: {
+                title: "Something that hasn't yet led to a concrete realization but has a lot of potential",
+                abbr: 'Idea',
+            },
+            fr: {
+                title: "Quelquechose n'ayant pas encore mené à de réalisation concrète mais a beaucoup de potentiel",
+                abbr: 'Idée',
+            },
         },
     },
     library: {
@@ -187,8 +193,8 @@ export default {
     },
     oop: {
         title: {
-            en: '<abbr title="Object Oriented Programming">OOP</abbr>',
-            fr: '<abbr title="Programmation Orientée Objet">POO</span></abbr>',
+            en: { title: 'Object Oriented Programming', abbr: 'OOP' },
+            fr: { title: 'Programmation Orientée Objet', abbr: 'POO' },
         },
     },
     software: {
@@ -205,14 +211,14 @@ export default {
     },
     ui: {
         title: {
-            en: '<abbr title="User Interface">UI</abbr>',
-            fr: '<abbr title="Interface utilisateur">UI</span></abbr>',
+            en: { title: 'User Interface', abbr: 'UI' },
+            fr: { title: 'Interface utilisateur', abbr: 'IU' },
         },
     },
     ux: {
         title: {
-            en: '<abbr title="User Experience">UX</abbr>',
-            fr: '<abbr title="Expérience utilisateur">UX</span></abbr>',
+            en: { title: 'User Experience', abbr: 'UX' },
+            fr: { title: 'Expérience utilisateur', abbr: 'UX' },
         },
     },
     web: {

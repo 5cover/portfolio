@@ -1,13 +1,18 @@
 import { jsx as preactJsx, Fragment as preactFragment } from 'preact/jsx-runtime';
 import { jsx as astroJsx, Fragment as astroFragment } from 'astro/jsx-runtime';
 import z from 'astro/zod';
-import type { BadgeKey } from '../catalog/badges';
+import { BadgeKeys, type BadgeKey } from '../catalog/badges';
 import Badge from '../components/Badge';
+import { Locales, type Locale } from '../i18n';
 
 // Rich text "HTML as object" format for copy with inline formatting.
 
 export type Copy = null | string | CopyNode | Copy[];
-type CopyNode = { title: string; abbr: Copy } | { datetime: Date; time: Copy } | { key: BadgeKey; badge: Copy };
+type CopyNode =
+    | { title: string; abbr: Copy }
+    | { datetime: Date; time: Copy }
+    | { key: BadgeKey; badge: Copy }
+    | { lang: Locale; foreign: Copy };
 
 export const zCopy: z.ZodType<Copy> = z
     .lazy(() =>
@@ -21,6 +26,14 @@ export const zCopy: z.ZodType<Copy> = z
             z.strictObject({
                 datetime: z.date(),
                 time: zCopy,
+            }),
+            z.strictObject({
+                key: z.enum(BadgeKeys),
+                badge: zCopy,
+            }),
+            z.strictObject({
+                lang: z.enum(Locales),
+                foreign: zCopy,
             }),
         ])
     )
@@ -44,12 +57,13 @@ class Parser<Jsx extends JsxFn> {
         if ('abbr' in c) return this.node(c, 'abbr', { title: c.title });
         if ('time' in c) return this.node(c, 'time', { datetime: c.datetime.toISOString() });
         if ('badge' in c) return Badge({ of: c.key, children: this.parse(c.badge) });
+        if ('foreign' in c) return this.node(c, 'foreign', { lang: c.lang }, 'span');
 
         throw new Error(`unknown node: ${JSON.stringify(c)}`);
     }
 
-    private node<K extends string>(c: Record<K, Copy>, k: K, attrs: Record<string, string>) {
-        return this.jsx(k, { ...attrs, children: this.parse(c[k]) });
+    private node<K extends string>(c: Record<K, Copy>, k: K, attrs: Record<string, string>, element: string = k) {
+        return this.jsx(element, { ...attrs, children: this.parse(c[k]) });
     }
 }
 
