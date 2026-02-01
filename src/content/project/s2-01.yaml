@@ -1,60 +1,43 @@
-{
-  "title": {
-    "en": "Le Patio box office",
-    "fr": "Billeterie Le Patio"
-  },
-  "abstract": {
-    "en": "Development of a performance hall management application. Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr> (S2.01)",
-    "fr": "Développement d'une application de gestion de salle de spectacle. Création d'une <abbr title=\"Interface Homme Machine\">IHM</abbr> (S2.01)"
-  },
-  "context": {
-    "en": "BUT",
-    "fr": "BUT"
-  },
-  "startDate": "2024-05-28",
-  "endDate": "2024-06-17",
-  "tags": [
-    "but-realiser",
-    "oop",
-    "ui",
-    "ux",
-    "but-2"
-  ],
-  "technologies": [
-    "github",
-    "eclipse",
-    "java",
-    "javafx"
-  ],
-  "team": [
-    "chartier--le-goff-marius",
-    "kervadec-matteo",
-    "toe-paolo"
-  ],
-  "links": {
-    "en": [
-      {
-        "label": "GitHub repository",
-        "anchor": "github",
-        "href": "https://github.com/5cover/S2.05/tree/main/lot10"
-      }
-    ],
-    "fr": [
-      {
-        "label": "Dépôt GitHub",
-        "anchor": "github",
-        "href": "https://github.com/5cover/S2.05/tree/main/lot10"
-      }
-    ]
-  },
-  "references": {
-    "en": [],
-    "fr": []
-  },
-  "gallery": {
-    "en": [],
-    "fr": []
-  },
-  
-  
-}
+title:
+  en: Le Patio box office
+  fr: Billeterie Le Patio
+abstract:
+  en: Development of a performance hall management application. Création d'une <abbr
+    title="Interface Homme Machine">IHM</abbr> (S2.01)
+  fr: Développement d'une application de gestion de salle de spectacle. Création d'une
+    <abbr title="Interface Homme Machine">IHM</abbr> (S2.01)
+context:
+  en: BUT
+  fr: BUT
+startDate: '2024-05-28'
+endDate: '2024-06-17'
+tags:
+  - but-realiser
+  - oop
+  - ui
+  - ux
+  - but-2
+technologies:
+  - github
+  - eclipse
+  - java
+  - javafx
+team:
+  - chartier--le-goff-marius
+  - kervadec-matteo
+  - toe-paolo
+links:
+  en:
+    - label: GitHub repository
+      anchor: github
+      href: https://github.com/5cover/S2.05/tree/main/lot10
+  fr:
+    - label: Dépôt GitHub
+      anchor: github
+      href: https://github.com/5cover/S2.05/tree/main/lot10
+references:
+  en: []
+  fr: []
+gallery:
+  en: []
+  fr: []

@@ -1,8 +1,9 @@
-{
-  "title": { "en": "User Experience", "fr": "Expérience utilisateur" },
-  "summary":
-    { "en": "My passion project", "fr": "Mon projet <q>best-seller</q>" },
-  "backgroundImage": "/portfolio/img/piano-tile/8.png",
-  "href": "project/winclean.html",
-  "order": 7
-}
+title:
+  en: User Experience
+  fr: Expérience utilisateur
+summary:
+  en: My passion project
+  fr: Mon projet <q>best-seller</q>
+backgroundImage: /portfolio/img/piano-tile/8.png
+href: project/winclean.html
+order: 7

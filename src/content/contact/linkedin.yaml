@@ -1,9 +1,6 @@
-{
-  "platform": "LinkedIn",
-  "name": "Raphaël Bardini",
-  "src": "https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/",
-  "icon": {
-    "kind": "svg",
-    "src": "/portfolio/img/social/linkedin.svg"
-  }
-}
+platform: LinkedIn
+name: Raphaël Bardini
+href: https://www.linkedin.com/in/rapha%C3%ABl-bardini-6238432b6/
+icon:
+  kind: svg
+  src: /portfolio/img/social/linkedin.svg

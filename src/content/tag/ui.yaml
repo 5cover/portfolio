@@ -1,6 +1,3 @@
-{
-  "title": {
-    "en": "<abbr title=\"User Interface\">UI</abbr>",
-    "fr": "<abbr title=\"Interface utilisateur\">UI</span></abbr>"
-  }
-}
+title:
+  en: <abbr title="User Interface">UI</abbr>
+  fr: <abbr title="Interface utilisateur">UI</span></abbr>

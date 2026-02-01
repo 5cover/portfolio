@@ -1,11 +1,9 @@
-{
-  "title": { "en": "Optimization", "fr": "Optimisation" },
-  "summary":
-    {
-      "en": "Optimization never ends",
-      "fr": "L'optimisation ne se termine jamais"
-    },
-  "backgroundImage": "/portfolio/img/piano-tile/7.png",
-  "href": "project/s1-02.html",
-  "order": 6
-}
+title:
+  en: Optimization
+  fr: Optimisation
+summary:
+  en: Optimization never ends
+  fr: L'optimisation ne se termine jamais
+backgroundImage: /portfolio/img/piano-tile/7.png
+href: project/s1-02.html
+order: 6

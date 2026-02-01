@@ -1,33 +1,30 @@
-import type { ComponentChildren } from 'preact';
-import { LiteratureKinds, type LiteratureKind } from './content.config';
+import { LiteratureKinds } from './content.config';
 import type { ThemeLabels } from './lib/types';
 
 export const Locales = ['fr', 'en'] as const;
 export type Locale = (typeof Locales)[number];
 export type Localized<T> = Record<Locale, T>;
-export type Copy = string;
-export type Content = ComponentChildren;
-export const NavItemPages = ['projects', 'history', ...LiteratureKinds, 'history/history-but'] as const;
+export const NavItemPages = ['projects', 'history' /* , ...LiteratureKinds */, 'history/history-but'] as const;
 export type NavItemPage = (typeof NavItemPages)[number];
 
 export interface Translation {
-    flagClass: Copy;
-    locales: Record<Locale, Copy>;
-    siteDescription: Copy;
-    footerGitHubAnchorTitle: Copy;
-    nav: Record<NavItemPage, Copy>;
+    flagClass: string;
+    locales: Record<Locale, string>;
+    siteDescription: string;
+    footerGitHubAnchorTitle: string;
+    nav: Record<NavItemPage, string>;
     theme: ThemeLabels;
     copy: {
-        details: Copy;
-        fmtTitle: Copy;
-        ongoing: Copy;
-        links: Copy;
-        team: Copy;
-        story: Copy;
-        references: Copy;
-        technologies: Copy;
-        gallery: Copy;
-        refJumpUp: Copy;
+        details: string;
+        fmtTitle: string;
+        ongoing: string;
+        links: string;
+        team: string;
+        story: string;
+        references: string;
+        technologies: string;
+        gallery: string;
+        refJumpUp: string;
     };
 }
 

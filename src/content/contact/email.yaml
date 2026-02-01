@@ -1,9 +1,6 @@
-{
-  "platform": "E-mail",
-  "name": "bardini.raphael@gmail.com",
-  "src": "mailto:bardini.raphael@gmail.com",
-  "icon": {
-    "kind": "svg",
-    "src": "/portfolio/img/social/email.svg"
-  }
-}
+platform: E-mail
+name: bardini.raphael@gmail.com
+href: mailto:bardini.raphael@gmail.com
+icon:
+  kind: svg
+  src: /portfolio/img/social/email.svg

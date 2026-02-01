@@ -1,9 +1,6 @@
-{
-  "platform": "Instagram",
-  "name": "bardiniraphael",
-  "src": "https://www.instagram.com/bardiniraphael/",
-  "icon": {
-    "kind": "svg",
-    "src": "/portfolio/img/social/instagram.svg"
-  }
-}
+platform: Instagram
+name: bardiniraphael
+href: https://www.instagram.com/bardiniraphael/
+icon:
+  kind: svg
+  src: /portfolio/img/social/instagram.svg

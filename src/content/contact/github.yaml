@@ -1,9 +1,6 @@
-{
-  "platform": "GitHub",
-  "name": "5cover",
-  "src": "https://github.com/5cover",
-  "icon": {
-    "kind": "svg",
-    "src": "/portfolio/img/social/github.svg"
-  }
-}
+platform: GitHub
+name: 5cover
+href: https://github.com/5cover
+icon:
+  kind: svg
+  src: /portfolio/img/social/github.svg

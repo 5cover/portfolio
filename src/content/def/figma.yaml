@@ -1,16 +1,15 @@
-{
-  "type": "website",
-  "name": { "full": { "en": "Figma", "fr": "Figma" }, "abbr": {}, "short": {} },
-  "synopsis":
-    {
-      "en": "A collaborative web application for interface design.",
-      "fr": "Éditeur de graphiques vectoriels et un outil de prototypage en ligne."
-    },
-  "wiki":
-    {
-      "en": "https://en.wikipedia.org/wiki/Figma",
-      "fr": "https://fr.wikipedia.org/wiki/Figma"
-    },
-
-  "logo": { "src": "/portfolio/img/def/figma/logo.svg" }
-}
+type: website
+name:
+  full:
+    en: Figma
+    fr: Figma
+  abbr: {}
+  short: {}
+synopsis:
+  en: A collaborative web application for interface design.
+  fr: Éditeur de graphiques vectoriels et un outil de prototypage en ligne.
+wiki:
+  en: https://en.wikipedia.org/wiki/Figma
+  fr: https://fr.wikipedia.org/wiki/Figma
+logo:
+  src: /portfolio/img/def/figma/logo.svg

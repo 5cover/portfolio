@@ -1,7 +1,9 @@
-{
-  "title": { "en": "Data science", "fr": "Science des données" },
-  "summary": { "en": "Statistics and data mining", "fr": "Data science" },
-  "backgroundImage": "/portfolio/img/piano-tile/5.png",
-  "href": "project/ethercrash.html",
-  "order": 4
-}
+title:
+  en: Data science
+  fr: Science des données
+summary:
+  en: Statistics and data mining
+  fr: Data science
+backgroundImage: /portfolio/img/piano-tile/5.png
+href: project/ethercrash.html
+order: 4

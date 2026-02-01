@@ -1,11 +1,9 @@
-{
-  "title": { "en": "Sandbox videogames", "fr": "Jeu-vidéo bac-à-sable" },
-  "summary":
-    {
-      "en": "Joining art and functionality",
-      "fr": "L'art et la fonctionnalité conjointes"
-    },
-  "backgroundImage": "/portfolio/img/piano-tile/2.png",
-  "href": "literature.html#sandbox-videogames",
-  "order": 1
-}
+title:
+  en: Sandbox videogames
+  fr: Jeu-vidéo bac-à-sable
+summary:
+  en: Joining art and functionality
+  fr: L'art et la fonctionnalité conjointes
+backgroundImage: /portfolio/img/piano-tile/2.png
+href: literature.html#sandbox-videogames
+order: 1
