@@ -7,7 +7,7 @@ abstract:
 context:
   en: Personal
   fr: Personnel
-startDate: '2022-08-15'
+startDate: 2022-08-15
 tags:
   - full-stack
   - oop
@@ -22,7 +22,6 @@ technologies:
   - inno-setup
   - powershell
   - visual-studio
-team: []
 links:
   en:
     - label: CommentÇaMarche article (French)
@@ -38,9 +37,6 @@ links:
     - label: Dépôt GitHub
       anchor: github
       href: https://github.com/5cover/WinClean
-references:
-  en: []
-  fr: []
 gallery:
   en:
     - caption: Script execution

@@ -6,11 +6,11 @@ name:
   abbr:
     en: XML
     fr: XML
-  short: {}
 synopsis:
-  en: A markup language and file format for storing, transmitting, and reconstructing
-    arbitrary data.
-  fr: Métalangage informatique de balisage utilisé pour représenter des données structurées.
+  en: A markup language and file format for storing, transmitting, and
+    reconstructing arbitrary data.
+  fr: Métalangage informatique de balisage utilisé pour représenter des données
+    structurées.
 wiki:
   en: https://en.wikipedia.org/wiki/XML
   fr: https://fr.wikipedia.org/wiki/Extensible_Markup_Language

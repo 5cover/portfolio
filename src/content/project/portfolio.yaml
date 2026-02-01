@@ -5,7 +5,7 @@ abstract:
 context:
   en: BUT
   fr: BUT
-startDate: "2024-06-17"
+startDate: 2024-06-17
 tags:
   - web
   - but-realiser
@@ -23,19 +23,9 @@ technologies:
   - python
   - javascript
   - svg
-team: []
 links:
-  en:
-    - label: GitHub repository
-      anchor: github
-      href: https://github.com/5cover/portfolio
-  fr:
-    - label: Dépôt GitHub
-      anchor: github
-      href: https://github.com/5cover/portfolio
-references:
-  en: []
-  fr: []
-gallery:
-  en: []
-  fr: []
+  - label:
+      en: GitHub repository
+      fr: Dépôt GitHub
+    anchor: github
+    href: https://github.com/5cover/portfolio

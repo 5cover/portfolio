@@ -7,8 +7,8 @@ abstract:
 context:
   en: NSI High-school
   fr: NSI Lycée
-startDate: "2022-03-01"
-endDate: "2022-04-24"
+startDate: 2022-03-01
+endDate: 2022-04-24
 tags:
   - game
   - oop
@@ -30,6 +30,5 @@ references:
     caption:
       en: Wikipedia &mdash; Model–view–controller
       fr: Wikipedia &mdash; Modèle-vue-contrôleur
-
 logo:
   src: /portfolio/img/project/demineur-python/logo.png

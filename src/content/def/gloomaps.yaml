@@ -3,8 +3,6 @@ name:
   full:
     en: GlooMaps
     fr: GlooMaps
-  abbr: {}
-  short: {}
 synopsis:
   en: A simple online visual sitemap tool.
   fr: Outil de cartographie de site en ligne simple.

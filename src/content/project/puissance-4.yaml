@@ -7,8 +7,8 @@ abstract:
 context:
   en: NSI High-school
   fr: NSI Lycée
-startDate: '2021-11-15'
-endDate: '2021-12-05'
+startDate: 2021-11-15
+endDate: 2021-12-05
 tags:
   - game
   - high-level
@@ -16,7 +16,6 @@ tags:
 technologies:
   - python
   - spyder
-team: []
 links:
   en:
     - label: GitHub repository
@@ -26,9 +25,3 @@ links:
     - label: Dépôt GitHub
       anchor: github
       href: https://github.com/5cover/Puissance-4
-references:
-  en: []
-  fr: []
-gallery:
-  en: []
-  fr: []

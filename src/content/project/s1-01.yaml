@@ -7,8 +7,8 @@ abstract:
 context:
   en: BUT
   fr: BUT
-startDate: '2023-10-16'
-endDate: '2023-11-27'
+startDate: 2023-10-16
+endDate: 2023-11-27
 tags:
   - software
   - but-realiser
@@ -20,7 +20,6 @@ technologies:
   - vs-code
   - c
   - doxygen
-team: []
 links:
   en:
     - label: GitHub repository
@@ -30,9 +29,6 @@ links:
     - label: Dépôt GitHub
       anchor: github
       href: https://github.com/5cover/S1.01
-references:
-  en: []
-  fr: []
 gallery:
   en:
     - caption: Pseudocode algorithm

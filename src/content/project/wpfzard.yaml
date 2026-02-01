@@ -2,23 +2,27 @@ title:
   en: WPFZard
   fr: WPFZard
 abstract:
-  en: '
-
-    A simple <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Windows_Presentation_Foundation"
-    data-def-id="wpf" class="link def-tooltip-trigger">WPF</a> <a target="_blank"
-    rel="noopener noreferrer" href="https://learn.microsoft.com/en/windows/win32/uxguide/win-wizards"
-    data-def-id="wizard" class="link def-tooltip-trigger">Wizard</a> library.'
-  fr: '
-
-    Une simple bibliothèque d''<a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards"
-    data-def-id="wizard" class="link def-tooltip-trigger">Assistant</a> pour <a target="_blank"
-    rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation"
-    data-def-id="wpf" class="link def-tooltip-trigger">WPF</a>'
+  en: >-
+    
+    A simple <a target="_blank" rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/Windows_Presentation_Foundation"
+    data-def-id="wpf" class="link def-tooltip-trigger">WPF</a> <a
+    target="_blank" rel="noopener noreferrer"
+    href="https://learn.microsoft.com/en/windows/win32/uxguide/win-wizards"
+    data-def-id="wizard" class="link def-tooltip-trigger">Wizard</a> library.
+  fr: >-
+    
+    Une simple bibliothèque d'<a target="_blank" rel="noopener noreferrer"
+    href="https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards"
+    data-def-id="wizard" class="link def-tooltip-trigger">Assistant</a> pour <a
+    target="_blank" rel="noopener noreferrer"
+    href="https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation"
+    data-def-id="wpf" class="link def-tooltip-trigger">WPF</a>
 context:
   en: Personal
   fr: Personnel
-startDate: '2022-07-21'
-endDate: '2022-11-23'
+startDate: 2022-07-21
+endDate: 2022-11-23
 tags:
   - oop
   - library
@@ -28,7 +32,6 @@ technologies:
   - visual-studio
   - dotnet
   - wpf
-team: []
 links:
   en:
     - label: GitHub repository
@@ -59,8 +62,5 @@ references:
     - anchor: github
       href: https://github.com/xceedsoftware/wpftoolkit/blob/master/license.md
       caption: Licence Xceed Extended WPF Toolkit™ &mdash; GitHub (anglais)
-gallery:
-  en: []
-  fr: []
 logo:
   src: /portfolio/img/project/wpfzard/logo.png

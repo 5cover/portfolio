@@ -3,8 +3,6 @@ name:
   full:
     en: SQL Workbench/J
     fr: SQL Workbench/J
-  abbr: {}
-  short: {}
 synopsis:
   en: A database engine written in the C programming language.
   fr: Outil de requête SQL multiplateforme indépendant du SGBD.

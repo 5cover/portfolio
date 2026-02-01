@@ -6,12 +6,11 @@ name:
   abbr:
     en: SVG
     fr: SVG
-  short: {}
 synopsis:
-  en: An XML-based vector image format for defining two-dimensional graphics, having
-    support for interactivity and animation.
-  fr: Format de données textuel conçu pour décrire des ensembles de graphiques vectoriels
-    2D et basé sur XML.
+  en: An XML-based vector image format for defining two-dimensional graphics,
+    having support for interactivity and animation.
+  fr: Format de données textuel conçu pour décrire des ensembles de graphiques
+    vectoriels 2D et basé sur XML.
 wiki:
   en: https://en.wikipedia.org/wiki/SVG
   fr: https://fr.wikipedia.org/wiki/Scalable_Vector_Graphics

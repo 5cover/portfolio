@@ -3,8 +3,6 @@ name:
   full:
     en: Figma
     fr: Figma
-  abbr: {}
-  short: {}
 synopsis:
   en: A collaborative web application for interface design.
   fr: Éditeur de graphiques vectoriels et un outil de prototypage en ligne.

@@ -7,8 +7,8 @@ abstract:
 context:
   en: BUT
   fr: BUT
-startDate: '2023-10-09'
-endDate: '2024-01-21'
+startDate: 2023-10-09
+endDate: 2024-01-21
 tags:
   - but-conduire
   - but-collaborer
@@ -37,9 +37,3 @@ links:
     - label: Dépôt GitHub
       anchor: github
       href: https://github.com/Matteo-K/TabasKho
-references:
-  en: []
-  fr: []
-gallery:
-  en: []
-  fr: []

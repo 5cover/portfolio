@@ -6,11 +6,11 @@ name:
   abbr:
     en: VS Code
     fr: VS Code
-  short: {}
 synopsis:
-  en: A source-code editor developed by Microsoft for Windows, Linux, macOS and web
-    browsers.
-  fr: Éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.
+  en: A source-code editor developed by Microsoft for Windows, Linux, macOS and
+    web browsers.
+  fr: Éditeur de code extensible développé par Microsoft pour Windows, Linux et
+    macOS.
 wiki:
   en: https://en.wikipedia.org/wiki/Visual_Studio_Code
   fr: https://fr.wikipedia.org/wiki/Visual_Studio_Code

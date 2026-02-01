@@ -5,8 +5,8 @@ abstract:
 context:
   en: Personal
   fr: Personnel
-startDate: "2021-06-15"
-endDate: "2022-10-02"
+startDate: 2021-06-15
+endDate: 2022-10-02
 tags:
   - 3d-modeling
   - asset-creation

@@ -3,8 +3,6 @@ name:
   full:
     en: Markdown
     fr: Markdown
-  abbr: {}
-  short: {}
 synopsis:
   en: A lightweight markup language for creating formatted text using a plain-text
     editor.

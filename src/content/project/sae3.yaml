@@ -3,12 +3,12 @@ title:
   fr: Système de recommandation musical
 abstract:
   en: A music streaming website with AI-based user recommendations
-  fr: Un site de streaming musical avec des recommandations personnalisées utilisant
-    l'IA
+  fr: Un site de streaming musical avec des recommandations personnalisées
+    utilisant l'IA
 context:
   en: BUT
   fr: BUT
-startDate: '2025-09-15'
+startDate: 2025-09-15
 tags:
   - but-collaborer
   - but-3
@@ -16,13 +16,3 @@ tags:
   - but-conduire
 technologies:
   - github
-team: []
-links:
-  en: []
-  fr: []
-references:
-  en: []
-  fr: []
-gallery:
-  en: []
-  fr: []

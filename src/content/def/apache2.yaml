@@ -3,7 +3,6 @@ name:
   full:
     en: Apache HTTP Server
     fr: Apache HTTP Server
-  abbr: {}
   short:
     en: Apache
     fr: Apache

@@ -7,7 +7,7 @@ abstract:
 context:
   en: Personal
   fr: Personnel
-startDate: '2023-11-15'
+startDate: 2023-11-15
 tags:
   - software
   - oop
@@ -20,7 +20,6 @@ technologies:
   - ebnf
   - vs-code
   - markdown
-team: []
 links:
   en:
     - label: GitHub repository

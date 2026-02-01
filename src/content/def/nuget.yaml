@@ -3,12 +3,10 @@ name:
   full:
     en: NuGet
     fr: NuGet
-  abbr: {}
-  short: {}
 synopsis:
   en: A package manager for the Microsoft development platform, including .NET.
-  fr: Un gestionnaire de paquets pour la plateforme de développement Microsoft, incluant
-    .NET.
+  fr: Un gestionnaire de paquets pour la plateforme de développement Microsoft,
+    incluant .NET.
 wiki:
   en: https://en.wikipedia.org/wiki/NuGet
   fr: https://fr.wikipedia.org/wiki/NuGet

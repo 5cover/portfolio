@@ -7,8 +7,8 @@ abstract:
 context:
   en: Personal
   fr: Personnel
-startDate: "2023-10-09"
-endDate: "2024-03-09"
+startDate: 2023-10-09
+endDate: 2024-03-09
 tags:
   - low-level
   - library
@@ -26,8 +26,10 @@ references:
   - anchor: website
     href: https://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html
     caption:
-      en: Felix Palmen &mdash; A beginner's guide <em>away</em> from <code>scanf()</code>
-      fr: Felix Palmen &mdash; A beginner's guide <em>away</em> from <code>scanf()</code> (anglais)
+      en: Felix Palmen &mdash; A beginner's guide <em>away</em> from
+        <code>scanf()</code>
+      fr: Felix Palmen &mdash; A beginner's guide <em>away</em> from
+        <code>scanf()</code> (anglais)
   - anchor: github
     href: https://github.com/nothings/stb
     caption:

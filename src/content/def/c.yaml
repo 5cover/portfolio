@@ -3,11 +3,10 @@ name:
   full:
     en: C
     fr: C
-  abbr: {}
-  short: {}
 synopsis:
-  en: A general-purpose programming language. It was created in the 1970s by Dennis
-    Ritchie and Ken Thompson. Despite its age, it remains very widely used and influential.
+  en: A general-purpose programming language. It was created in the 1970s by
+    Dennis Ritchie and Ken Thompson. Despite its age, it remains very widely
+    used and influential.
   fr: Langage de programmation impératif, généraliste et de bas niveau, inventé en
     <time datatime="1972">1972</time> par Dennis Ritchie et Ken Thompson.
 wiki:

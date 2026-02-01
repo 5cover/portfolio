@@ -1,20 +1,16 @@
 title: Dialogs
 abstract:
-  en: '
-
-    A managed adapter for Windows <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en/windows/win32/controls/task-dialogs-overview"
-    data-def-id="task-dialog" class="link def-tooltip-trigger">task dialog</a> that
-    supports all native features.'
-  fr: '
-
-    Un adapteur managé pour les <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview"
-    data-def-id="task-dialog" class="link def-tooltip-trigger">dialogue de tâche</a>
-    Windows qui supporte toutes les fonctionnalités natives.'
+  en: |-
+    
+    A managed adapter for Windows <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en/windows/win32/controls/task-dialogs-overview" data-def-id="task-dialog" class="link def-tooltip-trigger">task dialog</a> that supports all native features.
+  fr: |-
+    
+    Un adapteur managé pour les <a target="_blank" rel="noopener noreferrer" href="https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview" data-def-id="task-dialog" class="link def-tooltip-trigger">dialogue de tâche</a> Windows qui supporte toutes les fonctionnalités natives.
 context:
   en: Personal
   fr: Personnel
-startDate: "2022-11-23"
-endDate: "2023-06-25"
+startDate: 2022-11-23
+endDate: 2023-06-25
 tags:
   - oop
   - library

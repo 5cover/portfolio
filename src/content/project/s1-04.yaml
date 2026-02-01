@@ -8,8 +8,8 @@ abstract:
 context:
   en: BUT
   fr: BUT
-startDate: '2023-11-27'
-endDate: '2024-01-22'
+startDate: 2023-11-27
+endDate: 2024-01-22
 tags:
   - but-gerer
   - but-collaborer
@@ -31,9 +31,3 @@ links:
     - label: Dépôt GitHub
       anchor: github
       href: https://github.com/5cover/S1.04
-references:
-  en: []
-  fr: []
-gallery:
-  en: []
-  fr: []

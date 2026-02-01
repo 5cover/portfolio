@@ -2,20 +2,21 @@ title:
   en: ztest
   fr: ztest
 abstract:
-  en: '
-
-    The <code>test</code> Unix command implemented in <a target="_blank" rel="noopener
-    noreferrer" href="https://en.wikipedia.org/wiki/Zig_(programming_language)" data-def-id="zig"
-    class="link def-tooltip-trigger">Zig</a>'
-  fr: '
-
-    La commande Unix <code>test</code> implémentée en <a target="_blank" rel="noopener
-    noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)" data-def-id="zig"
-    class="link def-tooltip-trigger">Zig</a>'
+  en: >-
+    
+    The <code>test</code> Unix command implemented in <a target="_blank"
+    rel="noopener noreferrer"
+    href="https://en.wikipedia.org/wiki/Zig_(programming_language)"
+    data-def-id="zig" class="link def-tooltip-trigger">Zig</a>
+  fr: >-
+    
+    La commande Unix <code>test</code> implémentée en <a target="_blank"
+    rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)"
+    data-def-id="zig" class="link def-tooltip-trigger">Zig</a>
 context:
   en: Personal
   fr: Personnel
-startDate: '2024-06-01'
+startDate: 2024-06-01
 tags:
   - software
   - cli
@@ -23,7 +24,6 @@ tags:
 technologies:
   - zig
   - vs-code
-team: []
 links:
   en:
     - label: GitHub repository
@@ -42,6 +42,3 @@ references:
     - anchor: github
       caption: test.c &mdash; dépôt GitHub GNU coreutils
       href: https://github.com/coreutils/coreutils/blob/master/src/test.c
-gallery:
-  en: []
-  fr: []

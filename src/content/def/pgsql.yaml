@@ -3,8 +3,6 @@ name:
   full:
     en: PostgreSQL
     fr: PostgreSQL
-  abbr: {}
-  short: {}
 synopsis:
   en: A free and open-source relational database management system.
   fr: Système de gestion de base de données relationnelle et objet.

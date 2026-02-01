@@ -2,15 +2,15 @@ title:
   en: Documentation generator
   fr: Générateur de documentation
 abstract:
-  en: Automation, scripts, containerization, Markdown parser. Setting up a development
-    environment (S1.03)
-  fr: Automatisation, scripts, conteneurisation, parseur Markdown. Installation d'un
-    poste pour le développement (S1.03)
+  en: Automation, scripts, containerization, Markdown parser. Setting up a
+    development environment (S1.03)
+  fr: Automatisation, scripts, conteneurisation, parseur Markdown. Installation
+    d'un poste pour le développement (S1.03)
 context:
   en: BUT
   fr: BUT
-startDate: '2023-10-25'
-endDate: '2023-01-21'
+startDate: 2023-10-25
+endDate: 2023-01-21
 tags:
   - but-administrer
   - but-collaborer
@@ -39,9 +39,3 @@ links:
     - label: Dépôt GitHub
       anchor: github
       href: https://github.com/5cover/S1.03
-references:
-  en: []
-  fr: []
-gallery:
-  en: []
-  fr: []

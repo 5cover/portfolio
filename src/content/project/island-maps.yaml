@@ -5,7 +5,7 @@ abstract:
 context:
   en: Personal
   fr: Personnel
-startDate: "2023-04-27"
+startDate: 2023-04-27
 tags:
   - idea
   - algorithms
@@ -17,7 +17,9 @@ links:
     href: https://anno2070.fandom.com/wiki/User_blog:Scover32/Anno_2070:_Island_maps
 references:
   - anchor: wikipedia
-    href: https://en.wikipedia.org/wiki/NP-hardness
+    href:
+      en: https://en.wikipedia.org/wiki/NP-hardness
+      fr: https://fr.wikipedia.org/wiki/NP-difficile
     caption:
       en: NP-hardness, Wikipedia
       fr: NP-difficile, Wikipédia

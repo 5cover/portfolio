@@ -6,7 +6,6 @@ name:
   abbr:
     en: SASS
     fr: SASS
-  short: {}
 synopsis:
   en: A preprocessor scripting language that is interpreted or compiled into CSS.
   fr: Langage de script préprocesseur qui est compilé ou interprété en CSS.
