@@ -230,9 +230,9 @@ export async function buildInfonodeGraph(l: Locale): Promise<Infonode[]> {
 
         successors.push(...project.tags.map(tagId => makeRef(l, 'Tag', tagId, 'content', 'private')));
 
-        successors.push(...project.technologies.map(defId => makeRef(l, 'Def', defId, 'content', 'public')));
+        successors.push(...project.technologies.map(({ id }) => makeRef(l, 'Def', id, 'content', 'public')));
 
-        successors.push(...project.team.map(defId => makeRef(l, 'Def', defId, 'content', 'public')));
+        successors.push(...project.team.map(({ id }) => makeRef(l, 'Def', id, 'content', 'public')));
 
         successors.push(...createConnectorNodes(id, project.links));
 

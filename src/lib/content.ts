@@ -1,11 +1,11 @@
-import type { Item, LocalizedItem } from '../content.config';
-import { normalizeLocale, type Locale } from '../i18n';
+import type { Item, Localized, LocalizedItem } from '../content.config';
+import { Locales, normalizeLocale, type Locale } from '../i18n';
 import { getCollection, getEntry, render, type CollectionKey } from 'astro:content';
+import type { Copy } from './copy';
 
 export type TextualKind = 'history' | 'history/body' | 'literature' | 'project';
 export type Entry<T> = readonly [id: string, d: T];
 
-export const anchor = await getter('anchor');
 export const contact = await getter('contact');
 export const project = await getterLocalized('project', (d, l) => ({
     ...d,
@@ -55,10 +55,21 @@ export const history = await getterLocalized('history', (d, l) => ({
         : undefined,
 }));
 export const pianoTile = await getterLocalized('piano-tile', (d, l) => ({
-    ...d,
-    title: d.title[l],
-    summary: d.summary[l],
+    title: loc(l, d.title),
+    summary: loc(l, d.summary),
+    backgroundImage: d.backgroundImage,
+    href: d.href,
 }));
+
+function loc(l: Locale, c: Localized<Copy>): Copy {
+    if (c === null) return null;
+    const isLocaleRecord = (c: Exclude<Localized<Copy>, null>): c is Record<Locale, Copy> =>
+        typeof c === 'object' && Locales.every(l => l in c);
+    if (isLocaleRecord(c)) {
+        return c[l];
+    }
+    return c;
+}
 
 export async function textual(locale: string, kind: TextualKind, id: string) {
     const entryId = buildTextualId(locale, kind, id);

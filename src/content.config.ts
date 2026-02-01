@@ -7,26 +7,30 @@ import {
     type CollectionKey,
 } from 'astro:content';
 import type { ExplicitUndefined } from './lib/types';
-import { Locales, type Locale, type Localized } from './i18n';
+import { Locales, type Locale } from './i18n';
 import { glob } from 'astro/loaders';
 import type { CollectionConfig } from 'astro/content/config';
 import { typedObjectFromEntries } from './lib/util';
 import { AnchorKeys } from './catalog/anchor';
 import { DefTypesKeys } from './catalog/def-type';
-import { zCopy } from './lib/copy';
+import { zCopy, type Copy } from './lib/copy';
 import { TagKeys } from './catalog/tags';
+import type { ZodTypeAny, ZodTypeDef } from 'astro:schema';
 
 export const LiteratureKinds = ['passion', 'blog', 'story'] as const;
 export type LiteratureKind = (typeof LiteratureKinds)[number];
 
-const zLocales: z.ZodType<Locale> = z.enum(Locales);
-const zText = zDefault(zCopy, '');
 const zUrl = z.string(); // .url() does not support relatve
 const zSrc = z.string().refine(src => src); // todo (check exists?)
+const zText = zLocalized(zCopy);
 
 export type Item<C extends CollectionKey> = CollectionEntry<C>['data'];
-type Delocalize<T> = { [P in keyof T]: ExplicitUndefined<T[P]> extends Localized<infer U> ? U : Delocalize<T[P]> };
+export type Localized<T> = T | Record<Locale, T>;
+type Delocalize<T> = { [P in keyof T]: T[P] extends Localized<infer T> ? T : Delocalize<T[P]> };
 export type LocalizedItem<C extends CollectionKey> = Delocalize<Item<C>>;
+
+type X = Delocalize<Item<'def'>['name']>;
+type Y = Delocalize<Item<'def'>>['name'];
 
 const zGraphic = z.object({
     src: zSrc,
@@ -35,93 +39,92 @@ const zGraphic = z.object({
 export type Graphic = z.infer<typeof zGraphic>;
 
 const zLink = z.object({
-    label: zLocalized(zText),
+    label: zText,
     anchor: zDefault(z.enum(AnchorKeys), 'website'),
     href: zLocalized(z.string().url()),
 });
 export type Link = z.infer<typeof zLink>;
 
 const zReference = z.object({
-    caption: zLocalized(zText),
-    anchor: zText,
-    href: zLocalized(zText),
+    caption: zText,
+    anchor: z.string(),
+    href: zText,
 });
 export type Reference = z.infer<typeof zReference>;
 
 // todo: redo this cleanly and typedly
 const zGalleryItem = z.object({
-    caption: zLocalized(zText),
+    caption: zText,
     src: zSrc.optional(),
     iframeSrc: zSrc.optional(),
-    content: zText.optional(),
+    content: z.string().optional(),
 });
 
 export type GalleryItem = z.infer<typeof zGalleryItem>;
 
 export const collections = defCollections({
     contact: z.object({
-        platform: zText,
-        name: zText,
+        platform: z.string(),
+        name: z.string(),
         href: zUrl,
         icon: zGraphic,
     }),
     def: z.object({
         type: z.enum(DefTypesKeys),
         name: z.object({
-            full: zLocalized(zText),
-            abbr: zLocalized(zText).optional(),
-            short: zLocalized(zText).optional(),
+            full: zText,
+            abbr: zText.optional(),
+            short: zText.optional(),
         }),
-        synopsis: zLocalized(zText),
-        wiki: zLocalized(zText),
+        synopsis: zText,
+        wiki: zText,
         background: zSrc.optional(),
         logo: zGraphic.optional(),
     }),
     history: z.object({
-        title: zLocalized(zText),
-        meta: zLocalized(zText),
+        title: zText,
+        meta: zText,
         year: z.number(),
         media: z
             .object({
-                img: zText,
-                alt: zLocalized(zText),
+                img: zSrc,
+                alt: zText,
             })
             .optional(),
     }),
     literature: z.object({
         kind: z.enum(LiteratureKinds),
-        title: zLocalized(zText),
-        abstract: zLocalized(zText),
+        title: zText,
+        abstract: zText,
         links: zArray(zLink),
         references: zArray(zReference),
         gallery: zArray(zGalleryItem),
         logo: zGraphic.optional(),
-        background: zText.optional(),
-        tags: zArray(zText),
+        background: zSrc,
+        tags: zArray(z.enum(TagKeys)),
     }),
     'piano-tile': z.object({
-        title: zLocalized(zText),
-        summary: zLocalized(zText),
-        backgroundImage: zText,
+        title: zText,
+        summary: zText,
+        backgroundImage: zSrc,
         href: zUrl,
     }),
     project: z.object({
-        title: zLocalized(zText),
-        abstract: zLocalized(zText),
-        context: zLocalized(zText).optional(),
+        title: zText,
+        abstract: zText,
+        context: zText.optional(),
         startDate: z.date().optional(),
         endDate: z.date().optional(),
         tags: zArray(z.enum(TagKeys)),
-        //todo: reference('def')
-        technologies: zArray(z.string()),
-        team: zArray(z.string()),
+        technologies: zArray(reference('def')),
+        team: zArray(reference('def')),
         links: zArray(zLink),
         references: zArray(zReference),
         gallery: zArray(zGalleryItem),
         logo: zGraphic.optional(),
-        background: zText.optional(),
+        background: zSrc,
     }),
-    textual: z.object({}),
+    textual: z.unknown(),
 });
 
 function defCollections<T extends Record<CollectionKey, BaseSchema>>(x: T) {
@@ -139,14 +142,14 @@ function defCollections<T extends Record<CollectionKey, BaseSchema>>(x: T) {
     ) as { [K in CollectionKey]: CollectionConfig<T[K]> };
 }
 
-function zArray<T>(schema: z.ZodType<T>) {
+function zArray<Z extends ZodTypeAny>(schema: Z) {
     return zDefault(z.array(schema), []);
 }
 
-function zLocalized<T>(schema: z.ZodType<T>) {
-    return schema.or(z.record(zLocales, schema));
+function zLocalized<Z extends ZodTypeAny>(schema: Z) {
+    return schema.or(z.strictObject(typedObjectFromEntries(Locales.map(l => [l, schema] as const))));
 }
 
-function zDefault<T>(schema: z.ZodType<T>, def: T) {
+function zDefault<O, D extends ZodTypeDef, I>(schema: z.ZodType<O, D, I>, def: O) {
     return schema.nullish().transform(x => x ?? def);
 }

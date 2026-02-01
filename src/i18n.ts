@@ -3,7 +3,6 @@ import type { ThemeLabels } from './lib/types';
 
 export const Locales = ['fr', 'en'] as const;
 export type Locale = (typeof Locales)[number];
-export type Localized<T> = Record<Locale, T>;
 export const NavItemPages = ['projects', 'history' /* , ...LiteratureKinds */, 'history/history-but'] as const;
 export type NavItemPage = (typeof NavItemPages)[number];
 
