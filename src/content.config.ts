@@ -25,12 +25,6 @@ const zSrc = z.string().refine(src => src); // todo (check exists?)
 const zText = zLocalized(zCopy);
 
 export type Item<C extends CollectionKey> = CollectionEntry<C>['data'];
-export type Localized<T> = T | Record<Locale, T>;
-type Delocalize<T> = { [P in keyof T]: T[P] extends Localized<infer T> ? T : Delocalize<T[P]> };
-export type LocalizedItem<C extends CollectionKey> = Delocalize<Item<C>>;
-
-type X = Delocalize<Item<'def'>['name']>;
-type Y = Delocalize<Item<'def'>>['name'];
 
 const zGraphic = z.object({
     src: zSrc,
