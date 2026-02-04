@@ -1,12 +1,10 @@
-import type { Graphic, LocalizedItem } from '../content.config';
-import { stripTags } from '../lib/util';
+import type { Graphic } from '../content.config';
+import type { LocalizedItem } from '../lib/content';
 import { requireElementById } from './util';
 
 type Project = LocalizedItem<'project'>;
 type ProjectEntry = [id: string, project: Project];
 type ProjectIndex = Record<string, Project>;
-type TagIndex = Record<string, LocalizedItem<'tag'>>;
-type AnchorIndex = Record<string, LocalizedItem<'anchor'>>;
 
 async function init(): Promise<void> {
     const locale = document.documentElement.lang || 'fr';

@@ -1,4 +1,5 @@
-import type { Translation } from '../i18n';
+import { capitalize } from '../lib/util';
+import type { Translation } from './Translation';
 
 export default {
     flagClass: 'fi-us',
@@ -21,16 +22,14 @@ export default {
         system: 'System theme',
         dark: 'Dark theme',
     },
-    copy: {
-        details: 'Details',
-        fmtTitle: '%s logo',
-        ongoing: 'ongoing',
-        links: 'Links',
-        team: 'Team',
-        story: 'Story',
-        references: 'References',
-        technologies: 'Technologies',
-        gallery: 'Gallery',
-        refJumpUp: 'Jump up',
-    },
+    details: 'Details',
+    logoTitle: defTitle => `${capitalize(defTitle)} logo`,
+    ongoing: 'ongoing',
+    links: 'Links',
+    team: 'Team',
+    story: 'Story',
+    references: 'References',
+    technologies: 'Technologies',
+    gallery: 'Gallery',
+    refJumpUp: 'Jump up',
 } as const satisfies Translation;

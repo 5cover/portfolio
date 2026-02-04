@@ -6,7 +6,9 @@ import Graphic from '../Graphic';
 import LinkList from '../LinkList';
 import ReferenceList from '../ReferenceList.astro';
 import * as content from '../../lib/content';
-import { getLabels, normalizeLocale } from '../../i18n';
+import { translation, normalizeLocale } from '../../i18n';
+import { copy } from '../../lib/copy';
+import Copy from '../Copy.astro';
 
 interface Props {
     id: string;
@@ -15,44 +17,45 @@ interface Props {
 const { id, mainClass } = Astro.props;
 
 const locale = normalizeLocale(Astro.currentLocale);
-const copy = getLabels(locale).copy;
+const _ = translation(locale);
 const data = content.literature(locale, id);
 const body = await content.textual(locale, 'literature', id);
 const backgroundStyle = data.background ? `--bg-img: url(${data.background})` : undefined;
-const logoTitle = copy.fmtTitle.replace('%s', data.title);
+const title = copy(data.title);
+const abstract = copy(data.abstract);
 ---
 
 <BaseLayout pageName={`literature/${id}`}>
     <main style={backgroundStyle} class={mainClass}>
         <header>
-            <h1 set:html={data.title} />
-            {data.logo ? <Graphic of={data.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
-            <p class='abstract' set:html={data.abstract} />
+            <h1><Copy c={title} /></h1>
+            {data.logo ? <Graphic of={data.logo} title={_.logoTitle(title.toString())} class='logo' /> : null}
+            <p class='abstract'><Copy c={abstract} /></p>
         </header>
         {
             data.links.length > 0 ? (
                 <section id='links'>
-                    <h2>{copy.links}</h2>
+                    <h2>{_.links}</h2>
                     <LinkList links={data.links} variant='page' />
                 </section>
             ) : null
         }
         <section id='story'>
-            <h2>{copy.story}</h2>
+            <h2>{_.story}</h2>
             <TextualContent content={body} />
         </section>
         {
             data.references.length > 0 ? (
                 <section id='references'>
-                    <h2>{copy.references}</h2>
-                    <ReferenceList references={data.references} backlinkLabel={copy.refJumpUp} />
+                    <h2>{_.references}</h2>
+                    <ReferenceList references={data.references} />
                 </section>
             ) : null
         }
         {
             data.gallery.length > 0 ? (
                 <section id='gallery'>
-                    <h2>{copy.gallery}</h2>
+                    <h2>{_.gallery}</h2>
                     <Gallery items={data.gallery} />
                 </section>
             ) : null

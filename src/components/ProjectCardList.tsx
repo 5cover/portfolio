@@ -1,11 +1,10 @@
-import type { LocalizedItem } from '../content.config';
 import type { Locale } from '../i18n';
-import type * as content from '../lib/content';
+import type { Entry, LocalizedItem } from '../lib/content';
 import ProjectCard from './ProjectCard';
 
 interface Props {
     class?: string;
-    entries: content.Entry<LocalizedItem<'project'>>[];
+    entries: Entry<LocalizedItem<'project'>>[];
     locale: Locale;
 }
 

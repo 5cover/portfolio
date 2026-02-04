@@ -1,5 +1,3 @@
-import type { ComponentChildren } from 'preact';
-
 export interface NavItem {
     page: string;
     label: string;

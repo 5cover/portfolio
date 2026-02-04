@@ -1,3 +1,3 @@
-import { createContext } from "preact";
+import { createContext } from 'preact';
 
-export const OutlineDepth = createContext<number>(0);
+export const outlineDepth = createContext<number>(0);

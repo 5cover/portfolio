@@ -23,3 +23,11 @@ Les requirements se centrent autour du BUT informatique
 ## rename collections to singular
 
 ## Cleanup types
+
+## convert all yaml to json
+
+## i18n
+
+switch default language to en
+
+deduplicate logic from pages

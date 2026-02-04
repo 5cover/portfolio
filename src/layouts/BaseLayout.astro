@@ -2,7 +2,7 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { getLabels, normalizeLocale } from '../i18n';
+import { translation, normalizeLocale } from '../i18n';
 
 import '../styles/base.scss';
 
@@ -12,14 +12,12 @@ interface Props {
 
 const { pageName } = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
-const labels = getLabels(locale);
-const siteDescription = labels.siteDescription;
-const githubTitle = labels.footerGitHubAnchorTitle;
+const _ = translation(locale);
 const dataBase = getRelativeLocaleUrl(locale, 'data');
 ---
 
 <!doctype html>
-<html lang={locale} data-locale={locale} data-data-base={dataBase} data-ongoing-label={labels.copy.ongoing}>
+<html lang={locale} data-locale={locale} data-data-base={dataBase} data-ongoing-label={_.ongoing}>
     <head>
         <link rel='apple-touch-icon' sizes='180x180' href='/portfolio/apple-touch-icon.png' />
         <link rel='icon' type='image/png' sizes='16x16' href='/portfolio/favicon-16x16.png' />
@@ -30,7 +28,7 @@ const dataBase = getRelativeLocaleUrl(locale, 'data');
         <link rel='sitemap' href='/sitemap-index.xml' />
         <meta charset='UTF-8' />
         <meta name='author' content='Raphaël Bardini' />
-        <meta name='description' content={siteDescription} />
+        <meta name='description' content={_.siteDescription} />
         <meta name='msapplication-TileColor' content='#2d89ef' />
         <meta name='theme-color' content='#ffffff' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -44,13 +42,12 @@ const dataBase = getRelativeLocaleUrl(locale, 'data');
             href='https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css'
         />
         <link rel='stylesheet' href='https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/default.min.css' />
-        <script is:inline async src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js'
-        ></script>
     </head>
+
     <body>
         <Header pageName={pageName} />
         <slot />
-        <Footer githubTitle={githubTitle} />
+        <Footer />
         <script src='../scripts/base.ts'></script>
     </body>
 </html>

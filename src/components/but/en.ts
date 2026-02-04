@@ -1,4 +1,4 @@
-import type { PageCopy } from "./types";
+import type { ButData } from './types';
 
 export default {
     skills: {
@@ -204,46 +204,30 @@ export default {
     synthesisHeading: 'Global summary',
     yearLabel: 'Year',
     logoAlt: 'BUT Computer Science logo',
-    heading: (
-        <>
-            <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Computer Science
-        </>
-    ),
+    heading: [{ title: 'Bachelor Universitaire Technologique', abbr: 'BUT' }, ' Computer science'],
     linkTextSyllabus: 'Officiel BUT Computer Science syllabus',
     skillsAbstract:
         'The BUT Computer Science program is not limited to learning technologies. It proposes an implicit progression of posture, from individual practice to understanding broader technical and human systems.',
-    skill: (i, name) => (
-        <>
-            Skill {i}: {name}
-        </>
-    ),
+    skill: (i, name) => `Skill ${i}: ${name}`,
     iutAlt: "Entrée de l'IUT de Lannion",
-    iutCaption: (
-        <>
-            The IUT of Lannion (<em>Côtes d'Armor</em>, France). This is where I am doing my BUT in Computer Science.
-        </>
-    ),
-    presentation: (
-        <>
-            <p>
-                Designing, creating and implementing IT solutions that meet the digital transformation needs of
-                companies is the daily life of the holder of the BUT in IT, regardless of the sector in which their
-                company works.
-            </p>
-            <p>
-                In three years after the baccalaureate, the BUT offers university training that combines theory and
-                practice, with an emphasis on progressive professionalization for rapid integration, while guaranteeing
-                a sufficient scientific level to allow those who wish to continue their studies.
-            </p>
-            <p>
-                The holder of the BUT specializing in IT is competent on technical and methodological levels while being
-                aware of current issues (data security, <em>cloud computing</em>, artificial intelligence), on societal,
-                legal, ethical and environmental issues related to the uses of digital technology.
-            </p>
-            <p>
-                At the end of a one-year common core, the student will be able, depending on their professional project,
-                to choose one of the four paths offered by the IT specialization.
-            </p>
-        </>
-    ),
-} satisfies PageCopy;
+    iutCaption: [
+        'The IUT of Lannion (',
+        { lang: 'fr', copy: "Côtes d'Armor" },
+        ', France). This is where I am doing my BUT in Computer Science.',
+    ],
+
+    presentation: [
+        {
+            p: 'Designing, creating and implementing IT solutions that meet the digital transformation needs of companies is the daily life of the holder of the BUT in IT, regardless of the sector in which their company works.',
+        },
+        {
+            p: 'In three years after the baccalaureate, the BUT offers university training that combines theory and practice, with an emphasis on progressive professionalization for rapid integration, while guaranteeing a sufficient scientific level to allow those who wish to continue their studies.',
+        },
+        {
+            p: 'The holder of the BUT specializing in IT is competent on technical and methodological levels while being aware of current issues (data security, cloud computing, artificial intelligence), on societal, legal, ethical and environmental issues related to the uses of digital technology.',
+        },
+        {
+            p: 'At the end of a one-year common core, the student will be able, depending on their professional project, to choose one of the four paths offered by the IT specialization.',
+        },
+    ],
+} satisfies ButData;

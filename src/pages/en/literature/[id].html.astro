@@ -3,8 +3,7 @@ import LiteratureDetailPage from '../../../components/pages/LiteratureDetailPage
 import { getCollection } from 'astro:content';
 import '../../../styles/literature.scss';
 export async function getStaticPaths() {
-    const entries = await getCollection('literature');
-    return entries.map(({ id }) => ({ params: { id } }));
+    return (await getCollection('literature')).map(({ id }) => ({ params: { id } }));
 }
 ---
 

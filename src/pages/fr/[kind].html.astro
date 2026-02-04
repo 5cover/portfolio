@@ -1,15 +1,10 @@
 ---
 import LiteratureIndexPage from '../../components/pages/LiteratureIndexPage.astro';
-import { LiteratureKinds } from '../../content.config';
+import { literatureKinds } from '../../i18n';
 
 export async function getStaticPaths() {
-    return LiteratureKinds.map(kind => ({ params: { kind } }));
-}
-
-const { kind } = Astro.params;
-if (!kind) {
-    throw new Error('Missing route params');
+    return literatureKinds.map(kind => ({ params: { kind } }));
 }
 ---
 
-<LiteratureIndexPage kind={kind} mainClass='margined' />
+<LiteratureIndexPage kind={Astro.params.kind} mainClass='margined' />

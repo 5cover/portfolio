@@ -1,14 +1,11 @@
 import type { Entry } from './content';
 
-export function throwf(x: unknown): never {
+export const throwf = (x: unknown) => {
     throw x instanceof Error ? x : new Error(String(x));
-}
-export function stripTags(value: string): string {
-    return value.replace(/<[^>]*>/g, '');
-}
-export function capitalize(value: string): string {
-    return value[0].toUpperCase() + value.slice(1);
-}
+};
+export const stripTags = (value: string) => value.replace(/<[^>]*>/g, '');
+
+export const capitalize = (value: string) => value[0].toUpperCase() + value.slice(1);
 
 export const typedObjectFromEntries = <const T extends ReadonlyArray<readonly [PropertyKey, unknown]>>(
     entries: T
@@ -16,9 +13,16 @@ export const typedObjectFromEntries = <const T extends ReadonlyArray<readonly [P
     return Object.fromEntries(entries) as { [K in T[number] as K[0]]: K[1] };
 };
 
-export function mapById<T>(entries: readonly Entry<T>[]): Record<string, T> {
-    return entries.reduce<Record<string, T>>((acc, [id, d]) => {
+export const mapById = <T>(entries: readonly Entry<T>[]): Record<string, T> =>
+    entries.reduce<Record<string, T>>((acc, [id, d]) => {
         acc[id] = d;
         return acc;
     }, {});
-}
+
+export const mapValues = <K extends PropertyKey, V, W>(o: Record<K, V>, map: (value: V, key: K) => W) =>
+    typedObjectFromEntries(plainEntries<K, V>(o).map(([k, v]) => [k, map(v, k)] as const));
+
+export const formatDate = (date: Date, locale: Intl.LocalesArgument) =>
+    new Intl.DateTimeFormat(locale, { dateStyle: 'long' }).format(date);
+
+export const plainEntries = <K extends PropertyKey, V>(o: Partial<Record<K, V>>) => Object.entries(o) as [K, V][];

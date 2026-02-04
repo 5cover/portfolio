@@ -1,18 +1,14 @@
 ---
-import type { LocalizedItem } from '../content.config';
-import * as content from '../lib/content';
+import type { Entry, LocalizedItem } from '../lib/content';
 import LiteratureCard from './LiteratureCard.astro';
 interface Props {
-    langLabels: {
-        fmtTitle: string;
-    };
-    entries: readonly content.Entry<LocalizedItem<'literature'>>[];
+    entries: readonly Entry<LocalizedItem<'literature'>>[];
     headingLevel?: number;
 }
 
-const { langLabels, entries, headingLevel = 3 } = Astro.props;
+const { entries, headingLevel = 3 } = Astro.props;
 ---
 
 <ul class='lvl list-detail-split-card'>
-    {entries.map(entry => <LiteratureCard langLabels={langLabels} entry={entry} headingLevel={headingLevel} />)}
+    {entries.map(entry => <LiteratureCard entry={entry} headingLevel={headingLevel} />)}
 </ul>

@@ -1,7 +1,7 @@
-import type { Localized } from '../i18n';
-import type { Copy } from '../lib/copy';
+import { loc, type Locale, type Localized } from '../i18n';
+import type { copy } from '../lib/copy';
 
-export const DefTypesKeys = [
+export const defTypesKeys = [
     'algorithm',
     'computer-language',
     'data-format',
@@ -22,11 +22,15 @@ export const DefTypesKeys = [
     'website',
 ] as const;
 
-export type DefTypeKey = (typeof DefTypesKeys)[number];
+export type DefTypeKey = (typeof defTypesKeys)[number];
 
 export interface DefType {
-    title: Localized<Copy>;
+    title: Localized<copy>;
 }
+
+export const localizeDefType = (l: Locale) => (d: DefType) => ({
+    title: loc(l, d.title),
+});
 
 export default {
     algorithm: { title: { en: 'algorithm', fr: 'algorithme' } },

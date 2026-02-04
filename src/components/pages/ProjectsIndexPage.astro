@@ -3,18 +3,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import '../../styles/projects.scss';
 
-interface Copy {
-    projectSearchSearch: string;
-    projectSearchPlaceholder: string;
-    projectSearchTags: string;
-    projectSearchSort: string;
-}
-
 interface Props {
-    copy: Copy;
+    copy: {
+        search: string;
+        placeholder: string;
+        tags: string;
+        sort: string;
+    };
 }
 
-const { copy } = Astro.props;
+const s = Astro.props.copy;
 ---
 
 <BaseLayout pageName='projects'>
@@ -23,23 +21,23 @@ const { copy } = Astro.props;
             <!-- Fill this up dynamically -->
         </datalist>
         <section class='lvl' id='search-bar'>
-            <h1>{copy.projectSearchSearch}</h1>
+            <h1>{s.search}</h1>
             <input
                 incremental
                 type='search'
                 id='search-input'
-                placeholder={copy.projectSearchPlaceholder}
+                placeholder={s.placeholder}
                 autocomplete='on'
                 list='project-titles'
             />
             <section>
-                <h3>{copy.projectSearchTags}</h3>
+                <h3>{s.tags}</h3>
                 <ul class='lvl list-rect' id='list-tag'>
                     <!-- Tags will be added here -->
                 </ul>
             </section>
             <section>
-                <h3>{copy.projectSearchSort}</h3>
+                <h3>{s.sort}</h3>
                 <ul class='lvl list-rect' id='list-sorting'>
                     <li>
                         <label for='sort-asc'

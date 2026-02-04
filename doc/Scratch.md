@@ -97,25 +97,17 @@ see astro docs
 
 Automatically generate heading levels
 
+## compute history year and sort by date span
+
+use yaml native dates?
+
 ## typed css
 
 classes
 
-## ~i18n~
+## fix clientside scripts and reuse cards
 
-~~switch default language to en~~
-
-~~deduplicate logic from pages~~
-
-experiment with MDX as translated JSX store using exports along with the main content.
-
-## ~~fix clientside scripts~~ and reuse cards
-
-## convert all yaml to json
-
-## compute history year and sort by date span
-
-use yaml native dates?
+and find a solution for defs
 
 ## remove formatting copy
 
@@ -126,3 +118,7 @@ with C style
 it's outdated
 
 what's the modern idiomatic way?
+
+## standardize copy usage
+
+remove tsx stuff.

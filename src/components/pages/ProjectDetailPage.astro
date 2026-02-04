@@ -8,12 +8,14 @@ import LinkList from '../LinkList';
 import ReferenceList from '../ReferenceList.astro';
 
 import * as content from '../../lib/content';
-import { formatDate } from '../../lib/date';
 import { pageHref } from '../../lib/links';
-import { getLabels, normalizeLocale } from '../../i18n';
+import { translation, normalizeLocale } from '../../i18n';
 
 import '../../styles/project.scss';
-import { capitalize } from '../../lib/util';
+import { formatDate } from '../../lib/util';
+import { copy } from '../../lib/copy';
+import tags, { localizeTag } from '../../catalog/tag';
+import Copy from '../Copy.astro';
 
 interface Props {
     id: string;
@@ -23,20 +25,19 @@ const { id } = Astro.props;
 
 const locale = normalizeLocale(Astro.currentLocale);
 
-const labels = getLabels(locale);
+const _ = translation(locale);
 
 const p = content.project(locale, id);
 const projectBody = await content.textual(locale, 'project', id);
 
 const backgroundStyle = p.background ? `--bg-img: url(${p.background})` : undefined;
-const logoTitle = labels.copy.fmtTitle.replace('%s', p.title);
-const startDate = p.startDate;
-const endDate = p.endDate;
-const startLabel = startDate ? formatDate(startDate, locale) : '';
-const endLabel = endDate ? formatDate(endDate, locale) : '';
-const context = p.context ? capitalize(p.context) : '';
-const teamDefs = p.team.map(memberId => content.def(locale, memberId));
-const techDefs = p.technologies.map(techId => content.def(locale, techId));
+const title = copy(p.title);
+const logoTitle = _.logoTitle(title.toString());
+const startLabel = p.startDate ? formatDate(p.startDate, locale) : '';
+const endLabel = p.endDate ? formatDate(p.endDate, locale) : '';
+const context = p.context ? copy(p.context).capitalize() : undefined;
+const teamDefs = p.team.map(({ id }) => content.def(locale, id));
+const techDefs = p.technologies.map(({ id }) => content.def(locale, id));
 ---
 
 <BaseLayout pageName={`project/${id}`}>
@@ -46,24 +47,29 @@ const techDefs = p.technologies.map(techId => content.def(locale, techId));
                 {
                     p.tags.map(tagId => (
                         <li>
-                            <a
-                                href={`${pageHref(locale, 'projects')}?tag=${tagId}`}
-                                set:html={content.tag(locale, tagId)}
-                            />
+                            <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`}>
+                                <Copy c={copy(localizeTag(locale)(tags[tagId]).title)} />
+                            </a>
                         </li>
                     ))
                 }
             </ul>
-            <h1 set:html={p.title} />
+            <h1><Copy c={copy(p.title)} /></h1>
             {p.logo ? <Graphic of={p.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
-            <p class='abstract' set:html={p.abstract} />
+            <p class='abstract'><Copy c={copy(p.abstract)} /></p>
             <div class='status-context'>
-                {context ? <small class='context'>{context}</small> : null}
                 {
-                    startDate ? (
+                    context ? (
+                        <small class='context'>
+                            <Copy c={context} />
+                        </small>
+                    ) : null
+                }
+                {
+                    p.startDate ? (
                         <small class='status'>
-                            <time datetime={startDate}>{startLabel}</time> &ndash;{' '}
-                            {endDate ? <time datetime={endDate}>{endLabel}</time> : labels.copy.ongoing}
+                            <time datetime={p.startDate.toISOString()}>{startLabel}</time> &ndash;{' '}
+                            {p.endDate ? <time datetime={p.endDate.toISOString()}>{endLabel}</time> : _.ongoing}
                         </small>
                     ) : null
                 }
@@ -72,7 +78,7 @@ const techDefs = p.technologies.map(techId => content.def(locale, techId));
         {
             p.links.length > 0 ? (
                 <section id='links'>
-                    <h2>{labels.copy.links}</h2>
+                    <h2>{_.links}</h2>
                     <LinkList links={p.links} variant='page' />
                 </section>
             ) : null
@@ -80,35 +86,35 @@ const techDefs = p.technologies.map(techId => content.def(locale, techId));
         {
             teamDefs.length > 0 ? (
                 <section id='team'>
-                    <h2>{labels.copy.team}</h2>
-                    <DefCardList defs={teamDefs} langLabels={{ fmtTitle: labels.copy.fmtTitle }} />
+                    <h2>{_.team}</h2>
+                    <DefCardList defs={teamDefs} />
                 </section>
             ) : null
         }
         <section id='story'>
-            <h2>{labels.copy.story}</h2>
+            <h2>{_.story}</h2>
             <TextualContent content={projectBody} />
         </section>
         {
             p.references.length > 0 ? (
                 <section id='references'>
-                    <h2>{labels.copy.references}</h2>
-                    <ReferenceList references={p.references} backlinkLabel={labels.copy.refJumpUp} />
+                    <h2>{_.references}</h2>
+                    <ReferenceList references={p.references} />
                 </section>
             ) : null
         }
         {
             techDefs.length > 0 ? (
                 <section id='technologies'>
-                    <h2>{labels.copy.technologies}</h2>
-                    <DefCardList defs={techDefs} langLabels={{ fmtTitle: labels.copy.fmtTitle }} />
+                    <h2>{_.technologies}</h2>
+                    <DefCardList defs={techDefs} />
                 </section>
             ) : null
         }
         {
             p.gallery.length > 0 ? (
                 <section id='gallery'>
-                    <h2>{labels.copy.gallery}</h2>
+                    <h2>{_.gallery}</h2>
                     <Gallery items={p.gallery} />
                 </section>
             ) : null

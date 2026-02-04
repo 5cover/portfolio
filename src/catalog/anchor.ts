@@ -1,6 +1,6 @@
 import type { Graphic } from '../content.config';
 
-export const AnchorKeys = [
+export const anchorKeys = [
     'ccm',
     'email',
     'github',
@@ -12,7 +12,7 @@ export const AnchorKeys = [
     'wikipedia',
     'youtube',
 ] as const;
-export type AnchorKey = (typeof AnchorKeys)[number];
+export type AnchorKey = (typeof anchorKeys)[number];
 
 export default {
     ccm: { src: '/portfolio/img/social/ccm.png' },

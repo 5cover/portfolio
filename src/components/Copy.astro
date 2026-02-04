@@ -1,9 +1,9 @@
 ---
-import { type Copy, astro as copy } from '../lib/copy';
+import { type Copy as Cop } from '../lib/copy';
 interface Props {
-    c: Copy;
+    c: Cop;
 }
-const C = copy(Astro.props.c);
+const C = Astro.props.c.astro();
 ---
 
 <C />

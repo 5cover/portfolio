@@ -1,4 +1,4 @@
-import type { Translation } from '../i18n';
+import type { Translation } from './Translation';
 
 export default {
     flagClass: 'fi-fr',
@@ -22,16 +22,14 @@ export default {
         system: 'Thème système',
         dark: 'Thème sombre',
     },
-    copy: {
-        details: 'Détails',
-        fmtTitle: 'Logo %s',
-        ongoing: 'en cours',
-        links: 'Liens',
-        team: 'Équipe',
-        story: 'Histoire',
-        references: 'Références',
-        technologies: 'Technologies',
-        gallery: 'Galerie',
-        refJumpUp: 'Revenir plus haut',
-    },
+    details: 'Détails',
+    logoTitle: title => `Logo ${title}`,
+    ongoing: 'en cours',
+    links: 'Liens',
+    team: 'Équipe',
+    story: 'Histoire',
+    references: 'Références',
+    technologies: 'Technologies',
+    gallery: 'Galerie',
+    refJumpUp: 'Revenir plus haut',
 } as const satisfies Translation;

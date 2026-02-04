@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default ({ children }: Props) => {
-    const depth = useContext(ctx.OutlineDepth);
+    const depth = useContext(ctx.outlineDepth);
     return depth <= 6 ? (
         createElement(`h${depth}`, null, children)
     ) : (

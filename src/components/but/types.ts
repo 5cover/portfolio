@@ -1,27 +1,27 @@
-import type { Copy } from '../../lib/types';
+import type { copy } from '../../lib/copy';
 
-export const SkillNames = ['realiser', 'optimiser', 'administrer', 'gerer', 'conduire', 'collaborer'] as const;
-export type SkillName = (typeof SkillNames)[number];
-export const YearTags = ['but-1', 'but-2', 'but-3'] as const;
-export type YearTag = (typeof YearTags)[number];
+export const skillNames = ['realiser', 'optimiser', 'administrer', 'gerer', 'conduire', 'collaborer'] as const;
+export type SkillName = (typeof skillNames)[number];
+export const yearTags = ['but-1', 'but-2', 'but-3'] as const;
+export type YearTag = (typeof yearTags)[number];
 
-export interface PageCopy {
-    skills: Record<SkillName, Record<'name' | 'desc', Copy>>;
+export interface ButData {
+    skills: Record<SkillName, Record<'name' | 'desc', copy>>;
     years: Record<
         YearTag,
-        Record<'label' | 'title' | 'description' | 'bilan', Copy> & {
-            skills: Partial<Record<SkillName, { ac: Copy[] }>>;
+        Record<'label' | 'title' | 'description' | 'bilan', copy> & {
+            skills: Partial<Record<SkillName, { ac: copy[] }>>;
         }
     >;
     yearTabsLabel: string;
-    synthesisHeading: Copy;
-    yearLabel: Copy;
+    synthesisHeading: copy;
+    yearLabel: copy;
     logoAlt: string;
-    linkTextSyllabus: Copy;
-    skillsAbstract: Copy;
-    skill: (i: number, name: Copy) => Copy;
+    linkTextSyllabus: copy;
+    skillsAbstract: copy;
+    skill: (i: number, name: copy) => copy;
     iutAlt: string;
-    presentation: Copy;
-    heading: Copy;
-    iutCaption: Copy;
+    presentation: copy;
+    heading: copy;
+    iutCaption: copy;
 }

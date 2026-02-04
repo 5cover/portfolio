@@ -1,16 +1,13 @@
 ---
+import { translation } from '../i18n';
 import Graphic from './Graphic';
 
-interface Props {
-    githubTitle: string;
-}
-
-const { githubTitle } = Astro.props;
+const gh = translation(Astro.currentLocale).footerGitHubAnchorTitle;
 ---
 
 <footer class='lvl'>
     <small>&copy; <time datetime='2024' data-current-year>2024</time> Raphaël Bardini</small>
-    <a target='_blank' rel='noopener noreferrer' href='https://github.com/5cover/portfolio' title={githubTitle}>
-        <Graphic src='/portfolio/img/social/github.svg' kind='svg' alt='GitHub' title={githubTitle} />
+    <a target='_blank' rel='noopener noreferrer' href='https://github.com/5cover/portfolio' title={gh}>
+        <Graphic src='/portfolio/img/social/github.svg' kind='svg' alt='GitHub' title={gh} />
     </a>
 </footer>

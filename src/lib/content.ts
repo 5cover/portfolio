@@ -1,33 +1,49 @@
-import type { Item, Link } from '../content.config';
-import { Locales, normalizeLocale, type Locale } from '../i18n';
+import type { GalleryItem, Item, Link, Reference } from '../content.config';
+import { loc, normalizeLocale, type Locale, type Localize } from '../i18n';
 import { getCollection, getEntry, render, type CollectionKey } from 'astro:content';
-import type { Copy } from './copy';
 
 export type TextualKind = 'history' | 'history/body' | 'literature' | 'project';
 export type Entry<T> = readonly [id: string, d: T];
+export type LocalizedItem<C extends CollectionKey> = Localize<Item<C>>;
 
 export const contact = await getter('contact');
 
-export const localizeLink = (d: Link)
+const locLink = (l: Locale) => (d: Link) => ({
+    ...d,
+    href: loc(l, d.href),
+    label: loc(l, d.label),
+});
 
-export const project = await getterLocalized('project', (d, l) => ({
+const locRef = (l: Locale) => (d: Reference) => ({
+    ...d,
+    caption: loc(l, d.caption),
+    href: loc(l, d.href),
+});
+
+const locGalleryItem = (l: Locale) => (d: GalleryItem) => ({
+    ...d,
+    caption: loc(l, d.caption),
+});
+
+export const project = await getterLocalized('project', (l, d) => ({
     ...d,
     title: loc(l, d.title),
     abstract: loc(l, d.abstract),
     context: loc(l, d.context),
-    links: loc(l, d.links),
-    references: loc(l, d.references),
-    gallery: loc(l, d.gallery),
+    links: d.links.map(locLink(l)),
+    references: d.references.map(locRef(l)),
+    gallery: d.gallery.map(locGalleryItem(l)),
 }));
-export const literature = await getterLocalized('literature', (d, l) => ({
+
+export const literature = await getterLocalized('literature', (l, d) => ({
     ...d,
     title: loc(l, d.title),
     abstract: loc(l, d.abstract),
-    links: loc(l, d.links),
-    references: loc(l, d.references),
-    gallery: loc(l, d.gallery),
+    links: d.links.map(locLink(l)),
+    references: d.references.map(locRef(l)),
+    gallery: d.gallery.map(locGalleryItem(l)),
 }));
-export const def = await getterLocalized('def', (d, l) => ({
+export const def = await getterLocalized('def', (l, d) => ({
     ...d,
     name: {
         full: loc(l, d.name.full),
@@ -37,7 +53,7 @@ export const def = await getterLocalized('def', (d, l) => ({
     synopsis: loc(l, d.synopsis),
     wiki: loc(l, d.wiki),
 }));
-export const history = await getterLocalized('history', (d, l) => ({
+export const history = await getterLocalized('history', (l, d) => ({
     ...d,
     title: loc(l, d.title),
     meta: loc(l, d.meta),
@@ -49,21 +65,11 @@ export const history = await getterLocalized('history', (d, l) => ({
           }
         : undefined,
 }));
-export const pianoTile = await getterLocalized('piano-tile', (d, l) => ({
+export const pianoTile = await getterLocalized('piano-tile', (l, d) => ({
     ...d,
     title: loc(l, d.title),
     summary: loc(l, d.summary),
 }));
-
-type Localized<T> = Record<Locale, T>;
-function loc<T>(l: Locale, c: T | Localized<T>): T {
-    const isLocalized = (c: T | Localized<T>): c is Localized<T> =>
-        c !== null && typeof c === 'object' && Locales.every(l => l in c);
-    if (isLocalized(c)) {
-        return c[l];
-    }
-    return c;
-}
 
 export async function textual(locale: string, kind: TextualKind, id: string) {
     const entryId = buildTextualId(locale, kind, id);
@@ -78,7 +84,7 @@ function buildTextualId(locale: string, kind: TextualKind, id: string): string {
     return `${normalizeLocale(locale)}/${kind}/${id}`;
 }
 
-async function getterLocalized<K extends CollectionKey, U>(k: K, localize: (data: Item<K>, locale: Locale) => U) {
+async function getterLocalized<K extends CollectionKey, U>(k: K, localize: (locale: Locale, data: Item<K>) => U) {
     const raw = await getCollection(k);
     type I = Readonly<U>;
     function get(locale: string | undefined, id: string): I;
@@ -86,13 +92,13 @@ async function getterLocalized<K extends CollectionKey, U>(k: K, localize: (data
     function get(locale: string | undefined, id?: string): I | readonly Entry<I>[] {
         const l = normalizeLocale(locale);
         if (id === undefined) {
-            return raw.map(e => [e.id, localize(e.data, l)] as const);
+            return raw.map(e => [e.id, localize(l, e.data)] as const);
         }
         const item = raw.find(e => e.id === id);
         if (item === undefined) {
             throw new Error(`${k} of id '${id}' does not exist`);
         }
-        return localize(item.data, l);
+        return localize(l, item.data);
     }
     return get;
 }

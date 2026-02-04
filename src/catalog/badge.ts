@@ -1,6 +1,6 @@
 import type { Graphic } from '../content.config';
-export const BadgeKeys = ['but-informatique'] as const;
-export type BadgeKey = (typeof BadgeKeys)[number];
+export const badgeKeys = ['but-informatique'] as const;
+export type BadgeKey = (typeof badgeKeys)[number];
 
 export interface Badge {
     graphic: Graphic;

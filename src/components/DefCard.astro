@@ -1,39 +1,35 @@
 ---
-import type { LocalizedItem } from '../content.config';
-import * as content from '../lib/content';
-import { capitalize } from '../lib/util';
+import defTypes, { localizeDefType as localizeDefType } from '../catalog/def-type';
+import { normalizeLocale } from '../i18n';
+import type { LocalizedItem } from '../lib/content';
+import { copy } from '../lib/copy';
+import Copy from './Copy.astro';
 import Graphic from './Graphic';
+import { translation } from '../i18n';
 
-function buildDefTitle(entry: LocalizedItem<'def'>): string {
-    const abbr = entry.name.abbr;
-    return abbr ? `${entry.name.full} (${abbr})` : entry.name.full;
+function buildDefTitle(entry: LocalizedItem<'def'>) {
+    const { abbr, full } = entry.name;
+    return copy(abbr ? [full, ' (', { title: copy(full).toString(), abbr }, ')'] : full);
 }
 
-function formatTitle(fmt: string, title: string): string {
-    return fmt.replace('%s', title);
-}
 interface Props {
     def: LocalizedItem<'def'>;
-    langLabels: {
-        fmtTitle: string;
-    };
 }
-const { def, langLabels } = Astro.props;
+const { def } = Astro.props;
 const defTitle = buildDefTitle(def);
-const logoTitle = formatTitle(langLabels.fmtTitle, defTitle);
+const logoTitle = translation(Astro.currentLocale).logoTitle(defTitle.toString());
 const backgroundStyle = def.background ? `--bg-img-card: url(${def.background})` : undefined;
 
-const defType = content.defType(Astro.currentLocale, def.type);
-const typeName = defType.title ?? def.type;
+const typeName = localizeDefType(normalizeLocale(Astro.currentLocale))(defTypes[def.type]).title;
 ---
 
 <article class='def' style={backgroundStyle}>
     <h4>
         <a class='foil' target='_blank' rel='noopener noreferrer' href={def.wiki}>
-            {defTitle}
+            <Copy c={defTitle} />
         </a>
     </h4>
     {def.logo ? <Graphic of={def.logo} title={logoTitle} class='logo' /> : null}
-    <p class='type'><small>{capitalize(typeName)}</small></p>
-    <p class='synopsis' set:html={def.synopsis} />
+    <p class='type'><small><Copy c={copy(typeName).capitalize()} /></small></p>
+    <p class='synopsis'><Copy c={copy(def.synopsis)} /></p>
 </article>

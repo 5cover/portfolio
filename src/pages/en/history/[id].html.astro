@@ -3,14 +3,8 @@ import HistoryDetailPage from '../../../components/pages/HistoryDetailPage.astro
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-    const entries = await getCollection('history');
-    return entries.map(({ id }) => ({ params: { id } }));
-}
-
-const { id } = Astro.params;
-if (!id) {
-    throw new Error('Missing route params');
+    return (await getCollection('history')).map(({ id }) => ({ params: { id } }));
 }
 ---
 
-<HistoryDetailPage id={id} />
+<HistoryDetailPage id={Astro.params.id} />

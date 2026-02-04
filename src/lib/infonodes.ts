@@ -70,7 +70,6 @@ export async function buildInfonodeGraph(l: Locale): Promise<Infonode[]> {
     const projects = content.project(l),
         literature = content.literature(l),
         defs = content.def(l),
-        tags = content.tag(l),
         contacts = content.contact(),
         history = content.history(l),
         pianoTiles = content.pianoTile(l);
@@ -80,17 +79,6 @@ export async function buildInfonodeGraph(l: Locale): Promise<Infonode[]> {
     const addNode = (node: Infonode) => {
         nodes.push(node);
     };
-
-    tags.forEach(([id, data]) => {
-        addNode({
-            id: nodeid(l, 'Tag', id),
-            type: 'Tag',
-            role: 'content',
-            visibility: 'private',
-            successors: [],
-            data,
-        });
-    });
 
     defs.forEach(([id, data]) => {
         addNode({
@@ -168,18 +156,7 @@ export async function buildInfonodeGraph(l: Locale): Promise<Infonode[]> {
     const createConnectorNodes = (parentId: string, links: Link[]): InfonodeRef[] => {
         return links.map((link, index) => {
             const connectorId = `${parentId}:connector:${index}`;
-            const icon = content.anchor(link.anchor);
             const successors: InfonodeRef[] = [];
-
-            successors.push(makeRef(l, 'Image', `${connectorId}:icon`, 'content', 'private'));
-            addNode({
-                id: nodeid(l, 'Image', `${connectorId}:icon`),
-                type: 'Image',
-                role: 'content',
-                visibility: 'private',
-                successors: [],
-                data: icon,
-            });
 
             addNode({
                 id: nodeid(l, 'Connector', connectorId),

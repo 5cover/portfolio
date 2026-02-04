@@ -1,31 +1,37 @@
 ---
+import anchors from '../catalog/anchor';
 import type { Reference } from '../content.config';
-import * as content from '../lib/content';
+import { translation, type Localize } from '../i18n';
+import { copy } from '../lib/copy';
+import Copy from './Copy.astro';
 import Graphic from './Graphic';
 
 interface Props {
-    references: Reference[];
-    backlinkLabel: string;
+    references: Localize<Reference>[];
 }
 
-const { references, backlinkLabel } = Astro.props;
+const { references } = Astro.props;
+const _ = translation(Astro.currentLocale);
 ---
 
 <ol class='list'>
     {
         references.map((ref, index) => {
             const num = index + 1;
-            const anchor = content.anchor(ref.anchor);
+            const anchor = anchors[ref.anchor];
+            const caption = copy(ref.caption);
             return (
                 <li id={`ref-${num}`}>
-                    <span class='ref-backlink' aria-label={backlinkLabel} title={backlinkLabel}>
+                    <span class='ref-backlink' aria-label={_.refJumpUp} title={_.refJumpUp}>
                         <a class='link' href={`#cite-ref-${num}`}>
                             &uarr;
                         </a>
                     </span>
                     <a class='ref-cite link' target='_blank' rel='noopener noreferrer' href={ref.href}>
-                        {anchor ? <Graphic of={anchor} alt={ref.caption} /> : null}
-                        <span set:html={ref.caption} />
+                        <Graphic of={anchor} alt={caption.toString()} />
+                        <span>
+                            <Copy c={caption} />
+                        </span>
                     </a>
                 </li>
             );

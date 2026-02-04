@@ -1,8 +1,11 @@
 ---
 import type { GalleryItem } from '../content.config';
+import type { Localize } from '../i18n';
+import { copy } from '../lib/copy';
+import Copy from './Copy.astro';
 
 interface Props {
-    items: GalleryItem[];
+    items: Localize<GalleryItem>[];
 }
 
 const { items } = Astro.props;
@@ -10,26 +13,31 @@ const { items } = Astro.props;
 
 <ul class='lvl gallery'>
     {
-        items.map((item, index) => (
-            <li>
-                <figure id={`gallery-${index + 1}`} class='figure'>
-                    {item.src ? (
-                        <img src={item.src} alt={item.caption} title={item.caption} loading='lazy' />
-                    ) : item.iframeSrc ? (
-                        <iframe
-                            src={item.iframeSrc}
-                            frameborder='0'
-                            loading='lazy'
-                            width='300'
-                            height='300'
-                            title={item.caption}
-                        />
-                    ) : item.content ? (
-                        <Fragment set:html={item.content} />
-                    ) : null}
-                    <figcaption set:html={item.caption} />
-                </figure>
-            </li>
-        ))
+        items.map((item, index) => {
+            const caption = copy(item.caption);
+            return (
+                <li>
+                    <figure id={`gallery-${index + 1}`} class='figure'>
+                        {item.src ? (
+                            <img src={item.src} alt={caption.toString()} title={caption.toString()} loading='lazy' />
+                        ) : item.iframeSrc ? (
+                            <iframe
+                                src={item.iframeSrc}
+                                frameborder='0'
+                                loading='lazy'
+                                width='300'
+                                height='300'
+                                title={caption.toString()}
+                            />
+                        ) : item.content ? (
+                            <Fragment set:html={item.content} />
+                        ) : null}
+                        <figcaption>
+                            <Copy c={caption} />
+                        </figcaption>
+                    </figure>
+                </li>
+            );
+        })
     }
 </ul>

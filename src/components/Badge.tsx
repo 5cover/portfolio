@@ -1,7 +1,7 @@
 import type { ComponentChildren } from 'preact';
-import type { Badge, BadgeKey } from '../catalog/badges';
+import type { Badge, BadgeKey } from '../catalog/badge';
 import Graphic from './Graphic';
-import badges from '../catalog/badges';
+import badges from '../catalog/badge';
 
 export interface Props {
     of: Badge | BadgeKey;

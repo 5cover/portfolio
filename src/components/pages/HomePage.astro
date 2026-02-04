@@ -5,90 +5,88 @@ import ProjectCardList from '../ProjectCardList';
 import * as content from '../../lib/content';
 import { pageHref } from '../../lib/links';
 import { normalizeLocale } from '../../i18n';
+import Copy from '../Copy.astro';
+import { copy } from '../../lib/copy';
 import '../../styles/index.scss';
 
-interface Copy {
-    indexMe: string;
-    indexMyPhoto: string;
-    indexOngoingProjects: string;
-    indexAllMyProjects: string;
-    indexContact: string;
-    indexMyResumePreview: string;
-    indexMyResume: string;
-    indexVideoCv: string;
-}
-
 interface Props {
-    copy: Copy;
+    copy: {
+        me: string;
+        myPhoto: string;
+        ongoingProjects: string;
+        allMyProjects: string;
+        contact: string;
+        myResumePreview: string;
+        myResume: string;
+        videoCv: string;
+    };
 }
 
-const { copy } = Astro.props,
-    locale = normalizeLocale(Astro.currentLocale),
+const locale = normalizeLocale(Astro.currentLocale),
     projects = content.project(locale),
     contacts = content.contact(),
-    pianoTiles = content.pianoTile(locale);
-
-import Copy from '../Copy.astro';
-
-const x = ['My ', { title: 'Computer Science', abbr: 'CS' }, ' degree'];
-const y = ['This is my ', x];
+    pianoTiles = content.pianoTile(locale),
+    s = Astro.props.copy;
 ---
 
 <BaseLayout pageName='index'>
     <main>
-        <Copy c={y} />
         <ul class='lvl list-piano-tiles'>
             {
-                pianoTiles.map(([, tile]) => (
-                    <li>
-                        <figure>
-                            <img
-                                src={tile.backgroundImage}
-                                alt={tile.title}
-                                width='240'
-                                height='480'
-                                loading='lazy'
-                                title={tile.summary}
-                            />
-                            <figcaption>
-                                <div>
-                                    <h2>
-                                        <a class='foil' href={tile.href}>
-                                            {tile.title}
-                                        </a>
-                                    </h2>
-                                    <p set:html={tile.summary} />
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </li>
-                ))
+                pianoTiles.map(([, tile]) => {
+                    const title = copy(tile.title);
+                    const summary = copy(tile.summary);
+                    return (
+                        <li>
+                            <figure>
+                                <img
+                                    src={tile.backgroundImage}
+                                    alt={title.toString()}
+                                    width='240'
+                                    height='480'
+                                    loading='lazy'
+                                    title={summary.toString()}
+                                />
+                                <figcaption>
+                                    <div>
+                                        <h2>
+                                            <a class='foil' href={tile.href}>
+                                                <Copy c={title} />
+                                            </a>
+                                        </h2>
+                                        <Copy c={summary} />
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    );
+                })
             }
         </ul>
         <article id='me' class='lvl content-block'>
             <div>
-                <h2>{copy.indexMe}</h2>
+                <h2>{s.me}</h2>
                 <slot name='about-content' />
             </div>
             <img
                 src='/portfolio/img/me.jpg'
-                alt={copy.indexMyPhoto}
+                alt={s.myPhoto}
                 width='1600'
                 height='1600'
                 loading='lazy'
-                title={copy.indexMyPhoto}
+                title={s.myPhoto}
             />
         </article>
         <section id='ongoing-projects' class='lvl'>
-            <h2>{copy.indexOngoingProjects}</h2>
+            <h2>{s.ongoingProjects}</h2>
             <ProjectCardList entries={projects.filter(([, project]) => !project.endDate)} locale={locale} />
             <a href={pageHref(locale, 'projects')} class='lvl button-link'>
-                {copy.indexAllMyProjects}
+                {s.allMyProjects}
             </a>
         </section>
         <article id='contact' class='lvl content-block'>
             <div>
-                <h2>{copy.indexContact}</h2>
+                <h2>{s.contact}</h2>
                 <address>
                     <ul>
                         {
@@ -98,7 +96,7 @@ const y = ['This is my ', x];
                                         class='link iconed-text'
                                         target='_blank'
                                         rel='noopener noreferrer'
-                                        href={contact.src}>
+                                        href={contact.href}>
                                         <Graphic of={contact.icon} alt={contact.platform} />
                                         <span>{contact.name}</span>
                                     </a>
@@ -108,22 +106,19 @@ const y = ['This is my ', x];
                     </ul>
                 </address>
             </div>
-            <a
-                href={`/portfolio/${normalizeLocale(Astro.currentLocale)}/cv-bardini-raphael.pdf`}
-                target='_blank'
-                rel='noopener noreferrer'>
+            <a href={`/portfolio/${locale}/cv-bardini-raphael.pdf`} target='_blank' rel='noopener noreferrer'>
                 <img
-                    src={`/portfolio/${normalizeLocale(Astro.currentLocale)}/cv-bardini-raphael-preview.jpg`}
-                    alt={copy.indexMyResumePreview}
+                    src={`/portfolio/${locale}/cv-bardini-raphael-preview.jpg`}
+                    alt={s.myResumePreview}
                     width='212'
                     height='300'
                     loading='lazy'
                 />
-                <span>{copy.indexMyResume}</span>
+                <span>{s.myResume}</span>
             </a>
         </article>
         <article class='lvl content-block'>
-            <h2>{copy.indexVideoCv}</h2>
+            <h2>{s.videoCv}</h2>
             <iframe
                 src='https://www.youtube-nocookie.com/embed/6VqtL5oogwk?modestbranding=1&rel=0'
                 width='640'

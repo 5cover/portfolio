@@ -1,14 +1,11 @@
 import Graphic from './Graphic';
-import * as content from '../lib/content';
-
-interface LinkItem {
-    label: string;
-    anchor: string;
-    href: string;
-}
+import anchors from '../catalog/anchor';
+import type { Link } from '../content.config';
+import { copy } from '../lib/copy';
+import type { Localize } from '../i18n';
 
 interface Props {
-    links: LinkItem[];
+    links: Localize<Link>[];
     variant?: 'card' | 'page';
 }
 
@@ -18,12 +15,13 @@ export default ({ links, variant = 'card' }: Props) => {
     return (
         <ul class={listClass}>
             {links.map(link => {
-                const anchor = content.anchor(link.anchor);
+                const anchor = anchors[link.anchor];
+                const label = copy(link.label);
                 return (
                     <li>
-                        <a target="_blank" rel="noopener noreferrer" href={link.href} title={link.label}>
-                            {anchor ? <Graphic of={anchor} alt={link.label} /> : null}
-                            {includeLabel ? <span>{link.label}</span> : null}
+                        <a target="_blank" rel="noopener noreferrer" href={link.href} title={label.toString()}>
+                            <Graphic of={anchor} alt={label.toString()} />
+                            {includeLabel ? <span>{label.preact()}</span> : null}
                         </a>
                     </li>
                 );

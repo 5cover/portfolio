@@ -1,4 +1,4 @@
-import type { PageCopy } from './types';
+import type { ButData } from './types';
 
 export default {
     skills: {
@@ -205,43 +205,25 @@ export default {
     synthesisHeading: 'Synthèse globale',
     yearLabel: 'Année',
     logoAlt: 'Logo BUT Informatique',
-    heading: (
-        <>
-            <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Computer Science
-        </>
-    ),
+    heading: [{ title: 'Bachelor Universitaire Technologique', abbr: 'BUT' }, ' Informatique'],
     linkTextSyllabus: 'Programme officiel du BUT Informatique',
     skillsAbstract:
         "Le programme du BUT Informatique ne se limite pas à l'apprentissage de technologies. Il propose une progression implicite de posture, de la pratique individuelle vers la compréhension de systèmes techniques et humains plus larges.",
-    skill: (i, name) => (
-        <>
-            Compétence {i}&nbsp;: {name}
-        </>
-    ),
+    skill: (i, name) => `Compétence ${i}\u00a0: ${name}`,
     iutAlt: "Entrée de l'IUT de Lannion",
     iutCaption: "L'IUT de Lannion (Côtes d'Armor). C'est ici que je fais mon BUT Informatique.",
-    presentation: (
-        <>
-            <p>
-                Concevoir, réaliser et mettre en œuvre des solutions informatiques qui répondent aux besoins de
-                transformation numérique des entreprises, voilà le quotidien du titulaire du BUT informatique, quel que
-                soit le secteur dans lequel travaille son entreprise.
-            </p>
-            <p>
-                En trois ans après le bac, le BUT offre une formation universitaire qui mêle théorie et pratique, avec
-                un accent mis sur une professionnalisation progressive pour une insertion rapide, tout en garantissant
-                un niveau scientifique suffisant pour permettre de continuer des études pour ceux qui le souhaitent.
-            </p>
-            <p>
-                Le titulaire du BUT spécialité informatique est compétent sur les plans technique et méthodologique tout
-                en étant sensibilisé aux problématiques actuelles (sécurité des données,
-                <em>cloud computing</em>, intelligence artificielle), sur les questions sociétales, juridiques, éthiques
-                et environnementales liées aux usages du numérique.
-            </p>
-            <p>
-                À l'issue d'un tronc commun d'un an, l'étudiant pourra, en fonction de son projet professionnel, choisir
-                l'un des quatre parcours proposés par la spécialité informatique.
-            </p>
-        </>
-    ),
-} satisfies PageCopy;
+    presentation: [
+        {
+            p: 'Concevoir, réaliser et mettre en œuvre des solutions informatiques qui répondent aux besoins de transformation numérique des entreprises, voilà le quotidien du titulaire du BUT informatique, quel que soit le secteur dans lequel travaille son entreprise.',
+        },
+        {
+            p: 'En trois ans après le bac, le BUT offre une formation universitaire qui mêle théorie et pratique, avec un accent mis sur une professionnalisation progressive pour une insertion rapide, tout en garantissant un niveau scientifique suffisant pour permettre de continuer des études pour ceux qui le souhaitent.',
+        },
+        {
+            p: 'Le titulaire du BUT spécialité informatique est compétent sur les plans technique et méthodologique tout en étant sensibilisé aux problématiques actuelles (sécurité des données, informatique en nuage, intelligence artificielle), sur les questions sociétales, juridiques, éthiques et environnementales liées aux usages du numérique.',
+        },
+        {
+            p: "À l'issue d'un tronc commun d'un an, l'étudiant pourra, en fonction de son projet professionnel, choisir l'un des quatre parcours proposés par la spécialité informatique.",
+        },
+    ],
+} satisfies ButData;

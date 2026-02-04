@@ -5,11 +5,6 @@ import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
     return (await getCollection('project')).map(({ id }) => ({ params: { id } }));
 }
-
-const { id } = Astro.params;
-if (!id) {
-    throw new Error('Missing route params');
-}
 ---
 
-<ProjectDetailPage id={id} />
+<ProjectDetailPage id={Astro.params.id} />

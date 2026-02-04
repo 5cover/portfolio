@@ -2,26 +2,21 @@
 import Graphic from './Graphic';
 import LinkList from './LinkList';
 import { detailHref } from '../lib/links';
-import { normalizeLocale } from '../i18n';
-import type { LocalizedItem } from '../content.config';
-import * as content from '../lib/content';
-
-function formatTitle(fmt: string, title: string): string {
-    return fmt.replace('%s', title);
-}
+import { translation, normalizeLocale } from '../i18n';
+import type { Entry, LocalizedItem } from '../lib/content';
+import { copy } from '../lib/copy';
+import Copy from './Copy.astro';
 
 interface Props {
-    langLabels: {
-        fmtTitle: string;
-    };
-    entry: content.Entry<LocalizedItem<'literature'>>;
+    entry: Entry<LocalizedItem<'literature'>>;
     headingLevel?: number;
 }
 
-const { langLabels, entry, headingLevel = 3 } = Astro.props;
+const { entry, headingLevel = 3 } = Astro.props;
 const [id, lit] = entry;
 const locale = normalizeLocale(Astro.currentLocale);
-const logoTitle = formatTitle(langLabels.fmtTitle, lit.title);
+const title = copy(lit.title);
+const logoTitle = translation(locale).logoTitle(title.toString());
 const backgroundStyle = lit.background ? `--bg-img-card: url(${lit.background})` : undefined;
 ---
 
@@ -31,19 +26,25 @@ const backgroundStyle = lit.background ? `--bg-img-card: url(${lit.background})`
         {
             headingLevel === 1 ? (
                 <h1>
-                    <a class='foil' href={detailHref(locale, 'literature', id)} set:html={lit.title} />
+                    <a class='foil' href={detailHref(locale, 'literature', id)}>
+                        <Copy c={title} />
+                    </a>
                 </h1>
             ) : headingLevel === 2 ? (
                 <h2>
-                    <a class='foil' href={detailHref(locale, 'literature', id)} set:html={lit.title} />
+                    <a class='foil' href={detailHref(locale, 'literature', id)}>
+                        <Copy c={title} />
+                    </a>
                 </h2>
             ) : (
                 <h3>
-                    <a class='foil' href={detailHref(locale, 'literature', id)} set:html={lit.title} />
+                    <a class='foil' href={detailHref(locale, 'literature', id)}>
+                        <Copy c={title} />
+                    </a>
                 </h3>
             )
         }
-        <p class='abstract' set:html={lit.abstract} />
+        <p class='abstract'>=<Copy c={copy(lit.abstract)} /></p>
         {lit.links.length > 0 ? <LinkList links={lit.links} /> : null}
     </div>
 </li>

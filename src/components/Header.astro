@@ -1,5 +1,5 @@
 ---
-import { getLabels, Locales, normalizeLocale } from '../i18n';
+import { translation, locales, normalizeLocale } from '../i18n';
 import { pageHref } from '../lib/links';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 
 const { pageName } = Astro.props;
 
-const _ = getLabels(Astro.currentLocale);
+const _ = translation(Astro.currentLocale);
 
 const locale = normalizeLocale(Astro.currentLocale);
 ---
@@ -46,8 +46,8 @@ const locale = normalizeLocale(Astro.currentLocale);
     </nav>
     <ul class='list-flags'>
         {
-            Locales.map(l => {
-                const l_ = getLabels(l);
+            locales.map(l => {
+                const l_ = translation(l);
                 const isSame = l === locale;
                 const className = `fi ${l_.flagClass}${isSame ? '' : ' gray-when-not-hover'}`;
                 const title = `${_.locales[l]}${isSame ? '' : ` / ${l_.locales[l]}`}`;
