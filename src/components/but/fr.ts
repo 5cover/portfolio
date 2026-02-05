@@ -205,7 +205,7 @@ export default {
     synthesisHeading: 'Synthèse globale',
     yearLabel: 'Année',
     logoAlt: 'Logo BUT Informatique',
-    heading: [{ title: 'Bachelor Universitaire Technologique', abbr: 'BUT' }, ' Informatique'],
+    heading: [{ title: 'Bachelor Universitaire Technologique', abbr: 'BUT' }, 'Informatique'],
     linkTextSyllabus: 'Programme officiel du BUT Informatique',
     skillsAbstract:
         "Le programme du BUT Informatique ne se limite pas à l'apprentissage de technologies. Il propose une progression implicite de posture, de la pratique individuelle vers la compréhension de systèmes techniques et humains plus larges.",

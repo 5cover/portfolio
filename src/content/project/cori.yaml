@@ -26,17 +26,25 @@ references:
   - anchor: website
     href: https://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html
     caption:
-      en: Felix Palmen &mdash; A beginner's guide <em>away</em> from
-        <code>scanf()</code>
-      fr: Felix Palmen &mdash; A beginner's guide <em>away</em> from
-        <code>scanf()</code> (anglais)
+      en: &1
+        - Felix Palmen — A beginner's guide
+        - em: away
+        - from
+        - code: scanf()
+      fr:
+        - lang: en
+          copy: *1
+        - (anglais)
   - anchor: github
     href: https://github.com/nothings/stb
     caption:
-      en: Sean Barrett &mdash; STB-style public domain libraries repository
-      fr: Sean Barrett &mdash; dépôt des bibliothèques STB du domaine public (anglais)
+      en: Sean Barrett — STB-style public domain libraries repository
+      fr: Sean Barrett — dépôt des bibliothèques STB du domaine public (anglais)
   - anchor: wikipedia
     href: https://en.wikipedia.org/wiki/X_macro
     caption:
-      en: Wikipedia &mdash; X macro pattern
-      fr: Wikipedia &mdash; X macro pattern (anglais)
+      en: &2 Wikipedia — X macro pattern
+      fr:
+        - lang: en
+          copy: *2
+        - (anglais)

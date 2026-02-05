@@ -36,12 +36,12 @@ references:
       en: https://learn.microsoft.com/en-us/windows/win32/controls/task-dialogs-overview
       fr: https://learn.microsoft.com/fr-fr/windows/win32/controls/task-dialogs-overview
     caption:
-      en: Microsoft &mdash; About Task Dialogs
-      fr: Microsoft &mdash; À propos des boîtes de dialogue de tâche
+      en: Microsoft — About Task Dialogs
+      fr: Microsoft — À propos des boîtes de dialogue de tâche
   - anchor: youtube
     href: https://youtu.be/443UNeGrFoM?t=6949
     caption:
-      en: Eskil Steenberg &mdash; How I program C (at 1h55m49s)
-      fr: Eskil Steenberg &mdash; How I program C (à 1h55m49s, anglais)
+      en: Eskil Steenberg — How I program C (at 1h55m49s)
+      fr: Eskil Steenberg — How I program C (à 1h55m49s, anglais)
 logo:
   src: /portfolio/img/project/dialogs/logo.png

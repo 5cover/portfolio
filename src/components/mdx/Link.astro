@@ -1,4 +1,6 @@
 ---
+import { cls } from '../../lib/util';
+
 interface Props {
     href: string;
     external?: boolean;
@@ -12,9 +14,8 @@ if (!href) {
 }
 
 const isExternal = (external ?? href.startsWith('http://')) || href.startsWith('https://');
-const classes = ['link', className].filter(Boolean).join(' ');
 ---
 
-<a href={href} class={classes} {...isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}}>
+<a href={href} class:list={['link', className]} {...isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}}>
     <slot />
 </a>

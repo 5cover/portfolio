@@ -31,6 +31,6 @@ links:
 references:
   - anchor: github
     caption:
-      en: test.c &mdash; GNU coreutils GitHub repository
-      fr: test.c &mdash; dépôt GitHub GNU coreutils
+      en: test.c — GNU coreutils GitHub repository
+      fr: test.c — dépôt GitHub GNU coreutils
     href: https://github.com/coreutils/coreutils/blob/master/src/test.c

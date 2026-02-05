@@ -1,4 +1,6 @@
+import type { Item } from './content.config';
 import type { Translation } from './i18n/Translation';
+import type { copy } from './lib/copy';
 
 export const literatureKinds = ['passion', 'blog', 'story'] as const;
 export type LiteratureKind = (typeof literatureKinds)[number];
@@ -7,15 +9,22 @@ export type Locale = (typeof locales)[number];
 export const navItemPages = ['projects', 'history', ...literatureKinds, 'history/history-but'] as const;
 export type NavItemPage = (typeof navItemPages)[number];
 
-type Equals<A, B> = A extends B ? (B extends A ? true : false) : false;
+type HasLoc<T> = Extract<T, Loc<unknown>> extends never ? false : true;
+type UnwrapLoc<T> = Extract<T, Loc<unknown>> extends Loc<infer U> ? U : never;
 
-export type Localize<T> = {
-    [K in keyof T]: Equals<keyof T[K], Locale> extends true
-        ? T[K] extends Localized<infer U>
-            ? U
-            : Localize<T[K]>
-        : Localize<T[K]>;
-};
+export type Localize<T> =
+    // si l'union contient une branche Loc<...>, on prend la valeur
+    HasLoc<T> extends true
+        ? UnwrapLoc<T>
+        : // arrays (évite que "object" attrape les tableaux)
+          T extends readonly (infer I)[]
+          ? readonly Localize<I>[]
+          : // objets
+            T extends object
+            ? { [K in keyof T]: Localize<T[K]> }
+            : // primitives
+              T;
+
 type Loc<T> = Record<Locale, T>;
 export type Localized<T> = T | Loc<T>;
 export function loc<T>(l: Locale, c: Localized<T>): T {

@@ -26,3 +26,7 @@ export const formatDate = (date: Date, locale: Intl.LocalesArgument) =>
     new Intl.DateTimeFormat(locale, { dateStyle: 'long' }).format(date);
 
 export const plainEntries = <K extends PropertyKey, V>(o: Partial<Record<K, V>>) => Object.entries(o) as [K, V][];
+
+export const cls = (...classes: readonly (string | false | null | undefined)[]) => classes.filter(Boolean).join();
+
+export const isArray = (x: unknown): x is readonly unknown[] => Array.isArray(x);

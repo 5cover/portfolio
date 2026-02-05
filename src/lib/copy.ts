@@ -1,7 +1,7 @@
 import z from 'astro/zod';
 import { badgeKeys, type BadgeKey } from '../catalog/badge';
 import { locales, type Locale } from '../i18n';
-import { capitalize as capitalizeStr } from './util';
+import { capitalize as capitalizeStr, isArray } from './util';
 import { astroParser, preactParser } from './Parser';
 
 // Rich text "HTML as object" format for copy with inline formatting.
@@ -9,29 +9,45 @@ import { astroParser, preactParser } from './Parser';
 export type CompiledCopy =
     | null
     | string
-    | CompiledCopy[]
-    | { [K in keyof CopyNodes]: CompiledCopyNode<K> }[keyof CopyNodes];
+    | readonly CompiledCopy[]
+    | { [K in keyof CopyElems]: Readonly<CompiledElem<K>> }[keyof CopyElems]
+    | { [K in keyof CopyVoids]: Readonly<CompiledVoid<K>> }[keyof CopyVoids];
 export type copy =
     | null
     | string
-    | copy[]
-    | { [K in keyof CopyNodes]: CopyNodes[K] & { [T in K]: copy } }[keyof CopyNodes];
+    | readonly copy[]
+    | { [K in keyof CopyElems]: Readonly<CopyElems[K]> & { readonly [T in K]: copy } }[keyof CopyElems]
+    | { [K in keyof CopyVoids]: Readonly<Record<K, CopyVoids[K]>> }[keyof CopyVoids];
 
-export interface CopyNodes {
+export interface CopyElems {
     abbr: { title: string };
     time: { datetime: Date };
     badge: { key: BadgeKey };
     copy: { lang: Locale };
     p: object;
+    code: object;
+    em: object;
+    strong: object;
 }
 
-export interface CompiledCopyNode<K extends keyof CopyNodes> {
+export interface CopyVoids {
+    def: string;
+}
+
+export interface CompiledElem<K extends keyof CopyElems> {
     /** Type */
     t: K;
     /** Properties */
-    p: CopyNodes[K];
+    p: CopyElems[K];
     /** Children */
     c: CompiledCopy;
+}
+
+export interface CompiledVoid<K extends keyof CopyVoids> {
+    /** Type */
+    t: K;
+    /** Properties */
+    p: CopyVoids[K];
 }
 
 export function copy(c: copy) {
@@ -80,6 +96,18 @@ export const zCopy: z.ZodType<copy> = z
             z.strictObject({
                 p: zCopy,
             }),
+            z.strictObject({
+                code: zCopy,
+            }),
+            z.strictObject({
+                em: zCopy,
+            }),
+            z.strictObject({
+                strong: zCopy,
+            }),
+            z.strictObject({
+                def: z.string(),
+            }),
         ])
     )
     .nullable();
@@ -87,35 +115,42 @@ export const zCopy: z.ZodType<copy> = z
 function compile(c: copy): CompiledCopy {
     if (c === null) return null;
     if (typeof c === 'string') return c;
-    if (Array.isArray(c)) return c.map(compile);
-    const node = <K extends keyof CopyNodes>(k: K, c: Record<K, copy>, p: CopyNodes[K]): CompiledCopyNode<K> => ({
-        // Must contain only declared keys (since later the parser uses object spread)
-        p,
+    if (isArray(c)) return c.map(compile);
+    const nodeElem = <K extends keyof CopyElems>(k: K, c: Record<K, copy>, p: CopyElems[K]): CompiledElem<K> => ({
         t: k,
+        p, // Must contain only declared keys (since later the parser uses object spread)
         c: compile(c[k]),
     });
-    if ('abbr' in c) return node('abbr', c, { title: c.title });
-    if ('time' in c) return node('time', c, { datetime: c.datetime });
-    if ('badge' in c) return node('badge', c, { key: c.key });
-    if ('copy' in c) return node('copy', c, { lang: c.lang });
-    if ('p' in c) return node('p', c, {});
-    throw new Error(`unknown copy node: ${JSON.stringify(c)}`);
+    const nodeVoid = <K extends keyof CopyVoids>(k: K, c: Record<K, CopyVoids[K]>): CompiledVoid<K> => ({
+        t: k,
+        p: c[k],
+    });
+    if ('abbr' in c) return nodeElem('abbr', c, { title: c.title });
+    if ('time' in c) return nodeElem('time', c, { datetime: c.datetime });
+    if ('badge' in c) return nodeElem('badge', c, { key: c.key });
+    if ('copy' in c) return nodeElem('copy', c, { lang: c.lang });
+    if ('em' in c) return nodeElem('em', c, {});
+    if ('strong' in c) return nodeElem('strong', c, {});
+    if ('code' in c) return nodeElem('code', c, {});
+    if ('p' in c) return nodeElem('p', c, {});
+    if ('def' in c) return nodeVoid('def', c);
+    return c satisfies never;
 }
 
 function capitalize(c: CompiledCopy): CompiledCopy {
     if (c === null) return null;
     if (typeof c === 'string') return capitalizeStr(c);
-    if (Array.isArray(c)) {
+    if (isArray(c)) {
         const first = c.at(0);
         return first === undefined ? c : [capitalize(first), ...c.slice(1)];
     }
-    return { ...c, c: capitalize(c.c) };
+    return { ...c, ...('c' in c ? { c: capitalize(c.c) } : null) };
 }
 function stringify(c: CompiledCopy): string {
     if (c === null) return '';
     if (typeof c === 'string') return c;
     if (Array.isArray(c)) return c.map(stringify).join('');
-    return stringify(c.c);
+    return 'c' in c ? stringify(c.c) : '';
 }
 
 export function c(c: copy) {

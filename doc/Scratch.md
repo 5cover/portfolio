@@ -122,3 +122,5 @@ what's the modern idiomatic way?
 ## standardize copy usage
 
 remove tsx stuff.
+
+## remove locale props in preact

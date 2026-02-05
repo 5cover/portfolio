@@ -1,6 +1,7 @@
 import type { GalleryItem, Item, Link, Reference } from '../content.config';
 import { loc, normalizeLocale, type Locale, type Localize } from '../i18n';
 import { getCollection, getEntry, render, type CollectionKey } from 'astro:content';
+import type { copy } from './copy';
 
 export type TextualKind = 'history' | 'history/body' | 'literature' | 'project';
 export type Entry<T> = readonly [id: string, d: T];
@@ -8,28 +9,30 @@ export type LocalizedItem<C extends CollectionKey> = Localize<Item<C>>;
 
 export const contact = await getter('contact');
 
+type X = Localize<Item<'def'>['name']['full']>;
+
 const locLink = (l: Locale) => (d: Link) => ({
     ...d,
     href: loc(l, d.href),
-    label: loc(l, d.label),
+    label: loc<copy>(l, d.label),
 });
 
 const locRef = (l: Locale) => (d: Reference) => ({
     ...d,
-    caption: loc(l, d.caption),
+    caption: loc<copy>(l, d.caption),
     href: loc(l, d.href),
 });
 
 const locGalleryItem = (l: Locale) => (d: GalleryItem) => ({
     ...d,
-    caption: loc(l, d.caption),
+    caption: loc<copy>(l, d.caption),
 });
 
 export const project = await getterLocalized('project', (l, d) => ({
     ...d,
-    title: loc(l, d.title),
-    abstract: loc(l, d.abstract),
-    context: loc(l, d.context),
+    title: loc<copy>(l, d.title),
+    abstract: loc<copy>(l, d.abstract),
+    context: loc<copy | undefined>(l, d.context),
     links: d.links.map(locLink(l)),
     references: d.references.map(locRef(l)),
     gallery: d.gallery.map(locGalleryItem(l)),
@@ -37,8 +40,8 @@ export const project = await getterLocalized('project', (l, d) => ({
 
 export const literature = await getterLocalized('literature', (l, d) => ({
     ...d,
-    title: loc(l, d.title),
-    abstract: loc(l, d.abstract),
+    title: loc<copy>(l, d.title),
+    abstract: loc<copy>(l, d.abstract),
     links: d.links.map(locLink(l)),
     references: d.references.map(locRef(l)),
     gallery: d.gallery.map(locGalleryItem(l)),
@@ -46,17 +49,17 @@ export const literature = await getterLocalized('literature', (l, d) => ({
 export const def = await getterLocalized('def', (l, d) => ({
     ...d,
     name: {
-        full: loc(l, d.name.full),
-        abbr: loc(l, d.name.abbr),
-        short: loc(l, d.name.short),
+        full: loc<copy>(l, d.name.full),
+        abbr: loc<copy | undefined>(l, d.name.abbr),
+        short: loc<copy | undefined>(l, d.name.short),
     },
-    synopsis: loc(l, d.synopsis),
+    synopsis: loc<copy>(l, d.synopsis),
     wiki: loc(l, d.wiki),
 }));
 export const history = await getterLocalized('history', (l, d) => ({
     ...d,
-    title: loc(l, d.title),
-    meta: loc(l, d.meta),
+    title: loc<copy>(l, d.title),
+    meta: loc<copy>(l, d.meta),
     year: d.year,
     media: d.media
         ? {
@@ -67,8 +70,8 @@ export const history = await getterLocalized('history', (l, d) => ({
 }));
 export const pianoTile = await getterLocalized('piano-tile', (l, d) => ({
     ...d,
-    title: loc(l, d.title),
-    summary: loc(l, d.summary),
+    title: loc<copy>(l, d.title),
+    summary: loc<copy>(l, d.summary),
 }));
 
 export async function textual(locale: string, kind: TextualKind, id: string) {

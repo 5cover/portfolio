@@ -204,7 +204,7 @@ export default {
     synthesisHeading: 'Global summary',
     yearLabel: 'Year',
     logoAlt: 'BUT Computer Science logo',
-    heading: [{ title: 'Bachelor Universitaire Technologique', abbr: 'BUT' }, ' Computer science'],
+    heading: [{ title: 'Bachelor Universitaire Technologique', abbr: 'BUT' }, 'Computer science'],
     linkTextSyllabus: 'Officiel BUT Computer Science syllabus',
     skillsAbstract:
         'The BUT Computer Science program is not limited to learning technologies. It proposes an implicit progression of posture, from individual practice to understanding broader technical and human systems.',

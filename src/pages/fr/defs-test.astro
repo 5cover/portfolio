@@ -1,0 +1,10 @@
+---
+import DefCardList from '../../components/DefCardList.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { def } from '../../lib/content';
+const defs = def(Astro.currentLocale).map(([, v]) => v);
+---
+
+<BaseLayout pageName='defs-test'>
+    <DefCardList defs={defs} />
+</BaseLayout>

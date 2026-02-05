@@ -28,7 +28,7 @@ references:
       en: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
       fr: https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur
     caption:
-      en: Wikipedia &mdash; Model–view–controller
-      fr: Wikipedia &mdash; Modèle-vue-contrôleur
+      en: Wikipedia — Model–view–controller
+      fr: Wikipedia — Modèle-vue-contrôleur
 logo:
   src: /portfolio/img/project/demineur-python/logo.png

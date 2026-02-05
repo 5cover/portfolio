@@ -1,16 +1,12 @@
 title: JSlave
 abstract:
-  en: >-
-
-    Formal language for <a target="_blank" rel="noopener noreferrer"
-    href="https://en.wikipedia.org/wiki/Java_(programming_language)"
-    data-def-id="java" class="link def-tooltip-trigger">Java</a> metaprogramming
-    and boilerplate elimination
-  fr: >-
-
-    Language formel de métaprogrammation <a target="_blank" rel="noopener
-    noreferrer" href="https://fr.wikipedia.org/wiki/Java_(langage)"
-    data-def-id="java" class="link def-tooltip-trigger">Java</a>
+  en:
+    - Formal language for
+    - def: java
+    - metaprogramming and boilerplate elimination
+  fr:
+    - Language formel de métaprogrammation
+    - def: java
 context:
   en: Personal
   fr: Personnel
@@ -33,5 +29,5 @@ references:
   - anchor: website
     href: https://mermaid.js.org/syntax/classDiagram.html
     caption:
-      en: Mermaid.js &mdash; Class diagram syntax
-      fr: Mermaid.js &mdash; syntaxe des diagrammes de classes (anglais)
+      en: Mermaid.js — Class diagram syntax
+      fr: Mermaid.js — syntaxe des diagrammes de classes (anglais)

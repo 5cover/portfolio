@@ -3,11 +3,15 @@ name:
   full: Bourne-Again shell
   abbr: Bash
 synopsis:
-  en: A shell program and command language supported by the <abbr title="Free
-    Software Foundation">FSF</abbr> and first developed for the <abbr title="GNU
-    is Not Unix">GNU</abbr> Project by Brian Fox.
-  fr: Interpréteur en ligne de commande de type script. C'est le shell Unix du
-    projet GNU.
+  en:
+    - 'A shell program and command language supported by the '
+    - title: Free Software Foundation
+      abbr: FSF
+    - ' and first developed for the '
+    - title: GNU is Not Unix
+      abbr: GNU
+    - ' Project by Brian Fox.'
+  fr: Interpréteur en ligne de commande de type script. C'est le shell Unix du projet GNU.
 wiki:
   en: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
   fr: https://fr.wikipedia.org/wiki/Bourne-Again_shell
