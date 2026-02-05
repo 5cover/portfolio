@@ -1,21 +1,20 @@
 import ProjectCardList from '../ProjectCardList';
 import * as content from '../../lib/content';
-import { type Locale } from '../../i18n';
 import Section from '../Section';
 import Heading from '../Heading';
 import type { ButData } from './types';
 import { plainEntries } from '../../lib/util';
 import { c, copy } from '../../lib/copy';
+import { astro } from '../context';
 
 const MaxProjectsPerSkill = 4;
 
 export interface Props {
     d: ButData;
-    locale: Locale;
 }
 
-export default ({ d, locale }: Props) => {
-    const projects = content.project(locale);
+export default ({ d }: Props) => {
+    const projects = content.project(astro().currentLocale);
     return (
         <>
             <Section class="but-body margined">
@@ -90,11 +89,7 @@ export default ({ d, locale }: Props) => {
                                                     ))}
                                                 </ul>
                                                 {skillProjects.length > 0 ? (
-                                                    <ProjectCardList
-                                                        entries={skillProjects}
-                                                        class="project-skills"
-                                                        locale={locale}
-                                                    />
+                                                    <ProjectCardList entries={skillProjects} class="project-skills" />
                                                 ) : null}
                                             </li>
                                         );

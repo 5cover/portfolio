@@ -3,7 +3,7 @@ import type { LocalizedItem } from '../lib/content';
 import DefCard from './DefCard.astro';
 
 interface Props {
-    defs: LocalizedItem<'def'>[];
+    defs: readonly LocalizedItem<'def'>[];
 }
 const { defs } = Astro.props;
 ---

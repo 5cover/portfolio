@@ -34,7 +34,7 @@ export interface CopyElems {
     em: object;
     strong: object;
     a: { href: string };
-    q: { cite: string };
+    q: { cite?: string };
 }
 
 export interface CopyVoids {

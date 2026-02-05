@@ -1,7 +1,5 @@
 import { createContext } from 'preact';
-import type { Locale } from '../i18n';
 import type { AstroGlobal } from 'astro';
-import { useContext } from 'preact/hooks';
 import { throwf } from '../lib/util';
 
 export const outlineDepth = createContext<number>(0);

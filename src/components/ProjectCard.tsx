@@ -1,19 +1,20 @@
 import Graphic from './Graphic';
 import LinkList from './LinkList';
 import { detailHref, pageHref } from '../lib/links';
-import { translation, type Locale } from '../i18n';
+import { normalizeLocale, translation, type Locale } from '../i18n';
 import type { Entry, LocalizedItem } from '../lib/content';
 import { formatDate } from '../lib/util';
 import { c, copy } from '../lib/copy';
 import tags, { localizeTag } from '../catalog/tag';
+import { astro } from './context';
 
 interface Props {
     entry: Entry<LocalizedItem<'project'>>;
     headingLevel?: number;
-    locale: Locale;
 }
 
-export default ({ locale, entry, headingLevel = 3 }: Props) => {
+export default ({ entry, headingLevel = 3 }: Props) => {
+    const locale = normalizeLocale(astro().currentLocale);
     const [id, project] = entry;
     const _ = translation(locale);
     const title = copy(project.title);

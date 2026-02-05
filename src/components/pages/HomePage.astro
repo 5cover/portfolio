@@ -79,7 +79,7 @@ const locale = normalizeLocale(Astro.currentLocale),
         </article>
         <section id='ongoing-projects' class='lvl'>
             <h2>{s.ongoingProjects}</h2>
-            <ProjectCardList entries={projects.filter(([, project]) => !project.endDate)} locale={locale} />
+            <ProjectCardList entries={projects.filter(([, project]) => !project.endDate)} />
             <a href={pageHref(locale, 'projects')} class='lvl button-link'>
                 {s.allMyProjects}
             </a>

@@ -5,7 +5,7 @@ import { copy } from '../lib/copy';
 import type { Localize } from '../i18n';
 
 interface Props {
-    links: Localize<Link>[];
+    links: readonly Localize<Link>[];
     variant?: 'card' | 'page';
 }
 

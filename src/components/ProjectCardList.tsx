@@ -4,14 +4,13 @@ import ProjectCard from './ProjectCard';
 
 interface Props {
     class?: string;
-    entries: Entry<LocalizedItem<'project'>>[];
-    locale: Locale;
+    entries: readonly Entry<LocalizedItem<'project'>>[];
 }
 
-export default ({ entries, locale, class: className = '' }: Props) => (
+export default ({ entries, class: className = '' }: Props) => (
     <ul class={`lvl list-project ${className}`}>
         {entries.map(project => (
-            <ProjectCard entry={project} locale={locale} />
+            <ProjectCard entry={project} />
         ))}
     </ul>
 );

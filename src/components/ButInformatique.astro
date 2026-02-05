@@ -5,7 +5,7 @@ const locale = normalizeLocale(Astro.currentLocale);
 const { default: copy } = await import(`./but/${locale}.ts`);
 ---
 
-<ButInformatiqueBody locale={locale} d={copy}>
+<ButInformatiqueBody d={copy}>
     <slot />
 </ButInformatiqueBody>
 <script src='../../src/scripts/but.ts'></script>

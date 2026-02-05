@@ -1,6 +1,5 @@
-import type { Item } from './content.config';
+import astroConfig from '../astro.config.mjs';
 import type { Translation } from './i18n/Translation';
-import type { copy } from './lib/copy';
 
 export const literatureKinds = ['passion', 'blog', 'story'] as const;
 export type LiteratureKind = (typeof literatureKinds)[number];
@@ -14,16 +13,18 @@ type UnwrapLoc<T> = Extract<T, Loc<unknown>> extends Loc<infer U> ? U : never;
 
 export type Localize<T> =
     // si l'union contient une branche Loc<...>, on prend la valeur
-    HasLoc<T> extends true
-        ? UnwrapLoc<T>
-        : // arrays (évite que "object" attrape les tableaux)
-          T extends readonly (infer I)[]
-          ? readonly Localize<I>[]
-          : // objets
-            T extends object
-            ? { [K in keyof T]: Localize<T[K]> }
-            : // primitives
-              T;
+    T extends Date
+        ? T
+        : HasLoc<T> extends true
+          ? UnwrapLoc<T>
+          : // arrays (évite que "object" attrape les tableaux)
+            T extends readonly (infer I)[]
+            ? readonly Localize<I>[]
+            : // objets
+              T extends object
+              ? { [K in keyof T]: Localize<T[K]> }
+              : // primitives
+                T;
 
 type Loc<T> = Record<Locale, T>;
 export type Localized<T> = T | Loc<T>;
@@ -37,7 +38,7 @@ export function loc<T>(l: Locale, c: Localized<T>): T {
 }
 
 export function normalizeLocale(locale: string | undefined): Locale {
-    return locale === 'en' ? 'en' : 'fr';
+    return locales.includes(locale as Locale) ? (locale as Locale) : astroConfig.i18n!.defaultLocale!;
 }
 
 const modules = import.meta.glob('./i18n/*.ts', { eager: true });
