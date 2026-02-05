@@ -1,4 +1,6 @@
-title: <abbr title="Bachelor Universitaire Technologique">BUT</abbr> Informatique
+title:
+  abbr: BUT
+  title: 'Bachelor Universitaire Technologique'
 meta: BUT
 year: 2023
 media:

@@ -3,6 +3,8 @@ title:
   fr: Expérience utilisateur
 summary:
   en: My passion project
-  fr: Mon projet <q>best-seller</q>
+  fr:
+    - Mon projet
+    - q: best-seller
 backgroundImage: /portfolio/img/piano-tile/8.png
 href: project/winclean
