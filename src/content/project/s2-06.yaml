@@ -2,10 +2,13 @@ title:
   en: Knight for a Day
   fr: Chevalier d'un Jour
 abstract:
-  en: Planning a <em>team building</em> event and making a promotional film.
+  en: Planning a team building event and making a promotional film.
     Organizing teamwork (S2.06)
-  fr: Planification d'un évènement de <em>team building</em> et réalisation d'un
-    film promotionnel. Organisation d'un travail d'équipe (S2.06)
+  fr:
+    - "Planification d'un évènement de "
+    - lang: en
+      copy: 'team building'
+    - " et réalisation d'un film promotionnel. Organisation d'un travail d'équipe (S2.06)"
 context: BUT
 startDate: 2024-04-18
 endDate: 2024-06-06

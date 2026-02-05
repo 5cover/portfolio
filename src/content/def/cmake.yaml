@@ -6,10 +6,10 @@ synopsis:
   en: In software development, CMake is cross-platform free and open-source
     software for build automation, testing, packaging and installation of
     software by using a compiler-independent method.
-  fr: Logiciel open-source de génération de fichiers de build pour des projets
-    logiciels. Il a été créé en <time datetime="2000">2000</time> par Kitware et
-    est maintenant développé et maintenu par une communauté active de
-    développeurs.
+  fr:
+    - 'Logiciel open-source de génération de fichiers de build pour des projets logiciels. Il a été créé en '
+    - time: '2000'
+    - ' par Kitware et est maintenant développé et maintenu par une communauté active de développeurs.'
 wiki:
   en: https://en.wikipedia.org/wiki/CMake
   fr: https://fr.wikipedia.org/wiki/CMake

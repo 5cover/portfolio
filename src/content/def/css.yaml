@@ -3,11 +3,9 @@ name:
   full: Cascading Style Sheets
   abbr: CSS
 synopsis:
-  en:
-    A style sheet language used for specifying the presentation and styling of a
+  en: A style sheet language used for specifying the presentation and styling of a
     document written in a markup language such as HTML or XML.
-  fr:
-    Les feuilles de style en cascade forment un langage informatique qui décrit
+  fr: Les feuilles de style en cascade forment un langage informatique qui décrit
     la présentation des documents HTML et XML.
 wiki:
   en: https://en.wikipedia.org/wiki/CSS

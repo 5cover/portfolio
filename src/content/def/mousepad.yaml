@@ -2,8 +2,7 @@ type: software
 name:
   full: Mousepad
 synopsis:
-  en:
-    Mousepad is a simple text editor for the Xfce desktop environment. Mousepad
+  en: Mousepad is a simple text editor for the Xfce desktop environment. Mousepad
     aims to be an easy-to-use and fast editor.
   fr: L'éditeur de texte officiel de l'environnement de bureau XFCE. C'est un
     éditeur rapide, léger, et facile à prendre en main.

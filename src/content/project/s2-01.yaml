@@ -2,10 +2,16 @@ title:
   en: Le Patio box office
   fr: Billeterie Le Patio
 abstract:
-  en: Development of a performance hall management application. Création d'une
-    <abbr title="Interface Homme Machine">IHM</abbr> (S2.01)
-  fr: Développement d'une application de gestion de salle de spectacle. Création
-    d'une <abbr title="Interface Homme Machine">IHM</abbr> (S2.01)
+  en:
+    - "Development of a performance hall management application. Création d'une "
+    - title: 'Interface Homme Machine'
+      abbr: IHM
+    - ' (S2.01)'
+  fr:
+    - "Développement d'une application de gestion de salle de spectacle. Création d'une "
+    - abbr: IHM
+      title: 'Interface Homme Machine'
+    - ' (S2.01)'
 context: BUT
 startDate: 2024-05-28
 endDate: 2024-06-17

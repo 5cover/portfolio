@@ -9,8 +9,9 @@ synopsis:
     problems, a greedy strategy does not produce an optimal solution, but a
     greedy heuristic can yield locally optimal solutions that approximate a
     globally optimal solution in a reasonable amount of time.
-  fr: Un algorithme glouton (<em lang="en">greedy algorithm</em> en anglais,
-    parfois appelé aussi algorithme gourmand, ou goulu) est un algorithme qui
-    suit le principe de réaliser, étape par étape, un choix optimum local, afin
-    d'obtenir un résultat optimum global.
+  fr:
+    - Un algorithme glouton (
+    - lang: en
+      em: greedy algorithm
+    - " en anglais, parfois appelé aussi algorithme gourmand, ou goulu) est un algorithme qui suit le principe de réaliser, étape par étape, un choix optimum local, afin d'obtenir un résultat optimum global."
 wiki: https://fr.wikipedia.org/wiki/Algorithme_glouton

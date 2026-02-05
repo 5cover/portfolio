@@ -6,8 +6,9 @@ synopsis:
     Dennis Ritchie and Ken Thompson. Despite its age, it remains very widely
     used and influential.
   fr:
-    Langage de programmation impératif, généraliste et de bas niveau, inventé en
-    <time datatime="1972">1972</time> par Dennis Ritchie et Ken Thompson.
+    - 'Langage de programmation impératif, généraliste et de bas niveau, inventé en '
+    - time: '1972'
+    - ' par Dennis Ritchie et Ken Thompson.'
 wiki:
   en: https://en.wikipedia.org/wiki/C_(programming_language)
   fr: https://fr.wikipedia.org/wiki/C_(langage)

@@ -131,9 +131,9 @@ export async function buildInfonodeGraph(l: Locale): Promise<Infonode[]> {
     pianoTiles.forEach(([id, data]) => {
         const successors: InfonodeRef[] = [];
         const href = data.href;
-        const projectMatch = href.match(/projects\/(.+)\.html/);
-        const hobbyMatch = href.match(/hobbies\.html#(.+)/);
-        const blogMatch = href.match(/blog\.html#(.+)/);
+        const projectMatch = href.match(/projects\/(.+)/);
+        const hobbyMatch = href.match(/hobbies#(.+)/);
+        const blogMatch = href.match(/blog#(.+)/);
 
         if (projectMatch) {
             successors.push(makeRef(l, 'Project', projectMatch[1], 'content', 'public'));

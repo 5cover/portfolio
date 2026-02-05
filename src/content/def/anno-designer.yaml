@@ -4,8 +4,7 @@ name:
 synopsis:
   en: A program that lets you create and export building layouts for the Anno
     series of games.
-  fr:
-    Un programme qui vous permet de créer et exporter des plans de construction
+  fr: Un programme permettant de créer et exporter des plans de construction
     pour la série de jeux Anno.
 wiki: https://github.com/AnnoDesigner/anno-designer
 logo:

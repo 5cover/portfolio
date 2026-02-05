@@ -2,20 +2,12 @@ type: game-server
 name:
   full: Dreamfinity
 synopsis:
-  en: '<q cite="https://dreamfinity.org">We present you the most modern and
-    innovative Minecraft server: the Dreamfinity project! Our unique servers
-    combine all the best modes, fresh features and gameplay features available
-    for playing in Minecraft on the network. For many years, we have been
-    analyzing the needs of a variety of players and can confidently say: you
-    will like it!</q>'
+  en:
+    cite: &1 'https://dreamfinity.org'
+    q: 'We present you the most modern and innovative Minecraft server: the Dreamfinity project! Our unique servers combine all the best modes, fresh features and gameplay features available for playing in Minecraft on the network. For many years, we have been analyzing the needs of a variety of players and can confidently say: you will like it!'
   fr:
-    <q cite="https://dreamfinity.org">Nous vous présentons le serveurs Minecraft
-    les plus moderne et innovant à ce jour — le projet Dreamfinity ! Nos
-    serveurs uniques combinent tous les meilleurs mods, nouvelles
-    fonctionnalités et fonctionnalités de jeu disponibles pour jouer à Minecraft
-    en ligne. Au fil de nombreuses années, nous avons analysé les besoins d'une
-    variété de joueurs et nous pouvons affirmer avec certitude que vous aimerez
-    notre collaboration !</q>
-wiki: https://dreamfinity.org
+    cite: *1
+    q: "Nous vous présentons le serveurs Minecraft les plus moderne et innovant à ce jour — le projet Dreamfinity ! Nos serveurs uniques combinent tous les meilleurs mods, nouvelles fonctionnalités et fonctionnalités de jeu disponibles pour jouer à Minecraft en ligne. Au fil de nombreuses années, nous avons analysé les besoins d'une variété de joueurs et nous pouvons affirmer avec certitude que vous aimerez notre collaboration !"
+wiki: *1
 logo:
   src: /portfolio/img/def/dreamfinity/logo.svg

@@ -10,24 +10,31 @@ export type CompiledCopy =
     | null
     | string
     | readonly CompiledCopy[]
-    | { [K in keyof CopyElems]: Readonly<CompiledElem<K>> }[keyof CopyElems]
+    | (CommonElemAttrs & { [K in keyof CopyElems]: Readonly<CompiledElem<K>> }[keyof CopyElems])
     | { [K in keyof CopyVoids]: Readonly<CompiledVoid<K>> }[keyof CopyVoids];
 export type copy =
     | null
     | string
     | readonly copy[]
-    | { [K in keyof CopyElems]: Readonly<CopyElems[K]> & { readonly [T in K]: copy } }[keyof CopyElems]
+    | (CommonElemAttrs &
+          { [K in keyof CopyElems]: Readonly<CopyElems[K]> & { readonly [T in K]: copy } }[keyof CopyElems])
     | { [K in keyof CopyVoids]: Readonly<Record<K, CopyVoids[K]>> }[keyof CopyVoids];
+
+interface CommonElemAttrs {
+    lang?: Locale;
+}
 
 export interface CopyElems {
     abbr: { title: string };
-    time: { datetime: Date };
+    time: { datetime?: string };
     badge: { key: BadgeKey };
-    copy: { lang: Locale };
+    copy: object;
     p: object;
     code: object;
     em: object;
     strong: object;
+    a: { href: string };
+    q: { cite: string };
 }
 
 export interface CopyVoids {
@@ -38,7 +45,7 @@ export interface CompiledElem<K extends keyof CopyElems> {
     /** Type */
     t: K;
     /** Properties */
-    p: CopyElems[K];
+    p: CommonElemAttrs & CopyElems[K];
     /** Children */
     c: CompiledCopy;
 }
@@ -72,39 +79,61 @@ class CopyClass {
     }
 }
 
+const commonAttrsElemn = {
+    lang: z.enum(locales).optional(),
+} as const;
+
 export const zCopy: z.ZodType<copy> = z
     .lazy(() =>
         z.union([
             z.string(),
             z.array(zCopy),
             z.strictObject({
+                ...commonAttrsElemn,
                 title: z.string(),
                 abbr: zCopy,
             }),
             z.strictObject({
-                datetime: z.date(),
+                ...commonAttrsElemn,
+                datetime: z.string().optional(), // We could validate this. We could. I won't.
                 time: zCopy,
             }),
             z.strictObject({
+                ...commonAttrsElemn,
                 key: z.enum(badgeKeys),
                 badge: zCopy,
             }),
             z.strictObject({
-                lang: z.enum(locales),
+                ...commonAttrsElemn,
                 copy: zCopy,
             }),
             z.strictObject({
+                ...commonAttrsElemn,
                 p: zCopy,
             }),
             z.strictObject({
+                ...commonAttrsElemn,
                 code: zCopy,
             }),
             z.strictObject({
+                ...commonAttrsElemn,
                 em: zCopy,
             }),
             z.strictObject({
+                ...commonAttrsElemn,
                 strong: zCopy,
             }),
+            z.strictObject({
+                ...commonAttrsElemn,
+                href: z.string(),
+                a: zCopy,
+            }),
+            z.strictObject({
+                ...commonAttrsElemn,
+                cite: z.string().optional(),
+                q: zCopy,
+            }),
+
             z.strictObject({
                 def: z.string(),
             }),
@@ -116,9 +145,13 @@ function compile(c: copy): CompiledCopy {
     if (c === null) return null;
     if (typeof c === 'string') return c;
     if (isArray(c)) return c.map(compile);
-    const nodeElem = <K extends keyof CopyElems>(k: K, c: Record<K, copy>, p: CopyElems[K]): CompiledElem<K> => ({
+    const nodeElem = <K extends keyof CopyElems>(
+        k: K,
+        c: CommonElemAttrs & Record<K, copy>,
+        p: CopyElems[K]
+    ): CompiledElem<K> => ({
         t: k,
-        p, // Must contain only declared keys (since later the parser uses object spread)
+        p: { lang: c.lang, ...p }, // Must contain only declared keys (since later the parser uses object spread)
         c: compile(c[k]),
     });
     const nodeVoid = <K extends keyof CopyVoids>(k: K, c: Record<K, CopyVoids[K]>): CompiledVoid<K> => ({
@@ -128,11 +161,13 @@ function compile(c: copy): CompiledCopy {
     if ('abbr' in c) return nodeElem('abbr', c, { title: c.title });
     if ('time' in c) return nodeElem('time', c, { datetime: c.datetime });
     if ('badge' in c) return nodeElem('badge', c, { key: c.key });
-    if ('copy' in c) return nodeElem('copy', c, { lang: c.lang });
+    if ('copy' in c) return nodeElem('copy', c, {});
     if ('em' in c) return nodeElem('em', c, {});
     if ('strong' in c) return nodeElem('strong', c, {});
     if ('code' in c) return nodeElem('code', c, {});
     if ('p' in c) return nodeElem('p', c, {});
+    if ('q' in c) return nodeElem('q', c, { cite: c.cite });
+    if ('a' in c) return nodeElem('a', c, { href: c.href });
     if ('def' in c) return nodeVoid('def', c);
     return c satisfies never;
 }

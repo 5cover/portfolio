@@ -4,8 +4,10 @@ name:
   short: Visual Studio
 synopsis:
   en:
-    An <abbr title="Integrated Development Environment">IDE</abbr> developed by
-    Microsoft. It is used to develop computer programs.
+    - 'An '
+    - abbr: IDE
+      title: 'Integrated Development Environment'
+    - ' developed by Microsoft. It is used to develop computer programs.'
   fr: Suite de logiciels de développement pour Windows et mac OS conçue par
     Microsoft.
 wiki:

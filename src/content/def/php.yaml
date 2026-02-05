@@ -1,14 +1,16 @@
 type: programming-language
 name:
-  full: "PHP: Hypertext Preprocessor"
+  full: 'PHP: Hypertext Preprocessor'
   abbr: PHP
 synopsis:
   en:
-    A general-purpose scripting language geared towards web development, created
-    in 1993.
-  fr: Langage de programmation créé en <time datetime="1993">1993</time>,
-    principalement utilisé pour produire des pages Web dynamiques via un serveur
-    web
+    - 'A general-purpose scripting language geared towards web development, created in '
+    - time: '1993'
+    - .
+  fr:
+    - 'Langage de programmation créé en '
+    - time: '1993'
+    - ', principalement utilisé pour produire des pages Web dynamiques via un serveur web.'
 wiki: https://en.wikipedia.org/wiki/PHP
 background: /portfolio/img/def/php/bg.png
 logo:

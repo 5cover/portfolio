@@ -1,21 +1,17 @@
 title: WPFZard
 abstract:
-  en: >-
-
-    A simple <a target="_blank" rel="noopener noreferrer"
-    href="https://en.wikipedia.org/wiki/Windows_Presentation_Foundation"
-    data-def-id="wpf" class="link def-tooltip-trigger">WPF</a> <a
-    target="_blank" rel="noopener noreferrer"
-    href="https://learn.microsoft.com/en/windows/win32/uxguide/win-wizards"
-    data-def-id="wizard" class="link def-tooltip-trigger">Wizard</a> library.
-  fr: >-
-
-    Une simple bibliothèque d'<a target="_blank" rel="noopener noreferrer"
-    href="https://learn.microsoft.com/fr/windows/win32/uxguide/win-wizards"
-    data-def-id="wizard" class="link def-tooltip-trigger">Assistant</a> pour <a
-    target="_blank" rel="noopener noreferrer"
-    href="https://fr.wikipedia.org/wiki/Windows_Presentation_Foundation"
-    data-def-id="wpf" class="link def-tooltip-trigger">WPF</a>
+  en:
+    - 'A simple '
+    - def: wpf
+    - ' '
+    - def: wizard
+    - ' library.'
+  fr:
+    - Une simple bibliothèque d'
+    - def: wizard
+    - ' pour '
+    - def: wpf
+    - .
 context:
   en: Personal
   fr: Personnel

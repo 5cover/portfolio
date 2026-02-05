@@ -1,16 +1,15 @@
 title: ztest
 abstract:
-  en: >-
-
-    The <code>test</code> Unix command implemented in <a target="_blank"
-    rel="noopener noreferrer"
-    href="https://en.wikipedia.org/wiki/Zig_(programming_language)"
-    data-def-id="zig" class="link def-tooltip-trigger">Zig</a>
-  fr: >-
-
-    La commande Unix <code>test</code> implémentée en <a target="_blank"
-    rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Zig_(langage)"
-    data-def-id="zig" class="link def-tooltip-trigger">Zig</a>
+  en:
+    - 'The '
+    - code: test
+    - ' Unix command implemented in '
+    - def: zig
+  fr:
+    - 'La commande Unix '
+    - code: test
+    - ' implémentée en '
+    - def: zig
 context:
   en: Personal
   fr: Personnel

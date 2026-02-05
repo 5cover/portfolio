@@ -124,3 +124,5 @@ what's the modern idiomatic way?
 remove tsx stuff.
 
 ## remove locale props in preact
+
+## Dialogs -- go into more details about the philosophy, rationale, arch and design

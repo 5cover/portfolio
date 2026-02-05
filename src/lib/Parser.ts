@@ -23,11 +23,18 @@ export class Parser<Jsx extends JsxFn> {
         }
         switch (c.t) {
             case 'badge':
-                return Badge({ of: c.p.key, children: this.parse(c.c) });
+                return Badge({ lang: c.p.lang, of: c.p.key, children: this.parse(c.c) });
             case 'copy':
                 return this.jsx('span', { lang: c.p.lang, children: this.parse(c.c) });
             case 'def':
                 return Def({ id: c.p });
+            case 'a':
+                return this.jsx('a', {
+                    ...c.p,
+                    class: 'link',
+                    ...(c.p.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : null),
+                    children: this.parse(c.c),
+                });
             default:
                 return this.ashtml(c);
         }

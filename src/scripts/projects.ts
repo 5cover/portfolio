@@ -177,7 +177,7 @@ async function renderProjectCard(
     li.innerHTML = `
     <ul class="list-rect">${tagItems}</ul>
     ${logoHtml}
-    <h3><a class="foil" href="${localeBase}/project/${id}.html">${project.title}</a></h3>
+    <h3><a class="foil" href="${localeBase}/project/${id}">${project.title}</a></h3>
     ${context ? `<small class="context">${context}</small>` : ''}
     ${status ? `<small class="status">${status}</small>` : ''}
     <p class="abstract">${project.abstract}</p>

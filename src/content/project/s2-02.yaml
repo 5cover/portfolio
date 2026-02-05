@@ -2,12 +2,8 @@ title:
   en: N-queens problem
   fr: Problème des N reines
 abstract:
-  en: Innovative solutions to the <a class="link" target="_blank" rel="noopener
-    noreferrer" href="/portfolio/img/project/s2.02/sujet-sae.pdf">N-queens
-    problem</a>. Algorithmically exploring a problem (S2.02)
-  fr: Des solutions innovantes au <a class="link" target="_blank" rel="noopener
-    noreferrer" href="/portfolio/img/project/s2.02/sujet-sae.pdf">problème des N
-    reines</a>. Exploration algorithmique d'un problème (S2.02)
+  en: Innovative solutions to the N-queens problem. Algorithmically exploring a problem (S2.02)
+  fr: Des solutions innovantes au problème des N reines. Exploration algorithmique d'un problème (S2.02)
 context: BUT
 startDate: 2024-03-11
 endDate: 2024-03-27

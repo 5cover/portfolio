@@ -3,12 +3,15 @@ name:
   full: Minecraft
 synopsis:
   en:
-    A <time datetime="2011">2011</time> sandbox game developed by Mojang Studios
-    and originally released in <time datetime="2009">2009</time>.
+    - 'A '
+    - time: '2011'
+    - ' sandbox game developed by Mojang Studios and originally released in '
+    - time: '2009'
+    - .
   fr:
-    Jeu vidéo de type aventure « bac à sable » (construction complètement libre)
-    développé par le Suédois Markus Persson, alias Notch, puis par la société
-    Mojang Studios.
+    - 'Jeu vidéo de type aventure '
+    - q: bac à sable
+    - ' (construction complètement libre) développé par le Suédois Markus Persson, alias Notch, puis par la société Mojang Studios.'
 wiki:
   en: https://en.wikipedia.org/wiki/Minecraft
   fr: https://fr.wikipedia.org/wiki/Minecraft
