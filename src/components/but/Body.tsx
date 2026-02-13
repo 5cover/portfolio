@@ -4,7 +4,7 @@ import Section from '../Section';
 import Heading from '../Heading';
 import type { ButData } from './types';
 import { plainEntries } from '../../lib/util';
-import { c, copy } from '../../lib/copy';
+import { c } from '../../lib/copy';
 import { astro } from '../context';
 
 const MaxProjectsPerSkill = 4;

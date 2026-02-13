@@ -1,7 +1,6 @@
-import type { LocalizedItem } from '../content.config';
+import type { LocalizedItem } from '../lib/content';
 
 type DefIndex = Record<string, LocalizedItem<'def'>>;
-type DefTypeIndex = Record<string, LocalizedItem<'def-type'>>;
 
 const tooltipLeftOffset = 20 * 0.75;
 const tooltipTriggerMarginTop = 20 * 0.25;

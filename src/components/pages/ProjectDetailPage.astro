@@ -13,9 +13,8 @@ import { translation, normalizeLocale } from '../../i18n';
 
 import '../../styles/project.scss';
 import { formatDate } from '../../lib/util';
-import { copy } from '../../lib/copy';
-import tags, { localizeTag } from '../../catalog/tag';
 import Copy from '../Copy.astro';
+import { tag } from '../../catalog/tag';
 
 interface Props {
     id: string;
@@ -31,11 +30,10 @@ const p = content.project(locale, id);
 const projectBody = await content.textual(locale, 'project', id);
 
 const backgroundStyle = p.background ? `--bg-img: url(${p.background})` : undefined;
-const title = copy(p.title);
-const logoTitle = _.logoTitle(title.toString());
+const logoTitle = _.logoTitle(p.title.toString());
 const startLabel = p.startDate ? formatDate(p.startDate, locale) : '';
 const endLabel = p.endDate ? formatDate(p.endDate, locale) : '';
-const context = p.context ? copy(p.context).capitalize() : undefined;
+const context = p.context ? p.context.capitalize() : undefined;
 const teamDefs = p.team.map(({ id }) => content.def(locale, id));
 const techDefs = p.technologies.map(({ id }) => content.def(locale, id));
 ---
@@ -48,15 +46,15 @@ const techDefs = p.technologies.map(({ id }) => content.def(locale, id));
                     p.tags.map(tagId => (
                         <li>
                             <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`}>
-                                <Copy c={copy(localizeTag(locale)(tags[tagId]).title)} />
+                                <Copy c={tag(locale, tagId).title} />
                             </a>
                         </li>
                     ))
                 }
             </ul>
-            <h1><Copy c={copy(p.title)} /></h1>
+            <h1><Copy c={p.title} /></h1>
             {p.logo ? <Graphic of={p.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
-            <p class='abstract'><Copy c={copy(p.abstract)} /></p>
+            <p class='abstract'><Copy c={p.abstract} /></p>
             <div class='status-context'>
                 {
                     context ? (

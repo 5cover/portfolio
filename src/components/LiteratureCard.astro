@@ -4,47 +4,29 @@ import LinkList from './LinkList';
 import { detailHref } from '../lib/links';
 import { translation, normalizeLocale } from '../i18n';
 import type { Entry, LocalizedItem } from '../lib/content';
-import { copy } from '../lib/copy';
 import Copy from './Copy.astro';
+import Section from './Section';
 
 interface Props {
     entry: Entry<LocalizedItem<'literature'>>;
-    headingLevel?: number;
 }
 
-const { entry, headingLevel = 3 } = Astro.props;
+const { entry } = Astro.props;
 const [id, lit] = entry;
 const locale = normalizeLocale(Astro.currentLocale);
-const title = copy(lit.title);
-const logoTitle = translation(locale).logoTitle(title.toString());
+const logoTitle = translation(locale).logoTitle(lit.title.toString());
 const backgroundStyle = lit.background ? `--bg-img-card: url(${lit.background})` : undefined;
 ---
 
 <li id={id} style={backgroundStyle}>
     {lit.logo ? <Graphic of={lit.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
     <div>
-        {
-            headingLevel === 1 ? (
-                <h1>
-                    <a class='foil' href={detailHref(locale, 'literature', id)}>
-                        <Copy c={title} />
-                    </a>
-                </h1>
-            ) : headingLevel === 2 ? (
-                <h2>
-                    <a class='foil' href={detailHref(locale, 'literature', id)}>
-                        <Copy c={title} />
-                    </a>
-                </h2>
-            ) : (
-                <h3>
-                    <a class='foil' href={detailHref(locale, 'literature', id)}>
-                        <Copy c={title} />
-                    </a>
-                </h3>
-            )
-        }
-        <p class='abstract'>=<Copy c={copy(lit.abstract)} /></p>
+        <Section>
+            <a class='foil' href={detailHref(locale, 'literature', id)}>
+                <Copy c={lit.title} />
+            </a>
+        </Section>
+        <p class='abstract'>=<Copy c={lit.abstract} /></p>
         {lit.links.length > 0 ? <LinkList links={lit.links} /> : null}
     </div>
 </li>

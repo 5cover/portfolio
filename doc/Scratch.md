@@ -122,3 +122,10 @@ what's the modern idiomatic way?
 and find a solution for defs
 
 ## A "see all {infonode type}" that goes back to the list of cards in each detail page
+
+## @ in imports instead of relative everuwhere
+
+## infonode content model
+
+collections as an implementation detail
+unified `<Infonode>` component.

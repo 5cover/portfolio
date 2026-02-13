@@ -1,6 +1,15 @@
-import { loc, type Locale, type Localized } from '../i18n';
+import type { Locale } from '../const';
+import { locopy, type Localized } from '../i18n';
 import type { copy } from '../lib/copy';
 
+export interface Tag {
+    title: Localized<copy>;
+}
+export const tag = (l: Locale, d: TagKey) => ({
+    title: locopy(l, tags[d].title),
+});
+
+export type TagKey = (typeof tagKeys)[number];
 export const tagKeys = [
     '3d-modeling',
     'algorithms',
@@ -34,17 +43,7 @@ export const tagKeys = [
     'web',
 ] as const;
 
-export type TagKey = (typeof tagKeys)[number];
-
-export interface Tag {
-    title: Localized<copy>;
-}
-
-export const localizeTag = (l: Locale) => (d: Tag) => ({
-    title: loc(l, d.title),
-});
-
-export default {
+export const tags = {
     '3d-modeling': {
         title: {
             en: '3D',

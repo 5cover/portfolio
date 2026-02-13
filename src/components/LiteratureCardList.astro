@@ -3,12 +3,11 @@ import type { Entry, LocalizedItem } from '../lib/content';
 import LiteratureCard from './LiteratureCard.astro';
 interface Props {
     entries: readonly Entry<LocalizedItem<'literature'>>[];
-    headingLevel?: number;
 }
 
-const { entries, headingLevel = 3 } = Astro.props;
+const { entries } = Astro.props;
 ---
 
 <ul class='lvl list-detail-split-card'>
-    {entries.map(entry => <LiteratureCard entry={entry} headingLevel={headingLevel} />)}
+    {entries.map(entry => <LiteratureCard entry={entry} />)}
 </ul>

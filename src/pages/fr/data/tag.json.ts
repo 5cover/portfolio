@@ -1,5 +1,5 @@
-import { tag } from '../../../lib/data';
+import { tags } from '../../../lib/data';
 
 export function GET() {
-    return tag('fr');
+    return tags('fr');
 }

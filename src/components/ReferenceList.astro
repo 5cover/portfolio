@@ -1,13 +1,12 @@
 ---
-import anchors from '../catalog/anchor';
+import { anchors } from '../catalog/anchor';
 import type { Reference } from '../content.config';
 import { translation, type Localize } from '../i18n';
-import { copy } from '../lib/copy';
 import Copy from './Copy.astro';
 import Graphic from './Graphic';
 
 interface Props {
-    references: Localize<Reference>[];
+    references: readonly Localize<Reference>[];
 }
 
 const { references } = Astro.props;
@@ -19,7 +18,6 @@ const _ = translation(Astro.currentLocale);
         references.map((ref, index) => {
             const num = index + 1;
             const anchor = anchors[ref.anchor];
-            const caption = copy(ref.caption);
             return (
                 <li id={`ref-${num}`}>
                     <span class='ref-backlink' aria-label={_.refJumpUp} title={_.refJumpUp}>
@@ -28,9 +26,9 @@ const _ = translation(Astro.currentLocale);
                         </a>
                     </span>
                     <a class='ref-cite link' target='_blank' rel='noopener noreferrer' href={ref.href}>
-                        <Graphic of={anchor} alt={caption.toString()} />
+                        <Graphic of={anchor} alt={ref.caption.toString()} />
                         <span>
-                            <Copy c={caption} />
+                            <Copy c={ref.caption} />
                         </span>
                     </a>
                 </li>

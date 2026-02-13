@@ -1,4 +1,4 @@
-import { def } from '../../../lib/data';
+import { defs } from '../../../lib/data';
 export function GET() {
-    return def('fr');
+    return defs('fr');
 }

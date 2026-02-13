@@ -1,24 +1,23 @@
 import Graphic from './Graphic';
 import LinkList from './LinkList';
 import { detailHref, pageHref } from '../lib/links';
-import { normalizeLocale, translation, type Locale } from '../i18n';
+import { normalizeLocale, translation } from '../i18n';
 import type { Entry, LocalizedItem } from '../lib/content';
 import { formatDate } from '../lib/util';
 import { c, copy } from '../lib/copy';
-import tags, { localizeTag } from '../catalog/tag';
 import { astro } from './context';
+import Section from './Section';
+import { tag } from '../catalog/tag';
 
 interface Props {
     entry: Entry<LocalizedItem<'project'>>;
-    headingLevel?: number;
 }
 
-export default ({ entry, headingLevel = 3 }: Props) => {
+export default ({ entry }: Props) => {
     const locale = normalizeLocale(astro().currentLocale);
     const [id, project] = entry;
     const _ = translation(locale);
-    const title = copy(project.title);
-    const logoTitle = _.logoTitle(title.toString());
+    const logoTitle = _.logoTitle(project.title.toString());
     const startLabel = project.startDate ? formatDate(project.startDate, locale) : null;
     const endLabel = project.endDate ? formatDate(project.endDate, locale) : null;
     const context = project.context ? copy(project.context).capitalize() : null;
@@ -28,50 +27,16 @@ export default ({ entry, headingLevel = 3 }: Props) => {
             <ul class="list-rect">
                 {project.tags.map(tagId => (
                     <li>
-                        <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`}>
-                            {c(localizeTag(locale)(tags[tagId]).title)}
-                        </a>
+                        <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`}>{c(tag(locale, tagId).title)}</a>
                     </li>
                 ))}
             </ul>
             {project.logo ? <Graphic of={project.logo} alt={logoTitle} title={logoTitle} class="logo" /> : null}
-            {headingLevel === 1 ? (
-                <h1>
-                    <a class="foil" href={detailHref(locale, 'projects', id)}>
-                        {title.preact()}
-                    </a>
-                </h1>
-            ) : headingLevel === 2 ? (
-                <h2>
-                    <a class="foil" href={detailHref(locale, 'projects', id)}>
-                        {title.preact()}
-                    </a>
-                </h2>
-            ) : headingLevel === 4 ? (
-                <h4>
-                    <a class="foil" href={detailHref(locale, 'projects', id)}>
-                        {title.preact()}
-                    </a>
-                </h4>
-            ) : headingLevel === 5 ? (
-                <h5>
-                    <a class="foil" href={detailHref(locale, 'projects', id)}>
-                        {title.preact()}
-                    </a>
-                </h5>
-            ) : headingLevel === 6 ? (
-                <h6>
-                    <a class="foil" href={detailHref(locale, 'projects', id)}>
-                        {title.preact()}
-                    </a>
-                </h6>
-            ) : (
-                <h3>
-                    <a class="foil" href={detailHref(locale, 'projects', id)}>
-                        {title.preact()}
-                    </a>
-                </h3>
-            )}
+            <Section>
+                <a class="foil" href={detailHref(locale, 'projects', id)}>
+                    {project.title.preact()}
+                </a>
+            </Section>
             {project.startDate ? (
                 <small class="status">
                     <time datetime={project.startDate.toISOString()}>{startLabel}</time> &ndash;{' '}

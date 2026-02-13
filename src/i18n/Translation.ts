@@ -1,4 +1,4 @@
-import type { Locale, NavItemPage } from '../i18n';
+import type { Locale, NavItemPage } from '../const';
 import type { ThemeLabels } from '../lib/types';
 
 export interface Translation {

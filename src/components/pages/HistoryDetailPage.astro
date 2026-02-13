@@ -10,7 +10,6 @@ import '../../styles/history-detail.scss';
 // (it shows as resolved but sitll doesn't work for me)
 import '../../styles/but-informatique.scss';
 import Copy from '../Copy.astro';
-import { copy } from '../../lib/copy';
 
 interface Props {
     id: string;
@@ -29,13 +28,13 @@ const historyBody = await content.textual(locale, 'history/body', id);
 <BaseLayout pageName={`history/${id}`}>
     <main>
         <header>
-            <h1><Copy c={copy(data.title)} /></h1>
+            <h1><Copy c={data.title} /></h1>
             {
                 data.meta || data.year ? (
                     <p class='history-meta'>
                         {data.meta ? (
                             <span>
-                                <Copy c={copy(data.meta)} />
+                                <Copy c={data.meta} />
                             </span>
                         ) : null}
                         {data.year ? <span class='history-meta_year'>{data.year}</span> : null}

@@ -1,6 +1,6 @@
 ---
 import LiteratureIndexPage from '../../components/pages/LiteratureIndexPage.astro';
-import { literatureKinds } from '../../i18n';
+import { literatureKinds } from '../../const';
 
 export async function getStaticPaths() {
     return literatureKinds.map(kind => ({ params: { kind } }));

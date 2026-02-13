@@ -1,4 +1,3 @@
-import type { Locale } from '../i18n';
 import type { Entry, LocalizedItem } from '../lib/content';
 import ProjectCard from './ProjectCard';
 

@@ -1,4 +1,4 @@
-import { anchor } from '../../../lib/data';
+import { anchors } from '../../../lib/data';
 export function GET() {
-    return anchor();
+    return anchors();
 }

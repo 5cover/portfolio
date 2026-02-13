@@ -6,7 +6,6 @@ import * as content from '../../lib/content';
 import { pageHref } from '../../lib/links';
 import { normalizeLocale } from '../../i18n';
 import Copy from '../Copy.astro';
-import { copy } from '../../lib/copy';
 import '../../styles/index.scss';
 
 interface Props {
@@ -34,27 +33,25 @@ const locale = normalizeLocale(Astro.currentLocale),
         <ul class='lvl list-piano-tiles'>
             {
                 pianoTiles.map(([, tile]) => {
-                    const title = copy(tile.title);
-                    const summary = copy(tile.summary);
                     return (
                         <li>
                             <figure>
                                 <img
                                     src={tile.backgroundImage}
-                                    alt={title.toString()}
+                                    alt={tile.title.toString()}
                                     width='240'
                                     height='480'
                                     loading='lazy'
-                                    title={summary.toString()}
+                                    title={tile.summary.toString()}
                                 />
                                 <figcaption>
                                     <div>
                                         <h2>
                                             <a class='foil' href={tile.href}>
-                                                <Copy c={title} />
+                                                <Copy c={tile.title} />
                                             </a>
                                         </h2>
-                                        <Copy c={summary} />
+                                        <Copy c={tile.summary} />
                                     </div>
                                 </figcaption>
                             </figure>
@@ -124,7 +121,6 @@ const locale = normalizeLocale(Astro.currentLocale),
                 width='640'
                 height='360'
                 title='Video CV - Raphaël Bardini'
-                frameborder='0'
                 allowfullscreen></iframe>
         </article>
     </main>

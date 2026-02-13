@@ -1,5 +1,5 @@
-import { defType } from '../../../lib/data';
+import { defTypes } from '../../../lib/data';
 
 export function GET() {
-    return defType('en');
+    return defTypes('en');
 }

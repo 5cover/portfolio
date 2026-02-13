@@ -1,15 +1,15 @@
 ---
-import defTypes, { localizeDefType as localizeDefType } from '../catalog/def-type';
 import { normalizeLocale } from '../i18n';
 import type { LocalizedItem } from '../lib/content';
 import { copy } from '../lib/copy';
 import Copy from './Copy.astro';
 import Graphic from './Graphic';
 import { translation } from '../i18n';
+import { defType } from '../catalog/def-type';
 
 function buildDefTitle(entry: LocalizedItem<'def'>) {
     const { abbr, full } = entry.name;
-    return copy(abbr ? [full, ' (', { title: copy(full).toString(), abbr }, ')'] : full);
+    return abbr ? copy([full, ' (', { title: full.toString(), abbr }, ')']) : full;
 }
 
 interface Props {
@@ -20,7 +20,7 @@ const defTitle = buildDefTitle(def);
 const logoTitle = translation(Astro.currentLocale).logoTitle(defTitle.toString());
 const backgroundStyle = def.background ? `--bg-img-card: url(${def.background})` : undefined;
 
-const typeName = localizeDefType(normalizeLocale(Astro.currentLocale))(defTypes[def.type]).title;
+const typeName = defType(normalizeLocale(Astro.currentLocale), def.type).title;
 ---
 
 <article class='def' style={backgroundStyle}>
@@ -30,6 +30,6 @@ const typeName = localizeDefType(normalizeLocale(Astro.currentLocale))(defTypes[
         </a>
     </h4>
     {def.logo ? <Graphic of={def.logo} title={logoTitle} class='logo' /> : null}
-    <p class='type'><small><Copy c={copy(typeName).capitalize()} /></small></p>
-    <p class='synopsis'><Copy c={copy(def.synopsis)} /></p>
+    <p class='type'><small><Copy c={typeName.capitalize()} /></small></p>
+    <p class='synopsis'><Copy c={def.synopsis} /></p>
 </article>

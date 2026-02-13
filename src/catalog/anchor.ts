@@ -14,7 +14,7 @@ export const anchorKeys = [
 ] as const;
 export type AnchorKey = (typeof anchorKeys)[number];
 
-export default {
+export const anchors = {
     ccm: { src: '/portfolio/img/social/ccm.png' },
     email: { src: '/portfolio/img/social/email.svg', kind: 'svg' },
     github: { src: '/portfolio/img/social/github.svg', kind: 'svg' },

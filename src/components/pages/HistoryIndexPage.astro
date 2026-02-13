@@ -6,7 +6,6 @@ import { normalizeLocale } from '../../i18n';
 import * as content from '../../lib/content';
 
 import '../../styles/history.scss';
-import { copy } from '../../lib/copy';
 import Copy from '../Copy.astro';
 
 const locale = normalizeLocale(Astro.currentLocale);
@@ -30,7 +29,6 @@ const historyBodies = await Promise.all(historyItems.map(([id]) => content.textu
                             const isOdd = i % 2 === 1;
                             const HistoryBody = historyBodies[i];
                             const href = detailHref(locale, 'history', id);
-                            const meta = copy(h.meta);
                             return (
                                 <div class='lvl js-timeline_item ag-timeline_item'>
                                     <div class='ag-timeline-card_box'>
@@ -38,7 +36,7 @@ const historyBodies = await Promise.all(historyItems.map(([id]) => content.textu
                                             <>
                                                 <div class='ag-timeline-card_meta-box'>
                                                     <div class='ag-timeline-card_meta'>
-                                                        <Copy c={meta} />
+                                                        <Copy c={h.meta} />
                                                     </div>
                                                 </div>
                                                 <div class='js-timeline-card_point-box ag-timeline-card_point-box'>
@@ -52,7 +50,7 @@ const historyBodies = await Promise.all(historyItems.map(([id]) => content.textu
                                                 </div>
                                                 <div class='ag-timeline-card_meta-box'>
                                                     <div class='ag-timeline-card_meta'>
-                                                        <Copy c={meta} />
+                                                        <Copy c={h.meta} />
                                                     </div>
                                                 </div>
                                             </>
@@ -71,14 +69,14 @@ const historyBodies = await Promise.all(historyItems.map(([id]) => content.textu
                                             </div>
                                             <div class='ag-timeline-card_info'>
                                                 <div class='ag-timeline-card_title'>
-                                                    <Copy c={copy(h.title)} />
+                                                    <Copy c={h.title} />
                                                 </div>
                                                 <div class='ag-timeline-card_desc'>
                                                     <TextualContent content={HistoryBody} />
                                                 </div>
                                             </div>
                                         </div>
-                                        <a class='ag-timeline-card_link' href={href} aria-label={meta.toString()} />
+                                        <a class='ag-timeline-card_link' href={href} aria-label={h.meta.toString()} />
                                         <div class='ag-timeline-card_arrow' />
                                     </div>
                                 </div>

@@ -1,7 +1,7 @@
 import type { GalleryItem, Item, Link, Reference } from '../content.config';
-import { loc, normalizeLocale, type Locale, type Localize } from '../i18n';
+import { loc, locopy, normalizeLocale, type Localize } from '../i18n';
 import { getCollection, getEntry, render, type CollectionKey } from 'astro:content';
-import type { copy } from './copy';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 
 export type TextualKind = 'history' | 'history/body' | 'literature' | 'project';
 export type Entry<T> = readonly [id: string, d: T];
@@ -12,25 +12,25 @@ export const contact = await getter('contact');
 const locLink = (l: Locale) => (d: Link) => ({
     ...d,
     href: loc(l, d.href),
-    label: loc<copy>(l, d.label),
+    label: locopy(l, d.label),
 });
 
 const locRef = (l: Locale) => (d: Reference) => ({
     ...d,
-    caption: loc<copy>(l, d.caption),
+    caption: locopy(l, d.caption),
     href: loc(l, d.href),
 });
 
 const locGalleryItem = (l: Locale) => (d: GalleryItem) => ({
     ...d,
-    caption: loc<copy>(l, d.caption),
+    caption: locopy(l, d.caption),
 });
 
 export const project = await getterLocalized('project', (l, d) => ({
     ...d,
-    title: loc<copy>(l, d.title),
-    abstract: loc<copy>(l, d.abstract),
-    context: loc<copy | undefined>(l, d.context),
+    title: locopy(l, d.title),
+    abstract: locopy(l, d.abstract),
+    context: locopy(l, d.context),
     links: d.links.map(locLink(l)),
     references: d.references.map(locRef(l)),
     gallery: d.gallery.map(locGalleryItem(l)),
@@ -38,8 +38,8 @@ export const project = await getterLocalized('project', (l, d) => ({
 
 export const literature = await getterLocalized('literature', (l, d) => ({
     ...d,
-    title: loc<copy>(l, d.title),
-    abstract: loc<copy>(l, d.abstract),
+    title: locopy(l, d.title),
+    abstract: locopy(l, d.abstract),
     links: d.links.map(locLink(l)),
     references: d.references.map(locRef(l)),
     gallery: d.gallery.map(locGalleryItem(l)),
@@ -47,17 +47,17 @@ export const literature = await getterLocalized('literature', (l, d) => ({
 export const def = await getterLocalized('def', (l, d) => ({
     ...d,
     name: {
-        full: loc<copy>(l, d.name.full),
-        abbr: loc<copy | undefined>(l, d.name.abbr),
-        short: loc<copy | undefined>(l, d.name.short),
+        full: locopy(l, d.name.full),
+        abbr: locopy(l, d.name.abbr),
+        short: locopy(l, d.name.short),
     },
-    synopsis: loc<copy>(l, d.synopsis),
+    synopsis: locopy(l, d.synopsis),
     wiki: loc(l, d.wiki),
 }));
 export const history = await getterLocalized('history', (l, d) => ({
     ...d,
-    title: loc<copy>(l, d.title),
-    meta: loc<copy>(l, d.meta),
+    title: locopy(l, d.title),
+    meta: locopy(l, d.meta),
     year: d.year,
     media: d.media
         ? {
@@ -69,11 +69,12 @@ export const history = await getterLocalized('history', (l, d) => ({
 
 export const pianoTile = await getterLocalized('piano-tile', (l, d) => ({
     ...d,
-    title: loc<copy>(l, d.title),
-    summary: loc<copy>(l, d.summary),
+    title: locopy(l, d.title),
+    summary: locopy(l, d.summary),
 }));
 
-export async function textual(locale: string, kind: TextualKind, id: string) {
+export type Textual = Promise<AstroComponentFactory>;
+export async function textual(locale: string | undefined, kind: TextualKind, id: string): Textual {
     const entryId = buildTextualId(locale, kind, id);
     const entry = await getEntry('textual', entryId);
     if (!entry) {
@@ -82,13 +83,26 @@ export async function textual(locale: string, kind: TextualKind, id: string) {
     return (await render(entry)).Content;
 }
 
-function buildTextualId(locale: string, kind: TextualKind, id: string): string {
+import * as mdx from '@mdx-js/mdx';
+import { readFileSync } from 'fs';
+import { Fragment } from 'preact/jsx-runtime';
+import type { Locale } from '../const';
+
+export function textual2(locale: string | undefined, kind: TextualKind, id: string) {
+    const entryId = buildTextualId(locale, kind, id);
+    return mdx.evaluateSync(readFileSync('src/content/textual/' + entryId), { Fragment }).default;
+}
+
+function buildTextualId(locale: string | undefined, kind: TextualKind, id: string): string {
     return `${normalizeLocale(locale)}/${kind}/${id}`;
 }
 
-async function getterLocalized<K extends CollectionKey, U>(k: K, localize: (locale: Locale, data: Item<K>) => U) {
+async function getterLocalized<C extends CollectionKey>(
+    k: C,
+    localize: (locale: Locale, data: Item<C>) => LocalizedItem<C>
+) {
     const raw = await getCollection(k);
-    type I = Readonly<U>;
+    type I = LocalizedItem<C>;
     function get(locale: string | undefined, id: string): I;
     function get(locale: string | undefined): readonly Entry<I>[];
     function get(locale: string | undefined, id?: string): I | readonly Entry<I>[] {

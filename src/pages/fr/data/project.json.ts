@@ -1,4 +1,4 @@
-import { project } from '../../../lib/data';
+import { projects } from '../../../lib/data';
 export function GET() {
-    return project('fr');
+    return projects('fr');
 }

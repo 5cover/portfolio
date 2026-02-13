@@ -1,24 +1,25 @@
 import z from 'astro/zod';
 import { badgeKeys, type BadgeKey } from '../catalog/badge';
-import { locales, type Locale } from '../i18n';
 import { capitalize as capitalizeStr, isArray } from './util';
 import { astroParser, preactParser } from './Parser';
+import { locales, type Locale } from '../const';
 
 // Rich text "HTML as object" format for copy with inline formatting.
 
-export type CompiledCopy =
-    | null
-    | string
-    | readonly CompiledCopy[]
-    | (CommonElemAttrs & { [K in keyof CopyElems]: Readonly<CompiledElem<K>> }[keyof CopyElems])
-    | { [K in keyof CopyVoids]: Readonly<CompiledVoid<K>> }[keyof CopyVoids];
 export type copy =
     | null
     | string
     | readonly copy[]
     | (CommonElemAttrs &
           { [K in keyof CopyElems]: Readonly<CopyElems[K]> & { readonly [T in K]: copy } }[keyof CopyElems])
-    | { [K in keyof CopyVoids]: Readonly<Record<K, CopyVoids[K]>> }[keyof CopyVoids];
+    | { [K in keyof CopyVoids]: Readonly<Record<K, CopyVoids[K]>> }[keyof CopyVoids]
+    | CopyClass; // for merging back compiled copy into new copy
+export type CompiledCopy =
+    | null
+    | string
+    | readonly CompiledCopy[]
+    | (CommonElemAttrs & { [K in keyof CopyElems]: Readonly<CompiledElem<K>> }[keyof CopyElems])
+    | { [K in keyof CopyVoids]: Readonly<CompiledVoid<K>> }[keyof CopyVoids];
 
 interface CommonElemAttrs {
     lang?: Locale;
@@ -58,7 +59,7 @@ export interface CompiledVoid<K extends keyof CopyVoids> {
 }
 
 export function copy(c: copy) {
-    return new CopyClass(compile(c));
+    return c instanceof CopyClass ? c : new CopyClass(compile(c));
 }
 
 export type { CopyClass as Copy };
@@ -79,61 +80,60 @@ class CopyClass {
     }
 }
 
-const commonAttrsElemn = {
+const commonAttrsElems = {
     lang: z.enum(locales).optional(),
 } as const;
 
-export const zCopy: z.ZodType<copy> = z
+export const zCopy: z.ZodType<Exclude<copy, CopyClass>> = z
     .lazy(() =>
         z.union([
             z.string(),
             z.array(zCopy),
             z.strictObject({
-                ...commonAttrsElemn,
+                ...commonAttrsElems,
                 title: z.string(),
                 abbr: zCopy,
             }),
             z.strictObject({
-                ...commonAttrsElemn,
+                ...commonAttrsElems,
                 datetime: z.string().optional(), // We could validate this. We could. I won't.
                 time: zCopy,
             }),
             z.strictObject({
-                ...commonAttrsElemn,
+                ...commonAttrsElems,
                 key: z.enum(badgeKeys),
                 badge: zCopy,
             }),
             z.strictObject({
-                ...commonAttrsElemn,
+                ...commonAttrsElems,
                 copy: zCopy,
             }),
             z.strictObject({
-                ...commonAttrsElemn,
+                ...commonAttrsElems,
                 p: zCopy,
             }),
             z.strictObject({
-                ...commonAttrsElemn,
+                ...commonAttrsElems,
                 code: zCopy,
             }),
             z.strictObject({
-                ...commonAttrsElemn,
+                ...commonAttrsElems,
                 em: zCopy,
             }),
             z.strictObject({
-                ...commonAttrsElemn,
+                ...commonAttrsElems,
                 strong: zCopy,
             }),
             z.strictObject({
-                ...commonAttrsElemn,
+                ...commonAttrsElems,
                 href: z.string(),
                 a: zCopy,
             }),
             z.strictObject({
-                ...commonAttrsElemn,
+                ...commonAttrsElems,
                 cite: z.string().optional(),
                 q: zCopy,
             }),
-
             z.strictObject({
                 def: z.string(),
             }),
@@ -144,6 +144,7 @@ export const zCopy: z.ZodType<copy> = z
 function compile(c: copy): CompiledCopy {
     if (c === null) return null;
     if (typeof c === 'string') return c;
+    if (c instanceof CopyClass) return c.copy;
     if (isArray(c)) return c.map(compile);
     const nodeElem = <K extends keyof CopyElems>(
         k: K,

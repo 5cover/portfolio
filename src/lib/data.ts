@@ -1,15 +1,14 @@
 import * as content from './content';
 import type { Locale } from '../i18n';
-import { mapById, mapValues } from './util';
-import tags, { localizeTag as localizeTag } from '../catalog/tag';
-import defTypes, { localizeDefType as localizeDefType } from '../catalog/def-type';
-import anchors from '../catalog/anchor';
+import { tagKeys, tag } from '../catalog/tag';
+import { defType, defTypesKeys } from '../catalog/def-type';
 
-export const def = async (l: Locale) => jsonResponse(mapById(content.def(l)));
-export const project = async (l: Locale) => jsonResponse(mapById(content.project(l)));
-export const tag = async (l: Locale) => jsonResponse(mapValues(tags, localizeTag(l)));
-export const defType = async (l: Locale) => jsonResponse(mapValues(defTypes, localizeDefType(l)));
-export const anchor = async () => jsonResponse(anchors);
+export const defs = async (l: Locale) => jsonResponse(Object.fromEntries(content.def(l)));
+export const projects = async (l: Locale) => jsonResponse(Object.fromEntries(content.project(l)));
+export const tags = async (l: Locale) => jsonResponse(Object.fromEntries(tagKeys.map(k => [k, tag(l, k)])));
+export const defTypes = async (l: Locale) =>
+    jsonResponse(Object.fromEntries(defTypesKeys.map(k => [k, defType(l, k)])));
+export const anchors = async () => jsonResponse(anchors);
 
 function jsonResponse(data: unknown): Response {
     return new Response(JSON.stringify(data), {

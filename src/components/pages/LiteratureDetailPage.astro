@@ -7,7 +7,6 @@ import LinkList from '../LinkList';
 import ReferenceList from '../ReferenceList.astro';
 import * as content from '../../lib/content';
 import { translation, normalizeLocale } from '../../i18n';
-import { copy } from '../../lib/copy';
 import Copy from '../Copy.astro';
 
 interface Props {
@@ -21,16 +20,14 @@ const _ = translation(locale);
 const data = content.literature(locale, id);
 const body = await content.textual(locale, 'literature', id);
 const backgroundStyle = data.background ? `--bg-img: url(${data.background})` : undefined;
-const title = copy(data.title);
-const abstract = copy(data.abstract);
 ---
 
 <BaseLayout pageName={`literature/${id}`}>
     <main style={backgroundStyle} class={mainClass}>
         <header>
-            <h1><Copy c={title} /></h1>
-            {data.logo ? <Graphic of={data.logo} title={_.logoTitle(title.toString())} class='logo' /> : null}
-            <p class='abstract'><Copy c={abstract} /></p>
+            <h1><Copy c={data.title} /></h1>
+            {data.logo ? <Graphic of={data.logo} title={_.logoTitle(data.title.toString())} class='logo' /> : null}
+            <p class='abstract'><Copy c={data.abstract} /></p>
         </header>
         {
             data.links.length > 0 ? (
