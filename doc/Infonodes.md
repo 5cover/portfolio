@@ -14,54 +14,48 @@ For the infonode graph, we will talk about the existence of an edge `A --> B` as
 
 Information on the site is represented by infonodes -- objects that know how to render themselves on a webpage and have a named string type.
 
-One should be able to modify this data without changing the code.
-
 All infonodes are of a specific role, either `content` (semantic content), or `layout` (layout and arrangement).
 
 - `content` infonodes may reference other `content` infonodes semantically. They are sourced from data-oriented documents or code decoupled from the generation logic (YAML, markdown, MDX, images and document files). They represent pure information and are layout-agnostic
-- `layout` infonodes may not be successors, meaning no edge in the graph should target them. They are programmed directly.
+- `layout` infonodes cannot be successors, meaning no edge in the graph should target them. They are programmed directly.
 
 They also have a visibility, either `public` or `private`. Infonodes of `public` visibility are included in the Yggdrasil graph and the global search, whereas infonodes of `private` visibility are not.
 
-Infonodes link to other infonodes, creating a directed graph of all infonodes. This graph is called Yggdrasil. Effectively, each infonode has a list of successor infonodes. Each knows how to render itself so we don't need to know its type to render it. However, the types of infonode linked affect the parent structure (for instance in the **Project** detail a "Gallery" heading is added if there are linked Media infonodes) so we can read infonode types from the list. A list implies an order in successors, which is sometimes meaningful. **Media** successor order makes sense for **Project**, for instance, whereas **Tags** are always ordered alphabetically.
+Infonodes link to other infonodes, creating a directed graph of all infonodes. This graph is called Yggdrasil. Effectively, each infonode has a list of successor infonodes. Each knows how to render itself so we don't need to know its type to render it. However, the types of infonodes linked affect the parent structure (for instance in the **Project** detail a "Gallery" heading is added if there are linked **Image** infonodes) so we can read infonode types from the list. A list implies an order in successors, which is sometimes meaningful. **Image** successor order makes sense for **Project**, for instance, whereas **Tags** are always ordered alphabetically.
 
-We could have a whole page (Yggdrasil) that renders this graph as a pannable-explorable render, excluding internal/display only infonodes such as **PianoTiles**.
+We could have a whole page (Yggdrasil) that renders this graph as a pannable-explorable render, excluding private and layout infonodes such as **PianoTiles**.
 
 Every detail page includes a "See in Yggdrasil" link that navigates to the Yggdrasil page with the current infonode selected.
 
 Any infonode can be linked to any other. This is the point.
 
-Infonodes have the ability render themselves in two forms: Card and Detail.
+Pages, header and footer do not represent knowledge. They simply orchestrate existing infonodes with filtered views and presentation choices. Therefore, they are not infonodes.
+
+### Rendering
+
+Infonodes have the ability render themselves in three forms: Link, Card and Detail.
 
 - Card renders a card to be embedded in another page that introduces the infonode and gives a short summary. If the infonode provides Detail rendering, the card is clickable and clicking it navigates to the detail page.
-  - Card also provides CardList which renders a list of instances of itself as a list of cards and pages reuse that instead of implementing their own lists. The rendering can be parameterized by the caller (to change order for instance).
 - Detail renders an HTML `<main>` element that represents all information of the infonode.
+- Link renders a link to the infonode detail page.
 
-Card rendering is always available. Detail rendering may not be available.
+Card rendering is always available. Detail rendering may not be available. Link availability follows Detail availability.
+
+An agnostic CardList component exists to list cards for any infonode type.
+
+### Successors
 
 Infonodes types define properties to hold primitive data and "Successors", that is, supported types of infonodes that can be connected and rendered in a specific way. Other infonodes are still rendered in the infonode's detail page, in a "More..." section and are of course displayed in Yggdrasil.
 
-An Infonode can also have properties that are of infonode types in addition to its successors. This is used to name edges and specify multiplicities to treat them specially in rendering. The `successors` property, present in all infonodes, includes them in the returned iterable/array for use by the Yggdrasil renderer, in insignificant order. This allows for intuitive data shape in YAML.
+An Infonode can also have properties that are of infonode types in addition to its successors. This is used to name edges and specify multiplicities to treat them specially in rendering.
+
+The `successors` computed property, present in all infonodes, also includes named successors in the returned iterable/array for use by the Yggdrasil renderer, in insignificant order. This allows for intuitive data shape in YAML.
 
 Infonodes are built from data YAML files and rendered at generation-time. Adding an infonode of a known type or amending one should be as simple as modifying the YAML corresponding file and redeploying.
 
-Do not generate infonodes data. You may only generate examples to serve as demonstration value so I can write them later.
+## Infonode types
 
-## Textual type
-
-The conceptual data type Textual is used below. It refers to arbitrary content that is primarily meant to be read (text) but is also rich (emphasis, bold, etc) and can contain images, figures and arbitrary representations, as well as **Def** card displayed as tooltips. Effectively, it is HTML. However, it is only semantic, and should not carry its own styling information, rather it inherits the page's styles.
-
-The site must be available in multiple languages (fr and en to start), so Text and textual content are localized.
-
-Textual can be implemented with MDX.
-
-Localization notes:
-
-- Locale-specific pages live under `src/pages/` (default locale) and `src/pages/<locale>/` for others.
-- Localized UI copy is authored directly in those pages or shared via small locale helpers (no lang content collection).
-- Long-form copy lives in `src/content/textual/<locale>/<kind>/<id>.mdx`.
-
-## **Project**
+### **Project**
 
 Common property|Value
 -|-
@@ -73,8 +67,8 @@ Something concrete I've made.
 
 Property|Description|Required?
 -|-|-
-*title*|Line of text|Y
-*summary*|Line of text|N
+*title*|Copy|Y
+*summary*|Copy|N
 *technologies*|List of defs|N
 *links*|List of links. steam (for my workshop stuff), github, random websites...|N
 *context*|link to an history element, optional for personal stuff|N
@@ -91,7 +85,7 @@ Successor type|Description|Order significant?
 **Connector**|Connectors related to this infonode|N
 **Def**|Linked defs. People defs correspond to the project's team members. Other defs correspond to the project's technologies.|Y
 
-## **Image**
+### **Image**
 
 Common property|Value
 -|-
@@ -99,7 +93,7 @@ Role|`content`
 Visibility|`private`
 Detail rendering available?|N
 
-A captioned image. Used to abstract figures. For images, clicking it opens a modal with the image shown large and caption displayed
+A captioned image. Used to abstract figures. For images, clicking it opens a modal with the image shown large and caption displayed. Can take advantage of Astro image optimization features.
 
 Property|Description|Required?
 -|-|-
@@ -108,7 +102,7 @@ Property|Description|Required?
 *caption*|Text, caption (html title or figcaption)|N
 *kind*|one of `img`, `svg` (embedding an SVG image as markup instead of an img element so that they are affected by global theming)|N
 
-## **Document**
+### **Document**
 
 Common property|Value
 -|-
@@ -117,7 +111,7 @@ Visibility|`public`
 Detail rendering available?|N
 
 For pdf: The card renders a thumbnail of the document. Clicking the card opens a viewer for the document in a new tab.
-For video: the card renders the video with controls
+For video: the card renders the video with controls.
 
 Property|Description|Required?
 -|-|-
@@ -126,7 +120,7 @@ Property|Description|Required?
 *caption*|Text, caption (html title or figcaption)|N
 *type*|`pdf`,`video`
 
-## **Connector**
+### **Connector**
 
 Common property|Value
 -|-
@@ -143,7 +137,7 @@ Property|Description|Required?
 *link*|URL to the relevant webpage|Y
 *backgroundImage*|**Image**, the background image|N
 
-## **Literature**
+### **Literature**
 
 Common property|Value
 -|-
@@ -177,7 +171,7 @@ Successor type|Description|Order significant?
 **Tag**|Tags that describe this infonode|N
 **Connector**|Connectors related to this infonode|N
 
-## **History**
+### **History**
 
 Common property|Value
 -|-
@@ -203,7 +197,7 @@ Successor type|Description|Order significant?
 **Tag**|Tags that describe this infonode|N
 **Connector**|Connectors related to this infonode|N
 
-## **Def**
+### **Def**
 
 Common property|Value
 -|-
@@ -230,7 +224,7 @@ Successor type|Description|Order significant?
 **Tag**|Tags that type the object defined|N
 **Connector**|Connectors related to this infonode. Ideally, one trusted, stable wiki link is expected and rendered at the bottom of the card.|N
 
-## **PianoTile**
+### **PianoTile**
 
 Common property|Value
 -|-
@@ -248,7 +242,7 @@ Property|Description|Required?
 
 Linked to exactly one content, with have detail rendering available. Clicking the **PianoTile** card navigates to this content's detail.
 
-## **Contact**
+### **Contact**
 
 Common property|Value
 -|-
@@ -265,7 +259,7 @@ Property|Description|Required?
 *name*|Line of text, name of my profile|Y
 *url*|Target URL|Y
 
-## **Tag**
+### **Tag**
 
 Common property|Value
 -|-
@@ -280,44 +274,10 @@ Property|Description|Required?
 *title*|Tag name|Y
 *icon*|**Image**, tag icon|N
 
-## **Page**
+## Usage
 
-Common property|Value
--|-
-Role|`layout`
-Visibility|`public`
-Detail rendering available?|Y
+Render an infonode:
 
-The content of a page.
-
-**Pages** don't have common properties besides the polymorphic infonode rendering methods.
-
-More detail on each page in [Pages.md](./Pages.md).
-
-## **Header**
-
-Common property|Value
--|-
-Role|`layout`
-Visibility|`private`
-Detail rendering available?|N
-
-The common header of every page.
-
-Arranges horizontally: links to successor **Pages** (navbar), (language selector), (theme selector)
-
-Successors
-
-Successor type|Description|Order significant?
--|-|-
-**Page**|Pages to show in the navbar|Y
-
-## **Footer**
-
-Common property|Value
--|-
-Role|`layout`
-Visibility|`private`
-Detail rendering available?|N
-
-Arranged horizontally: copyright (current year calculated client side so it never goes outdated), site github link, "contact me" link that opens a modal with all **Contact** infonodes rendered as well as my resume as a clickable thumbnail (**Document** card) that opens the pdf in a new tab.
+```astro
+<Infonode as="card" type="project" id="winclean"/>
+```

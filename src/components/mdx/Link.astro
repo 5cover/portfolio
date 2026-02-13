@@ -1,6 +1,4 @@
 ---
-import { cls } from '../../lib/util';
-
 interface Props {
     href: string;
     external?: boolean;
@@ -9,11 +7,7 @@ interface Props {
 
 const { href, external, class: className } = Astro.props;
 
-if (!href) {
-    throw new Error('TextLink requires an href');
-}
-
-const isExternal = (external ?? href.startsWith('http://')) || href.startsWith('https://');
+const isExternal = external ?? (href.startsWith('http://') || href.startsWith('https://'));
 ---
 
 <a href={href} class:list={['link', className]} {...isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}}>

@@ -31,3 +31,9 @@ Les requirements se centrent autour du BUT informatique
 switch default language to en
 
 deduplicate logic from pages
+
+## remove locale props in preact
+
+## standardize copy usage
+
+remove tsx stuff.

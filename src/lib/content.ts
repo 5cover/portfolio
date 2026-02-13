@@ -9,8 +9,6 @@ export type LocalizedItem<C extends CollectionKey> = Localize<Item<C>>;
 
 export const contact = await getter('contact');
 
-type X = Localize<Item<'def'>['name']['full']>;
-
 const locLink = (l: Locale) => (d: Link) => ({
     ...d,
     href: loc(l, d.href),
@@ -68,6 +66,7 @@ export const history = await getterLocalized('history', (l, d) => ({
           }
         : undefined,
 }));
+
 export const pianoTile = await getterLocalized('piano-tile', (l, d) => ({
     ...d,
     title: loc<copy>(l, d.title),

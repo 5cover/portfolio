@@ -105,10 +105,6 @@ use yaml native dates?
 
 classes
 
-## fix clientside scripts and reuse cards
-
-and find a solution for defs
-
 ## remove formatting copy
 
 fmtX
@@ -119,10 +115,10 @@ it's outdated
 
 what's the modern idiomatic way?
 
-## standardize copy usage
-
-remove tsx stuff.
-
-## remove locale props in preact
-
 ## Dialogs -- go into more details about the philosophy, rationale, arch and design
+
+## fix clientside scripts and reuse cards
+
+and find a solution for defs
+
+## A "see all {infonode type}" that goes back to the list of cards in each detail page
