@@ -8,7 +8,7 @@ type UnwrapLoc<T> = Extract<T, Loc<unknown>> extends Loc<infer U> ? U : never;
 export type Localize<T> =
     // si l'union contient une branche Loc<...>, on prend la valeur
     // compile copy
-    copy extends T
+    Exclude<copy, Copy> extends T
         ? Copy
         : T extends Date
           ? T

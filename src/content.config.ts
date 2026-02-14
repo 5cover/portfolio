@@ -6,7 +6,6 @@ import {
     type CollectionEntry,
     type CollectionKey,
 } from 'astro:content';
-import { glob } from 'astro/loaders';
 import { typedObjectFromEntries } from './lib/util';
 import { anchorKeys } from './catalog/anchor';
 import { defTypesKeys } from './catalog/def-type';
@@ -14,9 +13,10 @@ import { zCopy } from './lib/copy';
 import { tagKeys } from './catalog/tag';
 import type { ZodTypeAny, ZodTypeDef } from 'astro:schema';
 import { literatureKinds, locales } from './const';
+import { glob } from 'astro/loaders';
 
 const zUrl = z.string(); // .url() does not support relatve
-const zSrc = z.string().refine(src => src); // todo (check exists?)
+const zSrc = z.string();
 const zText = zLocalized(zCopy);
 
 export type Item<C extends CollectionKey> = CollectionEntry<C>['data'];
@@ -132,11 +132,11 @@ export const collections = {
         })
     ),
     textual: col('textual', z.unknown()),
-} as const;
+};
 
 function col<S extends BaseSchema>(name: CollectionKey, schema: S) {
     return defineCollection({
-        loader: glob({ base: `src/content/${name}`, pattern: ['**/*.{yaml,mdx}'] }),
+        loader: glob({ base: `src/content/${name}`, pattern: ['**/*.(yaml|mdx)'] }),
         schema,
     });
 }
