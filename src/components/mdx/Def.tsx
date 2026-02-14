@@ -1,6 +1,6 @@
 import * as content from '../../lib/content';
 import { cls } from '../../lib/util';
-import { astro } from '../context';
+import { astro } from '../../lib/context';
 
 interface Props {
     id: string;

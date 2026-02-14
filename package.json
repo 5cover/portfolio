@@ -50,7 +50,10 @@
           "**/*.jsx",
           "**/*.astro",
           "**/*.mjs",
-          "**/*.cjs"
+          "**/*.cjs",
+          "**/*.css",
+          "**/*.sass",
+          "**/*.scss"
         ],
         "options": {
           "tabWidth": 4

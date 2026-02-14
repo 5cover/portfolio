@@ -7,7 +7,8 @@ import { formatDate } from '../lib/util';
 import { c, copy } from '../lib/copy';
 import { tag } from '../catalog/tag';
 import Heading from './Heading';
-import { astro } from './context';
+import { astro } from '../lib/context';
+import Section from './Section';
 
 interface Props {
     entry: Entry<LocalizedItem<'project'>>;
@@ -23,7 +24,7 @@ export default ({ entry }: Props) => {
     const context = project.context ? copy(project.context).capitalize() : null;
     const backgroundStyle = project.background ? `--bg-img-card: url(${project.background})` : undefined;
     return (
-        <li style={backgroundStyle}>
+        <Section as="li" style={backgroundStyle}>
             <ul class="list-rect">
                 {project.tags.map(tagId => (
                     <li>
@@ -46,6 +47,6 @@ export default ({ entry }: Props) => {
             {context ? <small class="context">{context}</small> : null}
             <p class="abstract">{project.abstract}</p>
             {project.links.length > 0 ? <LinkList links={project.links} /> : null}
-        </li>
+        </Section>
     );
 };

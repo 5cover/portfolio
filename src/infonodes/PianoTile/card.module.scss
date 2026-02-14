@@ -1,0 +1,43 @@
+@use '../../styles/const';
+@use '../../styles/util';
+.card_piano-tile {
+  @include util.hover-card;
+  @include util.wrap-anywhere;
+  $min-width: 180px;
+  //flex-basis: calc(min(100%, 1920px) / $tile-count);
+  flex-shrink: 1;
+  min-width: $min-width;
+
+  h2 {
+    font-size: max(1.224em, 1.7vw);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  figcaption {
+    @include util.absolute-fill;
+
+    div {
+      background-color: rgb(from var(--color-lvl) r g b / calc(2 / 3));
+      height: fit-content;
+
+      > * {
+        @include util.horizontal-box(1, 0);
+      }
+    }
+  }
+
+  &#{const.$hover},
+  &.hover {
+    @include util.bring-out(1.05);
+    z-index: 1;
+  }
+
+  &:not(&#{const.$hover}) figcaption {
+    opacity: 0;
+  }
+}

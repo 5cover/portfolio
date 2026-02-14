@@ -1,5 +1,5 @@
 import { createElement, type ComponentChildren } from 'preact';
-import * as ctx from './context';
+import * as ctx from '../lib/context';
 import { useContext } from 'preact/hooks';
 
 interface Props {

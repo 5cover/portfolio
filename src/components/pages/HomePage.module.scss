@@ -1,0 +1,93 @@
+@use '../../styles/const';
+@use '../../styles/util';
+
+section {
+    @include util.strip-content(1px 0);
+}
+
+section,
+article {
+    @include util.heading-margins(2, 2);
+}
+
+.me {
+    @include util.text;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    > img {
+        width: auto;
+        height: 8em;
+        border-radius: 0.5em;
+        align-self: center;
+    }
+}
+
+.ongoingProjects {
+    display: flex;
+    flex-flow: column nowrap;
+
+    h2 {
+        text-align: center;
+    }
+
+    .button-link {
+        margin-top: 2lh;
+    }
+
+    .list-project {
+        justify-content: center;
+    }
+}
+
+.contact {
+    @include util.text;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 1lh;
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: calc(1lh / 3);
+
+        > li {
+            width: fit-content;
+        }
+    }
+
+    > a {
+        height: 100%;
+        position: relative;
+
+        img {
+            min-height: 0;
+            max-height: 12em;
+            width: auto;
+            opacity: 0.5;
+            border-radius: 0.5em;
+        }
+
+        span {
+            @include util.absolute-center;
+            @include util.horizontal-box;
+            width: max-content;
+            background-color: var(--color-lvl);
+        }
+
+        &#{const.$hover} {
+            @include util.bring-out(1.05);
+
+            img {
+                opacity: 1;
+            }
+
+            span {
+                @include util.color-accent-bg;
+            }
+        }
+    }
+}

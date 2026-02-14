@@ -1,14 +1,14 @@
-import * as content from '../content';
-import { normalizeLocale, translation } from '../../i18n';
-import { detailHref, pageHref } from '../links';
-import { formatDate } from '../util';
-import LinkList from '../../components/LinkList';
-import Graphic from '../../components/Graphic';
-import { tag } from '../../catalog/tag';
+import * as content from '../lib/content';
+import { translation } from '../i18n';
+import { detailHref, pageHref } from '../lib/links';
+import { formatDate } from '../lib/util';
+import LinkList from '../components/LinkList';
+import Graphic from '../components/Graphic';
+import { tag } from '../catalog/tag';
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import type { DetailedInfonode } from '../infonodes';
-import type { Locale } from '../../const';
-import Heading from '../../components/Heading.astro';
+import type { DetailedInfonode } from '../lib/infonodes';
+import type { Locale } from '../const';
+import Heading from '../components/Heading';
 
 export class Project implements DetailedInfonode {
     private constructor(
@@ -17,13 +17,8 @@ export class Project implements DetailedInfonode {
         private readonly data: content.LocalizedItem<'project'>,
         private readonly body: content.Textual
     ) {}
-    static of(locale: string | undefined, id: string) {
-        return new Project(
-            id,
-            normalizeLocale(locale),
-            content.project(locale, id),
-            content.textual(locale, 'project', id)
-        );
+    static of(locale: Locale, id: string) {
+        return new Project(id, locale, content.project(locale, id), content.textual(locale, 'project', id));
     }
     readonly Card = () => {
         const _ = translation(this.locale);
