@@ -3,9 +3,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { translation, normalizeLocale } from '../i18n';
-
 import '../styles/base.scss';
-import { setAstro } from '../components/context';
 
 interface Props {
     pageName: string;
@@ -15,7 +13,7 @@ const { pageName } = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
 const _ = translation(locale);
 const dataBase = getRelativeLocaleUrl(locale, 'data');
-setAstro(Astro);
+//setAstro(Astro);
 ---
 
 <!doctype html>

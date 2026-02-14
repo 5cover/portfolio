@@ -5,7 +5,7 @@ import { detailHref } from '../lib/links';
 import { translation, normalizeLocale } from '../i18n';
 import type { Entry, LocalizedItem } from '../lib/content';
 import Copy from './Copy.astro';
-import Section from './Section';
+import Heading from './Heading';
 
 interface Props {
     entry: Entry<LocalizedItem<'literature'>>;
@@ -21,11 +21,11 @@ const backgroundStyle = lit.background ? `--bg-img-card: url(${lit.background})`
 <li id={id} style={backgroundStyle}>
     {lit.logo ? <Graphic of={lit.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
     <div>
-        <Section>
+        <Heading>
             <a class='foil' href={detailHref(locale, 'literature', id)}>
                 <Copy c={lit.title} />
             </a>
-        </Section>
+        </Heading>
         <p class='abstract'>=<Copy c={lit.abstract} /></p>
         {lit.links.length > 0 ? <LinkList links={lit.links} /> : null}
     </div>

@@ -1,9 +1,9 @@
 import { createContext } from 'preact';
-import type { AstroGlobal } from 'astro';
+import { useContext } from 'preact/hooks';
 import { throwf } from '../lib/util';
+import type { AstroGlobal } from 'astro';
 
 export const outlineDepth = createContext<number>(0);
-export let astroGlobal: AstroGlobal | null = null;
+export const astroCtx = createContext<AstroGlobal | null>(null);
 
-export const astro = () => astroGlobal ?? throwf(new Error('astro global context unset'));
-export const setAstro = (astro: AstroGlobal) => (astroGlobal = astro);
+export const astro = () => useContext(astroCtx) ?? throwf(new Error('astro global context unset'));

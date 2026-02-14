@@ -4,11 +4,11 @@ import { detailHref, pageHref } from '../links';
 import { formatDate } from '../util';
 import LinkList from '../../components/LinkList';
 import Graphic from '../../components/Graphic';
-import Section from '../../components/Section';
 import { tag } from '../../catalog/tag';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import type { DetailedInfonode } from '../infonodes';
 import type { Locale } from '../../const';
+import Heading from '../../components/Heading.astro';
 
 export class Project implements DetailedInfonode {
     private constructor(
@@ -17,7 +17,7 @@ export class Project implements DetailedInfonode {
         private readonly data: content.LocalizedItem<'project'>,
         private readonly body: content.Textual
     ) {}
-    static of(id: string, locale: string | undefined) {
+    static of(locale: string | undefined, id: string) {
         return new Project(
             id,
             normalizeLocale(locale),
@@ -25,7 +25,7 @@ export class Project implements DetailedInfonode {
             content.textual(locale, 'project', id)
         );
     }
-    Card() {
+    readonly Card = () => {
         const _ = translation(this.locale);
         const logoTitle = _.logoTitle(this.data.title.toString());
         const context = this.data.context ? this.data.context.capitalize() : null;
@@ -42,11 +42,11 @@ export class Project implements DetailedInfonode {
                     ))}
                 </ul>
                 {this.data.logo ? <Graphic of={this.data.logo} alt={logoTitle} title={logoTitle} class="logo" /> : null}
-                <Section>
+                <Heading>
                     <a class="foil" href={detailHref(this.locale, 'projects', this.id)}>
                         {this.data.title.preact()}
                     </a>
-                </Section>
+                </Heading>
                 {this.data.startDate ? (
                     <small class="status">
                         <time datetime={this.data.startDate.toISOString()}>
@@ -67,8 +67,8 @@ export class Project implements DetailedInfonode {
                 {this.data.links.length > 0 ? <LinkList links={this.data.links} /> : null}
             </li>
         );
-    }
-    Detail() {
+    };
+    readonly Detail = () => {
         const _ = translation(this.locale);
 
         const ProjectBody = content.textual2(this.locale, 'project', this.id);
@@ -147,7 +147,7 @@ export class Project implements DetailedInfonode {
                 ) : null}
             </main>
         );
-    }
+    };
     Link() {
         return <a href={getRelativeLocaleUrl(this.locale, `project/${this.id}`)}></a>;
     }

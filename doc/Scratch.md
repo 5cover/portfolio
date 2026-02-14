@@ -97,6 +97,8 @@ see astro docs
 
 Automatically generate heading levels
 
+reset heading styles sizes etc. the number is now arbitrary
+
 ## compute history year and sort by date span
 
 use yaml native dates?
@@ -129,3 +131,9 @@ and find a solution for defs
 
 collections as an implementation detail
 unified `<Infonode>` component.
+
+##  problem
+
+I don't like having to deal with astro and preact incompatibilities.
+
+going full preact is possible, maybe i should just do that.

@@ -5,9 +5,9 @@ import { normalizeLocale, translation } from '../i18n';
 import type { Entry, LocalizedItem } from '../lib/content';
 import { formatDate } from '../lib/util';
 import { c, copy } from '../lib/copy';
-import { astro } from './context';
-import Section from './Section';
 import { tag } from '../catalog/tag';
+import Heading from './Heading';
+import { astro } from './context';
 
 interface Props {
     entry: Entry<LocalizedItem<'project'>>;
@@ -32,11 +32,11 @@ export default ({ entry }: Props) => {
                 ))}
             </ul>
             {project.logo ? <Graphic of={project.logo} alt={logoTitle} title={logoTitle} class="logo" /> : null}
-            <Section>
+            <Heading>
                 <a class="foil" href={detailHref(locale, 'projects', id)}>
                     {project.title.preact()}
                 </a>
-            </Section>
+            </Heading>
             {project.startDate ? (
                 <small class="status">
                     <time datetime={project.startDate.toISOString()}>{startLabel}</time> &ndash;{' '}
