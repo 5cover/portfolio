@@ -1,7 +1,6 @@
 import z from 'astro/zod';
 import { badgeKeys, type BadgeKey } from '../catalog/badge';
 import { capitalize as capitalizeStr, isArray } from './util';
-import { astroParser, preactParser } from './Parser';
 import { locales, type Locale } from '../const';
 
 // Rich text "HTML as object" format for copy with inline formatting.
@@ -13,11 +12,11 @@ export type copy =
     | (CommonElemAttrs &
           { [K in keyof CopyElems]: Readonly<CopyElems[K]> & { readonly [T in K]: copy } }[keyof CopyElems])
     | { [K in keyof CopyVoids]: Readonly<Record<K, CopyVoids[K]>> }[keyof CopyVoids]
-    | CopyClass; // for merging back compiled copy into new copy
-export type CompiledCopy =
+    | CC; // for merging back compiled copy into new copy
+type CompiledCopy =
     | null
     | string
-    | readonly CompiledCopy[]
+    | readonly CC[]
     | (CommonElemAttrs & { [K in keyof CopyElems]: Readonly<CompiledElem<K>> }[keyof CopyElems])
     | { [K in keyof CopyVoids]: Readonly<CompiledVoid<K>> }[keyof CopyVoids];
 
@@ -25,7 +24,7 @@ interface CommonElemAttrs {
     lang?: Locale;
 }
 
-export interface CopyElems {
+interface CopyElems {
     abbr: { title: string };
     time: { datetime?: string };
     badge: { key: BadgeKey };
@@ -38,20 +37,20 @@ export interface CopyElems {
     q: { cite?: string };
 }
 
-export interface CopyVoids {
+interface CopyVoids {
     def: string;
 }
 
-export interface CompiledElem<K extends keyof CopyElems> {
+interface CompiledElem<K extends keyof CopyElems> {
     /** Type */
     t: K;
     /** Properties */
     p: CommonElemAttrs & CopyElems[K];
     /** Children */
-    c: CompiledCopy;
+    c: CC;
 }
 
-export interface CompiledVoid<K extends keyof CopyVoids> {
+interface CompiledVoid<K extends keyof CopyVoids> {
     /** Type */
     t: K;
     /** Properties */
@@ -59,24 +58,27 @@ export interface CompiledVoid<K extends keyof CopyVoids> {
 }
 
 export function copy(c: copy) {
-    return c instanceof CopyClass ? c : new CopyClass(compile(c));
+    return c instanceof CC ? c : new CC(compile(c));
 }
 
-export type { CopyClass as Copy };
+export type { CC as Copy };
 
-class CopyClass {
+class CC {
     constructor(readonly copy: CompiledCopy) {}
-    capitalize() {
-        return new CopyClass(capitalize(this.copy));
+    capitalize(): CC {
+        if (this.copy === null) return new CC(null);
+        if (typeof this.copy === 'string') return new CC(capitalizeStr(this.copy));
+        if (isArray(this.copy)) {
+            const first = this.copy.at(0);
+            return first === undefined ? this : new CC([first.capitalize(), ...this.copy.slice(1)]);
+        }
+        return new CC({ ...this.copy, ...('c' in this.copy ? { c: this.copy.c.capitalize() } : null) });
     }
-    toString() {
-        return stringify(this.copy);
-    }
-    astro() {
-        return () => astroParser.parse(this.copy);
-    }
-    preact() {
-        return preactParser.parse(this.copy);
+    toString(): string {
+        if (this.copy === null) return '';
+        if (typeof this.copy === 'string') return this.copy;
+        if (Array.isArray(this.copy)) return this.copy.map(c => c.toString()).join('');
+        return 'c' in this.copy ? this.copy.c.toString() : '';
     }
 }
 
@@ -84,7 +86,7 @@ const commonAttrsElems = {
     lang: z.enum(locales).optional(),
 } as const;
 
-export const zCopy: z.ZodType<Exclude<copy, CopyClass>> = z
+export const zCopy: z.ZodType<Exclude<copy, CC>> = z
     .lazy(() =>
         z.union([
             z.string(),
@@ -96,7 +98,7 @@ export const zCopy: z.ZodType<Exclude<copy, CopyClass>> = z
             }),
             z.strictObject({
                 ...commonAttrsElems,
-                datetime: z.string().optional(), // We could validate this. We could. I won't.
+                datetime: z.string().optional(), // We could validate  We could. I won't.
                 time: zCopy,
             }),
             z.strictObject({
@@ -144,8 +146,8 @@ export const zCopy: z.ZodType<Exclude<copy, CopyClass>> = z
 function compile(c: copy): CompiledCopy {
     if (c === null) return null;
     if (typeof c === 'string') return c;
-    if (c instanceof CopyClass) return c.copy;
-    if (isArray(c)) return c.map(compile);
+    if (c instanceof CC) return c.copy;
+    if (isArray(c)) return c.map(copy);
     const nodeElem = <K extends keyof CopyElems>(
         k: K,
         c: CommonElemAttrs & Record<K, copy>,
@@ -153,7 +155,7 @@ function compile(c: copy): CompiledCopy {
     ): CompiledElem<K> => ({
         t: k,
         p: { lang: c.lang, ...p }, // Must contain only declared keys (since later the parser uses object spread)
-        c: compile(c[k]),
+        c: copy(c[k]),
     });
     const nodeVoid = <K extends keyof CopyVoids>(k: K, c: Record<K, CopyVoids[K]>): CompiledVoid<K> => ({
         t: k,
@@ -171,24 +173,4 @@ function compile(c: copy): CompiledCopy {
     if ('a' in c) return nodeElem('a', c, { href: c.href });
     if ('def' in c) return nodeVoid('def', c);
     return c satisfies never;
-}
-
-function capitalize(c: CompiledCopy): CompiledCopy {
-    if (c === null) return null;
-    if (typeof c === 'string') return capitalizeStr(c);
-    if (isArray(c)) {
-        const first = c.at(0);
-        return first === undefined ? c : [capitalize(first), ...c.slice(1)];
-    }
-    return { ...c, ...('c' in c ? { c: capitalize(c.c) } : null) };
-}
-function stringify(c: CompiledCopy): string {
-    if (c === null) return '';
-    if (typeof c === 'string') return c;
-    if (Array.isArray(c)) return c.map(stringify).join('');
-    return 'c' in c ? stringify(c.c) : '';
-}
-
-export function c(c: copy) {
-    return copy(c).preact();
 }

@@ -2,7 +2,7 @@ import type { ComponentChildren } from 'preact';
 import type { Badge, BadgeKey } from '../catalog/badge';
 import Graphic from './Graphic';
 import { badges } from '../catalog/badge';
-import type { Locale } from '../i18n';
+import type { Locale } from '../const';
 
 export interface Props {
     of: Badge | BadgeKey;

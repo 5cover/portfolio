@@ -1,0 +1,102 @@
+---
+import Graphic from '../Graphic';
+import ProjectCardList from '../ProjectCardList.astro';
+import * as content from '../../lib/content';
+import { pageHref } from '../../lib/links';
+import { normalizeLocale } from '../../i18n';
+import Section from '../Section.astro';
+import Heading from '../Heading.astro';
+import CardList from '../CardList.astro';
+import style from './HomePage.module.scss';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Context } from '../../lib/types';
+import Card from '../../infonodes/piano-tile/Card.astro';
+
+export interface Props {
+    copy: {
+        me: string;
+        myPhoto: string;
+        ongoingProjects: string;
+        allMyProjects: string;
+        contact: string;
+        myResumePreview: string;
+        myResume: string;
+        videoCv: string;
+    };
+}
+
+const locale = normalizeLocale(Astro.currentLocale);
+const projects = content.project(locale);
+const contacts = content.contact();
+const s = Astro.props.copy;
+---
+
+<BaseLayout pageName='index'
+    >{((c: Context) => (
+    // <CardList items={content.pianoTile(locale).map(entry => <Card c={c} entry={entry}></Card>)} />
+    <Section {c} as='article' class:list={['lvl', 'content-block', style.me]}>{((c: Context) =>
+        <div>
+            <Heading {c}>{s.me}</Heading>
+            <slot />
+        </div>
+        <img
+            src='/portfolio/img/me.jpg'
+            alt={s.myPhoto}
+            width='1600'
+            height='1600'
+            loading='lazy'
+            title={s.myPhoto}
+        />
+    )}</Section>
+    <Section {c} class:list={['lvl', style.ongoingProjects]}>{((c: Context) =>
+        <Heading {c}>{s.ongoingProjects}</Heading>
+        <ProjectCardList {c} entries={projects.filter(([, project]) => !project.endDate)} />
+        <a href={pageHref(locale, 'projects')} class='lvl button-link'>
+            {s.allMyProjects}
+        </a>
+    )}</Section>
+    <Section {c} class:list={['lvl', style.contentBlock]}>{((c: Context) =>
+        <div>
+            <Heading {c}>{s.contact}</Heading>
+            <address>
+                <ul>
+                    {
+                        contacts.map(([, contact]) => (
+                            <li title={contact.platform}>
+                                <a
+                                    class='link iconed-text'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    href={contact.href}>
+                                    <Graphic of={contact.icon} alt={contact.platform} />
+                                    <span>{contact.name}</span>
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </address>
+        </div>
+        <a href={`/portfolio/${locale}/cv-bardini-raphael.pdf`} target='_blank' rel='noopener noreferrer'>
+            <img
+                src={`/portfolio/${locale}/cv-bardini-raphael-preview.jpg`}
+                alt={s.myResumePreview}
+                width='212'
+                height='300'
+                loading='lazy'
+            />
+            <span>{s.myResume}</span>
+        </a>
+    )}</Section>
+    <Section {c} class='lvl content-block'>{((c: Context) =>
+        <Heading {c}>{s.videoCv}</Heading>
+        <iframe
+            src='https://www.youtube-nocookie.com/embed/6VqtL5oogwk?modestbranding=1&rel=0'
+            width='640'
+            height='360'
+            title='Video CV - Raphaël Bardini'
+            allowfullscreen></iframe>
+     )}</Section>
+))}</BaseLayout
+>
+<script src='../../scripts/index.ts'></script>

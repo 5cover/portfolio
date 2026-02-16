@@ -1,0 +1,64 @@
+---
+import { tag } from '../../catalog/tag';
+import Copy from '../../components/Copy.astro';
+import Graphic from '../../components/Graphic';
+import Heading from '../../components/Heading.astro';
+import LinkList from '../../components/LinkList.astro';
+import { normalizeLocale, translation } from '../../i18n';
+import type { Entry, LocalizedItem } from '../../lib/content';
+import { pageHref, detailHref } from '../../lib/links';
+import type { PropsBase } from '../../lib/types';
+import { formatDate } from '../../lib/util';
+
+interface Props extends PropsBase {
+    entry: Entry<LocalizedItem<'project'>>;
+}
+const { c, entry } = Astro.props;
+const [id, data] = entry;
+
+const locale = normalizeLocale(Astro.currentLocale);
+const _ = translation(locale);
+const logoTitle = _.logoTitle(data.title.toString());
+const context = data.context ? data.context.capitalize() : null;
+const backgroundStyle = data.background ? `--bg-img-card: url(${data.background})` : undefined;
+---
+
+<li style={backgroundStyle}>
+    <ul class='list-rect'>
+        {
+            data.tags.map(tagId => (
+                <li>
+                    <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`}>
+                        <Copy of={tag(locale, tagId).title} />
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+    {data.logo ? <Graphic of={data.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
+    <Heading {c}>
+        <a class='foil' href={detailHref(locale, 'projects', id)}>
+            <Copy of={data.title} />
+        </a>
+    </Heading>
+    {
+        data.startDate ? (
+            <small class='status'>
+                <time datetime={data.startDate.toISOString()}>
+                    {data.startDate ? formatDate(data.startDate, locale) : null}
+                </time>
+                &ndash;
+                {data.endDate ? (
+                    <time datetime={data.endDate.toISOString()}>
+                        {data.endDate ? formatDate(data.endDate, locale) : null}
+                    </time>
+                ) : (
+                    _.ongoing
+                )}
+            </small>
+        ) : null
+    }
+    {context ? <small class='context'>{context}</small> : null}
+    <p class='abstract'>{data.abstract}</p>
+    {data.links.length > 0 ? <LinkList links={data.links} /> : null}
+</li>

@@ -7,7 +7,7 @@ interface Props {
     pageName: string;
 }
 
-const { pageName } = Astro.props;
+const p = Astro.props;
 
 const _ = translation(Astro.currentLocale);
 
@@ -47,12 +47,12 @@ const locale = normalizeLocale(Astro.currentLocale);
     </nav>
     <ul class='list-flags'>
         {
-            locales.map(l => {
-                const l_ = translation(l);
-                const isSame = l === locale;
+            locales.map(loc => {
+                const l_ = translation(loc);
+                const isSame = loc === locale;
                 const className = `fi ${l_.flagClass}${isSame ? '' : ' gray-when-not-hover'}`;
-                const title = `${_.locales[l]}${isSame ? '' : ` / ${l_.locales[l]}`}`;
-                const href = pageHref(l, pageName);
+                const title = `${_.locales[loc]}${isSame ? '' : ` / ${l_.locales[loc]}`}`;
+                const href = pageHref(loc, p.pageName);
                 return (
                     <li>
                         <a class={className} title={title} href={href} />

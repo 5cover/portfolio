@@ -1,0 +1,111 @@
+---
+import { tag } from '../../catalog/tag';
+import Graphic from '../../components/Graphic';
+import { normalizeLocale, translation } from '../../i18n';
+import type { Entry, LocalizedItem } from '../../lib/content';
+import { pageHref } from '../../lib/links';
+import type { PropsBase } from '../../lib/types';
+import { formatDate } from '../../lib/util';
+import * as content from '../../lib/content';
+import Copy from '../../components/Copy.astro';
+
+interface Props extends PropsBase {
+    entry: Entry<LocalizedItem<'project'>>;
+}
+const { entry } = Astro.props;
+const [id, data] = entry;
+
+const locale = normalizeLocale(Astro.currentLocale);
+const _ = translation(locale);
+
+const ProjectBody = content.textual2(locale, 'project', id);
+
+const backgroundStyle = data.background ? `--bg-img: url(${data.background})` : undefined;
+const logoTitle = _.logoTitle(data.title.toString());
+const startLabel = data.startDate ? formatDate(data.startDate, locale) : '';
+const endLabel = data.endDate ? formatDate(data.endDate, locale) : '';
+const context = data.context ? data.context.capitalize() : undefined;
+const teamDefs = data.team.map(({ id }) => content.def(locale, id));
+const techDefs = data.technologies.map(({ id }) => content.def(locale, id));
+---
+
+<div style={backgroundStyle}>
+    <header>
+        <ul class='list-rect'>
+            {
+                data.tags.map(tagId => (
+                    <li>
+                        <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`}>
+                            <Copy of={tag(locale, tagId).title} />
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <h1><Copy of={data.title} /></h1>
+        {data.logo ? <Graphic of={data.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
+        <p class='abstract'><Copy of={data.abstract} /></p>
+        <div class='status-context'>
+            {
+                context ? (
+                    <small class='context'>
+                        <Copy of={context} />
+                    </small>
+                ) : null
+            }
+            {
+                data.startDate ? (
+                    <small class='status'>
+                        <time datetime={data.startDate.toISOString()}>{startLabel}</time> &ndash;{' '}
+                        {data.endDate ? <time datetime={data.endDate.toISOString()}>{endLabel}</time> : _.ongoing}
+                    </small>
+                ) : null
+            }
+        </div>
+    </header>
+    {
+        data.links.length > 0 ? (
+            <section id='links'>
+                <h2>{_.links}</h2>
+                {/* <LinkList links={data.links} variant="page" /> */}
+            </section>
+        ) : null
+    }
+    {
+        teamDefs.length > 0 ? (
+            <section id='team'>
+                <h2>{_.team}</h2>
+                {/* <DefCardList defs={teamDefs} /> */}
+            </section>
+        ) : null
+    }
+    <section id='story'>
+        <h2>{_.story}</h2>
+        <ProjectBody />
+    </section>
+    {
+        data.references.length > 0 ? (
+            <section id='references'>
+                <h2>{_.references}</h2>
+                {/* <ReferenceList references={data.references} /> */}
+            </section>
+        ) : null
+    }
+    {
+        techDefs.length > 0 ? (
+            <section id='technologies'>
+                <h2>{_.technologies}</h2>
+                {/* <DefCardList defs={techDefs} /> */}
+            </section>
+        ) : null
+    }
+    {
+        data.gallery.length > 0 ? (
+            <section id='gallery'>
+                <h2>{_.gallery}</h2>
+                {/* <Gallery items={data.gallery} /> */}
+            </section>
+        ) : null
+    }
+</div>
+); ---

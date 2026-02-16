@@ -1,0 +1,22 @@
+---
+import * as content from '../../lib/content';
+import { cls } from '../../lib/util';
+import Copy from '../Copy.astro';
+
+interface Props {
+    id: string;
+    class?: string;
+}
+const p = Astro.props;
+const def = content.def(Astro.currentLocale, p.id);
+const label = def.name.abbr ?? def.name.short ?? def.name.full ?? p.id;
+---
+
+<a
+    href={def.wiki}
+    class={cls('link', 'def-tooltip-trigger', p.class)}
+    data-def-id={p.id}
+    target='_blank'
+    rel='noopener noreferrer'>
+    <slot><Copy of={label} /></slot>
+</a>

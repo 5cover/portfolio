@@ -1,0 +1,33 @@
+---
+import Graphic from './Graphic';
+import { anchors } from '../catalog/anchor';
+import type { Link } from '../content.config';
+import type { Localize } from '../i18n';
+import Copy from './Copy.astro';
+interface Props {
+    links: readonly Localize<Link>[];
+    variant?: 'card' | 'page';
+}
+const p = Astro.props;
+const listClass = p.variant === 'page' ? 'lvl list-link' : 'list-link';
+const includeLabel = p.variant === 'page';
+---
+
+<ul class={listClass}>
+    {
+        p.links.map(link => {
+            return (
+                <li>
+                    <a target='_blank' rel='noopener noreferrer' href={link.href} title={link.label.toString()}>
+                        <Graphic of={anchors[link.anchor]} alt={link.label.toString()} />
+                        {includeLabel ? (
+                            <span>
+                                <Copy of={link.label} />
+                            </span>
+                        ) : null}
+                    </a>
+                </li>
+            );
+        })
+    }
+</ul>

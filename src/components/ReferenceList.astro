@@ -28,7 +28,7 @@ const _ = translation(Astro.currentLocale);
                     <a class='ref-cite link' target='_blank' rel='noopener noreferrer' href={ref.href}>
                         <Graphic of={anchor} alt={ref.caption.toString()} />
                         <span>
-                            <Copy c={ref.caption} />
+                            <Copy of={ref.caption} />
                         </span>
                     </a>
                 </li>

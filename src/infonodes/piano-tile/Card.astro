@@ -1,0 +1,37 @@
+---
+import Copy from '../../components/Copy.astro';
+import Heading from '../../components/Heading.astro';
+import Section from '../../components/Section.astro';
+import type { Entry, LocalizedItem } from '../../lib/content';
+import type { PropsBase } from '../../lib/types';
+import styles from './card.module.scss';
+
+interface Props extends PropsBase {
+    entry: Entry<LocalizedItem<'piano-tile'>>;
+}
+const { c, entry } = Astro.props;
+const [, data] = entry;
+---
+
+<Section class={styles['card_piano-tile']}>
+    <figure>
+        <img
+            src={data.backgroundImage}
+            alt={data.title.toString()}
+            width='240'
+            height='480'
+            loading='lazy'
+            title={data.summary.toString()}
+        />
+        <figcaption>
+            <div>
+                <Heading {c}>
+                    <a class='foil' href={data.href}>
+                        <Copy of={data.title} />
+                    </a>
+                </Heading>
+                <Copy of={data.summary} />
+            </div>
+        </figcaption>
+    </figure>
+</Section>

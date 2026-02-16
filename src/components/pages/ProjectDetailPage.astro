@@ -1,10 +1,10 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
 import DefCardList from '../DefCardList.astro';
 import Gallery from '../Gallery.astro';
 import Graphic from '../Graphic';
-import LinkList from '../LinkList';
+import LinkList from '../LinkList.astro';
 import ReferenceList from '../ReferenceList.astro';
 
 import * as content from '../../lib/content';
@@ -46,20 +46,20 @@ const techDefs = p.technologies.map(({ id }) => content.def(locale, id));
                     p.tags.map(tagId => (
                         <li>
                             <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`}>
-                                <Copy c={tag(locale, tagId).title} />
+                                <Copy of={tag(locale, tagId).title} />
                             </a>
                         </li>
                     ))
                 }
             </ul>
-            <h1><Copy c={p.title} /></h1>
+            <h1><Copy of={p.title} /></h1>
             {p.logo ? <Graphic of={p.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
-            <p class='abstract'><Copy c={p.abstract} /></p>
+            <p class='abstract'><Copy of={p.abstract} /></p>
             <div class='status-context'>
                 {
                     context ? (
                         <small class='context'>
-                            <Copy c={context} />
+                            <Copy of={context} />
                         </small>
                     ) : null
                 }

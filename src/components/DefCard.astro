@@ -26,10 +26,10 @@ const typeName = defType(normalizeLocale(Astro.currentLocale), def.type).title;
 <article class='def' style={backgroundStyle}>
     <h4>
         <a class='foil' target='_blank' rel='noopener noreferrer' href={def.wiki}>
-            <Copy c={defTitle} />
+            <Copy of={defTitle} />
         </a>
     </h4>
     {def.logo ? <Graphic of={def.logo} title={logoTitle} class='logo' /> : null}
-    <p class='type'><small><Copy c={typeName.capitalize()} /></small></p>
-    <p class='synopsis'><Copy c={def.synopsis} /></p>
+    <p class='type'><small><Copy of={typeName.capitalize()} /></small></p>
+    <p class='synopsis'><Copy of={def.synopsis} /></p>
 </article>

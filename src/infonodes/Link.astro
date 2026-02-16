@@ -1,0 +1,14 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { normalizeLocale } from '../i18n';
+import type { CollectionKey } from 'astro:content';
+
+interface Props {
+    type: CollectionKey;
+    id: string;
+}
+const locale = normalizeLocale(Astro.currentLocale);
+const p = Astro.props;
+---
+
+<a href={getRelativeLocaleUrl(locale, `${p.type}/${p.id}`)}></a>

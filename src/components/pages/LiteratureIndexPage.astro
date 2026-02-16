@@ -1,7 +1,9 @@
 ---
-import { normalizeLocale, translation, type LiteratureKind } from '../../i18n';
-import BaseLayout from '../../layouts/BaseLayout
+import type { LiteratureKind } from '../../const';
+import { normalizeLocale, translation } from '../../i18n';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import * as content from '../../lib/content';
+import type { Context } from '../../lib/types';
 import LiteratureCardList from '../LiteratureCardList.astro';
 
 interface Props {
@@ -9,15 +11,19 @@ interface Props {
     mainClass?: string;
 }
 
-const { kind, mainClass } = Astro.props;
+const p = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
 const { nav } = translation(locale);
-const entries = content.literature(locale).filter(([, lit]) => lit.kind === kind);
+const entries = content.literature(locale).filter(([, lit]) => lit.kind === p.kind);
 ---
 
-<BaseLayout pageName={kind}>
-    <main class={mainClass}>
-        <h1>{nav[kind]}</h1>
-        <LiteratureCardList entries={entries} />
-    </main>
-</BaseLayout>
+<BaseLayout pageName={p.kind}
+    >{
+        (c: Context) => (
+            <main class={p.mainClass}>
+                <h1>{nav[p.kind]}</h1>
+                <LiteratureCardList {c} entries={entries} />
+            </main>
+        )
+    }</BaseLayout
+>

@@ -1,9 +1,34 @@
 ---
-import { type Copy as Cop } from '../lib/copy';
+import { copy } from '../lib/copy';
+import { isArray } from '../lib/util';
+import Badge from './Badge';
+import Def from './mdx/Def.astro';
 interface Props {
-    c: Cop;
+    of: copy;
 }
-const C = Astro.props.c.astro();
+const of = copy(Astro.props.of).copy;
 ---
 
-<C />
+{
+    of === null ? null : typeof of === 'string' ? (
+        <>{of}</>
+    ) : isArray(of) ? (
+        of.map(of => <Astro.self {of} />)
+    ) : of.t === 'badge' ? (
+        <Badge of={of.p.key} lang={of.p.lang}>
+            <Astro.self of={of.c} />
+        </Badge>
+    ) : of.t === 'copy' ? (
+        <Astro.self of={of.c} />
+    ) : of.t === 'def' ? (
+        <Def id={of.p} />
+    ) : of.t === 'a' ? (
+        <a {...of.p} class='link' target='_blank' rel='noopener noreferrer'>
+            <Astro.self of={of.c} />
+        </a>
+    ) : (
+        <of.t {...of.p}>
+            <Astro.self of={of.c} />
+        </of.t>
+    )
+}

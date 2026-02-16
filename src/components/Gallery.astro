@@ -35,7 +35,7 @@ const { items } = Astro.props;
                             <Fragment set:html={item.content} />
                         ) : null}
                         <figcaption>
-                            <Copy c={item.caption} />
+                            <Copy of={item.caption} />
                         </figcaption>
                     </figure>
                 </li>

@@ -1,0 +1,19 @@
+---
+import type { PropsBase as Props } from '../lib/types';
+
+const p = Astro.props;
+const H = `h${p.c.level}`;
+const useNative = p.c.level <= 6;
+---
+
+{
+    useNative ? (
+        <H>
+            <slot />
+        </H>
+    ) : (
+        <div role='heading' aria-level={p.c.level}>
+            <slot />
+        </div>
+    )
+}

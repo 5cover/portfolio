@@ -1,3 +1,10 @@
+export interface Context {
+    level: number;
+}
+export interface PropsBase {
+    c: Readonly<Context>;
+}
+
 export interface NavItem {
     page: string;
     label: string;

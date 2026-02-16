@@ -1,17 +1,18 @@
 ---
 import Graphic from './Graphic';
-import LinkList from './LinkList';
+import LinkList from './LinkList.astro';
 import { detailHref } from '../lib/links';
 import { translation, normalizeLocale } from '../i18n';
 import type { Entry, LocalizedItem } from '../lib/content';
 import Copy from './Copy.astro';
-import Heading from './Heading';
+import Heading from './Heading.astro';
+import type { PropsBase } from '../lib/types';
 
-interface Props {
+interface Props extends PropsBase {
     entry: Entry<LocalizedItem<'literature'>>;
 }
 
-const { entry } = Astro.props;
+const { c, entry } = Astro.props;
 const [id, lit] = entry;
 const locale = normalizeLocale(Astro.currentLocale);
 const logoTitle = translation(locale).logoTitle(lit.title.toString());
@@ -21,12 +22,12 @@ const backgroundStyle = lit.background ? `--bg-img-card: url(${lit.background})`
 <li id={id} style={backgroundStyle}>
     {lit.logo ? <Graphic of={lit.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
     <div>
-        <Heading>
+        <Heading {c}>
             <a class='foil' href={detailHref(locale, 'literature', id)}>
-                <Copy c={lit.title} />
+                <Copy of={lit.title} />
             </a>
         </Heading>
-        <p class='abstract'>=<Copy c={lit.abstract} /></p>
+        <p class='abstract'>=<Copy of={lit.abstract} /></p>
         {lit.links.length > 0 ? <LinkList links={lit.links} /> : null}
     </div>
 </li>

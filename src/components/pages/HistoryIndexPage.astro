@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
 import { detailHref } from '../../lib/links';
 import { normalizeLocale } from '../../i18n';
@@ -36,7 +36,7 @@ const historyBodies = await Promise.all(historyItems.map(([id]) => content.textu
                                             <>
                                                 <div class='ag-timeline-card_meta-box'>
                                                     <div class='ag-timeline-card_meta'>
-                                                        <Copy c={h.meta} />
+                                                        <Copy of={h.meta} />
                                                     </div>
                                                 </div>
                                                 <div class='js-timeline-card_point-box ag-timeline-card_point-box'>
@@ -50,7 +50,7 @@ const historyBodies = await Promise.all(historyItems.map(([id]) => content.textu
                                                 </div>
                                                 <div class='ag-timeline-card_meta-box'>
                                                     <div class='ag-timeline-card_meta'>
-                                                        <Copy c={h.meta} />
+                                                        <Copy of={h.meta} />
                                                     </div>
                                                 </div>
                                             </>
@@ -69,7 +69,7 @@ const historyBodies = await Promise.all(historyItems.map(([id]) => content.textu
                                             </div>
                                             <div class='ag-timeline-card_info'>
                                                 <div class='ag-timeline-card_title'>
-                                                    <Copy c={h.title} />
+                                                    <Copy of={h.title} />
                                                 </div>
                                                 <div class='ag-timeline-card_desc'>
                                                     <TextualContent content={HistoryBody} />

@@ -4,12 +4,15 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { translation, normalizeLocale } from '../i18n';
 import '../styles/base.scss';
+import Section from '../components/Section.astro';
+import type { Context } from '../lib/types';
 
 interface Props {
     pageName: string;
+    mainClass?: string;
 }
 
-const { pageName } = Astro.props;
+const p = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
 const _ = translation(locale);
 const dataBase = getRelativeLocaleUrl(locale, 'data');
@@ -45,8 +48,10 @@ const dataBase = getRelativeLocaleUrl(locale, 'data');
     </head>
 
     <body>
-        <Header pageName={pageName} />
-        <slot />
+        <Header pageName={p.pageName} />
+        <Section as='main' class={p.mainClass} c={{ level: 0 }}
+            >{async (c: Context) => await Astro.slots.render('default', [c])}</Section
+        >
         <Footer />
         <script src='../scripts/base.ts'></script>
     </body>

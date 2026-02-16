@@ -1,0 +1,11 @@
+---
+import style from './CardList.module.scss';
+export interface Props {
+    items: readonly unknown[];
+}
+const p = Astro.props;
+---
+
+<ul class={style.cardList}>
+    {p.items.map(i => <li>{i}</li>)}
+</ul>

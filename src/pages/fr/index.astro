@@ -1,63 +1,59 @@
 ---
-import HomePage from '../../components/pages/HomePage';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomePage from '../../components/pages/HomePage.astro';
 ---
 
-<BaseLayout pageName='index'>
-    <HomePage
-        astro={Astro}
-        copy={{
-            me: 'À propos de moi',
-            myPhoto: 'Ma photo',
-            ongoingProjects: 'Mes projets en cours',
-            allMyProjects: 'Tous mes projets',
-            contact: 'Contact',
-            myResumePreview: 'Aperçu de mon CV',
-            myResume: 'Mon CV',
-            videoCv: 'CV Vidéo (anglais)',
-        }}>
-        <p>
-            Bonjour, je m'appelle <strong>Raphaël Bardini</strong>. J'ai 18 ans et suis étudiant en 2
-            <sup>ème</sup> année de <abbr title='Bachelor Universitaire Technologique'>BUT</abbr>{' '}
-            Informatique, à l'
-            <a class='link' target='_blank' rel='noopener noreferrer' href='https://iut-lannion.univ-rennes.fr/'>
-                <abbr title='Institut Universitaire Technologique'>IUT</abbr> de Lannion
-            </a>
-            .
-        </p>
-        <p>
-            J'ai un baccalauréat général avec spécialités{' '}
-            <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://www.lyceeschoelcher972.fr/specialite-llcer-amc/'
-                data-def-id='amc'
-                class='link def-tooltip-trigger'>
-                AMC
-            </a>{' '}
-            et{' '}
-            <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448'
-                data-def-id='nsi'
-                class='link def-tooltip-trigger'>
-                NSI
-            </a>
-            . J'ai un bon niveau en anglais.
-        </p>
-        <p>
-            Je suis passionné par le <strong>développement logiciel</strong> et je suis investi dans le milieu <strong
-                >open-source</strong
-            >. Je suis également un grand amateur de{' '}
-            <a
-                class='link'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://youtube.com/playlist?list=PL1weKnP9ENMdJbMr338lNOMSF487f8nGm'>
-                jazz
-            </a>
-            . Rejoignez-moi dans cette aventure&nbsp;! &#9749;
-        </p>
-    </HomePage>
-</BaseLayout>
+<HomePage
+    copy={{
+        me: 'À propos de moi',
+        myPhoto: 'Ma photo',
+        ongoingProjects: 'Mes projets en cours',
+        allMyProjects: 'Tous mes projets',
+        contact: 'Contact',
+        myResumePreview: 'Aperçu de mon CV',
+        myResume: 'Mon CV',
+        videoCv: 'CV Vidéo (anglais)',
+    }}>
+    <p>
+        Bonjour, je m'appelle <strong>Raphaël Bardini</strong>. J'ai 18 ans et suis étudiant en 2
+        <sup>ème</sup> année de <abbr title='Bachelor Universitaire Technologique'>BUT</abbr>{' '}
+        Informatique, à l'
+        <a class='link' target='_blank' rel='noopener noreferrer' href='https://iut-lannion.univ-rennes.fr/'>
+            <abbr title='Institut Universitaire Technologique'>IUT</abbr> de Lannion
+        </a>
+        .
+    </p>
+    <p>
+        J'ai un baccalauréat général avec spécialités{' '}
+        <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://www.lyceeschoelcher972.fr/specialite-llcer-amc/'
+            data-def-id='amc'
+            class='link def-tooltip-trigger'>
+            AMC
+        </a>{' '}
+        et{' '}
+        <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448'
+            data-def-id='nsi'
+            class='link def-tooltip-trigger'>
+            NSI
+        </a>
+        . J'ai un bon niveau en anglais.
+    </p>
+    <p>
+        Je suis passionné par le <strong>développement logiciel</strong> et je suis investi dans le milieu <strong
+            >open-source</strong
+        >. Je suis également un grand amateur de{' '}
+        <a
+            class='link'
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://youtube.com/playlist?list=PL1weKnP9ENMdJbMr338lNOMSF487f8nGm'>
+            jazz
+        </a>
+        . Rejoignez-moi dans cette aventure&nbsp;! &#9749;
+    </p>
+</HomePage>

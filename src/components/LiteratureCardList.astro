@@ -1,13 +1,14 @@
 ---
 import type { Entry, LocalizedItem } from '../lib/content';
+import type { PropsBase } from '../lib/types';
 import LiteratureCard from './LiteratureCard.astro';
-interface Props {
+interface Props extends PropsBase {
     entries: readonly Entry<LocalizedItem<'literature'>>[];
 }
 
-const { entries } = Astro.props;
+const { c, entries } = Astro.props;
 ---
 
 <ul class='lvl list-detail-split-card'>
-    {entries.map(entry => <LiteratureCard entry={entry} />)}
+    {entries.map(entry => <LiteratureCard {c} entry={entry} />)}
 </ul>

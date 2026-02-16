@@ -1,11 +1,125 @@
 ---
 import { normalizeLocale } from '../i18n';
-import ButInformatiqueBody from './but/Body';
+import ProjectCardList from './ProjectCardList.astro';
+import * as content from '../lib/content';
+import Heading from './Heading.astro';
+import { plainEntries } from '../lib/util';
+import type { PropsBase as Props } from '../lib/types';
+import Copy from './Copy.astro';
+import type { ButData } from './but/types';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const MaxProjectsPerSkill = 4;
 const locale = normalizeLocale(Astro.currentLocale);
-const { default: copy } = await import(`./but/${locale}.ts`);
+const d = (await import(`./but/${locale}.ts`)).default as ButData;
+const { c } = Astro.props;
+const projects = content.project(Astro.currentLocale);
 ---
 
-<ButInformatiqueBody d={copy}>
-    <slot />
-</ButInformatiqueBody>
+<BaseLayout pageName='but-informatique' mainClass='but-body margined'>
+    <header id='titre'>
+        <Heading {c}><Copy of={d.heading} /></Heading>
+        <img src='/portfolio/img/but.webp' alt={d.logoAlt} width='95' height='96' loading='lazy' title={d.logoAlt} />
+    </header>
+
+    <article id='presentation'><Copy of={d.presentation} /></article>
+    <a
+        class='lvl button-link'
+        target='_blank'
+        rel='noopener noreferrer'
+        href='https://www.enseignementsup-recherche.gouv.fr/sites/default/files/annexe-2-licence-professionnelle-bachelor-universitaire-de-technologie-informatique-29016.pdf'>
+        <Copy of={d.linkTextSyllabus} />
+    </a>
+    <section id='progression'>
+        <h2>{d.yearTabsLabel}</h2>
+        <p><Copy of={d.skillsAbstract} /></p>
+        <div class='tabs' id='but-years'>
+            <div class='tablist' role='tablist' aria-label={d.yearTabsLabel}>
+                {
+                    plainEntries(d.years).map(([id, year], i) => (
+                        <button
+                            type='button'
+                            role='tab'
+                            id={`tab-${id}`}
+                            aria-controls={`panel-${id}`}
+                            aria-selected={i === 0 ? 'true' : 'false'}
+                            tabindex={i === 0 ? 0 : -1}>
+                            <Copy of={year.label} />
+                        </button>
+                    ))
+                }
+            </div>
+            {
+                plainEntries(d.years).map(([yearName, year], i) => (
+                    <section
+                        id={`panel-${yearName}`}
+                        role='tabpanel'
+                        aria-labelledby={`tab-${yearName}`}
+                        style={i === 0 ? '' : 'display:none'}>
+                        <h3>
+                            <Copy of={d.yearLabel} /> {i + 1} &mdash; <Copy of={year.title} />
+                        </h3>
+                        <p class='year-description'>
+                            <Copy of={year.description} />
+                        </p>
+                        <p class='year-bilan'>
+                            <em>
+                                <Copy of={year.bilan} />
+                            </em>
+                        </p>
+                        <ul class='year-skills lvl'>
+                            {plainEntries(year.skills).map(([skillName, skillYear], i) => {
+                                const skillProjects = projects
+                                    .filter(
+                                        ([, project]) =>
+                                            project.tags.includes(yearName) && project.tags.includes(`but-${skillName}`)
+                                    )
+                                    .slice(0, MaxProjectsPerSkill);
+                                return (
+                                    <li
+                                        style={`--bg-img: url(/portfolio/img/skill/${skillName}.jpg)`}
+                                        class='year-skill'>
+                                        <h3>
+                                            <Copy of={d.skill(i + 1, d.skills[skillName].name)} />
+                                        </h3>
+                                        <p>
+                                            <Copy of={d.skills[skillName].desc} />
+                                        </p>
+                                        <ul class='apprentissages'>
+                                            {skillYear.ac.map(item => (
+                                                <li>
+                                                    <Copy of={item} />
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        {skillProjects.length > 0 ? (
+                                            <ProjectCardList {c} entries={skillProjects} class='project-skills' />
+                                        ) : null}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </section>
+                ))
+            }
+        </div>
+    </section>
+    <div class='lvl'>
+        <article id='resultat-pour-moi'>
+            <h2><Copy of={d.synthesisHeading} /></h2>
+            <slot />
+        </article>
+        <figure class='figure'>
+            <img
+                src='/portfolio/img/iut-lannion.jpg'
+                alt={d.iutAlt}
+                width='1200'
+                height='630'
+                loading='lazy'
+                title={d.iutAlt}
+            />
+            <figcaption><Copy of={d.iutCaption} /></figcaption>
+        </figure>
+    </div>
+</BaseLayout>
 <script src='../../src/scripts/but.ts'></script>

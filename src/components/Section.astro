@@ -1,0 +1,17 @@
+---
+import type { Context, PropsBase } from '../lib/types';
+import { cls } from '../lib/util';
+
+export interface Props extends PropsBase {
+    as?: 'section' | 'main' | 'header' | 'footer' | 'article';
+    class?: string;
+    id?: string;
+    style?: string;
+}
+const p = Astro.props;
+const Tag = p.as ?? 'section';
+---
+
+<Tag class={cls(p.class, 'section')} id={p.id} style={p.style}>
+    {await Astro.slots.render('default', [{ level: p.c.level + 1 } satisfies Context])}
+</Tag>

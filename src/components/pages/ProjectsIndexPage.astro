@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import '../../styles/projects.scss';
 
@@ -16,45 +16,41 @@ const s = Astro.props.copy;
 ---
 
 <BaseLayout pageName='projects'>
-    <main>
-        <datalist id='project-titles'>
-            <!-- Fill this up dynamically -->
-        </datalist>
-        <section class='lvl' id='search-bar'>
-            <h1>{s.search}</h1>
-            <input
-                incremental
-                type='search'
-                id='search-input'
-                placeholder={s.placeholder}
-                autocomplete='on'
-                list='project-titles'
-            />
-            <section>
-                <h3>{s.tags}</h3>
-                <ul class='lvl list-rect' id='list-tag'>
-                    <!-- Tags will be added here -->
-                </ul>
-            </section>
-            <section>
-                <h3>{s.sort}</h3>
-                <ul class='lvl list-rect' id='list-sorting'>
-                    <li>
-                        <label for='sort-asc'
-                            >A-Z<input type='radio' name='sorting' id='sort-asc' value='asc' checked /></label
-                        >
-                    </li>
-                    <li>
-                        <label for='sort-desc'
-                            >Z-A<input type='radio' name='sorting' id='sort-desc' value='desc' /></label
-                        >
-                    </li>
-                </ul>
-            </section>
+    <datalist id='project-titles'>
+        <!-- Fill this up dynamically -->
+    </datalist>
+    <section class='lvl' id='search-bar'>
+        <h1>{s.search}</h1>
+        <input
+            incremental
+            type='search'
+            id='search-input'
+            placeholder={s.placeholder}
+            autocomplete='on'
+            list='project-titles'
+        />
+        <section>
+            <h3>{s.tags}</h3>
+            <ul class='lvl list-rect' id='list-tag'>
+                <!-- Tags will be added here -->
+            </ul>
         </section>
-        <ul class='lvl list-project' id='project-list'>
-            <!-- Project list will be updated here -->
-        </ul>
-    </main>
-    <script src='../../scripts/projects.ts'></script>
+        <section>
+            <h3>{s.sort}</h3>
+            <ul class='lvl list-rect' id='list-sorting'>
+                <li>
+                    <label for='sort-asc'
+                        >A-Z<input type='radio' name='sorting' id='sort-asc' value='asc' checked /></label
+                    >
+                </li>
+                <li>
+                    <label for='sort-desc'>Z-A<input type='radio' name='sorting' id='sort-desc' value='desc' /></label>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <ul class='lvl list-project' id='project-list'>
+        <!-- Project list will be updated here -->
+    </ul>
 </BaseLayout>
+<script src='../../scripts/projects.ts'></script>

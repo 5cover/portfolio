@@ -1,0 +1,15 @@
+---
+import type { Entry, LocalizedItem } from '../lib/content';
+import type { PropsBase } from '../lib/types';
+import ProjectCard from './ProjectCard.astro';
+
+interface Props extends PropsBase {
+    class?: string;
+    entries: readonly Entry<LocalizedItem<'project'>>[];
+}
+const { c, ...p } = Astro.props;
+---
+
+<ul class:list={['lvl', 'list-project', p.class]}>
+    {p.entries.map(project => <ProjectCard {c} entry={project} />)}
+</ul>

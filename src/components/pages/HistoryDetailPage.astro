@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import TextualContent from '../TextualContent.astro';
 import * as content from '../../lib/content';
 import { normalizeLocale, translation } from '../../i18n';
@@ -28,13 +28,13 @@ const historyBody = await content.textual(locale, 'history/body', id);
 <BaseLayout pageName={`history/${id}`}>
     <main>
         <header>
-            <h1><Copy c={data.title} /></h1>
+            <h1><Copy of={data.title} /></h1>
             {
                 data.meta || data.year ? (
                     <p class='history-meta'>
                         {data.meta ? (
                             <span>
-                                <Copy c={data.meta} />
+                                <Copy of={data.meta} />
                             </span>
                         ) : null}
                         {data.year ? <span class='history-meta_year'>{data.year}</span> : null}
