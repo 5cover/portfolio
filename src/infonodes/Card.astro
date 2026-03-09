@@ -1,0 +1,17 @@
+---
+import type { CollectionKey } from 'astro:content';
+import type { Infonode } from '../lib/content';
+import type { PropsBase } from '../lib/types';
+
+interface Props<C extends CollectionKey = CollectionKey> extends PropsBase {
+    infonode: Infonode<C>;
+}
+
+const { infonode } = Astro.props;
+
+switch (infonode.type) {
+    case 'contact':
+        infonode.type;
+        infonode.data;
+}
+---

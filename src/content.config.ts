@@ -19,8 +19,6 @@ const zUrl = z.string(); // .url() does not support relatve
 const zSrc = z.string();
 const zText = zLocalized(zCopy);
 
-export type Item<C extends CollectionKey> = CollectionEntry<C>['data'];
-
 const zGraphic = z.object({
     src: zSrc,
     kind: z.enum(['img', 'svg']).nullish(),

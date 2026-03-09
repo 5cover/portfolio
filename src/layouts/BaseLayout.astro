@@ -50,7 +50,7 @@ const dataBase = getRelativeLocaleUrl(locale, 'data');
     <body>
         <Header pageName={p.pageName} />
         <Section as='main' class={p.mainClass} c={{ level: 0 }}
-            >{async (c: Context) => await Astro.slots.render('default', [c])}</Section
+            >{(c: Context) => Astro.slots.render('default', [c])}</Section
         >
         <Footer />
         <script src='../scripts/base.ts'></script>

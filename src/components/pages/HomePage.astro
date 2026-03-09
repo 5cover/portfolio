@@ -6,11 +6,13 @@ import { pageHref } from '../../lib/links';
 import { normalizeLocale } from '../../i18n';
 import Section from '../Section.astro';
 import Heading from '../Heading.astro';
-import CardList from '../CardList.astro';
+
 import style from './HomePage.module.scss';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import type { Context } from '../../lib/types';
-import Card from '../../infonodes/piano-tile/Card.astro';
+import CardList from '../CardList.astro';
+import PianoTileCard from '../../infonodes/piano-tile/Card.astro';
+import type { Entry, LocalizedItem } from '../../lib/content';
 
 export interface Props {
     copy: {
@@ -29,11 +31,12 @@ const locale = normalizeLocale(Astro.currentLocale);
 const projects = content.project(locale);
 const contacts = content.contact();
 const s = Astro.props.copy;
+type PianoTile = (Entry<LocalizedItem<'piano-tile'>>)
 ---
 
 <BaseLayout pageName='index'
     >{((c: Context) => (
-    // <CardList items={content.pianoTile(locale).map(entry => <Card c={c} entry={entry}></Card>)} />
+    <CardList items={content.pianoTile(locale)}>{((entry: PianoTile) => (<PianoTileCard {c} {entry}/>))}</CardList>
     <Section {c} as='article' class:list={['lvl', 'content-block', style.me]}>{((c: Context) =>
         <div>
             <Heading {c}>{s.me}</Heading>

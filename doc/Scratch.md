@@ -132,7 +132,7 @@ and find a solution for defs
 collections as an implementation detail
 unified `<Infonode>` component.
 
-##  problem
+## problem
 
 I don't like having to deal with astro and preact incompatibilities.
 
@@ -155,3 +155,20 @@ how can you live without relative headings. the more i think about headings the 
 Section/Heading is not just about heading hierarchies, outline and semantics. it's about styling. i already have a .lvl .lvl .lvl with 8% themed color steps generated in SASS. i could use Section instead and tie colors to structure.
 
 Section would represent a semantic depth break.
+
+Solution: keep Astro, pass context prop explicitly. use preact only when necessary.
+
+regarding another thing i had started making before, i guess i could call this initiative object oriented components
+
+basically components/infonodes/{type}/{card,detail}.astro and related module-based CSS instead of components/{LiteratureCard, ProjectCard} etc and global css
+
+the file organization in itself isn't bad though it will require import discipline since it fills in the filename from the default export, we don't want ominous "Card" imports everywhere
+
+astro philosophy is 1 component = 1 file
+
+hierarchical directories make module css cleaner
+assuming it works (we'll have to test that)
+
+what we could do is one Card component, one Link component, one Detail component
+
+that accepts a localized "infonode" which type is encoded as a string (no more `Entry<LocalizedItem<''>>` mess)

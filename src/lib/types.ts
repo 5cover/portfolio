@@ -1,3 +1,5 @@
+import type { CollectionKey } from 'astro:content';
+
 export interface Context {
     level: number;
 }

@@ -1,13 +1,38 @@
-import type { GalleryItem, Item, Link, Reference } from '../content.config';
+import type { GalleryItem, Link, Reference } from '../content.config';
 import { loc, locopy, normalizeLocale, type Localize } from '../i18n';
-import { getCollection, getEntry, render, type CollectionKey } from 'astro:content';
+import { getCollection, getEntry, render, type CollectionEntry, type CollectionKey } from 'astro:content';
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import * as mdx from '@mdx-js/mdx';
+import { readFileSync } from 'fs';
+import { Fragment } from 'preact/jsx-runtime';
+import type { Locale } from '../const';
 
 export type TextualKind = 'history' | 'history/body' | 'literature' | 'project';
-export type Entry<T> = readonly [id: string, d: T];
-export type LocalizedItem<C extends CollectionKey> = Localize<Item<C>>;
+type Item<C extends CollectionKey> = CollectionEntry<C>['data'];
 
-export const contact = await getter('contact');
+type LocalizableCollections = 'project' | 'literature' | 'def' | 'history' | 'piano-tile';
+type ResolvedItem<C extends CollectionKey> = C extends LocalizableCollections ? Localize<Item<C>> : Item<C>;
+type ResolvedItems = {
+    [C in CollectionKey]: ResolvedItem<C>;
+};
+type InfonodeOf<C extends CollectionKey> = {
+    id: string;
+    type: C;
+    data: ResolvedItems[C];
+};
+type Infonodes = {
+    [C in CollectionKey]: InfonodeOf<C>;
+};
+
+export type Infonode<C extends CollectionKey = CollectionKey> = Infonodes[C];
+
+const x: Infonode = { id: 'a', data: {} as Infonode<'project'>['data'], type: 'project' };
+switch (x.type) {
+    case 'project':
+        x.data satisfies ResolvedItem<'project'>;
+}
+
+export const contact = await getter('contact', (_, d) => d);
 
 const locLink = (l: Locale) => (d: Link) => ({
     ...d,
@@ -26,7 +51,7 @@ const locGalleryItem = (l: Locale) => (d: GalleryItem) => ({
     caption: locopy(l, d.caption),
 });
 
-export const project = await getterLocalized('project', (l, d) => ({
+export const project = await getter('project', (l, d) => ({
     ...d,
     title: locopy(l, d.title),
     abstract: locopy(l, d.abstract),
@@ -36,7 +61,7 @@ export const project = await getterLocalized('project', (l, d) => ({
     gallery: d.gallery.map(locGalleryItem(l)),
 }));
 
-export const literature = await getterLocalized('literature', (l, d) => ({
+export const literature = await getter('literature', (l, d) => ({
     ...d,
     title: locopy(l, d.title),
     abstract: locopy(l, d.abstract),
@@ -44,7 +69,7 @@ export const literature = await getterLocalized('literature', (l, d) => ({
     references: d.references.map(locRef(l)),
     gallery: d.gallery.map(locGalleryItem(l)),
 }));
-export const def = await getterLocalized('def', (l, d) => ({
+export const def = await getter('def', (l, d) => ({
     ...d,
     name: {
         full: locopy(l, d.name.full),
@@ -54,7 +79,7 @@ export const def = await getterLocalized('def', (l, d) => ({
     synopsis: locopy(l, d.synopsis),
     wiki: loc(l, d.wiki),
 }));
-export const history = await getterLocalized('history', (l, d) => ({
+export const history = await getter('history', (l, d) => ({
     ...d,
     title: locopy(l, d.title),
     meta: locopy(l, d.meta),
@@ -67,7 +92,7 @@ export const history = await getterLocalized('history', (l, d) => ({
         : undefined,
 }));
 
-export const pianoTile = await getterLocalized('piano-tile', (l, d) => ({
+export const pianoTile = await getter('piano-tile', (l, d) => ({
     ...d,
     title: locopy(l, d.title),
     summary: locopy(l, d.summary),
@@ -83,11 +108,6 @@ export async function textual(locale: string | undefined, kind: TextualKind, id:
     return (await render(entry)).Content;
 }
 
-import * as mdx from '@mdx-js/mdx';
-import { readFileSync } from 'fs';
-import { Fragment } from 'preact/jsx-runtime';
-import type { Locale } from '../const';
-
 export function textual2(locale: string | undefined, kind: TextualKind, id: string) {
     const entryId = buildTextualId(locale, kind, id);
     return mdx.evaluateSync(readFileSync('src/content/textual/' + entryId), { Fragment }).default;
@@ -97,42 +117,21 @@ function buildTextualId(locale: string | undefined, kind: TextualKind, id: strin
     return `${normalizeLocale(locale)}/${kind}/${id}`;
 }
 
-async function getterLocalized<C extends CollectionKey>(
-    k: C,
-    localize: (locale: Locale, data: Item<C>) => LocalizedItem<C>
-) {
-    const raw = await getCollection(k);
-    type I = LocalizedItem<C>;
+async function getter<C extends CollectionKey>(type: C, resolve: (locale: Locale, data: Item<C>) => ResolvedItems[C]) {
+    const raw = await getCollection(type);
+    type I = InfonodeOf<C>;
     function get(locale: string | undefined, id: string): I;
-    function get(locale: string | undefined): readonly Entry<I>[];
-    function get(locale: string | undefined, id?: string): I | readonly Entry<I>[] {
+    function get(locale: string | undefined): readonly I[];
+    function get(locale: string | undefined, id?: string): I | readonly I[] {
         const l = normalizeLocale(locale);
         if (id === undefined) {
-            return raw.map(e => [e.id, localize(l, e.data)] as const);
+            return raw.map(({ id, data }) => ({ type, id, data: resolve(l, data) }) as const);
         }
         const item = raw.find(e => e.id === id);
         if (item === undefined) {
-            throw new Error(`${k} of id '${id}' does not exist`);
+            throw new Error(`${type} of id '${id}' does not exist`);
         }
-        return localize(l, item.data);
-    }
-    return get;
-}
-
-async function getter<K extends CollectionKey>(k: K) {
-    const all = (await getCollection(k)).map(e => [e.id, e.data] as const as Entry<I>);
-    type I = Readonly<Item<K>>;
-    function get(id: string): I;
-    function get(): readonly Entry<I>[];
-    function get(id?: string): I | readonly Entry<I>[] {
-        if (id === undefined) {
-            return all;
-        }
-        const item = all.find(([eid]) => eid === id);
-        if (item === undefined) {
-            throw new Error(`${k} of id '${id}' does not exist`);
-        }
-        return item[1];
+        return { type, id, data: resolve(l, item.data) };
     }
     return get;
 }

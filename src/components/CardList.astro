@@ -3,9 +3,13 @@ import style from './CardList.module.scss';
 export interface Props {
     items: readonly unknown[];
 }
+export interface Slots {
+    default: [unknown];
+}
 const p = Astro.props;
+const slots = await Promise.all(p.items.map(item => Astro.slots.render('default', [item] satisfies Slots['default'])));
 ---
 
 <ul class={style.cardList}>
-    {p.items.map(i => <li>{i}</li>)}
+    {slots.forEach(html => <li set:html={html} />)}
 </ul>
