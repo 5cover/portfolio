@@ -20,11 +20,11 @@ type CompiledCopy =
     | (CommonElemAttrs & { [K in keyof CopyElems]: Readonly<CompiledElem<K>> }[keyof CopyElems])
     | { [K in keyof CopyVoids]: Readonly<CompiledVoid<K>> }[keyof CopyVoids];
 
-interface CommonElemAttrs {
+type CommonElemAttrs = {
     lang?: Locale;
 }
 
-interface CopyElems {
+type CopyElems = {
     abbr: { title: string };
     time: { datetime?: string };
     badge: { key: BadgeKey };
@@ -37,11 +37,11 @@ interface CopyElems {
     q: { cite?: string };
 }
 
-interface CopyVoids {
+type CopyVoids = {
     def: string;
 }
 
-interface CompiledElem<K extends keyof CopyElems> {
+type CompiledElem<K extends keyof CopyElems> = {
     /** Type */
     t: K;
     /** Properties */
@@ -50,7 +50,7 @@ interface CompiledElem<K extends keyof CopyElems> {
     c: CC;
 }
 
-interface CompiledVoid<K extends keyof CopyVoids> {
+type CompiledVoid<K extends keyof CopyVoids> = {
     /** Type */
     t: K;
     /** Properties */

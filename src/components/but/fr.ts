@@ -209,7 +209,7 @@ export default {
     linkTextSyllabus: 'Programme officiel du BUT Informatique',
     skillsAbstract:
         "Le programme du BUT Informatique ne se limite pas à l'apprentissage de technologies. Il propose une progression implicite de posture, de la pratique individuelle vers la compréhension de systèmes techniques et humains plus larges.",
-    skill: (i, name) => `Compétence ${i}\u00a0: ${name}`,
+    skill: (i, name) => `Compétence ${i}\u00a0: ${name.toString()}`,
     iutAlt: "Entrée de l'IUT de Lannion",
     iutCaption: "L'IUT de Lannion (Côtes d'Armor). C'est ici que je fais mon BUT Informatique.",
     presentation: [

@@ -1,11 +1,11 @@
-import type { ComponentChildren } from 'preact';
 import type { Graphic } from '../content.config';
+import type { SvgComponent } from 'astro/types';
 
 const svgModules = import.meta.glob('../../public/**/*.svg', {
     import: 'default',
-}) as Record<string, (props: any) => ComponentChildren>;
+}) as Record<string, SvgComponent>;
 
-interface CommonProps {
+type CommonProps = {
     title?: string;
     class?: string;
     width?: number;
@@ -28,8 +28,9 @@ export default (props: Props) => {
         }
         return (
             <Svg
-                className={className}
+                class={className}
                 height={baseHeight}
+                // @ts-expect-error title may not a valid SVG attribute but it is supported in HTML.
                 title={title}
                 role={title ? 'img' : 'presentation'}
                 aria-label={title}

@@ -1,6 +1,6 @@
 import type { Graphic } from '../content.config';
 
-export interface Badge {
+export type Badge = {
     graphic: Graphic;
 }
 

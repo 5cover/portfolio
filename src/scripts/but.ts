@@ -1,4 +1,4 @@
-import { requireElementById } from "./util";
+import { requireElementById } from './util';
 
 const root = requireElementById('but-years');
 
@@ -29,7 +29,7 @@ root.addEventListener('keydown', event => {
     if (currentIndex < 0) {
         return;
     }
-    let nextIndex = currentIndex;
+    let nextIndex;
     if (e.key === 'ArrowRight') {
         nextIndex = (currentIndex + 1) % tabs.length;
     } else if (e.key === 'ArrowLeft') {

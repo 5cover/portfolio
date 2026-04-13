@@ -2,7 +2,7 @@ import type { Locale } from '../const';
 import { locopy, type Localized } from '../i18n';
 import type { copy } from '../lib/copy';
 
-export interface Tag {
+export type Tag = {
     title: Localized<copy>;
 }
 export const tag = (l: Locale, d: TagKey) => ({

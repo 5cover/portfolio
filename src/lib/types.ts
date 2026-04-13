@@ -1,25 +1,23 @@
-import type { CollectionKey } from 'astro:content';
-
-export interface Context {
+export type Context = {
     level: number;
 }
-export interface PropsBase {
+export type PropsBase = {
     c: Readonly<Context>;
 }
 
-export interface NavItem {
+export type NavItem = {
     page: string;
     label: string;
 }
 
-export interface LanguageInfo {
+export type LanguageInfo = {
     code: string;
     name: string;
     flagClass: string;
     names: Record<string, string>;
 }
 
-export interface ThemeLabels {
+export type ThemeLabels = {
     light: string;
     system: string;
     dark: string;

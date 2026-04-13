@@ -1,7 +1,7 @@
 import type { Locale, NavItemPage } from '../const';
 import type { ThemeLabels } from '../lib/types';
 
-export interface Translation {
+export type Translation = {
     flagClass: string;
     locales: Record<Locale, string>;
     siteDescription: string;

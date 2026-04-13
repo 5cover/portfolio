@@ -5,7 +5,7 @@ export const stripTags = (value: string) => value.replace(/<[^>]*>/g, '');
 
 export const capitalize = (value: string) => value[0].toUpperCase() + value.slice(1);
 
-export const typedObjectFromEntries = <const T extends ReadonlyArray<readonly [PropertyKey, unknown]>>(
+export const typedObjectFromEntries = <const T extends readonly (readonly [PropertyKey, unknown])[]>(
     entries: T
 ): { [K in T[number] as K[0]]: K[1] } => {
     return Object.fromEntries(entries) as { [K in T[number] as K[0]]: K[1] };

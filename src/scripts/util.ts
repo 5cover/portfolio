@@ -1,4 +1,4 @@
-interface Constructor<T> {
+type Constructor<T> = {
     new (): T;
     prototype: T;
 }

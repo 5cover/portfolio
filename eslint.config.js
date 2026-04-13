@@ -35,12 +35,7 @@ export default [
             '@typescript-eslint/adjacent-overload-signatures': 'off',
             '@typescript-eslint/no-empty-function': 'off',
             '@typescript-eslint/no-confusing-void-expression': 'off',
-            '@typescript-eslint/ban-ts-comment': [
-                'error',
-                {
-                    'ts-nocheck': false,
-                },
-            ],
+            '@typescript-eslint/ban-ts-comment': ['error', {}],
             '@typescript-eslint/restrict-template-expressions': [
                 'error',
                 {
@@ -54,6 +49,7 @@ export default [
                     allowInterfaces: 'always',
                 },
             ],
+            '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
         },
     },
 ];

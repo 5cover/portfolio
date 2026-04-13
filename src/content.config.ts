@@ -1,11 +1,4 @@
-import {
-    defineCollection,
-    reference,
-    z,
-    type BaseSchema,
-    type CollectionEntry,
-    type CollectionKey,
-} from 'astro:content';
+import { defineCollection, reference, z, type BaseSchema, type CollectionKey } from 'astro:content';
 import { typedObjectFromEntries } from './lib/util';
 import { anchorKeys } from './catalog/anchor';
 import { defTypesKeys } from './catalog/def-type';

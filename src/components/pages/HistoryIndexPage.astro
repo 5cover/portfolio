@@ -13,7 +13,7 @@ const historyItems = content.history(locale);
 
 // todo: order history here.
 
-const historyBodies = await Promise.all(historyItems.map(([id]) => content.textual(locale, 'history', id)));
+const historyBodies = await Promise.all(historyItems.map(({ id }) => content.textual(locale, 'history', id)));
 ---
 
 <BaseLayout pageName='history'>
@@ -25,7 +25,7 @@ const historyBodies = await Promise.all(historyItems.map(([id]) => content.textu
                 </div>
                 <div class='ag-timeline_list'>
                     {
-                        historyItems.map(([id, h], i) => {
+                        historyItems.map(({ id, data }, i) => {
                             const isOdd = i % 2 === 1;
                             const HistoryBody = historyBodies[i];
                             const href = detailHref(locale, 'history', id);
@@ -36,21 +36,21 @@ const historyBodies = await Promise.all(historyItems.map(([id]) => content.textu
                                             <>
                                                 <div class='ag-timeline-card_meta-box'>
                                                     <div class='ag-timeline-card_meta'>
-                                                        <Copy of={h.meta} />
+                                                        <Copy of={data.meta} />
                                                     </div>
                                                 </div>
                                                 <div class='js-timeline-card_point-box ag-timeline-card_point-box'>
-                                                    <div class='ag-timeline-card_point'>{h.year}</div>
+                                                    <div class='ag-timeline-card_point'>{data.year}</div>
                                                 </div>
                                             </>
                                         ) : (
                                             <>
                                                 <div class='js-timeline-card_point-box ag-timeline-card_point-box'>
-                                                    <div class='ag-timeline-card_point'>{h.year}</div>
+                                                    <div class='ag-timeline-card_point'>{data.year}</div>
                                                 </div>
                                                 <div class='ag-timeline-card_meta-box'>
                                                     <div class='ag-timeline-card_meta'>
-                                                        <Copy of={h.meta} />
+                                                        <Copy of={data.meta} />
                                                     </div>
                                                 </div>
                                             </>
@@ -59,24 +59,28 @@ const historyBodies = await Promise.all(historyItems.map(([id]) => content.textu
                                     <div class='ag-timeline-card_item'>
                                         <div class='ag-timeline-card_inner'>
                                             <div class='ag-timeline-card_img-box'>
-                                                {h.media ? (
+                                                {data.media ? (
                                                     <img
-                                                        src={h.media.img}
-                                                        alt={h.media.alt}
+                                                        src={data.media.img}
+                                                        alt={data.media.alt}
                                                         class='ag-timeline-card_img'
                                                     />
                                                 ) : null}
                                             </div>
                                             <div class='ag-timeline-card_info'>
                                                 <div class='ag-timeline-card_title'>
-                                                    <Copy of={h.title} />
+                                                    <Copy of={data.title} />
                                                 </div>
                                                 <div class='ag-timeline-card_desc'>
                                                     <TextualContent content={HistoryBody} />
                                                 </div>
                                             </div>
                                         </div>
-                                        <a class='ag-timeline-card_link' href={href} aria-label={h.meta.toString()} />
+                                        <a
+                                            class='ag-timeline-card_link'
+                                            href={href}
+                                            aria-label={data.meta.toString()}
+                                        />
                                         <div class='ag-timeline-card_arrow' />
                                     </div>
                                 </div>

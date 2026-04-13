@@ -208,7 +208,7 @@ export default {
     linkTextSyllabus: 'Officiel BUT Computer Science syllabus',
     skillsAbstract:
         'The BUT Computer Science program is not limited to learning technologies. It proposes an implicit progression of posture, from individual practice to understanding broader technical and human systems.',
-    skill: (i, name) => `Skill ${i}: ${name}`,
+    skill: (i, name) => `Skill ${i}: ${name.toString()}`,
     iutAlt: "Entrée de l'IUT de Lannion",
     iutCaption: [
         'The IUT of Lannion (',

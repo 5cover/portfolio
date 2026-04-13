@@ -4,7 +4,7 @@ import Graphic from './Graphic';
 import { badges } from '../catalog/badge';
 import type { Locale } from '../const';
 
-export interface Props {
+export type Props = {
     of: Badge | BadgeKey;
     children: ComponentChildren;
     lang?: Locale;

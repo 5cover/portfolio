@@ -8,6 +8,7 @@ import type { PropsBase as Props } from '../lib/types';
 import Copy from './Copy.astro';
 import type { ButData } from './but/types';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { copy } from '../lib/copy';
 
 const MaxProjectsPerSkill = 4;
 const locale = normalizeLocale(Astro.currentLocale);
@@ -80,7 +81,7 @@ const projects = content.project(Astro.currentLocale);
                                         style={`--bg-img: url(/portfolio/img/skill/${skillName}.jpg)`}
                                         class='year-skill'>
                                         <h3>
-                                            <Copy of={d.skill(i + 1, d.skills[skillName].name)} />
+                                            <Copy of={d.skill(i + 1, copy(d.skills[skillName].name))} />
                                         </h3>
                                         <p>
                                             <Copy of={d.skills[skillName].desc} />
