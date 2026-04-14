@@ -5,16 +5,18 @@ import Graphic from '../../components/Graphic';
 import Heading from '../../components/Heading.astro';
 import LinkList from '../../components/LinkList.astro';
 import { normalizeLocale, translation } from '../../i18n';
-import type { Entry, LocalizedItem } from '../../lib/content';
+import type { Infonode } from '../../lib/content';
 import { pageHref, detailHref } from '../../lib/links';
 import type { PropsBase } from '../../lib/types';
 import { formatDate } from '../../lib/util';
 
 interface Props extends PropsBase {
-    entry: Entry<LocalizedItem<'project'>>;
+    of: Infonode<'project'>;
 }
-const { c, entry } = Astro.props;
-const [id, data] = entry;
+const {
+    c,
+    of: { id, data },
+} = Astro.props;
 
 const locale = normalizeLocale(Astro.currentLocale);
 const _ = translation(locale);

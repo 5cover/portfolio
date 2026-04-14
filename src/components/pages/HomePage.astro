@@ -12,7 +12,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import type { Context } from '../../lib/types';
 import CardList from '../CardList.astro';
 import PianoTileCard from '../../infonodes/piano-tile/Card.astro';
-import type { Entry, LocalizedItem } from '../../lib/content';
 
 export interface Props {
     copy: {
@@ -29,14 +28,13 @@ export interface Props {
 
 const locale = normalizeLocale(Astro.currentLocale);
 const projects = content.project(locale);
-const contacts = content.contact();
+const contacts = content.contact(locale);
 const s = Astro.props.copy;
-type PianoTile = (Entry<LocalizedItem<'piano-tile'>>)
 ---
 
 <BaseLayout pageName='index'
     >{((c: Context) => (
-    <CardList items={content.pianoTile(locale)}>{((entry: PianoTile) => (<PianoTileCard {c} {entry}/>))}</CardList>
+    <CardList items={content.pianoTile(locale)}>{((of: content.Infonode<'piano-tile'>) => (<PianoTileCard {c} {of}/>))}</CardList>
     <Section {c} as='article' class:list={['lvl', 'content-block', style.me]}>{((c: Context) =>
         <div>
             <Heading {c}>{s.me}</Heading>
@@ -53,7 +51,7 @@ type PianoTile = (Entry<LocalizedItem<'piano-tile'>>)
     )}</Section>
     <Section {c} class:list={['lvl', style.ongoingProjects]}>{((c: Context) =>
         <Heading {c}>{s.ongoingProjects}</Heading>
-        <ProjectCardList {c} entries={projects.filter(([, project]) => !project.endDate)} />
+        <ProjectCardList {c} of={projects.filter(({data}) => !data.endDate)} />
         <a href={pageHref(locale, 'projects')} class='lvl button-link'>
             {s.allMyProjects}
         </a>
@@ -64,15 +62,15 @@ type PianoTile = (Entry<LocalizedItem<'piano-tile'>>)
             <address>
                 <ul>
                     {
-                        contacts.map(([, contact]) => (
-                            <li title={contact.platform}>
+                        contacts.map(({data}) => (
+                            <li title={data.platform}>
                                 <a
                                     class='link iconed-text'
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    href={contact.href}>
-                                    <Graphic of={contact.icon} alt={contact.platform} />
-                                    <span>{contact.name}</span>
+                                    href={data.href}>
+                                    <Graphic of={data.icon} alt={data.platform} />
+                                    <span>{data.name}</span>
                                 </a>
                             </li>
                         ))

@@ -3,7 +3,6 @@ import Graphic from './Graphic';
 import LinkList from './LinkList.astro';
 import { detailHref, pageHref } from '../lib/links';
 import { normalizeLocale, translation } from '../i18n';
-import type { Entry, LocalizedItem } from '../lib/content';
 import { formatDate } from '../lib/util';
 import { copy } from '../lib/copy';
 import { tag } from '../catalog/tag';
@@ -11,19 +10,22 @@ import Heading from './Heading.astro';
 import Section from './Section.astro';
 import type { PropsBase, Context } from '../lib/types';
 import Copy from './Copy.astro';
+import type { Infonode } from '../lib/content';
 
 interface Props extends PropsBase {
-    entry: Entry<LocalizedItem<'project'>>;
+    of: Infonode<'project'>;
 }
-const { c, ...p } = Astro.props;
+const {
+    c,
+    of: { id, data },
+} = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
-const [id, project] = p.entry;
 const _ = translation(locale);
-const logoTitle = _.logoTitle(project.title.toString());
-const startLabel = project.startDate ? formatDate(project.startDate, locale) : null;
-const endLabel = project.endDate ? formatDate(project.endDate, locale) : null;
-const context = project.context ? copy(project.context).capitalize() : null;
-const backgroundStyle = project.background ? `--bg-img-card: url(${project.background})` : undefined;
+const logoTitle = _.logoTitle(data.title.toString());
+const startLabel = data.startDate ? formatDate(data.startDate, locale) : null;
+const endLabel = data.endDate ? formatDate(data.endDate, locale) : null;
+const context = data.context ? copy(data.context).capitalize() : null;
+const backgroundStyle = data.background ? `--bg-img-card: url(${data.background})` : undefined;
 ---
 
 <Section {c} as='li' style={backgroundStyle}
@@ -31,7 +33,7 @@ const backgroundStyle = project.background ? `--bg-img-card: url(${project.backg
         (c: Context) => (
             <>
                 <ul class='list-rect'>
-                    {project.tags.map(tagId => (
+                    {data.tags.map(tagId => (
                         <li>
                             <a href={`${pageHref(locale, 'projects')}?tag=${tagId}`}>
                                 <Copy of={tag(locale, tagId).title} />
@@ -39,21 +41,21 @@ const backgroundStyle = project.background ? `--bg-img-card: url(${project.backg
                         </li>
                     ))}
                 </ul>
-                {project.logo ? <Graphic of={project.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
+                {data.logo ? <Graphic of={data.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
                 <Heading {c}>
                     <a class='foil' href={detailHref(locale, 'projects', id)}>
-                        <Copy of={project.title} />
+                        <Copy of={data.title} />
                     </a>
                 </Heading>
-                {project.startDate ? (
+                {data.startDate ? (
                     <small class='status'>
-                        <time datetime={project.startDate.toISOString()}>{startLabel}</time> &ndash;{' '}
-                        {project.endDate ? <time datetime={project.endDate.toISOString()}>{endLabel}</time> : _.ongoing}
+                        <time datetime={data.startDate.toISOString()}>{startLabel}</time> &ndash;{' '}
+                        {data.endDate ? <time datetime={data.endDate.toISOString()}>{endLabel}</time> : _.ongoing}
                     </small>
                 ) : null}
                 {context ? <small class='context'>{context}</small> : null}
-                <p class='abstract'>{project.abstract}</p>
-                {project.links.length > 0 ? <LinkList links={project.links} /> : null}
+                <p class='abstract'>{data.abstract}</p>
+                {data.links.length > 0 ? <LinkList links={data.links} /> : null}
             </>
         )
     }</Section

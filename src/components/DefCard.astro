@@ -1,35 +1,36 @@
 ---
 import { normalizeLocale } from '../i18n';
-import type { LocalizedItem } from '../lib/content';
 import { copy } from '../lib/copy';
 import Copy from './Copy.astro';
 import Graphic from './Graphic';
 import { translation } from '../i18n';
 import { defType } from '../catalog/def-type';
+import type { Infonode } from '../lib/content';
 
-function buildDefTitle(entry: LocalizedItem<'def'>) {
-    const { abbr, full } = entry.name;
+function buildDefTitle(def: Infonode<'def'>) {
+    const { abbr, full } = def.data.name;
     return abbr ? copy([full, ' (', { title: full.toString(), abbr }, ')']) : full;
 }
 
 interface Props {
-    def: LocalizedItem<'def'>;
+    def: Infonode<'def'>;
 }
 const { def } = Astro.props;
+const { data } = def;
 const defTitle = buildDefTitle(def);
 const logoTitle = translation(Astro.currentLocale).logoTitle(defTitle.toString());
-const backgroundStyle = def.background ? `--bg-img-card: url(${def.background})` : undefined;
+const backgroundStyle = data.background ? `--bg-img-card: url(${data.background})` : undefined;
 
-const typeName = defType(normalizeLocale(Astro.currentLocale), def.type).title;
+const typeName = defType(normalizeLocale(Astro.currentLocale), data.type).title;
 ---
 
 <article class='def' style={backgroundStyle}>
     <h4>
-        <a class='foil' target='_blank' rel='noopener noreferrer' href={def.wiki}>
+        <a class='foil' target='_blank' rel='noopener noreferrer' href={data.wiki}>
             <Copy of={defTitle} />
         </a>
     </h4>
-    {def.logo ? <Graphic of={def.logo} title={logoTitle} class='logo' /> : null}
+    {data.logo ? <Graphic of={data.logo} title={logoTitle} class='logo' /> : null}
     <p class='type'><small><Copy of={typeName.capitalize()} /></small></p>
-    <p class='synopsis'><Copy of={def.synopsis} /></p>
+    <p class='synopsis'><Copy of={data.synopsis} /></p>
 </article>

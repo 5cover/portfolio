@@ -14,7 +14,7 @@ interface Props {
 const p = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
 const { nav } = translation(locale);
-const entries = content.literature(locale).filter(([, lit]) => lit.kind === p.kind);
+const entries = content.literature(locale).filter(({ data }) => data.kind === p.kind);
 ---
 
 <BaseLayout pageName={p.kind}
@@ -22,7 +22,7 @@ const entries = content.literature(locale).filter(([, lit]) => lit.kind === p.ki
         (c: Context) => (
             <main class={p.mainClass}>
                 <h1>{nav[p.kind]}</h1>
-                <LiteratureCardList {c} entries={entries} />
+                <LiteratureCardList {c} of={entries} />
             </main>
         )
     }</BaseLayout

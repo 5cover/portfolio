@@ -4,8 +4,8 @@ import { defType, defTypesKeys } from '../catalog/def-type';
 import { anchors as a } from '../catalog/anchor';
 import type { Locale } from '../const';
 
-export const defs = async (l: Locale) => jsonResponse(Object.fromEntries(content.def(l)));
-export const projects = async (l: Locale) => jsonResponse(Object.fromEntries(content.project(l)));
+export const defs = async (l: Locale) => jsonResponse(content.def(l));
+export const projects = async (l: Locale) => jsonResponse(content.project(l));
 export const tags = async (l: Locale) => jsonResponse(Object.fromEntries(tagKeys.map(k => [k, tag(l, k)])));
 export const defTypes = async (l: Locale) =>
     jsonResponse(Object.fromEntries(defTypesKeys.map(k => [k, defType(l, k)])));

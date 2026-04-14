@@ -1,10 +1,10 @@
-import { defineCollection, reference, z, type BaseSchema, type CollectionKey } from 'astro:content';
+import { defineCollection, reference, type BaseSchema, type CollectionKey } from 'astro:content';
+import { z } from 'astro/zod';
 import { typedObjectFromEntries } from './lib/util';
 import { anchorKeys } from './catalog/anchor';
 import { defTypesKeys } from './catalog/def-type';
 import { zCopy } from './lib/copy';
 import { tagKeys } from './catalog/tag';
-import type { ZodTypeAny, ZodTypeDef } from 'astro:schema';
 import { literatureKinds, locales } from './const';
 import { glob } from 'astro/loaders';
 
@@ -21,7 +21,7 @@ export type Graphic = z.infer<typeof zGraphic>;
 const zLink = z.object({
     label: zText,
     anchor: zDefault(z.enum(anchorKeys), 'website'),
-    href: zLocalized(z.string().url()),
+    href: zLocalized(z.url()),
 });
 export type Link = z.infer<typeof zLink>;
 
@@ -132,14 +132,14 @@ function col<S extends BaseSchema>(name: CollectionKey, schema: S) {
     });
 }
 
-function zArray<Z extends ZodTypeAny>(schema: Z) {
+function zArray<Z extends z.ZodType>(schema: Z) {
     return zDefault(z.array(schema), []);
 }
 
-function zLocalized<Z extends ZodTypeAny>(schema: Z) {
+function zLocalized<Z extends z.ZodType>(schema: Z) {
     return schema.or(z.strictObject(typedObjectFromEntries(locales.map(l => [l, schema] as const))));
 }
 
-function zDefault<O, D extends ZodTypeDef, I>(schema: z.ZodType<O, D, I>, def: O) {
+function zDefault<Z extends z.ZodType>(schema: Z, def: z.infer<Z>) {
     return schema.nullish().transform(x => x ?? def);
 }

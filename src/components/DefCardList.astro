@@ -1,9 +1,9 @@
 ---
-import type { LocalizedItem } from '../lib/content';
+import type { Infonode } from '../lib/content';
 import DefCard from './DefCard.astro';
 
 interface Props {
-    defs: readonly LocalizedItem<'def'>[];
+    defs: readonly Infonode<'def'>[];
 }
 const { defs } = Astro.props;
 ---

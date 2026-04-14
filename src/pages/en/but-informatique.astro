@@ -1,6 +1,4 @@
 ---
 import { detailHref } from '../../lib/links';
-import { normalizeLocale } from '../../i18n';
-
-return Astro.redirect(detailHref(normalizeLocale(Astro.currentLocale), 'history', 'history-but'));
+return Astro.redirect(detailHref(Astro.currentLocale, 'history', 'history-but'));
 ---

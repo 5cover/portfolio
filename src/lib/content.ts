@@ -26,12 +26,6 @@ type Infonodes = {
 
 export type Infonode<C extends CollectionKey = CollectionKey> = Infonodes[C];
 
-const x: Infonode = { id: 'a', data: {} as Infonode<'project'>['data'], type: 'project' };
-switch (x.type) {
-    case 'project':
-        x.data satisfies ResolvedItem<'project'>;
-}
-
 export const contact = await getter('contact', (_, d) => d);
 
 const locLink = (l: Locale) => (d: Link) => ({

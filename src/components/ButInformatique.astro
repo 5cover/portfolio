@@ -72,8 +72,8 @@ const projects = content.project(Astro.currentLocale);
                             {plainEntries(year.skills).map(([skillName, skillYear], i) => {
                                 const skillProjects = projects
                                     .filter(
-                                        ([, project]) =>
-                                            project.tags.includes(yearName) && project.tags.includes(`but-${skillName}`)
+                                        ({ data }) =>
+                                            data.tags.includes(yearName) && data.tags.includes(`but-${skillName}`)
                                     )
                                     .slice(0, MaxProjectsPerSkill);
                                 return (
@@ -94,7 +94,7 @@ const projects = content.project(Astro.currentLocale);
                                             ))}
                                         </ul>
                                         {skillProjects.length > 0 ? (
-                                            <ProjectCardList {c} entries={skillProjects} class='project-skills' />
+                                            <ProjectCardList {c} of={skillProjects} class='project-skills' />
                                         ) : null}
                                     </li>
                                 );

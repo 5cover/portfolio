@@ -21,8 +21,8 @@ type CompiledCopy =
     | { [K in keyof CopyVoids]: Readonly<CompiledVoid<K>> }[keyof CopyVoids];
 
 type CommonElemAttrs = {
-    lang?: Locale;
-}
+    lang?: Locale | undefined;
+};
 
 type CopyElems = {
     abbr: { title: string };
@@ -35,11 +35,11 @@ type CopyElems = {
     strong: object;
     a: { href: string };
     q: { cite?: string };
-}
+};
 
 type CopyVoids = {
     def: string;
-}
+};
 
 type CompiledElem<K extends keyof CopyElems> = {
     /** Type */
@@ -48,14 +48,14 @@ type CompiledElem<K extends keyof CopyElems> = {
     p: CommonElemAttrs & CopyElems[K];
     /** Children */
     c: CC;
-}
+};
 
 type CompiledVoid<K extends keyof CopyVoids> = {
     /** Type */
     t: K;
     /** Properties */
     p: CopyVoids[K];
-}
+};
 
 export function copy(c: copy) {
     return c instanceof CC ? c : new CC(compile(c));

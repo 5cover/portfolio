@@ -12,13 +12,12 @@ import '../../styles/but-informatique.scss';
 import Copy from '../Copy.astro';
 
 interface Props {
-    id: string;
+    of: content.Infonode<'history'>;
 }
 
-const { id } = Astro.props;
+const { data, id } = Astro.props.of;
 
 const locale = normalizeLocale(Astro.currentLocale);
-const data = content.history(locale, id);
 const _ = translation(locale);
 
 const historySummary = await content.textual(locale, 'history', id);

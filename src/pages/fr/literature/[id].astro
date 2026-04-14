@@ -2,9 +2,10 @@
 import LiteratureDetailPage from '../../../components/pages/LiteratureDetailPage.astro';
 import { getCollection } from 'astro:content';
 import '../../../styles/literature.scss';
+import { literature } from '../../../lib/content';
 export async function getStaticPaths() {
     return (await getCollection('literature')).map(({ id }) => ({ params: { id } }));
 }
 ---
 
-<LiteratureDetailPage id={Astro.params.id} />
+<LiteratureDetailPage of={literature(Astro.currentLocale, Astro.params.id)} />

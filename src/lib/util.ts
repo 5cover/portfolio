@@ -3,7 +3,7 @@ export const throwf = (x: unknown) => {
 };
 export const stripTags = (value: string) => value.replace(/<[^>]*>/g, '');
 
-export const capitalize = (value: string) => value[0].toUpperCase() + value.slice(1);
+export const capitalize = (value: string) => (value[0] === undefined ? '' : value[0].toUpperCase() + value.slice(1));
 
 export const typedObjectFromEntries = <const T extends readonly (readonly [PropertyKey, unknown])[]>(
     entries: T

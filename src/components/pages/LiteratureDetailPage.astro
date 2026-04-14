@@ -10,14 +10,16 @@ import { translation, normalizeLocale } from '../../i18n';
 import Copy from '../Copy.astro';
 
 interface Props {
-    id: string;
+    of: content.Infonode<'literature'>;
     mainClass?: string;
 }
-const { id, mainClass } = Astro.props;
+const {
+    mainClass,
+    of: { data, id },
+} = Astro.props;
 
 const locale = normalizeLocale(Astro.currentLocale);
 const _ = translation(locale);
-const data = content.literature(locale, id);
 const body = await content.textual(locale, 'literature', id);
 const backgroundStyle = data.background ? `--bg-img: url(${data.background})` : undefined;
 ---

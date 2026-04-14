@@ -3,31 +3,33 @@ import Graphic from './Graphic';
 import LinkList from './LinkList.astro';
 import { detailHref } from '../lib/links';
 import { translation, normalizeLocale } from '../i18n';
-import type { Entry, LocalizedItem } from '../lib/content';
 import Copy from './Copy.astro';
 import Heading from './Heading.astro';
 import type { PropsBase } from '../lib/types';
+import type { Infonode } from '../lib/content';
 
 interface Props extends PropsBase {
-    entry: Entry<LocalizedItem<'literature'>>;
+    of: Infonode<'literature'>;
 }
 
-const { c, entry } = Astro.props;
-const [id, lit] = entry;
+const {
+    c,
+    of: { id, data },
+} = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
-const logoTitle = translation(locale).logoTitle(lit.title.toString());
-const backgroundStyle = lit.background ? `--bg-img-card: url(${lit.background})` : undefined;
+const logoTitle = translation(locale).logoTitle(data.title.toString());
+const backgroundStyle = data.background ? `--bg-img-card: url(${data.background})` : undefined;
 ---
 
 <li id={id} style={backgroundStyle}>
-    {lit.logo ? <Graphic of={lit.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
+    {data.logo ? <Graphic of={data.logo} alt={logoTitle} title={logoTitle} class='logo' /> : null}
     <div>
         <Heading {c}>
             <a class='foil' href={detailHref(locale, 'literature', id)}>
-                <Copy of={lit.title} />
+                <Copy of={data.title} />
             </a>
         </Heading>
-        <p class='abstract'>=<Copy of={lit.abstract} /></p>
-        {lit.links.length > 0 ? <LinkList links={lit.links} /> : null}
+        <p class='abstract'>=<Copy of={data.abstract} /></p>
+        {data.links.length > 0 ? <LinkList links={data.links} /> : null}
     </div>
 </li>
