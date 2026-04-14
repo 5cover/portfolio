@@ -7,7 +7,7 @@ import type { PropsBase } from '../../lib/types';
 import styles from './card.module.scss';
 
 interface Props extends PropsBase {
-    of: Infonode<'piano-tile'>;
+    of: Infonode<'pianoTile'>;
 }
 const {
     c,
@@ -15,7 +15,7 @@ const {
 } = Astro.props;
 ---
 
-<Section class={styles['card_piano-tile']}>
+<Section class={styles['card_pianoTile']}>
     <figure>
         <img
             src={data.backgroundImage}

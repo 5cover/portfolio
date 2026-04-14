@@ -11,7 +11,7 @@ import style from './HomePage.module.scss';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import type { Context } from '../../lib/types';
 import CardList from '../CardList.astro';
-import PianoTileCard from '../../infonodes/piano-tile/Card.astro';
+import PianoTileCard from '../../infonodes/pianoTile/Card.astro';
 
 export interface Props {
     copy: {
@@ -34,7 +34,7 @@ const s = Astro.props.copy;
 
 <BaseLayout pageName='index'
     >{((c: Context) => (
-    <CardList items={content.pianoTile(locale)}>{((of: content.Infonode<'piano-tile'>) => (<PianoTileCard {c} {of}/>))}</CardList>
+    <CardList items={content.pianoTile(locale)}>{((of: content.Infonode<'pianoTile'>) => (<PianoTileCard {c} {of}/>))}</CardList>
     <Section {c} as='article' class:list={['lvl', 'content-block', style.me]}>{((c: Context) =>
         <div>
             <Heading {c}>{s.me}</Heading>

@@ -1,5 +1,5 @@
 ---
-import * as content from '../../lib/content';
+import { get } from '../../lib/content';
 import { cls } from '../../lib/util';
 import Copy from '../Copy.astro';
 
@@ -8,7 +8,7 @@ interface Props {
     class?: string;
 }
 const p = Astro.props;
-const def = content.def(Astro.currentLocale, p.id).data;
+const def = get.def(Astro.currentLocale, p.id).data;
 const label = def.name.abbr ?? def.name.short ?? def.name.full ?? p.id;
 ---
 

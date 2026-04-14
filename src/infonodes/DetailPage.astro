@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { get, type HasDetail, type InfonodeKey } from '../lib/content';
+import type { Context } from '../lib/types';
+import Detail from './Detail.astro';
+
+type Props = {
+    of: InfonodeKey & HasDetail;
+    id: string;
+};
+
+const { of, id } = Astro.props;
+---
+
+<BaseLayout pageName={`${of}/${id}`}>
+    {(c: Context) => <Detail {c} of={get[of](Astro.currentLocale, id)} />}
+</BaseLayout>

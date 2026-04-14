@@ -4,7 +4,7 @@ function setupPianoTiles(): void {
         return;
     }
 
-    const tiles = Array.from(document.querySelectorAll<HTMLElement>('.list-piano-tiles li'));
+    const tiles = Array.from(document.querySelectorAll<HTMLElement>('.list-pianoTiles li'));
     if (tiles.length === 0) {
         return;
     }

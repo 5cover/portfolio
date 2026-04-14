@@ -4,7 +4,7 @@
     "./.astro/collections/contact.schema.json": "/src/content/contact/**.yaml",
     "./.astro/collections/history.schema.json": "/src/content/history/**.yaml",
     "./.astro/collections/literature.schema.json": "/src/content/literature/**.yaml",
-    "./.astro/collections/piano-tile.schema.json": "/src/content/piano-tile/**.yaml",
+    "./.astro/collections/pianoTile.schema.json": "/src/content/pianoTile/**.yaml",
     "./.astro/collections/project.schema.json": "/src/content/project/**.yaml",
   }
 }

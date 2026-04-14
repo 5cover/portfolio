@@ -1,6 +1,6 @@
 @use '../../styles/const';
 @use '../../styles/util';
-.card_piano-tile {
+.card_pianoTile {
   @include util.hover-card;
   @include util.wrap-anywhere;
   $min-width: 180px;

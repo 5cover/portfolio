@@ -79,7 +79,9 @@ We make history items clickable, they lead to a long-form textual body (detail r
 
 Then we can go in depth about the internship and the apprenticeship
 
-## ~~Standardized MDX content~~. Currently markup is everwyhere. Image components
+## tandardized MDX content. Currently markup is everwyhere.  Image components
+
+turn HTML-as mdx quick&dirty content into proper markdown.
 
 ## Install linters and stuff
 
@@ -119,6 +121,13 @@ and find a solution for defs
 
 avoid N+1 requestsvca
 
+## resolve todos
+
+## infonode content model
+
+collections as an implementation detail
+`<Card>`, `<Detail>`, and `<CardList>` components. switch on infonode type. of property. cardlist determines the list class from the type.
+
 ## DetailPage
 
 from
@@ -135,9 +144,8 @@ to
 <DetailPage of={project(Astro.currentLocale, id)}>
 ```
 
-## infonode content model
+## dedicated get object in content.astro
 
-collections as an implementation detail
-`<Card>`, `<Detail>`, and `<CardList>` components. switch on infonode type. of property. cardlist determines the list class from the type.
+allows more robust dynamic lookup
 
-## resolve todos
+## resolve textual in infonodes instead of separately

@@ -88,3 +88,7 @@ assuming it works (we'll have to test that)
 what we could do is one Card component, one Link component, one Detail component
 
 that accepts a localized "infonode" which type is encoded as a string (no more `Entry<LocalizedItem<''>>` mess)
+
+## rename pianoTile to pianoTile
+
+more identifier friendly

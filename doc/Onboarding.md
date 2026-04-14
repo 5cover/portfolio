@@ -73,7 +73,7 @@ Important collections:
 - `types`: def categories (localized fields inline).
 - `history`: timeline entries (localized fields inline, body in MDX).
 - `textual`: MDX bodies for projects, literature, and history.
-- `piano-tiles`: home page tiles.
+- `pianoTiles`: home page tiles.
 - `contacts`, `anchors` (supporting data).
 
 All content is validated by Zod at build time. If the schema does not match,

@@ -1,17 +1,19 @@
 ---
-import type { CollectionKey } from 'astro:content';
-import type { Infonode } from '../lib/content';
+import type { Infonode, InfonodeKey } from '../lib/content';
 import type { PropsBase } from '../lib/types';
+import ProjectCard from './project/Card.astro';
+import PianoTileCard from './pianoTile/Card.astro';
 
-interface Props<C extends CollectionKey = CollectionKey> extends PropsBase {
+interface Props<C extends InfonodeKey> extends PropsBase {
     of: Infonode<C>;
 }
-// todo
-const { of } = Astro.props;
+const { c, of } = Astro.props;
 
-switch (of.type) {
-    case 'contact':
-        of.type;
-        of.data;
-}
+const components = {
+    project: ProjectCard,
+    pianoTile: PianoTileCard,
+} as const;
+const Component = components[of.type];
 ---
+
+<Component {c} {of} />

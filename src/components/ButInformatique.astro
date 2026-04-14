@@ -1,7 +1,7 @@
 ---
 import { normalizeLocale } from '../i18n';
 import ProjectCardList from './ProjectCardList.astro';
-import * as content from '../lib/content';
+import { get } from '../lib/content';
 import Heading from './Heading.astro';
 import { plainEntries } from '../lib/util';
 import type { PropsBase as Props } from '../lib/types';
@@ -14,7 +14,7 @@ const MaxProjectsPerSkill = 4;
 const locale = normalizeLocale(Astro.currentLocale);
 const d = (await import(`./but/${locale}.ts`)).default as ButData;
 const { c } = Astro.props;
-const projects = content.project(Astro.currentLocale);
+const projects = get.project(Astro.currentLocale);
 ---
 
 <BaseLayout pageName='but-informatique' mainClass='but-body margined'>

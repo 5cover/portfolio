@@ -1,32 +1,37 @@
 import type { GalleryItem, Link, Reference } from '../content.config';
 import { loc, locopy, normalizeLocale, type Localize } from '../i18n';
-import { getCollection, getEntry, render, type CollectionEntry, type CollectionKey } from 'astro:content';
+import { getCollection, render, type CollectionEntry, type CollectionKey } from 'astro:content';
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
-import * as mdx from '@mdx-js/mdx';
-import { readFileSync } from 'fs';
-import { Fragment } from 'preact/jsx-runtime';
 import type { Locale } from '../const';
+import { throwf } from './util';
 
-export type TextualKind = 'history' | 'history/body' | 'literature' | 'project';
-type Item<C extends CollectionKey> = CollectionEntry<C>['data'];
+export type Textual = AstroComponentFactory;
+export type InfonodeKey = Exclude<CollectionKey, 'textual'>;
+export type HasDetail = 'project' | 'literature' | 'history';
 
-type LocalizableCollections = 'project' | 'literature' | 'def' | 'history' | 'piano-tile';
-type ResolvedItem<C extends CollectionKey> = C extends LocalizableCollections ? Localize<Item<C>> : Item<C>;
+type Item<C extends InfonodeKey> = CollectionEntry<C>['data'];
+type LocalizableCollections = 'project' | 'literature' | 'def' | 'history' | 'pianoTile';
+type ResolvedItem<C extends InfonodeKey> = C extends LocalizableCollections ? Localize<Item<C>> : Item<C>;
 type ResolvedItems = {
-    [C in CollectionKey]: ResolvedItem<C>;
+    [C in InfonodeKey]: ResolvedItem<C> &
+        (C extends keyof InfonodeTextualProps ? Record<InfonodeTextualProps[C], Textual> : unknown);
 };
-type InfonodeOf<C extends CollectionKey> = {
+type InfonodeTextualProps = {
+    history: 'body' | 'description';
+    literature: 'body';
+    project: 'body';
+};
+
+type InfonodeOf<C extends InfonodeKey> = {
     id: string;
     type: C;
     data: ResolvedItems[C];
 };
 type Infonodes = {
-    [C in CollectionKey]: InfonodeOf<C>;
+    [C in InfonodeKey]: InfonodeOf<C>;
 };
 
-export type Infonode<C extends CollectionKey = CollectionKey> = Infonodes[C];
-
-export const contact = await getter('contact', (_, d) => d);
+export type Infonode<C extends InfonodeKey = InfonodeKey> = Infonodes[C];
 
 const locLink = (l: Locale) => (d: Link) => ({
     ...d,
@@ -45,87 +50,87 @@ const locGalleryItem = (l: Locale) => (d: GalleryItem) => ({
     caption: locopy(l, d.caption),
 });
 
-export const project = await getter('project', (l, d) => ({
-    ...d,
-    title: locopy(l, d.title),
-    abstract: locopy(l, d.abstract),
-    context: locopy(l, d.context),
-    links: d.links.map(locLink(l)),
-    references: d.references.map(locRef(l)),
-    gallery: d.gallery.map(locGalleryItem(l)),
-}));
+export const get = {
+    contact: await getter('contact', (_, d) => d),
+    project: await getter('project', (l, d, id) => ({
+        ...d,
+        title: locopy(l, d.title),
+        abstract: locopy(l, d.abstract),
+        context: locopy(l, d.context),
+        links: d.links.map(locLink(l)),
+        references: d.references.map(locRef(l)),
+        gallery: d.gallery.map(locGalleryItem(l)),
+        body: textual(l, 'project', id, 'body'),
+    })),
+    literature: await getter('literature', (l, d, id) => ({
+        ...d,
+        title: locopy(l, d.title),
+        abstract: locopy(l, d.abstract),
+        links: d.links.map(locLink(l)),
+        references: d.references.map(locRef(l)),
+        gallery: d.gallery.map(locGalleryItem(l)),
+        body: textual(l, 'literature', id, 'body'),
+    })),
+    def: await getter('def', (l, d) => ({
+        ...d,
+        name: {
+            full: locopy(l, d.name.full),
+            abbr: locopy(l, d.name.abbr),
+            short: locopy(l, d.name.short),
+        },
+        synopsis: locopy(l, d.synopsis),
+        wiki: loc(l, d.wiki),
+    })),
+    history: await getter('history', (l, d, id) => ({
+        ...d,
+        title: locopy(l, d.title),
+        meta: locopy(l, d.meta),
+        year: d.year,
+        media: d.media
+            ? {
+                  img: d.media.img,
+                  alt: loc(l, d.media.alt),
+              }
+            : undefined,
+        body: textual(l, 'history', id, 'body'),
+        description: textual(l, 'history', id, 'description'),
+    })),
+    pianoTile: await getter('pianoTile', (l, d) => ({
+        ...d,
+        title: locopy(l, d.title),
+        summary: locopy(l, d.summary),
+    })),
+};
 
-export const literature = await getter('literature', (l, d) => ({
-    ...d,
-    title: locopy(l, d.title),
-    abstract: locopy(l, d.abstract),
-    links: d.links.map(locLink(l)),
-    references: d.references.map(locRef(l)),
-    gallery: d.gallery.map(locGalleryItem(l)),
-}));
-export const def = await getter('def', (l, d) => ({
-    ...d,
-    name: {
-        full: locopy(l, d.name.full),
-        abbr: locopy(l, d.name.abbr),
-        short: locopy(l, d.name.short),
-    },
-    synopsis: locopy(l, d.synopsis),
-    wiki: loc(l, d.wiki),
-}));
-export const history = await getter('history', (l, d) => ({
-    ...d,
-    title: locopy(l, d.title),
-    meta: locopy(l, d.meta),
-    year: d.year,
-    media: d.media
-        ? {
-              img: d.media.img,
-              alt: loc(l, d.media.alt),
-          }
-        : undefined,
-}));
+const textuals = Object.fromEntries(
+    await Promise.all((await getCollection('textual')).map(async item => [item.id, (await render(item)).Content]))
+);
 
-export const pianoTile = await getter('piano-tile', (l, d) => ({
-    ...d,
-    title: locopy(l, d.title),
-    summary: locopy(l, d.summary),
-}));
-
-export type Textual = Promise<AstroComponentFactory>;
-export async function textual(locale: string | undefined, kind: TextualKind, id: string): Textual {
-    const entryId = buildTextualId(locale, kind, id);
-    const entry = await getEntry('textual', entryId);
-    if (!entry) {
-        throw new Error(`Missing textual body ${entryId}`);
-    }
-    return (await render(entry)).Content;
+function textual(locale: string | undefined, type: keyof InfonodeTextualProps, id: string, prop: string): Textual {
+    const entryId = `${normalizeLocale(locale)}/${type}/${id}/${prop}`;
+    const entry = textuals[entryId];
+    return entry ?? throwf(`Missing textual body ${entryId}`);
 }
 
-export function textual2(locale: string | undefined, kind: TextualKind, id: string) {
-    const entryId = buildTextualId(locale, kind, id);
-    return mdx.evaluateSync(readFileSync('src/content/textual/' + entryId), { Fragment }).default;
-}
-
-function buildTextualId(locale: string | undefined, kind: TextualKind, id: string): string {
-    return `${normalizeLocale(locale)}/${kind}/${id}`;
-}
-
-async function getter<C extends CollectionKey>(type: C, resolve: (locale: Locale, data: Item<C>) => ResolvedItems[C]) {
+async function getter<C extends InfonodeKey>(
+    type: C,
+    resolve: (locale: Locale, data: Item<C>, id: string) => ResolvedItems[C]
+) {
     const raw = await getCollection(type);
     type I = InfonodeOf<C>;
+
     function get(locale: string | undefined, id: string): I;
     function get(locale: string | undefined): readonly I[];
     function get(locale: string | undefined, id?: string): I | readonly I[] {
         const l = normalizeLocale(locale);
         if (id === undefined) {
-            return raw.map(({ id, data }) => ({ type, id, data: resolve(l, data) }) as const);
+            return raw.map(({ id, data }) => ({ type, id, data: resolve(l, data, id) }) as const);
         }
         const item = raw.find(e => e.id === id);
         if (item === undefined) {
             throw new Error(`${type} of id '${id}' does not exist`);
         }
-        return { type, id, data: resolve(l, item.data) };
+        return { type, id, data: resolve(l, item.data, id) };
     }
     return get;
 }
