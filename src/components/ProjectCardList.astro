@@ -11,5 +11,11 @@ const { c, ...p } = Astro.props;
 ---
 
 <ul class:list={['lvl', 'list-project', p.class]}>
-    {p.of.map(project => <ProjectCard {c} of={project} />)}
+    {
+        p.of.map(project => (
+            <li>
+                <ProjectCard {c} of={project} />
+            </li>
+        ))
+    }
 </ul>

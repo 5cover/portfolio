@@ -10,5 +10,11 @@ const { c, of } = Astro.props;
 ---
 
 <ul class='lvl list-detail-split-card'>
-    {of.map(entry => <LiteratureCard {c} of={entry} />)}
+    {
+        of.map(entry => (
+            <li>
+                <LiteratureCard {c} of={entry} />
+            </li>
+        ))
+    }
 </ul>

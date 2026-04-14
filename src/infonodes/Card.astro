@@ -4,14 +4,14 @@ import type { Infonode } from '../lib/content';
 import type { PropsBase } from '../lib/types';
 
 interface Props<C extends CollectionKey = CollectionKey> extends PropsBase {
-    infonode: Infonode<C>;
+    of: Infonode<C>;
 }
 // todo
-const { infonode } = Astro.props;
+const { of } = Astro.props;
 
-switch (infonode.type) {
+switch (of.type) {
     case 'contact':
-        infonode.type;
-        infonode.data;
+        of.type;
+        of.data;
 }
 ---

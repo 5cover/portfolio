@@ -38,6 +38,16 @@ deduplicate logic from pages
 
 remove tsx stuff.
 
+remove formatting copy.
+
+fmtX
+
+with C style
+
+it's outdated
+
+what's the modern idiomatic way?
+
 ## problem
 
 I don't like having to deal with astro and preact incompatibilities.

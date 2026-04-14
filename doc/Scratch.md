@@ -103,33 +103,41 @@ reset heading styles sizes etc. the number is now arbitrary
 
 use yaml native dates?
 
-## typed css
+## typed modular css
 
-classes
-
-## remove formatting copy
-
-fmtX
-
-with C style
-
-it's outdated
-
-what's the modern idiomatic way?
+typed classes
 
 ## Dialogs -- go into more details about the philosophy, rationale, arch and design
 
 ## A "see all {infonode type}" that goes back to the list of cards in each detail page
 
-## @ in imports instead of relative everuwhere
-
 ## fix clientside scripts
 
 and find a solution for defs
 
+## resolve textuals as part of content getters?
+
+avoid N+1 requestsvca
+
+## DetailPage
+
+from
+
+```astro
+<BaseLayout pageName={`project/${id}`}>
+    {(c: Context) => <Detail {c} of={project(Astro.currentLocale, id)} />}
+</BaseLayout>
+```
+
+to
+
+```astro
+<DetailPage of={project(Astro.currentLocale, id)}>
+```
+
 ## infonode content model
 
 collections as an implementation detail
-unified `<Card>` and `<Detail>` component?
+`<Card>`, `<Detail>`, and `<CardList>` components. switch on infonode type. of property. cardlist determines the list class from the type.
 
 ## resolve todos
