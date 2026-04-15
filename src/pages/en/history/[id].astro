@@ -1,11 +1,11 @@
 ---
 import HistoryDetailPage from '../../../components/pages/HistoryDetailPage.astro';
 import { getCollection } from 'astro:content';
-import { history } from '../../../lib/content';
+import { get } from '../../../lib/infonodes';
 
 export async function getStaticPaths() {
     return (await getCollection('history')).map(({ id }) => ({ params: { id } }));
 }
 ---
 
-<HistoryDetailPage of={history(Astro.currentLocale, Astro.params.id)} />
+<HistoryDetailPage of={get.history(Astro.currentLocale, Astro.params.id)} />

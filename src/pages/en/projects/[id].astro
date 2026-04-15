@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Detail from '../../../infonodes/project/Detail.astro';
-import { project } from '../../../lib/content';
+import { get } from '../../../lib/infonodes';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import type { Context } from '../../../lib/types';
 
@@ -12,5 +12,5 @@ const id = Astro.params.id;
 ---
 
 <BaseLayout pageName={`project/${id}`}>
-    {(c: Context) => <Detail {c} of={project(Astro.currentLocale, id)} />}
+    {(c: Context) => <Detail {c} of={get.project(Astro.currentLocale, id)} />}
 </BaseLayout>

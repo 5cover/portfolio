@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import TextualContent from '../TextualContent.astro';
 import { normalizeLocale, translation } from '../../i18n';
 
 import '../../styles/history-detail.scss';
@@ -9,7 +8,7 @@ import '../../styles/history-detail.scss';
 // (it shows as resolved but sitll doesn't work for me)
 import '../../styles/but-informatique.scss';
 import Copy from '../Copy.astro';
-import type { Infonode } from '../../lib/content';
+import type { Infonode } from '../../lib/infonodes';
 
 interface Props {
     of: Infonode<'history'>;
@@ -41,11 +40,11 @@ const _ = translation(locale);
         </header>
         <section id='story'>
             <h2>{_.story}</h2>
-            <TextualContent content={data.description} />
+            <data.description />
         </section>
-        <section id='history-body'>
+        <section id='history-body textual'>
             <h2>{_.details}</h2>
-            <TextualContent content={data.body} className='history-body textual' />
+            <data.body />
         </section>
     </main>
 </BaseLayout>

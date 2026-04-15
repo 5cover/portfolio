@@ -2,7 +2,7 @@
 import type { LiteratureKind } from '../../const';
 import { normalizeLocale, translation } from '../../i18n';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import * as content from '../../lib/content';
+import { get } from '../../lib/infonodes';
 import type { Context } from '../../lib/types';
 import LiteratureCardList from '../LiteratureCardList.astro';
 
@@ -14,7 +14,7 @@ interface Props {
 const p = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
 const { nav } = translation(locale);
-const entries = content.literature(locale).filter(({ data }) => data.kind === p.kind);
+const entries = get.literature(locale).filter(({ data }) => data.kind === p.kind);
 ---
 
 <BaseLayout pageName={p.kind}

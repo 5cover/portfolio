@@ -128,6 +128,10 @@ avoid N+1 requestsvca
 collections as an implementation detail
 `<Card>`, `<Detail>`, and `<CardList>` components. switch on infonode type. of property. cardlist determines the list class from the type.
 
+## resolve textual in infonodes instead of separately
+
+(totest)
+
 ## DetailPage
 
 from
@@ -143,9 +147,3 @@ to
 ```astro
 <DetailPage of={project(Astro.currentLocale, id)}>
 ```
-
-## dedicated get object in content.astro
-
-allows more robust dynamic lookup
-
-## resolve textual in infonodes instead of separately

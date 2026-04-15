@@ -1,7 +1,7 @@
 ---
 import { normalizeLocale } from '../i18n'
 import ProjectCardList from './ProjectCardList.astro'
-import { get } from '../lib/content'
+import { get } from '../lib/infonodes'
 import Heading from './Heading.astro'
 import { plainEntries } from '../lib/util'
 import type { PropsBase as Props } from '../lib/types'
@@ -93,9 +93,9 @@ const projects = get.project(Astro.currentLocale)
                                                 </li>
                                             ))}
                                         </ul>
-                                        {skillProjects.length > 0 ?
+                                        {skillProjects.length > 0 ? (
                                             <ProjectCardList {c} of={skillProjects} class='project-skills' />
-                                        :   null}
+                                        ) : null}
                                     </li>
                                 )
                             })}

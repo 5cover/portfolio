@@ -1,16 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import TextualContent from '../TextualContent.astro';
 import Gallery from '../Gallery.astro';
 import Graphic from '../Graphic';
 import LinkList from '../LinkList.astro';
 import ReferenceList from '../ReferenceList.astro';
-import * as content from '../../lib/content';
+import { type Infonode } from '../../lib/infonodes';
 import { translation, normalizeLocale } from '../../i18n';
 import Copy from '../Copy.astro';
 
 interface Props {
-    of: content.Infonode<'literature'>;
+    of: Infonode<'literature'>;
     mainClass?: string;
 }
 const {
@@ -20,7 +19,6 @@ const {
 
 const locale = normalizeLocale(Astro.currentLocale);
 const _ = translation(locale);
-const body = await content.textual(locale, 'literature', id);
 const backgroundStyle = data.background ? `--bg-img: url(${data.background})` : undefined;
 ---
 
@@ -41,7 +39,7 @@ const backgroundStyle = data.background ? `--bg-img: url(${data.background})` : 
         }
         <section id='story'>
             <h2>{_.story}</h2>
-            <TextualContent content={body} />
+            <data.body />
         </section>
         {
             data.references.length > 0 ? (

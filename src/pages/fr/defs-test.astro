@@ -1,9 +1,9 @@
 ---
 import DefCardList from '../../components/DefCardList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { def } from '../../lib/content';
+import { get } from '../../lib/infonodes';
 ---
 
 <BaseLayout pageName='defs-test'>
-    <DefCardList defs={def(Astro.currentLocale)} />
+    <DefCardList defs={get.def(Astro.currentLocale)} />
 </BaseLayout>

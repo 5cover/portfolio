@@ -5,26 +5,24 @@ import { normalizeLocale, translation } from '../../i18n';
 import { pageHref } from '../../lib/links';
 import type { PropsBase } from '../../lib/types';
 import { formatDate } from '../../lib/util';
-import * as content from '../../lib/content';
+import { get, type Infonode } from '../../lib/infonodes';
 import Copy from '../../components/Copy.astro';
 
 interface Props extends PropsBase {
-    of: content.Infonode<'project'>;
+    of: Infonode<'project'>;
 }
-const { data, id } = Astro.props.of;
+const { data } = Astro.props.of;
 
 const locale = normalizeLocale(Astro.currentLocale);
 const _ = translation(locale);
-
-const ProjectBody = content.textual2(locale, 'project', id);
 
 const backgroundStyle = data.background ? `--bg-img: url(${data.background})` : undefined;
 const logoTitle = _.logoTitle(data.title.toString());
 const startLabel = data.startDate ? formatDate(data.startDate, locale) : '';
 const endLabel = data.endDate ? formatDate(data.endDate, locale) : '';
 const context = data.context ? data.context.capitalize() : undefined;
-const teamDefs = data.team.map(({ id }) => content.def(locale, id));
-const techDefs = data.technologies.map(({ id }) => content.def(locale, id));
+const teamDefs = data.team.map(({ id }) => get.def(locale, id));
+const techDefs = data.technologies.map(({ id }) => get.def(locale, id));
 ---
 
 <main style={backgroundStyle}>
@@ -79,7 +77,7 @@ const techDefs = data.technologies.map(({ id }) => content.def(locale, id));
     }
     <section id='story'>
         <h2>{_.story}</h2>
-        <ProjectBody />
+        <data.body />
     </section>
     {
         data.references.length > 0 ? (

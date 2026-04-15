@@ -92,3 +92,9 @@ that accepts a localized "infonode" which type is encoded as a string (no more `
 ## rename pianoTile to pianoTile
 
 more identifier friendly
+
+## dedicated get object in content.astro
+
+allows more robust dynamic lookup
+
+## rename content to infonodes

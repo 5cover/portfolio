@@ -1,7 +1,7 @@
 ---
 import Graphic from '../Graphic';
 import ProjectCardList from '../ProjectCardList.astro';
-import * as content from '../../lib/content';
+import { get, type Infonode } from '../../lib/infonodes';
 import { pageHref } from '../../lib/links';
 import { normalizeLocale } from '../../i18n';
 import Section from '../Section.astro';
@@ -13,7 +13,7 @@ import type { Context } from '../../lib/types';
 import CardList from '../CardList.astro';
 import PianoTileCard from '../../infonodes/pianoTile/Card.astro';
 
-export interface Props {
+export type Props = {
     copy: {
         me: string;
         myPhoto: string;
@@ -27,14 +27,14 @@ export interface Props {
 }
 
 const locale = normalizeLocale(Astro.currentLocale);
-const projects = content.project(locale);
-const contacts = content.contact(locale);
+const projects = get.project(locale);
+const contacts = get.contact(locale);
 const s = Astro.props.copy;
 ---
 
 <BaseLayout pageName='index'
     >{((c: Context) => (
-    <CardList items={content.pianoTile(locale)}>{((of: content.Infonode<'pianoTile'>) => (<PianoTileCard {c} {of}/>))}</CardList>
+    <CardList items={get.pianoTile(locale)}>{((of: Infonode<'pianoTile'>) => (<PianoTileCard {c} {of}/>))}</CardList>
     <Section {c} as='article' class:list={['lvl', 'content-block', style.me]}>{((c: Context) =>
         <div>
             <Heading {c}>{s.me}</Heading>
