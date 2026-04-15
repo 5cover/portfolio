@@ -1,16 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
-import Detail from '../../../infonodes/project/Detail.astro';
-import { get } from '../../../lib/infonodes';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import type { Context } from '../../../lib/types';
+import DetailPage from '../../../layouts/DetailPage.astro';
 
 export async function getStaticPaths() {
     return (await getCollection('project')).map(({ id }) => ({ params: { id } }));
 }
-const id = Astro.params.id;
 ---
 
-<BaseLayout pageName={`project/${id}`}>
-    {(c: Context) => <Detail {c} of={get.project(Astro.currentLocale, id)} />}
-</BaseLayout>
+<DetailPage of='project' id={Astro.params.id} />

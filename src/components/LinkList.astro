@@ -4,10 +4,10 @@ import { anchors } from '../catalog/anchor';
 import type { Link } from '../content.config';
 import type { Localize } from '../i18n';
 import Copy from './Copy.astro';
-interface Props {
+type Props = {
     links: readonly Localize<Link>[];
     variant?: 'card' | 'page';
-}
+};
 const p = Astro.props;
 const listClass = p.variant === 'page' ? 'lvl list-link' : 'list-link';
 const includeLabel = p.variant === 'page';

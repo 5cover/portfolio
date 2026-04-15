@@ -12,9 +12,9 @@ function buildDefTitle(def: Infonode<'def'>) {
     return abbr ? copy([full, ' (', { title: full.toString(), abbr }, ')']) : full;
 }
 
-interface Props {
+type Props = {
     def: Infonode<'def'>;
-}
+};
 const { def } = Astro.props;
 const { data } = def;
 const defTitle = buildDefTitle(def);

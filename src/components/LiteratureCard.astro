@@ -8,9 +8,9 @@ import Heading from './Heading.astro';
 import type { PropsBase } from '../lib/types';
 import type { Infonode } from '../lib/infonodes';
 
-interface Props extends PropsBase {
+type Props = PropsBase & {
     of: Infonode<'literature'>;
-}
+};
 
 const {
     c,

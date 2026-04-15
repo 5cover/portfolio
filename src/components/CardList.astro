@@ -1,11 +1,11 @@
 ---
 import style from './CardList.module.scss';
-export interface Props {
+export type Props = {
     items: readonly unknown[];
-}
-export interface Slots {
+};
+export type Slots = {
     default: [unknown];
-}
+};
 const p = Astro.props;
 const slots = await Promise.all(p.items.map(item => Astro.slots.render('default', [item] satisfies Slots['default'])));
 ---

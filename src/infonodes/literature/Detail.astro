@@ -1,0 +1,58 @@
+---
+import Gallery from '../../components/Gallery.astro';
+import Graphic from '../../components/Graphic';
+import LinkList from '../../components/LinkList.astro';
+import ReferenceList from '../../components/ReferenceList.astro';
+import { type Infonode } from '../../lib/infonodes';
+import { translation, normalizeLocale } from '../../i18n';
+import Copy from '../../components/Copy.astro';
+
+type Props = {
+    of: Infonode<'literature'>;
+    mainClass?: string;
+};
+const {
+    mainClass,
+    of: { data },
+} = Astro.props;
+
+const locale = normalizeLocale(Astro.currentLocale);
+const _ = translation(locale);
+const backgroundStyle = data.background ? `--bg-img: url(${data.background})` : undefined;
+---
+
+<main style={backgroundStyle} class={mainClass}>
+    <header>
+        <h1><Copy of={data.title} /></h1>
+        {data.logo ? <Graphic of={data.logo} title={_.logoTitle(data.title.toString())} class='logo' /> : null}
+        <p class='abstract'><Copy of={data.abstract} /></p>
+    </header>
+    {
+        data.links.length > 0 ? (
+            <section id='links'>
+                <h2>{_.links}</h2>
+                <LinkList links={data.links} variant='page' />
+            </section>
+        ) : null
+    }
+    <section id='story'>
+        <h2>{_.story}</h2>
+        <data.body />
+    </section>
+    {
+        data.references.length > 0 ? (
+            <section id='references'>
+                <h2>{_.references}</h2>
+                <ReferenceList references={data.references} />
+            </section>
+        ) : null
+    }
+    {
+        data.gallery.length > 0 ? (
+            <section id='gallery'>
+                <h2>{_.gallery}</h2>
+                <Gallery items={data.gallery} />
+            </section>
+        ) : null
+    }
+</main>

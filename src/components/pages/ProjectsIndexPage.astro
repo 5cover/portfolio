@@ -3,14 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import '../../styles/projects.scss';
 
-interface Props {
+type Props = {
     copy: {
         search: string;
         placeholder: string;
         tags: string;
         sort: string;
     };
-}
+};
 
 const s = Astro.props.copy;
 ---

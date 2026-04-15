@@ -2,9 +2,9 @@
 import type { Infonode } from '../lib/infonodes';
 import DefCard from './DefCard.astro';
 
-interface Props {
+type Props = {
     defs: readonly Infonode<'def'>[];
-}
+};
 const { defs } = Astro.props;
 ---
 

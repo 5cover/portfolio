@@ -3,10 +3,10 @@ import { get } from '../../lib/infonodes';
 import { cls } from '../../lib/util';
 import Copy from '../Copy.astro';
 
-interface Props {
+type Props = {
     id: string;
     class?: string;
-}
+};
 const p = Astro.props;
 const def = get.def(Astro.currentLocale, p.id).data;
 const label = def.name.abbr ?? def.name.short ?? def.name.full ?? p.id;

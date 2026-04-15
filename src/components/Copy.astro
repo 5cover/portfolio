@@ -3,9 +3,9 @@ import { copy } from '../lib/copy';
 import { isArray } from '../lib/util';
 import Badge from './Badge';
 import Def from './mdx/Def.astro';
-interface Props {
+type Props = {
     of: copy;
-}
+};
 const of = copy(Astro.props.of).copy;
 ---
 

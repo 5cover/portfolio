@@ -98,3 +98,25 @@ more identifier friendly
 allows more robust dynamic lookup
 
 ## rename content to infonodes
+
+## resolve textuals as part of content getters?
+
+avoid N+1 requestsvca
+
+(totest, do they display correctly? textual class?)
+
+## DetailPage
+
+from
+
+```astro
+<BaseLayout pageName={`project/${id}`}>
+    {(c: Context) => <Detail {c} of={project(Astro.currentLocale, id)} />}
+</BaseLayout>
+```
+
+to
+
+```astro
+<DetailPage of={project(Astro.currentLocale, id)}>
+```

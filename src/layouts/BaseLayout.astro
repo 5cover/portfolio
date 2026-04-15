@@ -7,10 +7,10 @@ import '../styles/base.scss';
 import Section from '../components/Section.astro';
 import type { Context } from '../lib/types';
 
-interface Props {
+type Props = {
     pageName: string;
     mainClass?: string;
-}
+};
 
 const p = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);

@@ -8,9 +8,9 @@ import { formatDate } from '../../lib/util';
 import { get, type Infonode } from '../../lib/infonodes';
 import Copy from '../../components/Copy.astro';
 
-interface Props extends PropsBase {
+type Props = PropsBase & {
     of: Infonode<'project'>;
-}
+};
 const { data } = Astro.props.of;
 
 const locale = normalizeLocale(Astro.currentLocale);

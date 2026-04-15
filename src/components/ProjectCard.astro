@@ -12,9 +12,9 @@ import type { PropsBase, Context } from '../lib/types';
 import Copy from './Copy.astro';
 import type { Infonode } from '../lib/infonodes';
 
-interface Props extends PropsBase {
+type Props = PropsBase & {
     of: Infonode<'project'>;
-}
+};
 const {
     c,
     of: { id, data },

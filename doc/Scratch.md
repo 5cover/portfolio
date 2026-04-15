@@ -113,13 +113,15 @@ typed classes
 
 ## A "see all {infonode type}" that goes back to the list of cards in each detail page
 
+## formalize background image patterns
+
+and use it everywhere consistently?
+
+unless it's a v1 remnant and we can do it better now
+
 ## fix clientside scripts
 
 and find a solution for defs
-
-## resolve textuals as part of content getters?
-
-avoid N+1 requestsvca
 
 ## resolve todos
 
@@ -127,23 +129,3 @@ avoid N+1 requestsvca
 
 collections as an implementation detail
 `<Card>`, `<Detail>`, and `<CardList>` components. switch on infonode type. of property. cardlist determines the list class from the type.
-
-## resolve textual in infonodes instead of separately
-
-(totest)
-
-## DetailPage
-
-from
-
-```astro
-<BaseLayout pageName={`project/${id}`}>
-    {(c: Context) => <Detail {c} of={project(Astro.currentLocale, id)} />}
-</BaseLayout>
-```
-
-to
-
-```astro
-<DetailPage of={project(Astro.currentLocale, id)}>
-```

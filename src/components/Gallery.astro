@@ -3,9 +3,9 @@ import type { GalleryItem } from '../content.config';
 import type { Localize } from '../i18n';
 import Copy from './Copy.astro';
 
-interface Props {
+type Props = {
     items: readonly Localize<GalleryItem>[];
-}
+};
 
 const { items } = Astro.props;
 ---

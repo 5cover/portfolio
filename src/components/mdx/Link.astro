@@ -1,9 +1,9 @@
 ---
-interface Props {
+type Props = {
     href: string;
     external?: boolean;
     class?: string;
-}
+};
 
 const { href, external, class: className } = Astro.props;
 

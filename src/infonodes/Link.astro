@@ -3,10 +3,10 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import { normalizeLocale } from '../i18n';
 import type { InfonodeKey } from '../lib/infonodes';
 
-interface Props {
+type Props = {
     type: InfonodeKey;
     id: string;
-}
+};
 const locale = normalizeLocale(Astro.currentLocale);
 const p = Astro.props;
 ---

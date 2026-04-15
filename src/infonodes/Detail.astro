@@ -2,16 +2,28 @@
 import type { HasDetail, Infonode, InfonodeKey } from '../lib/infonodes';
 import type { PropsBase } from '../lib/types';
 import ProjectDetail from './project/Detail.astro';
+import HistoryDetail from './history/Detail.astro';
+import LiteratureDetail from './literature/Detail.astro';
 
-interface Props<C extends InfonodeKey & HasDetail = HasDetail> extends PropsBase {
-    of: Infonode<C>;
-}
-const { c, of } = Astro.props;
+type Props<C extends InfonodeKey & HasDetail = HasDetail> = [C] extends [C]
+    ? PropsBase & {
+          of: Infonode<C>;
+      }
+    : never;
 
-const components = {
+const components: {
+    [C in HasDetail]: (props: Props<C>) => unknown;
+} = {
     project: ProjectDetail,
-} as const;
-const Component = components[of.type];
+    history: HistoryDetail,
+    literature: LiteratureDetail,
+};
+const get =
+    <C extends HasDetail>(props: Props<C>) =>
+    () =>
+        components[props.of.type](props);
+
+const Component = get(Astro.props);
 ---
 
-<Component {c} {of} />
+<Component />

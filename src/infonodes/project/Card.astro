@@ -10,9 +10,9 @@ import { pageHref, detailHref } from '../../lib/links';
 import type { PropsBase } from '../../lib/types';
 import { formatDate } from '../../lib/util';
 
-interface Props extends PropsBase {
+type Props = PropsBase & {
     of: Infonode<'project'>;
-}
+};
 const {
     c,
     of: { id, data },

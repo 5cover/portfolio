@@ -6,9 +6,9 @@ import type { Infonode } from '../../lib/infonodes';
 import type { PropsBase } from '../../lib/types';
 import styles from './card.module.scss';
 
-interface Props extends PropsBase {
+type Props = PropsBase & {
     of: Infonode<'pianoTile'>;
-}
+};
 const {
     c,
     of: { data },

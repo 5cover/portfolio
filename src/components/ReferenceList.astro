@@ -5,9 +5,9 @@ import { translation, type Localize } from '../i18n';
 import Copy from './Copy.astro';
 import Graphic from './Graphic';
 
-interface Props {
+type Props = {
     references: readonly Localize<Reference>[];
-}
+};
 
 const { references } = Astro.props;
 const _ = translation(Astro.currentLocale);

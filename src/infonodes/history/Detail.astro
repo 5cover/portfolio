@@ -1,0 +1,47 @@
+---
+import { normalizeLocale, translation } from '../../i18n';
+
+import '../../styles/history-detail.scss';
+
+// one off exception for the heavily styled BUT informatique page: https://github.com/withastro/astro/issues/7761
+// (it shows as resolved but sitll doesn't work for me)
+import '../../styles/but-informatique.scss';
+import type { Infonode } from '../../lib/infonodes';
+import Copy from '../../components/Copy.astro';
+
+type Props = {
+    of: Infonode<'history'>;
+};
+
+const { data } = Astro.props.of;
+
+const locale = normalizeLocale(Astro.currentLocale);
+const _ = translation(locale);
+---
+
+<main>
+    <header>
+        <h1><Copy of={data.title} /></h1>
+        {
+            data.meta || data.year ? (
+                <p class='history-meta'>
+                    {data.meta ? (
+                        <span>
+                            <Copy of={data.meta} />
+                        </span>
+                    ) : null}
+                    {data.year ? <span class='history-meta_year'>{data.year}</span> : null}
+                </p>
+            ) : null
+        }
+        {data.media ? <img class='history-media' src={data.media.img} alt={data.media.alt} loading='lazy' /> : null}
+    </header>
+    <section id='story'>
+        <h2>{_.story}</h2>
+        <data.description />
+    </section>
+    <section id='history-body textual'>
+        <h2>{_.details}</h2>
+        <data.body />
+    </section>
+</main>

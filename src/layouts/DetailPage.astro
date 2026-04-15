@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from './BaseLayout.astro';
 import { get, type HasDetail, type InfonodeKey } from '../lib/infonodes';
 import type { Context } from '../lib/types';
-import Detail from './Detail.astro';
+import Detail from '../infonodes/Detail.astro';
 
 type Props = {
     of: InfonodeKey & HasDetail;
