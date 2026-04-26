@@ -95,7 +95,7 @@ export const collections = {
             tags: zArray(z.enum(tagKeys)),
         })
     ),
-    'pianoTile': col(
+    pianoTile: col(
         'pianoTile',
         z.object({
             title: zText,
