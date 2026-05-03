@@ -1,20 +1,20 @@
 ---
-import { normalizeLocale } from '../i18n';
-import ProjectCardList from './ProjectCardList.astro';
-import { get } from '../lib/content';
-import Heading from './Heading.astro';
-import { plainEntries } from '../lib/util';
-import type { PropsBase as Props } from '../lib/types';
-import Copy from './Copy.astro';
-import type { ButData } from './but/types';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { copy } from '../lib/copy';
+import { normalizeLocale } from '../i18n'
+import ProjectCardList from './ProjectCardList.astro'
+import { get } from '../lib/content'
+import Heading from './Heading.astro'
+import { plainEntries } from '../lib/util'
+import type { PropsBase as Props } from '../lib/types'
+import Copy from './Copy.astro'
+import type { ButData } from './but/types'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { copy } from '../lib/copy'
 
-const MaxProjectsPerSkill = 4;
-const locale = normalizeLocale(Astro.currentLocale);
-const d = (await import(`./but/${locale}.ts`)).default as ButData;
-const { c } = Astro.props;
-const projects = get.project(Astro.currentLocale);
+const MaxProjectsPerSkill = 4
+const locale = normalizeLocale(Astro.currentLocale)
+const d = (await import(`./but/${locale}.ts`)).default as ButData
+const { c } = Astro.props
+const projects = get.project(Astro.currentLocale)
 ---
 
 <BaseLayout pageName='but-informatique' mainClass='but-body margined'>
@@ -75,7 +75,7 @@ const projects = get.project(Astro.currentLocale);
                                         ({ data }) =>
                                             data.tags.includes(yearName) && data.tags.includes(`but-${skillName}`)
                                     )
-                                    .slice(0, MaxProjectsPerSkill);
+                                    .slice(0, MaxProjectsPerSkill)
                                 return (
                                     <li
                                         style={`--bg-img: url(/portfolio/img/skill/${skillName}.jpg)`}
@@ -93,11 +93,11 @@ const projects = get.project(Astro.currentLocale);
                                                 </li>
                                             ))}
                                         </ul>
-                                        {skillProjects.length > 0 ? (
+                                        {skillProjects.length > 0 ?
                                             <ProjectCardList {c} of={skillProjects} class='project-skills' />
-                                        ) : null}
+                                        :   null}
                                     </li>
-                                );
+                                )
                             })}
                         </ul>
                     </section>

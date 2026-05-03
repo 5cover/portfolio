@@ -19,7 +19,6 @@ export default [
         languageOptions: {
             globals: {
                 ...globals.browser,
-                ComponentFramework: true,
             },
             parserOptions: {
                 ecmaVersion: 2020,

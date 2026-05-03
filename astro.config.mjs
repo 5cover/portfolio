@@ -7,6 +7,7 @@ import preact from '@astrojs/preact';
 import svgr from 'vite-plugin-svgr';
 
 // https://astro.build/config
+
 export default defineConfig({
     site: 'https://5cover.github.io',
     base: '/portfolio',
