@@ -108,7 +108,7 @@ const textuals = Object.fromEntries(
 
 function textual(locale: string | undefined, type: keyof InfonodeTextualProps, id: string, prop: string): Textual {
     const entryId = `${normalizeLocale(locale)}/${type}/${id}/${prop}`;
-    const entry = textuals[entryId];
+    let entry = textuals[entryId];
     return entry ?? throwf(`Missing textual body ${entryId}`);
 }
 

@@ -1,11 +1,10 @@
 ---
-import { normalizeLocale } from '../i18n';
-import { copy } from '../lib/copy';
-import Copy from './Copy.astro';
-import Graphic from './Graphic';
-import { translation } from '../i18n';
+import { translation, normalizeLocale } from '../../i18n';
+import { copy } from '../../lib/copy';
+import Graphic from '../../components/Graphic';
 import { defType } from '../catalog/def-type';
 import type { Infonode } from '../lib/infonodes';
+import Copy from '../../components/Copy.astro';
 
 function buildDefTitle(def: Infonode<'def'>) {
     const { abbr, full } = def.data.name;

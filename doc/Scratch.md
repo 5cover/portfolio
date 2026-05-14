@@ -119,6 +119,10 @@ and use it everywhere consistently?
 
 unless it's a v1 remnant and we can do it better now
 
+## import normalizer/sorter/diff reducer
+
+canonnicalize diffs. prettier gets us part of the way. what i want now is semantic prettier.
+
 ## fix clientside scripts
 
 and find a solution for defs
